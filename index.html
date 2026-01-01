@@ -7,13 +7,9 @@
 </head>
 
 <body style="margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">
-<!-- SITE HEADER / NAVIGATION -->
-<header style="
-  width:100%;
-  background:#ffffff;
-  border-bottom:1px solid #e6f2f2;
-">
 
+<!-- SITE HEADER / NAVIGATION -->
+<header style="width:100%;background:#ffffff;border-bottom:1px solid #e6f2f2;">
   <div style="
     max-width:1200px;
     margin:0 auto;
@@ -21,54 +17,45 @@
     display:flex;
     flex-direction:column;
     align-items:center;
-    box-sizing:border-box;
   ">
 
     <!-- LOGO -->
-    <a href="index.html" style="display:inline-block;">
+    <a href="/" style="display:inline-block;">
       <img
         src="MKT-logo.png"
         alt="Marsha Kerr Talley – Live Inspired"
-        style="
-          max-width:180px;
-          height:auto;
-          display:block;
-          margin:0 auto 12px;
-        "
+        style="max-width:180px;height:auto;margin-bottom:12px;"
       />
     </a>
 
-    <!-- NAV LINKS -->
+    <!-- NAV -->
     <nav aria-label="Main navigation">
       <ul style="
         list-style:none;
         padding:0;
         margin:0;
         display:flex;
-        gap:28px;
+        gap:22px;
         flex-wrap:wrap;
         justify-content:center;
-        font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
         font-size:14px;
         letter-spacing:0.08em;
         text-transform:uppercase;
       ">
-        <li><a href="index.html" style="color:#056367;text-decoration:none;font-weight:600;">Home</a></li>
-        <li><a href="work-with-me.html" style="color:#2f2f2f;text-decoration:none;">Work With Me</a></li>
-        <li><a href="books.html" style="color:#2f2f2f;text-decoration:none;">Books</a></li>
-        <li><a href="podcast.html" style="color:#2f2f2f;text-decoration:none;">Podcast</a></li>
-        <li><a href="reflections.html" style="color:#2f2f2f;text-decoration:none;">Reflections</a></li>
+        <li><a href="/" style="color:#056367;font-weight:600;text-decoration:none;">Home</a></li>
+        <li><a href="/work-with-me" style="color:#2f2f2f;text-decoration:none;">Work With Me</a></li>
+        <li><a href="/books" style="color:#2f2f2f;text-decoration:none;">Books</a></li>
+        <li><a href="/podcast" style="color:#2f2f2f;text-decoration:none;">Podcast</a></li>
+        <li><a href="/reflections" style="color:#2f2f2f;text-decoration:none;">Reflections</a></li>
       </ul>
     </nav>
 
   </div>
 </header>
 
-  
-<!-- TOP BANNER / INTRO -->
-<section style="width:100%;text-align:center;padding:24px 16px 48px;">
-  <img
-    src="MKT Website Banner-3.png"
+<!-- TOP BANNER -->
+<section style="text-align:center;padding:24px 16px 48px;">
+  <img src="MKT Website Banner-3.png"
     alt="Live Inspired by Marsha Kerr Talley"
     style="width:100%;max-width:1200px;border-radius:16px;display:block;margin:0 auto;"
   />
@@ -82,7 +69,7 @@
     experiencing sustained stress through practical, relevant guidance.
   </p>
 
-  <a href="about.html" style="
+  <a href="/about" style="
     display:inline-block;
     padding:12px 28px;
     background:#056367;
@@ -94,101 +81,48 @@
   </a>
 </section>
 
-<!-- PREVENTIVE WELLBEING STATEMENT -->
-<section style="padding:64px 16px;text-align:center;">
-  <h2 style="color:#319fa2;font-size:clamp(30px,5vw,40px);margin-bottom:24px;">
-    Preventive Health and Wellbeing
-  </h2>
-  <p style="max-width:720px;margin:0 auto;font-size:clamp(18px,2.6vw,22px);line-height:1.6;color:#5a5a5a;">
-    Burnout is a symptom.<br>
-    Pain is the raw material.<br>
-    Possibility is the quiet catalyst.
-  </p>
-</section>
+<!-- HERO -->
+<section id="mkt-hero" style="margin:72px 16px;position:relative;border-radius:28px;padding:clamp(22px,4vw,44px);background:linear-gradient(180deg,#056367,#2fe2dd);">
 
-<!-- HERO: Marsha Kerr Talley -->
-<section id="mkt-hero" aria-label="Marsha Kerr Talley hero" style="margin:72px 16px;">
-  <style>
-    #mkt-hero{position:relative;overflow:hidden;border-radius:28px;padding:clamp(22px,4vw,44px);}
-    #mkt-hero *{box-sizing:border-box}
-    #mkt-hero .wrap{max-width:1100px;margin:0 auto;display:grid;gap:28px;grid-template-columns:1.15fr 0.85fr;align-items:center;}
-    @media (max-width:900px){#mkt-hero .wrap{grid-template-columns:1fr}}
+  <div style="max-width:1100px;margin:0 auto;display:grid;gap:28px;grid-template-columns:1.15fr 0.85fr;">
+    <style>
+      @media (max-width:900px){
+        #mkt-hero div{grid-template-columns:1fr;}
+      }
+    </style>
 
-    #mkt-hero .bg{
-      position:absolute;inset:0;
-      background:
-        radial-gradient(900px 500px at 10% 15%, rgba(255,255,255,0.35), transparent 60%),
-        radial-gradient(800px 450px at 90% 10%, rgba(255,255,255,0.22), transparent 55%),
-        radial-gradient(700px 520px at 80% 90%, rgba(255,255,255,0.18), transparent 55%),
-        linear-gradient(180deg,#056367 0%,#319fa2 45%,#2fe2dd 100%);
-    }
-
-    #mkt-hero .card{
-      position:relative;z-index:2;
-      background:rgba(255,255,255,.8);
-      border-radius:24px;
-      padding:28px;
-      box-shadow:0 24px 70px rgba(0,0,0,.18);
-    }
-
-    #mkt-hero h1{
-      font-size:clamp(34px,5vw,58px);
-      line-height:1.05;
-      margin:16px 0;
-      color:#043b3d;
-    }
-
-    #mkt-hero .lead{font-size:18px;line-height:1.55;color:#0d4b4e;}
-    #mkt-hero .poem{border-left:4px solid rgba(5,99,103,.35);padding-left:14px;margin-top:16px;}
-
-    #mkt-hero .proof{
-      position:relative;z-index:2;
-      background:rgba(255,255,255,.25);
-      border-radius:24px;
-      padding:24px;
-      color:#fff;
-    }
-  </style>
-
-  <div class="bg"></div>
-
-  <div class="wrap">
-    <div class="card">
+    <div style="background:rgba(255,255,255,.85);border-radius:24px;padding:28px;">
       <div style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#044e51;">
         Turning Pain Into Possibilities • Preventive Wellbeing • Education
       </div>
 
-      <h1>You are not broken.<br>You are allowed to shape what comes next.</h1>
+      <h1 style="font-size:clamp(34px,5vw,58px);line-height:1.05;margin:16px 0;color:#043b3d;">
+        You are not broken.<br>You are allowed to shape what comes next.
+      </h1>
 
-      <p class="lead">
+      <p style="font-size:18px;line-height:1.55;color:#0d4b4e;">
         I support individuals and organisations navigating sustained stress
         to transform lived experience into clarity, self-trust, and direction.
       </p>
-
-      <div class="poem">
-        Pain is not a personal failure.<br>
-        It is asking for something to shift.<br>
-        Misery does not get the final word.
-      </div>
     </div>
 
-    <aside class="proof">
+    <aside style="background:rgba(255,255,255,.25);border-radius:24px;padding:24px;color:#fff;">
       <h3>What you can expect</h3>
-      <ul>
-        <li>Support that creates clarity and grounded direction</li>
-        <li>Emotional regulation skills for everyday life</li>
-        <li>Education-informed guidance for sustainable change</li>
-        <li>A safe, steady space to move forward</li>
+      <ul style="padding-left:18px;line-height:1.6;">
+        <li>Clarity and grounded direction</li>
+        <li>Emotional regulation skills</li>
+        <li>Sustainable change support</li>
+        <li>A steady space to move forward</li>
       </ul>
     </aside>
   </div>
 </section>
 
-<!-- WORK WITH ME CTA -->
+<!-- CTA -->
 <section style="text-align:center;padding:72px 16px;">
   <h2 style="color:#319fa2;">You are already enough.</h2>
   <p>You don’t need fixing. You need support.</p>
-  <a href="work-with-me.html" style="
+  <a href="/work-with-me" style="
     display:inline-block;
     padding:18px 48px;
     background:#5aa3a6;
@@ -200,23 +134,13 @@
   </a>
 </section>
 
-<!-- MOMENT TO PAUSE -->
+<!-- YOUTUBE -->
 <section style="text-align:center;padding:72px 16px;">
   <h2 style="color:#319fa2;">A Moment to Pause and Reset</h2>
-  <p>A gentle reminder to slow down and reconnect.</p>
 
-  <div style="
-    max-width:900px;
-    margin:36px auto;
-    aspect-ratio:16/9;
-    border-radius:24px;
-    overflow:hidden;
-    box-shadow:0 20px 50px rgba(0,0,0,.18);">
-    <iframe
-      src="https://www.youtube.com/embed/IOaZFi53LEo"
-      style="width:100%;height:100%;border:0;"
-      allowfullscreen>
-    </iframe>
+  <div style="max-width:900px;margin:36px auto;aspect-ratio:16/9;border-radius:24px;overflow:hidden;">
+    <iframe src="https://www.youtube.com/embed/IOaZFi53LEo"
+      style="width:100%;height:100%;border:0;" allowfullscreen></iframe>
   </div>
 </section>
 
@@ -224,12 +148,11 @@
 <section style="padding:64px 16px;">
   <div style="max-width:900px;margin:0 auto;">
     <h2 style="color:#056367;">What People Experience</h2>
-    <p>This work supports steadiness, clarity, and capacity that builds over time.</p>
-    <ul>
+    <ul style="line-height:1.7;">
       <li>Greater emotional steadiness</li>
       <li>Clearer thinking under pressure</li>
-      <li>Confidence managing stress and boundaries</li>
-      <li>Understanding personal stress signals</li>
+      <li>Confidence with boundaries</li>
+      <li>Awareness of stress signals</li>
       <li>Sustainable wellbeing habits</li>
     </ul>
   </div>
@@ -238,8 +161,7 @@
 <!-- STAY CONNECTED -->
 <section style="text-align:center;padding:72px 16px;">
   <h2 style="color:#319fa2;">Stay connected. You are not alone.</h2>
-  <p>You are supported here.</p>
-  <a href="work-with-me.html" style="
+  <a href="/work-with-me" style="
     display:block;
     max-width:960px;
     margin:24px auto;
