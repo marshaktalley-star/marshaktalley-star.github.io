@@ -9,14 +9,49 @@
 <body style="margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">
 
 <!-- SITE HEADER / NAVIGATION -->
-<header style="width:100%;background:#ffffff;border-bottom:1px solid #e6f2f2;">
-  <div style="max-width:1200px;margin:0 auto;padding:20px 16px 12px;display:flex;flex-direction:column;align-items:center;">
-    <a href="index.html">
-      <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired"
-        style="max-width:220px;margin-bottom:12px;">
+<header style="
+  width:100%;
+  background:#ffffff;
+  border-bottom:1px solid #e6f2f2;
+">
+  <div style="
+    max-width:1200px;
+    margin:0 auto;
+    padding:20px 16px 12px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    box-sizing:border-box;
+  ">
+    <!-- LOGO -->
+    <a href="index.html" style="display:inline-block;">
+      <img
+        src="MKT-logo-3.png"
+        alt="Marsha Kerr Talley – Live Inspired"
+        style="
+          max-width:220px;
+          width:100%;
+          height:auto;
+          display:block;
+          margin:0 auto 12px;
+        "
+      />
     </a>
-    <nav>
-      <ul style="list-style:none;padding:0;margin:0;display:flex;gap:28px;flex-wrap:wrap;justify-content:center;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;">
+
+    <!-- NAV LINKS -->
+    <nav aria-label="Main navigation">
+      <ul style="
+        list-style:none;
+        padding:0;
+        margin:0;
+        display:flex;
+        gap:28px;
+        flex-wrap:wrap;
+        justify-content:center;
+        font-size:14px;
+        letter-spacing:0.08em;
+        text-transform:uppercase;
+      ">
         <li><a href="index.html" style="color:#056367;text-decoration:none;font-weight:600;">Home</a></li>
         <li><a href="work-with-me.html" style="color:#2f2f2f;text-decoration:none;">Work With Me</a></li>
         <li><a href="books.html" style="color:#2f2f2f;text-decoration:none;">Books</a></li>
@@ -27,60 +62,951 @@
   </div>
 </header>
 
-<!-- ABOUT PAGE HEADER -->
-<div style="text-align:center;margin:18px 0;">
-  <h1 style="color:#056367;">About Marsha Kerr Talley</h1>
-  <p style="color:#319fa2;">Live Inspired, Turning Pain Into Possibilities</p>
-  <p style="color:#4f7f82;">Preventive Health and Wellbeing</p>
+  <!-- ABOUT PAGE HEADER -->
+<div style="
+  width:100%;
+  max-width:100%;
+  margin:0 0 18px 0;
+  padding:4px 0 0 0;
+  box-sizing:border-box;
+  text-align:center;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+">
+
+  <h1 style="
+    margin:0;
+    font-size:clamp(24px,4vw,32px);
+    font-weight:600;
+    line-height:1.25;
+    letter-spacing:-0.01em;
+    color:#056367;
+  ">
+    About Marsha Kerr Talley
+  </h1>
+
+  <p style="
+    margin:8px 0 0 0;
+    font-size:clamp(15px,2.6vw,17px);
+    font-weight:500;
+    color:#319fa2;
+    line-height:1.5;
+  ">
+    Live Inspired, Turning Pain Into Possibilities
+  </p>
+
+  <p style="
+    margin:6px 0 0 0;
+    font-size:clamp(14px,2.4vw,16px);
+    font-weight:400;
+    color:#4f7f82;
+    line-height:1.5;
+  ">
+    Preventive Health and Wellbeing
+  </p>
+
 </div>
 
-<!-- ABOUT PHOTO -->
-<div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;">
-  <img src="about-marsha-photo.webp" alt="Marsha Kerr Talley" style="width:100%;">
+<!-- ABOUT PAGE PHOTO -->
+<div style="
+  width:100%;
+  max-width:1200px;
+  margin:28px auto 0 auto;
+  padding:0 1.5rem;
+  box-sizing:border-box;
+">
+
+  <img 
+    src="about-marsha-photo.webp"
+    alt="Marsha Kerr Talley working at a laptop, smiling"
+    style="
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:2px;
+    "
+  >
+
 </div>
 
-<!-- ABOUT CONTENT -->
-<section style="padding:32px 16px 56px;">
+  
+<!-- ABOUT PAGE | TWO-TIER STRUCTURE (GoDaddy-ready, header removed) -->
+<section aria-label="About Marsha Kerr Talley" style="
+  width:100%;
+  max-width:100vw;
+  padding:32px 16px 56px;
+  margin:0;
+  background:#ffffff;
+  color:#0d4b4e;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  box-sizing:border-box;
+">
 
-<details open class="mkt-details" style="max-width:1000px;margin:28px auto;background:#f9fefe;border-radius:20px;padding:18px;">
-<summary style="font-weight:900;color:#056367;">Read the full journey</summary>
+  <style>
+    html, body { max-width:100%; overflow-x:hidden; }
+    *, *::before, *::after { box-sizing:border-box; }
 
-<!-- WELLBEING IN PRACTICE (LABEL REMOVED, CONTENT RESTORED) -->
-<section style="max-width:900px;margin:3.5rem auto;padding:2.5rem 2rem;background:#f6fbfb;border-radius:18px;">
-  <h2 style="color:#056367;">Wellbeing in Practice</h2>
-  <h3>Silhouette’s Café</h3>
+    details.mkt-details {
+      max-width:1000px;
+      margin:28px auto 0;
+      border-radius:20px;
+      background:#f9fefe;
+      padding:18px 18px;
+    }
 
-  <p>Before formalising my work in preventive health and wellbeing, I founded <strong>Silhouette’s Café</strong>...</p>
-  <p>Silhouette’s Café offered 100% certified essential oils...</p>
-  <p>What began as a product-based wellness business evolved...</p>
-  <p>While Silhouette’s Café currently lives quietly within my wider work...</p>
-  <p>Silhouette’s Café will be returning in its next iteration...</p>
+    details.mkt-details summary {
+      cursor:pointer;
+      list-style:none;
+      font-weight:900;
+      color:#056367;
+      font-size:clamp(16px,3.2vw,18px);
+      outline:none;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
 
-  <p><a href="https://www.marshakerrtalley.com/silhouettes-cafe" style="color:#319fa2;">Learn more about Silhouette’s Café</a></p>
+    details.mkt-details summary::-webkit-details-marker { display:none; }
+
+    .mkt-chevron {
+      width:28px;
+      height:28px;
+      border-radius:10px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(5,99,103,.10);
+      color:#056367;
+      font-weight:900;
+      line-height:1;
+      flex:0 0 auto;
+      transition:transform .2s ease;
+    }
+
+    details[open] .mkt-chevron {
+      transform:rotate(90deg);
+    }
+  </style>
+
+  <div style="max-width:1000px;margin:0 auto;">
+
+    <!-- TIER 1: SKIM OVERVIEW -->
+    <h2 style="
+      margin:0 0 8px 0;
+      font-size:clamp(28px,6vw,42px);
+      font-weight:900;
+      line-height:1.1;
+      letter-spacing:-0.02em;
+      color:#056367;
+    ">
+      Turning Pain Into Possibilities
+    </h2>
+
+    <div style="
+      margin-top:18px;
+      padding-left:12px;
+      border-left:4px solid #2fe2dd;
+      max-width:72ch;
+    ">
+      <p style="margin:0 0 12px 0;font-size:clamp(16px,3.8vw,18px);line-height:1.65;">
+        I am a systems-aware practitioner shaped by lived experience and guided by
+        deep respect for the weight people carry across the many roles in their lives.
+      </p>
+
+      <p style="margin:0 0 12px 0;font-size:clamp(16px,3.8vw,18px);line-height:1.65;">
+        Over time, I learned how to use challenge as building material rather than limitation,
+        turning pain into insight, ingenuity, and new possibilities.
+        This mindset guides my work.
+      </p>
+
+      <p style="margin:0;font-size:clamp(16px,3.8vw,18px);line-height:1.65;">
+        I support individuals and organisations in reclaiming authorship
+        of their decisions with grounded, preventive guidance that honours
+        real life and real responsibility.
+      </p>
+    </div>
+
+    <p style="
+      font-size:clamp(18px,4vw,20px);
+      font-weight:900;
+      color:#056367;
+      max-width:72ch;
+      margin:22px 0 0 0;
+    ">
+      Misery does not get the final word.
+    </p>
+
+    <p style="
+      margin:14px 0 0 0;
+      font-size:clamp(16px,3.6vw,18px);
+      line-height:1.65;
+      max-width:72ch;
+    ">
+      Supporting clarity, self-trust, and sustainable ways of living
+      by strengthening the conditions that help people function well over time.
+    </p>
+
+    <!-- TIER 2: COLLAPSIBLE DEEP DIVE -->
+    <details class="mkt-details">
+      <summary>
+        <span class="mkt-chevron">›</span>
+        Read the full journey
+      </summary>
+
+<!-- FULL JOURNEY: WELLBEING IN PRACTICE -->
+<section style="
+  max-width:900px;
+  margin:3.5rem auto;
+  padding:2.5rem 2rem;
+  font-family:'Poppins', sans-serif;
+  color:#244646;
+  background:#f6fbfb;
+  border-radius:18px;
+  box-sizing:border-box;
+">
+
+  <!-- REMOVED ONLY THIS LABEL LINE:
+  <p> The Work in Practice </p>
+  -->
+
+  <h2 style="
+    font-size:clamp(24px, 2.8vw, 30px);
+    font-weight:600;
+    color:#056367;
+    margin:0 0 1.25rem 0;
+  ">
+    Wellbeing in Practice
+  </h2>
+
+  <h3 style="
+    font-size:18px;
+    font-weight:600;
+    margin:0 0 1.25rem 0;
+  ">
+    Silhouette’s Café
+  </h3>
+
+  <p>
+    Before formalising my work in preventive health and wellbeing, I founded 
+    <strong>Silhouette’s Café</strong>, formerly <em>Silhouette’s Health Café</em>, a wellness-focused business rooted in accessibility, education, and everyday care.
+  </p>
+
+  <p>
+    Silhouette’s Café offered 100% certified essential oils, herbs, diffusers, herbal coffees and teas, and thoughtfully curated wellness products designed to support emotional balance, stress reduction, and intentional living. For a period of time, I also operated a physical storefront in Dallas, Texas, creating a space where conversations about wellbeing were practical, human, and grounded, not clinical or performative.
+  </p>
+
+  <p>
+    What began as a product-based wellness business evolved into something deeper:
+    an understanding that <strong>prevention lives in daily choices, environments, and rhythms</strong>, not just programmes or policies.
+  </p>
+
+  <p>
+    While Silhouette’s Café currently lives quietly within my wider work, it remains deeply relevant to my preventive wellbeing practice. It reflects the same values I bring to organisations and individuals today: sustainability, nervous system awareness, emotional literacy, and care that fits real life.
+  </p>
+
+  <p>
+    Silhouette’s Café will be returning in its next iteration, integrated, intentional, and aligned with the broader <em>Live Inspired</em> philosophy.
+  </p>
+
+  <p style="margin-top:1.5rem;">
+    <a href="https://www.marshakerrtalley.com/silhouettes-cafe"
+       style="color:#319fa2;text-decoration:none;font-weight:500;">
+      Learn more about Silhouette’s Café
+    </a>
+  </p>
+
 </section>
 
-<!-- WELLBEING BEYOND THE INDIVIDUAL (LABEL REMOVED, CONTENT RESTORED) -->
-<section style="max-width:900px;margin:3.5rem auto;padding:2.5rem 2rem;border:1px solid #eef6f6;border-radius:18px;">
-  <h2 style="color:#056367;">Wellbeing Beyond the Individual</h2>
-  <h3>Wellbeing Is Also About Where We Land</h3>
 
-  <p>My work in preventive health and wellbeing also recognises something often overlooked...</p>
-  <p>Alongside my consulting and coaching work, I manage a small portfolio of furnished rental homes...</p>
-  <p>While this is not a public-facing service...</p>
+<!-- FULL JOURNEY: WELLBEING BEYOND THE INDIVIDUAL -->
+<section style="
+  max-width:900px;
+  margin:3.5rem auto;
+  padding:2.5rem 2rem;
+  font-family:'Poppins', sans-serif;
+  color:#244646;
+  background:#ffffff;
+  border:1px solid #eef6f6;
+  border-radius:18px;
+  box-sizing:border-box;
+">
 
-  <p><a href="https://www.marshakerrtalley.com/rentals" style="color:#319fa2;">View rental information</a></p>
+  <!-- REMOVED ONLY THIS LABEL LINE:
+  <p> The Work in Environment </p>
+  -->
+
+  <h2 style="
+    font-size:clamp(24px, 2.8vw, 30px);
+    font-weight:600;
+    color:#056367;
+    margin:0 0 1.25rem 0;
+  ">
+    Wellbeing Beyond the Individual
+  </h2>
+
+  <h3 style="
+    font-size:18px;
+    font-weight:600;
+    margin:0 0 1.25rem 0;
+  ">
+    Wellbeing Is Also About Where We Land
+  </h3>
+
+  <p>
+    My work in preventive health and wellbeing also recognises something often overlooked:
+    <strong>our environments matter</strong>.
+  </p>
+
+  <p>
+    Alongside my consulting and coaching work, I manage a small portfolio of furnished rental homes, spaces designed to offer comfort, calm, and stability during periods of transition. Whether supporting professionals on temporary placements or individuals needing a fully furnished, ready-to-live-in environment, this work reflects the same principles I bring to wellbeing: safety, intentionality, and ease.
+  </p>
+
+  <p>
+    While this is not a public-facing service, I believe in transparency and alignment. The way we live, rest, and recover is inseparable from our health, and I strive to ensure that every part of my work reflects that understanding.
+  </p>
+
+  <p style="margin-top:1.5rem;">
+    <a href="https://www.marshakerrtalley.com/rentals"
+       style="color:#319fa2;text-decoration:none;font-weight:500;">
+      View rental information
+    </a>
+  </p>
+
 </section>
 
-<!-- REMAINDER OF PAGE UNCHANGED -->
-<!-- (Book section, credentials, contact form, scripts ALL remain exactly as you provided) -->
+      <div style="padding:14px 6px 6px; max-width:72ch;">
 
-</details>
+        <p style="margin:0 0 14px;font-size:clamp(16px,3.8vw,18px);line-height:1.65;">
+          My work did not begin in theory.
+          It was shaped through personal experience,
+          where I came to understand how prolonged stress and emotional strain
+          quietly reshape identity, confidence, and purpose.
+        </p>
+
+        <p style="margin:0 0 14px;font-size:clamp(16px,3.8vw,18px);line-height:1.65;">
+          That understanding led me to focus on prevention rather than recovery alone.
+        </p>
+
+        <p style="margin:0 0 14px;font-size:clamp(16px,3.8vw,18px);line-height:1.65;">
+          Alongside my consultancy and wellbeing work, I am the author of
+          <strong style="color:#056367;">The Decision Is Just the Beginning</strong>
+          and <strong style="color:#056367;">Healing from Emotional Traumas</strong>,
+          exploring agency, emotional awareness, and sustainable personal change.
+        </p>
+
+        <p style="margin:0 0 22px;font-size:clamp(16px,3.8vw,18px);line-height:1.65;">
+          I have spent over two decades in education, teaching and supporting people
+          with diverse learning profiles and special educational needs,
+          alongside curriculum development and educational leadership.
+        </p>
+
+        <!-- COACHING & CONSULTING -->
+        <h3 style="margin:0 0 16px;font-size:clamp(22px,4vw,24px);font-weight:900;color:#056367;">
+          Coaching and Consulting
+        </h3>
+
+        <p style="margin:0 0 18px;font-size:clamp(16px,3.6vw,18px);line-height:1.65;">
+          My work spans both coaching and consulting.
+          These approaches overlap but serve different purposes,
+          used intentionally depending on context and responsibility.
+        </p>
+
+        <p style="margin:0 0 18px;font-size:clamp(16px,3.6vw,18px);line-height:1.65;">
+          <strong style="color:#056367;">Coaching</strong> focuses on the individual,
+          creating space for reflection, sense-making, and personal authorship.
+        </p>
+
+        <p style="margin:0 0 22px;font-size:clamp(16px,3.6vw,18px);line-height:1.65;">
+          <strong style="color:#056367;">Consulting</strong> focuses on systems,
+          roles, and environments, supporting organisations to strengthen
+          conditions that sustain wellbeing, capacity, and retention.
+        </p>
+
+        <!-- SCOPE -->
+        <h4 style="margin:0 0 10px;font-size:clamp(18px,3.8vw,20px);font-weight:900;color:#056367;">
+          Clarifying the scope of this work
+        </h4>
+
+        <p style="margin:0 0 10px;font-size:clamp(15px,3.4vw,17px);line-height:1.65;">
+          This work is not therapy, counselling, or clinical intervention.
+          It does not involve diagnosis or treatment of mental health conditions.
+        </p>
+
+        <p style="margin:0;font-size:clamp(15px,3.4vw,17px);line-height:1.65;">
+          Preventive wellbeing support focuses on awareness, steadiness,
+          and practical strategies that sit alongside existing
+          therapeutic or safeguarding support where needed.
+        </p>
+
+      </div>
+    </details>
+
+  </div>
 </section>
 
-<!-- FOOTER -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supporting Staff Wellbeing</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Georgia", "Times New Roman", serif;
+      color: #333;
+      background-color: #ffffff;
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+
+    /* Heading line style */
+    .heading-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .heading-line {
+      flex: 1;
+      height: 1px;
+      background-color: #319fa2;
+      max-width: 120px;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 500;
+      color: #319fa2;
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    .subheading {
+      font-family: Arial, sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 2.5rem;
+      color: #222;
+    }
+
+    .image-wrapper {
+      margin: 0 auto 2.5rem;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .footer-text {
+      font-family: Arial, sans-serif;
+      margin-top: 2rem;
+    }
+
+    .footer-text strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-text span {
+      font-size: 1rem;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="section">
+
+    <div class="heading-wrapper">
+      <div class="heading-line"></div>
+      <h1>Supporting Staff Wellbeing</h1>
+      <div class="heading-line"></div>
+    </div>
+
+    <p class="subheading">
+      Where staff wellbeing is supported before burnout escalates
+    </p>
+
+    <div class="image-wrapper">
+      <img src="teacher-and-students.webp" alt="Teacher supporting students in school hallway">
+    </div>
+
+    <div class="footer-text">
+      <strong>Preventive wellbeing support for schools and organisations</strong>
+      <span>Burnout prevention is one expression of this work — not the whole story.</span>
+    </div>
+
+  </section>
+
+<section class="about-wrapper">
+
+  <!-- BOOK SECTION -->
+  <div class="about-book">
+    <div class="book-container">
+
+      <div class="book-page active">
+        <h2>Chapter One</h2>
+        <h3>Where It Began</h3>
+        <p>
+          My work has always centred on people — their stories, their resilience, and their capacity
+          to grow even in difficult circumstances. For over two decades, I worked across education,
+          special educational needs, and employability, supporting individuals navigating sustained
+          stress, disruption, and transition.
+        </p>
+      </div>
+
+      <div class="book-page">
+        <h2>Chapter Two</h2>
+        <h3>The Work Beneath the Work</h3>
+        <p>
+          Long before I used the language of preventive health, I was already doing the work.
+          Supporting learners experiencing burnout, anxiety, disengagement, trauma, and overwhelm
+          required more than curriculum delivery — it required emotional awareness, regulation,
+          trust-building, and practical strategies for wellbeing.
+        </p>
+        <p>
+          Whether working with young people, adults returning to learning, or professionals at risk
+          of burnout, my approach has always been holistic, compassionate, and strengths-based.
+        </p>
+      </div>
+
+      <div class="book-page">
+        <h2>Chapter Three</h2>
+        <h3>Patterns I Couldn’t Ignore</h3>
+        <p>
+          Over time, a clear pattern emerged: burnout was not a failure of effort, but a signal.
+          A signal that systems, environments, and expectations were misaligned with human needs.
+        </p>
+        <p>
+          I saw capable, committed people struggling not because they lacked ability, but because
+          they lacked sustainable support.
+        </p>
+      </div>
+
+      <div class="book-page">
+        <h2>Chapter Four</h2>
+        <h3>Preventive Health &amp; Wellbeing</h3>
+        <p>
+          My work in Preventive Health and Wellbeing grew directly from this foundation.
+          It is not a departure from my past — it is the natural continuation of it.
+        </p>
+        <p>
+          Today, I support individuals and organisations experiencing sustained stress with
+          practical, preventive guidance that restores balance, clarity, and capacity —
+          before crisis becomes the only option.
+        </p>
+      </div>
+
+      <div class="book-page">
+        <h2>Chapter Five</h2>
+        <h3>Live Inspired</h3>
+        <p>
+          Live Inspired is both my philosophy and my practice.
+          I believe pain is not the end of the story — it is the raw material.
+          Possibility is the quiet catalyst.
+        </p>
+        <p>
+          My work exists to help people reconnect with their energy, their agency,
+          and their sense of what is possible.
+        </p>
+      </div>
+
+      <div class="book-controls">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROFESSIONAL FOUNDATIONS -->
+  <div class="credentials-section">
+    <div class="credentials-container">
+
+      <h2>Professional Foundations</h2>
+
+      <p class="credentials-intro">
+        My work in Preventive Health and Wellbeing is grounded in formal training,
+        leadership experience, and over two decades of applied practice supporting
+        individuals and organisations operating under sustained pressure.
+      </p>
+
+      <div class="credentials-grid">
+
+        <div class="credential-item">
+          <h3>Experience Domains</h3>
+          <p>
+            Preventive wellbeing within education and employability systems<br>
+            Stress, burnout, and capacity support in high-demand environments<br>
+            Inclusive and trauma-informed practice<br>
+            Remote and virtual delivery
+          </p>
+        </div>
+
+        <div class="credential-item">
+          <h3>Professional Training</h3>
+          <p>
+            Counselling Skills (person-centred foundations)<br>
+            Nutrition &amp; Health (preventive health principles)
+          </p>
+        </div>
+
+        <div class="credential-item">
+          <h3>Professional Credentials</h3>
+          <p>
+            State-certified teaching and instructional leadership credentials (Texas),
+            reflecting advanced training in inclusive practice, curriculum design,
+            and leadership within high-stress systems.
+          </p>
+        </div>
+
+        <div class="credential-item">
+          <h3>Practice Scope</h3>
+          <p>
+            United Kingdom &amp; United States<br>
+            Individual, organisational, and system-level support
+          </p>
+        </div>
+
+      </div>
+
+      <div class="credentials-toggle">
+        <button id="toggleBtn">View formal credentials</button>
+
+        <div id="formalCredentials" class="credentials-hidden">
+          <p>
+            Master’s degree in Special Education<br>
+            Bachelor’s degree in Dance Performance<br><br>
+            State of Texas teaching and instructional leadership certifications,
+            representing regulated professional standards and leadership preparation
+            within complex educational systems.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<style>
+.about-wrapper {
+  background: #f7fbfb;
+  padding: 60px 20px 80px;
+  font-family: Georgia, serif;
+}
+
+/* BOOK */
+.book-container {
+  max-width: 720px;
+  margin: 0 auto 80px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(5,99,103,0.12);
+  padding: 40px;
+}
+
+.book-page { display: none; }
+.book-page.active { display: block; }
+
+.book-page h2 {
+  color: #319fa2;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.book-page h3 {
+  color: #056367;
+  font-size: 1.6rem;
+  margin-bottom: 18px;
+}
+
+.book-page p {
+  color: #056367;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.book-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.book-controls button {
+  background: #2fe2dd;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #056367;
+}
+
+/* CREDENTIALS */
+.credentials-section {
+  max-width: 720px;
+  margin: auto;
+}
+
+.credentials-container h2 {
+  color: #056367;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.credentials-intro {
+  color: #056367;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  margin-bottom: 30px;
+}
+
+.credential-item {
+  border-left: 4px solid #2fe2dd;
+  padding-left: 18px;
+}
+
+.credential-item h3 {
+  color: #319fa2;
+  font-size: 0.8rem;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.credential-item p {
+  color: #056367;
+  line-height: 1.6;
+}
+
+/* TOGGLE */
+.credentials-toggle button {
+  background: #2fe2dd;
+  border: none;
+  border-radius: 22px;
+  padding: 10px 20px;
+  font-weight: 600;
+  color: #056367;
+  cursor: pointer;
+}
+
+.credentials-hidden {
+  display: none;
+  margin-top: 20px;
+  border-left: 3px solid #319fa2;
+  padding-left: 16px;
+}
+</style>
+
+<script>
+let currentPage = 0;
+const pages = document.querySelectorAll('.book-page');
+
+function showPage(index) {
+  pages.forEach(p => p.classList.remove('active'));
+  pages[index].classList.add('active');
+}
+
+function nextPage() {
+  if (currentPage < pages.length - 1) {
+    currentPage++;
+    showPage(currentPage);
+  }
+}
+
+function prevPage() {
+  if (currentPage > 0) {
+    currentPage--;
+    showPage(currentPage);
+  }
+}
+
+showPage(currentPage);
+
+const toggleBtn = document.getElementById('toggleBtn');
+const hiddenSection = document.getElementById('formalCredentials');
+
+toggleBtn.addEventListener('click', () => {
+  const open = hiddenSection.style.display === 'block';
+  hiddenSection.style.display = open ? 'none' : 'block';
+  toggleBtn.textContent = open ? 'View formal credentials' : 'Hide formal credentials';
+});
+</script>
+
+<blockquote style="
+  margin:40px auto;
+  padding:30px 32px;
+  max-width:880px;
+  background:#f7fbfb;
+  border-left:10px solid #319fa2;
+  border-radius:14px;
+  font-size:1.35rem;
+  line-height:1.7;
+  font-weight:500;
+  color:#056367
+">
+  “Burnout prevention is one expression of my preventive wellbeing work, but it’s not the whole story.”
+  <div style="
+    margin-top:12px;
+    font-size:1.05rem;
+    font-weight:600;
+    color:#056367;
+  ">
+    — Marsha Kerr Talley
+  </div>
+</blockquote>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Let's Connect</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    .contact-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: #056367;
+      margin-bottom: 2.5rem;
+    }
+
+    form {
+      width: 100%;
+    }
+
+    .form-group {
+      margin-bottom: 1.8rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 1.1rem 1rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      background-color: #fff;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #777;
+    }
+
+    .submit-btn {
+      margin-top: 2rem;
+      background-color: #5fa6a6;
+      color: #fff;
+      border: none;
+      border-radius: 40px;
+      padding: 0.9rem 2.8rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #4d8f8f;
+    }
+
+    .recaptcha-text {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .recaptcha-text a {
+      color: #5fa6a6;
+      text-decoration: none;
+    }
+
+    .recaptcha-text a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="contact-section">
+    <h2>Let's Connect</h2>
+
+    <form action="mailto:info@marshakerrtalley.com" method="post" enctype="text/plain">
+      
+      <div class="form-group">
+        <input type="text" name="Name" placeholder="Name*" required>
+      </div>
+
+      <div class="form-group">
+        <input type="email" name="Email" placeholder="Email*" required>
+      </div>
+
+      <div class="form-group">
+        <textarea name="Message" placeholder="Message*" required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">SEND</button>
+    </form>
+
+    <div class="recaptcha-text">
+      This site is protected by reCAPTCHA and the Google
+      <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a>
+      and
+      <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a>
+      apply.
+    </div>
+  </section>
+
 <footer class="site-footer">
   <div class="footer-inner">
-    <p>Copyright © 2025 Marsha Kerr Talley - All Rights Reserved.</p>
+    <p class="copyright">
+      Copyright © 2025 Marsha Kerr Talley - All Rights Reserved.
+    </p>
+
     <nav class="footer-links">
       <a href="/privacy-policy">Privacy Policy</a>
       <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
@@ -89,18 +1015,46 @@
   </div>
 </footer>
 
+<!-- FIX #2: Footer CSS wrapped properly so it does NOT render as text -->
 <style>
 .site-footer {
-  background:#fff;
-  border-top:1px solid #eee;
-  padding:2.5rem 1.5rem;
-  text-align:center;
+  background-color: #ffffff;
+  border-top: 1px solid #eee;
+  padding: 2.5rem 1.5rem 2rem;
+  text-align: center;
 }
-.site-footer p { color:#666;font-size:0.95rem;margin-bottom:1.4rem; }
-.footer-links { display:flex;justify-content:center;gap:2rem;flex-wrap:wrap; }
-.footer-links a { color:#319fa2;text-decoration:none; }
-.footer-links a:hover { color:#056367;text-decoration:underline; }
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-footer p {
+  margin: 0 0 1.4rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  font-size: 1rem;
+  color: #319fa2;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #056367;
+  text-decoration: underline;
+}
 </style>
+
 
 </body>
 </html>
