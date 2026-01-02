@@ -1,1 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marsha Kerr Talley | Turning Pain Into Possibilities</title>
+</head>
+
+<body style="margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">
+
+<!-- SITE HEADER / NAVIGATION -->
+<header style="
+  width:100%;
+  background:#ffffff;
+  border-bottom:1px solid #e6f2f2;
+">
+  <div style="
+    max-width:1200px;
+    margin:0 auto;
+    padding:20px 16px 12px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    box-sizing:border-box;
+  ">
+    <!-- LOGO -->
+    <a href="index.html" style="display:inline-block;">
+      <img
+        src="MKT-logo-3.png"
+        alt="Marsha Kerr Talley – Live Inspired"
+        style="
+          max-width:220px;
+          width:100%;
+          height:auto;
+          display:block;
+          margin:0 auto 12px;
+        "
+      />
+    </a>
+
+    <!-- NAV LINKS -->
+    <nav aria-label="Main navigation">
+      <ul style="
+        list-style:none;
+        padding:0;
+        margin:0;
+        display:flex;
+        gap:28px;
+        flex-wrap:wrap;
+        justify-content:center;
+        font-size:14px;
+        letter-spacing:0.08em;
+        text-transform:uppercase;
+      ">
+        <li><a href="index.html" style="color:#056367;text-decoration:none;font-weight:600;">Home</a></li>
+        <li><a href="work-with-me.html" style="color:#2f2f2f;text-decoration:none;">Work With Me</a></li>
+        <li><a href="books.html" style="color:#2f2f2f;text-decoration:none;">Books</a></li>
+        <li><a href="podcast.html" style="color:#2f2f2f;text-decoration:none;">Podcast</a></li>
+        <li><a href="reflections.html" style="color:#2f2f2f;text-decoration:none;">Reflections</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ABOUT PAGE | TWO-TIER STRUCTURE (GoDaddy-ready, header removed) -->
+<section aria-label="About Marsha Kerr Talley" style="
+  width:100%;
+  max-width:100vw;
+  padding:32px 16px 56px;
+  margin:0;
+  background:#ffffff;
+  color:#0d4b4e;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  box-sizing:border-box;
+">
+
+  <style>
+    html, body { max-width:100%; overflow-x:hidden; }
+    *, *::before, *::after { box-sizing:border-box; }
+
+    details.mkt-details {
+      max-width:1000px;
+      margin:28px auto 0;
+      border-radius:20px;
+      background:#f9fefe;
+      padding:18px 18px;
+    }
+
+    details.mkt-details summary {
+      cursor:pointer;
+      list-style:none;
+      font-weight:900;
+      color:#056367;
+      font-size:clamp(16px,3.2vw,18px);
+      outline:none;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    details.mkt-details summary::-webkit-details-marker { display:none; }
+
+    .mkt-chevron {
+      width:28px;
+      height:28px;
+      border-radius:10px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(5,99,103,.10);
+      color:#056367;
+      font-weight:900;
+      line-height:1;
+      flex:0 0 auto;
+      transition:transform .2s ease;
+    }
+
+    details[open] .mkt-chevron {
+      transform:rotate(90deg);
+    }
+  </style>
+
+  <div style="max-width:1000px;margin:0 auto;">
+
+    <!-- TIER 1: SKIM OVERVIEW -->
+    <h2 style="
+      margin:0 0 8px 0;
+      font-size:clamp(28px,6vw,42px);
+      font-weight:900;
+      line-height:1.1;
+      letter-spacing:-0.02em;
+      color:#056367;
+    ">
+      Turning Pain Into Possibilities
+    </h2>
+
+    <div style="
+      margin-top:18px;
+      padding-left:12px;
+      border-left:4px solid #2fe2dd;
+      max-width:72ch;
+    ">
+      <p style="margin:0 0 12px 0;font-size:clamp(16px,3.8vw,18px);line-height:1.65;">
+        I am a systems-aware practitioner shaped by lived experience and guided by
+        deep respect for the weight people carry across the many roles in their lives.
+      </p>
+
+      <p style="margin:0 0 12px 0;font-size:clamp(16px,3.8vw,18px);line-height:1.65;">
+        Over time, I learned how to use challenge as building material rather than limitation,
+        turning pain into insight, ingenuity, and new possibilities.
+        This mindset guides my work.
+      </p>
+
+      <p style="margin:0;font-size:clamp(16px,3.8vw,18px);line-height:1.65;">
+        I support individuals and organisations in reclaiming authorship
+        of their decisions with grounded, preventive guidance that honours
+        real life and real responsibility.
+      </p>
+    </div>
+
+    <p style="
+      font-size:clamp(18px,4vw,20px);
+      font-weight:900;
+      color:#056367;
+      max-width:72ch;
+      margin:22px 0 0 0;
+    ">
+      Misery does not get the final word.
+    </p>
+
+    <p style="
+      margin:14px 0 0 0;
+      font-size:clamp(16px,3.6vw,18px);
+      line-height:1.65;
+      max-width:72ch;
+    ">
+      Supporting clarity, self-trust, and sustainable ways of living
+      by strengthening the conditions that help people function well over time.
+    </p>
+
+    <!-- TIER 2: COLLAPSIBLE DEEP DIVE -->
+    <details class="mkt-details">
+      <summary>
+        <span class="mkt-chevron">›</span>
+        Read the full journey
+      </summary>
+
+<!-- FULL JOURNEY: WELLBEING IN PRACTICE -->
+<section style="
+  max-width:900px;
+  margin:3.5rem auto;
+  padding:2.5rem 2rem;
+  font-family:'Poppins', sans-serif;
+  color:#244646;
+  background:#f6fbfb;
+  border-radius:18px;
+  box-sizing:border-box;
+">
+
+  <p style="
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:#319fa2;
+    margin:0 0 0.5rem 0;
+    font-weight:600;
+  ">
+    The Work in Practice
+  </p>
+
+  <h2 style="
+    font-size:clamp(24px, 2.8vw, 30px);
+    font-weight:600;
+    color:#056367;
+    margin:0 0 1.25rem 0;
+  ">
+    Wellbeing in Practice
+  </h2>
+
+  <h3 style="
+    font-size:18px;
+    font-weight:600;
+    margin:0 0 1.25rem 0;
+  ">
+    Silhouette’s Café
+  </h3>
+
+  <p>
+    Before formalising my work in preventive health and wellbeing, I founded 
+    <strong>Silhouette’s Café</strong>, formerly <em>Silhouette’s Health Café</em>, a wellness-focused business rooted in accessibility, education, and everyday care.
+  </p>
+
+  <p>
+    Silhouette’s Café offered 100% certified essential oils, herbs, diffusers, herbal coffees and teas, and thoughtfully curated wellness products designed to support emotional balance, stress reduction, and intentional living. For a period of time, I also operated a physical storefront in Dallas, Texas, creating a space where conversations about wellbeing were practical, human, and grounded, not clinical or performative.
+  </p>
+
+  <p>
+    What began as a product-based wellness business evolved into something deeper:
+    an understanding that <strong>prevention lives in daily choices, environments, and rhythms</strong>, not just programmes or policies.
+  </p>
+
+  <p>
+    While Silhouette’s Café currently lives quietly within my wider work, it remains deeply relevant to my preventive wellbeing practice. It reflects the same values I bring to organisations and individuals today: sustainability, nervous system awareness, emotional literacy, and care that fits real life.
+  </p>
+
+  <p>
+    Silhouette’s Café will be returning in its next iteration, integrated, intentional, and aligned with the broader <em>Live Inspired</em> philosophy.
+  </p>
+
+  <p style="margin-top:1.5rem;">
+    <a href="https://www.marshakerrtalley.com/silhouettes-cafe"
+       style="color:#319fa2;text-decoration:none;font-weight:500;">
+      Learn more about Silhouette’s Café
+    </a>
+  </p>
+
+</section>
+
+
+<!-- FULL JOURNEY: WELLBEING BEYOND THE INDIVIDUAL -->
+<section style="
+  max-width:900px;
+  margin:3.5rem auto;
+  padding:2.5rem 2rem;
+  font-family:'Poppins', sans-serif;
+  color:#244646;
+  background:#ffffff;
+  border:1px solid #eef6f6;
+  border-radius:18px;
+  box-sizing:border-box;
+">
+
+  <p style="
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:#319fa2;
+    margin:0 0 0.5rem 0;
+    font-weight:600;
+  ">
+    The Work in Environment
+  </p>
+
+  <h2 style="
+    font-size:clamp(24px, 2.8vw, 30px);
+    font-weight:600;
+    color:#056367;
+    margin:0 0 1.25rem 0;
+  ">
+    Wellbeing Beyond the Individual
+  </h2>
+
+  <h3 style="
+    font-size:18px;
+    font-weight:600;
+    margin:0 0 1.25rem 0;
+  ">
+    Wellbeing Is Also About Where We Land
+  </h3>
+
+  <p>
+    My work in preventive health and wellbeing also recognises something often overlooked:
+    <strong>our environments matter</strong>.
+  </p>
+
+  <p>
+    Alongside my consulting and coaching work, I manage a small portfolio of furnished rental homes, spaces designed to offer comfort, calm, and stability during periods of transition. Whether supporting professionals on temporary placements or individuals needing a fully furnished, ready-to-live-in environment, this work reflects the same principles I bring to wellbeing: safety, intentionality, and ease.
+  </p>
+
+  <p>
+    While this is not a public-facing service, I believe in transparency and alignment. The way we live, rest, and recover is inseparable from our health, and I strive to ensure that every part of my work reflects that understanding.
+  </p>
+
+  <p style="margin-top:1.5rem;">
+    <a href="https://www.marshakerrtalley.com/rentals"
+       style="color:#319fa2;text-decoration:none;font-weight:500;">
+      View rental information
+    </a>
+  </p>
+
+</section>
+
+      <div style="padding:14px 6px 6px; max-width:72ch;">
+
+        <p style="margin:0 0 14px;font-size:clamp(16px,3.8vw,18px);line-height:1.65;">
+          My work did not begin in theory.
+          It was shaped through personal experience,
+          where I came to understand how prolonged stress and emotional strain
+          quietly reshape identity, confidence, and purpose.
+        </p>
+
+        <p style="margin:0 0 14px;font-size:clamp(16px,3.8vw,18px);line-height:1.65;">
+          That understanding led me to focus on prevention rather than recovery alone.
+        </p>
+
+        <p style="margin:0 0 14px;font-size:clamp(16px,3.8vw,18px);line-height:1.65;">
+          Alongside my consultancy and wellbeing work, I am the author of
+          <strong style="color:#056367;">The Decision Is Just the Beginning</strong>
+          and <strong style="color:#056367;">Healing from Emotional Traumas</strong>,
+          exploring agency, emotional awareness, and sustainable personal change.
+        </p>
+
+        <p style="margin:0 0 22px;font-size:clamp(16px,3.8vw,18px);line-height:1.65;">
+          I have spent over two decades in education, teaching and supporting people
+          with diverse learning profiles and special educational needs,
+          alongside curriculum development and educational leadership.
+        </p>
+
+        <!-- COACHING & CONSULTING -->
+        <h3 style="margin:0 0 16px;font-size:clamp(22px,4vw,24px);font-weight:900;color:#056367;">
+          Coaching and Consulting
+        </h3>
+
+        <p style="margin:0 0 18px;font-size:clamp(16px,3.6vw,18px);line-height:1.65;">
+          My work spans both coaching and consulting.
+          These approaches overlap but serve different purposes,
+          used intentionally depending on context and responsibility.
+        </p>
+
+        <p style="margin:0 0 18px;font-size:clamp(16px,3.6vw,18px);line-height:1.65;">
+          <strong style="color:#056367;">Coaching</strong> focuses on the individual,
+          creating space for reflection, sense-making, and personal authorship.
+        </p>
+
+        <p style="margin:0 0 22px;font-size:clamp(16px,3.6vw,18px);line-height:1.65;">
+          <strong style="color:#056367;">Consulting</strong> focuses on systems,
+          roles, and environments, supporting organisations to strengthen
+          conditions that sustain wellbeing, capacity, and retention.
+        </p>
+
+        <!-- SCOPE -->
+        <h4 style="margin:0 0 10px;font-size:clamp(18px,3.8vw,20px);font-weight:900;color:#056367;">
+          Clarifying the scope of this work
+        </h4>
+
+        <p style="margin:0 0 10px;font-size:clamp(15px,3.4vw,17px);line-height:1.65;">
+          This work is not therapy, counselling, or clinical intervention.
+          It does not involve diagnosis or treatment of mental health conditions.
+        </p>
+
+        <p style="margin:0;font-size:clamp(15px,3.4vw,17px);line-height:1.65;">
+          Preventive wellbeing support focuses on awareness, steadiness,
+          and practical strategies that sit alongside existing
+          therapeutic or safeguarding support where needed.
+        </p>
+
+      </div>
+    </details>
+
+  </div>
+</section>
+
 
