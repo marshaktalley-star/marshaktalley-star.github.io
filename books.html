@@ -146,14 +146,187 @@
 
 </section>
 
+<style>
+  .book-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+  }
 
+  .book-row {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 3.5rem;
+  }
 
+  .book-row img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+  }
 
+  .book-price {
+    color: #777;
+    font-size: 1rem;
+    margin-bottom: .4rem;
+  }
 
+  .book-title {
+    color: #319fa2;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
 
+  .book-desc {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 1.6rem;
+  }
 
+  .buy-btn {
+    display: inline-block;
+    background: #319fa2;
+    color: #fff;
+    padding: .85rem 1.6rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+  }
 
+  .buy-btn:hover {
+    background: #056367;
+  }
 
+  .reader-box {
+    background: #f3fbfb;
+    border-radius: 14px;
+    padding: 1.8rem;
+    margin-bottom: 4rem;
+    max-width: 900px;
+  }
+
+  .reader-box h4 {
+    color: #056367;
+    margin-bottom: .6rem;
+  }
+
+  .reader-box p {
+    margin: .3rem 0;
+    color: #245b5d;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 900px) {
+    .book-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<section class="book-section">
+
+  <!-- BOOK 1 -->
+  <div class="book-row">
+    <img src="healing-from-emotional-traumas.jpg" alt="Healing from Emotional Traumas book cover">
+    <div>
+      <div class="book-price">£21.99</div>
+      <div class="book-title">Healing from Emotional Traumas</div>
+      <p class="book-desc">
+        Drawing on personal experiences, Marsha Kerr Talley helps readers confront their past that still impacts their lives today.
+        This book can help you break free from the emotional baggage through insightful reflections and practical exercises.
+      </p>
+      <a class="buy-btn" href="https://buy.stripe.com/fZe6sj8dg67i7ba28d">BUY NOW!</a>
+    </div>
+  </div>
+
+  <div class="reader-box">
+    <h4>⭐ ⭐ ⭐ ⭐ ⭐ &nbsp; Reader Rating</h4>
+    <p>
+      Readers frequently describe this book as compassionate and validating.
+      It is often experienced as a steady companion for understanding emotional pain,
+      recognising patterns, and approaching healing with patience and self-awareness.
+    </p>
+    <p><em>Based on reader reflections and lived experience shared over time.</em></p>
+  </div>
+
+  <!-- BOOK 2 -->
+  <div class="book-row">
+    <img src="the-decision-is-just-the-beginning.jpg" alt="The Decision Is Just the Beginning book cover">
+    <div>
+      <div class="book-price">£13.95</div>
+      <div class="book-title">The Decision Is Just the Beginning</div>
+      <p class="book-desc">
+        With relatable stories and dedicated sections to write down your thoughts and feelings,
+        this workbook invites reflection and helps turn aspirations into reality.
+        Start your journey to better decision-making today!
+      </p>
+      <a class="buy-btn" href="https://buy.stripe.com/28o8AreBE53e3YYaEI">BUY NOW!</a>
+    </div>
+  </div>
+
+  <div class="reader-box">
+    <h4>⭐ ⭐ ⭐ ⭐ ⭐ &nbsp; Reader Rating</h4>
+    <p>
+      Readers often describe this book as grounding and clarifying, particularly during moments when change feels uncertain.
+      Many reflect on how it helped them pause, reflect, and make more intentional choices without pressure or urgency.
+    </p>
+    <p><em>Based on reader reflections and feedback over time.</em></p>
+  </div>
+
+  <!-- BOOK 3 -->
+  <div class="book-row">
+    <img src="a-guide-to-dealing-with-a-narcissist.jpg" alt="A Guide to Dealing with a Narcissist book cover">
+    <div>
+      <div class="book-price">£4.99</div>
+      <div class="book-title">A Guide to Dealing with A Narcissist</div>
+      <p class="book-desc">
+        Blending research with real-life anecdotes to shed light on their manipulative behaviours,
+        "A Guide to Dealing with a Narcissist" offers strategies for navigating relationships with those
+        who exhibit narcissistic tendencies.
+      </p>
+      <a class="buy-btn" href="https://buy.stripe.com/6oE03V9hk7bmanmfZ1">BUY NOW!</a>
+    </div>
+  </div>
+
+  <div class="reader-box">
+    <h4>Reader Context</h4>
+    <p>
+      This guide is often used as a practical starting point for understanding challenging relational dynamics.
+      Readers typically engage with it during periods of confusion, boundary-setting, or emotional recalibration.
+    </p>
+    <p><em>Designed as an informational and reflective resource.</em></p>
+  </div>
+
+  <!-- BOOK 4 -->
+  <div class="book-row">
+    <img src="surviving-covid-19.jpg" alt="Surviving Covid-19 book cover">
+    <div>
+      <div class="book-price">£5.99</div>
+      <div class="book-title">Surviving Covid-19</div>
+      <p class="book-desc">
+        Recounting the challenges she faced as anxiety grew and lockdowns began,
+        Marsha Kerr Talley's story highlights resilience, hope, and community strength during difficult times.
+        "Surviving Covid-19" is a powerful reminder of our shared humanity during adversity.
+      </p>
+      <a class="buy-btn" href="https://buy.stripe.com/00gaIzbps7bmgLK4gi">BUY NOW!</a>
+    </div>
+  </div>
+
+  <div class="reader-box">
+    <h4>Reader Context</h4>
+    <p>
+      This book captures lived experience and reflection during a time of collective uncertainty.
+      Readers often approach it as a moment-in-time narrative offering perspective, meaning, and human connection.
+    </p>
+    <p><em>Shared as a reflective account rather than an evaluative text.</em></p>
+  </div>
+
+</section>
 
   <blockquote style="
   margin:40px auto;
@@ -298,6 +471,107 @@
       <a href="/terms-and-conditions">Terms and Conditions</a>
     </nav>
   </div>
+
+<section class="newsletter-section">
+  <div class="newsletter-inner">
+
+    <div class="newsletter-icon">+</div>
+
+    <h2>Stay Connected</h2>
+
+    <p>
+      Occasional reflections, resources, and updates shared with care.
+    </p>
+
+    <form
+      action="https://marshakerrtalley.substack.com/api/v1/free"
+      method="post"
+      target="_blank"
+      class="newsletter-form"
+    >
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        required
+      />
+
+      <button type="submit">SIGN UP</button>
+    </form>
+
+  </div>
+</section>
+
+<style>
+.newsletter-section {
+  padding: 4.5rem 1.5rem;
+  background: #ffffff;
+  text-align: center;
+}
+
+.newsletter-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.newsletter-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #319fa2;
+  color: #ffffff;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+}
+
+.newsletter-section h2 {
+  font-size: clamp(2.2rem, 3vw, 2.8rem);
+  color: #319fa2;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+}
+
+.newsletter-section p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2.2rem;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input {
+  width: min(420px, 100%);
+  padding: 0.9rem 1.1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.newsletter-form button {
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  border: none;
+  background: #319fa2;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.newsletter-form button:hover {
+  background: #056367;
+}
+</style>
+
+
 </footer>
 
 <!-- FIX #2: Footer CSS wrapped properly so it does NOT render as text -->
