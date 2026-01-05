@@ -8,14 +8,14 @@
 
 <body style="margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">
 
-<!-- ================= HEADER ================= -->
+<!-- SITE HEADER / NAVIGATION -->
 <header style="width:100%;background:#ffffff;border-bottom:1px solid #e6f2f2;">
-  <div style="max-width:1200px;margin:0 auto;padding:20px 16px 12px;display:flex;flex-direction:column;align-items:center;">
+  <div style="max-width:1200px;margin:0 auto;padding:20px 16px 12px;display:flex;flex-direction:column;align-items:center;box-sizing:border-box;">
     <a href="index.html">
       <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired" style="max-width:220px;margin-bottom:12px;">
     </a>
     <nav>
-      <ul style="list-style:none;padding:0;margin:0;display:flex;gap:28px;flex-wrap:wrap;justify-content:center;font-size:14px;letter-spacing:.08em;text-transform:uppercase;">
+      <ul style="list-style:none;padding:0;margin:0;display:flex;gap:28px;flex-wrap:wrap;justify-content:center;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;">
         <li><a href="index.html" style="color:#056367;font-weight:600;text-decoration:none;">Home</a></li>
         <li><a href="work-with-me.html" style="color:#2f2f2f;text-decoration:none;">Work With Me</a></li>
         <li><a href="books.html" style="color:#2f2f2f;text-decoration:none;">Books</a></li>
@@ -26,75 +26,89 @@
   </div>
 </header>
 
-<!-- ================= BOOK INTRO ================= -->
+<!-- BOOKS INTRO -->
 <section style="max-width:1200px;margin:4rem auto;padding:0 1.5rem;text-align:center;">
-  <div style="display:flex;align-items:center;justify-content:center;margin-bottom:2.5rem;">
-    <span style="flex:1;height:1px;background:#319fa2;max-width:200px;"></span>
-    <h2 style="margin:0 1.5rem;font-size:clamp(2rem,3vw,2.6rem);color:#319fa2;font-weight:500;">
-      Books by Marsha Kerr Talley
-    </h2>
-    <span style="flex:1;height:1px;background:#319fa2;max-width:200px;"></span>
-  </div>
-
-  <img src="13-EGL_4825.jpg" alt="Marsha Kerr Talley facilitating a reflective group discussion"
-       style="width:100%;border-radius:14px;margin-bottom:2.5rem;">
-
-  <h3 style="color:#056367;font-weight:500;">Written for Thoughtful Living</h3>
-
-  <p style="max-width:900px;margin:0 auto 1.2rem;color:#245b5d;line-height:1.7;">
-    My books are self-paced guides, rooted in lived experience and reflective anecdotes, supporting emotional regulation, life transitions, and self-discovery. They are not written for quick fixes or surface inspiration.
+  <h2 style="color:#319fa2;font-weight:500;">Books by Marsha Kerr Talley</h2>
+  <img src="13-EGL_4825.jpg" alt="Facilitated discussion" style="width:100%;border-radius:14px;margin:2rem 0;">
+  <h3 style="color:#056367;">Written for Thoughtful Living</h3>
+  <p style="max-width:900px;margin:0 auto;color:#245b5d;">
+    My books are self-paced guides, rooted in lived experience and reflective anecdotes, supporting emotional regulation, life transitions, and self-discovery.
   </p>
-
-  <p style="max-width:900px;margin:0 auto 1.2rem;color:#245b5d;line-height:1.7;">
-    Each chapter invites you to return, reflect, and live with intention and meaning.
-  </p>
-
-  <p style="font-style:italic;color:#056367;">
+  <p style="color:#056367;font-style:italic;">
     Please note: Some book reviews include reader ratings. Others offer a summary rather than scores.
   </p>
 </section>
 
-<!-- ================= BOOK LISTINGS ================= -->
-<section class="book-section">
-  <!-- BOOK SECTIONS UNCHANGED -->
-  <!-- (All your book rows, Stripe links, reader boxes remain exactly as provided) -->
+<!-- BOOK LIST -->
+<section style="max-width:1200px;margin:0 auto;padding:0 1.5rem;">
+
+  <!-- BOOK 1 -->
+  <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:3rem;align-items:center;margin-bottom:3rem;">
+    <img src="healing-from-emotional-traumas.jpg" alt="">
+    <div>
+      <div>£21.99</div>
+      <h3 style="color:#319fa2;">Healing from Emotional Traumas</h3>
+      <p>Drawing on personal experiences, Marsha Kerr Talley helps readers confront their past that still impacts their lives today.</p>
+      <a href="https://buy.stripe.com/fZe6sj8dg67i7ba28d" style="background:#319fa2;color:#fff;padding:.8rem 1.6rem;border-radius:999px;text-decoration:none;">BUY NOW!</a>
+    </div>
+  </div>
+
+  <!-- BOOK 2 -->
+  <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:3rem;align-items:center;margin-bottom:3rem;">
+    <img src="the-decision-is-just-the-beginning.jpg" alt="">
+    <div>
+      <div>£13.95</div>
+      <h3 style="color:#319fa2;">The Decision Is Just the Beginning</h3>
+      <p>This workbook invites reflection and helps turn aspirations into reality.</p>
+      <a href="https://buy.stripe.com/28o8AreBE53e3YYaEI" style="background:#319fa2;color:#fff;padding:.8rem 1.6rem;border-radius:999px;text-decoration:none;">BUY NOW!</a>
+    </div>
+  </div>
+
+  <!-- BOOK 3 -->
+  <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:3rem;align-items:center;margin-bottom:3rem;">
+    <img src="a-guide-to-dealing-with-a-narcissist.jpg" alt="">
+    <div>
+      <div>£4.99</div>
+      <h3 style="color:#319fa2;">A Guide to Dealing with A Narcissist</h3>
+      <p>Offers strategies for navigating relationships with those who exhibit narcissistic tendencies.</p>
+      <a href="https://buy.stripe.com/6oE03V9hk7bmanmfZ1" style="background:#319fa2;color:#fff;padding:.8rem 1.6rem;border-radius:999px;text-decoration:none;">BUY NOW!</a>
+    </div>
+  </div>
+
+  <!-- BOOK 4 -->
+  <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:3rem;align-items:center;margin-bottom:3rem;">
+    <img src="surviving-covid-19.jpg" alt="">
+    <div>
+      <div>£5.99</div>
+      <h3 style="color:#319fa2;">Surviving Covid-19</h3>
+      <p>A reflective account of resilience and humanity during uncertainty.</p>
+      <a href="https://buy.stripe.com/00gaIzbps7bmgLK4gi" style="background:#319fa2;color:#fff;padding:.8rem 1.6rem;border-radius:999px;text-decoration:none;">BUY NOW!</a>
+    </div>
+  </div>
+
 </section>
 
-<!-- ================= QUOTE ================= -->
-<blockquote style="margin:40px auto;padding:30px 32px;max-width:880px;background:#f7fbfb;border-left:10px solid #056367;border-radius:14px;font-size:1.35rem;color:#102f30;">
-  “Pain doesn’t have to be the end of the story. It can be the beginning of something more aligned.”
-  <div style="margin-top:16px;font-weight:600;color:#056367;">— Marsha Kerr Talley</div>
-</blockquote>
-
-<!-- ================= READER REFLECTIONS ================= -->
-<section style="background:#f9fefe;padding:48px 16px;">
-  <!-- Reviews unchanged -->
-</section>
-
-<!-- ================= NEWSLETTER (NOW CORRECTLY PLACED) ================= -->
-<section class="newsletter-section">
-  <div class="newsletter-inner">
-    <div class="newsletter-icon">+</div>
-    <h2>Stay Connected</h2>
+<!-- NEWSLETTER (NOW CORRECTLY BEFORE FOOTER) -->
+<section class="newsletter-section" style="padding:4.5rem 1.5rem;text-align:center;">
+  <div style="max-width:760px;margin:0 auto;">
+    <div style="width:68px;height:68px;border-radius:50%;background:#319fa2;color:#fff;font-size:32px;display:flex;align-items:center;justify-content:center;margin:0 auto 2rem;">+</div>
+    <h2 style="color:#319fa2;">Stay Connected</h2>
     <p>Occasional reflections, resources, and updates shared with care.</p>
-
-    <form action="https://marshakerrtalley.substack.com/api/v1/free" method="post" target="_blank" class="newsletter-form">
-      <input type="email" name="email" placeholder="Email" required>
-      <button type="submit">SIGN UP</button>
+    <form action="https://marshakerrtalley.substack.com/api/v1/free" method="post" target="_blank" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <input type="email" name="email" placeholder="Email" required style="padding:.9rem 1.1rem;width:min(420px,100%);">
+      <button type="submit" style="background:#319fa2;color:#fff;padding:.9rem 2rem;border:none;border-radius:999px;">SIGN UP</button>
     </form>
   </div>
 </section>
 
-<!-- ================= FOOTER (LAST ELEMENT) ================= -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p>Copyright © 2025 Marsha Kerr Talley - All Rights Reserved.</p>
-    <nav class="footer-links">
-      <a href="/privacy-policy">Privacy Policy</a>
-      <a href="/shipping-return-policy">Shipping & Return Policy</a>
-      <a href="/terms-and-conditions">Terms and Conditions</a>
-    </nav>
-  </div>
+<!-- FOOTER (LAST ELEMENT) -->
+<footer style="border-top:1px solid #eee;padding:2.5rem 1.5rem;text-align:center;">
+  <p>Copyright © 2025 Marsha Kerr Talley - All Rights Reserved.</p>
+  <nav style="display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;">
+    <a href="/privacy-policy">Privacy Policy</a>
+    <a href="/shipping-return-policy">Shipping & Return Policy</a>
+    <a href="/terms-and-conditions">Terms and Conditions</a>
+  </nav>
 </footer>
 
 </body>
