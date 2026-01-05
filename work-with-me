@@ -49,3 +49,36 @@
   </p>
 
 </div>
+
+<section class="workplace-section">
+  <div class="section-header">
+    <span class="line"></span>
+    <h2>Supporting Healthier Workplaces</h2>
+    <span class="line"></span>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="text-content">
+      <h3>Relevant and Practical Support for staff wellbeing</h3>
+
+      <p>
+        Burnout is not a personal failure. Much of the strain we see at work isn’t about individuals.
+        It’s about systems that have quietly stretched people beyond what’s sustainable.
+      </p>
+
+      <p>
+        My work focuses on helping organisations notice this earlier and respond in ways that
+        support steadier, healthier ways of working.
+      </p>
+
+      <p>
+        I work across different settings, adapting the approach to the realities of each environment.
+      </p>
+    </div>
+
+    <div class="image-content">
+      <img src="13-EGL_4825.jpg" alt="Facilitated workplace wellbeing discussion">
+    </div>
+  </div>
+</section>
+
