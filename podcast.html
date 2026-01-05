@@ -122,34 +122,307 @@
   </p>
 
 </div>
-<section style="max-width:900px;margin:3rem auto;text-align:center;font-family:inherit;">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Candid Conversations with Marsha — Podcast</title>
+  <meta name="description" content="Honest reflections, emotional wellness, and inspired living." />
 
-  <!-- BUTTONS -->
-  <div style="display:flex;flex-direction:column;gap:1.25rem;align-items:center;margin-bottom:4rem;">
+  <style>
+    :root{
+      --deep:#056367;
+      --teal:#319fa2;
+      --aqua:#2fe2dd;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --line:#e5e7eb;
+      --bg:#f7fafb;
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+    }
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 2.5rem 1rem 4rem;
+    }
+    header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:1rem;
+      flex-wrap:wrap;
+      margin-bottom: 1.5rem;
+    }
+    h1{
+      margin:0;
+      color:var(--deep);
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      line-height:1.15;
+    }
+    .subtitle{
+      margin:.5rem 0 0;
+      color:var(--muted);
+      font-size: 1.05rem;
+      line-height:1.5;
+      max-width: 62ch;
+    }
+    .actions{
+      display:flex;
+      gap:.75rem;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      border:0;
+      text-decoration:none;
+      background: var(--teal);
+      color:#fff;
+      padding: .85rem 1.1rem;
+      border-radius: 999px;
+      font-weight: 650;
+      letter-spacing: .03em;
+      transition: transform .08s ease, opacity .12s ease;
+      white-space:nowrap;
+    }
+    .btn.secondary{ background: var(--deep); }
+    .btn:hover{ opacity:.95; transform: translateY(-1px); }
+    .status{
+      margin: 1.25rem 0 0;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: var(--radius);
+      color: var(--muted);
+      line-height:1.5;
+    }
+    .grid{
+      margin-top: 1.6rem;
+      display:grid;
+      gap: 1rem;
+    }
+    .card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.1rem 1rem;
+      box-shadow: 0 6px 22px rgba(0,0,0,.04);
+    }
+    .ep-title{
+      margin:0;
+      font-size: 1.15rem;
+      color: var(--deep);
+      line-height:1.35;
+    }
+    .meta{
+      margin: .35rem 0 .85rem;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    .desc{
+      color: #374151;
+      line-height:1.6;
+      margin: 0 0 .9rem;
+    }
+    .desc details > summary{
+      cursor:pointer;
+      color: var(--teal);
+      font-weight: 600;
+      margin-top: .25rem;
+    }
+    audio{
+      width: 100%;
+      margin-top: .25rem;
+    }
+    .links{
+      display:flex;
+      gap:.75rem;
+      flex-wrap:wrap;
+      margin-top:.85rem;
+    }
+    .link{
+      color: var(--teal);
+      font-weight: 650;
+      text-decoration:none;
+    }
+    .link:hover{ text-decoration:underline; }
+    footer{
+      margin-top: 2.5rem;
+      color: var(--muted);
+      font-size: .95rem;
+      text-align:center;
+    }
+    code{
+      background:#eef6f6;
+      padding:.15rem .35rem;
+      border-radius:6px;
+    }
+  </style>
+</head>
 
-    <a href="https://form.jotform.com/242924328863363"
-       target="_blank"
-       style="display:block;width:100%;max-width:600px;
-              background:#319fa2;color:#ffffff;
-              padding:1.2rem 2rem;
-              border-radius:999px;
-              text-decoration:none;
-              font-weight:600;
-              letter-spacing:0.05em;">
-      🎙️ BE MY GUEST
-    </a>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1 id="showTitle">Candid Conversations with Marsha</h1>
+        <p class="subtitle" id="showDesc">Loading podcast feed…</p>
+      </div>
 
-    <a href="https://open.spotify.com/show/0xWznKWex06z0oxqUk3dVs"
-       target="_blank"
-       style="display:block;width:100%;max-width:600px;
-              background:#319fa2;color:#ffffff;
-              padding:1.2rem 2rem;
-              border-radius:999px;
-              text-decoration:none;
-              font-weight:600;
-              letter-spacing:0.05em;">
-      🎧 LISTEN ON SPOTIFY
-    </a>
+      <div class="actions">
+        <a class="btn" href="https://open.spotify.com/show/0xWznKWex06z0oxqUk3dVs" target="_blank" rel="noopener">
+          🎧 Listen on Spotify
+        </a>
+        <a class="btn secondary" href="https://form.jotform.com/242924328863363" target="_blank" rel="noopener">
+          🎙️ Be My Guest
+        </a>
+      </div>
+    </header>
+
+    <div class="status" id="status">
+      Fetching RSS: <code id="rssUrlLabel"></code>
+    </div>
+
+    <main class="grid" id="episodes"></main>
+
+    <footer>
+      Built for GitHub Pages • Powered by your RSS feed
+    </footer>
+  </div>
+
+  <script>
+    // ========= CONFIG =========
+    const RSS_URL = "https://feed.podbean.com/marshakerrtalley/feed.xml";
+    const MAX_EPISODES = 20;
+    // ==========================
+
+    document.getElementById("rssUrlLabel").textContent = RSS_URL;
+
+    function stripHtml(html) {
+      const div = document.createElement("div");
+      div.innerHTML = html || "";
+      return (div.textContent || div.innerText || "").trim();
+    }
+
+    function formatDate(dateStr) {
+      if (!dateStr) return "";
+      const d = new Date(dateStr);
+      if (Number.isNaN(d.getTime())) return dateStr;
+      return d.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+    }
+
+    function firstText(el, selector) {
+      const node = el.querySelector(selector);
+      return node ? node.textContent.trim() : "";
+    }
+
+    async function loadFeed() {
+      const status = document.getElementById("status");
+      const episodesEl = document.getElementById("episodes");
+
+      try {
+        const res = await fetch(RSS_URL, { cache: "no-store" });
+
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status} when fetching RSS`);
+        }
+
+        const xmlText = await res.text();
+        const xml = new DOMParser().parseFromString(xmlText, "text/xml");
+
+        // RSS parsing
+        const channel = xml.querySelector("channel");
+        const title = channel ? firstText(channel, "title") : "";
+        const desc = channel ? firstText(channel, "description") : "";
+
+        if (title) document.getElementById("showTitle").textContent = title;
+        document.getElementById("showDesc").textContent = desc || "Episodes listed below.";
+
+        const items = Array.from(xml.querySelectorAll("item")).slice(0, MAX_EPISODES);
+        episodesEl.innerHTML = "";
+
+        if (!items.length) {
+          episodesEl.innerHTML = `<div class="card">No episodes found in the feed.</div>`;
+          status.textContent = "Feed loaded, but no items were found.";
+          return;
+        }
+
+        items.forEach((item) => {
+          const epTitle = firstText(item, "title");
+          const pubDate = formatDate(firstText(item, "pubDate"));
+          const link = firstText(item, "link");
+          const rawDesc = firstText(item, "description") || firstText(item, "content\\:encoded");
+          const cleanDesc = stripHtml(rawDesc);
+
+          // enclosure (audio)
+          const enclosure = item.querySelector("enclosure");
+          const audioUrl = enclosure ? enclosure.getAttribute("url") : "";
+
+          const card = document.createElement("article");
+          card.className = "card";
+
+          const short = cleanDesc.length > 220 ? cleanDesc.slice(0, 220).trim() + "…" : cleanDesc;
+
+          card.innerHTML = `
+            <h2 class="ep-title">${epTitle || "Episode"}</h2>
+            <div class="meta">${pubDate ? pubDate : ""}</div>
+
+            <div class="desc">
+              ${short ? short : ""}
+              ${cleanDesc.length > 220 ? `
+                <details>
+                  <summary>Show description</summary>
+                  <p style="margin:.75rem 0 0; color:#374151; line-height:1.6;">${cleanDesc}</p>
+                </details>
+              ` : ""}
+            </div>
+
+            ${audioUrl ? `
+              <audio controls preload="none">
+                <source src="${audioUrl}">
+                Your browser does not support the audio element.
+              </audio>
+            ` : ""}
+
+            <div class="links">
+              ${link ? `<a class="link" href="${link}" target="_blank" rel="noopener">Open episode</a>` : ""}
+              ${audioUrl ? `<a class="link" href="${audioUrl}" target="_blank" rel="noopener">Download audio</a>` : ""}
+            </div>
+          `;
+
+          episodesEl.appendChild(card);
+        });
+
+        status.textContent = `Loaded ${items.length} episode(s) from the RSS feed.`;
+
+      } catch (err) {
+        console.error(err);
+        status.innerHTML = `
+          <strong>Could not load the RSS feed.</strong><br>
+          This is usually caused by <em>CORS</em> blocking cross-site requests from GitHub Pages.<br><br>
+          <strong>Guaranteed fix:</strong> download the RSS file into your repo as <code>feed.xml</code>
+          and change <code>RSS_URL</code> to <code>"./feed.xml"</code>.
+        `;
+        document.getElementById("showDesc").textContent =
+          "Your browser blocked the RSS request. Use the local-feed fallback noted above.";
+      }
+    }
+
+    loadFeed();
+  </script>
+</body>
+</html>
+
 
   </div>
 
