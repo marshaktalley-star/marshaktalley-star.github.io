@@ -82,3 +82,88 @@
   </div>
 </section>
 
+<section class="pathways-section">
+  <div class="pathways-header">
+    <span class="line"></span>
+    <h2>The Three Pathways</h2>
+    <span class="line"></span>
+  </div>
+
+  <div class="pathways-grid">
+
+    <!-- Support for Schools -->
+    <div class="pathway-card">
+      <h3>Support for Schools</h3>
+      <img src="Children.webp" alt="Children in a classroom setting">
+
+      <h4>Education-based Support</h4>
+      <p>
+        Practical, trauma-informed support that helps educators work well, stay healthy, and remain in the profession.
+        This pathway improves retention without adding pressure or extra workload.
+      </p>
+
+      <p class="list-title">Educator Support includes:</p>
+      <ul>
+        <li>Evidence-informed workshops</li>
+        <li>Term-based burnout prevention support</li>
+        <li>Tools educators can apply immediately</li>
+        <li>Support that respects safeguarding and professional boundaries</li>
+      </ul>
+
+      <a href="burnout-prevention" class="btn-primary">
+        EXPLORE SCHOOL-BASED SUPPORT
+      </a>
+    </div>
+
+    <!-- Support for Teams -->
+    <div class="pathway-card">
+      <h3>Support for Teams</h3>
+      <img src="person.webp" alt="Person experiencing workplace strain">
+
+      <h4>Non-Education based Support</h4>
+      <p>
+        Structured, remote support for teams experiencing ongoing strain, focused on creating sustainable working
+        conditions for everyone.
+      </p>
+
+      <p class="list-title">Organisation Support includes:</p>
+      <ul>
+        <li>Burnout prevention sprints (30–90 days)</li>
+        <li>Manager toolkits and reflection frameworks</li>
+        <li>Evidence-informed workshops and check-ins</li>
+        <li>Clear outcomes and practical next steps</li>
+      </ul>
+
+      <a href="team-support" class="btn-primary">
+        VIEW ORGANISATIONAL SUPPORT OPTIONS
+      </a>
+    </div>
+
+    <!-- Support for Individuals -->
+    <div class="pathway-card">
+      <h3>Support for Individuals</h3>
+      <img src="group.webp" alt="Group of people smiling together">
+
+      <h4>Support without therapy</h4>
+      <p>
+        This pathway is for individuals who are holding it together on the outside, but need practical guidance
+        to sustain their health and wellbeing over time.
+      </p>
+
+      <p class="list-title">Individual Support includes:</p>
+      <ul>
+        <li>Structured 1:1 sessions</li>
+        <li>6-week guided wellbeing programme</li>
+        <li>Stress awareness and regulation strategies</li>
+        <li>Practical tools for sustainable self-care</li>
+        <li>Certificate of completion</li>
+      </ul>
+
+      <a href="the-six-weeks-program" class="btn-primary">
+        INDIVIDUAL SUPPORT
+      </a>
+    </div>
+
+  </div>
+</section>
+
