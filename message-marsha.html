@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marsha Kerr Talley | Turning Pain Into Possibilities</title>
+</head>
+
+<body style="margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">
+
+<!-- SITE HEADER / NAVIGATION -->
+<header style="
+  width:100%;
+  background:#ffffff;
+  border-bottom:1px solid #e6f2f2;
+">
+  <div style="
+    max-width:1200px;
+    margin:0 auto;
+    padding:20px 16px 12px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    box-sizing:border-box;
+  ">
+    <!-- LOGO -->
+    <a href="index.html" style="display:inline-block;">
+      <img
+        src="MKT-logo-3.png"
+        alt="Marsha Kerr Talley – Live Inspired"
+        style="
+          max-width:220px;
+          width:100%;
+          height:auto;
+          display:block;
+          margin:0 auto 12px;
+        "
+      />
+    </a>
+
+    <!-- NAV LINKS -->
+    <nav aria-label="Main navigation">
+      <ul style="
+        list-style:none;
+        padding:0;
+        margin:0;
+        display:flex;
+        gap:28px;
+        flex-wrap:wrap;
+        justify-content:center;
+        font-size:14px;
+        letter-spacing:0.08em;
+        text-transform:uppercase;
+      ">
+        <li><a href="index.html" style="color:#056367;text-decoration:none;font-weight:600;">Home</a></li>
+        <li><a href="work-with-me.html" style="color:#2f2f2f;text-decoration:none;">Work With Me</a></li>
+        <li><a href="books.html" style="color:#2f2f2f;text-decoration:none;">Books</a></li>
+        <li><a href="podcast.html" style="color:#2f2f2f;text-decoration:none;">Podcast</a></li>
+        <li><a href="reflections.html" style="color:#2f2f2f;text-decoration:none;">Reflections</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+
+<!-- MESSAGE MARSHA | GODADDY SAFE | PRIVATE CLIENT INBOX -->
+
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.mm-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.mm-chat {
+  max-width: 640px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 22px;
+  position: relative;
+}
+
+.mm-header {
+  background: #056367;
+  color: #ffffff;
+  padding: 22px;
+  font-size: 24px;
+  font-weight: 900;
+  text-align: center;
+  border-radius: 22px 22px 0 0;
+  position: relative;
+}
+
+.mm-admin-link {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.mm-admin-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.mm-welcome {
+  padding: 18px 24px 16px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #056367;
+  text-align: center;
+}
+
+.mm-meta {
+  padding: 0 24px 16px;
+}
+
+.mm-meta input,
+.mm-meta select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.5px solid #9fbfc1;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.mm-messages {
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mm-msg {
+  max-width: 80%;
+  padding: 14px;
+  border-radius: 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.mm-visitor {
+  background: #e5f7f6;
+  align-self: flex-end;
+}
+
+.mm-admin {
+  background: #f2f2f2;
+  align-self: flex-start;
+}
+
+.mm-admin-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #056367;
+  margin-bottom: 4px;
+}
+
+.mm-input {
+  padding: 16px 24px 8px;
+}
+
+.mm-input textarea {
+  width: 100%;
+  min-height: 200px;
+  max-height: 360px;
+  resize: vertical;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1.5px solid #9fbfc1;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.mm-send {
+  padding: 0 24px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mm-send button {
+  background: #056367;
+  color: #ffffff;
+  border: none;
+  border-radius: 26px;
+  padding: 12px 32px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.mm-note {
+  font-size: 12px;
+  color: #319fa2;
+  margin-top: 6px;
+}
+
+.mm-inbox {
+  width: 320px;
+  display: none;
+  flex-direction: column;
+  background: #f9fefe;
+  border-radius: 22px;
+  border: 1px solid #9fbfc1;
+}
+
+.mm-inbox-header {
+  background: #056367;
+  color: #fff;
+  padding: 16px;
+  text-align: center;
+  font-weight: 900;
+}
+
+.mm-thread {
+  padding: 14px;
+  cursor: pointer;
+  border-bottom: 1px solid #d6eeee;
+}
+
+.mm-thread.unread {
+  font-weight: 900;
+  border-left: 6px solid #2fe2dd;
+}
+
+.mm-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.mm-modal-box {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 22px;
+  width: 320px;
+}
+
+.mm-modal-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  border: 1.5px solid #9fbfc1;
+}
+
+.mm-modal-box button {
+  width: 100%;
+  padding: 12px;
+  background: #056367;
+  color: #ffffff;
+  border: none;
+  border-radius: 18px;
+  font-weight: 800;
+  cursor: pointer;
+}
+</style>
+
+<div class="mm-wrapper">
+  <div class="mm-chat">
+    <div class="mm-header">
+      Message Marsha<br>
+      <small>Burnout Prevention and Wellbeing Support</small>
+      <div class="mm-admin-link" onclick="openAdmin()">Admin Login</div>
+    </div>
+
+    <div class="mm-welcome">
+      This space is for thoughtful, confidential messages related to burnout, wellbeing, and sustainable change. You’re welcome to share what’s been weighing on you, and I’ll respond with calm, grounded guidance.
+    </div>
+
+    <div class="mm-meta">
+      <input id="nameInput" placeholder="Your name (optional)">
+      <input id="emailInput" placeholder="Your email (optional)">
+      <select id="tagInput">
+        <option value="">Select topic (optional)</option>
+        <option>Burnout and Exhaustion</option>
+        <option>Work–Life Boundaries</option>
+        <option>Leadership Pressure</option>
+        <option>Life Transitions</option>
+        <option>Wellbeing Support</option>
+      </select>
+    </div>
+
+    <div class="mm-messages" id="messages"></div>
+
+    <div class="mm-input">
+      <textarea id="input" placeholder="Share what you’re navigating right now…"></textarea>
+    </div>
+
+    <div class="mm-send">
+      <button onclick="sendMessage()">Send message</button>
+      <div class="mm-note">
+        This inbox is not monitored continuously and is not for crisis support.
+      </div>
+    </div>
+  </div>
+
+  <div class="mm-inbox" id="inbox">
+    <div class="mm-inbox-header">
+      Inbox<br>
+      <small style="cursor:pointer;" onclick="adminLogout()">Log out</small>
+    </div>
+    <div id="threads"></div>
+  </div>
+</div>
+
+<div class="mm-modal" id="adminModal">
+  <div class="mm-modal-box">
+    <input id="adminEmail" placeholder="Admin email">
+    <input id="adminPass" type="password" placeholder="Password">
+    <button onclick="adminLogin()">Login</button>
+  </div>
+</div>
+
+<script>
+firebase.initializeApp({
+  apiKey: "AIzaSyBZCg70hhCkx01ccZWePeIKAZEPC3mejkc",
+  authDomain: "testimonials-8100a.firebaseapp.com",
+  projectId: "testimonials-8100a"
+});
+
+const db = firebase.firestore();
+const auth = firebase.auth();
+const ADMIN = "info@marshakerrtalley.com";
+
+let convoRef = null;
+let isAdmin = false;
+
+auth.signInAnonymously();
+
+function listenMessages(ref) {
+  ref.collection("messages").orderBy("createdAt").onSnapshot(snap => {
+    messages.innerHTML = "";
+    snap.forEach(d => {
+      const m = d.data();
+      messages.innerHTML += `
+        <div class="mm-msg ${m.sender}">
+          ${m.sender === "mm-admin"
+            ? `<div class="mm-admin-label">Marsha — Burnout Prevention Specialist</div>`
+            : ""}
+          ${m.text}
+        </div>`;
+    });
+  });
+}
+
+function openAdmin() {
+  adminModal.style.display = "flex";
+}
+
+function adminLogin() {
+  auth.signOut().then(() => {
+    auth.signInWithEmailAndPassword(adminEmail.value, adminPass.value)
+      .then(u => {
+        if (u.user.email !== ADMIN) return alert("Not authorised");
+        isAdmin = true;
+        adminModal.style.display = "none";
+        inbox.style.display = "flex";
+        loadInbox();
+      })
+      .catch(e => alert(e.message));
+  });
+}
+
+function adminLogout() {
+  auth.signOut().then(() => location.reload());
+}
+</script>
+
+
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <p class="copyright">
+      Copyright © <span id="currentYear"></span> Marsha Kerr Talley — All Rights Reserved.
+    </p>
+
+    <nav class="footer-links">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
+      <a href="/terms-and-conditions">Terms and Conditions</a>
+    </nav>
+
+  </div>
+</footer>
+
+<!-- FOOTER STYLES -->
+<style>
+.site-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #eee;
+  padding: 2.5rem 1.5rem 2rem;
+  text-align: center;
+  font-family: inherit;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-footer p {
+  margin: 0 0 1.4rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  font-size: 1rem;
+  color: #319fa2;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #056367;
+  text-decoration: underline;
+}
+</style>
+
+<!-- AUTO-UPDATE COPYRIGHT YEAR -->
+<script>
+  document.getElementById("currentYear").textContent =
+    new Date().getFullYear();
+</script>
