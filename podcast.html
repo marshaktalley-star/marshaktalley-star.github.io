@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Podcast | Marsha Kerr Talley</title>
+  <title>Live Inspired Reflections | Marsha Kerr Talley</title>
 
   <!-- =========================
-       GLOBAL STYLES
+       GLOBAL STYLES (GoDaddy-harmonised)
   ========================== -->
   <style>
     body {
@@ -17,10 +17,18 @@
       background: #ffffff;
     }
 
-    a { color: #056367; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a {
+      color: #056367;
+      text-decoration: none;
+    }
 
-    section { box-sizing: border-box; }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      box-sizing: border-box;
+    }
 
     .container {
       max-width: 1100px;
@@ -43,8 +51,16 @@
     </a>
 
     <nav>
-      <ul style="list-style:none;display:flex;gap:28px;justify-content:center;
-                 padding:0;margin:0;font-size:14px;text-transform:uppercase;">
+      <ul style="
+        list-style:none;
+        display:flex;
+        gap:28px;
+        justify-content:center;
+        padding:0;
+        margin:0;
+        font-size:14px;
+        text-transform:uppercase;
+        letter-spacing:0.08em;">
         <li><a href="index.html">Home</a></li>
         <li><a href="work-with-me.html">Work With Me</a></li>
         <li><a href="books.html">Books</a></li>
@@ -56,176 +72,195 @@
 </header>
 
 <!-- ======================================================
-     HERO BANNER / QUOTE
+     HERO BANNER
 ====================================================== -->
-<section class="hero-banner" style="
-  background:url('4-EGL_3367.jpg') center 10%/cover no-repeat;
-  min-height:420px;
+<section style="
+  background:url('4-EGL_3367.jpg') center 30% / cover no-repeat;
+  min-height:480px;
   position:relative;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  color:#fff;
+  color:#ffffff;
 ">
   <div style="position:absolute;inset:0;background:rgba(0,0,0,0.45);"></div>
   <div style="position:relative;max-width:900px;padding:2rem;">
-    <div style="font-family:Georgia,serif;font-size:clamp(1.8rem,4vw,3rem);">
+    <div style="
+      font-family:Georgia,serif;
+      font-size:clamp(1.8rem,4vw,3rem);
+      line-height:1.3;">
       “Let’s make space for conversations that matter.”
     </div>
-    <div style="margin-top:1rem;letter-spacing:0.08em;text-transform:uppercase;">
+    <div style="
+      margin-top:1rem;
+      letter-spacing:0.08em;
+      text-transform:uppercase;">
       — Marsha Kerr Talley
     </div>
   </div>
 </section>
 
 <!-- ======================================================
-     PAGE TITLE + CALM INTRODUCTION
+     PODCAST PAGE HEADER
 ====================================================== -->
-<section class="container" style="margin:4rem auto 2rem;text-align:center;">
-  <h1 style="color:#056367;font-size:clamp(28px,5vw,42px);margin-bottom:0.5rem;">
-    Choose a conversation
+<div style="text-align:center;margin:3.5rem 0 1rem;">
+  <h1 style="
+    margin:0;
+    font-size:clamp(28px,5vw,42px);
+    font-weight:900;
+    color:#056367;">
+    Live Inspired Reflections
   </h1>
-  <p style="color:#319fa2;font-weight:600;">
-    Candid Conversations with Marsha Kerr Talley
+  <p style="margin-top:6px;color:#319fa2;font-weight:700;">
+    Conversations with Marsha Kerr Talley
   </p>
-</section>
+</div>
 
 <!-- ======================================================
-     ORIENTATION / INVITATION
+     PODCAST INTRO
 ====================================================== -->
-<section class="container" style="max-width:760px;margin-bottom:3rem;">
-  <p style="font-style:italic;color:#555;">
-    These conversations are not meant to be rushed.
-    You’re invited to listen gently, notice what resonates,
-    and allow insight to unfold in its own time.
+<div style="background:#dff3f3;padding:24px 16px;text-align:center;">
+  <p style="
+    max-width:68ch;
+    margin:0 auto;
+    color:#0d4b4e;
+    font-size:clamp(15px,2.6vw,18px);">
+    In these conversations, I reflect on how people make sense of challenge,
+    navigate change, and stay anchored in themselves when life feels demanding.
+    I offer grounded perspective and space to think — not quick fixes.
   </p>
+</div>
+
+<!-- ======================================================
+     EPISODE LIST (AUTO-UPDATING)
+====================================================== -->
+<section class="container" style="margin:4rem auto;">
+  <h2 style="color:#056367;margin-bottom:2rem;">
+    Choose a conversation
+  </h2>
+
+  <div id="podcast-episodes"></div>
 </section>
 
 <!-- ======================================================
-     BEGIN HERE – FEATURED CONVERSATION
+     REFLECTION SPACE (INTERACTIVE)
 ====================================================== -->
-<section class="container" style="margin-bottom:4rem;
-  background:#eef7f7;padding:2rem;border-radius:16px;">
-  <h2 style="color:#056367;">Begin here</h2>
-  <p><strong>Your Belief Changes Everything</strong></p>
-  <p style="color:#444;">
-    A grounding place to start if you’re reflecting on identity,
-    self-trust, and the quiet stories that shape how you live.
-  </p>
-</section>
+<section class="container" style="
+  max-width:760px;
+  background:#eef7f7;
+  padding:2.5rem;
+  border-radius:16px;
+  margin:4rem auto;">
+  <h2 style="color:#056367;">After listening</h2>
 
-<!-- ======================================================
-     CONVERSATION GROUPS
-====================================================== -->
-<section class="container" style="margin-bottom:2rem;">
-  <h2 style="color:#056367;">Explore by theme</h2>
-  <ul style="display:flex;gap:1.5rem;list-style:none;padding:0;">
-    <li>Belief & Identity</li>
-    <li>Burnout & Boundaries</li>
-    <li>Grief & Meaning</li>
-  </ul>
-</section>
+  <div class="reflection-card" onclick="toggleCard(this)">
+    <strong>What belief felt affirmed?</strong>
+    <div class="reflection-options">
+      <p>I am allowed to change.</p>
+      <p>I don’t need to rush healing.</p>
+      <p>My needs are valid.</p>
+      <p>I am more capable than I realised.</p>
+    </div>
+  </div>
 
-<!-- ======================================================
-     AUTO-UPDATING CONVERSATION CARDS
-====================================================== -->
-<section class="container">
-  <div id="podcast-episodes"
-       style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-              gap:1.75rem;">
-    <p>Loading conversations…</p>
+  <div class="reflection-card" onclick="toggleCard(this)">
+    <strong>What felt gently challenged?</strong>
+    <div class="reflection-options">
+      <p>Where I hold on too tightly.</p>
+      <p>Where I silence myself.</p>
+      <p>Where I mistake endurance for strength.</p>
+    </div>
   </div>
 </section>
 
-<!-- ======================================================
-     REFLECTION PROMPT
-====================================================== -->
-<section class="container" style="max-width:760px;margin:4rem auto;
-  background:#eef7f7;padding:2.5rem;border-radius:16px;">
-  <h2 style="color:#056367;">After listening</h2>
-  <p>What belief felt affirmed — or gently challenged?</p>
-  <p>What part of you felt seen or softened?</p>
-  <p>What might you carry forward from this conversation?</p>
-</section>
+<style>
+.reflection-card {
+  background:#ffffff;
+  padding:1.25rem;
+  border-radius:12px;
+  margin-top:1rem;
+  cursor:pointer;
+}
+
+.reflection-options {
+  display:none;
+  margin-top:0.75rem;
+  color:#444;
+}
+</style>
 
 <!-- ======================================================
-     GENTLE CTA TO WORK WITH ME
+     SIGNUP (SUBSTACK)
 ====================================================== -->
-<section class="container" style="text-align:center;margin-bottom:4rem;">
-  <p>
-    If these reflections resonate and you’d like guided support,
-    you’re welcome to explore working together.
-  </p>
-  <a href="work-with-me.html"
-     style="display:inline-block;margin-top:1rem;
-            background:#319fa2;color:#fff;
-            padding:1rem 2rem;border-radius:999px;">
-    Explore working with me
-  </a>
-</section>
-
-<!-- ======================================================
-     PLATFORM LINKS
-====================================================== -->
-<section class="container" style="text-align:center;margin-bottom:3rem;">
-  <a href="https://podcasts.apple.com/" target="_blank">Apple Podcasts</a> |
-  <a href="https://open.spotify.com/" target="_blank">Spotify</a>
-</section>
-
-<!-- ======================================================
-     BUTTONS / SUBSCRIBE
-====================================================== -->
-<section class="container" style="text-align:center;margin-bottom:4rem;">
-  <a href="https://form.jotform.com/242924328863363" target="_blank"
-     style="display:block;max-width:600px;margin:0 auto 1.5rem;
-            background:#319fa2;color:#fff;padding:1.2rem;border-radius:999px;">
-    🎙️ Be My Guest
-  </a>
+<section class="container" style="text-align:center;margin:4rem auto;">
+  <h3 style="color:#056367;font-weight:400;">
+    Stay connected
+  </h3>
 
   <form action="https://marshakerrtalley.substack.com" method="get" target="_blank">
     <input type="email" required placeholder="Email"
            style="padding:0.9rem;border-radius:6px;border:1px solid #ccc;">
     <button type="submit"
-            style="background:#319fa2;color:#fff;border:none;
-                   padding:0.9rem 2rem;border-radius:999px;">
+            style="
+              background:#319fa2;
+              color:#ffffff;
+              border:none;
+              padding:0.9rem 2rem;
+              border-radius:999px;
+              margin-left:0.5rem;
+              cursor:pointer;">
       Sign up
     </button>
   </form>
 </section>
 
 <!-- ======================================================
-     FOOTER
+     FOOTER (AUTO-YEAR)
 ====================================================== -->
-<footer style="border-top:1px solid #eee;padding:2.5rem 1.5rem;text-align:center;">
-  <p style="color:#666;">© 2025 Marsha Kerr Talley. All Rights Reserved.</p>
-  <nav>
-    <a href="/privacy-policy">Privacy Policy</a> |
-    <a href="/terms-and-conditions">Terms</a>
-  </nav>
+<footer style="border-top:1px solid #eee;padding:2.5rem;text-align:center;">
+  <p style="color:#666;">
+    © <span id="year"></span> Marsha Kerr Talley. All Rights Reserved.
+  </p>
+  <a href="/privacy-policy">Privacy Policy</a> | <a href="/terms">Terms</a>
 </footer>
 
 <!-- ======================================================
-     RSS → JSON SCRIPT (GITHUB-SAFE)
+     JAVASCRIPT (AUTOMATION)
 ====================================================== -->
 <script>
-const FEED_URL =
+/* Footer year auto-update */
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* Reflection cards */
+function toggleCard(card) {
+  const options = card.querySelector(".reflection-options");
+  options.style.display = options.style.display === "block" ? "none" : "block";
+}
+
+/* Podcast feed with automatic themes */
+const FEED =
   "https://api.rss2json.com/v1/api.json?rss_url=https://feed.podbean.com/marshakerrtalley/feed.xml";
 
-fetch(FEED_URL)
+fetch(FEED)
   .then(res => res.json())
   .then(data => {
     const container = document.getElementById("podcast-episodes");
-    container.innerHTML = "";
-
     data.items.slice(0,9).forEach(item => {
+      const text = item.description.toLowerCase();
+      let theme = "Reflection";
+
+      if (text.includes("belief") || text.includes("identity")) theme = "Belief & Identity";
+      if (text.includes("burnout") || text.includes("stress")) theme = "Burnout & Boundaries";
+      if (text.includes("grief") || text.includes("loss")) theme = "Grief & Meaning";
+
       container.innerHTML += `
-        <div style="background:#f6fbfb;padding:1.5rem;border-radius:14px;">
-          <h3 style="color:#056367;">${item.title}</h3>
-          <p style="font-size:0.85rem;color:#777;">
-            ${new Date(item.pubDate).toLocaleDateString()}
+        <div style="margin-bottom:2.5rem;">
+          <p style="font-size:0.75rem;color:#319fa2;text-transform:uppercase;">
+            ${theme}
           </p>
-          <p>${item.description.replace(/(<([^>]+)>)/gi,"").slice(0,160)}…</p>
+          <h3 style="color:#056367;">${item.title}</h3>
+          <p>${item.description.replace(/(<([^>]+)>)/gi,"").slice(0,180)}…</p>
           <audio controls style="width:100%;">
             <source src="${item.enclosure.link}" type="audio/mpeg">
           </audio>
