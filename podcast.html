@@ -255,64 +255,66 @@
   </form>
 </section>
 
-<!-- ======================================================
-     FOOTER (AUTO-YEAR)
-====================================================== -->
-<footer style="border-top:1px solid #eee;padding:2.5rem;text-align:center;">
-  <p style="color:#666;">
-    © <span id="year"></span> Marsha Kerr Talley. All Rights Reserved.
-  </p>
-  <a href="/privacy-policy">Privacy Policy</a> | <a href="/terms">Terms</a>
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <p class="copyright">
+      Copyright © <span id="currentYear"></span> Marsha Kerr Talley — All Rights Reserved.
+    </p>
+
+    <nav class="footer-links">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
+      <a href="/terms-and-conditions">Terms and Conditions</a>
+    </nav>
+
+  </div>
 </footer>
 
-<!-- ======================================================
-     JAVASCRIPT
-====================================================== -->
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-
-function reflect(el) {
-  const response = el.querySelector(".reflection-response");
-  response.style.display =
-    response.style.display === "block" ? "none" : "block";
+<!-- FOOTER STYLES -->
+<style>
+.site-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #eee;
+  padding: 2.5rem 1.5rem 2rem;
+  text-align: center;
+  font-family: inherit;
 }
 
-const FEED =
-  "https://api.rss2json.com/v1/api.json?rss_url=https://feed.podbean.com/marshakerrtalley/feed.xml";
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-fetch(FEED)
-  .then(res => res.json())
-  .then(data => {
-    const container = document.getElementById("podcast-episodes");
+.site-footer p {
+  margin: 0 0 1.4rem;
+  font-size: 0.95rem;
+  color: #666;
+}
 
-    data.items.slice(0,9).forEach(item => {
-      const text = item.description.toLowerCase();
-      let theme = "Reflection";
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
 
-      if (text.includes("belief") || text.includes("identity"))
-        theme = "Belief & Identity";
-      if (text.includes("burnout") || text.includes("stress"))
-        theme = "Burnout & Boundaries";
-      if (text.includes("grief") || text.includes("loss"))
-        theme = "Grief & Meaning";
+.footer-links a {
+  font-size: 1rem;
+  color: #319fa2;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
-      container.innerHTML += `
-        <div style="margin-bottom:3rem;">
-          <p style="font-size:0.75rem;color:#319fa2;text-transform:uppercase;">
-            ${theme}
-          </p>
-          <h3 style="color:#056367;">${item.title}</h3>
-          <p>
-            ${item.description.replace(/(<([^>]+)>)/gi,"").slice(0,180)}…
-          </p>
-          <audio controls style="width:100%;">
-            <source src="${item.enclosure.link}" type="audio/mpeg">
-          </audio>
-        </div>
-      `;
-    });
-  });
+.footer-links a:hover {
+  color: #056367;
+  text-decoration: underline;
+}
+</style>
+
+<!-- AUTO-UPDATE COPYRIGHT YEAR -->
+<script>
+  document.getElementById("currentYear").textContent =
+    new Date().getFullYear();
 </script>
-
-</body>
-</html>
