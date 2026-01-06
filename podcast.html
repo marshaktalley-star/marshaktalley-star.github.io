@@ -201,30 +201,228 @@
 </div>
 
 
-  <section style="max-width:1100px;margin:auto;padding:2rem 1rem;font-family:inherit;">
-  <h2 style="color:#056367;margin-bottom:0.5rem;">
-    Candid Conversations with Marsha
-  </h2>
-  <p style="color:#555;margin-bottom:1.5rem;">
-    Honest reflections, emotional wellness, and inspired living.
-  </p>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Candid Conversations with Marsha</title>
 
-  <iframe
-    title="Candid Conversations with Marsha Podcast"
-    src="https://www.podbean.com/player-v2/?i=marshakerrtalley&from=pb6admin&square=1&share=1&download=1&rtl=0&fonts=Arial&skin=1"
-    style="border:none;width:100%;height:480px;"
-    loading="lazy"
-    allowfullscreen>
-  </iframe>
-</section>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      line-height: 1.65;
+    }
 
-  <p style="text-align:center;margin-top:1rem;">
-  <a href="https://podcasts.apple.com" target="_blank">Apple Podcasts</a> |
-  <a href="https://open.spotify.com" target="_blank">Spotify</a> |
-  <a href="https://marshakerrtalley.com" target="_blank">Live Inspired</a>
-</p>
+    /* ===== Main Section ===== */
+    .podcast-section {
+      max-width: 1100px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+    }
 
-  <section style="max-width:900px;margin:3rem auto;text-align:center;font-family:inherit;">
+    .podcast-section h1 {
+      color: #056367;
+      font-size: 2.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .podcast-intro {
+      max-width: 760px;
+      margin-bottom: 2.5rem;
+      color: #555;
+      font-size: 1.05rem;
+    }
+
+    /* ===== Reflection Orientation ===== */
+    .reflection-orientation {
+      max-width: 720px;
+      font-style: italic;
+      color: #666;
+      margin-bottom: 3.5rem;
+    }
+
+    /* ===== Episode / Conversation Grid ===== */
+    .episode-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .episode-card {
+      background: #f6fbfb;
+      border-radius: 14px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .episode-card h3 {
+      font-size: 1.05rem;
+      color: #056367;
+      margin: 0 0 0.4rem 0;
+    }
+
+    .episode-date {
+      font-size: 0.8rem;
+      color: #777;
+      margin-bottom: 0.75rem;
+    }
+
+    .episode-desc {
+      font-size: 0.95rem;
+      color: #333;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .episode-card audio {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+
+    /* ===== Reflection Integration ===== */
+    .reflection-prompt {
+      max-width: 760px;
+      margin: 4.5rem auto 3.5rem;
+      padding: 2.25rem;
+      background: #eef7f7;
+      border-radius: 16px;
+    }
+
+    .reflection-prompt h2 {
+      color: #056367;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .reflection-prompt p {
+      margin-bottom: 0.75rem;
+      color: #444;
+    }
+
+    /* ===== Platform Links ===== */
+    .platform-links {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .platform-links a {
+      color: #056367;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    .platform-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      .podcast-section {
+        margin: 3rem auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="podcast-section">
+    <h1>Choose a conversation</h1>
+
+    <p class="podcast-intro">
+      Candid Conversations with Marsha offers reflective dialogue on healing,
+      belief, identity, and emotional wellbeing — shared gently, without urgency.
+    </p>
+
+    <p class="reflection-orientation">
+      These conversations are not meant to be consumed all at once.
+      You’re invited to notice what draws you in, listen with compassion,
+      and allow insight to arrive in its own time.
+    </p>
+
+    <div id="podcast-episodes" class="episode-grid">
+      <p>Loading conversations…</p>
+    </div>
+
+    <div class="reflection-prompt">
+      <h2>After listening</h2>
+      <p>
+        What belief felt affirmed — or quietly challenged?
+      </p>
+      <p>
+        What part of you felt seen, softened, or stirred?
+      </p>
+      <p>
+        What might it look like to carry this insight with you,
+        rather than resolve it immediately?
+      </p>
+    </div>
+
+    <div class="platform-links">
+      <a href="https://podcasts.apple.com/" target="_blank">Apple Podcasts</a> |
+      <a href="https://open.spotify.com/" target="_blank">Spotify</a> |
+      <a href="https://marshakerrtalley.com" target="_blank">Live Inspired</a>
+    </div>
+  </section>
+
+  <!-- ===== RSS → JSON Proxy Script (GitHub-safe) ===== -->
+  <script>
+    const FEED_URL =
+      "https://api.rss2json.com/v1/api.json?rss_url=https://feed.podbean.com/marshakerrtalley/feed.xml";
+
+    fetch(FEED_URL)
+      .then(response => response.json())
+      .then(data => {
+        const items = data.items || [];
+        let html = "";
+
+        items.slice(0, 9).forEach(item => {
+          const title = item.title || "";
+          const pubDate = item.pubDate || "";
+          const description = (item.description || "")
+            .replace(/(<([^>]+)>)/gi, "")
+            .trim()
+            .slice(0, 180) + "...";
+          const audioUrl = item.enclosure?.link || "";
+
+          html += `
+            <div class="episode-card">
+              <h3>${title}</h3>
+              <div class="episode-date">
+                ${new Date(pubDate).toLocaleDateString(undefined, {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric"
+                })}
+              </div>
+              <div class="episode-desc">${description}</div>
+              <audio controls preload="none">
+                <source src="${audioUrl}" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          `;
+        });
+
+        document.getElementById("podcast-episodes").innerHTML = html;
+      })
+      .catch(error => {
+        document.getElementById("podcast-episodes").innerHTML =
+          "<p>Conversations are unavailable at the moment.</p>";
+        console.error(error);
+      });
+  </script>
+
+</body>
+</html>
+
 
   <!-- BUTTONS AND SUBSCRIBE -->
   <div style="display:flex;flex-direction:column;gap:1.25rem;align-items:center;margin-bottom:4rem;">
