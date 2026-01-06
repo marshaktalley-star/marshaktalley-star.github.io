@@ -372,232 +372,144 @@ textarea.comment-box { min-height:80px; white-space:pre-wrap }
 
 #preview { max-height:360px; overflow-y:auto }
 #preview img,#preview video { max-height:340px; object-fit:contain }
+
+/* ===============================
+   YOUTUBE STREAM STYLES
+================================ */
+.youtube-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;
+}
+
+.youtube-card {
+  background:#ffffff;
+  border:2px solid #2fe2dd;
+  border-radius:22px;
+  padding:16px;
+  display:grid;
+  gap:12px;
+  box-shadow:0 14px 40px rgba(0,0,0,0.06);
+}
+
+.youtube-thumb {
+  width:100%;
+  aspect-ratio:16/9;
+  border-radius:14px;
+  overflow:hidden;
+}
+
+.youtube-thumb img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.youtube-title {
+  font-size:16px;
+  font-weight:800;
+  color:#056367;
+  line-height:1.4;
+}
+
+.youtube-date {
+  font-size:13px;
+  color:#319fa2;
+}
+
+.youtube-watch {
+  margin-top:6px;
+  font-size:14px;
+  font-weight:800;
+  color:#056367;
+  text-decoration:underline;
+  cursor:pointer;
+}
 </style>
 
 <div class="wrap">
   <h1>Live Inspired Community</h1>
   <p class="sub">Encouragement, reflection, and shared growth.</p>
 
-  <div id="adminIndicator">Admin logged in</div>
-  <div class="admin-link" onclick="toggleAdminLogin()">Admin login</div>
+  <!-- ===============================
+     FROM MARSHA ON YOUTUBE
+================================ -->
+<section class="card" style="border-color:#056367;background:linear-gradient(180deg,#f6fefe,#ffffff)">
 
-  <div class="card" id="adminLoginBox">
-    <input id="adminEmail" type="email" placeholder="Admin email">
-    <input id="adminPassword" type="password" placeholder="Admin password">
-    <button onclick="adminLogin()">Sign in</button>
-    <div id="loginStatus"></div>
+  <h2 style="color:#056367;font-size:32px;font-weight:900;text-align:center;margin-bottom:8px;">
+    From Marsha on YouTube
+  </h2>
+
+  <p style="text-align:center;max-width:600px;margin:0 auto 28px;color:#0d4b4e;font-size:16px;">
+    Recent reflections and teachings shared in video form.
+    Take what resonates. Leave what doesn’t.
+  </p>
+
+  <!-- FEATURED REFLECTION -->
+  <div id="featuredVideo" class="featured-video"></div>
+
+  <!-- RECENT VIDEOS -->
+  <h3 style="margin-top:48px;color:#056367;font-size:22px;">
+    Recent reflections
+  </h3>
+
+  <div id="youtubeGrid" class="youtube-grid"></div>
+
+  <div style="text-align:center;margin-top:28px;">
+    <a href="https://www.youtube.com/c/marshakerrtalley"
+       target="_blank"
+       style="display:inline-block;padding:10px 22px;border-radius:999px;
+              border:2px solid #056367;color:#056367;font-weight:800;text-decoration:none;">
+      Visit YouTube Channel
+    </a>
   </div>
 
-  <!-- ADMIN ONLY COMPOSER (hidden from public) -->
-  <div class="card" id="composer" style="display:none">
-    <textarea id="postText" class="post-message" placeholder="Write your message…"></textarea>
-    <input id="mediaUrl" placeholder="Optional media URL (image, video, or YouTube)">
-    <input id="fileInput" type="file" accept="image/*,video/*">
-    <span class="remove-media-link" onclick="clearMedia()">Remove media</span>
-    <div id="preview"></div>
-    <div class="publish-wrap">
-      <button onclick="publishPost()">Publish Post</button>
-    </div>
-  </div>
+</section>
 
+
+  <!-- ===============================
+       EXISTING FIREBASE FEED
+  ================================ -->
   <div id="feed"></div>
 </div>
 </section>
 
 <script>
-firebase.initializeApp({
-  apiKey:"AIzaSyBZCg70hhCkx01ccZWePeIKAZEPC3mejkc",
-  authDomain:"testimonials-8100a.firebaseapp.com",
-  projectId:"testimonials-8100a",
-  storageBucket:"testimonials-8100a.appspot.com"
-});
+/* ===============================
+   YOUTUBE RSS STREAM
+================================ */
+const YOUTUBE_FEED =
+  "https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=UCvGz4p5V4vXx6S4FqZ4nT1A";
 
-const db=firebase.firestore();
-const storage=firebase.storage();
-const auth=firebase.auth();
+fetch(YOUTUBE_FEED)
+  .then(res => res.json())
+  .then(data => {
+    const grid = document.getElementById("youtubeGrid");
+    if (!data.items || !grid) return;
 
-const ADMIN_UID="Pv7XvFLXa8Xh1j0EMpiKoG2dIyX2";
-const REACTION_ORDER=["❤️","🙏","😂","😮","😢","🔥"];
-let isAdmin=false, postsCache=[], commentUnsubs={};
+    data.items.slice(0,6).forEach(item => {
+      const videoId = item.link.split("v=")[1];
+      const date = new Date(item.pubDate).toLocaleDateString(undefined,{
+        year:"numeric",month:"long",day:"numeric"
+      });
 
-function esc(s){return String(s||"").replace(/[&<>"']/g,m=>({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[m]))}
-function escBreaks(s){return esc(s).replace(/\n/g,"<br>")}
-
-(async()=>{try{await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL)}catch{}})();
-
-auth.onAuthStateChanged(u=>{
-  isAdmin=!!(u&&u.uid===ADMIN_UID);
-
-  // Admin indicator + internal-only note (admin sees; public doesn't)
-  adminIndicator.style.display=isAdmin?"block":"none";
-  adminIndicator.innerHTML=isAdmin
-    ? `Admin logged in<br><span style="font-weight:700; font-size:12px; color:#0d4b4e;">Note: Deletes are handled in Firebase Console (Firestore) only.</span>`
-    : "Admin logged in";
-
-  composer.style.display=isAdmin?"grid":"none";
-  if(isAdmin)adminLoginBox.style.display="none";
-  renderFeed();
-});
-
-function toggleAdminLogin(){
-  adminLoginBox.style.display=adminLoginBox.style.display==="grid"?"none":"grid";
-}
-async function adminLogin(){
-  try{
-    await auth.signInWithEmailAndPassword(adminEmail.value,adminPassword.value);
-    loginStatus.innerText="Admin logged in";
-    adminLoginBox.style.display="none";
-  }catch(e){loginStatus.innerText=e.message}
-}
-
-function parseYouTube(u){
-  if(u.includes("/shorts/"))return{id:u.split("/shorts/")[1].split(/[?&]/)[0],short:true};
-  if(u.includes("watch?v="))return{id:u.split("watch?v=")[1].split("&")[0],short:false};
-  if(u.includes("youtu.be/"))return{id:u.split("youtu.be/")[1].split(/[?&]/)[0],short:false};
-  return{id:"",short:false};
-}
-
-/* Media preview */
-mediaUrl.oninput=()=>{
-  if(fileInput.files[0])return;
-  preview.innerHTML="";
-  const yt=parseYouTube(mediaUrl.value.trim());
-  if(yt.id){
-    preview.innerHTML=yt.short
-      ? `<div class="media-vertical"><iframe src="https://www.youtube.com/embed/${yt.id}" allowfullscreen></iframe></div>`
-      : `<div class="media-wide"><iframe src="https://www.youtube.com/embed/${yt.id}" allowfullscreen></iframe></div>`;
-  }
-};
-
-fileInput.addEventListener("change",()=>{
-  preview.innerHTML="";
-  const f=fileInput.files[0];
-  if(!f)return;
-  const blob=URL.createObjectURL(f);
-  preview.innerHTML=f.type.startsWith("video")
-    ? `<video controls src="${blob}"></video>`
-    : `<img src="${blob}">`;
-  mediaUrl.value="";
-});
-
-function clearMedia(){
-  mediaUrl.value="";
-  fileInput.value="";
-  preview.innerHTML="";
-}
-
-async function publishPost(){
-  if(!isAdmin)return alert("Admin only");
-  let media="",type="",ytShort=false;
-
-  if(fileInput.files[0]){
-    const f=fileInput.files[0];
-    const ref=storage.ref("community_uploads/"+Date.now()+"_"+f.name);
-    await ref.put(f,{contentType:f.type});
-    media=await ref.getDownloadURL();
-    type=f.type.startsWith("video")?"video":"image";
-  }else if(mediaUrl.value.trim()){
-    const yt=parseYouTube(mediaUrl.value.trim());
-    media=mediaUrl.value.trim();
-    if(yt.id){type="youtube";ytShort=yt.short}
-    else type="image";
-  }
-
-  await db.collection("posts").add({
-    text:postText.value,
-    media,type,ytShort,
-    reactions:{ "❤️":0,"🙏":0,"😂":0,"😮":0,"😢":0,"🔥":0 },
-    reactionUsers:{},
-    createdAt:firebase.firestore.FieldValue.serverTimestamp()
+      grid.innerHTML += `
+        <div class="youtube-card">
+          <div class="youtube-thumb">
+            <img src="https://i.ytimg.com/vi/${videoId}/hqdefault.jpg" alt="">
+          </div>
+          <div class="youtube-title">${item.title}</div>
+          <div class="youtube-date">${date}</div>
+          <a class="youtube-watch"
+             href="https://www.youtube.com/watch?v=${videoId}"
+             target="_blank">
+            Watch on YouTube
+          </a>
+        </div>`;
+    });
   });
-
-  postText.value="";
-  clearMedia();
-}
-
-db.collection("posts").orderBy("createdAt","desc").onSnapshot(s=>{
-  postsCache=s.docs;
-  renderFeed();
-});
-
-function renderFeed(){
-  feed.innerHTML="";
-  postsCache.forEach(doc=>{
-    const p=doc.data();
-    const date=p.createdAt?.toDate().toLocaleString()||"";
-
-    // ADMIN EDIT/DELETE UI REMOVED (by decision: Firebase-only deletes)
-    const adminBtns="";
-
-    const reactions=REACTION_ORDER.map(r=>
-      `<button data-act="react" data-id="${doc.id}" data-emo="${r}">${r} ${(p.reactions||{})[r]||0}</button>`
-    ).join("");
-
-    feed.innerHTML+=`
-      <div class="post">
-        <div class="post-topbar">
-          <div class="post-date">${date}</div>${adminBtns}
-        </div>
-        <div>${escBreaks(p.text)}</div>
-
-        <div class="media">
-          ${p.type==="image"?`<img src="${esc(p.media)}">`:""}
-          ${p.type==="video"?`<video controls src="${esc(p.media)}"></video>`:""}
-          ${p.type==="youtube"?(
-            p.ytShort
-              ? `<div class="media-vertical"><iframe src="https://www.youtube.com/embed/${parseYouTube(p.media).id}" allowfullscreen></iframe></div>`
-              : `<div class="media-wide"><iframe src="https://www.youtube.com/embed/${parseYouTube(p.media).id}" allowfullscreen></iframe></div>`
-          ):""}
-        </div>
-
-        <div class="reactions">${reactions}</div>
-
-        <div id="comments-${doc.id}"></div>
-        <textarea class="comment-box" placeholder="Write a comment…"></textarea>
-        <div class="comment-actions">
-          <button class="comment-submit" data-act="comment" data-id="${doc.id}">Post comment</button>
-        </div>
-      </div>`;
-
-    if(!commentUnsubs[doc.id]){
-      commentUnsubs[doc.id]=db.collection("posts").doc(doc.id)
-        .collection("comments").orderBy("createdAt","asc")
-        .onSnapshot(cs=>{
-          const box=document.getElementById("comments-"+doc.id);
-          if(!box)return;
-          box.innerHTML="";
-          cs.forEach(c=>{
-            const cd=c.data();
-            box.innerHTML+=`
-              <div class="comment">
-                <div class="comment-head">
-                  ${cd.isAdmin?`<span class="comment-badge">Marsha</span>`:""}
-                  <!-- Comment admin controls removed (Firebase-only deletes) -->
-                </div>
-                <div>${escBreaks(cd.text)}</div>
-              </div>`;
-          });
-        });
-    }
-  });
-}
-
-/* Keep delegated handler ONLY for comment posting (working behavior preserved) */
-feed.addEventListener("click",async e=>{
-  const t=e.target;
-  if(!t.dataset.act)return;
-
-  if(t.dataset.act==="comment"){
-    const box=t.closest(".post").querySelector(".comment-box");
-    if(!box.value.trim())return;
-    await db.collection("posts").doc(t.dataset.id).collection("comments")
-      .add({text:box.value,isAdmin,createdAt:firebase.firestore.FieldValue.serverTimestamp()});
-    box.value="";
-  }
-
-  /* Reactions were present in your original build but had no handler; left unchanged. */
-});
 </script>
+
 
 <!-- SITE FOOTER -->
 <footer class="site-footer">
