@@ -70,13 +70,13 @@
 </header>
 
 <!-- ======================================================
-     HERO BANNER (ZOOMED OUT / MORE CONTEXT)
+     HERO BANNER (ZOOMED OUT SLIGHTLY MORE)
 ====================================================== -->
 <section style="
   background-image:url('4-EGL_3367.jpg');
   background-size:cover;
-  background-position: center 18%;
-  min-height:600px;
+  background-position: center 12%;
+  min-height:680px;
   position:relative;
   display:flex;
   align-items:center;
@@ -152,7 +152,7 @@
 </section>
 
 <!-- ======================================================
-     REFLECTION SPACE (CLICKABLE, NON-GAMIFIED)
+     REFLECTION SPACE
 ====================================================== -->
 <section class="container" style="
   max-width:760px;
@@ -200,9 +200,12 @@
   border-radius:12px;
   margin-bottom:1rem;
   cursor:pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .reflection-option:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   color:#056367;
 }
 
@@ -255,20 +258,17 @@
 </footer>
 
 <!-- ======================================================
-     JAVASCRIPT (AUTOMATION)
+     JAVASCRIPT
 ====================================================== -->
 <script>
-/* Auto year */
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* Reflection reveal */
 function reflect(el) {
   const response = el.querySelector(".reflection-response");
   response.style.display =
     response.style.display === "block" ? "none" : "block";
 }
 
-/* Podcast feed */
 const FEED =
   "https://api.rss2json.com/v1/api.json?rss_url=https://feed.podbean.com/marshakerrtalley/feed.xml";
 
