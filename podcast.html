@@ -6,7 +6,7 @@
   <title>Live Inspired Reflections | Marsha Kerr Talley</title>
 
   <!-- =========================
-       GLOBAL STYLES (GoDaddy-harmonised)
+       GLOBAL STYLES
   ========================== -->
   <style>
     body {
@@ -26,14 +26,11 @@
       text-decoration: underline;
     }
 
-    section {
-      box-sizing: border-box;
-    }
-
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 1.5rem;
+      box-sizing: border-box;
     }
   </style>
 </head>
@@ -41,12 +38,13 @@
 <body>
 
 <!-- ======================================================
-     SITE HEADER / NAVIGATION
+     HEADER / NAVIGATION
 ====================================================== -->
 <header style="border-bottom:1px solid #e6f2f2;">
   <div class="container" style="padding:20px 0;text-align:center;">
     <a href="index.html">
-      <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired"
+      <img src="MKT-logo-3.png"
+           alt="Marsha Kerr Talley – Live Inspired"
            style="max-width:220px;margin-bottom:12px;">
     </a>
 
@@ -59,8 +57,8 @@
         padding:0;
         margin:0;
         font-size:14px;
-        text-transform:uppercase;
-        letter-spacing:0.08em;">
+        letter-spacing:0.08em;
+        text-transform:uppercase;">
         <li><a href="index.html">Home</a></li>
         <li><a href="work-with-me.html">Work With Me</a></li>
         <li><a href="books.html">Books</a></li>
@@ -72,11 +70,13 @@
 </header>
 
 <!-- ======================================================
-     HERO BANNER
+     HERO BANNER (ZOOMED OUT / MORE CONTEXT)
 ====================================================== -->
 <section style="
-  background:url('4-EGL_3367.jpg') center 30% / cover no-repeat;
-  min-height:480px;
+  background-image:url('4-EGL_3367.jpg');
+  background-size:cover;
+  background-position: center 18%;
+  min-height:600px;
   position:relative;
   display:flex;
   align-items:center;
@@ -85,17 +85,20 @@
   color:#ffffff;
 ">
   <div style="position:absolute;inset:0;background:rgba(0,0,0,0.45);"></div>
+
   <div style="position:relative;max-width:900px;padding:2rem;">
     <div style="
       font-family:Georgia,serif;
-      font-size:clamp(1.8rem,4vw,3rem);
+      font-size:clamp(1.9rem,4vw,3.1rem);
       line-height:1.3;">
       “Let’s make space for conversations that matter.”
     </div>
+
     <div style="
-      margin-top:1rem;
+      margin-top:1.2rem;
       letter-spacing:0.08em;
-      text-transform:uppercase;">
+      text-transform:uppercase;
+      font-size:0.95rem;">
       — Marsha Kerr Talley
     </div>
   </div>
@@ -112,7 +115,12 @@
     color:#056367;">
     Live Inspired Reflections
   </h1>
-  <p style="margin-top:6px;color:#319fa2;font-weight:700;">
+
+  <p style="
+    margin-top:6px;
+    font-size:clamp(15px,2.6vw,18px);
+    font-weight:700;
+    color:#319fa2;">
     Conversations with Marsha Kerr Talley
   </p>
 </div>
@@ -124,19 +132,19 @@
   <p style="
     max-width:68ch;
     margin:0 auto;
-    color:#0d4b4e;
-    font-size:clamp(15px,2.6vw,18px);">
+    font-size:clamp(15px,2.6vw,18px);
+    color:#0d4b4e;">
     In these conversations, I reflect on how people make sense of challenge,
     navigate change, and stay anchored in themselves when life feels demanding.
-    I offer grounded perspective and space to think — not quick fixes.
+    I offer grounded perspective and space to think — rather than quick fixes.
   </p>
 </div>
 
 <!-- ======================================================
-     EPISODE LIST (AUTO-UPDATING)
+     EPISODES (AUTO-UPDATING)
 ====================================================== -->
 <section class="container" style="margin:4rem auto;">
-  <h2 style="color:#056367;margin-bottom:2rem;">
+  <h2 style="color:#056367;margin-bottom:2.5rem;">
     Choose a conversation
   </h2>
 
@@ -144,62 +152,83 @@
 </section>
 
 <!-- ======================================================
-     REFLECTION SPACE (INTERACTIVE)
+     REFLECTION SPACE (CLICKABLE, NON-GAMIFIED)
 ====================================================== -->
 <section class="container" style="
   max-width:760px;
   background:#eef7f7;
-  padding:2.5rem;
-  border-radius:16px;
+  padding:2.75rem;
+  border-radius:18px;
   margin:4rem auto;">
-  <h2 style="color:#056367;">After listening</h2>
+  <h2 style="color:#056367;margin-bottom:1.5rem;">
+    After listening
+  </h2>
 
-  <div class="reflection-card" onclick="toggleCard(this)">
-    <strong>What belief felt affirmed?</strong>
-    <div class="reflection-options">
-      <p>I am allowed to change.</p>
-      <p>I don’t need to rush healing.</p>
-      <p>My needs are valid.</p>
-      <p>I am more capable than I realised.</p>
-    </div>
+  <div class="reflection-option" onclick="reflect(this)">
+    I am allowed to change.
+    <span class="reflection-response">
+      Notice where this feels true — or difficult — without needing to act.
+    </span>
   </div>
 
-  <div class="reflection-card" onclick="toggleCard(this)">
-    <strong>What felt gently challenged?</strong>
-    <div class="reflection-options">
-      <p>Where I hold on too tightly.</p>
-      <p>Where I silence myself.</p>
-      <p>Where I mistake endurance for strength.</p>
-    </div>
+  <div class="reflection-option" onclick="reflect(this)">
+    I don’t need to rush healing.
+    <span class="reflection-response">
+      What might soften if you trusted the pace you’re already moving at?
+    </span>
+  </div>
+
+  <div class="reflection-option" onclick="reflect(this)">
+    My needs are valid.
+    <span class="reflection-response">
+      Where have you learned to minimise this truth?
+    </span>
+  </div>
+
+  <div class="reflection-option" onclick="reflect(this)">
+    I am more capable than I realised.
+    <span class="reflection-response">
+      Let this be information, not a demand.
+    </span>
   </div>
 </section>
 
 <style>
-.reflection-card {
+.reflection-option {
   background:#ffffff;
   padding:1.25rem;
   border-radius:12px;
-  margin-top:1rem;
+  margin-bottom:1rem;
   cursor:pointer;
 }
 
-.reflection-options {
+.reflection-option:hover {
+  color:#056367;
+}
+
+.reflection-response {
   display:none;
-  margin-top:0.75rem;
-  color:#444;
+  margin-top:0.6rem;
+  font-size:0.9rem;
+  font-style:italic;
+  color:#555;
 }
 </style>
 
 <!-- ======================================================
-     SIGNUP (SUBSTACK)
+     SUBSTACK SIGNUP
 ====================================================== -->
 <section class="container" style="text-align:center;margin:4rem auto;">
   <h3 style="color:#056367;font-weight:400;">
     Stay connected
   </h3>
 
-  <form action="https://marshakerrtalley.substack.com" method="get" target="_blank">
-    <input type="email" required placeholder="Email"
+  <form action="https://marshakerrtalley.substack.com"
+        method="get"
+        target="_blank">
+    <input type="email"
+           required
+           placeholder="Email"
            style="padding:0.9rem;border-radius:6px;border:1px solid #ccc;">
     <button type="submit"
             style="
@@ -229,16 +258,17 @@
      JAVASCRIPT (AUTOMATION)
 ====================================================== -->
 <script>
-/* Footer year auto-update */
+/* Auto year */
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* Reflection cards */
-function toggleCard(card) {
-  const options = card.querySelector(".reflection-options");
-  options.style.display = options.style.display === "block" ? "none" : "block";
+/* Reflection reveal */
+function reflect(el) {
+  const response = el.querySelector(".reflection-response");
+  response.style.display =
+    response.style.display === "block" ? "none" : "block";
 }
 
-/* Podcast feed with automatic themes */
+/* Podcast feed */
 const FEED =
   "https://api.rss2json.com/v1/api.json?rss_url=https://feed.podbean.com/marshakerrtalley/feed.xml";
 
@@ -246,21 +276,27 @@ fetch(FEED)
   .then(res => res.json())
   .then(data => {
     const container = document.getElementById("podcast-episodes");
+
     data.items.slice(0,9).forEach(item => {
       const text = item.description.toLowerCase();
       let theme = "Reflection";
 
-      if (text.includes("belief") || text.includes("identity")) theme = "Belief & Identity";
-      if (text.includes("burnout") || text.includes("stress")) theme = "Burnout & Boundaries";
-      if (text.includes("grief") || text.includes("loss")) theme = "Grief & Meaning";
+      if (text.includes("belief") || text.includes("identity"))
+        theme = "Belief & Identity";
+      if (text.includes("burnout") || text.includes("stress"))
+        theme = "Burnout & Boundaries";
+      if (text.includes("grief") || text.includes("loss"))
+        theme = "Grief & Meaning";
 
       container.innerHTML += `
-        <div style="margin-bottom:2.5rem;">
+        <div style="margin-bottom:3rem;">
           <p style="font-size:0.75rem;color:#319fa2;text-transform:uppercase;">
             ${theme}
           </p>
           <h3 style="color:#056367;">${item.title}</h3>
-          <p>${item.description.replace(/(<([^>]+)>)/gi,"").slice(0,180)}…</p>
+          <p>
+            ${item.description.replace(/(<([^>]+)>)/gi,"").slice(0,180)}…
+          </p>
           <audio controls style="width:100%;">
             <source src="${item.enclosure.link}" type="audio/mpeg">
           </audio>
