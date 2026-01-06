@@ -165,12 +165,8 @@ textarea.comment-box { min-height:80px; white-space:pre-wrap }
     <h2>From YouTube · Watch & Reflect</h2>
     <p class="sub">Moments of insight, encouragement, and conversation.</p>
 
-    <div class="youtube-grid">
-      <!-- Replace these with your real YouTube IDs -->
-      <div class="yt-embed"><iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe></div>
-      <div class="yt-embed"><iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe></div>
-      <div class="yt-embed"><iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe></div>
-    </div>
+  <div id="youtubeGrid" class="youtube-grid"></div>
+    
   </div>
 
   <div id="adminIndicator">Admin logged in</div>
@@ -441,6 +437,63 @@ feed.addEventListener("click",async e=>{
   </div>
 </footer>
 
+<script>
+/* =========================
+   YOUTUBE PLAYLIST AUTO-PULL
+   ========================= */
+
+const YT_API_KEY = "AIzaSyC3xN***************5yU"; // your real key stays here locally
+const PLAYLIST_ID = "PLfLwFGreLvJGFe9llGE1qj-0zx8sOWZui";
+const MAX_RESULTS = 6; // change to 3, 6, or 9 if you like
+
+async function loadYouTubePlaylist() {
+  const grid = document.getElementById("youtubeGrid");
+  if (!grid) return;
+
+  try {
+    const response = await fetch(
+      `https://www.googleapis.com/youtube/v3/playlistItems` +
+      `?part=snippet` +
+      `&playlistId=${PLAYLIST_ID}` +
+      `&maxResults=${MAX_RESULTS}` +
+      `&key=${YT_API_KEY}`
+    );
+
+    const data = await response.json();
+    if (!data.items) throw data;
+
+    grid.innerHTML = "";
+
+    data.items.forEach(item => {
+      const videoId = item.snippet.resourceId.videoId;
+
+      grid.innerHTML += `
+        <div class="yt-embed">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/${videoId}"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      `;
+    });
+
+  } catch (err) {
+    grid.innerHTML = `
+      <div class="error-box">
+        <strong>Unable to load YouTube videos.</strong><br>
+        Please check API key, playlist visibility, or quota.
+      </div>
+    `;
+    console.error("YouTube API error:", err);
+  }
+}
+
+loadYouTubePlaylist();
+</script>
+
+
+  
 <!-- FOOTER STYLES -->
 <style>
 .site-footer {
