@@ -62,7 +62,6 @@
   </div>
 </header>
 
-
 <!-- LIVE INSPIRED COMMUNITY | FINAL ARCHIVED BUILD (NO UI EDIT/DELETE; FIREBASE-ONLY DELETES)
      Archived: 2025-12-19
      Admin deletes handled in Firebase Console (Firestore) only.
@@ -83,25 +82,31 @@ p.sub { text-align:center; color:#0d4b4e }
 
 .card,.post { background:#fff; border:3px solid #2fe2dd; border-radius:26px; padding:24px; display:grid; gap:16px; box-shadow:0 20px 60px rgba(0,0,0,.08) }
 
-/* 🔹 NEW: YouTube section */
-.youtube-section h2 {
+/* ✅ NEW: YouTube section (matches your card style) */
+.youtube-section h2{
   text-align:center;
   color:#056367;
-  margin-bottom:6px;
+  margin:0;
+  font-size:26px;
+  font-weight:900;
 }
-.youtube-grid {
+.youtube-grid{
   display:grid;
-  gap:20px;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  align-items:stretch;
 }
-.youtube-video {
+.yt-embed{
+  width:100%;
   aspect-ratio:16/9;
+  border-radius:18px;
+  overflow:hidden;
+  background:#000;
 }
-.youtube-video iframe {
+.yt-embed iframe{
   width:100%;
   height:100%;
-  border-radius:18px;
-  border:none;
+  border:0;
 }
 
 .admin-link { text-align:right; font-size:14px; color:#056367; cursor:pointer; text-decoration:underline }
@@ -118,6 +123,7 @@ button { background:linear-gradient(135deg,#056367,#319fa2); color:#fff; border:
 
 .post-topbar { display:flex; justify-content:space-between; align-items:flex-start; gap:12px }
 .post-date { font-size:13px; color:#0d4b4e }
+.admin-mini a,.comment-mini a { font-size:13px; color:#056367; text-decoration:underline; cursor:pointer; margin-left:10px }
 
 .reactions { display:flex; gap:10px; flex-wrap:wrap }
 .reactions button { background:#f0fefe; color:#056367; border:1px solid #2fe2dd; padding:6px 14px; font-weight:800 }
@@ -126,7 +132,8 @@ textarea.comment-box { min-height:80px; white-space:pre-wrap }
 .comment-actions { display:flex; justify-content:flex-end }
 .comment-submit { margin-top:6px; padding:6px 16px; font-size:14px }
 
-.comment { border-top:1px solid #e0f7f7; padding-top:10px; display:grid; gap:6px }
+.comment { border-top:1px solid #e0f7f7; padding-top:10px; white-space:pre-wrap; display:grid; gap:6px }
+.comment-head { display:flex; justify-content:space-between; align-items:center; gap:10px }
 .comment-badge { font-size:12px; font-weight:800; color:#056367; border:1px solid #2fe2dd; background:#f0fefe; padding:2px 10px; border-radius:999px }
 
 .media img,.media video { width:100%; border-radius:16px }
@@ -135,27 +142,34 @@ textarea.comment-box { min-height:80px; white-space:pre-wrap }
 .media-vertical iframe,.media-wide iframe { width:100%; height:100%; border-radius:16px }
 
 #preview { max-height:360px; overflow-y:auto }
+#preview img,#preview video { max-height:340px; object-fit:contain }
+
+/* ✅ NEW: visible error box if Firestore fails */
+.error-box{
+  border:2px solid #ffb3b3;
+  background:#fff5f5;
+  color:#7a1f1f;
+  padding:14px 16px;
+  border-radius:16px;
+  font-size:14px;
+  line-height:1.5;
+}
 </style>
 
 <div class="wrap">
   <h1>Live Inspired Community</h1>
   <p class="sub">Encouragement, reflection, and shared growth.</p>
 
-  <!-- 🔹 NEW: YouTube Section -->
+  <!-- ✅ NEW: YouTube section inserted above admin/feed -->
   <div class="card youtube-section">
     <h2>From YouTube · Watch & Reflect</h2>
     <p class="sub">Moments of insight, encouragement, and conversation.</p>
 
     <div class="youtube-grid">
-      <div class="youtube-video">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
-      </div>
-      <div class="youtube-video">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
-      </div>
-      <div class="youtube-video">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
-      </div>
+      <!-- Replace these with your real YouTube IDs -->
+      <div class="yt-embed"><iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe></div>
+      <div class="yt-embed"><iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe></div>
+      <div class="yt-embed"><iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe></div>
     </div>
   </div>
 
@@ -169,6 +183,7 @@ textarea.comment-box { min-height:80px; white-space:pre-wrap }
     <div id="loginStatus"></div>
   </div>
 
+  <!-- ADMIN ONLY COMPOSER (hidden from public) -->
   <div class="card" id="composer" style="display:none">
     <textarea id="postText" class="post-message" placeholder="Write your message…"></textarea>
     <input id="mediaUrl" placeholder="Optional media URL (image, video, or YouTube)">
@@ -184,7 +199,227 @@ textarea.comment-box { min-height:80px; white-space:pre-wrap }
 </div>
 </section>
 
-<!-- 🔒 Firebase + Community logic remains EXACTLY as provided -->
+<script>
+firebase.initializeApp({
+  apiKey:"AIzaSyBZCg70hhCkx01ccZWePeIKAZEPC3mejkc",
+  authDomain:"testimonials-8100a.firebaseapp.com",
+  projectId:"testimonials-8100a",
+  storageBucket:"testimonials-8100a.appspot.com"
+});
+
+const db=firebase.firestore();
+const storage=firebase.storage();
+const auth=firebase.auth();
+
+const ADMIN_UID="Pv7XvFLXa8Xh1j0EMpiKoG2dIyX2";
+const REACTION_ORDER=["❤️","🙏","😂","😮","😢","🔥"];
+let isAdmin=false, postsCache=[], commentUnsubs={};
+
+/* ✅ Explicit DOM refs (Safari-safe) */
+const adminIndicator = document.getElementById("adminIndicator");
+const adminLoginBox  = document.getElementById("adminLoginBox");
+const composer       = document.getElementById("composer");
+const feed           = document.getElementById("feed");
+const adminEmail     = document.getElementById("adminEmail");
+const adminPassword  = document.getElementById("adminPassword");
+const loginStatus    = document.getElementById("loginStatus");
+const postText       = document.getElementById("postText");
+const mediaUrl       = document.getElementById("mediaUrl");
+const fileInput      = document.getElementById("fileInput");
+const preview        = document.getElementById("preview");
+
+function esc(s){return String(s||"").replace(/[&<>"']/g,m=>({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[m]))}
+function escBreaks(s){return esc(s).replace(/\n/g,"<br>")}
+
+(async()=>{try{await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL)}catch{}})();
+
+auth.onAuthStateChanged(u=>{
+  isAdmin=!!(u&&u.uid===ADMIN_UID);
+
+  adminIndicator.style.display=isAdmin?"block":"none";
+  adminIndicator.innerHTML=isAdmin
+    ? `Admin logged in<br><span style="font-weight:700; font-size:12px; color:#0d4b4e;">Note: Deletes are handled in Firebase Console (Firestore) only.</span>`
+    : "Admin logged in";
+
+  composer.style.display=isAdmin?"grid":"none";
+  if(isAdmin) adminLoginBox.style.display="none";
+  renderFeed();
+});
+
+function toggleAdminLogin(){
+  adminLoginBox.style.display = (adminLoginBox.style.display==="grid") ? "none" : "grid";
+}
+async function adminLogin(){
+  try{
+    await auth.signInWithEmailAndPassword(adminEmail.value,adminPassword.value);
+    loginStatus.innerText="Admin logged in";
+    adminLoginBox.style.display="none";
+  }catch(e){
+    loginStatus.innerText=e.message;
+  }
+}
+
+function parseYouTube(u){
+  u = String(u||"");
+  if(u.includes("/shorts/"))return{id:u.split("/shorts/")[1].split(/[?&]/)[0],short:true};
+  if(u.includes("watch?v="))return{id:u.split("watch?v=")[1].split("&")[0],short:false};
+  if(u.includes("youtu.be/"))return{id:u.split("youtu.be/")[1].split(/[?&]/)[0],short:false};
+  return{id:"",short:false};
+}
+
+/* Media preview */
+mediaUrl.oninput=()=>{
+  if(fileInput.files[0])return;
+  preview.innerHTML="";
+  const yt=parseYouTube(mediaUrl.value.trim());
+  if(yt.id){
+    preview.innerHTML=yt.short
+      ? `<div class="media-vertical"><iframe src="https://www.youtube.com/embed/${yt.id}" allowfullscreen></iframe></div>`
+      : `<div class="media-wide"><iframe src="https://www.youtube.com/embed/${yt.id}" allowfullscreen></iframe></div>`;
+  }
+};
+
+fileInput.addEventListener("change",()=>{
+  preview.innerHTML="";
+  const f=fileInput.files[0];
+  if(!f)return;
+  const blob=URL.createObjectURL(f);
+  preview.innerHTML=f.type.startsWith("video")
+    ? `<video controls src="${blob}"></video>`
+    : `<img src="${blob}">`;
+  mediaUrl.value="";
+});
+
+function clearMedia(){
+  mediaUrl.value="";
+  fileInput.value="";
+  preview.innerHTML="";
+}
+
+async function publishPost(){
+  if(!isAdmin)return alert("Admin only");
+  let media="",type="",ytShort=false;
+
+  if(fileInput.files[0]){
+    const f=fileInput.files[0];
+    const ref=storage.ref("community_uploads/"+Date.now()+"_"+f.name);
+    await ref.put(f,{contentType:f.type});
+    media=await ref.getDownloadURL();
+    type=f.type.startsWith("video")?"video":"image";
+  }else if(mediaUrl.value.trim()){
+    const yt=parseYouTube(mediaUrl.value.trim());
+    media=mediaUrl.value.trim();
+    if(yt.id){type="youtube";ytShort=yt.short}
+    else type="image";
+  }
+
+  await db.collection("posts").add({
+    text:postText.value,
+    media,type,ytShort,
+    reactions:{ "❤️":0,"🙏":0,"😂":0,"😮":0,"😢":0,"🔥":0 },
+    reactionUsers:{},
+    createdAt:firebase.firestore.FieldValue.serverTimestamp()
+  });
+
+  postText.value="";
+  clearMedia();
+}
+
+/* ✅ Snapshot with visible error reporting */
+db.collection("posts").orderBy("createdAt","desc").onSnapshot(
+  s=>{
+    postsCache=s.docs;
+    renderFeed();
+  },
+  err=>{
+    feed.innerHTML = `
+      <div class="error-box">
+        <strong>Your Community feed didn’t load.</strong><br>
+        Firebase error: <code>${esc(err.message || err)}</code><br><br>
+        Most common causes:<br>
+        • Firestore security rules blocking reads<br>
+        • Wrong projectId / rules changed<br>
+        • Network/ad-blocker blocking Firebase<br>
+      </div>
+    `;
+  }
+);
+
+function renderFeed(){
+  feed.innerHTML="";
+  postsCache.forEach(doc=>{
+    const p=doc.data();
+    const date=p.createdAt?.toDate().toLocaleString()||"";
+
+    const reactions=REACTION_ORDER.map(r=>
+      `<button data-act="react" data-id="${doc.id}" data-emo="${r}">${r} ${(p.reactions||{})[r]||0}</button>`
+    ).join("");
+
+    feed.innerHTML+=`
+      <div class="post">
+        <div class="post-topbar">
+          <div class="post-date">${date}</div>
+        </div>
+        <div>${escBreaks(p.text)}</div>
+
+        <div class="media">
+          ${p.type==="image"?`<img src="${esc(p.media)}">`:""}
+          ${p.type==="video"?`<video controls src="${esc(p.media)}"></video>`:""}
+          ${p.type==="youtube"?(
+            p.ytShort
+              ? `<div class="media-vertical"><iframe src="https://www.youtube.com/embed/${parseYouTube(p.media).id}" allowfullscreen></iframe></div>`
+              : `<div class="media-wide"><iframe src="https://www.youtube.com/embed/${parseYouTube(p.media).id}" allowfullscreen></iframe></div>`
+          ):""}
+        </div>
+
+        <div class="reactions">${reactions}</div>
+
+        <div id="comments-${doc.id}"></div>
+        <textarea class="comment-box" placeholder="Write a comment…"></textarea>
+        <div class="comment-actions">
+          <button class="comment-submit" data-act="comment" data-id="${doc.id}">Post comment</button>
+        </div>
+      </div>`;
+
+    if(!commentUnsubs[doc.id]){
+      commentUnsubs[doc.id]=db.collection("posts").doc(doc.id)
+        .collection("comments").orderBy("createdAt","asc")
+        .onSnapshot(cs=>{
+          const box=document.getElementById("comments-"+doc.id);
+          if(!box)return;
+          box.innerHTML="";
+          cs.forEach(c=>{
+            const cd=c.data();
+            box.innerHTML+=`
+              <div class="comment">
+                <div class="comment-head">
+                  ${cd.isAdmin?`<span class="comment-badge">Marsha</span>`:""}
+                </div>
+                <div>${escBreaks(cd.text)}</div>
+              </div>`;
+          });
+        });
+    }
+  });
+}
+
+/* Keep delegated handler ONLY for comment posting (working behavior preserved) */
+feed.addEventListener("click",async e=>{
+  const t=e.target;
+  if(!t.dataset.act)return;
+
+  if(t.dataset.act==="comment"){
+    const box=t.closest(".post").querySelector(".comment-box");
+    if(!box.value.trim())return;
+    await db.collection("posts").doc(t.dataset.id).collection("comments")
+      .add({text:box.value,isAdmin,createdAt:firebase.firestore.FieldValue.serverTimestamp()});
+    box.value="";
+  }
+
+  /* Reactions were present in your original build but had no handler; left unchanged. */
+});
+</script>
+
 
 
 
