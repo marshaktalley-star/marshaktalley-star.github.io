@@ -32,12 +32,6 @@
       padding: 0 1.5rem;
       box-sizing: border-box;
     }
-@media (max-width: 768px) {
-  section[style*="background-image"] {
-    min-height: 300px;
-    background-position: center 35%;
-  }
-  
   </style>
 </head>
 
@@ -79,18 +73,16 @@
      HERO BANNER (ZOOMED OUT SLIGHTLY MORE)
 ====================================================== -->
 <section style="
-  background-image: url('4-EGL_3367.jpg');
-  background-size: contain;
-  background-position: center 28%;
-  background-repeat: no-repeat;
-  min-height: 420px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #ffffff;
-
+  background-image:url('4-EGL_3367.jpg');
+  background-size:cover;
+  background-position: center 12%;
+  min-height:680px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#ffffff;
 ">
   <div style="position:absolute;inset:0;background:rgba(0,0,0,0.45);"></div>
 
@@ -255,66 +247,64 @@
   </form>
 </section>
 
-<!-- SITE FOOTER -->
-<footer class="site-footer">
-  <div class="footer-inner">
-
-    <p class="copyright">
-      Copyright © <span id="currentYear"></span> Marsha Kerr Talley — All Rights Reserved.
-    </p>
-
-    <nav class="footer-links">
-      <a href="/privacy-policy">Privacy Policy</a>
-      <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
-      <a href="/terms-and-conditions">Terms and Conditions</a>
-    </nav>
-
-  </div>
+<!-- ======================================================
+     FOOTER (AUTO-YEAR)
+====================================================== -->
+<footer style="border-top:1px solid #eee;padding:2.5rem;text-align:center;">
+  <p style="color:#666;">
+    © <span id="year"></span> Marsha Kerr Talley. All Rights Reserved.
+  </p>
+  <a href="/privacy-policy">Privacy Policy</a> | <a href="/terms">Terms</a>
 </footer>
 
-<!-- FOOTER STYLES -->
-<style>
-.site-footer {
-  background-color: #ffffff;
-  border-top: 1px solid #eee;
-  padding: 2.5rem 1.5rem 2rem;
-  text-align: center;
-  font-family: inherit;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.site-footer p {
-  margin: 0 0 1.4rem;
-  font-size: 0.95rem;
-  color: #666;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.footer-links a {
-  font-size: 1rem;
-  color: #319fa2;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #056367;
-  text-decoration: underline;
-}
-</style>
-
-<!-- AUTO-UPDATE COPYRIGHT YEAR -->
+<!-- ======================================================
+     JAVASCRIPT
+====================================================== -->
 <script>
-  document.getElementById("currentYear").textContent =
-    new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
+
+function reflect(el) {
+  const response = el.querySelector(".reflection-response");
+  response.style.display =
+    response.style.display === "block" ? "none" : "block";
+}
+
+const FEED =
+  "https://api.rss2json.com/v1/api.json?rss_url=https://feed.podbean.com/marshakerrtalley/feed.xml";
+
+fetch(FEED)
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById("podcast-episodes");
+
+    data.items.slice(0,9).forEach(item => {
+      const text = item.description.toLowerCase();
+      let theme = "Reflection";
+
+      if (text.includes("belief") || text.includes("identity"))
+        theme = "Belief & Identity";
+      if (text.includes("burnout") || text.includes("stress"))
+        theme = "Burnout & Boundaries";
+      if (text.includes("grief") || text.includes("loss"))
+        theme = "Grief & Meaning";
+
+      container.innerHTML += `
+        <div style="margin-bottom:3rem;">
+          <p style="font-size:0.75rem;color:#319fa2;text-transform:uppercase;">
+            ${theme}
+          </p>
+          <h3 style="color:#056367;">${item.title}</h3>
+          <p>
+            ${item.description.replace(/(<([^>]+)>)/gi,"").slice(0,180)}…
+          </p>
+          <audio controls style="width:100%;">
+            <source src="${item.enclosure.link}" type="audio/mpeg">
+          </audio>
+        </div>
+      `;
+    });
+  });
 </script>
+
+</body>
+</html>
