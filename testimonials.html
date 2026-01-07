@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <!-- ======================================================
+       DOCUMENT METADATA
+  ====================================================== -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Marsha Kerr Talley | Turning Pain Into Possibilities</title>
 
+  <!-- ======================================================
+       BANNER & TESTIMONIAL STYLES
+  ====================================================== -->
   <style>
     body {
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:#ffffff;
-      color:#555;
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #ffffff;
+      color: #333;
     }
 
-    /* ===== BANNER STYLES ===== */
+    /* ===== Banner ===== */
     .banner {
       position: relative;
       width: 100%;
-      max-width: 100%;
       overflow: hidden;
     }
 
@@ -51,7 +57,6 @@
 
     .quote-mark {
       font-size: 3rem;
-      line-height: 1;
       opacity: 0.7;
       margin-bottom: 0.5rem;
     }
@@ -60,14 +65,12 @@
       font-family: Georgia, "Times New Roman", serif;
       font-size: clamp(1.8rem, 4vw, 3rem);
       line-height: 1.25;
-      font-weight: 400;
-      margin: 0 0 1.25rem 0;
+      margin-bottom: 1.25rem;
     }
 
     .quote-author {
       font-size: 1rem;
       letter-spacing: 0.04em;
-      opacity: 0.9;
     }
 
     @media (max-width: 768px) {
@@ -75,52 +78,60 @@
         background: rgba(0,0,0,0.55);
         text-align: center;
       }
-      .quote-wrapper { max-width: 100%; }
     }
 
-    /* ===== TESTIMONIALS ===== */
-    :root { --teal:#6aa9a9; }
-
-    .testimonials-section{
-      max-width:1200px;
-      margin:0 auto;
-      padding:4rem 1.5rem 5rem;
-      box-sizing:border-box;
-      text-align:center;
+    /* ===== Testimonials ===== */
+    :root {
+      --teal:#6aa9a9;
+      --text:#555;
     }
 
-    .section-title{
-      display:flex;
-      align-items:center;
-      gap:1.5rem;
-      margin-bottom:2.5rem;
+    .testimonials-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 5rem;
+      text-align: center;
+      color: var(--text);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
     }
 
     .section-title::before,
-    .section-title::after{
-      content:"";
-      flex:1;
-      height:1px;
-      background:var(--teal);
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--teal);
     }
 
-    .section-title h2{
-      margin:0;
-      font-size:clamp(1.8rem,3vw,2.6rem);
-      font-weight:500;
-      color:var(--teal);
-      white-space:nowrap;
+    .section-title h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 500;
+      color: var(--teal);
+      white-space: nowrap;
     }
 
-    .testimonial-text{
-      max-width:900px;
-      margin:0 auto;
-      font-size:1.15rem;
-      line-height:1.8;
-      color:#666;
+    .testimonial-text {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #666;
     }
 
-    /* ===== FOOTER ===== */
+    @media (max-width: 768px) {
+      .testimonial-text {
+        font-size: 1.05rem;
+      }
+    }
+
+    /* ===== Footer ===== */
     .site-footer {
       background-color: #ffffff;
       border-top: 1px solid #eee;
@@ -133,12 +144,6 @@
       margin: 0 auto;
     }
 
-    .site-footer p {
-      margin: 0 0 1.4rem;
-      font-size: 0.95rem;
-      color: #666;
-    }
-
     .footer-links {
       display: flex;
       justify-content: center;
@@ -147,41 +152,52 @@
     }
 
     .footer-links a {
-      font-size: 1rem;
       color: #319fa2;
       text-decoration: none;
-      transition: color 0.3s ease;
     }
 
     .footer-links a:hover {
-      color: #056367;
       text-decoration: underline;
     }
   </style>
+
+  <!-- ======================================================
+       TAILWIND CSS
+  ====================================================== -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ======================================================
+       FIREBASE SDK
+  ====================================================== -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
 </head>
 
 <body>
 
-<!-- SITE HEADER / NAVIGATION -->
-<header style="width:100%;background:#ffffff;border-bottom:1px solid #e6f2f2;">
-  <div style="max-width:1200px;margin:0 auto;padding:20px 16px 12px;display:flex;flex-direction:column;align-items:center;">
+<!-- ======================================================
+     SITE HEADER / NAVIGATION
+====================================================== -->
+<header style="background:#ffffff;border-bottom:1px solid #e6f2f2;">
+  <div style="max-width:1200px;margin:0 auto;padding:20px 16px 12px;text-align:center;">
     <a href="index.html">
-      <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired"
-        style="max-width:220px;width:100%;height:auto;display:block;margin:0 auto 12px;">
+      <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired" style="max-width:220px;">
     </a>
-
     <nav aria-label="Main navigation">
-      <ul style="list-style:none;padding:0;margin:0;display:flex;gap:28px;flex-wrap:wrap;justify-content:center;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;">
-        <li><a href="index.html" style="color:#056367;text-decoration:none;font-weight:600;">Home</a></li>
-        <li><a href="work-with-me.html" style="color:#2f2f2f;text-decoration:none;">Work With Me</a></li>
-        <li><a href="books.html" style="color:#2f2f2f;text-decoration:none;">Books</a></li>
-        <li><a href="podcast.html" style="color:#2f2f2f;text-decoration:none;">Podcast</a></li>
-        <li><a href="reflections.html" style="color:#2f2f2f;text-decoration:none;">Reflections</a></li>
+      <ul style="list-style:none;display:flex;gap:28px;justify-content:center;padding:0;margin-top:12px;font-size:14px;text-transform:uppercase;">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work-with-me.html">Work With Me</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="podcast.html">Podcast</a></li>
+        <li><a href="reflections.html">Reflections</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
+<!-- ======================================================
+     HERO BANNER
+====================================================== -->
 <section class="banner">
   <img src="MKT-banner.png" alt="Marsha Kerr Talley banner">
   <div class="banner-content">
@@ -196,8 +212,13 @@
   </div>
 </section>
 
+<!-- ======================================================
+     TESTIMONIALS
+====================================================== -->
 <section class="testimonials-section">
-  <div class="section-title"><h2>Testimonials</h2></div>
+  <div class="section-title">
+    <h2>Testimonials</h2>
+  </div>
   <p class="testimonial-text">
     Marsha Kerr Talley is a true life enthusiast who inspires others to live fully and intentionally.
     Through her work as a lecturer, author, podcaster, and lifestyle coach, she empowers people to
@@ -205,17 +226,38 @@
   </p>
 </section>
 
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
+<!-- ======================================================
+     TESTIMONIAL SUBMISSION FORM
+====================================================== -->
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#056367] via-[#319fa2] to-[#2fe2dd] py-12">
+  <div class="max-w-xl w-full p-8 bg-white/75 rounded-3xl shadow-2xl">
+    <h2 class="text-4xl font-bold text-center text-[#056367] mb-6">Share Your Experience</h2>
 
-<!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+    <form id="reviewForm" class="space-y-6">
+      <div>
+        <div id="starRating" class="flex gap-2 text-3xl cursor-pointer">
+          <span data-value="1" class="star text-gray-300">★</span>
+          <span data-value="2" class="star text-gray-300">★</span>
+          <span data-value="3" class="star text-gray-300">★</span>
+          <span data-value="4" class="star text-gray-300">★</span>
+          <span data-value="5" class="star text-gray-300">★</span>
+        </div>
+      </div>
 
-<!-- SITE FOOTER -->
+      <textarea id="message" rows="4" required class="w-full p-3 border rounded-xl"></textarea>
+
+      <button type="submit" class="w-full bg-[#056367] text-white p-3 rounded-xl">Submit</button>
+      <p id="successMsg" class="hidden text-center text-[#056367]">Thank you for sharing ✨</p>
+    </form>
+  </div>
+</div>
+
+<!-- ======================================================
+     SITE FOOTER
+====================================================== -->
 <footer class="site-footer">
   <div class="footer-inner">
-    <p>Copyright © <span id="currentYear"></span> Marsha Kerr Talley — All Rights Reserved.</p>
+    <p>Copyright © <span id="currentYear"></span> Marsha Kerr Talley</p>
     <nav class="footer-links">
       <a href="/privacy-policy">Privacy Policy</a>
       <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
@@ -224,8 +266,53 @@
   </div>
 </footer>
 
+<!-- ======================================================
+     SCRIPTS
+====================================================== -->
 <script>
   document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBZCg70hhCkx01ccZWePeIKAZEPC3mejkc",
+    authDomain: "testimonials-8100a.firebaseapp.com",
+    projectId: "testimonials-8100a",
+    storageBucket: "testimonials-8100a.firebasestorage.app",
+    messagingSenderId: "718470051880",
+    appId: "1:718470051880:web:0e42651ea9db9201019d1d"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  let currentRating = 0;
+  const stars = document.querySelectorAll(".star");
+
+  stars.forEach(star => {
+    star.addEventListener("click", () => {
+      currentRating = parseInt(star.dataset.value);
+      updateStars();
+    });
+  });
+
+  function updateStars() {
+    stars.forEach(s => {
+      s.classList.toggle("text-yellow-400", s.dataset.value <= currentRating);
+      s.classList.toggle("text-gray-300", s.dataset.value > currentRating);
+    });
+  }
+
+  document.getElementById("reviewForm").addEventListener("submit", async e => {
+    e.preventDefault();
+    const message = document.getElementById("message").value.trim();
+    if (!currentRating || !message) return;
+    await db.collection("reviews").add({ rating: currentRating, message, timestamp: Date.now() });
+    e.target.reset();
+    currentRating = 0;
+    updateStars();
+    document.getElementById("successMsg").classList.remove("hidden");
+  });
 </script>
 
 </body>
