@@ -62,9 +62,79 @@
   </div>
 </header>
 
+<!-- =========================
+     HERO BANNER
+========================== -->
+<section class="hero-banner">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>
+        Presence matters. I bring warmth,<br>
+        clarity, and vibrancy into the room.
+      </h1>
+      <p class="hero-name">Marsha Kerr Talley</p>
+    </div>
+  </div>
+</section>
 
+<!-- =========================
+     HERO STYLES
+========================== -->
+<style>
+  .hero-banner {
+    position: relative;
+    width: 100%;
+    min-height: 75vh;
+    background-image: url("MKT-Website-Banner.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+  }
 
+  /* Soft overlay for readability */
+  .hero-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+  }
 
+  .hero-content {
+    max-width: 1100px;
+    padding: 0 2rem;
+    margin: 0 auto;
+    color: #ffffff;
+  }
+
+  .hero-content h1 {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .hero-name {
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+
+  /* Mobile refinement */
+  @media (max-width: 768px) {
+    .hero-banner {
+      min-height: 65vh;
+    }
+
+    .hero-content {
+      text-align: left;
+    }
+  }
+</style>
 
 
 <section style="max-width:1100px;margin:0 auto;padding:3.5rem 1.5rem;font-family:inherit;">
@@ -262,6 +332,205 @@
 </section>
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Let's Talk | Marsha Kerr Talley</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #ffffff;
+      color: #333;
+    }
+
+    /* =========================
+       CONTACT SECTION
+    ========================== */
+    .contact-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+      text-align: center;
+    }
+
+    .section-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: #319fa2;
+    }
+
+    .section-divider::before,
+    .section-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #319fa2;
+      opacity: 0.5;
+    }
+
+    .section-divider span {
+      padding: 0 1.5rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      color: #056367;
+    }
+
+    .contact-intro {
+      font-size: 1.1rem;
+      color: #056367;
+      margin-bottom: 3rem;
+    }
+
+    /* =========================
+       FORM STYLES
+    ========================== */
+    form {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+      border: 1px solid #e2e2e2;
+      border-radius: 6px;
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #777;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #319fa2;
+    }
+
+    /* =========================
+       BUTTON
+    ========================== */
+    .submit-wrapper {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    button {
+      background: #319fa2;
+      color: #ffffff;
+      border: none;
+      padding: 0.9rem 2.8rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #056367;
+    }
+
+    /* =========================
+       FOOTNOTE
+    ========================== */
+    .form-footnote {
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      color: #777;
+      text-align: center;
+    }
+
+    .form-footnote a {
+      color: #056367;
+      text-decoration: none;
+    }
+
+    .form-footnote a:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+    @media (max-width: 600px) {
+      .contact-section {
+        padding: 3.5rem 1.25rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="contact-section">
+
+    <div class="section-divider">
+      <span>Let's Talk</span>
+    </div>
+
+    <p class="contact-intro">
+      Share what you’re seeking, and we’ll take it from there.
+    </p>
+
+    <form action="#" method="post">
+      
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Name" />
+      </div>
+
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Email*" required />
+      </div>
+
+      <div class="form-group">
+        <input type="tel" name="phone" placeholder="Phone" />
+      </div>
+
+      <div class="form-group">
+        <textarea name="interest" placeholder="I'm interested in"></textarea>
+      </div>
+
+      <div class="form-group">
+        <textarea name="notes" placeholder="Other notes"></textarea>
+      </div>
+
+      <div class="submit-wrapper">
+        <button type="submit">SEND</button>
+      </div>
+
+    </form>
+
+    <p class="form-footnote">
+      This site is protected by reCAPTCHA and the Google
+      <a href="#">Privacy Policy</a> and
+      <a href="#">Terms of Service</a> apply.
+    </p>
+
+  </section>
+
+</body>
+</html>
 
 
 
