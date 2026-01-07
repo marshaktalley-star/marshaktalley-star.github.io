@@ -65,116 +65,112 @@
 
 
 
-
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Interactive Emotion Wheel</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wheel of Emotions – PDF Preview</title>
 
 <style>
-  * { box-sizing: border-box; }
-
-  html, body {
+  body {
     margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-      Roboto, Helvetica, Arial, sans-serif;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: #ffffff;
+    color: #333;
   }
 
-  .wheel-wrap {
+  .pdf-wrapper {
     max-width: 900px;
-    margin: 0 auto;
-    padding: 2.5rem 1.25rem;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
     text-align: center;
   }
 
-  .wheel-card {
-    background: rgba(49,159,162,.18);
-    border-radius: 22px;
-    padding: clamp(20px,4vw,36px);
+  .pdf-header {
+    background: #056367;
+    color: #ffffff;
+    padding: 2rem;
+    border-radius: 16px 16px 0 0;
   }
 
-  .wheel-title {
-    margin: 0 0 .5rem;
-    color: #056367;
-    font-size: clamp(22px,2.6vw,34px);
+  .pdf-header h2 {
+    margin: 0;
+    font-size: 2rem;
+  }
+
+  .pdf-header p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+
+  .pdf-preview {
+    border: 1px solid #e5e5e5;
+    border-top: none;
+    border-radius: 0 0 16px 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  }
+
+  iframe {
+    width: 100%;
+    height: 650px;
+    border: none;
+  }
+
+  .download-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.9rem 2rem;
+    background: #319fa2;
+    color: #ffffff;
+    text-decoration: none;
     font-weight: 600;
+    border-radius: 999px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
   }
 
-  .wheel-sub {
-    margin: 0 auto 1.4rem;
-    max-width: 680px;
-    font-size: 15px;
-    line-height: 1.55;
-    color: #3b3b3b;
+  .download-btn:hover {
+    transform: translateY(-4px);
+    background: #056367;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.18);
   }
 
-  .wheel-stage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: visible;
-  }
-
-  .wheel-svg {
-    width: min(520px, 90vw);
-    height: auto;
-    display: block;
-    overflow: visible;
-    filter: drop-shadow(0 10px 18px rgba(0,0,0,.12));
-  }
-
-  /* Interaction */
-  .slice {
-    cursor: pointer;
-    transform-origin: 200px 200px;
-    transition: transform .25s ease, filter .25s ease, opacity .25s ease;
-  }
-
-  .slice.dimmed { opacity: 0.35; }
-
-  .slice.active {
-    transform: scale(1.06);
-    filter: saturate(1.12);
-    opacity: 1;
-  }
-
-  /* Text – softened */
-  .label {
-    font-size: 18px;
-    font-weight: 600;
-    fill: rgba(0,0,0,.78);
-    text-anchor: middle;
-    pointer-events: none;
-  }
-
-  .word {
-    font-size: 13px;
-    font-weight: 400;
-    fill: rgba(0,0,0,.62);
-    text-anchor: middle;
-    pointer-events: none;
-    transition: font-weight .2s ease, fill .2s ease;
-  }
-
-  .word:hover {
-    font-weight: 600;
-    fill: rgba(0,0,0,.8);
-  }
-
-  .wheel-hint {
-    margin-top: 1rem;
-    font-size: 13px;
-    font-weight: 600;
-    color: #056367;
+  @media (max-width: 768px) {
+    iframe {
+      height: 500px;
+    }
   }
 </style>
 </head>
 
 <body>
+
+<section class="pdf-wrapper">
+
+  <div class="pdf-header">
+    <h2>Wheel of Emotions</h2>
+    <p>A gentle check-in tool to help name, notice, and understand how you’re feeling.</p>
+  </div>
+
+  <div class="pdf-preview">
+    <iframe src="Wheel-Emotions.pdf#view=fitH"></iframe>
+  </div>
+
+  <a class="download-btn" href="Wheel-Emotions.pdf" download>
+    Download PDF
+  </a>
+
+</section>
+
+
+
+
+
+
+
+
+
 
 <section class="wheel-wrap">
   <div class="wheel-card">
@@ -315,7 +311,150 @@
 
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Activity Menu</title>
 
+<style>
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: #ffffff;
+    color: #333;
+  }
+
+  .menu-wrapper {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .menu-wrapper h1 {
+    color: #056367;
+    font-size: 2.4rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .menu-wrapper p.subtitle {
+    color: #666;
+    margin-bottom: 3rem;
+    font-size: 1rem;
+  }
+
+  .week-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .week-button {
+    display: block;
+    width: 100%;
+    background: #319fa2;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 1.2rem 1.5rem;
+    border-radius: 999px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  }
+
+  .week-button:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.15);
+    background: #056367;
+  }
+
+  .week-description {
+    margin-top: 0.6rem;
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  .reflect {
+    background: linear-gradient(135deg, #319fa2, #2fe2dd);
+  }
+
+  .reflect:hover {
+    background: #056367;
+  }
+</style>
+</head>
+
+<body>
+
+<section class="menu-wrapper">
+  <h1>Weekly Activity Menu</h1>
+  <p class="subtitle">Building Your Emotional Wellness Muscles</p>
+
+  <div class="week-item">
+    <a class="week-button" href="https://www.canva.com/design/DAGLCmJUf5Q/rBroVzVDikPuI6h0WG2_kA/edit?utm_content=DAGLCmJUf5Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+      WEEK 1: STRESS AND YOUR LIFE
+    </a>
+    <div class="week-description">
+      Explore how stress shows up in your body, thoughts, and daily rhythms so you can begin responding with awareness rather than reaction.
+    </div>
+  </div>
+
+  <div class="week-item">
+    <a class="week-button" href="https://www.canva.com/design/DAGLru19VO8/DkzjCuO0FSg2XKvaoqcfIA/edit?utm_content=DAGLru19VO8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+      WEEK 2: IDENTIFYING PAIN POINTS AND TRIGGERS
+    </a>
+    <div class="week-description">
+      Gently identify emotional pain points and triggers while building compassion for your lived experiences.
+    </div>
+  </div>
+
+  <div class="week-item">
+    <a class="week-button" href="https://www.canva.com/design/DAGMVEJ5rm8/zvjFItyzlAcLdjGJprNsag/edit?utm_content=DAGMVEJ5rm8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+      WEEK 3: BODY-BASED REGULATION BASICS
+    </a>
+    <div class="week-description">
+      Learn simple body-based practices that help calm your nervous system and restore a sense of internal safety.
+    </div>
+  </div>
+
+  <div class="week-item">
+    <a class="week-button" href="https://www.canva.com/design/DAGM_IrFDYQ/0rBLMWD_H0UJbZtW-gx8kA/view?utm_content=DAGM_IrFDYQ&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank">
+      WEEK 4: LETTING GO AND MOVING FORWARD
+    </a>
+    <div class="week-description">
+      Release what no longer serves you and begin reconnecting with choice, clarity, and forward movement.
+    </div>
+  </div>
+
+  <div class="week-item">
+    <a class="week-button" href="https://www.canva.com/design/DAGNKiuSzSI/4NKPTEvSGmIG3AAgQVj1Gg/view?utm_content=DAGNKiuSzSI&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank">
+      WEEK 5: THE PURSUIT OF HAPPINESS
+    </a>
+    <div class="week-description">
+      Redefine happiness on your own terms by focusing on meaning, values, and emotional alignment.
+    </div>
+  </div>
+
+  <div class="week-item">
+    <a class="week-button" href="https://www.canva.com/design/DAGNK1BjxX0/eK9GBYeRB2BVL6TaoC7skg/view?utm_content=DAGNK1BjxX0&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank">
+      WEEK 6: SUSTAINABLE HABITS AND DAILY PRACTICE
+    </a>
+    <div class="week-description">
+      Create realistic habits that support emotional wellbeing long after the program ends.
+    </div>
+  </div>
+
+  <div class="week-item">
+    <a class="week-button reflect" href="https://www.canva.com/design/DAGLBvi6iyc/GYDz-Dwm5jBLW-5pUoDeRg/view?utm_content=DAGLBvi6iyc&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank">
+      7 WAYS TO REFLECT
+    </a>
+    <div class="week-description">
+      Choose reflective practices that help you integrate learning, insight, and emotional growth.
+    </div>
+  </div>
+
+</section>
 
 
 
@@ -388,3 +527,6 @@
   document.getElementById("currentYear").textContent =
     new Date().getFullYear();
 </script>
+
+</body>
+</html>
