@@ -148,13 +148,26 @@
       margin-bottom:5rem;
     }
 
-    /* REMOVED IMAGE BORDERS */
+    /* === FIX: REMOVE ALL IMAGE BORDERS === */
+    .image-box{
+      border:none;
+      padding:0;
+      background:none;
+    }
+
     .image-box img{
       width:100%;
       display:block;
     }
 
     .content-box{text-align:center;}
+
+    /* === FIX: REMOVE TEXT BORDER === */
+    .bordered-text{
+      border:none;
+      padding:0;
+    }
+
     .simple-text{max-width:420px;margin:0 auto;}
 
     /* ================= ESSENTIALS ================= */
@@ -275,10 +288,12 @@
     </div>
     <div class="content-box">
       <h2>Coffee and Teas</h2>
-      <p>
-        Silhouette's Cafe is a wellness company dedicated to promoting optimal health
-        through the use of high-quality herbal products...
-      </p>
+      <div class="bordered-text">
+        <p>
+          Silhouette's Cafe is a wellness company dedicated to promoting optimal health
+          through the use of high-quality herbal products...
+        </p>
+      </div>
     </div>
   </div>
 
