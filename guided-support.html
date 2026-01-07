@@ -242,6 +242,63 @@
 </section>
 
 <!-- EMOTIONAL WELLNESS CHECK-IN -->
+<style>
+  .wheel-wrap {
+    max-width:900px;
+    margin:0 auto;
+    padding:2.5rem 1.25rem;
+    text-align:center;
+  }
+  .wheel-card {
+    background:rgba(49,159,162,.18);
+    border-radius:22px;
+    padding:clamp(20px,4vw,36px);
+  }
+  .wheel-title {
+    margin:0 0 .5rem;
+    color:#056367;
+    font-size:clamp(22px,2.6vw,34px);
+    font-weight:600;
+  }
+  .wheel-sub {
+    margin:0 auto 1.4rem;
+    max-width:680px;
+    font-size:15px;
+    line-height:1.55;
+    color:#3b3b3b;
+  }
+  .wheel-stage {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  .wheel-svg {
+    width:min(520px,90vw);
+    height:min(520px,90vw);
+    aspect-ratio:1/1;
+    filter:drop-shadow(0 10px 18px rgba(0,0,0,.12));
+  }
+  .slice {
+    cursor:pointer;
+    transform-origin:200px 200px;
+    transition:transform .25s ease, opacity .25s ease;
+  }
+  .slice.dimmed { opacity:.35; }
+  .slice.active { transform:scale(1.06); opacity:1; }
+  .emoji {
+    font-size:22px;
+    pointer-events:none;
+    text-anchor:middle;
+    dominant-baseline:middle;
+  }
+  .wheel-hint {
+    margin-top:1rem;
+    font-size:13px;
+    font-weight:600;
+    color:#056367;
+  }
+</style>
+
 <section class="wheel-wrap">
   <div class="wheel-card">
     <h2 class="wheel-title">Emotional Wellness Check-In</h2>
@@ -252,50 +309,7 @@
 
     <div class="wheel-stage">
       <svg class="wheel-svg" viewBox="0 0 400 400">
-
-        <g class="slice" data-emotion="Sad" data-desc="A feeling of loss, heaviness, or emotional fatigue.">
-          <path d="M200 200 L200 20 A180 180 0 0 1 330 90 Z" fill="#d9a6a6"/>
-          <text x="250" y="90" class="label">😢</text>
-        </g>
-
-        <g class="slice" data-emotion="Fear" data-desc="A response to uncertainty, threat, or vulnerability.">
-          <path d="M200 200 L330 90 A180 180 0 0 1 380 200 Z" fill="#b5b9d6"/>
-          <text x="310" y="155" class="label">😨</text>
-        </g>
-
-        <g class="slice" data-emotion="Anger" data-desc="Energy arising from boundaries crossed or unmet needs.">
-          <path d="M200 200 L380 200 A180 180 0 0 1 330 310 Z" fill="#e6b089"/>
-          <text x="310" y="255" class="label">😠</text>
-        </g>
-
-        <g class="slice" data-emotion="Joy" data-desc="Moments of lightness, gratitude, or contentment.">
-          <path d="M200 200 L330 310 A180 180 0 0 1 200 380 Z" fill="#f2d88a"/>
-          <text x="250" y="325" class="label">😊</text>
-        </g>
-
-        <g class="slice" data-emotion="Peace" data-desc="A sense of calm, grounding, or inner steadiness.">
-          <path d="M200 200 L200 380 A180 180 0 0 1 70 310 Z" fill="#a8c7c7"/>
-          <text x="150" y="325" class="label">😌</text>
-        </g>
-
-        <g class="slice" data-emotion="Disgust" data-desc="A reaction to something that feels off, unsafe, or misaligned.">
-          <path d="M200 200 L70 310 A180 180 0 0 1 20 200 Z" fill="#c2b4a0"/>
-          <text x="90" y="255" class="label">🤢</text>
-        </g>
-
-        <g class="slice" data-emotion="Shame" data-desc="A painful feeling of self-judgment or exposure.">
-          <path d="M200 200 L20 200 A180 180 0 0 1 70 90 Z" fill="#cbb6c8"/>
-          <text x="90" y="155" class="label">😞</text>
-        </g>
-
-        <g class="slice" data-emotion="Surprise" data-desc="A sudden emotional response to the unexpected.">
-          <path d="M200 200 L70 90 A180 180 0 0 1 200 20 Z" fill="#b8d6c0"/>
-          <text x="150" y="90" class="label">😮</text>
-        </g>
-
-        <circle cx="200" cy="200" r="48" fill="#056367"/>
-        <text x="200" y="207" text-anchor="middle" font-size="18" fill="#ffffff">Check-In</text>
-
+        <!-- slices created by JS -->
       </svg>
     </div>
 
@@ -306,23 +320,86 @@
 </section>
 
 <script>
-  const slices = document.querySelectorAll('.slice');
-  const output = document.getElementById('emotionOutput');
+  const EMOTIONS = [
+    ["Sad","😢","#d9a6a6","A feeling of loss, heaviness, or emotional fatigue."],
+    ["Fear","😨","#b5b9d6","A response to uncertainty, threat, or vulnerability."],
+    ["Anger","😠","#e6b089","Energy arising from boundaries crossed or unmet needs."],
+    ["Joy","😊","#f2d88a","Moments of lightness, gratitude, or contentment."],
+    ["Peace","😌","#a8c7c7","A sense of calm, grounding, or inner steadiness."],
+    ["Disgust","🤢","#c2b4a0","A reaction to something that feels off, unsafe, or misaligned."],
+    ["Shame","😞","#cbb6c8","A painful feeling of self-judgment or exposure."],
+    ["Surprise","😮","#b8d6c0","A sudden emotional response to the unexpected."]
+  ];
 
-  slices.forEach(slice => {
-    slice.addEventListener('click', () => {
-      slices.forEach(s => s.classList.add('dimmed'));
-      slice.classList.remove('dimmed');
-      slice.classList.add('active');
+  const svg = document.querySelector(".wheel-svg");
+  const output = document.getElementById("emotionOutput");
+
+  const cx = 200, cy = 200, r = 180;
+  const step = (Math.PI * 2) / EMOTIONS.length;
+
+  EMOTIONS.forEach((e,i)=>{
+    const a0 = -Math.PI/2 + i*step;
+    const a1 = a0 + step;
+
+    const x0 = cx + r*Math.cos(a0);
+    const y0 = cy + r*Math.sin(a0);
+    const x1 = cx + r*Math.cos(a1);
+    const y1 = cy + r*Math.sin(a1);
+
+    const g = document.createElementNS("http://www.w3.org/2000/svg","g");
+    g.classList.add("slice");
+    g.dataset.emotion = e[0];
+    g.dataset.desc = e[3];
+
+    const path = document.createElementNS("http://www.w3.org/2000/svg","path");
+    path.setAttribute("d",`M${cx} ${cy} L${x0} ${y0} A${r} ${r} 0 0 1 ${x1} ${y1} Z`);
+    path.setAttribute("fill",e[2]);
+
+    const mid = (a0+a1)/2;
+    const tx = cx + 120*Math.cos(mid);
+    const ty = cy + 120*Math.sin(mid);
+
+    const text = document.createElementNS("http://www.w3.org/2000/svg","text");
+    text.setAttribute("x",tx);
+    text.setAttribute("y",ty);
+    text.setAttribute("class","emoji");
+    text.textContent = e[1];
+
+    g.appendChild(path);
+    g.appendChild(text);
+    svg.appendChild(g);
+  });
+
+  const center = document.createElementNS("http://www.w3.org/2000/svg","circle");
+  center.setAttribute("cx",200);
+  center.setAttribute("cy",200);
+  center.setAttribute("r",48);
+  center.setAttribute("fill","#056367");
+  svg.appendChild(center);
+
+  const label = document.createElementNS("http://www.w3.org/2000/svg","text");
+  label.setAttribute("x",200);
+  label.setAttribute("y",207);
+  label.setAttribute("text-anchor","middle");
+  label.setAttribute("fill","#fff");
+  label.setAttribute("font-size","18");
+  label.textContent = "Check-In";
+  svg.appendChild(label);
+
+  document.querySelectorAll(".slice").forEach(slice=>{
+    slice.addEventListener("click",()=>{
+      document.querySelectorAll(".slice").forEach(s=>s.classList.add("dimmed"));
+      slice.classList.remove("dimmed");
+      slice.classList.add("active");
       output.textContent = `${slice.dataset.emotion}: ${slice.dataset.desc}`;
     });
-
-    slice.addEventListener('mouseleave', () => {
-      slices.forEach(s => s.classList.remove('dimmed','active'));
+    slice.addEventListener("mouseleave",()=>{
+      document.querySelectorAll(".slice").forEach(s=>s.classList.remove("dimmed","active"));
       output.textContent = "Select an emotion to reflect.";
     });
   });
 </script>
+
 
 <!-- PDF PREVIEW -->
 <section class="pdf-wrapper">
