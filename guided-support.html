@@ -62,6 +62,109 @@
   </div>
 </header>
 
+</style>
+</head>
+
+<body>
+
+<section class="wheel-wrap">
+  <div class="wheel-card">
+    <h2 class="wheel-title">Emotional Wellness Check-In</h2>
+    <p class="wheel-sub">
+      Tap or click an emotion that best reflects how you’re feeling right now.
+      There is no right or wrong — this is about awareness, not judgment.
+    </p>
+
+    <div class="wheel-stage">
+      <svg class="wheel-svg" viewBox="0 0 400 400">
+
+        <!-- SAD -->
+        <g class="slice" data-emotion="Sad" data-desc="A feeling of loss, heaviness, or emotional fatigue.">
+          <path d="M200 200 L200 20 A180 180 0 0 1 330 90 Z" fill="#d9a6a6"/>
+          <text x="250" y="90" class="label">😢</text>
+        </g>
+
+        <!-- FEAR -->
+        <g class="slice" data-emotion="Fear" data-desc="A response to uncertainty, threat, or vulnerability.">
+          <path d="M200 200 L330 90 A180 180 0 0 1 380 200 Z" fill="#b5b9d6"/>
+          <text x="310" y="155" class="label">😨</text>
+        </g>
+
+        <!-- ANGER -->
+        <g class="slice" data-emotion="Anger" data-desc="Energy arising from boundaries crossed or unmet needs.">
+          <path d="M200 200 L380 200 A180 180 0 0 1 330 310 Z" fill="#e6b089"/>
+          <text x="310" y="255" class="label">😠</text>
+        </g>
+
+        <!-- JOY -->
+        <g class="slice" data-emotion="Joy" data-desc="Moments of lightness, gratitude, or contentment.">
+          <path d="M200 200 L330 310 A180 180 0 0 1 200 380 Z" fill="#f2d88a"/>
+          <text x="250" y="325" class="label">😊</text>
+        </g>
+
+        <!-- PEACE -->
+        <g class="slice" data-emotion="Peace" data-desc="A sense of calm, grounding, or inner steadiness.">
+          <path d="M200 200 L200 380 A180 180 0 0 1 70 310 Z" fill="#a8c7c7"/>
+          <text x="150" y="325" class="label">😌</text>
+        </g>
+
+        <!-- DISGUST -->
+        <g class="slice" data-emotion="Disgust" data-desc="A reaction to something that feels off, unsafe, or misaligned.">
+          <path d="M200 200 L70 310 A180 180 0 0 1 20 200 Z" fill="#c2b4a0"/>
+          <text x="90" y="255" class="label">🤢</text>
+        </g>
+
+        <!-- SHAME -->
+        <g class="slice" data-emotion="Shame" data-desc="A painful feeling of self-judgment or exposure.">
+          <path d="M200 200 L20 200 A180 180 0 0 1 70 90 Z" fill="#cbb6c8"/>
+          <text x="90" y="155" class="label">😞</text>
+        </g>
+
+        <!-- SURPRISE -->
+        <g class="slice" data-emotion="Surprise" data-desc="A sudden emotional response to the unexpected.">
+          <path d="M200 200 L70 90 A180 180 0 0 1 200 20 Z" fill="#b8d6c0"/>
+          <text x="150" y="90" class="label">😮</text>
+        </g>
+
+        <!-- CENTER -->
+        <circle cx="200" cy="200" r="48" fill="#056367"/>
+        <text x="200" y="207" text-anchor="middle" font-size="18" fill="#ffffff">Check-In</text>
+
+      </svg>
+    </div>
+
+    <div id="emotionOutput" class="wheel-hint">
+      Select an emotion to reflect.
+    </div>
+  </div>
+</section>
+
+<script>
+  const slices = document.querySelectorAll('.slice');
+  const output = document.getElementById('emotionOutput');
+
+  slices.forEach(slice => {
+    slice.addEventListener('click', () => {
+      slices.forEach(s => s.classList.add('dimmed'));
+      slice.classList.remove('dimmed');
+      slice.classList.add('active');
+
+      const emotion = slice.dataset.emotion;
+      const desc = slice.dataset.desc;
+
+      output.textContent = `${emotion}: ${desc}`;
+    });
+
+    slice.addEventListener('mouseleave', () => {
+      slices.forEach(s => {
+        s.classList.remove('dimmed', 'active');
+      });
+      output.textContent = "Select an emotion to reflect.";
+    });
+  });
+</script>
+
+
 
 
 
