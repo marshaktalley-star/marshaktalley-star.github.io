@@ -15,6 +15,43 @@
     }
   </style>
 
+  <!-- HEADER / NAVIGATION STYLES -->
+  <style>
+    header {
+      width:100%;
+      background:#ffffff;
+      border-bottom:1px solid #e6f2f2;
+    }
+    .nav-inner {
+      max-width:1200px;
+      margin:0 auto;
+      padding:20px 16px 12px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    nav ul {
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      gap:28px;
+      flex-wrap:wrap;
+      justify-content:center;
+      font-size:14px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    nav a {
+      text-decoration:none;
+      color:#2f2f2f;
+    }
+    nav a.active {
+      color:#056367;
+      font-weight:600;
+    }
+  </style>
+
   <!-- GUIDED SUPPORT STYLES -->
   <style>
     .guided-wrapper {
@@ -68,9 +105,10 @@
     }
   </style>
 
-  <!-- EMOTION WHEEL STYLES (UNCHANGED) -->
+  <!-- EMOTION WHEEL STYLES -->
   <style>
     * { box-sizing:border-box; }
+
     .wheel-wrap {
       max-width:900px;
       margin:0 auto;
@@ -111,9 +149,7 @@
       transition:transform .25s ease, opacity .25s ease;
       transform-origin:300px 300px;
     }
-    .slice:hover {
-      transform:scale(1.04);
-    }
+    .slice:hover { transform:scale(1.04); }
     .slice.dimmed { opacity:.35; }
     .slice.active { transform:scale(1.07); opacity:1; }
     .label {
@@ -130,15 +166,95 @@
       color:#056367;
     }
   </style>
+
+  <!-- PDF VIEWER STYLES -->
+  <style>
+    .pdf-wrapper {
+      max-width:900px;
+      margin:4rem auto;
+      padding:0 1.5rem;
+      text-align:center;
+    }
+    .pdf-header {
+      background:#056367;
+      color:#fff;
+      padding:2rem;
+      border-radius:16px 16px 0 0;
+    }
+    .pdf-preview {
+      border:1px solid #e5e5e5;
+      border-top:none;
+      border-radius:0 0 16px 16px;
+      overflow:hidden;
+    }
+    iframe {
+      width:100%;
+      height:650px;
+      border:none;
+    }
+    .download-btn {
+      display:inline-block;
+      margin-top:2rem;
+      padding:.9rem 2rem;
+      background:#319fa2;
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+      border-radius:999px;
+    }
+  </style>
+
+  <!-- WEEKLY MENU STYLES -->
+  <style>
+    .menu-wrapper {
+      max-width:900px;
+      margin:4rem auto;
+      padding:0 1.5rem;
+      text-align:center;
+    }
+    .menu-wrapper h1 {
+      color:#056367;
+      font-size:2.4rem;
+    }
+    .week-item { margin-bottom:1.5rem; }
+    .week-button {
+      display:block;
+      width:100%;
+      background:#319fa2;
+      color:#fff;
+      text-decoration:none;
+      padding:1.2rem 1.5rem;
+      border-radius:999px;
+      font-weight:600;
+    }
+    .week-description {
+      margin-top:.6rem;
+      font-size:.95rem;
+      color:#555;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- GUIDED SUPPORT SECTION (UNCHANGED) -->
-<section class="guided-wrapper">
-  <div class="section-header">
-    <h2>1:1 Guided Support</h2>
+<header>
+  <div class="nav-inner">
+    <img src="MKT-logo-3.png" alt="Marsha Kerr Talley" style="max-width:220px;margin-bottom:12px;">
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="work-with-me.html">Work With Me</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="podcast.html">Podcast</a></li>
+        <li><a href="reflections.html">Reflections</a></li>
+      </ul>
+    </nav>
   </div>
+</header>
+
+<!-- GUIDED SUPPORT -->
+<section class="guided-wrapper">
+  <div class="section-header"><h2>1:1 Guided Support</h2></div>
   <div class="section-subtitle">Find your personal Joy</div>
   <img src="16-EGL_5085.jpg" class="guided-image" />
   <div class="guided-text">
@@ -146,68 +262,75 @@
   </div>
 </section>
 
-<!-- ======================================================
-     EMOTIONAL WELLNESS CHECK-IN (UPDATED WHEEL ONLY)
-====================================================== -->
+<!-- EMOTIONAL WELLNESS CHECK-IN -->
 <section class="wheel-wrap">
   <div class="wheel-card">
     <h2 class="wheel-title">Emotional Wellness Check-In</h2>
-    <p class="wheel-sub">
-      Tap or click an emotion that best reflects how you’re feeling right now.
-      There is no right or wrong — this is about awareness, not judgment.
-    </p>
+    <p class="wheel-sub">Tap or click an emotion that best reflects how you’re feeling right now.</p>
 
     <div class="wheel-stage">
+      <svg class="wheel-svg" viewBox="0 0 600 600">
 
-<!-- === INTERACTIVE EMOTION WHEEL SVG === -->
-<svg class="wheel-svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet">
+        <g class="slice" data-emotion="Sad" data-desc="A feeling of loss, heaviness, or emotional fatigue.">
+          <path d="M300 300 L300 40 A260 260 0 0 1 482 118 Z" fill="#d9b2b2"/>
+          <text x="360" y="130" class="label">😢</text>
+        </g>
 
-  <g class="slice" data-emotion="Sad" data-desc="A feeling of loss, heaviness, or emotional fatigue.">
-    <path d="M300 300 L300 40 A260 260 0 0 1 482 118 Z" fill="#d9b2b2"/>
-    <text x="360" y="130" class="label">😢</text>
-  </g>
+        <g class="slice" data-emotion="Fear" data-desc="A response to uncertainty, threat, or vulnerability.">
+          <path d="M300 300 L482 118 A260 260 0 0 1 560 300 Z" fill="#c4c7de"/>
+          <text x="470" y="250" class="label">😰</text>
+        </g>
 
-  <g class="slice" data-emotion="Fear" data-desc="A response to uncertainty, threat, or vulnerability.">
-    <path d="M300 300 L482 118 A260 260 0 0 1 560 300 Z" fill="#c4c7de"/>
-    <text x="470" y="250" class="label">😰</text>
-  </g>
+        <g class="slice" data-emotion="Anger" data-desc="Energy arising from unmet needs.">
+          <path d="M300 300 L560 300 A260 260 0 0 1 482 482 Z" fill="#e3bc9a"/>
+          <text x="470" y="360" class="label">😠</text>
+        </g>
 
-  <g class="slice" data-emotion="Anger" data-desc="Energy arising from boundaries crossed or unmet needs.">
-    <path d="M300 300 L560 300 A260 260 0 0 1 482 482 Z" fill="#e3bc9a"/>
-    <text x="470" y="360" class="label">😠</text>
-  </g>
+        <g class="slice" data-emotion="Happy" data-desc="Moments of joy or lightness.">
+          <path d="M300 300 L300 560 A260 260 0 0 1 118 482 Z" fill="#b8d0d0"/>
+          <text x="250" y="470" class="label">😊</text>
+        </g>
 
-  <g class="slice" data-emotion="Strong" data-desc="Feeling capable, grounded, and able to meet challenges.">
-    <path d="M300 300 L482 482 A260 260 0 0 1 300 560 Z" fill="#f0e0a0"/>
-    <text x="360" y="470" class="label">💪</text>
-  </g>
+        <circle cx="300" cy="300" r="95" fill="#265c5f"/>
+        <text x="300" y="312" text-anchor="middle" font-size="28" fill="#fff">Check-In</text>
 
-  <g class="slice" data-emotion="Happy" data-desc="Moments of joy, contentment, or lightness.">
-    <path d="M300 300 L300 560 A260 260 0 0 1 118 482 Z" fill="#b8d0d0"/>
-    <text x="250" y="470" class="label">😊</text>
-  </g>
-
-  <g class="slice" data-emotion="Calm" data-desc="A sense of peace, steadiness, or ease.">
-    <path d="M300 300 L118 482 A260 260 0 0 1 40 300 Z" fill="#cfc4b1"/>
-    <text x="140" y="360" class="label">😌</text>
-  </g>
-
-  <circle cx="300" cy="300" r="95" fill="#265c5f"/>
-  <text x="300" y="312" text-anchor="middle" font-size="28" fill="#ffffff" font-weight="600">Check-In</text>
-
-</svg>
-<!-- === END WHEEL SVG === -->
-
+      </svg>
     </div>
 
-    <div id="emotionOutput" class="wheel-hint">
-      Select an emotion to reflect.
-    </div>
+    <div id="emotionOutput" class="wheel-hint">Select an emotion to reflect.</div>
   </div>
 </section>
 
-<!-- === INTERACTION SCRIPT (WHEEL ONLY) === -->
+<!-- PDF VIEWER -->
+<section class="pdf-wrapper">
+  <div class="pdf-header">
+    <h2>Wheel of Emotions</h2>
+    <p>A gentle check-in tool.</p>
+  </div>
+  <div class="pdf-preview">
+    <iframe src="Wheel-Emotions.pdf#view=fitH"></iframe>
+  </div>
+  <a class="download-btn" href="Wheel-Emotions.pdf" download>Download PDF</a>
+</section>
+
+<!-- WEEKLY MENU -->
+<section class="menu-wrapper">
+  <h1>Weekly Activity Menu</h1>
+
+  <div class="week-item">
+    <a class="week-button" href="#">Week 1: Stress and Your Life</a>
+    <div class="week-description">Explore how stress shows up.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="text-align:center;padding:2rem;color:#666;border-top:1px solid #eee;">
+  © <span id="year"></span> Marsha Kerr Talley — All Rights Reserved
+</footer>
+
 <script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
   const slices = document.querySelectorAll('.slice');
   const output = document.getElementById('emotionOutput');
 
@@ -218,7 +341,6 @@
       slice.classList.add('active');
       output.textContent = `${slice.dataset.emotion}: ${slice.dataset.desc}`;
     });
-
     slice.addEventListener('mouseleave', () => {
       slices.forEach(s => s.classList.remove('dimmed','active'));
       output.textContent = "Select an emotion to reflect.";
