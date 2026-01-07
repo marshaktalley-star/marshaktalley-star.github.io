@@ -101,9 +101,12 @@
       align-items:center;
     }
     .wheel-svg {
-      width:min(520px,90vw);
-      filter:drop-shadow(0 10px 18px rgba(0,0,0,.12));
-    }
+  width: min(520px,90vw);
+  height: min(520px,90vw); /* forces square */
+  aspect-ratio: 1 / 1;     /* guarantees circle */
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.12));
+}
+
     .slice {
       cursor:pointer;
       transform-origin:200px 200px;
@@ -112,7 +115,7 @@
     .slice.dimmed { opacity:.35; }
     .slice.active { transform:scale(1.06); opacity:1; }
     .label {
-      font-size:18px;
+      font-size:22px;
       font-weight:600;
       fill:rgba(0,0,0,.78);
       text-anchor:middle;
