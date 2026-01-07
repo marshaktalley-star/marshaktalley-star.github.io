@@ -1,195 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Speaking | Marsha Kerr Talley</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speaking | Marsha Kerr Talley</title>
 
-<style>
-/* =========================
-   GLOBAL STYLES
-========================== */
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: #ffffff;
-  color: #333;
-}
+  <!-- =========================
+       GLOBAL STYLES
+  ========================== -->
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #ffffff;
+      color: #333;
+    }
 
-/* =========================
-   HEADER / NAVIGATION
-========================== */
-header {
-  background: #ffffff;
-  border-bottom: 1px solid #e6f2f2;
-}
-.header-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px 16px 12px;
-  text-align: center;
-}
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 28px;
-  justify-content: center;
-  flex-wrap: wrap;
-  font-size: 14px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-nav a {
-  text-decoration: none;
-  color: #2f2f2f;
-}
-nav a.active {
-  color: #056367;
-  font-weight: 600;
-}
+    a { text-decoration: none; }
 
-/* =========================
-   HERO BANNER
-========================== */
-.hero-banner {
-  min-height: 75vh;
-  background: url("MKT-Website-Banner.png") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-}
-.hero-overlay {
-  width: 100%;
-  background: rgba(0,0,0,.35);
-}
-.hero-content {
-  max-width: 1100px;
-  margin: auto;
-  padding: 0 2rem;
-  color: #fff;
-}
-.hero-content h1 {
-  font-family: Georgia, serif;
-  font-weight: 400;
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  line-height: 1.25;
-}
-.hero-name {
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  opacity: .9;
-}
+    /* =========================
+       HEADER
+    ========================== */
+    header {
+      width:100%;
+      background:#ffffff;
+      border-bottom:1px solid #e6f2f2;
+    }
 
-/* =========================
-   LAYOUT UTILITIES
-========================== */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 3.5rem 1.5rem;
-}
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 2.2rem;
-}
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 1rem;
-}
+    .header-inner {
+      max-width:1200px;
+      margin:0 auto;
+      padding:20px 16px 12px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
 
-/* =========================
-   SECTIONS
-========================== */
-h2 {
-  color: #056367;
-}
-.card {
-  border: 1px solid rgba(5,99,103,.12);
-  border-radius: 18px;
-  padding: 1rem;
-  background: #fff;
-}
-.highlight {
-  background: rgba(49,159,162,.10);
-  border-radius: 22px;
-  padding: 1.5rem;
-}
+    nav ul {
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      gap:28px;
+      flex-wrap:wrap;
+      justify-content:center;
+      font-size:14px;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+    }
 
-/* =========================
-   CONTACT FORM
-========================== */
-.contact-section {
-  max-width: 900px;
-  margin: auto;
-  padding: 5rem 1.5rem;
-  text-align: center;
-}
-form {
-  max-width: 700px;
-  margin: auto;
-  text-align: left;
-}
-input, textarea {
-  width: 100%;
-  padding: 1rem;
-  border: 1px solid #e2e2e2;
-  border-radius: 6px;
-  margin-bottom: 1.5rem;
-}
-button {
-  background: #319fa2;
-  color: #fff;
-  border: none;
-  padding: .9rem 2.8rem;
-  border-radius: 999px;
-  letter-spacing: .1em;
-  cursor: pointer;
-}
+    nav a {
+      color:#2f2f2f;
+    }
 
-/* =========================
-   FOOTER
-========================== */
-footer {
-  border-top: 1px solid #eee;
-  padding: 2.5rem 1.5rem;
-  text-align: center;
-}
-footer a {
-  color: #319fa2;
-  text-decoration: none;
-  margin: 0 1rem;
-}
+    nav a.active {
+      color:#056367;
+      font-weight:600;
+    }
 
-/* =========================
-   RESPONSIVE
-========================== */
-@media (max-width: 860px) {
-  .grid-2, .grid-3 {
-    grid-template-columns: 1fr;
-  }
-  .hero-banner {
-    min-height: 65vh;
-  }
-}
-</style>
+    /* =========================
+       HERO BANNER
+    ========================== */
+    .hero-banner {
+      position: relative;
+      min-height: 75vh;
+      background: url("MKT-Website-Banner.png") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-overlay {
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,.35);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      color: #ffffff;
+    }
+
+    .hero-content h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.25;
+      margin: 0 0 1.5rem;
+    }
+
+    .hero-name {
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.9;
+    }
+
+    /* =========================
+       CONTENT LAYOUT
+    ========================== */
+    .content-wrapper {
+      max-width:1100px;
+      margin:0 auto;
+      padding:3.5rem 1.5rem;
+    }
+
+    .grid-two {
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:2.2rem;
+      align-items:center;
+      margin-bottom:2.5rem;
+    }
+
+    .grid-three {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1rem;
+    }
+
+    .grid-two-pricing {
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:1rem;
+    }
+
+    @media (max-width:860px) {
+      .grid-two,
+      .grid-three,
+      .grid-two-pricing {
+        grid-template-columns:1fr;
+      }
+    }
+
+    /* =========================
+       CONTACT FORM
+    ========================== */
+    .contact-section {
+      max-width:900px;
+      margin:0 auto;
+      padding:5rem 1.5rem;
+      text-align:center;
+    }
+
+    form {
+      max-width:700px;
+      margin:0 auto;
+      text-align:left;
+    }
+
+    input, textarea {
+      width:100%;
+      padding:1rem;
+      border:1px solid #e2e2e2;
+      border-radius:6px;
+      margin-bottom:1.5rem;
+      font-family:inherit;
+    }
+
+    textarea { min-height:140px; }
+
+    button {
+      background:#319fa2;
+      color:#fff;
+      border:none;
+      padding:.9rem 2.8rem;
+      border-radius:999px;
+      letter-spacing:.1em;
+      cursor:pointer;
+    }
+
+    button:hover { background:#056367; }
+
+    .confirmation {
+      display:none;
+      margin-top:1.5rem;
+      color:#056367;
+      font-weight:600;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+    footer {
+      border-top:1px solid #eee;
+      padding:2.5rem 1.5rem 2rem;
+      text-align:center;
+    }
+
+    .footer-links {
+      display:flex;
+      justify-content:center;
+      gap:2rem;
+      flex-wrap:wrap;
+    }
+
+    .footer-links a {
+      color:#319fa2;
+    }
+  </style>
+
+  <!-- =========================
+       EMAILJS
+  ========================== -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("");
+    })();
+  </script>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="header-inner">
-    <img src="MKT-logo-3.png" alt="Marsha Kerr Talley" style="max-width:220px;">
+    <a href="index.html">
+      <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired" style="max-width:220px;">
+    </a>
+
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="work-with-me.html">Work With Me</a></li>
         <li><a href="books.html">Books</a></li>
         <li><a href="podcast.html">Podcast</a></li>
-        <li><a href="speaking.html" class="active">Speaking</a></li>
+        <li><a href="reflections.html">Reflections</a></li>
       </ul>
     </nav>
   </div>
@@ -205,37 +244,98 @@ footer a {
   </div>
 </section>
 
-<!-- SPEAKING CONTENT -->
-<section class="container">
-  <div class="grid-2">
+<!-- MAIN CONTENT -->
+<section class="content-wrapper">
+
+  <!-- INTRO -->
+  <div class="grid-two">
     <div>
-      <h2>Written for Thoughtful Living<br>Spoken with Presence</h2>
-      <p>Speaking is one of the ways I bring this work into the room, in real time.</p>
+      <h2 style="color:#056367;">Written for Thoughtful Living<br>Spoken with Presence</h2>
+      <p>Speaking is one of the ways I bring this work into the room, in real time. I create experiences that feel human, immersive, and memorable.</p>
+      <p>If your audience is navigating sustained stress, change, leadership pressure, or life transition, I will meet them with warmth, clarity, and practical insight.</p>
     </div>
-    <img src="https://img1.wsimg.com/isteam/ip/813f1826-6145-4365-bb43-a568c1eaefd5/9-EGL_3969-08401f9.jpg" style="width:100%;border-radius:24px;">
+
+    <div style="border-radius:24px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.12);">
+      <img src="https://img1.wsimg.com/isteam/ip/813f1826-6145-4365-bb43-a568c1eaefd5/9-EGL_3969-08401f9.jpg" alt="Marsha Kerr Talley speaking" style="width:100%;">
+    </div>
   </div>
+
+  <!-- WHAT IT FEELS LIKE -->
+  <div style="background:rgba(49,159,162,.10);border:1px solid rgba(5,99,103,.12);border-radius:22px;padding:1.5rem;">
+    <h2 style="color:#056367;">What it feels like in the room</h2>
+    <p>Expect energy, movement, and a speaker who is fully present. I invite audiences into the moment, not just into information.</p>
+  </div>
+
+  <!-- THEMES -->
+  <h2 style="color:#056367;margin-top:2rem;">Themes I speak to</h2>
+  <div class="grid-three">
+    <div><strong>Burnout prevention</strong><br>without blame</div>
+    <div><strong>Emotional regulation</strong><br>skills people can use</div>
+    <div><strong>Transition</strong><br>navigating change</div>
+    <div><strong>Leadership</strong><br>values-led decisions</div>
+    <div><strong>Wellbeing culture</strong><br>beyond performance</div>
+    <div><strong>Psychological safety</strong><br>healthier ways of working</div>
+  </div>
+
+  <!-- PRICING -->
+  <h2 style="color:#056367;margin-top:2rem;">Pricing guide</h2>
+  <div class="grid-two-pricing">
+    <div>Virtual keynote – £750</div>
+    <div>In-person keynote – £1,500</div>
+    <div>Workshop – from £2,000</div>
+    <div>Panel – from £500</div>
+  </div>
+
+  <!-- ENQUIRIES -->
+  <div style="background:#056367;color:#fff;border-radius:22px;padding:1.6rem;margin-top:2rem;">
+    <h2>Enquiries</h2>
+    <p>If you are planning an event and want a speaker who is warm, engaging, and fully present, I would love to hear from you.</p>
+  </div>
+
 </section>
 
-<!-- CONTACT FORM -->
+<!-- CONTACT -->
 <section class="contact-section">
   <h2>Let's Talk</h2>
   <p>Share what you’re seeking, and we’ll take it from there.</p>
 
-  <form action="mailto:info@marshakerrtalley.com" method="post" enctype="text/plain">
-    <input type="text" name="Name" placeholder="Name">
-    <input type="email" name="Email" placeholder="Email*" required>
-    <input type="tel" name="Phone" placeholder="Phone">
-    <textarea name="Interest" placeholder="I'm interested in"></textarea>
-    <textarea name="Notes" placeholder="Other notes"></textarea>
+  <form id="contactForm">
+    <input name="name" placeholder="Name">
+    <input name="email" type="email" placeholder="Email*" required>
+    <input name="phone" placeholder="Phone">
+    <textarea name="interest" placeholder="I'm interested in"></textarea>
+    <textarea name="notes" placeholder="Other notes"></textarea>
     <button type="submit">SEND</button>
   </form>
+
+  <div class="confirmation" id="confirmation">
+    Thank you for reaching out. I’ll be in touch soon.
+  </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FORM LOGIC -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  emailjs.send("", "", {
+    name:this.name.value,
+    email:this.email.value,
+    phone:this.phone.value,
+    interest:this.interest.value,
+    notes:this.notes.value
+  }).then(() => {
+    document.getElementById("confirmation").style.display = "block";
+    this.reset();
+  });
+});
+</script>
+
 <footer>
-  <p>© <span id="year"></span> Marsha Kerr Talley</p>
-  <a href="/privacy-policy">Privacy Policy</a>
-  <a href="/terms-and-conditions">Terms & Conditions</a>
+  <p>© <span id="year"></span> Marsha Kerr Talley — All Rights Reserved.</p>
+  <div class="footer-links">
+    <a href="/privacy-policy">Privacy Policy</a>
+    <a href="/terms-and-conditions">Terms</a>
+  </div>
 </footer>
 
 <script>
