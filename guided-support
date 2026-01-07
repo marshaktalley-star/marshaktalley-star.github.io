@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marsha Kerr Talley | Turning Pain Into Possibilities</title>
+</head>
+
+<body style="margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">
+
+<!-- SITE HEADER / NAVIGATION -->
+<header style="
+  width:100%;
+  background:#ffffff;
+  border-bottom:1px solid #e6f2f2;
+">
+  <div style="
+    max-width:1200px;
+    margin:0 auto;
+    padding:20px 16px 12px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    box-sizing:border-box;
+  ">
+    <!-- LOGO -->
+    <a href="index.html" style="display:inline-block;">
+      <img
+        src="MKT-logo-3.png"
+        alt="Marsha Kerr Talley – Live Inspired"
+        style="
+          max-width:220px;
+          width:100%;
+          height:auto;
+          display:block;
+          margin:0 auto 12px;
+        "
+      />
+    </a>
+
+    <!-- NAV LINKS -->
+    <nav aria-label="Main navigation">
+      <ul style="
+        list-style:none;
+        padding:0;
+        margin:0;
+        display:flex;
+        gap:28px;
+        flex-wrap:wrap;
+        justify-content:center;
+        font-size:14px;
+        letter-spacing:0.08em;
+        text-transform:uppercase;
+      ">
+        <li><a href="index.html" style="color:#056367;text-decoration:none;font-weight:600;">Home</a></li>
+        <li><a href="work-with-me.html" style="color:#2f2f2f;text-decoration:none;">Work With Me</a></li>
+        <li><a href="books.html" style="color:#2f2f2f;text-decoration:none;">Books</a></li>
+        <li><a href="podcast.html" style="color:#2f2f2f;text-decoration:none;">Podcast</a></li>
+        <li><a href="reflections.html" style="color:#2f2f2f;text-decoration:none;">Reflections</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+
+
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Emotion Wheel</title>
+
+<style>
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  .wheel-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem;
+    text-align: center;
+  }
+
+  .wheel-card {
+    background: rgba(49,159,162,.18);
+    border-radius: 22px;
+    padding: clamp(20px,4vw,36px);
+  }
+
+  .wheel-title {
+    margin: 0 0 .5rem;
+    color: #056367;
+    font-size: clamp(22px,2.6vw,34px);
+    font-weight: 600;
+  }
+
+  .wheel-sub {
+    margin: 0 auto 1.4rem;
+    max-width: 680px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #3b3b3b;
+  }
+
+  .wheel-stage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+  }
+
+  .wheel-svg {
+    width: min(520px, 90vw);
+    height: auto;
+    display: block;
+    overflow: visible;
+    filter: drop-shadow(0 10px 18px rgba(0,0,0,.12));
+  }
+
+  /* Interaction */
+  .slice {
+    cursor: pointer;
+    transform-origin: 200px 200px;
+    transition: transform .25s ease, filter .25s ease, opacity .25s ease;
+  }
+
+  .slice.dimmed { opacity: 0.35; }
+
+  .slice.active {
+    transform: scale(1.06);
+    filter: saturate(1.12);
+    opacity: 1;
+  }
+
+  /* Text – softened */
+  .label {
+    font-size: 18px;
+    font-weight: 600;
+    fill: rgba(0,0,0,.78);
+    text-anchor: middle;
+    pointer-events: none;
+  }
+
+  .word {
+    font-size: 13px;
+    font-weight: 400;
+    fill: rgba(0,0,0,.62);
+    text-anchor: middle;
+    pointer-events: none;
+    transition: font-weight .2s ease, fill .2s ease;
+  }
+
+  .word:hover {
+    font-weight: 600;
+    fill: rgba(0,0,0,.8);
+  }
+
+  .wheel-hint {
+    margin-top: 1rem;
+    font-size: 13px;
+    font-weight: 600;
+    color: #056367;
+  }
+</style>
+</head>
+
+<body>
+
+<section class="wheel-wrap">
+  <div class="wheel-card">
+
+    <h2 class="wheel-title">How Are You Feeling Right Now?</h2>
+    <p class="wheel-sub">
+      Click a category to bring it forward. Hover over words to explore what resonates.
+      This is about awareness, not judgement.
+    </p>
+
+    <div class="wheel-stage">
+      <svg class="wheel-svg" viewBox="0 0 400 400">
+
+        <defs>
+          <radialGradient id="calmGrad">
+            <stop offset="20%" stop-color="#b8d8e8"/>
+            <stop offset="100%" stop-color="#8ec5dd"/>
+          </radialGradient>
+
+          <radialGradient id="happyGrad">
+            <stop offset="20%" stop-color="#95d5d0"/>
+            <stop offset="100%" stop-color="#6ab9b3"/>
+          </radialGradient>
+
+          <radialGradient id="strongGrad">
+            <stop offset="20%" stop-color="#f5d89a"/>
+            <stop offset="100%" stop-color="#e8c56f"/>
+          </radialGradient>
+
+          <radialGradient id="angerGrad">
+            <stop offset="20%" stop-color="#ecb892"/>
+            <stop offset="100%" stop-color="#dd9b6a"/>
+          </radialGradient>
+
+          <radialGradient id="fearGrad">
+            <stop offset="20%" stop-color="#c3d1de"/>
+            <stop offset="100%" stop-color="#9eb3c5"/>
+          </radialGradient>
+
+          <radialGradient id="sadGrad">
+            <stop offset="20%" stop-color="#ddb3bc"/>
+            <stop offset="100%" stop-color="#c89aa5"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Sad -->
+        <g class="slice" data-emotion="sad">
+          <path d="M200,200 L200,30 A170,170 0 0,1 347,113 Z" fill="url(#sadGrad)"/>
+          <text class="label" x="265" y="85">Sad</text>
+          <text class="word" x="265" y="104">Lonely</text>
+          <text class="word" x="265" y="118">Ashamed</text>
+          <text class="word" x="265" y="132">Disappointed</text>
+        </g>
+
+        <!-- Fear -->
+        <g class="slice" data-emotion="fear">
+          <path d="M200,200 L347,113 A170,170 0 0,1 347,287 Z" fill="url(#fearGrad)"/>
+          <text class="label" x="310" y="195">Fear</text>
+          <text class="word" x="310" y="212">Anxious</text>
+          <text class="word" x="310" y="226">Overwhelmed</text>
+          <text class="word" x="310" y="240">Tense</text>
+        </g>
+
+        <!-- Anger -->
+        <g class="slice" data-emotion="anger">
+          <path d="M200,200 L347,287 A170,170 0 0,1 200,370 Z" fill="url(#angerGrad)"/>
+          <text class="label" x="265" y="278">Anger</text>
+          <text class="word" x="265" y="295">Frustrated</text>
+          <text class="word" x="265" y="309">Aggravated</text>
+          <text class="word" x="265" y="323">Irritated</text>
+          <text class="word" x="265" y="337">Hostile</text>
+        </g>
+
+        <!-- Strong -->
+        <g class="slice" data-emotion="strong">
+          <path d="M200,200 L200,370 A170,170 0 0,1 53,287 Z" fill="url(#strongGrad)"/>
+          <text class="label" x="135" y="278">Strong</text>
+          <text class="word" x="135" y="295">Empowered</text>
+          <text class="word" x="135" y="309">Confident</text>
+          <text class="word" x="135" y="323">Determined</text>
+        </g>
+
+        <!-- Happy -->
+        <g class="slice" data-emotion="happy">
+          <path d="M200,200 L53,287 A170,170 0 0,1 53,113 Z" fill="url(#happyGrad)"/>
+          <text class="label" x="90" y="195">Happy</text>
+          <text class="word" x="90" y="212">Joyful</text>
+          <text class="word" x="90" y="226">Grateful</text>
+        </g>
+
+        <!-- Calm -->
+        <g class="slice" data-emotion="calm">
+          <path d="M200,200 L53,113 A170,170 0 0,1 200,30 Z" fill="url(#calmGrad)"/>
+          <text class="label" x="135" y="85">Calm</text>
+          <text class="word" x="135" y="104">Peaceful</text>
+          <text class="word" x="135" y="118">Relaxed</text>
+          <text class="word" x="135" y="132">Content</text>
+        </g>
+
+        <circle cx="200" cy="200" r="36" fill="#ffffff" opacity=".9"/>
+      </svg>
+    </div>
+
+    <div class="wheel-hint">
+      Tip: Click a slice to bring it forward. Hover a word to highlight it.
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function(){
+  const slices = document.querySelectorAll('.slice');
+  let active = null;
+
+  slices.forEach(slice => {
+    slice.addEventListener('click', e => {
+      e.stopPropagation();
+      if(active === slice){
+        slices.forEach(s => s.classList.remove('active','dimmed'));
+        active = null;
+        return;
+      }
+      active = slice;
+      slices.forEach(s => {
+        s.classList.toggle('active', s === slice);
+        s.classList.toggle('dimmed', s !== slice);
+      });
+    });
+  });
+
+  document.addEventListener('click', () => {
+    slices.forEach(s => s.classList.remove('active','dimmed'));
+    active = null;
+  });
+})();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <p class="copyright">
+      Copyright © <span id="currentYear"></span> Marsha Kerr Talley — All Rights Reserved.
+    </p>
+
+    <nav class="footer-links">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
+      <a href="/terms-and-conditions">Terms and Conditions</a>
+    </nav>
+
+  </div>
+</footer>
+
+<!-- FOOTER STYLES -->
+<style>
+.site-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #eee;
+  padding: 2.5rem 1.5rem 2rem;
+  text-align: center;
+  font-family: inherit;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-footer p {
+  margin: 0 0 1.4rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  font-size: 1rem;
+  color: #319fa2;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #056367;
+  text-decoration: underline;
+}
+</style>
+
+<!-- AUTO-UPDATE COPYRIGHT YEAR -->
+<script>
+  document.getElementById("currentYear").textContent =
+    new Date().getFullYear();
+</script>
