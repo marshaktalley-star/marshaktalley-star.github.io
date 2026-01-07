@@ -148,14 +148,16 @@
       margin-bottom:5rem;
     }
 
-    .image-box{border:4px solid var(--teal);}
-    .image-box img{width:100%;display:block;}
+    /* REMOVED IMAGE BORDERS */
+    .image-box img{
+      width:100%;
+      display:block;
+    }
 
     .content-box{text-align:center;}
-    .bordered-text{border:2px solid var(--teal);padding:1.5rem 1.75rem;}
     .simple-text{max-width:420px;margin:0 auto;}
 
-    /* ================= ESSENTIALS (FIXED) ================= */
+    /* ================= ESSENTIALS ================= */
     .row{
       display:grid;
       grid-template-columns:1.1fr 0.9fr;
@@ -249,9 +251,16 @@
   </div>
 
   <div class="content-grid">
-    <div class="logo"><img src="safe.webp" alt="Silhouette's Cafe logo"></div>
+    <div class="logo">
+      <img src="scafe.webp" alt="Silhouette's Cafe logo">
+    </div>
     <div class="text">
-      <p>Silhouette's Cafe is Marsha Kerr Talley's wellness brand. Here you can find Silhouette's Essentials, a collection of essential oils, and Jamaican Delight, her natural skin care line. Our mission at Silhouette's Café is to provide quality products for a mind-body connection.</p>
+      <p>
+        Silhouette's Cafe is Marsha Kerr Talley's wellness brand. Here you can find
+        Silhouette's Essentials, a collection of essential oils, and Jamaican Delight,
+        her natural skin care line. Our mission at Silhouette's Café is to provide quality
+        products for a mind-body connection.
+      </p>
       <div class="tagline">What is in your cup?</div>
     </div>
   </div>
@@ -261,12 +270,15 @@
   <div class="section-title"><h1>Our Products</h1></div>
 
   <div class="product-row">
-    <div class="image-box"><img src="care.webp" alt="Coffee and Teas"></div>
+    <div class="image-box">
+      <img src="care.webp" alt="Coffee and Teas">
+    </div>
     <div class="content-box">
       <h2>Coffee and Teas</h2>
-      <div class="bordered-text">
-        <p>Silhouette's Cafe is a wellness company dedicated to promoting optimal health through the use of high-quality herbal products...</p>
-      </div>
+      <p>
+        Silhouette's Cafe is a wellness company dedicated to promoting optimal health
+        through the use of high-quality herbal products...
+      </p>
     </div>
   </div>
 
@@ -274,16 +286,23 @@
     <div class="content-box">
       <h2>Jamaican Delight</h2>
       <div class="simple-text">
-        <p>Marsha Kerr Talley's personal brand of skin care products to keep your skin soft and glowing.</p>
+        <p>
+          Marsha Kerr Talley's personal brand of skin care products to keep your skin soft
+          and glowing.
+        </p>
       </div>
     </div>
-    <div class="image-box"><img src="sugar.webp" alt="Jamaican Delight Sugar Scrub"></div>
+    <div class="image-box">
+      <img src="sugar.webp" alt="Jamaican Delight Sugar Scrub">
+    </div>
   </div>
 </section>
 
 <section class="section">
   <div class="row">
-    <div class="image"><img src="eoils.webp" alt="Silhouette's Essentials essential oils"></div>
+    <div class="image">
+      <img src="eoils.webp" alt="Silhouette's Essentials essential oils">
+    </div>
     <div class="content">
       <h2>Silhouette's Essentials</h2>
       <p>Our brand of 100% certified pure and therapeutic grade essential oils.</p>
