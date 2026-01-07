@@ -4,93 +4,81 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Marsha Kerr Talley | Turning Pain Into Possibilities</title>
-</head>
-
-<body style="margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">
-
-<!-- SITE HEADER / NAVIGATION -->
-<header style="
-  width:100%;
-  background:#ffffff;
-  border-bottom:1px solid #e6f2f2;
-">
-  <div style="
-    max-width:1200px;
-    margin:0 auto;
-    padding:20px 16px 12px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    box-sizing:border-box;
-  ">
-    <!-- LOGO -->
-    <a href="index.html" style="display:inline-block;">
-      <img
-        src="MKT-logo-3.png"
-        alt="Marsha Kerr Talley – Live Inspired"
-        style="
-          max-width:220px;
-          width:100%;
-          height:auto;
-          display:block;
-          margin:0 auto 12px;
-        "
-      />
-    </a>
-
-    <!-- NAV LINKS -->
-    <nav aria-label="Main navigation">
-      <ul style="
-        list-style:none;
-        padding:0;
-        margin:0;
-        display:flex;
-        gap:28px;
-        flex-wrap:wrap;
-        justify-content:center;
-        font-size:14px;
-        letter-spacing:0.08em;
-        text-transform:uppercase;
-      ">
-        <li><a href="index.html" style="color:#056367;text-decoration:none;font-weight:600;">Home</a></li>
-        <li><a href="work-with-me.html" style="color:#2f2f2f;text-decoration:none;">Work With Me</a></li>
-        <li><a href="books.html" style="color:#2f2f2f;text-decoration:none;">Books</a></li>
-        <li><a href="podcast.html" style="color:#2f2f2f;text-decoration:none;">Podcast</a></li>
-        <li><a href="reflections.html" style="color:#2f2f2f;text-decoration:none;">Reflections</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Silhouette's Café</title>
 
   <style>
     :root{
-      --teal:#6aa9a9;
+      --teal:#1aa6a6;
+      --soft-teal:#6aa9a9;
+      --deep:#056367;
       --text:#333;
       --muted:#666;
+      --line:#e6f2f2;
     }
 
     body{
       margin:0;
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       background:#ffffff;
       color:var(--text);
     }
 
-    .wrapper{
+    /* ================= HEADER ================= */
+    .site-header{
+      width:100%;
+      background:#ffffff;
+      border-bottom:1px solid var(--line);
+    }
+
+    .header-inner{
+      max-width:1200px;
+      margin:0 auto;
+      padding:20px 16px 12px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      box-sizing:border-box;
+    }
+
+    .site-logo img{
+      max-width:220px;
+      width:100%;
+      height:auto;
+      display:block;
+      margin:0 auto 12px;
+    }
+
+    .main-nav ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      gap:28px;
+      flex-wrap:wrap;
+      justify-content:center;
+      font-size:14px;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+    }
+
+    .main-nav a{
+      text-decoration:none;
+      color:#2f2f2f;
+    }
+
+    .main-nav a.active{
+      color:var(--deep);
+      font-weight:600;
+    }
+
+    /* ================= COMMON SECTIONS ================= */
+    .section{
       max-width:1200px;
       margin:0 auto;
       padding:3.5rem 1.5rem 4rem;
       box-sizing:border-box;
     }
 
-    /* Heading with divider lines */
+    /* ================= SILHOUETTE CAFE ================= */
     .headline{
       display:flex;
       align-items:center;
@@ -104,128 +92,31 @@
       content:"";
       flex:1;
       height:1px;
-      background:var(--teal);
+      background:var(--soft-teal);
     }
 
     .headline h1{
       margin:0;
       font-size:clamp(1.6rem,3vw,2.4rem);
       font-weight:500;
-      color:var(--teal);
-      line-height:1.35;
+      color:var(--soft-teal);
     }
 
-    /* Main content */
-    .content{
+    .content-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:3rem;
       align-items:center;
     }
 
-    .logo{
-      text-align:center;
-    }
+    .logo{text-align:center;}
+    .logo img{max-width:420px;width:100%;height:auto;}
 
-    .logo img{
-      max-width:420px;
-      width:100%;
-      height:auto;
-    }
+    .text{text-align:center;max-width:520px;margin:0 auto;}
+    .text p{font-size:1.05rem;line-height:1.8;margin-bottom:1.75rem;}
+    .tagline{font-style:italic;color:var(--muted);}
 
-    .text{
-      text-align:center;
-      max-width:520px;
-      margin:0 auto;
-    }
-
-    .text p{
-      font-size:1.05rem;
-      line-height:1.8;
-      color:var(--text);
-      margin-bottom:1.75rem;
-    }
-
-    .text .tagline{
-      font-size:1rem;
-      color:var(--muted);
-      font-style:italic;
-    }
-
-    /* Responsive */
-    @media (max-width:900px){
-      .content{
-        grid-template-columns:1fr;
-        gap:2.5rem;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <section class="wrapper">
-
-    <div class="headline">
-      <h1>Welcome to Silhouette's Cafe: Home of essential oils, herbal coffee and tea</h1>
-    </div>
-
-    <div class="content">
-
-      <!-- Logo -->
-      <div class="logo">
-        <img src="safe.webp" alt="Silhouette's Cafe logo">
-      </div>
-
-      <!-- Text -->
-      <div class="text">
-        <p>
-          Silhouette's Cafe is Marsha Kerr Talley's wellness brand.
-          Here you can find Silhouette's Essentials, a collection of essential oils,
-          and Jamaican Delight, her natural skin care line.
-          Our mission at Silhouette's Café is to provide quality products
-          for a mind-body connection.
-        </p>
-
-        <div class="tagline">
-          What is in your cup?
-        </div>
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Products | Silhouette's Cafe</title>
-
-  <style>
-    :root{
-      --teal:#1aa6a6;
-      --soft-teal:#6aa9a9;
-      --text:#333;
-      --muted:#666;
-    }
-
-    body{
-      margin:0;
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:#ffffff;
-      color:var(--text);
-    }
-
-    .section{
-      max-width:1200px;
-      margin:0 auto;
-      padding:3.5rem 1.5rem 4.5rem;
-      box-sizing:border-box;
-    }
-
-    /* Section heading */
+    /* ================= PRODUCTS ================= */
     .section-title{
       display:flex;
       align-items:center;
@@ -247,10 +138,8 @@
       font-size:clamp(1.8rem,3vw,2.6rem);
       font-weight:500;
       color:var(--soft-teal);
-      white-space:nowrap;
     }
 
-    /* Product rows */
     .product-row{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -259,141 +148,14 @@
       margin-bottom:5rem;
     }
 
-    .image-box{
-      border:4px solid var(--teal);
-      padding:0;
-    }
+    .image-box{border:4px solid var(--teal);}
+    .image-box img{width:100%;display:block;}
 
-    .image-box img{
-      width:100%;
-      height:auto;
-      display:block;
-    }
+    .content-box{text-align:center;}
+    .bordered-text{border:2px solid var(--teal);padding:1.5rem 1.75rem;}
+    .simple-text{max-width:420px;margin:0 auto;}
 
-    .content-box{
-      text-align:center;
-    }
-
-    .content-box h2{
-      margin-bottom:1rem;
-      font-size:1.5rem;
-      font-weight:600;
-      color:#222;
-    }
-
-    .content-box p{
-      font-size:1.05rem;
-      line-height:1.75;
-      color:var(--muted);
-    }
-
-    .bordered-text{
-      border:2px solid var(--teal);
-      padding:1.5rem 1.75rem;
-    }
-
-    /* Second row spacing */
-    .simple-text{
-      max-width:420px;
-      margin:0 auto;
-    }
-
-    /* Responsive */
-    @media (max-width:900px){
-      .product-row{
-        grid-template-columns:1fr;
-        gap:2.5rem;
-      }
-      .image-box{
-        order:1;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-<section class="section">
-
-  <!-- Title -->
-  <div class="section-title">
-    <h1>Our Products</h1>
-  </div>
-
-  <!-- Product Row 1 -->
-  <div class="product-row">
-
-    <div class="image-box">
-      <img src="care.webp" alt="Coffee and Teas">
-    </div>
-
-    <div class="content-box">
-      <h2>Coffee and Teas</h2>
-
-      <div class="bordered-text">
-        <p>
-          Silhouette's Cafe is a wellness company dedicated to promoting optimal health through
-          the use of high-quality herbal products. We offer a range of natural solutions,
-          including herbal coffee and teas, supplements, essential oils, and skincare products
-          that are safe, effective, and affordable. Our mission is to help people achieve their
-          best health and well-being by providing convenient and easy-to-use natural remedies
-          supporting the body's healing abilities.
-        </p>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Product Row 2 -->
-  <div class="product-row">
-
-    <div class="content-box">
-      <h2>Jamaican Delight</h2>
-
-      <div class="simple-text">
-        <p>
-          Marsha Kerr Talley's personal brand of skin care products to keep your skin soft and glowing.
-        </p>
-      </div>
-    </div>
-
-    <div class="image-box">
-      <img src="sugar.webp" alt="Jamaican Delight Sugar Scrub">
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Silhouette's Essentials</title>
-
-  <style>
-    :root{
-      --text:#333;
-      --muted:#666;
-    }
-
-    body{
-      margin:0;
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:#ffffff;
-      color:var(--text);
-    }
-
-    .section{
-      max-width:1200px;
-      margin:0 auto;
-      padding:3.5rem 1.5rem 4rem;
-      box-sizing:border-box;
-    }
-
+    /* ================= ESSENTIALS ================= */
     .row{
       display:grid;
       grid-template-columns:1.1fr 0.9fr;
@@ -401,32 +163,42 @@
       align-items:center;
     }
 
-    .image img{
-      width:100%;
-      height:auto;
-      display:block;
+    /* ================= REVIEWS ================= */
+    .reviews{
+      background:#f9fefe;
+      padding:48px 16px;
     }
 
-    .content{
+    /* ================= FOOTER ================= */
+    .site-footer{
+      background:#ffffff;
+      border-top:1px solid #eee;
+      padding:2.5rem 1.5rem 2rem;
       text-align:center;
-      max-width:420px;
-      margin:0 auto;
     }
 
-    .content h2{
-      font-size:1.6rem;
-      font-weight:500;
-      margin-bottom:1rem;
+    .footer-inner{max-width:1200px;margin:0 auto;}
+
+    .footer-links{
+      display:flex;
+      justify-content:center;
+      gap:2rem;
+      flex-wrap:wrap;
     }
 
-    .content p{
-      font-size:1.05rem;
-      line-height:1.7;
-      color:var(--muted);
+    .footer-links a{
+      color:#319fa2;
+      text-decoration:none;
     }
 
-    /* Responsive */
+    .footer-links a:hover{
+      color:#056367;
+      text-decoration:underline;
+    }
+
     @media (max-width:900px){
+      .content-grid,
+      .product-row,
       .row{
         grid-template-columns:1fr;
         gap:2.5rem;
@@ -435,157 +207,95 @@
   </style>
 </head>
 
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired">
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="work-with-me.html">Work With Me</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="podcast.html">Podcast</a></li>
+        <li><a href="reflections.html">Reflections</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
 <section class="section">
+  <div class="headline">
+    <h1>Welcome to Silhouette's Cafe: Home of essential oils, herbal coffee and tea</h1>
+  </div>
 
-  <div class="row">
-
-    <!-- Image -->
-    <div class="image">
-      <img src="eoils.webp" alt="Silhouette's Essentials essential oils">
+  <div class="content-grid">
+    <div class="logo"><img src="safe.webp" alt="Silhouette's Cafe logo"></div>
+    <div class="text">
+      <p>Silhouette's Cafe is Marsha Kerr Talley's wellness brand. Here you can find Silhouette's Essentials, a collection of essential oils, and Jamaican Delight, her natural skin care line. Our mission at Silhouette's Café is to provide quality products for a mind-body connection.</p>
+      <div class="tagline">What is in your cup?</div>
     </div>
+  </div>
+</section>
 
-    <!-- Text -->
+<section class="section">
+  <div class="section-title"><h1>Our Products</h1></div>
+
+  <div class="product-row">
+    <div class="image-box"><img src="care.webp" alt="Coffee and Teas"></div>
+    <div class="content-box">
+      <h2>Coffee and Teas</h2>
+      <div class="bordered-text">
+        <p>Silhouette's Cafe is a wellness company dedicated to promoting optimal health through the use of high-quality herbal products...</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-row">
+    <div class="content-box">
+      <h2>Jamaican Delight</h2>
+      <div class="simple-text">
+        <p>Marsha Kerr Talley's personal brand of skin care products to keep your skin soft and glowing.</p>
+      </div>
+    </div>
+    <div class="image-box"><img src="sugar.webp" alt="Jamaican Delight Sugar Scrub"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="row">
+    <div class="image"><img src="eoils.webp" alt="Silhouette's Essentials essential oils"></div>
     <div class="content">
       <h2>Silhouette's Essentials</h2>
-      <p>
-        Our brand of 100% certified pure and therapeutic grade essential oils.
-      </p>
+      <p>Our brand of 100% certified pure and therapeutic grade essential oils.</p>
     </div>
-
-  </div>
-
-</section>
-
-
-
-
-
-
-
-
-
-
-
-<!-- OPTIONAL | FULL READER REVIEWS -->
-<section aria-label="Full Reader Reviews" style="
-  width:100%;
-  max-width:100vw;
-  padding:48px 16px;
-  margin:0;
-  background:#f9fefe;
-  color:#0d4b4e;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  box-sizing:border-box;
-  overflow:hidden;
-">
-
-  <div style="
-    max-width:900px;
-    margin:0 auto;
-    box-sizing:border-box;
-  ">
-
-    <h2 style="
-      margin:0 0 12px 0;
-      font-size:clamp(24px,4.5vw,32px);
-      font-weight:900;
-      letter-spacing:-0.02em;
-      color:#056367;
-      text-align:center;
-    ">
-      What Others Say
-    </h2>
-
-    <p style="
-      margin:0 0 28px 0;
-      font-size:clamp(15px,3.4vw,17px);
-      line-height:1.6;
-      max-width:72ch;
-      color:#319fa2;
-      font-weight:600;
-      text-align:center;
-      margin-left:auto;
-      margin-right:auto;
-    ">
-      Shared reflections from readers and those who have engaged with my work.
-    </p>
-
-    <!-- Yotpo Widget -->
-    <div style="
-      background:#ffffff;
-      border-radius:20px;
-      padding:24px;
-      box-shadow:0 12px 40px rgba(0,0,0,0.08);
-    ">
-      <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/AtKrwfdI2YVagQiXihl0WtyfVeCBrj9dy5E6KVOr" async></script>
-      <div class="yotpo-widget-instance" data-yotpo-instance-id="1056648"></div>
-    </div>
-
   </div>
 </section>
- <!-- SITE FOOTER -->
+
+<section class="reviews">
+  <div class="footer-inner">
+    <h2 style="color:#056367;text-align:center;">What Others Say</h2>
+    <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/AtKrwfdI2YVagQiXihl0WtyfVeCBrj9dy5E6KVOr" async></script>
+    <div class="yotpo-widget-instance" data-yotpo-instance-id="1056648"></div>
+  </div>
+</section>
+
 <footer class="site-footer">
   <div class="footer-inner">
-
-    <p class="copyright">
-      Copyright © <span id="currentYear"></span> Marsha Kerr Talley — All Rights Reserved.
-    </p>
-
+    <p>Copyright © <span id="currentYear"></span> Marsha Kerr Talley — All Rights Reserved.</p>
     <nav class="footer-links">
       <a href="/privacy-policy">Privacy Policy</a>
       <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
       <a href="/terms-and-conditions">Terms and Conditions</a>
     </nav>
-
   </div>
 </footer>
 
-<!-- FOOTER STYLES -->
-<style>
-.site-footer {
-  background-color: #ffffff;
-  border-top: 1px solid #eee;
-  padding: 2.5rem 1.5rem 2rem;
-  text-align: center;
-  font-family: inherit;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.site-footer p {
-  margin: 0 0 1.4rem;
-  font-size: 0.95rem;
-  color: #666;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.footer-links a {
-  font-size: 1rem;
-  color: #319fa2;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #056367;
-  text-decoration: underline;
-}
-</style>
-
-<!-- AUTO-UPDATE COPYRIGHT YEAR -->
 <script>
-  document.getElementById("currentYear").textContent =
-    new Date().getFullYear();
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
