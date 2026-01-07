@@ -62,15 +62,254 @@
   </div>
 </header>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shipping & Refund Policy | Marsha Kerr Talley</title>
+
+  <style>
+    :root{
+      --teal:#319fa2;
+      --deep:#056367;
+      --text:#333;
+      --muted:#666;
+      --line:#e6f2f2;
+      --card:#ffffff;
+      --bg:#ffffff;
+    }
+
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.75;
+    }
+
+    a{ color:var(--deep); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .page{
+      max-width:1100px;
+      margin:0 auto;
+      padding:3.25rem 1.5rem 4rem;
+      box-sizing:border-box;
+    }
+
+    /* Title with divider lines (matches your Privacy Policy style) */
+    .page-title{
+      display:flex;
+      align-items:center;
+      gap:1.5rem;
+      margin:0 0 2rem 0;
+      text-align:center;
+    }
+    .page-title::before,
+    .page-title::after{
+      content:"";
+      flex:1;
+      height:1px;
+      background:var(--teal);
+    }
+    .page-title h1{
+      margin:0;
+      font-size:clamp(1.8rem, 3vw, 2.6rem);
+      font-weight:500;
+      color:var(--teal);
+      letter-spacing:.4px;
+      white-space:nowrap;
+    }
+
+    .intro{
+      max-width:880px;
+      margin:0 auto 2.25rem auto;
+      color:var(--muted);
+      font-size:1.05rem;
+      text-align:center;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:1.25rem;
+      margin-top:2rem;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:1.5rem 1.5rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+    }
+
+    .card h2{
+      margin:0 0 .75rem 0;
+      color:var(--deep);
+      font-size:1.35rem;
+      font-weight:650;
+    }
+
+    .card h3{
+      margin:1.25rem 0 .25rem 0;
+      color:var(--deep);
+      font-size:1.05rem;
+      font-weight:650;
+    }
+
+    .card p{
+      margin:.25rem 0 0 0;
+      color:var(--muted);
+      font-size:1.02rem;
+    }
+
+    ul{
+      margin:.6rem 0 0 1.2rem;
+      padding:0;
+      color:var(--muted);
+    }
+    li{ margin:.35rem 0; }
+
+    .note{
+      margin-top:1rem;
+      padding:1rem 1rem;
+      border-left:4px solid var(--teal);
+      background:#f4fbfb;
+      border-radius:12px;
+      color:var(--muted);
+    }
+
+    .contact{
+      margin-top:2.25rem;
+      text-align:center;
+      color:var(--muted);
+      font-size:1.02rem;
+    }
+
+    .contact strong{ color:var(--deep); }
+
+    @media (min-width: 900px){
+      .grid{
+        grid-template-columns: 1fr 1fr;
+        gap:1.5rem;
+      }
+      .card{ padding:1.75rem 1.75rem; }
+    }
+  </style>
+</head>
 
 
+ 
 
+    <div class="page-title">
+      <h1>Shipping & Refund Policy</h1>
+    </div>
 
+    <p class="intro">
+      Thank you for choosing to shop with Marsha Kerr Talley. We are committed to providing our valued customers with
+      the best shopping experience and have implemented a transparent and reliable policy to support your satisfaction.
+    </p>
 
+    <section class="grid" aria-label="Shipping and Refund Policy Sections">
 
+      <!-- =======================
+           SHIPPING POLICY
+      ======================== -->
+      <article class="card" aria-label="Shipping Policy">
+        <h2>Shipping Policy</h2>
 
+        <h3>Shipping Charges</h3>
+        <p>
+          We provide <strong>free shipping</strong> on all orders over <strong>£50</strong>.
+          For orders under <strong>£50</strong>, a flat rate of <strong>£5.99</strong> applies on eligible items.
+        </p>
 
+        <h3>Delivery Time</h3>
+        <p>
+          We understand that timely delivery is important and strive to ensure your order is delivered as quickly as possible.
+          We estimate <strong>2–3 business days</strong> for UK orders.
+        </p>
 
+        <h3>Order Processing</h3>
+        <p>
+          We generally process orders within <strong>1–2 business days</strong> of receiving them.
+          Once your order is shipped, you will receive an email notification with tracking information.
+        </p>
+
+        <h3>Delivery Partners</h3>
+        <p>
+          We have partnered with reliable courier services, such as <strong>DPD</strong>, <strong>Royal Mail</strong>, and <strong>Hermes</strong>,
+          to ensure your order is delivered safely and securely.
+        </p>
+
+        <h3>Delivery Address</h3>
+        <p>
+          Customers must provide accurate and complete delivery addresses to ensure timely deliveries.
+          Please note that we are not responsible for delays or failed deliveries due to incorrect or incomplete delivery addresses.
+        </p>
+
+        <h3>International Shipping</h3>
+        <p>
+          We currently do not offer international shipping. We only ship to addresses in the UK.
+        </p>
+
+        <div class="note">
+          If you have any questions or concerns about our shipping policy, please email us at
+          <a href="mailto:info@marshakerrtalley.com"><strong>info@marshakerrtalley.com</strong></a>.
+        </div>
+      </article>
+
+      <!-- =======================
+           REFUND POLICY
+      ======================== -->
+      <article class="card" aria-label="Refund Policy">
+        <h2>Refund Policy</h2>
+
+        <p>
+          We offer a <strong>30-day refund policy</strong>, after which no returns or exchanges are allowed.
+        </p>
+
+        <h3>Eligibility for Refunds</h3>
+        <ul>
+          <li>Your item must be unused and in the same condition you received it.</li>
+          <li>The item must be in the original packaging.</li>
+          <li>To complete your return, we require a receipt or proof of purchase.</li>
+          <li>Only regular priced items may be refunded; we do not refund sale items.</li>
+          <li>Exchanges are not available.</li>
+          <li>Partial refunds are not available.</li>
+        </ul>
+
+        <h3>Refund Approval & Processing</h3>
+        <p>
+          We'll email you to confirm once we receive and inspect your return. If approved, we will process your refund within a few days.
+        </p>
+
+        <h3>Late or Missing Refunds</h3>
+        <p>
+          If you have not received a refund, contact your bank or credit card company. It may take a few days for the refund to be posted.
+          If you have done all of this and you still have not received your refund yet, please get in touch with us at
+          <a href="mailto:info@marshakerrtalley.com"><strong>info@marshakerrtalley.com</strong></a>.
+        </p>
+
+        <h3>Shipping (Returns)</h3>
+        <ul>
+          <li>Please note that you are responsible for paying the shipping costs for returning your item.</li>
+          <li>Shipping costs are non-refundable. If you receive a refund, the cost of return shipping will be deducted from your refund.</li>
+          <li>Please note we cannot guarantee that we will receive your returned item.</li>
+        </ul>
+
+        <div class="note">
+          For refund support, email: <a href="mailto:info@marshakerrtalley.com"><strong>info@marshakerrtalley.com</strong></a>
+        </div>
+      </article>
+
+    </section>
+
+    <p class="contact">
+      Need help? Email us anytime at <strong><a href="mailto:info@marshakerrtalley.com">info@marshakerrtalley.com</a></strong>.
+    </p>
 
 
 
