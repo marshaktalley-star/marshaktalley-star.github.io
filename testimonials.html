@@ -4,78 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Marsha Kerr Talley | Turning Pain Into Possibilities</title>
-</head>
-
-<body style="margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">
-
-<!-- SITE HEADER / NAVIGATION -->
-<header style="
-  width:100%;
-  background:#ffffff;
-  border-bottom:1px solid #e6f2f2;
-">
-  <div style="
-    max-width:1200px;
-    margin:0 auto;
-    padding:20px 16px 12px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    box-sizing:border-box;
-  ">
-    <!-- LOGO -->
-    <a href="index.html" style="display:inline-block;">
-      <img
-        src="MKT-logo-3.png"
-        alt="Marsha Kerr Talley – Live Inspired"
-        style="
-          max-width:220px;
-          width:100%;
-          height:auto;
-          display:block;
-          margin:0 auto 12px;
-        "
-      />
-    </a>
-
-    <!-- NAV LINKS -->
-    <nav aria-label="Main navigation">
-      <ul style="
-        list-style:none;
-        padding:0;
-        margin:0;
-        display:flex;
-        gap:28px;
-        flex-wrap:wrap;
-        justify-content:center;
-        font-size:14px;
-        letter-spacing:0.08em;
-        text-transform:uppercase;
-      ">
-        <li><a href="index.html" style="color:#056367;text-decoration:none;font-weight:600;">Home</a></li>
-        <li><a href="work-with-me.html" style="color:#2f2f2f;text-decoration:none;">Work With Me</a></li>
-        <li><a href="books.html" style="color:#2f2f2f;text-decoration:none;">Books</a></li>
-        <li><a href="podcast.html" style="color:#2f2f2f;text-decoration:none;">Podcast</a></li>
-        <li><a href="reflections.html" style="color:#2f2f2f;text-decoration:none;">Reflections</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Live Inspired | Marsha Kerr Talley</title>
 
   <style>
     body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: #ffffff;
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:#ffffff;
+      color:#555;
     }
 
+    /* ===== BANNER STYLES ===== */
     .banner {
       position: relative;
       width: 100%;
@@ -89,7 +27,6 @@
       display: block;
     }
 
-    /* Text overlay */
     .banner-content {
       position: absolute;
       inset: 0;
@@ -133,63 +70,16 @@
       opacity: 0.9;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .banner-content {
         background: rgba(0,0,0,0.55);
         text-align: center;
       }
-
-      .quote-wrapper {
-        max-width: 100%;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <section class="banner">
-    <img src="MKT-banner.png" alt="Marsha Kerr Talley banner">
-
-    <div class="banner-content">
-      <div class="quote-wrapper">
-        <div class="quote-mark">“</div>
-
-        <p class="quote-text">
-          Failure is not the worst thing that could happen. Regret is.<br>
-          Live life on your terms.
-        </p>
-
-        <div class="quote-author">
-          Marsha Kerr Talley
-        </div>
-      </div>
-    </div>
-  </section>
-
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Testimonials | Marsha Kerr Talley</title>
-
-  <style>
-    :root{
-      --teal:#6aa9a9;
-      --text:#555;
+      .quote-wrapper { max-width: 100%; }
     }
 
-    body{
-      margin:0;
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:#ffffff;
-      color:var(--text);
-    }
+    /* ===== TESTIMONIALS ===== */
+    :root { --teal:#6aa9a9; }
 
     .testimonials-section{
       max-width:1200px;
@@ -199,7 +89,6 @@
       text-align:center;
     }
 
-    /* Title with divider lines */
     .section-title{
       display:flex;
       align-items:center;
@@ -231,33 +120,90 @@
       color:#666;
     }
 
-    @media (max-width:768px){
-      .testimonial-text{
-        font-size:1.05rem;
-      }
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background-color: #ffffff;
+      border-top: 1px solid #eee;
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .site-footer p {
+      margin: 0 0 1.4rem;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 1rem;
+      color: #319fa2;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #056367;
+      text-decoration: underline;
     }
   </style>
 </head>
 
 <body>
 
-  <section class="testimonials-section">
+<!-- SITE HEADER / NAVIGATION -->
+<header style="width:100%;background:#ffffff;border-bottom:1px solid #e6f2f2;">
+  <div style="max-width:1200px;margin:0 auto;padding:20px 16px 12px;display:flex;flex-direction:column;align-items:center;">
+    <a href="index.html">
+      <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired"
+        style="max-width:220px;width:100%;height:auto;display:block;margin:0 auto 12px;">
+    </a>
 
-    <div class="section-title">
-      <h2>Testimonials</h2>
+    <nav aria-label="Main navigation">
+      <ul style="list-style:none;padding:0;margin:0;display:flex;gap:28px;flex-wrap:wrap;justify-content:center;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;">
+        <li><a href="index.html" style="color:#056367;text-decoration:none;font-weight:600;">Home</a></li>
+        <li><a href="work-with-me.html" style="color:#2f2f2f;text-decoration:none;">Work With Me</a></li>
+        <li><a href="books.html" style="color:#2f2f2f;text-decoration:none;">Books</a></li>
+        <li><a href="podcast.html" style="color:#2f2f2f;text-decoration:none;">Podcast</a></li>
+        <li><a href="reflections.html" style="color:#2f2f2f;text-decoration:none;">Reflections</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="banner">
+  <img src="MKT-banner.png" alt="Marsha Kerr Talley banner">
+  <div class="banner-content">
+    <div class="quote-wrapper">
+      <div class="quote-mark">“</div>
+      <p class="quote-text">
+        Failure is not the worst thing that could happen. Regret is.<br>
+        Live life on your terms.
+      </p>
+      <div class="quote-author">Marsha Kerr Talley</div>
     </div>
+  </div>
+</section>
 
-    <p class="testimonial-text">
-      Marsha Kerr Talley is a true life enthusiast who inspires others to live fully and intentionally.
-      Through her work as a lecturer, author, podcaster, and lifestyle coach, she empowers people to
-      transform their pain into purpose and discover the joy they deserve.
-    </p>
-
-  </section>
-
-</body>
-</html>
-
+<section class="testimonials-section">
+  <div class="section-title"><h2>Testimonials</h2></div>
+  <p class="testimonial-text">
+    Marsha Kerr Talley is a true life enthusiast who inspires others to live fully and intentionally.
+    Through her work as a lecturer, author, podcaster, and lifestyle coach, she empowers people to
+    transform their pain into purpose and discover the joy they deserve.
+  </p>
+</section>
 
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
@@ -266,198 +212,20 @@
 <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
 
-<!-- Page Container -->
-<div class="min-h-screen w-full flex items-center justify-center bg-gradient-to-b from-[#056367] via-[#319fa2] to-[#2fe2dd] py-12">
-
-  <!-- Form Card -->
-  <div class="w-full max-w-xl p-8 bg-white/75 backdrop-blur-md rounded-3xl shadow-2xl">
-    <h2 class="text-4xl font-bold text-center text-[#056367] mb-6">
-      Share Your Experience
-    </h2>
-
-    <form id="reviewForm" class="space-y-6">
-
-      <!-- Star Rating -->
-      <div>
-        <label class="block font-medium text-[#056367] mb-2">
-          Star Rating
-        </label>
-        <div id="starRating" class="flex gap-2 text-3xl cursor-pointer">
-          <span data-value="1" class="star text-gray-300">★</span>
-          <span data-value="2" class="star text-gray-300">★</span>
-          <span data-value="3" class="star text-gray-300">★</span>
-          <span data-value="4" class="star text-gray-300">★</span>
-          <span data-value="5" class="star text-gray-300">★</span>
-        </div>
-      </div>
-
-      <!-- Comment -->
-      <div>
-        <label for="message" class="block font-medium text-[#056367]">
-          Your Comment
-        </label>
-        <textarea
-          id="message"
-          rows="4"
-          required
-          class="w-full p-3 border border-[#319fa2] rounded-xl focus:ring-2 focus:ring-[#2fe2dd]"
-          placeholder="Write your thoughts here..."
-        ></textarea>
-      </div>
-
-      <!-- Submit -->
-      <button
-        type="submit"
-        class="w-full bg-[#056367] text-white p-3 rounded-xl text-lg font-semibold hover:bg-[#319fa2] transition"
-      >
-        Submit
-      </button>
-
-      <!-- Confirmation Message -->
-      <p id="successMsg" class="hidden text-center text-[#056367] font-medium">
-        Thank you for sharing ✨
-      </p>
-    </form>
-  </div>
-</div>
-
-<script>
-  // ===== Firebase Configuration =====
-  const firebaseConfig = {
-    apiKey: "AIzaSyBZCg70hhCkx01ccZWePeIKAZEPC3mejkc",
-    authDomain: "testimonials-8100a.firebaseapp.com",
-    projectId: "testimonials-8100a",
-    storageBucket: "testimonials-8100a.firebasestorage.app",
-    messagingSenderId: "718470051880",
-    appId: "1:718470051880:web:0e42651ea9db9201019d1d"
-  };
-
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-
-  // ===== Star Rating Logic =====
-  let currentRating = 0;
-  const stars = document.querySelectorAll(".star");
-
-  stars.forEach(star => {
-    star.addEventListener("click", () => {
-      currentRating = parseInt(star.dataset.value);
-      updateStars();
-    });
-
-    star.addEventListener("mouseenter", () => {
-      const value = parseInt(star.dataset.value);
-      stars.forEach(s => {
-        s.classList.toggle("text-yellow-400", s.dataset.value <= value);
-        s.classList.toggle("text-gray-300", s.dataset.value > value);
-      });
-    });
-
-    star.addEventListener("mouseleave", updateStars);
-  });
-
-  function updateStars() {
-    stars.forEach(s => {
-      s.classList.toggle("text-yellow-400", s.dataset.value <= currentRating);
-      s.classList.toggle("text-gray-300", s.dataset.value > currentRating);
-    });
-  }
-
-  // ===== Form Submission =====
-  const form = document.getElementById("reviewForm");
-  const successMsg = document.getElementById("successMsg");
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const message = document.getElementById("message").value.trim();
-
-    if (currentRating === 0) {
-      alert("Please select a star rating.");
-      return;
-    }
-
-    if (!message) {
-      alert("Please write a comment.");
-      return;
-    }
-
-    await db.collection("reviews").add({
-      rating: currentRating,
-      message,
-      timestamp: Date.now()
-    });
-
-    form.reset();
-    currentRating = 0;
-    updateStars();
-
-    successMsg.classList.remove("hidden");
-  });
-</script>
-
-   <!-- SITE FOOTER -->
+<!-- SITE FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
-
-    <p class="copyright">
-      Copyright © <span id="currentYear"></span> Marsha Kerr Talley — All Rights Reserved.
-    </p>
-
+    <p>Copyright © <span id="currentYear"></span> Marsha Kerr Talley — All Rights Reserved.</p>
     <nav class="footer-links">
       <a href="/privacy-policy">Privacy Policy</a>
       <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
       <a href="/terms-and-conditions">Terms and Conditions</a>
     </nav>
-
   </div>
 </footer>
 
-<!-- FOOTER STYLES -->
-<style>
-.site-footer {
-  background-color: #ffffff;
-  border-top: 1px solid #eee;
-  padding: 2.5rem 1.5rem 2rem;
-  text-align: center;
-  font-family: inherit;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.site-footer p {
-  margin: 0 0 1.4rem;
-  font-size: 0.95rem;
-  color: #666;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.footer-links a {
-  font-size: 1rem;
-  color: #319fa2;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #056367;
-  text-decoration: underline;
-}
-</style>
-
-<!-- AUTO-UPDATE COPYRIGHT YEAR -->
 <script>
-  document.getElementById("currentYear").textContent =
-    new Date().getFullYear();
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
 </script>
 
 </body>
