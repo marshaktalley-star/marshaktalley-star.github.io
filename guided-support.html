@@ -489,14 +489,67 @@
 </section>
 
 <!-- SITE FOOTER -->
-<footer class="site-footer" style="background:#fff;border-top:1px solid #eee;padding:2.5rem 1.5rem 2rem;text-align:center;">
-  <p style="margin:0 0 1.4rem;font-size:.95rem;color:#666;">
-    Copyright © <span id="currentYear"></span> Marsha Kerr Talley — All Rights Reserved.
-  </p>
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <p class="copyright">
+      Copyright © <span id="currentYear"></span> Marsha Kerr Talley — All Rights Reserved.
+    </p>
+
+    <nav class="footer-links">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
+      <a href="/terms-and-conditions">Terms and Conditions</a>
+    </nav>
+
+  </div>
 </footer>
 
+<!-- FOOTER STYLES -->
+<style>
+.site-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #eee;
+  padding: 2.5rem 1.5rem 2rem;
+  text-align: center;
+  font-family: inherit;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-footer p {
+  margin: 0 0 1.4rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  font-size: 1rem;
+  color: #319fa2;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #056367;
+  text-decoration: underline;
+}
+</style>
+
+<!-- AUTO-UPDATE COPYRIGHT YEAR -->
 <script>
-  document.getElementById("currentYear").textContent = new Date().getFullYear();
+  document.getElementById("currentYear").textContent =
+    new Date().getFullYear();
 </script>
 
 </body>
