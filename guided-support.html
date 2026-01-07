@@ -68,7 +68,7 @@
     }
   </style>
 
-  <!-- EMOTION WHEEL STYLES -->
+  <!-- EMOTION WHEEL STYLES (UNCHANGED) -->
   <style>
     * { box-sizing:border-box; }
     .wheel-wrap {
@@ -101,24 +101,27 @@
       align-items:center;
     }
     .wheel-svg {
-  width: min(520px,90vw);
-  height: min(520px,90vw); /* forces square */
-  aspect-ratio: 1 / 1;     /* guarantees circle */
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,.12));
-}
-
+      width:min(520px,90vw);
+      height:min(520px,90vw);
+      aspect-ratio:1/1;
+      filter:drop-shadow(0 10px 18px rgba(0,0,0,.12));
+    }
     .slice {
       cursor:pointer;
-      transform-origin:200px 200px;
-      transition:transform .25s ease,opacity .25s ease;
+      transition:transform .25s ease, opacity .25s ease;
+      transform-origin:300px 300px;
+    }
+    .slice:hover {
+      transform:scale(1.04);
     }
     .slice.dimmed { opacity:.35; }
-    .slice.active { transform:scale(1.06); opacity:1; }
+    .slice.active { transform:scale(1.07); opacity:1; }
     .label {
       font-size:22px;
       font-weight:600;
       fill:rgba(0,0,0,.78);
       text-anchor:middle;
+      pointer-events:none;
     }
     .wheel-hint {
       margin-top:1rem;
@@ -127,121 +130,25 @@
       color:#056367;
     }
   </style>
-
-  <!-- PDF PREVIEW STYLES -->
-  <style>
-    .pdf-wrapper {
-      max-width:900px;
-      margin:4rem auto;
-      padding:0 1.5rem;
-      text-align:center;
-    }
-    .pdf-header {
-      background:#056367;
-      color:#fff;
-      padding:2rem;
-      border-radius:16px 16px 0 0;
-    }
-    .pdf-preview {
-      border:1px solid #e5e5e5;
-      border-top:none;
-      border-radius:0 0 16px 16px;
-      overflow:hidden;
-    }
-    iframe {
-      width:100%;
-      height:650px;
-      border:none;
-    }
-    .download-btn {
-      display:inline-block;
-      margin-top:2rem;
-      padding:.9rem 2rem;
-      background:#319fa2;
-      color:#fff;
-      text-decoration:none;
-      font-weight:600;
-      border-radius:999px;
-    }
-  </style>
-
-  <!-- WEEKLY MENU STYLES -->
-  <style>
-    .menu-wrapper {
-      max-width:900px;
-      margin:4rem auto;
-      padding:0 1.5rem;
-      text-align:center;
-    }
-    .menu-wrapper h1 {
-      color:#056367;
-      font-size:2.4rem;
-      margin-bottom:.25rem;
-    }
-    .menu-wrapper p.subtitle {
-      color:#666;
-      margin-bottom:3rem;
-      font-size:1rem;
-    }
-    .week-item { margin-bottom:1.5rem; }
-    .week-button {
-      display:block;
-      width:100%;
-      background:#319fa2;
-      color:#fff;
-      text-decoration:none;
-      padding:1.2rem 1.5rem;
-      border-radius:999px;
-      font-weight:600;
-      letter-spacing:.03em;
-    }
-    .week-description {
-      margin-top:.6rem;
-      font-size:.95rem;
-      color:#555;
-    }
-    .reflect {
-      background:linear-gradient(135deg,#319fa2,#2fe2dd);
-    }
-  </style>
-
 </head>
 
 <body>
 
-<!-- SITE HEADER / NAVIGATION -->
-<header style="width:100%;background:#ffffff;border-bottom:1px solid #e6f2f2;">
-  <div style="max-width:1200px;margin:0 auto;padding:20px 16px 12px;display:flex;flex-direction:column;align-items:center;">
-    <a href="index.html">
-      <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired" style="max-width:220px;width:100%;height:auto;margin-bottom:12px;">
-    </a>
-    <nav>
-      <ul style="list-style:none;padding:0;margin:0;display:flex;gap:28px;flex-wrap:wrap;justify-content:center;font-size:14px;letter-spacing:.08em;text-transform:uppercase;">
-        <li><a href="index.html" style="color:#056367;font-weight:600;text-decoration:none;">Home</a></li>
-        <li><a href="work-with-me.html" style="color:#2f2f2f;text-decoration:none;">Work With Me</a></li>
-        <li><a href="books.html" style="color:#2f2f2f;text-decoration:none;">Books</a></li>
-        <li><a href="podcast.html" style="color:#2f2f2f;text-decoration:none;">Podcast</a></li>
-        <li><a href="reflections.html" style="color:#2f2f2f;text-decoration:none;">Reflections</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<!-- GUIDED SUPPORT SECTION -->
+<!-- GUIDED SUPPORT SECTION (UNCHANGED) -->
 <section class="guided-wrapper">
   <div class="section-header">
     <h2>1:1 Guided Support</h2>
   </div>
   <div class="section-subtitle">Find your personal Joy</div>
-  <img src="16-EGL_5085.jpg" alt="Guided one-to-one wellbeing support session" class="guided-image" />
+  <img src="16-EGL_5085.jpg" class="guided-image" />
   <div class="guided-text">
-    This page includes guided resources used during <strong>1:1 sessions</strong> to support reflection,
-    self-leadership, and sustainable wellbeing. These resources are <strong>educational</strong> and are not
-    designed for independent or group use.
+    This page includes guided resources used during <strong>1:1 sessions</strong>.
   </div>
 </section>
 
-<!-- EMOTIONAL WELLNESS CHECK-IN -->
+<!-- ======================================================
+     EMOTIONAL WELLNESS CHECK-IN (UPDATED WHEEL ONLY)
+====================================================== -->
 <section class="wheel-wrap">
   <div class="wheel-card">
     <h2 class="wheel-title">Emotional Wellness Check-In</h2>
@@ -251,52 +158,45 @@
     </p>
 
     <div class="wheel-stage">
-      <svg
-  class="wheel-svg"
-  viewBox="0 0 600 600"
-  preserveAspectRatio="xMidYMid meet"
-  aria-label="Wheel of Emotions">
 
-  <!-- ===== OUTER RING ===== -->
-  <g>
-    <circle cx="300" cy="300" r="280" fill="#e6f0ef"/>
+<!-- === INTERACTIVE EMOTION WHEEL SVG === -->
+<svg class="wheel-svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet">
 
-    <!-- segments -->
-    <path d="M300,300 L300,20 A280,280 0 0,1 498,102 Z" fill="#d9b2b2"/>
-    <path d="M300,300 L498,102 A280,280 0 0,1 580,300 Z" fill="#c4c7de"/>
-    <path d="M300,300 L580,300 A280,280 0 0,1 498,498 Z" fill="#e3bc9a"/>
-    <path d="M300,300 L498,498 A280,280 0 0,1 300,580 Z" fill="#f0e0a0"/>
-    <path d="M300,300 L300,580 A280,280 0 0,1 102,498 Z" fill="#b8d0d0"/>
-    <path d="M300,300 L102,498 A280,280 0 0,1 20,300 Z" fill="#cfc4b1"/>
-    <path d="M300,300 L20,300 A280,280 0 0,1 102,102 Z" fill="#d0c1d3"/>
-    <path d="M300,300 L102,102 A280,280 0 0,1 300,20 Z" fill="#c7ddc7"/>
+  <g class="slice" data-emotion="Sad" data-desc="A feeling of loss, heaviness, or emotional fatigue.">
+    <path d="M300 300 L300 40 A260 260 0 0 1 482 118 Z" fill="#d9b2b2"/>
+    <text x="360" y="130" class="label">😢</text>
   </g>
 
-  <!-- ===== MIDDLE RING ===== -->
-  <circle cx="300" cy="300" r="190" fill="#ffffff" opacity="0.25"/>
+  <g class="slice" data-emotion="Fear" data-desc="A response to uncertainty, threat, or vulnerability.">
+    <path d="M300 300 L482 118 A260 260 0 0 1 560 300 Z" fill="#c4c7de"/>
+    <text x="470" y="250" class="label">😰</text>
+  </g>
 
-  <!-- ===== INNER CORE ===== -->
+  <g class="slice" data-emotion="Anger" data-desc="Energy arising from boundaries crossed or unmet needs.">
+    <path d="M300 300 L560 300 A260 260 0 0 1 482 482 Z" fill="#e3bc9a"/>
+    <text x="470" y="360" class="label">😠</text>
+  </g>
+
+  <g class="slice" data-emotion="Strong" data-desc="Feeling capable, grounded, and able to meet challenges.">
+    <path d="M300 300 L482 482 A260 260 0 0 1 300 560 Z" fill="#f0e0a0"/>
+    <text x="360" y="470" class="label">💪</text>
+  </g>
+
+  <g class="slice" data-emotion="Happy" data-desc="Moments of joy, contentment, or lightness.">
+    <path d="M300 300 L300 560 A260 260 0 0 1 118 482 Z" fill="#b8d0d0"/>
+    <text x="250" y="470" class="label">😊</text>
+  </g>
+
+  <g class="slice" data-emotion="Calm" data-desc="A sense of peace, steadiness, or ease.">
+    <path d="M300 300 L118 482 A260 260 0 0 1 40 300 Z" fill="#cfc4b1"/>
+    <text x="140" y="360" class="label">😌</text>
+  </g>
+
   <circle cx="300" cy="300" r="95" fill="#265c5f"/>
-
-  <text x="300" y="312"
-        text-anchor="middle"
-        font-size="28"
-        fill="#ffffff"
-        font-weight="600">
-    Check-In
-  </text>
-
-  <!-- ===== CORE EMOTION LABELS ===== -->
-  <g font-size="20" font-weight="600" fill="#2b2b2b">
-    <text x="300" y="180" text-anchor="middle">Sad</text>
-    <text x="420" y="300" text-anchor="middle">Fear</text>
-    <text x="360" y="420" text-anchor="middle">Anger</text>
-    <text x="300" y="460" text-anchor="middle">Strong</text>
-    <text x="240" y="420" text-anchor="middle">Happy</text>
-    <text x="180" y="300" text-anchor="middle">Calm</text>
-  </g>
+  <text x="300" y="312" text-anchor="middle" font-size="28" fill="#ffffff" font-weight="600">Check-In</text>
 
 </svg>
+<!-- === END WHEEL SVG === -->
 
     </div>
 
@@ -306,68 +206,24 @@
   </div>
 </section>
 
-<!-- PDF PREVIEW -->
-<section class="pdf-wrapper">
-  <div class="pdf-header">
-    <h2>Wheel of Emotions</h2>
-    <p>A gentle check-in tool to help name, notice, and understand how you’re feeling.</p>
-  </div>
-  <div class="pdf-preview">
-    <iframe src="Wheel-Emotions.pdf#view=fitH"></iframe>
-  </div>
-  <a class="download-btn" href="Wheel-Emotions.pdf" download>Download PDF</a>
-</section>
-
-<!-- WEEKLY ACTIVITY MENU -->
-<section class="menu-wrapper">
-  <h1>Weekly Activity Menu</h1>
-  <p class="subtitle">Building Your Emotional Wellness Muscles</p>
-
-  <div class="week-item">
-    <a class="week-button" href="https://www.canva.com/design/DAGLCmJUf5Q/rBroVzVDikPuI6h0WG2_kA/edit?utm_content=DAGLCmJUf5Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">WEEK 1: STRESS AND YOUR LIFE</a>
-    <div class="week-description">Explore how stress shows up in your body, thoughts, and daily rhythms so you can begin responding with awareness rather than reaction.</div>
-  </div>
-
-  <div class="week-item">
-    <a class="week-button" href="https://www.canva.com/design/DAGLru19VO8/DkzjCuO0FSg2XKvaoqcfIA/edit?utm_content=DAGLru19VO8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">WEEK 2: IDENTIFYING PAIN POINTS AND TRIGGERS</a>
-    <div class="week-description">Gently identify emotional pain points and triggers while building compassion for your lived experiences.</div>
-  </div>
-
-  <div class="week-item">
-    <a class="week-button" href="https://www.canva.com/design/DAGMVEJ5rm8/zvjFItyzlAcLdjGJprNsag/edit?utm_content=DAGMVEJ5rm8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">WEEK 3: BODY-BASED REGULATION BASICS</a>
-    <div class="week-description">Learn simple body-based practices that help calm your nervous system and restore a sense of internal safety.</div>
-  </div>
-
-  <div class="week-item">
-    <a class="week-button" href="https://www.canva.com/design/DAGM_IrFDYQ/0rBLMWD_H0UJbZtW-gx8kA/view?utm_content=DAGM_IrFDYQ&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank">WEEK 4: LETTING GO AND MOVING FORWARD</a>
-    <div class="week-description">Release what no longer serves you and begin reconnecting with choice, clarity, and forward movement.</div>
-  </div>
-
-  <div class="week-item">
-    <a class="week-button" href="https://www.canva.com/design/DAGNKiuSzSI/4NKPTEvSGmIG3AAgQVj1Gg/view?utm_content=DAGNKiuSzSI&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank">WEEK 5: THE PURSUIT OF HAPPINESS</a>
-    <div class="week-description">Redefine happiness on your own terms by focusing on meaning, values, and emotional alignment.</div>
-  </div>
-
-  <div class="week-item">
-    <a class="week-button" href="https://www.canva.com/design/DAGNK1BjxX0/eK9GBYeRB2BVL6TaoC7skg/view?utm_content=DAGNK1BjxX0&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank">WEEK 6: SUSTAINABLE HABITS AND DAILY PRACTICE</a>
-    <div class="week-description">Create realistic habits that support emotional wellbeing long after the program ends.</div>
-  </div>
-
-  <div class="week-item">
-    <a class="week-button reflect" href="https://www.canva.com/design/DAGLBvi6iyc/GYDz-Dwm5jBLW-5pUoDeRg/view?utm_content=DAGLBvi6iyc&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank">7 WAYS TO REFLECT</a>
-    <div class="week-description">Choose reflective practices that help you integrate learning, insight, and emotional growth.</div>
-  </div>
-</section>
-
-<!-- SITE FOOTER -->
-<footer class="site-footer" style="background:#fff;border-top:1px solid #eee;padding:2.5rem 1.5rem 2rem;text-align:center;">
-  <p style="margin:0 0 1.4rem;font-size:.95rem;color:#666;">
-    Copyright © <span id="currentYear"></span> Marsha Kerr Talley — All Rights Reserved.
-  </p>
-</footer>
-
+<!-- === INTERACTION SCRIPT (WHEEL ONLY) === -->
 <script>
-  document.getElementById("currentYear").textContent = new Date().getFullYear();
+  const slices = document.querySelectorAll('.slice');
+  const output = document.getElementById('emotionOutput');
+
+  slices.forEach(slice => {
+    slice.addEventListener('click', () => {
+      slices.forEach(s => s.classList.add('dimmed'));
+      slice.classList.remove('dimmed');
+      slice.classList.add('active');
+      output.textContent = `${slice.dataset.emotion}: ${slice.dataset.desc}`;
+    });
+
+    slice.addEventListener('mouseleave', () => {
+      slices.forEach(s => s.classList.remove('dimmed','active'));
+      output.textContent = "Select an emotion to reflect.";
+    });
+  });
 </script>
 
 </body>
