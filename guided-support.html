@@ -306,25 +306,6 @@
   </div>
 </section>
 
-<script>
-  const slices = document.querySelectorAll('.slice');
-  const output = document.getElementById('emotionOutput');
-
-  slices.forEach(slice => {
-    slice.addEventListener('click', () => {
-      slices.forEach(s => s.classList.add('dimmed'));
-      slice.classList.remove('dimmed');
-      slice.classList.add('active');
-      output.textContent = `${slice.dataset.emotion}: ${slice.dataset.desc}`;
-    });
-
-    slice.addEventListener('mouseleave', () => {
-      slices.forEach(s => s.classList.remove('dimmed','active'));
-      output.textContent = "Select an emotion to reflect.";
-    });
-  });
-</script>
-
 <!-- PDF PREVIEW -->
 <section class="pdf-wrapper">
   <div class="pdf-header">
