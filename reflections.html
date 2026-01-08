@@ -458,12 +458,11 @@
 
 </div>
 
-
-
 <footer class="site-footer">
   <div class="footer-inner">
-    <p class="copyright">
-      Copyright © 2025 Marsha Kerr Talley - All Rights Reserved.
+    <p>
+      Copyright © <span id="currentYear"></span>
+      Marsha Kerr Talley — All Rights Reserved.
     </p>
 
     <nav class="footer-links">
@@ -474,7 +473,14 @@
   </div>
 </footer>
 
-<!-- FIX #2: Footer CSS wrapped properly so it does NOT render as text -->
+<!-- Auto-update copyright year -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  });
+</script>
+
 <style>
 .site-footer {
   background-color: #ffffff;
@@ -513,7 +519,6 @@
   text-decoration: underline;
 }
 </style>
-
 
 </body>
 </html>
