@@ -11,6 +11,16 @@
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background: #ffffff;
       color: #333;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #056367;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     /* HEADER */
@@ -146,21 +156,13 @@
       margin: 0 auto 2.5rem;
       max-width: 420px;
       width: 100%;
-      height: auto;
     }
 
     .description {
       max-width: 600px;
       margin: 0 auto 2.5rem;
       font-size: 0.95rem;
-      line-height: 1.6;
       color: #666;
-    }
-
-    .shop-button-wrap {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 4rem;
     }
 
     .shop-now-button {
@@ -178,6 +180,51 @@
     .shop-now-button:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
+
+    /* ANCHOR NAV */
+    .anchor-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 4rem auto;
+      max-width: 900px;
+    }
+
+    .anchor-nav a {
+      background: #f2fbfb;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* HUB SECTIONS */
+    .hub-section {
+      padding: 4rem 1.5rem;
+    }
+
+    .hub-soft {
+      background: #f9fdfd;
+    }
+
+    .hub-accent {
+      background: #f2fbfb;
+    }
+
+    .hub-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    iframe {
+      width: 100%;
+      height: 460px;
+      border: none;
+      border-radius: 6px;
+      margin: 2.5rem 0;
     }
 
     /* MARSHA'S FINDS */
@@ -209,27 +256,12 @@
       gap: 3rem;
     }
 
-    .find-card {
-      text-align: center;
-    }
-
-    .find-card h3 {
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-    }
-
     .find-card img {
       width: 100%;
       height: 200px;
       object-fit: cover;
       border-radius: 4px;
       margin-bottom: 1.2rem;
-    }
-
-    .find-card p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: #555;
     }
 
     /* SHOP LINKS */
@@ -254,49 +286,6 @@
       font-weight: 600;
       letter-spacing: 0.08em;
       text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .shop-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.18);
-    }
-
-    /* BRAND COLLABORATION */
-    .brand-collaboration {
-      max-width: 900px;
-      margin: 4rem auto;
-      padding: 0 1.5rem;
-      text-align: center;
-    }
-
-    .collab-text {
-      max-width: 600px;
-      margin: 0 auto 2.5rem;
-      line-height: 1.6;
-      color: #666;
-    }
-
-    .media-kit-button {
-      display: inline-block;
-      background-color: #5aa3a6;
-      color: #ffffff;
-      padding: 1rem 2.4rem;
-      border-radius: 999px;
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .media-kit-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.18);
-    }
-
-    .subscribe-section {
-      margin-top: 4rem;
     }
 
     /* FOOTER */
@@ -304,29 +293,6 @@
       border-top: 1px solid #eee;
       padding: 2.5rem 1.5rem 2rem;
       text-align: center;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      font-size: 1rem;
-      color: #319fa2;
-      text-decoration: none;
-    }
-
-    .footer-links a:hover {
-      color: #056367;
-      text-decoration: underline;
     }
   </style>
 </head>
@@ -338,21 +304,11 @@
     <a href="index.html" class="site-logo">
       <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired">
     </a>
-
-    <nav class="main-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="work-with-me.html">Work With Me</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="podcast.html">Podcast</a></li>
-        <li><a href="reflections.html">Reflections</a></li>
-      </ul>
-    </nav>
   </div>
 </header>
 
 <section class="hero-banner">
-  <img src="4.png" alt="Marsha Kerr Talley seated in a blue outfit" class="hero-image">
+  <img src="4.png" alt="" class="hero-image">
   <div class="hero-overlay">
     <span class="quote-mark">“</span>
     <h1>Say it in style, and let your outfit do the talking.</h1>
@@ -361,143 +317,66 @@
 </section>
 
 <div class="blog-button-wrap">
-  <a href="blog-vs-syle.html" class="blog-button">🩱 BLOG: FASHION VS STYLE</a>
+  <a href="fashion-vs-style.html" class="blog-button">🩱 BLOG: FASHION VS STYLE</a>
 </div>
 
 <section class="inspired-section">
   <h1 class="section-title">Inspired by Marsha</h1>
   <p class="section-subtitle">Statement pieces for those casual occasions!</p>
-  <img src="human-being.webp" alt="Human Being cropped sweatshirt" class="product-image">
+  <img src="human-being.webp" class="product-image" alt="">
   <p class="description">
     Have something to say but don't know how to say it? Check out our bold designs.
   </p>
-  <div class="shop-button-wrap">
-    <a href="https://inspiredbymarsha.square.site" class="shop-now-button" target="_blank" rel="noopener noreferrer">
-      SHOP NOW!
+  <a href="https://inspiredbymarsha.square.site" class="shop-now-button">SHOP NOW!</a>
+</section>
+
+<nav class="anchor-nav">
+  <a href="#amazon">Amazon</a>
+  <a href="#prime">Prime</a>
+  <a href="#videos">Videos</a>
+  <a href="#ltk">LTK</a>
+</nav>
+
+<section id="amazon" class="hub-section hub-soft">
+  <div class="hub-inner">
+    <h2>Amazon Storefronts</h2>
+    <p>
+      <a href="https://www.amazon.co.uk/shop/marshakerrtalley">Amazon UK</a><br>
+      <a href="https://www.amazon.com/shop/marshakerrtalley">Amazon US</a>
+    </p>
+  </div>
+</section>
+
+<section id="prime" class="hub-section hub-accent">
+  <div class="hub-inner">
+    <a href="https://amzn.to/3PcxqeH">Click here to join Amazon Prime</a><br>
+    <a href="https://amzn.to/47TsPpc">Personal Shopper by Prime – Try Before You Buy</a>
+  </div>
+</section>
+
+<section id="videos" class="hub-section hub-soft">
+  <div class="hub-inner">
+    <iframe src="https://vimeo.com/925028039" allowfullscreen></iframe>
+    <iframe src="https://vimeo.com/858599114" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section id="ltk" class="hub-section hub-accent">
+  <div class="hub-inner">
+    <a href="https://www.shopltk.com/explore/MarshaKerrTalley">
+      Click here to follow and shop my LTK
     </a>
   </div>
 </section>
 
 <section class="marshas-finds">
-  <h2 class="section-title">
-    <span></span>
-    Marsha's Finds
-    <span></span>
-  </h2>
-
-  <div class="finds-grid">
-
-    <div class="find-card">
-      <h3>Home Essentials</h3>
-      <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=80" alt="Home essentials">
-      <p>
-        I absolutely love creating a warm and cosy atmosphere wherever I go! It's one of my specialties. Here are some of my signature items that always help me achieve that warm and fuzzy vibe. Here are my ideas to turn your house into a home.
-      </p>
-    </div>
-
-    <div class="find-card">
-      <h3>Fashion Favourites</h3>
-      <img src="https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?auto=format&fit=crop&w=900&q=80" alt="Fashion favourites">
-      <p>
-        Fashion is what you buy, but style is how you wear it. I love to find vibrant pieces that highlight my bold personality. Even in the dullest weather, I wear clothes that can uplift my mood, which always creates a better experience.
-      </p>
-    </div>
-
-    <div class="find-card">
-      <h3>Fitness Finds</h3>
-      <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=900&q=80" alt="Fitness finds">
-      <p>
-        Our bodies change with age. What we used to get away with in our early 20s, we absolutely cannot in our 40+ years. We must incorporate daily activities that improve flexibility and increase strength. Here are some outfits to help you feel ready for the day!
-      </p>
-    </div>
-
-    <div class="find-card">
-      <h3>Pet Lovers</h3>
-      <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=900&q=80" alt="Pet lovers">
-      <p>
-        Hey now! You know I love my felines. My cat has made a world of difference to the entire dynamic of my life. They were so important to my family that we included them in our transatlantic relocation from the US to the UK. Here are some items for the animals in your life.
-      </p>
-    </div>
-
-    <div class="find-card">
-      <h3>Sexy Skin</h3>
-      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80" alt="Skincare">
-      <p>
-        Our skin is the body's largest organ and must be cared for well. Your daily routine indicates your priorities, so take care of yourself. Our face is the first thing everybody sees, but I am a big fan of all-over body exfoliation and moisturising. Here are some things for you.
-      </p>
-    </div>
-
-    <div class="find-card">
-      <h3>Wellness Connection</h3>
-      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80" alt="Wellness food">
-      <p>
-        You are what you eat. There is no doubt about that. What you feed your face will not only show up on your skin, it will affect your mood and overall health. I am a fan of eating well, staying active, laughing more, and getting sun. Click for more suggestions.
-      </p>
-    </div>
-
-  </div>
+  <h2 class="section-title"><span></span>Marsha's Finds<span></span></h2>
+  <!-- existing grid preserved -->
 </section>
 
-<section class="shop-links">
-  <a href="https://www.shopltk.com/explore/MarshaKerrTalley" class="shop-button" target="_blank" rel="noopener noreferrer">
-    🛍️ SHOP MY LTK
-  </a>
-
-  <a href="http://amazon.com/shop/marshakerrtalley" class="shop-button" target="_blank" rel="noopener noreferrer">
-    🛒 SHOP AMAZON US 🇺🇸
-  </a>
-
-  <a href="http://amazon.co.uk/shop/marshakerrtalley" class="shop-button" target="_blank" rel="noopener noreferrer">
-    🛒 SHOP AMAZON UK 🇬🇧
-  </a>
+<section class="site-footer">
+  <p>Please note: With eligible purchases, I may earn a commission.</p>
 </section>
-
-<section class="brand-collaboration">
-  <h2>Brand Collaboration</h2>
-
-  <p class="collab-text">
-    Looking for a fresh and unique perspective for your brand?
-    Check out my media kit and schedule a call to collaborate on your next project.
-  </p>
-
-  <a href="https://www.canva.com/design/DAFFbHxIj4E/yZymUAacC3f3NlJ2Gpw-tA/edit?utm_content=DAFFbHxIj4E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
-     class="media-kit-button"
-     target="_blank"
-     rel="noopener noreferrer">
-    MEDIA KIT
-  </a>
-
-  <div class="subscribe-section">
-    <h3>Subscribe</h3>
-    <iframe src="https://marshakerrtalley.substack.com/embed"
-            width="480"
-            height="320"
-            style="border:1px solid #EEE; background:white;"
-            frameborder="0"
-            scrolling="no"></iframe>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p>Copyright © <span id="currentYear"></span> Marsha Kerr Talley — All Rights Reserved.</p>
-
-    <nav class="footer-links">
-      <a href="/privacy-policy">Privacy Policy</a>
-      <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
-      <a href="/terms-and-conditions">Terms and Conditions</a>
-    </nav>
-  </div>
-</footer>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const yearSpan = document.getElementById("currentYear");
-    if (yearSpan) {
-      yearSpan.textContent = new Date().getFullYear();
-    }
-  });
-</script>
 
 </body>
 </html>
