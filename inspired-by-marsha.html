@@ -11,23 +11,9 @@
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background: #ffffff;
       color: #333;
-      line-height: 1.7;
     }
 
-    a {
-      color: #056367;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* HEADER */
-    .site-header {
-      border-bottom: 1px solid #eee;
-    }
-
+    .site-header { border-bottom: 1px solid #eee; }
     .header-inner {
       max-width: 1200px;
       margin: 0 auto;
@@ -36,11 +22,7 @@
       align-items: center;
       justify-content: space-between;
     }
-
-    .site-logo img {
-      height: 48px;
-    }
-
+    .site-logo img { height: 48px; }
     .main-nav ul {
       list-style: none;
       display: flex;
@@ -48,14 +30,12 @@
       margin: 0;
       padding: 0;
     }
-
     .main-nav a {
       text-decoration: none;
       color: #333;
       font-weight: 500;
     }
 
-    /* HERO */
     .hero-banner {
       position: relative;
       width: 100%;
@@ -63,18 +43,15 @@
       min-height: 420px;
       overflow: hidden;
     }
-
     .hero-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
-
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.35);
+      background: rgba(0,0,0,0.35);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -82,189 +59,65 @@
       text-align: center;
       padding: 2rem;
     }
-
     .hero-overlay h1 {
-      color: #ffffff;
+      color: #fff;
       font-size: clamp(2rem, 4vw, 3.5rem);
       font-weight: 400;
       max-width: 900px;
-      line-height: 1.2;
-      margin: 0 0 1rem;
     }
-
-    .quote-mark {
-      color: #ffffff;
-      font-size: 4rem;
-      margin-bottom: 0.5rem;
-    }
-
+    .quote-mark { font-size: 4rem; color: #fff; }
     .author {
-      color: #ffffff;
+      color: #fff;
       font-size: 1rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
-    /* BLOG BUTTON */
     .blog-button-wrap {
       display: flex;
       justify-content: center;
       margin: 2.5rem 0;
     }
-
     .blog-button {
-      background-color: #5aa3a6;
-      color: #ffffff;
+      background: #5aa3a6;
+      color: #fff;
       padding: 1.1rem 2.5rem;
       border-radius: 50px;
-      font-size: 1.05rem;
       font-weight: 600;
-      letter-spacing: 0.05em;
       text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .blog-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-    }
-
-    /* INSPIRED BY MARSHA */
     .inspired-section {
       max-width: 900px;
       margin: 0 auto;
       padding: 4rem 1.5rem;
       text-align: center;
     }
-
-    .section-title {
-      font-size: 2.2rem;
-      color: #5aa3a6;
-      margin-bottom: 0.5rem;
-    }
-
-    .section-subtitle {
-      font-size: 1.1rem;
-      margin-bottom: 3rem;
-    }
-
+    .section-title { font-size: 2.2rem; color: #5aa3a6; }
+    .section-subtitle { margin-bottom: 3rem; }
     .product-image {
-      display: block;
-      margin: 0 auto 2.5rem;
       max-width: 420px;
       width: 100%;
+      margin-bottom: 2.5rem;
     }
 
-    .description {
-      max-width: 600px;
-      margin: 0 auto 2.5rem;
-      font-size: 0.95rem;
-      color: #666;
-    }
-
-    .shop-now-button {
-      background-color: #5aa3a6;
-      color: #ffffff;
-      padding: 1rem 2.2rem;
-      border-radius: 999px;
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .shop-now-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-    }
-
-    /* ANCHOR NAV */
-    .anchor-nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin: 4rem auto;
-      max-width: 900px;
-    }
-
-    .anchor-nav a {
-      background: #f2fbfb;
-      padding: 0.6rem 1.2rem;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    /* HUB SECTIONS */
-    .hub-section {
-      padding: 4rem 1.5rem;
-    }
-
-    .hub-soft {
-      background: #f9fdfd;
-    }
-
-    .hub-accent {
-      background: #f2fbfb;
-    }
-
-    .hub-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    iframe {
-      width: 100%;
-      height: 460px;
-      border: none;
-      border-radius: 6px;
-      margin: 2.5rem 0;
-    }
-
-    /* MARSHA'S FINDS */
     .marshas-finds {
       padding: 4rem 1.5rem;
       max-width: 1200px;
       margin: 0 auto;
     }
-
-    .marshas-finds .section-title {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1.5rem;
-      font-size: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .marshas-finds .section-title span {
-      flex: 1;
-      height: 1px;
-      background: #5aa3a6;
-      opacity: 0.6;
-    }
-
     .finds-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 3rem;
     }
-
     .find-card img {
       width: 100%;
       height: 200px;
       object-fit: cover;
       border-radius: 4px;
-      margin-bottom: 1.2rem;
     }
 
-    /* SHOP LINKS */
     .shop-links {
       max-width: 900px;
       margin: 3rem auto;
@@ -274,24 +127,15 @@
       gap: 1.6rem;
     }
 
-    .shop-button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #5aa3a6;
-      color: #ffffff;
-      padding: 1.2rem 2rem;
-      border-radius: 999px;
-      font-size: 1.05rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-decoration: none;
+    .brand-collaboration {
+      max-width: 900px;
+      margin: 4rem auto;
+      text-align: center;
     }
 
-    /* FOOTER */
     .site-footer {
       border-top: 1px solid #eee;
-      padding: 2.5rem 1.5rem 2rem;
+      padding: 2.5rem 1.5rem;
       text-align: center;
     }
   </style>
@@ -304,11 +148,20 @@
     <a href="index.html" class="site-logo">
       <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired">
     </a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work-with-me.html">Work With Me</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="podcast.html">Podcast</a></li>
+        <li><a href="reflections.html">Reflections</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
 <section class="hero-banner">
-  <img src="4.png" alt="" class="hero-image">
+  <img src="4.png" class="hero-image">
   <div class="hero-overlay">
     <span class="quote-mark">“</span>
     <h1>Say it in style, and let your outfit do the talking.</h1>
@@ -316,67 +169,29 @@
   </div>
 </section>
 
-<div class="blog-button-wrap">
-  <a href="fashion-vs-style.html" class="blog-button">🩱 BLOG: FASHION VS STYLE</a>
-</div>
-
-<section class="inspired-section">
-  <h1 class="section-title">Inspired by Marsha</h1>
-  <p class="section-subtitle">Statement pieces for those casual occasions!</p>
-  <img src="human-being.webp" class="product-image" alt="">
-  <p class="description">
-    Have something to say but don't know how to say it? Check out our bold designs.
-  </p>
-  <a href="https://inspiredbymarsha.square.site" class="shop-now-button">SHOP NOW!</a>
-</section>
-
-<nav class="anchor-nav">
-  <a href="#amazon">Amazon</a>
-  <a href="#prime">Prime</a>
-  <a href="#videos">Videos</a>
-  <a href="#ltk">LTK</a>
-</nav>
-
-<section id="amazon" class="hub-section hub-soft">
-  <div class="hub-inner">
-    <h2>Amazon Storefronts</h2>
-    <p>
-      <a href="https://www.amazon.co.uk/shop/marshakerrtalley">Amazon UK</a><br>
-      <a href="https://www.amazon.com/shop/marshakerrtalley">Amazon US</a>
-    </p>
-  </div>
-</section>
-
-<section id="prime" class="hub-section hub-accent">
-  <div class="hub-inner">
-    <a href="https://amzn.to/3PcxqeH">Click here to join Amazon Prime</a><br>
-    <a href="https://amzn.to/47TsPpc">Personal Shopper by Prime – Try Before You Buy</a>
-  </div>
-</section>
-
-<section id="videos" class="hub-section hub-soft">
-  <div class="hub-inner">
-    <iframe src="https://vimeo.com/925028039" allowfullscreen></iframe>
-    <iframe src="https://vimeo.com/858599114" allowfullscreen></iframe>
-  </div>
-</section>
-
-<section id="ltk" class="hub-section hub-accent">
-  <div class="hub-inner">
-    <a href="https://www.shopltk.com/explore/MarshaKerrTalley">
-      Click here to follow and shop my LTK
-    </a>
-  </div>
-</section>
-
 <section class="marshas-finds">
-  <h2 class="section-title"><span></span>Marsha's Finds<span></span></h2>
-  <!-- existing grid preserved -->
+  <div class="finds-grid">
+
+    <!-- Sexy Skin (UPDATED IMAGE ONLY) -->
+    <div class="find-card">
+      <h3>Sexy Skin</h3>
+      <img src="woman-setting.webp" alt="Black woman smiling with healthy glowing skin">
+      <p>
+        Our skin is the body's largest organ and must be cared for well.
+        Your daily routine indicates your priorities.
+      </p>
+    </div>
+
+  </div>
 </section>
 
-<section class="site-footer">
-  <p>Please note: With eligible purchases, I may earn a commission.</p>
-</section>
+<footer class="site-footer">
+  <p>© <span id="currentYear"></span> Marsha Kerr Talley</p>
+</footer>
+
+<script>
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
