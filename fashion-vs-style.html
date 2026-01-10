@@ -75,16 +75,6 @@
 }
 
 
-/* Only visible DURING the flip */
-.turner.shadow {
-  display: block;
-}
-
-
-.turner.shadow {
-  display: block; /* show only while flipping */
-}
-
 
     .turnerFace {
       position: absolute;
@@ -1295,24 +1285,37 @@
       }
 
       function animateTurn(direction, targetIndex) {
-        if (isAnimating || targetIndex < 0 || targetIndex >= totalPages) return;
-        isAnimating = true;
+  if (isAnimating || targetIndex < 0 || targetIndex >= totalPages) return;
+  isAnimating = true;
 
-        const current = pages[index];
-        const next = pages[targetIndex];
+  const current = pages[index];
+  const next = pages[targetIndex];
 
-        turner.className = "turner shadow";
-        turner.style.display = "block";
+  // Reset + show turner
+  turner.className = "turner";
+  turner.style.display = "block";
 
-        if (direction === "next") {
-          clonePageTo(turnerFront, current);
-          clonePageTo(turnerBack, next);
-          turner.classList.add("flipNext");
-        } else {
-          clonePageTo(turnerFront, current);
-          clonePageTo(turnerBack, next);
-          turner.classList.add("flipPrev");
-        }
+  clonePageTo(turnerFront, current);
+  clonePageTo(turnerBack, next);
+
+  // Trigger animation
+  turner.classList.add(direction === "next" ? "flipNext" : "flipPrev");
+
+  // Switch active page halfway through flip
+  setTimeout(() => {
+    setActivePage(targetIndex);
+  }, 360);
+
+  // Cleanup after animation
+  turner.addEventListener("animationend", function onEnd() {
+    turner.removeEventListener("animationend", onEnd);
+    turner.className = "turner";
+    turnerFront.innerHTML = "";
+    turnerBack.innerHTML = "";
+    turner.style.display = "none"; // ✅ THIS FIXES THE WHITE SCREEN
+    isAnimating = false;
+  });
+}
 
         setTimeout(() => {
           setActivePage(targetIndex);
