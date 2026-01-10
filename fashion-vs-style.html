@@ -125,6 +125,11 @@
   transition: none; /* ⛔ prevent fade during flip */
       backface-visibility:hidden;
 }
+    .sheet.animating .page {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
 .page.active {
   opacity: 1;
   pointer-events: auto;
@@ -1295,6 +1300,9 @@
   const current = pages[index];
   const next = pages[targetIndex];
 
+  // Lock real pages
+  document.querySelector(".sheet").classList.add("animating");
+
   // Reset + show turner
   turner.className = "turner";
   turner.style.display = "block";
@@ -1305,18 +1313,19 @@
   // Trigger animation
   turner.classList.add(direction === "next" ? "flipNext" : "flipPrev");
 
-  // Switch active page halfway through flip
-  setTimeout(() => {
-    setActivePage(targetIndex);
-  }, 360);
-
-  // Cleanup after animation
   turner.addEventListener("animationend", function onEnd() {
     turner.removeEventListener("animationend", onEnd);
+
+    // Switch page AFTER animation (no mid-flip repaint)
+    setActivePage(targetIndex);
+
+    // Cleanup
     turner.className = "turner";
     turnerFront.innerHTML = "";
     turnerBack.innerHTML = "";
-    turner.style.display = "none"; // ✅ THIS FIXES THE WHITE SCREEN
+    turner.style.display = "none";
+
+    document.querySelector(".sheet").classList.remove("animating");
     isAnimating = false;
   });
 }
