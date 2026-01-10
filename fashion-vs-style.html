@@ -1311,7 +1311,10 @@
   clonePageTo(turnerBack, next);
 
   // Trigger animation
+ requestAnimationFrame(() => {
   turner.classList.add(direction === "next" ? "flipNext" : "flipPrev");
+});
+
 
   turner.addEventListener("animationend", function onEnd() {
     turner.removeEventListener("animationend", onEnd);
