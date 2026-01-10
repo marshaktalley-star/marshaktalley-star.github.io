@@ -1294,8 +1294,7 @@
         el.appendChild(clone);
       }
 
-      function animateTurn(direction, targetIndex) {
-  function animateTurn(direction, targetIndex) {
+     function animateTurn(direction, targetIndex) {
   if (isAnimating || targetIndex < 0 || targetIndex >= totalPages) return;
   isAnimating = true;
 
@@ -1305,41 +1304,35 @@
   // Lock real pages
   sheet.classList.add("animating");
 
-  // Reset turner state
+  // Reset + show turner
   turner.className = "turner";
+  turner.style.display = "block";
 
-  // Clone pages INTO the turner
+  // Clone pages
   clonePageTo(turnerFront, current);
   clonePageTo(turnerBack, next);
 
-  // 🔑 PREPARE TURNER (THIS IS WHERE YOUR BLOCK GOES)
-  turner.style.visibility = "visible";
-
-  // 🔑 FORCE PAINT, THEN START ANIMATION
+  // 🔑 ONE-FRAME DELAY (THIS FIXES THE WHITE FLASH)
   requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      turner.classList.add(
-        direction === "next" ? "flipNext" : "flipPrev"
-      );
-    });
+    turner.classList.add(direction === "next" ? "flipNext" : "flipPrev");
   });
 
-  // Animation end → cleanup
+  // Cleanup after animation
   turner.addEventListener("animationend", function onEnd() {
     turner.removeEventListener("animationend", onEnd);
 
     setActivePage(targetIndex);
 
-    // Cleanup
     turner.className = "turner";
-turnerFront.innerHTML = "";
-turnerBack.innerHTML = "";
-turner.style.display = "none";
+    turnerFront.innerHTML = "";
+    turnerBack.innerHTML = "";
+    turner.style.display = "none";
 
-sheet.classList.remove("animating");
-isAnimating = false;
+    sheet.classList.remove("animating");
+    isAnimating = false;
   });
 }
+
 
   
 
