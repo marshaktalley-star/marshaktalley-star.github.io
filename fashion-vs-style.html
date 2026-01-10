@@ -65,13 +65,19 @@
 
     /* Page turn layer */
     .turner {
-      position: absolute;
-      inset: 0;
-      border-radius: var(--radius);
-      transform-style: preserve-3d;
-      pointer-events: none;
-      z-index: 30;
-    }
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  transform-style: preserve-3d;
+  pointer-events: none;
+  z-index: 30;
+  display: none; /* IMPORTANT: hide overlay until a flip happens */
+}
+
+.turner.shadow {
+  display: block; /* show only while flipping */
+}
+
 
     .turnerFace {
       position: absolute;
