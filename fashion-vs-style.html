@@ -64,16 +64,16 @@
     }
 
     /* Page turn layer */
-   /* Page turn layer */
-.turner {
+ .turner {
   position: absolute;
   inset: 0;
   border-radius: var(--radius);
   transform-style: preserve-3d;
   pointer-events: none;
   z-index: 30;
-  display: none; /* hidden by default */
+  display: none; /* JS controls visibility */
 }
+
 
 /* Only visible DURING the flip */
 .turner.shadow {
