@@ -115,17 +115,20 @@
     }
 
     .page {
-      position: absolute;
-      inset: 0;
-      border-radius: var(--radius);
-      overflow: hidden;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 220ms ease;
-    }
-    .page.active {
-      opacity: 1;
-      pointer-events: auto;
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: none; /* ⛔ prevent fade during flip */
+}
+.page.active {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 180ms ease; /* ✅ fade only when settled */
+}
+
     }
 
     .pageInner {
