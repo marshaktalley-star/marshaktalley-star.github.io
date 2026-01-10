@@ -64,15 +64,22 @@
     }
 
     /* Page turn layer */
-    .turner {
+   /* Page turn layer */
+.turner {
   position: absolute;
   inset: 0;
   border-radius: var(--radius);
   transform-style: preserve-3d;
   pointer-events: none;
   z-index: 30;
-  display: none; /* IMPORTANT: hide overlay until a flip happens */
+  display: none; /* hidden by default */
 }
+
+/* Only visible DURING the flip */
+.turner.shadow {
+  display: block;
+}
+
 
 .turner.shadow {
   display: block; /* show only while flipping */
