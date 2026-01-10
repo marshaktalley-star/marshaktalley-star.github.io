@@ -1317,18 +1317,7 @@
   });
 }
 
-        setTimeout(() => {
-          setActivePage(targetIndex);
-        }, 360);
-
-        turner.addEventListener("animationend", function onEnd() {
-          turner.removeEventListener("animationend", onEnd);
-          turner.className = "turner";
-          turnerFront.innerHTML = "";
-          turnerBack.innerHTML = "";
-          isAnimating = false;
-        });
-      }
+  
 
       function next() { animateTurn("next", index + 1); }
       function prev() { animateTurn("prev", index - 1); }
