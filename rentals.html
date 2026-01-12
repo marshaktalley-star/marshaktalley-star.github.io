@@ -34,58 +34,283 @@
   </header>
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marsha Kerr Talley Management | Rentals</title>
 
-
-
-
-
-
-<!-- PROFESSIONAL DIVIDER BANNER -->
-<div style="
-  width:100%;
-  max-width:100%;
-  margin:48px 0 56px 0;
-  padding:22px 16px;
-  background:linear-gradient(90deg,#056367 0%, #319fa2 55%, #2fe2dd 100%);
-  text-align:center;
-  box-sizing:border-box;
-">
-  <span style="
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-    font-size: clamp(18px, 2.2vw, 24px);
-    font-weight: 500;
-    letter-spacing: 0.6px;
-    color: #ffffff;
-    display: inline-block;
-  ">
-    Professional, Thoughtful Leasing — From Start to Finish
-  </span>
-</div>
-<!-- SITE FOOTER -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p class="copyright">
-      Copyright © <span id="currentYear"></span>
-      Marsha Kerr Talley — All Rights Reserved.
-    </p>
-
-    <nav class="footer-links">
-      <a href="/privacy-policy">Privacy Policy</a>
-      <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
-      <a href="/terms-and-conditions">Terms and Conditions</a>
-    </nav>
-  </div>
-</footer>
-
-<!-- AUTO-UPDATE COPYRIGHT YEAR -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const yearSpan = document.getElementById("currentYear");
-    if (yearSpan) {
-      yearSpan.textContent = new Date().getFullYear();
+  <style>
+    :root {
+      --teal-dark: #056367;
+      --teal-main: #319fa2;
+      --teal-light: #2fe2dd;
+      --gray-soft: #f6f8f8;
+      --text-dark: #333;
     }
-  });
-</script>
+
+    body {
+      margin: 0;
+      font-family: "Georgia", "Times New Roman", serif;
+      color: var(--text-dark);
+      background: #fff;
+    }
+
+    h1, h2, h3 {
+      font-weight: 500;
+      margin: 0;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      background: url("HERO-IMAGE-URL-HERE") center/cover no-repeat;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-overlay {
+      background: rgba(0,0,0,0.45);
+      padding: 3rem 2rem;
+      width: 100%;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* BRAND HEADER */
+    .brand-block {
+      text-align: center;
+      padding: 3rem 1.5rem 2rem;
+    }
+
+    .brand-block h2 {
+      color: var(--teal-main);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .brand-block p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    /* CTA BUTTON */
+    .cta-wrapper {
+      text-align: center;
+      margin: 2rem 0 1.5rem;
+    }
+
+    .cta-button {
+      background: var(--teal-main);
+      color: white;
+      border: none;
+      padding: 1rem 3rem;
+      font-size: 1rem;
+      border-radius: 40px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .cta-button:hover {
+      background: var(--teal-dark);
+    }
+
+    /* RUNNER */
+    .runner {
+      background: linear-gradient(
+        to right,
+        var(--teal-dark),
+        var(--teal-main),
+        var(--teal-light)
+      );
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1rem;
+      letter-spacing: 0.6px;
+    }
+
+    /* SECTION HEADERS */
+    .section-title {
+      text-align: center;
+      color: var(--teal-main);
+      font-size: 1.8rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* PROPERTY BLOCK */
+    .property {
+      background: var(--gray-soft);
+      margin-bottom: 3rem;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .property-content {
+      padding: 2rem;
+    }
+
+    .property h3 {
+      color: var(--teal-dark);
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* AGENT RESOURCES */
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .agent-card {
+      border: 1px solid #ddd;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    .agent-card h4 {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .agent-card a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 2rem;
+      background: var(--teal-main);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 0.9rem;
+    }
+
+    .agent-card a:hover {
+      background: var(--teal-dark);
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <h1>The Right Rental for Your Lifestyle</h1>
+      <p>Experience the Ultimate in Practical Living</p>
+    </div>
+  </section>
+
+  <!-- BRAND -->
+  <section class="brand-block">
+    <h2>Marsha Kerr Talley Management</h2>
+    <p>Clear expectations. Consistent standards. Respectful leasing.</p>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-wrapper">
+    <a href="RENTAL-MANAGEMENT-APP-LINK" class="cta-button">
+      RENTAL MANAGEMENT APP
+    </a>
+  </div>
+
+  <!-- RUNNER -->
+  <div class="runner">
+    Clear expectations. Consistent standards. Respectful leasing.
+  </div>
+
+  <!-- PROPERTIES -->
+  <section class="container">
+    <h2 class="section-title">Available & Managed Properties</h2>
+
+    <div class="property">
+      <div class="property-content">
+        <h3>Fort Worth Bungalow</h3>
+        <p>Single-family home with open-concept living, dedicated workspace, and outdoor space.</p>
+      </div>
+    </div>
+
+    <div class="property">
+      <div class="property-content">
+        <h3>Oak Creek Condo (Arlington)</h3>
+        <p>Condo living with balcony, fireplace, community amenities, and convenient access.</p>
+      </div>
+    </div>
+
+    <div class="property">
+      <div class="property-content">
+        <h3>Cove Cay Condo (Florida)</h3>
+        <p>Resort-style community with pool, water views, and thoughtfully designed interior.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENT RESOURCES -->
+  <section class="container">
+    <h2 class="section-title">For Agents</h2>
+
+    <div class="agent-grid">
+      <div class="agent-card">
+        <h4>Agent Instructions (PDF)</h4>
+        <a href="LINK">Download</a>
+      </div>
+
+      <div class="agent-card">
+        <h4>Rental Prescreening (PDF)</h4>
+        <a href="LINK">Download</a>
+      </div>
+
+      <div class="agent-card">
+        <h4>Showing & Property Access Policy (PDF)</h4>
+        <a href="LINK">Download</a>
+      </div>
+
+      <div class="agent-card">
+        <h4>Decision Rationale (Owner Record Only)</h4>
+        <a href="LINK">Download</a>
+      </div>
+
+      <div class="agent-card">
+        <h4>Showing Access Acknowledgment (Fillable)</h4>
+        <a href="LINK">Download</a>
+      </div>
+
+      <div class="agent-card">
+        <h4>Rental Prescreening Form (Fillable)</h4>
+        <a href="LINK">Download</a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+
 
 <!-- FOOTER STYLES -->
 <style>
