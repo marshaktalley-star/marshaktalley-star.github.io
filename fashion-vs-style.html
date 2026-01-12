@@ -387,10 +387,13 @@
     }
 
     .mediaCard img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+  width: 100%;
+  height: auto;
+  max-height: 420px;     /* ← limits vertical size */
+  object-fit: cover;    /* ← crops instead of stretching */
+  display: block;
+}
+
 
     .caption {
       padding: 12px 14px;
