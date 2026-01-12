@@ -1,4 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Marsha Kerr Talley – Live Inspired</title>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Optional but recommended -->
+  <meta name="description" content="Marsha Kerr Talley – Live Inspired. Preventive wellbeing, reflection, and creative work.">
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired">
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work-with-me.html">Work With Me</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="podcast.html">Podcast</a></li>
+          <li><a href="reflections.html">Reflections</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
 
 
@@ -28,3 +61,70 @@
     Professional, Thoughtful Leasing — From Start to Finish
   </span>
 </div>
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="copyright">
+      Copyright © <span id="currentYear"></span>
+      Marsha Kerr Talley — All Rights Reserved.
+    </p>
+
+    <nav class="footer-links">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
+      <a href="/terms-and-conditions">Terms and Conditions</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- AUTO-UPDATE COPYRIGHT YEAR -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const yearSpan = document.getElementById("currentYear");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+  });
+</script>
+
+<!-- FOOTER STYLES -->
+<style>
+.site-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #eee;
+  padding: 2.5rem 1.5rem 2rem;
+  text-align: center;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-footer p {
+  margin: 0 0 1.4rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  font-size: 1rem;
+  color: #319fa2;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #056367;
+  text-decoration: underline;
+}
+</style>
+</body>
+</html>
