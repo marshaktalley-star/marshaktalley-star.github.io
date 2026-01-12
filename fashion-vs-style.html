@@ -63,6 +63,10 @@
       transform-style: preserve-3d;
     }
 
+    .sheet.animating {
+  overflow: hidden;
+}
+
     /* Page turn layer */
 .turner {
   position: absolute;
@@ -71,10 +75,14 @@
   transform-style: preserve-3d;
   pointer-events: none;
   z-index: 30;
-  display: none;
+  opacity: 0;
   will-change: transform;
   background: var(--paper);
+
+  /* GPU isolation */
+  transform: translateZ(0);
 }
+
 
     .turnerFace {
       position: absolute;
@@ -83,6 +91,7 @@
       background: var(--paper);
       backface-visibility: hidden;
       overflow: hidden;
+      transform: translateZ(0);
     }
 
     .turnerBack {
@@ -119,15 +128,15 @@
   inset: 0;
   border-radius: var(--radius);
   overflow: hidden;
-  opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  backface-visibility: hidden;
 }
 
 .page.active {
-  opacity: 1;
+  visibility: visible;
   pointer-events: auto;
 }
+
 
 
 
@@ -1298,7 +1307,7 @@
 
   // Reset + show turner
   turner.className = "turner";
-  turner.style.display = "block";
+  turner.style.display = "1";
 
   // Clone pages
   clonePageTo(turnerFront, current);
@@ -1318,7 +1327,7 @@
     turner.className = "turner";
     turnerFront.innerHTML = "";
     turnerBack.innerHTML = "";
-    turner.style.display = "none";
+    turner.style.display = "0";
 
     sheet.classList.remove("animating");
     isAnimating = false;
