@@ -100,8 +100,123 @@
     margin-bottom: 6px;
   }
 }
-
   </style>
+  <style>
+  /* Header / Nav (GoDaddy-style mobile menu) */
+  .site-header {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e6f2f2; /* keep your existing divider look */
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 16px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .site-logo img {
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 12px;
+  }
+
+  /* Desktop nav */
+  .site-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .site-nav a {
+    color: #2f2f2f;
+    text-decoration: none;
+  }
+
+  .site-nav a.active {
+    color: #056367;
+    font-weight: 600;
+  }
+
+  /* Hamburger button (hidden on desktop) */
+  .nav-toggle {
+    display: none;
+    position: absolute;
+    right: 16px;
+    top: 20px;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    color: #056367;
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .nav-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .site-nav {
+      display: none;
+      width: 100%;
+    }
+
+    .site-nav.open {
+      display: block;
+    }
+
+    .site-nav ul {
+      flex-direction: column;
+      gap: 16px;
+      padding: 10px 0 6px;
+      text-align: center;
+    }
+
+    .site-nav a {
+      font-size: 16px;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+  }
+
+  /* Footer mobile padding so links don’t hug the edges */
+  @media (max-width: 640px) {
+    .site-footer {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    .site-footer p {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+  }
+</style>
+
 </head>
 
 <body style="margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">
@@ -134,7 +249,11 @@
         "
       />
     </a>
+<button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+  ☰
+</button>
 
+    
     <!-- NAV LINKS -->
     <nav class="site-nav" aria-label="Main navigation">
       <ul style="
