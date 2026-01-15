@@ -4,148 +4,224 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Marsha Kerr Talley | Turning Pain Into Possibilities</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- GLOBAL STYLES -->
+  <style>
+    :root {
+      --brand-primary: #056367;
+      --brand-secondary: #319fa2;
+      --brand-soft: #f3fbfb;
+      --text-body: #5a5a5a;
+      --text-dark: #102f30;
+
+      --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      --font-heading: "Playfair Display", serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--text-body);
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      font-weight: 500;
+      color: var(--brand-primary);
+      margin-top: 0;
+    }
+
+    .page-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .page-wrap {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+    }
+
+    .buy-btn,
+    .newsletter-form button {
+      display: inline-block;
+      padding: 0.9rem 2rem;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+  </style>
+
+  <!-- HEADER / NAVIGATION STYLES -->
+  <style>
+    .site-header {
+      width: 100%;
+      background: #ffffff;
+    }
+
+    .site-header .page-wrap {
+      padding: 20px 16px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .site-header img {
+      max-width: 220px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .site-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .site-nav a {
+      text-decoration: none;
+      color: #2f2f2f;
+      font-weight: 500;
+    }
+
+    .site-nav a.active {
+      color: var(--brand-primary);
+      font-weight: 600;
+    }
+
+    .nav-toggle {
+      display: none;
+      position: absolute;
+      right: 16px;
+      top: 20px;
+      width: 44px;
+      height: 44px;
+      border: none;
+      background: transparent;
+      font-size: 28px;
+      color: var(--brand-primary);
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .site-nav {
+        display: none;
+        width: 100%;
+      }
+
+      .site-nav.open {
+        display: block;
+      }
+
+      .site-nav ul {
+        flex-direction: column;
+        gap: 16px;
+        padding: 10px 0 6px;
+        text-align: center;
+      }
+
+      .site-nav a {
+        font-size: 16px;
+        letter-spacing: 0.06em;
+        white-space: nowrap;
+      }
+    }
+  </style>
 </head>
 
-<body style="margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">
+<body>
 
-<!-- SITE HEADER / NAVIGATION -->
-<header style="
-  width:100%;
-  background:#ffffff;
-  border-bottom:1px solid #e6f2f2;
-">
-  <div style="
-    max-width:1200px;
-    margin:0 auto;
-    padding:20px 16px 12px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    box-sizing:border-box;
-  ">
-    <!-- LOGO -->
-    <a href="index.html" style="display:inline-block;">
-      <img
-        src="MKT-logo-3.png"
-        alt="Marsha Kerr Talley – Live Inspired"
-        style="
-          max-width:220px;
-          width:100%;
-          height:auto;
-          display:block;
-          margin:0 auto 12px;
-        "
-      />
+<!-- SITE HEADER -->
+<header class="site-header">
+  <div class="page-wrap">
+
+    <a href="index.html">
+      <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired" />
     </a>
 
-    <!-- NAV LINKS -->
-    <nav aria-label="Main navigation">
-      <ul style="
-        list-style:none;
-        padding:0;
-        margin:0;
-        display:flex;
-        gap:28px;
-        flex-wrap:wrap;
-        justify-content:center;
-        font-size:14px;
-        letter-spacing:0.08em;
-        text-transform:uppercase;
-      ">
-        <li><a href="index.html" style="color:#056367;text-decoration:none;font-weight:600;">Home</a></li>
-        <li><a href="work-with-me.html" style="color:#2f2f2f;text-decoration:none;">Work With Me</a></li>
-        <li><a href="books.html" style="color:#2f2f2f;text-decoration:none;">Books</a></li>
-        <li><a href="podcast.html" style="color:#2f2f2f;text-decoration:none;">Podcast</a></li>
-        <li><a href="reflections.html" style="color:#2f2f2f;text-decoration:none;">Reflections</a></li>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work-with-me.html">Work With Me</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="podcast.html">Podcast</a></li>
+        <li><a href="reflections.html">Reflections</a></li>
       </ul>
     </nav>
+
   </div>
 </header>
 
-<!-- BOOKS SECTION -->
-<section style="
-  max-width:1200px;
-  margin:4rem auto;
-  padding:0 1.5rem;
-  text-align:center;
-">
+<!-- BOOKS INTRO SECTION -->
+<section style="margin:4rem auto;text-align:center;">
+  <div class="page-wrap">
 
-  <!-- Section Header -->
-  <div style="
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:2.5rem;
-  ">
-    <span style="flex:1;height:1px;background:#319fa2;max-width:200px;"></span>
-    <h2 style="
-      margin:0 1.5rem;
-      font-size:clamp(2rem,3vw,2.6rem);
-      color:#319fa2;
-      font-weight:500;
-    ">
-      Books by Marsha Kerr Talley
-    </h2>
-    <span style="flex:1;height:1px;background:#319fa2;max-width:200px;"></span>
+    <div style="display:flex;align-items:center;justify-content:center;margin-bottom:2.5rem;">
+      <span style="flex:1;height:1px;background:#319fa2;max-width:200px;"></span>
+      <h2 style="margin:0 1.5rem;font-size:clamp(2rem,3vw,2.6rem);color:#319fa2;">
+        Books by Marsha Kerr Talley
+      </h2>
+      <span style="flex:1;height:1px;background:#319fa2;max-width:200px;"></span>
+    </div>
+
+    <div style="border-radius:14px;overflow:hidden;margin-bottom:2.5rem;">
+      <img
+        src="13-EGL_4825.jpg"
+        alt="Marsha Kerr Talley facilitating a reflective group discussion"
+        style="width:100%;height:auto;display:block;"
+      />
+    </div>
+
+    <h3 style="color:#056367;font-size:1.4rem;margin-bottom:1.2rem;">
+      Written for Thoughtful Living
+    </h3>
+
+    <p style="max-width:900px;margin:0 auto 1.2rem;color:#245b5d;">
+      My books are self-paced guides, rooted in lived experience and reflective anecdotes, supporting emotional regulation, life transitions, and self-discovery. They are not written for quick fixes or surface inspiration.
+    </p>
+
+    <p style="max-width:900px;margin:0 auto 1.2rem;color:#245b5d;">
+      Each chapter invites you to return, reflect, and live with intention and meaning.
+    </p>
+
+    <p style="max-width:900px;margin:0 auto;font-size:0.95rem;color:#056367;font-style:italic;">
+      Please note: Some book reviews include reader ratings. Others offer a summary rather than scores.
+    </p>
+
   </div>
-
-  <!-- Image -->
-  <div style="
-    border-radius:14px;
-    overflow:hidden;
-    margin-bottom:2.5rem;
-  ">
-    <img
-      src="13-EGL_4825.jpg"
-      alt="Marsha Kerr Talley facilitating a reflective group discussion"
-      style="width:100%;height:auto;display:block;"
-    />
-  </div>
-
-  <!-- Subheading -->
-  <h3 style="
-    color:#056367;
-    font-size:1.4rem;
-    font-weight:500;
-    margin-bottom:1.2rem;
-  ">
-    Written for Thoughtful Living
-  </h3>
-
-  <!-- Text -->
-  <p style="
-    max-width:900px;
-    margin:0 auto 1.2rem auto;
-    font-size:1rem;
-    line-height:1.7;
-    color:#245b5d;
-  ">
-    My books are self-paced guides, rooted in lived experience and reflective anecdotes, supporting emotional regulation, life transitions, and self-discovery. They are not written for quick fixes or surface inspiration.
-  </p>
-
-  <p style="
-    max-width:900px;
-    margin:0 auto 1.2rem auto;
-    font-size:1rem;
-    line-height:1.7;
-    color:#245b5d;
-  ">
-    Each chapter invites you to return, reflect, and live with intention and meaning.
-  </p>
-
-  <p style="
-    max-width:900px;
-    margin:0 auto;
-    font-size:0.95rem;
-    line-height:1.6;
-    color:#056367;
-    font-style:italic;
-  ">
-    Please note: Some book reviews include reader ratings. Others offer a summary rather than scores.
-  </p>
-
 </section>
 
+<!-- BOOK LIST STYLES -->
 <style>
   .book-section {
     max-width: 1200px;
@@ -179,6 +255,7 @@
     font-size: 2rem;
     font-weight: 500;
     margin-bottom: 1rem;
+    font-family: var(--font-heading);
   }
 
   .book-desc {
@@ -189,13 +266,9 @@
   }
 
   .buy-btn {
-    display: inline-block;
     background: #319fa2;
     color: #fff;
-    padding: .85rem 1.6rem;
-    border-radius: 999px;
     text-decoration: none;
-    font-weight: 600;
   }
 
   .buy-btn:hover {
@@ -213,6 +286,7 @@
   .reader-box h4 {
     color: #056367;
     margin-bottom: .6rem;
+    font-family: var(--font-heading);
   }
 
   .reader-box p {
@@ -228,155 +302,137 @@
   }
 </style>
 
+<!-- BOOK LIST -->
 <section class="book-section">
+  <div class="page-wrap">
 
-  <!-- BOOK 1 -->
-  <div class="book-row">
-    <img src="healing-from-emotional-traumas.jpg" alt="Healing from Emotional Traumas book cover">
-    <div>
-      <div class="book-price">£21.99</div>
-      <div class="book-title">Healing from Emotional Traumas</div>
-      <p class="book-desc">
-        Drawing on personal experiences, Marsha Kerr Talley helps readers confront their past that still impacts their lives today.
-        This book can help you break free from the emotional baggage through insightful reflections and practical exercises.
-      </p>
-      <a class="buy-btn" href="https://buy.stripe.com/fZe6sj8dg67i7ba28d">BUY NOW!</a>
+    <div class="book-row">
+      <img src="healing-from-emotional-traumas.jpg" alt="Healing from Emotional Traumas book cover">
+      <div>
+        <div class="book-price">£21.99</div>
+        <div class="book-title">Healing from Emotional Traumas</div>
+        <p class="book-desc">
+          Drawing on personal experiences, Marsha Kerr Talley helps readers confront their past that still impacts their lives today.
+          This book can help you break free from the emotional baggage through insightful reflections and practical exercises.
+        </p>
+        <a class="buy-btn" href="https://buy.stripe.com/fZe6sj8dg67i7ba28d">BUY NOW!</a>
+      </div>
     </div>
-  </div>
 
-  <div class="reader-box">
-    <h4>⭐ ⭐ ⭐ ⭐ ⭐ &nbsp; Reader Rating</h4>
-    <p>
-      Readers frequently describe this book as compassionate and validating.
-      It is often experienced as a steady companion for understanding emotional pain,
-      recognising patterns, and approaching healing with patience and self-awareness.
-    </p>
-    <p><em>Based on reader reflections and lived experience shared over time.</em></p>
-  </div>
-
-  <!-- BOOK 2 -->
-  <div class="book-row">
-    <img src="the-decision-is-just-the-beginning.jpg" alt="The Decision Is Just the Beginning book cover">
-    <div>
-      <div class="book-price">£13.95</div>
-      <div class="book-title">The Decision Is Just the Beginning</div>
-      <p class="book-desc">
-        With relatable stories and dedicated sections to write down your thoughts and feelings,
-        this workbook invites reflection and helps turn aspirations into reality.
-        Start your journey to better decision-making today!
+    <div class="reader-box">
+      <h4>⭐ ⭐ ⭐ ⭐ ⭐ &nbsp; Reader Rating</h4>
+      <p>
+        Readers frequently describe this book as compassionate and validating.
+        It is often experienced as a steady companion for understanding emotional pain,
+        recognising patterns, and approaching healing with patience and self-awareness.
       </p>
-      <a class="buy-btn" href="https://buy.stripe.com/28o8AreBE53e3YYaEI">BUY NOW!</a>
+      <p><em>Based on reader reflections and lived experience shared over time.</em></p>
     </div>
-  </div>
 
-  <div class="reader-box">
-    <h4>⭐ ⭐ ⭐ ⭐ ⭐ &nbsp; Reader Rating</h4>
-    <p>
-      Readers often describe this book as grounding and clarifying, particularly during moments when change feels uncertain.
-      Many reflect on how it helped them pause, reflect, and make more intentional choices without pressure or urgency.
-    </p>
-    <p><em>Based on reader reflections and feedback over time.</em></p>
-  </div>
+    <div class="book-row">
+      <img src="the-decision-is-just-the-beginning.jpg" alt="The Decision Is Just the Beginning book cover">
+      <div>
+        <div class="book-price">£13.95</div>
+        <div class="book-title">The Decision Is Just the Beginning</div>
+        <p class="book-desc">
+          With relatable stories and dedicated sections to write down your thoughts and feelings,
+          this workbook invites reflection and helps turn aspirations into reality.
+          Start your journey to better decision-making today!
+        </p>
+        <a class="buy-btn" href="https://buy.stripe.com/28o8AreBE53e3YYaEI">BUY NOW!</a>
+      </div>
+    </div>
 
-  <!-- BOOK 3 -->
-  <div class="book-row">
-    <img src="a-guide-to-dealing-with-a-narcissist.jpg" alt="A Guide to Dealing with a Narcissist book cover">
-    <div>
-      <div class="book-price">£4.99</div>
-      <div class="book-title">A Guide to Dealing with A Narcissist</div>
-      <p class="book-desc">
-        Blending research with real-life anecdotes to shed light on their manipulative behaviours,
-        "A Guide to Dealing with a Narcissist" offers strategies for navigating relationships with those
-        who exhibit narcissistic tendencies.
+    <div class="reader-box">
+      <h4>⭐ ⭐ ⭐ ⭐ ⭐ &nbsp; Reader Rating</h4>
+      <p>
+        Readers often describe this book as grounding and clarifying, particularly during moments when change feels uncertain.
+        Many reflect on how it helped them pause, reflect, and make more intentional choices without pressure or urgency.
       </p>
-      <a class="buy-btn" href="https://buy.stripe.com/6oE03V9hk7bmanmfZ1">BUY NOW!</a>
+      <p><em>Based on reader reflections and feedback over time.</em></p>
     </div>
-  </div>
 
-  <div class="reader-box">
-    <h4>Reader Context</h4>
-    <p>
-      This guide is often used as a practical starting point for understanding challenging relational dynamics.
-      Readers typically engage with it during periods of confusion, boundary-setting, or emotional recalibration.
-    </p>
-    <p><em>Designed as an informational and reflective resource.</em></p>
-  </div>
+    <div class="book-row">
+      <img src="a-guide-to-dealing-with-a-narcissist.jpg" alt="A Guide to Dealing with a Narcissist book cover">
+      <div>
+        <div class="book-price">£4.99</div>
+        <div class="book-title">A Guide to Dealing with A Narcissist</div>
+        <p class="book-desc">
+          Blending research with real-life anecdotes to shed light on their manipulative behaviours,
+          "A Guide to Dealing with a Narcissist" offers strategies for navigating relationships with those
+          who exhibit narcissistic tendencies.
+        </p>
+        <a class="buy-btn" href="https://buy.stripe.com/6oE03V9hk7bmanmfZ1">BUY NOW!</a>
+      </div>
+    </div>
 
-  <!-- BOOK 4 -->
-  <div class="book-row">
-    <img src="surviving-covid-19.jpg" alt="Surviving Covid-19 book cover">
-    <div>
-      <div class="book-price">£5.99</div>
-      <div class="book-title">Surviving Covid-19</div>
-      <p class="book-desc">
-        Recounting the challenges she faced as anxiety grew and lockdowns began,
-        Marsha Kerr Talley's story highlights resilience, hope, and community strength during difficult times.
-        "Surviving Covid-19" is a powerful reminder of our shared humanity during adversity.
+    <div class="reader-box">
+      <h4>Reader Context</h4>
+      <p>
+        This guide is often used as a practical starting point for understanding challenging relational dynamics.
+        Readers typically engage with it during periods of confusion, boundary-setting, or emotional recalibration.
       </p>
-      <a class="buy-btn" href="https://buy.stripe.com/00gaIzbps7bmgLK4gi">BUY NOW!</a>
+      <p><em>Designed as an informational and reflective resource.</em></p>
     </div>
-  </div>
 
-  <div class="reader-box">
-    <h4>Reader Context</h4>
-    <p>
-      This book captures lived experience and reflection during a time of collective uncertainty.
-      Readers often approach it as a moment-in-time narrative offering perspective, meaning, and human connection.
-    </p>
-    <p><em>Shared as a reflective account rather than an evaluative text.</em></p>
-  </div>
+    <div class="book-row">
+      <img src="surviving-covid-19.jpg" alt="Surviving Covid-19 book cover">
+      <div>
+        <div class="book-price">£5.99</div>
+        <div class="book-title">Surviving Covid-19</div>
+        <p class="book-desc">
+          Recounting the challenges she faced as anxiety grew and lockdowns began,
+          Marsha Kerr Talley's story highlights resilience, hope, and community strength during difficult times.
+          "Surviving Covid-19" is a powerful reminder of our shared humanity during adversity.
+        </p>
+        <a class="buy-btn" href="https://buy.stripe.com/00gaIzbps7bmgLK4gi">BUY NOW!</a>
+      </div>
+    </div>
 
+    <div class="reader-box">
+      <h4>Reader Context</h4>
+      <p>
+        This book captures lived experience and reflection during a time of collective uncertainty.
+        Readers often approach it as a moment-in-time narrative offering perspective, meaning, and human connection.
+      </p>
+      <p><em>Shared as a reflective account rather than an evaluative text.</em></p>
+    </div>
+
+  </div>
 </section>
 
-<blockquote style="
-  margin:40px auto;
-  padding:30px 32px;
-  max-width:880px;
-  background:#f7fbfb;
-  border-left:10px solid #056367;
-  border-radius:14px;
-  font-size:1.35rem;
-  line-height:1.7;
-  font-weight:500;
-  color:#102f30;
-">
-  “Pain doesn’t have to be the end of the story. It can be the beginning of something more aligned.”
-  <div style="
-    margin-top:16px;
-    font-size:1.05rem;
-    font-weight:600;
-    color:#056367;
+<!-- QUOTE -->
+<div class="page-wrap">
+  <blockquote style="
+    margin:40px auto;
+    padding:30px 32px;
+    max-width:880px;
+    background:#f7fbfb;
+    border-left:10px solid #056367;
+    border-radius:14px;
+    font-size:1.35rem;
+    line-height:1.7;
+    font-weight:500;
+    color:#102f30;
   ">
-    — Marsha Kerr Talley
-  </div>
-</blockquote>
+    “Pain doesn’t have to be the end of the story. It can be the beginning of something more aligned.”
+    <div style="margin-top:16px;font-size:1.05rem;font-weight:600;color:#056367;">
+      — Marsha Kerr Talley
+    </div>
+  </blockquote>
+</div>
 
-<!-- REAL READER REVIEWS -->
-<section aria-label="Reader Reviews" style="
-  width:100%;
-  padding:48px 16px;
-  background:#f9fefe;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  color:#0d4b4e;
-  box-sizing:border-box;
-">
+<!-- READER REVIEWS -->
+<section aria-label="Reader Reviews" style="padding:48px 0;background:#f9fefe;">
+  <div class="page-wrap">
 
-  <div style="max-width:900px;margin:0 auto;">
-
-    <h2 style="
-      text-align:center;
-      color:#056367;
-      font-size:clamp(26px,4.5vw,34px);
-      font-weight:600;
-      margin-bottom:40px;
-    ">
+    <h2 style="text-align:center;color:#056367;font-size:clamp(26px,4.5vw,34px);margin-bottom:40px;">
       Reader Reflections
     </h2>
 
-    <!-- REVIEW -->
     <article style="background:#fff;border-radius:18px;padding:26px;margin-bottom:28px;box-shadow:0 10px 30px rgba(0,0,0,0.06);">
       <div style="color:#f5b301;font-size:20px;margin-bottom:10px;">★★★★★</div>
-      <h3 style="margin:0 0 12px 0;color:#056367;">Incredibly Helpful</h3>
+      <h3 style="margin:0 0 12px;color:#056367;">Incredibly Helpful</h3>
       <p style="line-height:1.7;">
         </strong> I received this book as a gift after suffering a traumatic pregnancy loss.
         I cannot begin to tell you how helpful it was in my grieving process. Before reading, I felt so much shame
@@ -387,7 +443,7 @@
 
     <article style="background:#fff;border-radius:18px;padding:26px;margin-bottom:28px;box-shadow:0 10px 30px rgba(0,0,0,0.06);">
       <div style="color:#f5b301;font-size:20px;margin-bottom:10px;">★★★★★</div>
-      <h3 style="margin:0 0 12px 0;color:#056367;">Unexpected and Unique</h3>
+      <h3 style="margin:0 0 12px;color:#056367;">Unexpected and Unique</h3>
       <p style="line-height:1.7;">
         This book is a short, easy read from an unexpected perspective of the COVID-19 experience.
         The journal-like style allows for candor, nuance, and personal growth rather than rigid conclusions.
@@ -397,7 +453,7 @@
 
     <article style="background:#fff;border-radius:18px;padding:26px;margin-bottom:28px;box-shadow:0 10px 30px rgba(0,0,0,0.06);">
       <div style="color:#f5b301;font-size:20px;margin-bottom:10px;">★★★★★</div>
-      <h3 style="margin:0 0 12px 0;color:#056367;">Awesome Book</h3>
+      <h3 style="margin:0 0 12px;color:#056367;">Awesome Book</h3>
       <p style="line-height:1.7;">
         I remember thinking I could read this book in a day or two — I can’t. It’s a book you must
         take your time with, pause, reflect, and continue. That’s what healing truly is.
@@ -407,7 +463,7 @@
 
     <article style="background:#fff;border-radius:18px;padding:26px;margin-bottom:28px;box-shadow:0 10px 30px rgba(0,0,0,0.06);">
       <div style="color:#f5b301;font-size:20px;margin-bottom:10px;">★★★★☆</div>
-      <h3 style="margin:0 0 12px 0;color:#056367;">Selfless Offering</h3>
+      <h3 style="margin:0 0 12px;color:#056367;">Selfless Offering</h3>
       <p style="line-height:1.7;">
         Thank you for sharing your life experiences with us. Many hold similar confessions but fear judgment.
         Reading this created connection and deep emotional resonance.
@@ -417,7 +473,7 @@
 
     <article style="background:#fff;border-radius:18px;padding:26px;margin-bottom:28px;box-shadow:0 10px 30px rgba(0,0,0,0.06);">
       <div style="color:#f5b301;font-size:20px;margin-bottom:10px;">★★★★★</div>
-      <h3 style="margin:0 0 12px 0;color:#056367;">I’m Still Healing</h3>
+      <h3 style="margin:0 0 12px;color:#056367;">I’m Still Healing</h3>
       <p style="line-height:1.7;">
         A must-read for anyone dealing with mental or emotional trauma. We attend to physical wounds,
         yet often avoid psychological ones. This book meets you honestly in that space.
@@ -427,7 +483,7 @@
 
     <article style="background:#fff;border-radius:18px;padding:26px;margin-bottom:28px;box-shadow:0 10px 30px rgba(0,0,0,0.06);">
       <div style="color:#f5b301;font-size:20px;margin-bottom:10px;">★★★★★</div>
-      <h3 style="margin:0 0 12px 0;color:#056367;">Wonderful Read</h3>
+      <h3 style="margin:0 0 12px;color:#056367;">Wonderful Read</h3>
       <p style="line-height:1.7;">
         I appreciate how Marsha weaves personal testimony with data and the experiences of others.
         This is not opinion — it is thoughtful, grounded, and deeply compassionate.
@@ -437,7 +493,7 @@
 
     <article style="background:#fff;border-radius:18px;padding:26px;margin-bottom:28px;box-shadow:0 10px 30px rgba(0,0,0,0.06);">
       <div style="color:#f5b301;font-size:20px;margin-bottom:10px;">★★★★★</div>
-      <h3 style="margin:0 0 12px 0;color:#056367;">Game Changer</h3>
+      <h3 style="margin:0 0 12px;color:#056367;">Game Changer</h3>
       <p style="line-height:1.7;">
         The honesty in this book is monumental without being heavy.
         Marsha shares truth while offering tools for real healing.
@@ -447,7 +503,7 @@
 
     <article style="background:#fff;border-radius:18px;padding:26px;box-shadow:0 10px 30px rgba(0,0,0,0.06);">
       <div style="color:#f5b301;font-size:20px;margin-bottom:10px;">★★★★★</div>
-      <h3 style="margin:0 0 12px 0;color:#056367;">Healing from Emotional Trauma</h3>
+      <h3 style="margin:0 0 12px;color:#056367;">Healing from Emotional Trauma</h3>
       <p style="line-height:1.7;">
         This book is a masterpiece that supports healing from life’s scars.
         It encourages wholeness and gentle self-restoration.
@@ -458,9 +514,9 @@
   </div>
 </section>
 
-<!-- NEWSLETTER SECTION (MOVED HERE — BEFORE FOOTER) -->
+<!-- NEWSLETTER -->
 <section class="newsletter-section">
-  <div class="newsletter-inner">
+  <div class="newsletter-inner page-wrap">
 
     <div class="newsletter-icon">+</div>
 
@@ -476,13 +532,7 @@
       target="_blank"
       class="newsletter-form"
     >
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        required
-      />
-
+      <input type="email" name="email" placeholder="Email" required />
       <button type="submit">SIGN UP</button>
     </form>
 
@@ -519,6 +569,7 @@
   color: #319fa2;
   margin-bottom: 0.8rem;
   font-weight: 500;
+  font-family: var(--font-heading);
 }
 
 .newsletter-section p {
@@ -541,31 +592,17 @@
   border-radius: 8px;
   border: 1px solid #ddd;
 }
-
-.newsletter-form button {
-  padding: 0.9rem 2rem;
-  border-radius: 999px;
-  border: none;
-  background: #319fa2;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-}
-
-.newsletter-form button:hover {
-  background: #056367;
-}
 </style>
 
-<!-- FOOTER (NOW LAST) -->
+<!-- SITE FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
     <p class="copyright">
-      Copyright © 2025 Marsha Kerr Talley - All Rights Reserved.
+      Copyright © <span id="currentYear"></span>
+      Marsha Kerr Talley — All Rights Reserved.
     </p>
 
-    <nav class="footer-links">
+    <nav class="footer-links" aria-label="Footer links">
       <a href="/privacy-policy">Privacy Policy</a>
       <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
       <a href="/terms-and-conditions">Terms and Conditions</a>
@@ -573,13 +610,14 @@
   </div>
 </footer>
 
-<!-- FIX #2: Footer CSS wrapped properly so it does NOT render as text -->
 <style>
 .site-footer {
+  width: 100%;
   background-color: #ffffff;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #eeeeee;
   padding: 2.5rem 1.5rem 2rem;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .footer-inner {
@@ -590,14 +628,14 @@
 .site-footer p {
   margin: 0 0 1.4rem;
   font-size: 0.95rem;
-  color: #666;
+  color: #666666;
 }
 
 .footer-links {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  gap: 1rem;
+  flex-wrap: nowrap;
 }
 
 .footer-links a {
@@ -605,13 +643,44 @@
   color: #319fa2;
   text-decoration: none;
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
 .footer-links a:hover {
   color: #056367;
   text-decoration: underline;
 }
+
+@media (max-width: 640px) {
+  .footer-links {
+    flex-wrap: wrap;
+  }
+}
 </style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const yearSpan = document.getElementById("currentYear");
+  if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.site-nav');
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+  }
+
+  const currentPage = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+  document.querySelectorAll(".site-nav a").forEach(link => {
+    if (link.getAttribute("href").toLowerCase() === currentPage) {
+      link.classList.add("active");
+    }
+  });
+});
+</script>
 
 </body>
 </html>
