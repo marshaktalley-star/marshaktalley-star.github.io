@@ -77,6 +77,18 @@
 
     #mkt-hero h1{font-family:var(--font-heading) !important;}
     #mkt-hero .proof h3{font-family:var(--font-heading) !important;}
+    @media (max-width: 640px) {
+  .site-nav ul {
+    flex-wrap: nowrap;
+    gap: 14px;
+  }
+
+  .site-nav ul a {
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+}
   </style>
 </head>
 
@@ -643,8 +655,8 @@
 .footer-links {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  gap: 1.25rem;
+  flex-wrap: nowrap;
 }
 
 .footer-links a {
