@@ -5,20 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Live Inspired Reflections | Marsha Kerr Talley</title>
 
-  <!-- =========================
-       GLOBAL STYLES
-  ========================== -->
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- GLOBAL STYLES -->
   <style>
+    :root {
+      --brand-primary: #056367;
+      --brand-secondary: #319fa2;
+      --brand-accent: #2fe2dd;
+      --text-body: #5a5a5a;
+      --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      --font-heading: "Playfair Display", serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-family: var(--font-body);
       color: #333;
       line-height: 1.65;
       background: #ffffff;
     }
 
     a {
-      color: #056367;
+      color: var(--brand-primary);
       text-decoration: none;
     }
 
@@ -26,48 +42,173 @@
       text-decoration: underline;
     }
 
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      margin-top: 0;
+    }
+
+    .page-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .page-wrap {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+    }
+
+    /* Backward-compatible container (original content preserved) */
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 1.5rem;
       box-sizing: border-box;
     }
+
+    /* Button standardisation (text/links unchanged) */
+    button {
+      font-family: var(--font-body);
+    }
+
+    .buy-btn,
+    .newsletter-form button,
+    button[type="submit"] {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  </style>
+
+  <!-- Header / Navigation Styles -->
+  <style>
+    /* ===== HEADER / NAV ===== */
+    .site-header {
+      width: 100%;
+      background: #ffffff;
+    }
+
+    .site-header .page-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 16px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .site-header img {
+      max-width: 220px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .site-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .site-nav a {
+      text-decoration: none;
+      color: #2f2f2f;
+      font-weight: 500;
+    }
+
+    .site-nav a.active {
+      color: var(--brand-primary);
+      font-weight: 600;
+    }
+
+    .nav-toggle {
+      display: none;
+      position: absolute;
+      right: 16px;
+      top: 20px;
+      width: 44px;
+      height: 44px;
+      border: none;
+      background: transparent;
+      font-size: 28px;
+      color: var(--brand-primary);
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .site-nav {
+        display: none;
+        width: 100%;
+      }
+
+      .site-nav.open {
+        display: block;
+      }
+
+      .site-nav ul {
+        flex-direction: column;
+        gap: 16px;
+        padding: 10px 0 6px;
+        text-align: center;
+      }
+
+      .site-nav a {
+        font-size: 16px;
+        letter-spacing: 0.06em;
+        white-space: nowrap;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<!-- ======================================================
-     HEADER / NAVIGATION
-====================================================== -->
-<header style="border-bottom:1px solid #e6f2f2;">
-  <div class="container" style="padding:20px 0;text-align:center;">
-    <a href="index.html">
-      <img src="MKT-logo-3.png"
-           alt="Marsha Kerr Talley – Live Inspired"
-           style="max-width:220px;margin-bottom:12px;">
-    </a>
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="page-wrap">
 
-    <nav>
-      <ul style="
-        list-style:none;
-        display:flex;
-        gap:28px;
-        justify-content:center;
-        padding:0;
-        margin:0;
-        font-size:14px;
-        letter-spacing:0.08em;
-        text-transform:uppercase;">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="work-with-me.html">Work With Me</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="podcast.html" style="font-weight:700;">Podcast</a></li>
-        <li><a href="reflections.html">Reflections</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+      <a href="index.html">
+        <img
+          src="MKT-logo-3.png"
+          alt="Marsha Kerr Talley – Live Inspired"
+        />
+      </a>
+
+      <button
+        class="nav-toggle"
+        aria-label="Open menu"
+        aria-expanded="false">
+        ☰
+      </button>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work-with-me.html">Work With Me</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="podcast.html">Podcast</a></li>
+          <li><a href="reflections.html">Reflections</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
 
 <!-- ======================================================
      HERO BANNER (ZOOMED OUT SLIGHTLY MORE)
@@ -108,42 +249,46 @@
      PODCAST PAGE HEADER
 ====================================================== -->
 <div style="text-align:center;margin:3.5rem 0 1rem;">
-  <h1 style="
-    margin:0;
-    font-size:clamp(28px,5vw,42px);
-    font-weight:900;
-    color:#056367;">
-    Live Inspired Reflections
-  </h1>
+  <div class="page-wrap">
+    <h1 style="
+      margin:0;
+      font-size:clamp(28px,5vw,42px);
+      font-weight:900;
+      color:#056367;">
+      Live Inspired Reflections
+    </h1>
 
-  <p style="
-    margin-top:6px;
-    font-size:clamp(15px,2.6vw,18px);
-    font-weight:700;
-    color:#319fa2;">
-    Conversations with Marsha Kerr Talley
-  </p>
+    <p style="
+      margin-top:6px;
+      font-size:clamp(15px,2.6vw,18px);
+      font-weight:700;
+      color:#319fa2;">
+      Conversations with Marsha Kerr Talley
+    </p>
+  </div>
 </div>
 
 <!-- ======================================================
      PODCAST INTRO
 ====================================================== -->
 <div style="background:#dff3f3;padding:24px 16px;text-align:center;">
-  <p style="
-    max-width:68ch;
-    margin:0 auto;
-    font-size:clamp(15px,2.6vw,18px);
-    color:#0d4b4e;">
-    In these conversations, I reflect on how people make sense of challenge,
-    navigate change, and stay anchored in themselves when life feels demanding.
-    I offer grounded perspective and space to think — rather than quick fixes.
-  </p>
+  <div class="page-wrap">
+    <p style="
+      max-width:68ch;
+      margin:0 auto;
+      font-size:clamp(15px,2.6vw,18px);
+      color:#0d4b4e;">
+      In these conversations, I reflect on how people make sense of challenge,
+      navigate change, and stay anchored in themselves when life feels demanding.
+      I offer grounded perspective and space to think — rather than quick fixes.
+    </p>
+  </div>
 </div>
 
 <!-- ======================================================
      EPISODES (AUTO-UPDATING)
 ====================================================== -->
-<section class="container" style="margin:4rem auto;">
+<section class="container page-wrap" style="margin:4rem auto;">
   <h2 style="color:#056367;margin-bottom:2.5rem;">
     Choose a conversation
   </h2>
@@ -154,7 +299,7 @@
 <!-- ======================================================
      REFLECTION SPACE
 ====================================================== -->
-<section class="container" style="
+<section class="container page-wrap" style="
   max-width:760px;
   background:#eef7f7;
   padding:2.75rem;
@@ -221,7 +366,7 @@
 <!-- ======================================================
      SUBSTACK SIGNUP
 ====================================================== -->
-<section class="container" style="text-align:center;margin:4rem auto;">
+<section class="container page-wrap" style="text-align:center;margin:4rem auto;">
   <h3 style="color:#056367;font-weight:400;">
     Stay connected
   </h3>
@@ -247,22 +392,121 @@
   </form>
 </section>
 
-<!-- ======================================================
-     FOOTER (AUTO-YEAR)
-====================================================== -->
-<footer style="border-top:1px solid #eee;padding:2.5rem;text-align:center;">
-  <p style="color:#666;">
-    © <span id="year"></span> Marsha Kerr Talley. All Rights Reserved.
-  </p>
-  <a href="/privacy-policy">Privacy Policy</a> | <a href="/terms">Terms</a>
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="copyright">
+      Copyright © <span id="currentYear"></span>
+      Marsha Kerr Talley — All Rights Reserved.
+    </p>
+
+    <nav class="footer-links" aria-label="Footer links">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
+      <a href="/terms-and-conditions">Terms and Conditions</a>
+    </nav>
+  </div>
 </footer>
+
+<!-- FOOTER STYLES -->
+<style>
+.site-footer {
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #eeeeee;
+  padding: 2.5rem 1.5rem 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-footer p {
+  margin: 0 0 1.4rem;
+  font-size: 0.95rem;
+  color: #666666;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.footer-links a {
+  font-size: 1rem;
+  color: #319fa2;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.footer-links a:hover {
+  color: #056367;
+  text-decoration: underline;
+}
+
+/* Mobile safety fixes */
+@media (max-width: 640px) {
+  .site-footer {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .site-footer p {
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem;
+    white-space: normal;
+  }
+}
+</style>
+
+<!-- Navigation Scripts + AUTO-UPDATE COPYRIGHT YEAR -->
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.site-nav');
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const yearSpan = document.getElementById("currentYear");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+
+    const currentPage =
+      (location.pathname.split("/").pop() || "index.html").toLowerCase();
+
+    document.querySelectorAll(".site-nav a").forEach(link => {
+      const href = link.getAttribute("href").toLowerCase();
+      if (href === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
 
 <!-- ======================================================
      JAVASCRIPT
 ====================================================== -->
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
-
 function reflect(el) {
   const response = el.querySelector(".reflection-response");
   response.style.display =
