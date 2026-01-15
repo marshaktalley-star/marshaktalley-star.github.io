@@ -4,81 +4,180 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Marsha Kerr Talley | Turning Pain Into Possibilities</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- GLOBAL STYLES -->
+  <style>
+    :root {
+      --brand-primary: #056367;
+      --brand-secondary: #319fa2;
+      --brand-accent: #2fe2dd;
+      --text-body: #5a5a5a;
+      --text-dark: #102f30;
+
+      --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      --font-heading: "Playfair Display", serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--text-body);
+      background: #ffffff;
+      line-height: 1.65;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      color: var(--brand-primary);
+      margin-top: 0;
+    }
+
+    .page-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .page-wrap {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+    }
+  </style>
+
+  <!-- HEADER / NAVIGATION STYLES -->
+  <style>
+    .site-header {
+      width: 100%;
+      background: #ffffff;
+    }
+
+    .site-header .page-wrap {
+      padding: 20px 16px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .site-header img {
+      max-width: 220px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .site-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .site-nav a {
+      text-decoration: none;
+      color: #2f2f2f;
+      font-weight: 500;
+    }
+
+    .site-nav a.active {
+      color: var(--brand-primary);
+      font-weight: 600;
+    }
+
+    .nav-toggle {
+      display: none;
+      position: absolute;
+      right: 16px;
+      top: 20px;
+      width: 44px;
+      height: 44px;
+      border: none;
+      background: transparent;
+      font-size: 28px;
+      color: var(--brand-primary);
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .site-nav {
+        display: none;
+        width: 100%;
+      }
+
+      .site-nav.open {
+        display: block;
+      }
+
+      .site-nav ul {
+        flex-direction: column;
+        gap: 16px;
+        padding: 10px 0 6px;
+        text-align: center;
+      }
+
+      .site-nav a {
+        font-size: 16px;
+        letter-spacing: 0.06em;
+        white-space: nowrap;
+      }
+    }
+  </style>
 </head>
 
-<body style="margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">
+<body>
 
-<!-- SITE HEADER / NAVIGATION -->
-<header style="
-  width:100%;
-  background:#ffffff;
-  border-bottom:1px solid #e6f2f2;
-">
-  <div style="
-    max-width:1200px;
-    margin:0 auto;
-    padding:20px 16px 12px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    box-sizing:border-box;
-  ">
-    <!-- LOGO -->
-    <a href="index.html" style="display:inline-block;">
-      <img
-        src="MKT-logo-3.png"
-        alt="Marsha Kerr Talley – Live Inspired"
-        style="
-          max-width:220px;
-          width:100%;
-          height:auto;
-          display:block;
-          margin:0 auto 12px;
-        "
-      />
+<!-- SITE HEADER -->
+<header class="site-header">
+  <div class="page-wrap">
+
+    <a href="index.html">
+      <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired" />
     </a>
 
-    <!-- NAV LINKS -->
-    <nav aria-label="Main navigation">
-      <ul style="
-        list-style:none;
-        padding:0;
-        margin:0;
-        display:flex;
-        gap:28px;
-        flex-wrap:wrap;
-        justify-content:center;
-        font-size:14px;
-        letter-spacing:0.08em;
-        text-transform:uppercase;
-      ">
-        <li><a href="index.html" style="color:#056367;text-decoration:none;font-weight:600;">Home</a></li>
-        <li><a href="work-with-me.html" style="color:#2f2f2f;text-decoration:none;">Work With Me</a></li>
-        <li><a href="books.html" style="color:#2f2f2f;text-decoration:none;">Books</a></li>
-        <li><a href="podcast.html" style="color:#2f2f2f;text-decoration:none;">Podcast</a></li>
-        <li><a href="reflections.html" style="color:#2f2f2f;text-decoration:none;">Reflections</a></li>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work-with-me.html">Work With Me</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="podcast.html">Podcast</a></li>
+        <li><a href="reflections.html">Reflections</a></li>
       </ul>
     </nav>
+
   </div>
 </header>
 
-  <!-- BLOG HEADER + INTRO (BLOG INDEX ONLY) -->
-<div id="blog-header-only" style="margin-top:3.5rem;">
-
-
-  <!-- BLOG HEADER -->
-  <div style="
-    width:100%;
-    max-width:100%;
-    margin:0 0 18px 0;
-    padding:0;
-    box-sizing:border-box;
-    text-align:center;
-    font-family:inherit;
-  ">
+<!-- BLOG HEADER + INTRO -->
+<section style="margin-top:3.5rem;">
+  <div class="page-wrap" style="text-align:center;">
 
     <h1 style="
-      margin:0;
       font-size:clamp(30px,5.5vw,46px);
       font-weight:900;
       letter-spacing:-0.02em;
@@ -89,27 +188,13 @@
     </h1>
 
     <p style="
-      margin:6px 0 0 0;
+      margin:6px 0 1.2rem 0;
       font-size:clamp(15px,2.6vw,18px);
       font-weight:700;
       color:#319fa2;
-      line-height:1.4;
     ">
       By Marsha Kerr Talley
     </p>
-
-  </div>
-
-  <!-- BLOG PAGE INTRO -->
-  <div style="
-    width:100%;
-    max-width:100%;
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    text-align:center;
-    font-family:inherit;
-  ">
 
     <p style="
       margin:0 auto;
@@ -124,17 +209,15 @@
     </p>
 
   </div>
+</section>
 
-</div>
+<!-- ARTICLE -->
+<section style="margin:3rem auto;">
+  <div class="page-wrap">
 
-  <!-- BLOG-ONLY WRAPPER -->
-<div id="blog-only-container">
+<article style="max-width:780px;margin:0 auto;font-size:18px;line-height:1.65;color:#555;">
 
-<div id="lead-article">
-
-<article style="max-width:780px;margin:3rem auto;font-family:'Poppins', sans-serif;font-size:18px;line-height:1.65;color:#555;">
-
-  <h1 style="font-family:'Poppins', sans-serif;font-size:2.4rem;line-height:1.3;margin-bottom:0.5rem;color:#056367;">
+  <h1 style="font-size:2.4rem;line-height:1.3;margin-bottom:0.5rem;color:#056367;">
     When Love Is Conditional and You’re the One Who Notices
   </h1>
 
@@ -201,7 +284,7 @@
     style="width:100%;height:auto;margin:3rem 0;border-radius:8px;"
   >
 
-  <h2 style="color:#056367;">Naming the Actions Without Blame</h2>
+  <h2>Naming the Actions Without Blame</h2>
 
   <p>
     Let’s take a moment to name the behaviours we observe. Accountability, emotional attunement,
@@ -224,7 +307,7 @@
     Instead, we can recognise that people often do what they do because their capacity is limited.
   </p>
 
-  <h2 style="color:#056367;">What Is Emotional Attunement?</h2>
+  <h2>What Is Emotional Attunement?</h2>
 
   <p>Attunement is being understood, not just acknowledged.</p>
 
@@ -245,7 +328,7 @@
     They simply did not have the capacity to meet your needs.
   </p>
 
-  <h2 style="color:#056367;">Repair After Rupture</h2>
+  <h2>Repair After Rupture</h2>
 
   <p>
     Every family disagrees. There will inevitably be moments when you cannot see eye to eye.
@@ -281,7 +364,7 @@
     constantly cleaning up messes they didn’t make.
   </p>
 
-  <h2 style="color:#056367;">Accountability</h2>
+  <h2>Accountability</h2>
 
   <p>
     Today, accountability is often used as a buzzword — something that sounds mature but is
@@ -300,7 +383,7 @@
     it isn’t heard as care. It is perceived as insubordination.
   </p>
 
-  <h2 style="color:#056367;">Inclusion Without Hierarchy</h2>
+  <h2>Inclusion Without Hierarchy</h2>
 
   <p>
     Some families operate with invisible rankings — primary children and secondary ones,
@@ -324,7 +407,7 @@
     often grows into the adult who questions their worth.
   </p>
 
-  <h2 style="color:#056367;">Capacity</h2>
+  <h2>Capacity</h2>
 
   <p>The truth is, capacity is not love.</p>
 
@@ -356,7 +439,7 @@
     style="width:100%;height:auto;margin:3rem 0;border-radius:8px;"
   >
 
-  <h2 style="color:#056367;">Closing Words</h2>
+  <h2>Closing Words</h2>
 
   <p>
     The first truth I want you to hold is this: you were not asking for too much.
@@ -391,77 +474,66 @@
     It is the end of carrying the weight alone.
   </p>
 
-<!-- REFLECTION INVITATION -->
-<div style="
-  max-width:780px;
-  margin:3.5rem auto 0 auto;
-  padding:2.75rem 2rem;
-  background:#f4fbfb;
-  border-left:4px solid #056367;
-  box-sizing:border-box;
-  text-align:center;
-">
-
-  <p style="
-    font-size:1.05rem;
-    line-height:1.7;
-    margin:0 0 2rem 0;
-    color:#0d4b4e;
-  ">
-    If this reflection resonated with you, there are two gentle ways to continue.
-    Choose what feels supportive for where you are right now.
-  </p>
-
   <div style="
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:1.5rem;
+    max-width:780px;
+    margin:3.5rem auto 0 auto;
+    padding:2.75rem 2rem;
+    background:#f4fbfb;
+    border-left:4px solid #056367;
+    text-align:center;
   ">
 
-    <!-- Programme CTA -->
-    <a href="https://marshakerrtalley.com/the-six-weeks-program"
-   style="
-     font-size:1rem;
-     font-weight:600;
-     color:#ffffff;
-     background:#056367;
-     text-decoration:none;
-     padding:0.75rem 1.5rem;
-     border-radius:6px;
-     display:inline-block;
-     box-shadow:0 2px 6px rgba(0,0,0,0.06);
-   ">
+    <p style="
+      font-size:1.05rem;
+      line-height:1.7;
+      margin:0 0 2rem 0;
+      color:#0d4b4e;
+    ">
+      If this reflection resonated with you, there are two gentle ways to continue.
+      Choose what feels supportive for where you are right now.
+    </p>
 
-      Learn about the six-week programme
-    </a>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;">
 
-    <!-- Substack CTA -->
-    <a href="https://marshakerrtalley.substack.com/subscribe"
-   style="
-     font-size:1rem;
-     font-weight:600;
-     color:#056367;
-     text-decoration:none;
-     border:1px solid #056367;
-     padding:0.75rem 1.5rem;
-     border-radius:6px;
-     display:inline-block;
-     background:#ffffff;
-     box-shadow:0 2px 6px rgba(0,0,0,0.06);
-   ">
+      <a href="https://marshakerrtalley.com/the-six-weeks-program"
+         style="
+           font-size:1rem;
+           font-weight:600;
+           color:#ffffff;
+           background:#056367;
+           text-decoration:none;
+           padding:0.75rem 1.5rem;
+           border-radius:6px;
+           display:inline-block;
+         ">
+        Learn about the six-week programme
+      </a>
 
-      Receive future reflections
-    </a>
+      <a href="https://marshakerrtalley.substack.com/subscribe"
+         style="
+           font-size:1rem;
+           font-weight:600;
+           color:#056367;
+           text-decoration:none;
+           border:1px solid #056367;
+           padding:0.75rem 1.5rem;
+           border-radius:6px;
+           display:inline-block;
+           background:#ffffff;
+         ">
+        Receive future reflections
+      </a>
+
+    </div>
 
   </div>
 
-</div>
 </article>
-</div>
-</div>
 
- <!-- Footer -->
+  </div>
+</section>
+
+<!-- SITE FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
     <p>
@@ -477,18 +549,10 @@
   </div>
 </footer>
 
-<!-- Auto-update copyright year -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("currentYear").textContent =
-      new Date().getFullYear();
-  });
-</script>
-
 <style>
 .site-footer {
   background-color: #ffffff;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #eeeeee;
   padding: 2.5rem 1.5rem 2rem;
   text-align: center;
 }
@@ -501,13 +565,13 @@
 .site-footer p {
   margin: 0 0 1.4rem;
   font-size: 0.95rem;
-  color: #666;
+  color: #666666;
 }
 
 .footer-links {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
@@ -515,7 +579,6 @@
   font-size: 1rem;
   color: #319fa2;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
@@ -523,6 +586,35 @@
   text-decoration: underline;
 }
 </style>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.site-nav');
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const currentPage =
+      (location.pathname.split("/").pop() || "index.html").toLowerCase();
+
+    document.querySelectorAll(".site-nav a").forEach(link => {
+      const href = link.getAttribute("href").toLowerCase();
+      if (href === currentPage) {
+        link.classList.add("active");
+      }
+    });
+
+    const yearSpan = document.getElementById("currentYear");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+  });
+</script>
 
 </body>
 </html>
