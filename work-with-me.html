@@ -5,47 +5,146 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Marsha Kerr Talley | Turning Pain Into Possibilities</title>
 
+  <!-- ================= LOCKED HEADER SOURCE OF TRUTH ================= -->
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Header / Navigation Styles -->
   <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    :root {
+      --brand-primary: #056367;
+      --text-body: #5a5a5a;
+      --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      --font-heading: "Playfair Display", serif;
     }
 
-    /* ===== Header ===== */
-    header {
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--text-body);
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    .site-header {
       width: 100%;
       background: #ffffff;
       border-bottom: 1px solid #e6f2f2;
     }
 
-    .header-inner {
+    .site-header .page-wrap {
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px 16px 12px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
     }
 
-    nav ul {
+    .site-header img {
+      max-width: 220px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .site-nav ul {
       list-style: none;
       padding: 0;
       margin: 0;
       display: flex;
       gap: 28px;
-      flex-wrap: wrap;
       justify-content: center;
       font-size: 14px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
-    nav a {
+    .site-nav a {
       text-decoration: none;
       color: #2f2f2f;
+      font-weight: 500;
     }
 
-    /* ===== Shared Section Styles ===== */
+    .site-nav a.active {
+      color: var(--brand-primary);
+      font-weight: 600;
+    }
+
+    .nav-toggle {
+      display: none;
+      position: absolute;
+      right: 16px;
+      top: 20px;
+      width: 44px;
+      height: 44px;
+      border: none;
+      background: transparent;
+      font-size: 28px;
+      color: var(--brand-primary);
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .site-nav {
+        display: none;
+        width: 100%;
+      }
+
+      .site-nav.open {
+        display: block;
+      }
+
+      .site-nav ul {
+        flex-direction: column;
+        gap: 16px;
+        padding: 10px 0 6px;
+        text-align: center;
+      }
+
+      .site-nav a {
+        font-size: 16px;
+        letter-spacing: 0.06em;
+        white-space: nowrap;
+      }
+    }
+  </style>
+
+  <!-- ================= GLOBAL PAGE STYLES (APPROVED ONLY) ================= -->
+  <style>
+    :root {
+      --brand-secondary: #319fa2;
+      --brand-soft: #e8f6f6;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      font-weight: 500;
+      margin-top: 0;
+    }
+
+    .page-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
     .section-header {
       display: flex;
       align-items: center;
@@ -56,23 +155,19 @@
     .section-header h2 {
       margin: 0 1.5rem;
       font-size: clamp(2rem, 3vw, 2.6rem);
-      color: #319fa2;
-      font-weight: 500;
+      color: var(--brand-secondary);
       text-align: center;
     }
 
     .section-header .line {
       flex: 1;
       height: 1px;
-      background-color: #319fa2;
+      background-color: var(--brand-secondary);
       max-width: 200px;
     }
 
-    /* ===== Supporting People Before They Burnout ===== */
     .workplace-section {
-      max-width: 1200px;
       margin: 4rem auto;
-      padding: 0 1.5rem;
     }
 
     .content-wrapper {
@@ -82,34 +177,13 @@
       align-items: start;
     }
 
-    .text-content h3 {
-      font-size: 1.4rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .text-content p {
-      margin-bottom: 1.2rem;
-      line-height: 1.6;
-      color: #555;
-    }
-
-    .image-content {
-      max-width: 520px;
-      margin-left: auto;
-    }
-
     .image-content img {
       width: 100%;
-      height: auto;
       border-radius: 12px;
-      display: block;
     }
 
-    /* ===== The Three Pathways ===== */
     .pathways-section {
-      max-width: 1200px;
       margin: 4rem auto 6rem;
-      padding: 0 1.5rem;
     }
 
     .pathways-grid {
@@ -118,156 +192,63 @@
       gap: 2.5rem;
     }
 
-   .pathway-card {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
+    .pathway-card {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
 
-.pathway-card .btn-primary {
-  margin-top: auto;
-}
+    .pathway-card img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 1.2rem;
+    }
 
-.pathway-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.75rem;
-}
+    .pathway-card ul {
+      text-align: left;
+      max-width: 90%;
+      margin: 0 auto 1.1rem;
+    }
 
-.pathway-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  margin-bottom: 1.2rem;
-}
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: auto;
+      padding: 0.75rem 1.4rem;
+      background-color: var(--brand-secondary);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 30px;
+    }
 
-.pathway-card h4 {
-  font-size: 1rem;
-  margin-bottom: 0.8rem;
-  color: #444;
-}
+    .btn-primary:hover {
+      background-color: var(--brand-primary);
+    }
 
-.pathway-card p {
-  font-size: 0.9rem;
-  line-height: 1.55;
-  color: #555;
-  margin-bottom: 0.75rem;
-}
+    .speaking-section {
+      margin: 6rem auto;
+      padding: 5rem 1.5rem;
+      background: #f6fbfb;
+      border-radius: 24px;
+    }
 
-.list-title {
-  font-weight: 600;
-  margin-top: 1rem;
-}
+    .speaking-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
 
-.pathway-card ul {
-  list-style: disc;
-  padding-left: 1.2rem;
-  text-align: left;
-  margin: 0 auto 1.1rem;
-  max-width: 90%;
-}
-
-.pathway-card li {
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 0.4rem;
-}
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 1rem;
-  padding: 0.7rem 1.25rem;
-  background-color: #319fa2;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border-radius: 30px;
-}
-
-.btn-primary:hover {
-  background-color: #056367;
-}
-
-
-   /* ===== Speaking Engagements ===== */
-
-.speaking-section {
-  max-width: 1200px;
-  margin: 6rem auto;
-  padding: 5rem 1.5rem;
-  background: #f6fbfb;
-  border-radius: 24px;
-}
-
-.speaking-grid {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 2.5rem;
-  align-items: flex-start;
-}
-
-/* Lead paragraph for speaking */
-.speaking-lead {
-  font-size: 1.15rem;
-  line-height: 1.75;
-  color: #245b5d;
-  margin-bottom: 1.6rem;
-}
-
-/* Paragraph rhythm for speaking section */
-.speaking-section p {
-  line-height: 1.75;
-  margin-bottom: 1.4rem;
-}
-.speaking-grid img {
-  max-height: 520px;
-  object-fit: cover;
-}
-
-
-/* ===== CTA ===== */
     .cta-section {
       padding: 36px 20px;
-      background-color: #e8f6f6;
+      background-color: var(--brand-soft);
       border-radius: 12px;
       margin: 40px 0;
     }
 
-    /* ===== Footer ===== */
-    .site-footer {
-      background-color: #ffffff;
-      border-top: 1px solid #eee;
-      padding: 2.5rem 1.5rem 2rem;
-      text-align: center;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      font-size: 1rem;
-      color: #319fa2;
-      text-decoration: none;
-    }
-
-    .footer-links a:hover {
-      color: #056367;
-      text-decoration: underline;
-    }
-
-    /* ===== Responsive ===== */
     @media (max-width: 1000px) {
       .pathways-grid {
         grid-template-columns: 1fr;
@@ -279,26 +260,24 @@
       .speaking-grid {
         grid-template-columns: 1fr;
       }
-
-      .image-content {
-        margin: 2rem auto 0;
-        max-width: 100%;
-      }
     }
   </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
-  <div class="header-inner">
+<!-- ================= SITE HEADER ================= -->
+<header class="site-header">
+  <div class="page-wrap">
     <a href="index.html">
-      <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired" style="max-width:220px;margin-bottom:12px;">
+      <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired" />
     </a>
-    <nav>
+
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+    <nav class="site-nav" aria-label="Main navigation">
       <ul>
-        <li><a href="index.html" style="color:#056367;font-weight:600;">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="work-with-me.html">Work With Me</a></li>
         <li><a href="books.html">Books</a></li>
         <li><a href="podcast.html">Podcast</a></li>
@@ -308,147 +287,146 @@
   </div>
 </header>
 
-<!-- SUPPORTING HEALTHIER WORKPLACES -->
+<!-- ================= PAGE CONTENT ================= -->
+
 <section class="workplace-section">
-  <div class="section-header">
-    <span class="line"></span>
-    <h2>Supporting People Before They Burn Out</h2>
-    <span class="line"></span>
-  </div>
-
-  <div class="content-wrapper">
-    <div class="text-content">
-      <h3>Burnout isn't a personal failure.</h3>
-      <p>It’s what happens when people keep showing up, even when the system no longer supports them.</p>
-      <p>It’s what happens when people keep giving their best in environments that notice mistakes faster than humanity.</p>
-      <p>It's what happens when people become invisible inside systems and protocols.</p>
-      <p>My work helps organisations slow down enough to notice the individuals within them, not as problems to manage, but as people to understand.</p>
-      <p>I advocate for humane, proportionate responses that protect wellbeing, dignity, and sustainability at work.</p>
-    </div>
-    <div class="image-content">
-      <img src="16-EGL_5085.jpg" alt="Supporting individual wellbeing">
-    </div>
-  </div>
-</section>
-
-<!-- THE THREE PATHWAYS -->
-<section class="pathways-section">
-  <div class="section-header">
-    <span class="line"></span>
-    <h2>The Three Pathways</h2>
-    <span class="line"></span>
-  </div>
-
-   <div class="pathways-grid">
-
-    <div class="pathway-card">
-      <h3>Support for Schools</h3>
-      <img src="Children.webp" alt="Children in a classroom setting">
-      <h4>Education-based Support</h4>
-      <p>Practical, trauma-informed support that helps educators work well, stay healthy, and remain in the profession. This pathway improves retention without adding pressure or extra workload.</p>
-      <p class="list-title">Educator Support includes:</p>
-      <ul>
-        <li>Evidence-informed workshops</li>
-        <li>Term-based burnout prevention support</li>
-        <li>Tools educators can apply immediately</li>
-        <li>Support that respects safeguarding and professional boundaries</li>
-      </ul>
-      <a href="burnout-prevention" class="btn-primary">EXPLORE SCHOOL-BASED SUPPORT</a>
+  <div class="page-wrap">
+    <div class="section-header">
+      <span class="line"></span>
+      <h2>Supporting People Before They Burn Out</h2>
+      <span class="line"></span>
     </div>
 
-    <div class="pathway-card">
-      <h3>Support for Teams</h3>
-      <img src="person.webp" alt="Person experiencing workplace strain">
-      <h4>Non-Education based Support</h4>
-      <p>Structured, remote support for teams experiencing ongoing strain, focused on creating sustainable working conditions for everyone.</p>
-      <p class="list-title">Organisation Support includes:</p>
-      <ul>
-        <li>Burnout prevention sprints (30–90 days)</li>
-        <li>Manager toolkits and reflection frameworks</li>
-        <li>Evidence-informed workshops and check-ins</li>
-        <li>Clear outcomes and practical next steps</li>
-      </ul>
-      <a href="team-support" class="btn-primary">VIEW ORGANISATIONAL SUPPORT OPTIONS</a>
-    </div>
+    <div class="content-wrapper">
+      <div>
+        <h3>Burnout isn't a personal failure.</h3>
+        <p>It’s what happens when people keep showing up, even when the system no longer supports them.</p>
+        <p>It’s what happens when people keep giving their best in environments that notice mistakes faster than humanity.</p>
+        <p>It's what happens when people become invisible inside systems and protocols.</p>
+        <p>My work helps organisations slow down enough to notice the individuals within them, not as problems to manage, but as people to understand.</p>
+        <p>I advocate for humane, proportionate responses that protect wellbeing, dignity, and sustainability at work.</p>
+      </div>
 
-    <div class="pathway-card">
-      <h3>Support for Individuals</h3>
-      <img src="group.webp" alt="Group of people smiling together">
-      <h4>Support without therapy</h4>
-      <p>This pathway is for individuals who are holding it together on the outside, but need practical guidance to sustain their health and wellbeing over time.</p>
-      <p class="list-title">Individual Support includes:</p>
-      <ul>
-        <li>Structured 1:1 sessions</li>
-        <li>6-week guided wellbeing programme</li>
-        <li>Stress awareness and regulation strategies</li>
-        <li>Practical tools for sustainable self-care</li>
-        <li>Certificate of completion</li>
-      </ul>
-      <a href="the-six-weeks-program" class="btn-primary">INDIVIDUAL SUPPORT</a>
-    </div>
-
-  </div>
-</section>
-
-<!-- SPEAKING ENGAGEMENTS -->
-<section class="speaking-section">
-  <div class="speaking-grid">
-
-    <!-- TEXT COLUMN -->
-    <div>
-
-      <h2 style="color:#056367;margin:0 0 .5rem 0;">
-        Speaking Engagements
-      </h2>
-
-      <p style="max-width:720px;line-height:1.6;margin:0 0 1.2rem 0;color:#245b5d;">
-        <strong>Preventive Wellbeing Consultant.</strong>
-        With over 20 years’ experience in education, Marsha Kerr Talley brings relatability and wisdom shaped by lived experience of burnout and recovery.
-      </p>
-
-      <p style="max-width:720px;line-height:1.75;margin:0 0 1rem 0;">
-        A passionate and engaging speaker, her work brings energy, movement, and presence into the room. Talks are grounded and relatable, shaped by real-world experience and supported by relevant, up-to-date insight.
-      </p>
-
-      <p style="max-width:720px;line-height:1.75;margin:0 0 1rem 0;">
-        Rather than speaking <em>at</em> audiences, sessions are conversational and participatory. Space is created for reflection, shared understanding, and moments of connection that allow people to recognise themselves in the conversation.
-      </p>
-
-      <p style="max-width:720px;line-height:1.75;margin:0 0 1.25rem 0;">
-        Speaking engagements often sit alongside carefully curated visuals, music, and colour—creating an atmosphere that feels alive and immersive rather than instructional. When the subject matters deeply, that energy carries, bringing clarity, warmth, and momentum into the room.
-      </p>
-
-      <a href="speaking.html"
-         style="display:inline-block;background:#056367;color:#ffffff;text-decoration:none;padding:.85rem 1.4rem;border-radius:30px;font-weight:600;">
-        View speaking details and pricing
-      </a>
-
-      <p style="margin:.9rem 0 0;max-width:720px;line-height:1.6;color:#245b5d;">
-        If you are considering a speaker for your event, I would be happy to explore what might be supportive.
-      </p>
-
-    </div>
-
-    <!-- IMAGE COLUMN -->
-    <div style="max-width:520px;margin-left:auto;border-radius:22px;overflow:hidden;box-shadow:0 14px 32px rgba(0,0,0,.14);background:#ffffff;">
-      <img src="9-EGL_3969.jpg"
-           alt="Marsha Kerr Talley speaking at an event"
-           style="width:100%;display:block;">
-      <div style="padding:1rem 1.1rem;">
-        <p style="margin:0;line-height:1.6;">
-          <strong style="color:#056367;">Presence matters.</strong>
-          <span> I bring warmth and vibrancy into every room!</span>
-        </p>
+      <div class="image-content">
+        <img src="16-EGL_5085.jpg" alt="Supporting individual wellbeing">
       </div>
     </div>
-
   </div>
 </section>
 
+<!-- ===== THE THREE PATHWAYS ===== -->
+<section class="pathways-section">
+  <div class="page-wrap">
+    <div class="section-header">
+      <span class="line"></span>
+      <h2>The Three Pathways</h2>
+      <span class="line"></span>
+    </div>
 
-<!-- CTA -->
+    <div class="pathways-grid">
+      <div class="pathway-card">
+        <h3>Support for Schools</h3>
+        <img src="Children.webp" alt="Children in a classroom setting">
+        <h4>Education-based Support</h4>
+        <p>Practical, trauma-informed support that helps educators work well, stay healthy, and remain in the profession. This pathway improves retention without adding pressure or extra workload.</p>
+        <p class="list-title">Educator Support includes:</p>
+        <ul>
+          <li>Evidence-informed workshops</li>
+          <li>Term-based burnout prevention support</li>
+          <li>Tools educators can apply immediately</li>
+          <li>Support that respects safeguarding and professional boundaries</li>
+        </ul>
+        <a href="burnout-prevention" class="btn-primary">EXPLORE SCHOOL-BASED SUPPORT</a>
+      </div>
+
+      <div class="pathway-card">
+        <h3>Support for Teams</h3>
+        <img src="person.webp" alt="Person experiencing workplace strain">
+        <h4>Non-Education based Support</h4>
+        <p>Structured, remote support for teams experiencing ongoing strain, focused on creating sustainable working conditions for everyone.</p>
+        <p class="list-title">Organisation Support includes:</p>
+        <ul>
+          <li>Burnout prevention sprints (30–90 days)</li>
+          <li>Manager toolkits and reflection frameworks</li>
+          <li>Evidence-informed workshops and check-ins</li>
+          <li>Clear outcomes and practical next steps</li>
+        </ul>
+        <a href="team-support" class="btn-primary">VIEW ORGANISATIONAL SUPPORT OPTIONS</a>
+      </div>
+
+      <div class="pathway-card">
+        <h3>Support for Individuals</h3>
+        <img src="group.webp" alt="Group of people smiling together">
+        <h4>Support without therapy</h4>
+        <p>This pathway is for individuals who are holding it together on the outside, but need practical guidance to sustain their health and wellbeing over time.</p>
+        <p class="list-title">Individual Support includes:</p>
+        <ul>
+          <li>Structured 1:1 sessions</li>
+          <li>6-week guided wellbeing programme</li>
+          <li>Stress awareness and regulation strategies</li>
+          <li>Practical tools for sustainable self-care</li>
+          <li>Certificate of completion</li>
+        </ul>
+        <a href="the-six-weeks-program" class="btn-primary">INDIVIDUAL SUPPORT</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SPEAKING ENGAGEMENTS (RESTORED EXACTLY) ===== -->
+<section class="speaking-section">
+  <div class="page-wrap">
+    <div class="speaking-grid">
+
+      <div>
+        <h2 style="color:#056367;margin:0 0 .5rem 0;">Speaking Engagements</h2>
+
+        <p style="max-width:720px;line-height:1.6;margin:0 0 1.2rem 0;color:#245b5d;">
+          <strong>Preventive Wellbeing Consultant.</strong>
+          With over 20 years’ experience in education, Marsha Kerr Talley brings relatability and wisdom shaped by lived experience of burnout and recovery.
+        </p>
+
+        <p style="max-width:720px;line-height:1.75;margin:0 0 1rem 0;">
+          A passionate and engaging speaker, her work brings energy, movement, and presence into the room. Talks are grounded and relatable, shaped by real-world experience and supported by relevant, up-to-date insight.
+        </p>
+
+        <p style="max-width:720px;line-height:1.75;margin:0 0 1rem 0;">
+          Rather than speaking <em>at</em> audiences, sessions are conversational and participatory. Space is created for reflection, shared understanding, and moments of connection that allow people to recognise themselves in the conversation.
+        </p>
+
+        <p style="max-width:720px;line-height:1.75;margin:0 0 1.25rem 0;">
+          Speaking engagements often sit alongside carefully curated visuals, music, and colour—creating an atmosphere that feels alive and immersive rather than instructional. When the subject matters deeply, that energy carries, bringing clarity, warmth, and momentum into the room.
+        </p>
+
+        <a href="speaking.html"
+           style="display:inline-block;background:#056367;color:#ffffff;text-decoration:none;padding:.85rem 1.4rem;border-radius:30px;font-weight:600;">
+          View speaking details and pricing
+        </a>
+
+        <p style="margin:.9rem 0 0;max-width:720px;line-height:1.6;color:#245b5d;">
+          If you are considering a speaker for your event, I would be happy to explore what might be supportive.
+        </p>
+      </div>
+
+      <div style="max-width:520px;margin-left:auto;border-radius:22px;overflow:hidden;box-shadow:0 14px 32px rgba(0,0,0,.14);background:#ffffff;">
+        <img src="9-EGL_3969.jpg"
+             alt="Marsha Kerr Talley speaking at an event"
+             style="width:100%;display:block;">
+        <div style="padding:1rem 1.1rem;">
+          <p style="margin:0;line-height:1.6;">
+            <strong style="color:#056367;">Presence matters.</strong>
+            <span> I bring warmth and vibrancy into every room!</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
 <section class="cta-section">
-  <div style="max-width:900px;margin:0 auto;text-align:center;">
+  <div class="page-wrap" style="text-align:center;">
     <h2 style="color:#056367;font-size:28px;margin-bottom:10px;font-weight:600;">Not Sure Where to Begin?</h2>
     <p style="font-size:18.5px;line-height:1.65;color:#333;max-width:760px;margin:0 auto 18px auto;">
       If you’re unsure which type of support best fits your setting, schedule a short clarity conversation.
@@ -461,17 +439,106 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ================= LOCKED FOOTER SOURCE OF TRUTH ================= -->
+
 <footer class="site-footer">
   <div class="footer-inner">
-    <p>Copyright © 2025 Marsha Kerr Talley - All Rights Reserved.</p>
-    <nav class="footer-links">
+    <p class="copyright">
+      Copyright © <span id="currentYear"></span>
+      Marsha Kerr Talley — All Rights Reserved.
+    </p>
+
+    <nav class="footer-links" aria-label="Footer links">
       <a href="/privacy-policy">Privacy Policy</a>
       <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
       <a href="/terms-and-conditions">Terms and Conditions</a>
     </nav>
   </div>
 </footer>
+
+<style>
+.site-footer {
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #eeeeee;
+  padding: 2.5rem 1.5rem 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-footer p {
+  margin: 0 0 1.4rem;
+  font-size: 0.95rem;
+  color: #666666;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.footer-links a {
+  font-size: 1rem;
+  color: #319fa2;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #056367;
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .footer-links {
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem;
+    white-space: normal;
+  }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const yearSpan = document.getElementById("currentYear");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+});
+</script>
+
+<script>
+const toggle = document.querySelector('.nav-toggle');
+const nav = document.querySelector('.site-nav');
+
+if (toggle && nav) {
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const currentPage =
+    (location.pathname.split("/").pop() || "index.html").toLowerCase();
+
+  document.querySelectorAll(".site-nav a").forEach(link => {
+    const href = link.getAttribute("href").toLowerCase();
+    if (href === currentPage) {
+      link.classList.add("active");
+    }
+  });
+});
+</script>
 
 </body>
 </html>
