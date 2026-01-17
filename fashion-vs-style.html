@@ -1441,5 +1441,135 @@
       setActivePage(0);
     })();
   </script>
+  <!-- SITE FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="copyright">
+
+      <!-- SOCIAL LINKS (add inside your footer, above or below .footer-links) -->
+<div class="social-links" style="
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:16px;
+  margin: 1rem 0 1.2rem;
+">
+
+  <a href="https://www.linkedin.com/in/marshakerrtalley" 
+     target="_blank" 
+     rel="noopener"
+     aria-label="Visit Marsha Kerr Talley on LinkedIn"
+     style="text-decoration:none;color:#0A66C2;font-weight:600;">
+    LinkedIn
+  </a>
+
+  <span aria-hidden="true" style="color:#ccc;">|</span>
+
+  <a href="https://www.youtube.com/c/marshakerrtalley"
+     target="_blank"
+     rel="noopener"
+     aria-label="Visit Marsha Kerr Talley on YouTube"
+     style="text-decoration:none;color:#FF0000;font-weight:600;">
+    YouTube
+  </a>
+
+  <span aria-hidden="true" style="color:#ccc;">|</span>
+
+  <a href="https://www.pinterest.com/marshakerrtalley"
+     target="_blank"
+     rel="noopener"
+     aria-label="Visit Marsha Kerr Talley on Pinterest"
+     style="text-decoration:none;color:#E60023;font-weight:600;">
+    Pinterest
+  </a>
+
+</div>
+
+      Copyright © <span id="currentYear"></span>
+      Marsha Kerr Talley — All Rights Reserved.
+    </p>
+
+    <nav class="footer-links" aria-label="Footer links">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
+      <a href="/terms-and-conditions">Terms and Conditions</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- FOOTER STYLES -->
+<style>
+.site-footer {
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #eeeeee;
+  padding: 2.5rem 1.5rem 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-footer p {
+  margin: 0 0 1.4rem;
+  font-size: 0.95rem;
+  color: #666666;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.footer-links a {
+  font-size: 1rem;
+  color: #319fa2;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.footer-links a:hover {
+  color: #056367;
+  text-decoration: underline;
+}
+
+/* Mobile safety fixes */
+@media (max-width: 640px) {
+  .site-footer {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .site-footer p {
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem;
+    white-space: normal;
+  }
+}
+</style>
+
+<!-- AUTO-UPDATE COPYRIGHT YEAR -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const yearSpan = document.getElementById("currentYear");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+});
+</script>
 </body>
 </html>
