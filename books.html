@@ -315,45 +315,18 @@
     }
   }
 
- .pdf-viewer{
-  position: relative;
-  max-width: 1000px;
+ .pdf-preview-simple {
+  max-width: 900px;
   margin: 3rem auto;
-}
-
-.pdf-frame{
-  width: 100%;
-  aspect-ratio: 1 / 1.414;  /* portrait A4 ratio */
-  height: auto;
-  border: none;
   border-radius: 12px;
+  overflow: hidden;
   box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-  display: block;
 }
 
-.pdf-nav{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #2f9fa2;
-  color: white;
+.pdf-preview-simple iframe {
+  width: 100%;
+  height: 900px;
   border: none;
-  font-size: 28px;
-  padding: 12px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  z-index: 10;
-  user-select: none;
-}
-
-.pdf-nav.left{ left: -60px; }
-.pdf-nav.right{ right: -60px; }
-
-.pdf-nav:hover{ background: #056367; }
-
-@media (max-width: 768px){
-  .pdf-nav.left{ left: 10px; }
-  .pdf-nav.right{ right: 10px; }
 }
 
  
@@ -417,19 +390,12 @@
     </a>
   </div>
 
-<div class="pdf-viewer">
-  <button type="button" class="pdf-nav left" onclick="changePage(-1)">❮</button>
-
+<div class="pdf-preview-simple">
   <iframe
-    id="pdfFrame"
-    class="pdf-frame"
-    src="turning-pain-preview.pdf#page=1&view=FitH&toolbar=0&navpanes=0"
-    title="Turning Pain Into Possibility Preview"
-  ></iframe>
-
-  <button type="button" class="pdf-nav right" onclick="changePage(1)">❯</button>
+    src="turning-pain-preview.pdf"
+    loading="lazy">
+  </iframe>
 </div>
-
 
 
 
@@ -850,23 +816,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-<script>
-  window.currentPage = 1;
-  window.totalPages = 12; // change to your actual preview page count
-
-  window.changePage = function(direction) {
-    window.currentPage += direction;
-
-    if (window.currentPage < 1) window.currentPage = 1;
-    if (window.currentPage > window.totalPages) window.currentPage = window.totalPages;
-
-    const frame = document.getElementById("pdfFrame");
-    if (!frame) return;
-
-    frame.src = "turning-pain-preview.pdf#page=" 
-      + window.currentPage + "&view=FitH&toolbar=0&navpanes=0";
-  };
-</script>
 
   
 </body>
