@@ -315,31 +315,37 @@
     }
   }
 
-  /* ===== Workbook Preview Horizontal Scroll ===== */
-
-.flipbook-container {
-  width: 100%;
+ .pdf-viewer-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 2rem auto;
   max-width: 1000px;
-  margin: 0 auto;
-  overflow-x: auto;      /* Horizontal scroll */
-  overflow-y: hidden;    /* No vertical scroll */
-  white-space: nowrap;   /* Keep content in one row */
+}
+
+.pdf-frame {
+  width: 100%;
+  height: 700px;
+  border: none;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  scroll-snap-type: x mandatory;
 }
 
-.pdf-preview {
-  width: 1800px;         /* Forces sideways scrolling */
-  height: 800px;
+.pdf-nav {
+  background: #319fa2;
+  color: white;
   border: none;
-  display: inline-block;
-  scroll-snap-align: start;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
- .flipbook-container iframe {
-  pointer-events: auto;
+.pdf-nav:hover {
+  background: #056367;
 }
+
  
 </style>
 
@@ -409,25 +415,18 @@
     <p>A Preventive Leadership Workbook by Marsha Kerr Talley</p>
   </div>
 
-  <div class="flipbook-container">
-    <iframe 
-      src="turning-pain-preview.pdf"
-      class="pdf-preview">
-    </iframe>
-  </div>
+  <div class="pdf-viewer-wrapper">
+    <button class="pdf-nav" onclick="changePage(-1)">❮</button>
 
-  <div class="preview-cta">
-    <h3>Bring This Workbook to Your Organisation</h3>
-    <p>
-      This workbook supports leaders to reduce burnout, improve retention, and lead ethically under pressure.
-    </p>
-    <a href="https://www.marshakerrtalley.com/contact" class="cta-button">
-      Enquire About Workshops & Bulk Orders
-    </a>
+    <iframe 
+      id="pdfFrame"
+      src="turning-pain-preview.pdf#page=1&view=FitH"
+      class="pdf-frame">
+    </iframe>
+
+    <button class="pdf-nav" onclick="changePage(1)">❯</button>
   </div>
 </section>
-
-
 
 
     
@@ -847,5 +846,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<script>
+let currentPage = 1;
+const totalPages = 4; // change if your preview has more
+
+function changePage(direction) {
+  currentPage += direction;
+
+  if (currentPage < 1) currentPage = 1;
+  if (currentPage > totalPages) currentPage = totalPages;
+
+  document.getElementById("pdfFrame").src =
+    "turning-pain-preview.pdf#page=" + currentPage + "&view=FitH";
+}
+</script>
+
+  
 </body>
 </html>
