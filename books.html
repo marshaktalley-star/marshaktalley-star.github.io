@@ -315,22 +315,23 @@
     }
   }
 
- .pdf-viewer {
+ .pdf-viewer{
   position: relative;
   max-width: 1000px;
   margin: 3rem auto;
 }
 
-.pdf-frame {
+.pdf-frame{
   width: 100%;
-  height: 80vh;
-  max-height: 900px;
+  aspect-ratio: 1 / 1.414;  /* portrait A4 ratio */
+  height: auto;
   border: none;
   border-radius: 12px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  display: block;
 }
 
-.pdf-nav {
+.pdf-nav{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -342,18 +343,17 @@
   border-radius: 8px;
   cursor: pointer;
   z-index: 10;
+  user-select: none;
 }
 
-.pdf-nav.left { left: -60px; }
-.pdf-nav.right { right: -60px; }
+.pdf-nav.left{ left: -60px; }
+.pdf-nav.right{ right: -60px; }
 
-.pdf-nav:hover {
-  background: #056367;
-}
+.pdf-nav:hover{ background: #056367; }
 
-
-.pdf-nav:hover {
-  background: #056367;
+@media (max-width: 768px){
+  .pdf-nav.left{ left: 10px; }
+  .pdf-nav.right{ right: 10px; }
 }
 
  
@@ -417,19 +417,19 @@
     </a>
   </div>
 
-</div>
-
-    <div class="pdf-viewer">
-  <button class="pdf-nav left" onclick="changePage(-1)">❮</button>
+<div class="pdf-viewer">
+  <button type="button" class="pdf-nav left" onclick="changePage(-1)">❮</button>
 
   <iframe
     id="pdfFrame"
-    src="turning-pain-preview.pdf#toolbar=0&navpanes=0&scrollbar=0&page=1&view=FitH"
-    class="pdf-frame">
-  </iframe>
+    class="pdf-frame"
+    src="turning-pain-preview.pdf#page=1&view=FitH&toolbar=0&navpanes=0"
+    title="Turning Pain Into Possibility Preview"
+  ></iframe>
 
-  <button class="pdf-nav right" onclick="changePage(1)">❯</button>
+  <button type="button" class="pdf-nav right" onclick="changePage(1)">❯</button>
 </div>
+
 
 
 
@@ -850,20 +850,23 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-let currentPage = 1;
-const totalPages = 4; // change if preview has more pages
+<script>
+  window.currentPage = 1;
+  window.totalPages = 12; // change to your actual preview page count
 
-function changePage(direction) {
-  currentPage += direction;
+  window.changePage = function(direction) {
+    window.currentPage += direction;
 
-  if (currentPage < 1) currentPage = 1;
-  if (currentPage > totalPages) currentPage = totalPages;
+    if (window.currentPage < 1) window.currentPage = 1;
+    if (window.currentPage > window.totalPages) window.currentPage = window.totalPages;
 
-  document.getElementById("pdfFrame").src =
-    "turning-pain-preview.pdf#toolbar=0&navpanes=0&scrollbar=0&page=" 
-    + currentPage + "&view=FitH";
-}
+    const frame = document.getElementById("pdfFrame");
+    if (!frame) return;
 
+    frame.src = "turning-pain-preview.pdf#page=" 
+      + window.currentPage + "&view=FitH&toolbar=0&navpanes=0";
+  };
+</script>
 
   
 </body>
