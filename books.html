@@ -300,6 +300,30 @@
       grid-template-columns: 1fr;
     }
   }
+
+.mobile-preview-btn {
+  display: none;
+  margin-top: 1rem;
+  background: #319fa2;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .pdf-preview-wrapper iframe {
+    display: none;
+  }
+
+  .mobile-preview-btn {
+    display: inline-block;
+  }
+}
+
+
+  
 </style>
 
 <!-- BOOK LIST -->
@@ -325,24 +349,30 @@
 
     
   <!-- PDF Previewer -->
-<div style="margin: 1rem 0 4rem;">
+<div class="pdf-preview-wrapper" style="margin: 1rem 0 4rem;">
   <div style="background:#f3fbfb;border-radius:14px;padding:2rem;">
     <h3 style="text-align:center;margin-bottom:1.5rem;">Preview the Workbook</h3>
 
     <div style="max-width:750px;margin:0 auto;border-radius:12px;overflow:hidden;border:1px solid #e0eeee;">
       <iframe 
-        src="turning-pain-preview.pdf#view=FitH"
+        src="turning-pain-preview.pdf#zoom=page-width&view=FitH"
         width="100%" 
         height="360"
-        style="display:block;border:none;">
+        style="border:none;display:block;">
       </iframe>
     </div>
 
     <p style="text-align:center;margin-top:0.8rem;font-size:0.9rem;color:#245b5d;">
-      Scroll inside this window to view sample pages.
+      Scroll inside this window to browse sample pages.
     </p>
+
+    <!-- Mobile fallback button -->
+    <a href="turning-pain-preview.pdf" target="_blank" class="mobile-preview-btn">
+      Open Preview Full Screen
+    </a>
   </div>
 </div>
+
 
 
 
