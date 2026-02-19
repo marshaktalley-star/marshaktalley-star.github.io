@@ -405,8 +405,8 @@
   margin: 1rem 0 1.2rem;
 ">
 
-  <a href="https://www.linkedin.com/in/marshakerrtalley" 
-     target="_blank" 
+  <a href="https://www.linkedin.com/in/marshakerrtalley"
+     target="_blank"
      rel="noopener"
      aria-label="Visit Marsha Kerr Talley on LinkedIn"
      style="text-decoration:none;color:#0A66C2;font-weight:600;">
@@ -553,40 +553,70 @@ function reflect(el) {
     response.style.display === "block" ? "none" : "block";
 }
 
-const FEED =
-  "https://api.rss2json.com/v1/api.json?rss_url=https://feed.podbean.com/marshakerrtalley/feed.xml";
+const RSS_FEED_URL = "https://anchor.fm/s/10639d260/podcast/rss";
+const FEED = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(RSS_FEED_URL);
 
 fetch(FEED)
   .then(res => res.json())
   .then(data => {
     const container = document.getElementById("podcast-episodes");
+    if (!container) return;
 
-    data.items.slice(0,9).forEach(item => {
-      const text = item.description.toLowerCase();
+    if (!data || !data.items || !Array.isArray(data.items) || data.items.length === 0) {
+      container.innerHTML = `
+        <p style="color:#5a5a5a;">
+          Episodes are not available right now. Please check back soon.
+        </p>
+      `;
+      return;
+    }
+
+    container.innerHTML = "";
+
+    data.items.slice(0, 9).forEach(item => {
+      const rawDescription = (item.description || "").toString();
+      const cleanDescription = rawDescription.replace(/(<([^>]+)>)/gi, "").trim();
+      const text = cleanDescription.toLowerCase();
+
       let theme = "Reflection";
+      if (text.includes("belief") || text.includes("identity")) theme = "Belief & Identity";
+      if (text.includes("burnout") || text.includes("stress")) theme = "Burnout & Boundaries";
+      if (text.includes("grief") || text.includes("loss")) theme = "Grief & Meaning";
 
-      if (text.includes("belief") || text.includes("identity"))
-        theme = "Belief & Identity";
-      if (text.includes("burnout") || text.includes("stress"))
-        theme = "Burnout & Boundaries";
-      if (text.includes("grief") || text.includes("loss"))
-        theme = "Grief & Meaning";
+      const audioSrc =
+        (item.enclosure && (item.enclosure.link || item.enclosure.url || item.enclosure.href)) ? (item.enclosure.link || item.enclosure.url || item.enclosure.href) : "";
 
       container.innerHTML += `
         <div style="margin-bottom:3rem;">
           <p style="font-size:0.75rem;color:#319fa2;text-transform:uppercase;">
             ${theme}
           </p>
-          <h3 style="color:#056367;">${item.title}</h3>
+          <h3 style="color:#056367;">${item.title || ""}</h3>
           <p>
-            ${item.description.replace(/(<([^>]+)>)/gi,"").slice(0,180)}…
+            ${(cleanDescription.length > 180 ? cleanDescription.slice(0, 180) + "…" : cleanDescription)}
           </p>
-          <audio controls style="width:100%;">
-            <source src="${item.enclosure.link}" type="audio/mpeg">
-          </audio>
+          ${audioSrc ? `
+            <audio controls style="width:100%;">
+              <source src="${audioSrc}" type="audio/mpeg">
+            </audio>
+          ` : `
+            <p style="color:#5a5a5a;">
+              Audio preview is not available for this episode.
+            </p>
+          `}
         </div>
       `;
     });
+  })
+  .catch(() => {
+    const container = document.getElementById("podcast-episodes");
+    if (container) {
+      container.innerHTML = `
+        <p style="color:#5a5a5a;">
+          Episodes are not available right now. Please check back soon.
+        </p>
+      `;
+    }
   });
 </script>
 
