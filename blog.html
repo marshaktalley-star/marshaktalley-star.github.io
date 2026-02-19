@@ -16,16 +16,21 @@
       --brand-primary: #056367;
       --brand-secondary: #319fa2;
       --brand-accent: #2fe2dd;
+
       --text-body: #5a5a5a;
       --text-dark: #102f30;
 
+      --bg-soft: #f4fbfb;
+      --border-soft: rgba(5, 99, 103, 0.18);
+
       --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       --font-heading: "Playfair Display", serif;
+
+      --radius: 12px;
+      --shadow: 0 12px 30px rgba(16, 47, 48, 0.08);
     }
 
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -49,10 +54,59 @@
     }
 
     @media (max-width: 640px) {
-      .page-wrap {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
-      }
+      .page-wrap { padding-left: 1.25rem; padding-right: 1.25rem; }
+    }
+
+    /* Button system (minimal + consistent) */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0.8rem 1.25rem;
+      border-radius: 10px;
+      font-weight: 650;
+      font-size: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.08s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn:active { transform: translateY(1px); }
+
+    .btn-primary {
+      background: var(--brand-primary);
+      color: #ffffff;
+      border: 1px solid var(--brand-primary);
+      box-shadow: 0 10px 24px rgba(5, 99, 103, 0.18);
+    }
+
+    .btn-primary:hover {
+      background: #04585c;
+      border-color: #04585c;
+    }
+
+    .btn-ghost {
+      background: #ffffff;
+      color: var(--brand-primary);
+      border: 1px solid var(--brand-primary);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(47, 226, 221, 0.12);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
   </style>
 
@@ -84,22 +138,31 @@
       padding: 0;
       margin: 0;
       display: flex;
-      gap: 28px;
+      gap: 22px;
       justify-content: center;
       font-size: 14px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      flex-wrap: wrap;
     }
 
     .site-nav a {
       text-decoration: none;
       color: #2f2f2f;
       font-weight: 500;
+      padding: 6px 4px;
     }
 
     .site-nav a.active {
       color: var(--brand-primary);
-      font-weight: 600;
+      font-weight: 700;
+    }
+
+    /* Optional: make Substack stand out in nav without looking salesy */
+    .site-nav a.nav-subscribe {
+      color: var(--brand-primary);
+      font-weight: 700;
+      border-bottom: 2px solid rgba(5, 99, 103, 0.35);
     }
 
     .nav-toggle {
@@ -123,18 +186,12 @@
         justify-content: center;
       }
 
-      .site-nav {
-        display: none;
-        width: 100%;
-      }
-
-      .site-nav.open {
-        display: block;
-      }
+      .site-nav { display: none; width: 100%; }
+      .site-nav.open { display: block; }
 
       .site-nav ul {
         flex-direction: column;
-        gap: 16px;
+        gap: 14px;
         padding: 10px 0 6px;
         text-align: center;
       }
@@ -144,6 +201,129 @@
         letter-spacing: 0.06em;
         white-space: nowrap;
       }
+    }
+  </style>
+
+  <!-- SUBSTACK PROMINENCE: HERO CTA + STICKY BAR -->
+  <style>
+    .substack-hero-cta {
+      margin: 1.75rem auto 0;
+      max-width: 980px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.4rem 1.25rem;
+      text-align: left;
+    }
+
+    .substack-hero-cta-inner {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .substack-hero-cta h2 {
+      margin: 0 0 6px 0;
+      font-size: clamp(20px, 2.2vw, 26px);
+      line-height: 1.2;
+      color: var(--brand-primary);
+    }
+
+    .substack-hero-cta p {
+      margin: 0;
+      color: #0d4b4e;
+      font-size: 1rem;
+      line-height: 1.65;
+      max-width: 68ch;
+    }
+
+    .substack-hero-cta-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .substack-mini-note {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: rgba(13, 75, 78, 0.9);
+    }
+
+    .substack-mini-note a {
+      color: var(--brand-primary);
+      font-weight: 650;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(5, 99, 103, 0.25);
+    }
+
+    .substack-mini-note a:hover { border-bottom-color: rgba(5, 99, 103, 0.7); }
+
+    @media (max-width: 900px) {
+      .substack-hero-cta-inner { grid-template-columns: 1fr; }
+      .substack-hero-cta-actions { justify-content: flex-start; }
+    }
+
+    /* Sticky subscribe bar */
+    .sticky-subscribe {
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      z-index: 9999;
+      background: #ffffff;
+      border: 1px solid var(--border-soft);
+      border-radius: 16px;
+      box-shadow: 0 18px 40px rgba(16, 47, 48, 0.16);
+      padding: 12px 12px;
+      display: none;
+    }
+
+    .sticky-subscribe.show { display: block; }
+
+    .sticky-subscribe-inner {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .sticky-subscribe strong {
+      display: block;
+      color: var(--text-dark);
+      font-size: 0.98rem;
+      line-height: 1.2;
+    }
+
+    .sticky-subscribe span {
+      display: block;
+      color: #4a4a4a;
+      font-size: 0.92rem;
+      line-height: 1.2;
+      margin-top: 2px;
+    }
+
+    .sticky-close {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
+      padding: 8px;
+      color: rgba(16, 47, 48, 0.7);
+    }
+
+    .sticky-close:hover { color: rgba(16, 47, 48, 0.95); }
+
+    @media (max-width: 640px) {
+      .sticky-subscribe-inner {
+        grid-template-columns: 1fr;
+      }
+      .sticky-subscribe .btn { width: 100%; }
+      .sticky-close { position: absolute; right: 10px; top: 8px; }
+      .sticky-subscribe { padding-top: 18px; }
     }
   </style>
 </head>
@@ -167,6 +347,7 @@
         <li><a href="books.html">Books</a></li>
         <li><a href="podcast.html">Podcast</a></li>
         <li><a href="reflections.html">Reflections</a></li>
+        <li><a class="nav-subscribe" href="https://marshakerrtalley.substack.com" target="_blank" rel="noopener">Substack</a></li>
       </ul>
     </nav>
 
@@ -207,6 +388,45 @@
       I hold space for those who have experienced family rifts, relationship struggles, identity crisis, and sustain stresses. I write from lived experience and professional practice,
       offering introspective perspective. These are not quick fixes. They are my reflections.
     </p>
+
+    <!-- NEW: Prominent Substack CTA right after intro -->
+    <div class="substack-hero-cta" role="region" aria-label="Subscribe on Substack">
+      <div class="substack-hero-cta-inner">
+        <div>
+          <h2>Want future reflections in your inbox?</h2>
+          <p>
+            Substack is where I publish my deeper writing and send reflections by email.
+            Subscribe to stay connected without chasing algorithms.
+          </p>
+          <div class="substack-mini-note">
+            Prefer to browse first? <a href="https://marshakerrtalley.substack.com" target="_blank" rel="noopener">Read on Substack</a>
+          </div>
+        </div>
+
+        <div class="substack-hero-cta-actions">
+          <a class="btn btn-primary" href="https://marshakerrtalley.substack.com/subscribe" target="_blank" rel="noopener">
+            Receive future reflections
+          </a>
+          <a class="btn btn-ghost" href="https://marshakerrtalley.substack.com" target="_blank" rel="noopener">
+            Visit Substack
+          </a>
+        </div>
+      </div>
+
+      <!-- OPTIONAL: Embed Substack signup (uncomment if you want in-page email capture)
+      <div style="margin-top:14px;">
+        <iframe
+          title="Substack Subscribe"
+          src="https://marshakerrtalley.substack.com/embed"
+          width="100%"
+          height="210"
+          style="border:1px solid rgba(5,99,103,0.18);background:#fff;border-radius:12px;"
+          frameborder="0"
+          scrolling="no">
+        </iframe>
+      </div>
+      -->
+    </div>
 
   </div>
 </section>
@@ -481,6 +701,7 @@
     background:#f4fbfb;
     border-left:4px solid #056367;
     text-align:center;
+    border-radius:12px;
   ">
 
     <p style="
@@ -489,42 +710,27 @@
       margin:0 0 2rem 0;
       color:#0d4b4e;
     ">
-      If this reflection resonated with you, there are two gentle ways to continue.
-      Choose what feels supportive for where you are right now.
+      If this reflection resonated with you, continue with what feels supportive.
     </p>
 
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;">
 
-      <a href="https://marshakerrtalley.com/the-six-weeks-program"
-         style="
-           font-size:1rem;
-           font-weight:600;
-           color:#ffffff;
-           background:#056367;
-           text-decoration:none;
-           padding:0.75rem 1.5rem;
-           border-radius:6px;
-           display:inline-block;
-         ">
-        Learn about the six-week programme
-      </a>
-
-      <a href="https://marshakerrtalley.substack.com/subscribe"
-         style="
-           font-size:1rem;
-           font-weight:600;
-           color:#056367;
-           text-decoration:none;
-           border:1px solid #056367;
-           padding:0.75rem 1.5rem;
-           border-radius:6px;
-           display:inline-block;
-           background:#ffffff;
-         ">
+      <a class="btn btn-primary" href="https://marshakerrtalley.substack.com/subscribe" target="_blank" rel="noopener">
         Receive future reflections
       </a>
 
+      <a class="btn btn-ghost" href="https://marshakerrtalley.com/the-six-weeks-program">
+        Learn about the six-week programme
+      </a>
+
     </div>
+
+    <p style="margin:1.25rem 0 0 0;font-size:0.95rem;color:#0d4b4e;">
+      You can also read the full archive on
+      <a href="https://marshakerrtalley.substack.com" target="_blank" rel="noopener" style="color:#056367;font-weight:650;text-decoration:none;border-bottom:1px solid rgba(5,99,103,0.25);">
+        Substack
+      </a>.
+    </p>
 
   </div>
 
@@ -537,44 +743,41 @@
 <footer class="site-footer">
   <div class="footer-inner">
 
-    <!-- SOCIAL LINKS (add inside your footer, above or below .footer-links) -->
-<div class="social-links" style="
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:16px;
-  margin: 1rem 0 1.2rem;
-">
+    <div class="social-links" style="
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:16px;
+      margin: 1rem 0 1.2rem;
+    ">
+      <a href="https://www.linkedin.com/in/marshakerrtalley" 
+         target="_blank" 
+         rel="noopener"
+         aria-label="Visit Marsha Kerr Talley on LinkedIn"
+         style="text-decoration:none;color:#0A66C2;font-weight:600;">
+        LinkedIn
+      </a>
 
-  <a href="https://www.linkedin.com/in/marshakerrtalley" 
-     target="_blank" 
-     rel="noopener"
-     aria-label="Visit Marsha Kerr Talley on LinkedIn"
-     style="text-decoration:none;color:#0A66C2;font-weight:600;">
-    LinkedIn
-  </a>
+      <span aria-hidden="true" style="color:#ccc;">|</span>
 
-  <span aria-hidden="true" style="color:#ccc;">|</span>
+      <a href="https://www.youtube.com/c/marshakerrtalley"
+         target="_blank"
+         rel="noopener"
+         aria-label="Visit Marsha Kerr Talley on YouTube"
+         style="text-decoration:none;color:#FF0000;font-weight:600;">
+        YouTube
+      </a>
 
-  <a href="https://www.youtube.com/c/marshakerrtalley"
-     target="_blank"
-     rel="noopener"
-     aria-label="Visit Marsha Kerr Talley on YouTube"
-     style="text-decoration:none;color:#FF0000;font-weight:600;">
-    YouTube
-  </a>
+      <span aria-hidden="true" style="color:#ccc;">|</span>
 
-  <span aria-hidden="true" style="color:#ccc;">|</span>
-
-  <a href="https://www.pinterest.com/marshakerrtalley"
-     target="_blank"
-     rel="noopener"
-     aria-label="Visit Marsha Kerr Talley on Pinterest"
-     style="text-decoration:none;color:#E60023;font-weight:600;">
-    Pinterest
-  </a>
-
-</div>
+      <a href="https://www.pinterest.com/marshakerrtalley"
+         target="_blank"
+         rel="noopener"
+         aria-label="Visit Marsha Kerr Talley on Pinterest"
+         style="text-decoration:none;color:#E60023;font-weight:600;">
+        Pinterest
+      </a>
+    </div>
 
     <p>
       Copyright © <span id="currentYear"></span>
@@ -627,6 +830,26 @@
 }
 </style>
 
+<!-- NEW: Sticky Substack Subscribe Bar -->
+<div class="sticky-subscribe" id="stickySubscribe" role="region" aria-label="Subscribe for future reflections">
+  <button class="sticky-close" id="stickyClose" aria-label="Dismiss subscribe prompt">×</button>
+
+  <div class="sticky-subscribe-inner">
+    <div>
+      <strong>Receive future reflections by email</strong>
+      <span>Subscribe on Substack to stay connected.</span>
+    </div>
+
+    <a class="btn btn-primary" href="https://marshakerrtalley.substack.com/subscribe" target="_blank" rel="noopener">
+      Subscribe
+    </a>
+
+    <a class="btn btn-ghost" href="https://marshakerrtalley.substack.com" target="_blank" rel="noopener">
+      Read
+    </a>
+  </div>
+</div>
+
 <script>
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.site-nav');
@@ -643,7 +866,7 @@
       (location.pathname.split("/").pop() || "index.html").toLowerCase();
 
     document.querySelectorAll(".site-nav a").forEach(link => {
-      const href = link.getAttribute("href").toLowerCase();
+      const href = (link.getAttribute("href") || "").toLowerCase();
       if (href === currentPage) {
         link.classList.add("active");
       }
@@ -652,6 +875,36 @@
     const yearSpan = document.getElementById("currentYear");
     if (yearSpan) {
       yearSpan.textContent = new Date().getFullYear();
+    }
+
+    // Sticky subscribe behavior
+    const bar = document.getElementById("stickySubscribe");
+    const closeBtn = document.getElementById("stickyClose");
+
+    try {
+      const dismissed = localStorage.getItem("mkt_subscribe_dismissed") === "1";
+      if (!dismissed && bar) {
+        // Show after a little engagement (scroll ~25% down)
+        const showAt = Math.max(300, Math.floor(document.body.scrollHeight * 0.25));
+
+        const onScroll = () => {
+          if (window.scrollY > showAt) {
+            bar.classList.add("show");
+            window.removeEventListener("scroll", onScroll);
+          }
+        };
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+      }
+
+      if (closeBtn && bar) {
+        closeBtn.addEventListener("click", () => {
+          bar.classList.remove("show");
+          localStorage.setItem("mkt_subscribe_dismissed", "1");
+        });
+      }
+    } catch (e) {
+      // If localStorage is blocked, fail gracefully.
     }
   });
 </script>
