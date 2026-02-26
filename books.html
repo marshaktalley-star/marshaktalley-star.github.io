@@ -301,72 +301,7 @@
     }
   }
 
-./* ===== Workbook Preview (fix: responsive + consistent mobile behavior) ===== */
-.pdf-preview-wrapper {
-  margin: 1rem 0 4rem;
-}
 
-.pdf-preview-card {
-  background: #f3fbfb;
-  border-radius: 14px;
-  padding: 2rem;
-}
-
-.pdf-preview-title {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.pdf-preview-frame {
-  max-width: 900px;
-  margin: 0 auto;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid #e0eeee;
-  background: #ffffff;
-}
-
-/* Responsive height that works on desktop + laptop */
-.pdf-iframe {
-  width: 100%;
-  height: min(75vh, 820px);
-  min-height: 520px;
-  border: none;
-  display: block;
-}
-
-.pdf-preview-note {
-  text-align: center;
-  margin-top: 0.8rem;
-  font-size: 0.9rem;
-  color: #245b5d;
-}
-
-/* Desktop: hide the button (PDF is visible) */
-.mobile-preview-btn {
-  display: none;
-  margin: 1.2rem auto 0;
-  background: #319fa2;
-  color: #fff;
-  padding: 14px 24px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 600;
-  text-align: center;
-  line-height: 1.3;
-  max-width: 320px;
-}
-
-/* Mobile/tablet: hide iframe and show button */
-@media (max-width: 768px) {
-  .pdf-iframe {
-    display: none;
-  }
-
-  .mobile-preview-btn {
-    display: block;
-  }
-}
 
   
 </style>
@@ -393,30 +328,7 @@
 </div>
 
     
- <!-- PDF Previewer -->
-<div class="pdf-preview-wrapper">
-  <div class="pdf-preview-card">
-    <h3 class="pdf-preview-title">Preview the Workbook</h3>
-
-    <div class="pdf-preview-frame">
-      <iframe
-        class="pdf-iframe"
-        src="turning-pain-preview.pdf#view=FitH"
-        title="Turning Pain Into Possibility™ Workbook Preview"
-        loading="lazy"
-      ></iframe>
-    </div>
-
-    <p class="pdf-preview-note">
-      Scroll inside this window to browse sample pages.
-    </p>
-
-    <a href="turning-pain-preview.pdf" target="_blank" class="mobile-preview-btn">
-      Open Preview Full Screen
-    </a>
-  </div>
-</div>
-
+ 
 
 
     
