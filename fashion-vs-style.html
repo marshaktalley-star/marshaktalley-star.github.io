@@ -560,6 +560,39 @@
   margin: 22px auto;  /* center the card */
 }
 
+/* --- Media sizing fixes (images + embeds) --- */
+
+/* Keep the two-column layout from being stretched by tall media */
+.twoCol { align-items: start; }
+
+/* Give media a predictable frame so portrait photos don’t take over */
+.mediaCard {
+  max-height: 520px;      /* adjust 460–560px to taste */
+  overflow: hidden;
+}
+
+/* Fill the frame without distortion (may crop slightly) */
+.mediaCard img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;      /* key: prevents weird scaling */
+}
+
+/* Optional: show the whole image (no cropping) on selected cards */
+.mediaCard.fit-contain img {
+  object-fit: contain;
+  background: rgba(255,255,255,.92);
+}
+
+/* Mobile: let images breathe a bit more */
+@media (max-width: 860px) {
+  .mediaCard { max-height: 560px; }
+}
+
+
+.embedWrap.portrait { aspect-ratio: 9 / 16; }
+    
   </style>
 </head>
 
@@ -736,7 +769,7 @@
                 </div>
 
                 <div class="mediaCard">
-                  <div class="embedWrap" aria-label="YouTube Shorts embed">
+                  <div class="embedWrap portrait" aria-label="YouTube Shorts embed">
                     <iframe
                       src="https://www.youtube-nocookie.com/embed/XDxRiYF-v8s?rel=0&modestbranding=1"
                       title="Wisdom — YouTube Short"
@@ -787,7 +820,7 @@
                   Try new things and step out of your comfort zone. Experiment with different clothing combinations to create new and interesting outfits. Always have a statement piece in your wardrobe, and feel free to mix and match prints, textures, and colours to create a unique look.
                 </p>
 
-                <div class="mediaCard" style="margin-top:22px;">
+                <div class="mediaCard fit-contain" style="margin-top:22px;">
                   <img src="20220703_162202.jpg" alt="Marsha Kerr Talley style photo">
                   <div class="caption">Be confident! At the end of the day, style is all about confidence.</div>
                 </div>
