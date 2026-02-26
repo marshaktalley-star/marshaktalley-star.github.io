@@ -317,13 +317,18 @@
 
  .current-work-box{
   margin: 2.5rem 0 3rem;
+  display: flex;
+  justify-content: center;   /* forces true centering */
 }
 
 .current-work-card{
-  background:#fbfefe;                 /* closer to white */
+  background:#fbfefe;
   border: 1px solid rgba(5,99,103,.10);
-  padding: 1.2rem 1.6rem;             /* slightly smaller */
+  border-radius: 12px;
+  padding: 1.2rem 1.6rem;
   max-width: 720px;
+  width: 100%;               /* prevents awkward shrink */
+  text-align: center;
 }
 
 .current-work-card h3{
