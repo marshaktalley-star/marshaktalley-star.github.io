@@ -315,63 +315,66 @@
   }
 
 
-  /* Read My Current Work (Option 1) */
-.current-work-box{
-  margin: 0 auto 4rem;
+ .current-work-box{
+  margin: 2.5rem 0 3rem;
 }
 
 .current-work-card{
-  background: #f3fbfb;
-  border-radius: 14px;
-  padding: 2rem;
-  max-width: 900px;
+  background: #f7fbfb;              /* lighter than before */
+  border-radius: 12px;
+  padding: 1.4rem 1.8rem;           /* reduced padding */
+  max-width: 760px;                 /* narrower = less dominant */
   margin: 0 auto;
   text-align: center;
 }
 
 .current-work-card h3{
   color: #056367;
-  font-size: 1.6rem;
-  margin-bottom: 0.9rem;
+  font-size: 1.35rem;               /* smaller */
+  margin-bottom: 0.6rem;
+  font-weight: 500;                 /* lighter weight */
 }
 
 .current-work-card p{
   color: #245b5d;
-  margin: 0 auto 1.3rem;
-  max-width: 760px;
-  line-height: 1.7;
+  margin: 0 auto 1rem;
+  max-width: 620px;
+  line-height: 1.6;
+  font-size: 0.95rem;               /* smaller body text */
 }
 
 .current-work-actions{
   display: flex;
-  gap: 14px;
+  gap: 10px;
   justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
 }
 
+/* Make primary button less dominant */
 .current-work-primary{
   background: #319fa2;
   color: #ffffff;
-  text-decoration: none;
+  padding: 0.65rem 1.4rem;
+  font-size: 0.95rem;
 }
 
 .current-work-primary:hover{
   background: #056367;
 }
 
+/* Make Substack button lighter */
 .current-work-secondary{
-  display: inline-block;
-  padding: 0.9rem 1.2rem;
+  padding: 0.65rem 1.2rem;
   border-radius: 999px;
-  border: 1px solid rgba(5,99,103,.28);
+  border: 1px solid rgba(5,99,103,.22);
   color: #056367;
   font-weight: 600;
   text-decoration: none;
+  font-size: 0.9rem;
 }
 
 .current-work-secondary:hover{
-  background: rgba(5,99,103,.08);
+  background: rgba(5,99,103,.06);
 }
 
   
