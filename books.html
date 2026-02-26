@@ -301,6 +301,48 @@
     }
   }
 
+./* ===== Workbook Preview (fix: responsive + consistent mobile behavior) ===== */
+.pdf-preview-wrapper {
+  margin: 1rem 0 4rem;
+}
+
+.pdf-preview-card {
+  background: #f3fbfb;
+  border-radius: 14px;
+  padding: 2rem;
+}
+
+.pdf-preview-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.pdf-preview-frame {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e0eeee;
+  background: #ffffff;
+}
+
+/* Responsive height that works on desktop + laptop */
+.pdf-iframe {
+  width: 100%;
+  height: min(75vh, 820px);
+  min-height: 520px;
+  border: none;
+  display: block;
+}
+
+.pdf-preview-note {
+  text-align: center;
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: #245b5d;
+}
+
+/* Desktop: hide the button (PDF is visible) */
 .mobile-preview-btn {
   display: none;
   margin: 1.2rem auto 0;
@@ -310,22 +352,21 @@
   border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
-  text-align: center;      /* THIS centers the text */
-  line-height: 1.3;        /* better spacing on two lines */
-  max-width: 320px;        /* prevents awkward stretching */
-  display: block;
+  text-align: center;
+  line-height: 1.3;
+  max-width: 320px;
 }
 
+/* Mobile/tablet: hide iframe and show button */
 @media (max-width: 768px) {
-  .pdf-preview-wrapper iframe {
-    display: none;         /* keep PDF hidden on mobile */
+  .pdf-iframe {
+    display: none;
   }
 
   .mobile-preview-btn {
-    display: block;        /* show button on mobile */
+    display: block;
   }
 }
-
 
   
 </style>
@@ -352,31 +393,29 @@
 </div>
 
     
-  <!-- PDF Previewer -->
-<div class="pdf-preview-wrapper" style="margin: 1rem 0 4rem;">
-  <div style="background:#f3fbfb;border-radius:14px;padding:2rem;">
-    <h3 style="text-align:center;margin-bottom:1.5rem;">Preview the Workbook</h3>
+ <!-- PDF Previewer -->
+<div class="pdf-preview-wrapper">
+  <div class="pdf-preview-card">
+    <h3 class="pdf-preview-title">Preview the Workbook</h3>
 
-    <div style="max-width:750px;margin:0 auto;border-radius:12px;overflow:hidden;border:1px solid #e0eeee;">
-      <iframe 
-        src="turning-pain-preview.pdf#zoom=page-width&view=FitH"
-        width="100%" 
-        height="360"
-        style="border:none;display:block;">
-      </iframe>
+    <div class="pdf-preview-frame">
+      <iframe
+        class="pdf-iframe"
+        src="turning-pain-preview.pdf#view=FitH"
+        title="Turning Pain Into Possibility™ Workbook Preview"
+        loading="lazy"
+      ></iframe>
     </div>
 
-    <p style="text-align:center;margin-top:0.8rem;font-size:0.9rem;color:#245b5d;">
+    <p class="pdf-preview-note">
       Scroll inside this window to browse sample pages.
     </p>
 
-    <!-- Mobile fallback button -->
     <a href="turning-pain-preview.pdf" target="_blank" class="mobile-preview-btn">
       Open Preview Full Screen
     </a>
   </div>
 </div>
-
 
 
 
