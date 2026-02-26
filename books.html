@@ -207,16 +207,29 @@
     </h3>
 
     <p style="max-width:900px;margin:0 auto 1.2rem;color:#245b5d;">
-      My books are self-paced guides, rooted in lived experience and reflective anecdotes, supporting emotional regulation, life transitions, and self-discovery. They are not written for quick fixes or surface inspiration.
+      My books are self-paced guides grounded in lived experience and reflective insight for personal and professional growth. 
+      Each page invites deliberate reflection and intentional living.
     </p>
 
-    <p style="max-width:900px;margin:0 auto 1.2rem;color:#245b5d;">
-      Each chapter invites you to return, reflect, and live with intention and meaning.
-    </p>
+    <!-- Read My Current Work (Option 1) -->
+<section class="current-work-box" aria-label="Read my current work">
+  <div class="page-wrap">
+    <div class="current-work-card">
+      <h3>Read My Current Work</h3>
+      <p>
+        For real-time commentary on current affairs or controversial issues, read my latest Reflections.
+      </p>
 
-    <p style="max-width:900px;margin:0 auto;font-size:0.95rem;color:#056367;font-style:italic;">
-      Please note: Some book reviews include reader ratings. Others offer a summary rather than scores.
-    </p>
+      <div class="current-work-actions">
+        <a class="buy-btn current-work-primary" href="reflections.html">Read Reflections</a>
+        <a class="current-work-secondary" href="https://marshakerrtalley.substack.com" target="_blank" rel="noopener">
+          Subscribe on Substack
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+   
 
   </div>
 </section>
@@ -302,6 +315,64 @@
   }
 
 
+  /* Read My Current Work (Option 1) */
+.current-work-box{
+  margin: 0 auto 4rem;
+}
+
+.current-work-card{
+  background: #f3fbfb;
+  border-radius: 14px;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.current-work-card h3{
+  color: #056367;
+  font-size: 1.6rem;
+  margin-bottom: 0.9rem;
+}
+
+.current-work-card p{
+  color: #245b5d;
+  margin: 0 auto 1.3rem;
+  max-width: 760px;
+  line-height: 1.7;
+}
+
+.current-work-actions{
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.current-work-primary{
+  background: #319fa2;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.current-work-primary:hover{
+  background: #056367;
+}
+
+.current-work-secondary{
+  display: inline-block;
+  padding: 0.9rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(5,99,103,.28);
+  color: #056367;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.current-work-secondary:hover{
+  background: rgba(5,99,103,.08);
+}
 
   
 </style>
