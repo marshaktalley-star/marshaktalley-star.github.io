@@ -1005,78 +1005,89 @@ This is not the end of family. It is the end of carrying the emotional weight al
 </script>
 
 <script>
-  (function () {
-    const FEED_URL = "https://marshakerrtalley.substack.com/feed";
-    // rss2json helps avoid RSS/CORS issues on static sites
-    const RSS2JSON = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(FEED_URL);
+(function () {
+  const FEED_URL = "https://marshakerrtalley.substack.com/feed";
+  const RSS2JSON = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(FEED_URL);
 
-    const grid = document.getElementById("substackFeaturedGrid");
-    if (!grid) return;
+  const grid = document.getElementById("substackFeaturedGrid");
+  if (!grid) return;
 
-    function stripHtml(html) {
-      const tmp = document.createElement("div");
-      tmp.innerHTML = html || "";
-      return (tmp.textContent || tmp.innerText || "").trim();
+  function stripHtml(html) {
+    const tmp = document.createElement("div");
+    tmp.innerHTML = html || "";
+    return (tmp.textContent || tmp.innerText || "").trim();
+  }
+
+  function getImageFromItem(item) {
+    // 1) rss2json thumbnail
+    if (item.thumbnail) return item.thumbnail;
+
+    // 2) enclosure link (sometimes used for images)
+    if (item.enclosure && item.enclosure.link) {
+      const link = item.enclosure.link;
+      if (/\.(png|jpe?g|webp|gif)(\?|#|$)/i.test(link)) return link;
     }
 
-    function getImageFromItem(item) {
-      // rss2json sometimes provides `thumbnail`
-      if (item.thumbnail) return item.thumbnail;
+    // 3) try description/content HTML
+    const html = item.description || item.content || "";
+    const imgMatch = html.match(/<img[^>]+src=["']([^"']+)["']/i);
+    if (imgMatch && imgMatch[1]) return imgMatch[1];
 
-      // Try to extract first <img> from description/content
-      const html = item.description || item.content || "";
-      const match = html.match(/<img[^>]+src=["']([^"']+)["']/i);
-      if (match && match[1]) return match[1];
-
-      return ""; // no image found
+    // 4) try srcset
+    const srcsetMatch = html.match(/srcset=["']([^"']+)["']/i);
+    if (srcsetMatch && srcsetMatch[1]) {
+      const first = srcsetMatch[1].split(",")[0].trim().split(" ")[0];
+      if (first) return first;
     }
 
-    function render(items) {
-      const posts = (items || []).slice(0, 6);
-      if (!posts.length) {
-        grid.innerHTML = '<div class="substack-feature__loading">No posts found yet.</div>';
-        return;
-      }
+    return "";
+  }
 
-      grid.innerHTML = posts.map((item) => {
-        const title = stripHtml(item.title);
-        const link = item.link;
-        const img = getImageFromItem(item);
-
-        return `
-          <a class="substack-feature__card" role="listitem"
-             href="${link}" target="_blank" rel="noopener noreferrer"
-             aria-label="${title}">
-            ${
-              img
-                ? `<img class="substack-feature__img" src="${img}" alt="" loading="lazy" />`
-                : `<span class="substack-feature__fallback" aria-hidden="true"></span>`
-            }
-            <span class="substack-feature__overlay" aria-hidden="true">
-              <p class="substack-feature__text">${title}</p>
-            </span>
-          </a>
-        `;
-      }).join("");
+  function render(items) {
+    const posts = (items || []).slice(0, 6);
+    if (!posts.length) {
+      grid.innerHTML = '<div class="substack-feature__loading">No posts found yet.</div>';
+      return;
     }
 
-    fetch(RSS2JSON)
-      .then((r) => r.json())
-      .then((data) => {
-        if (!data || !data.items) throw new Error("Feed unavailable");
-        render(data.items);
-      })
-      .catch(() => {
-        grid.innerHTML = `
-          <div class="substack-feature__loading">
-            Latest posts could not be loaded right now.
-            <a href="https://marshakerrtalley.substack.com" target="_blank" rel="noopener noreferrer">Read on Substack →</a>
-          </div>
-        `;
-      });
-  })();
+    grid.innerHTML = posts.map((item) => {
+      const title = stripHtml(item.title);
+      const link = item.link;
+      const img = getImageFromItem(item);
+
+      return `
+        <a class="substack-feature__card" role="listitem"
+           href="${link}" target="_blank" rel="noopener noreferrer"
+           aria-label="${title}">
+          ${
+            img
+              ? `<img class="substack-feature__img" src="${img}" alt="" loading="lazy" />`
+              : `<span class="substack-feature__fallback" aria-hidden="true"></span>`
+          }
+          <span class="substack-feature__overlay" aria-hidden="true">
+            <p class="substack-feature__text">${title}</p>
+          </span>
+        </a>
+      `;
+    }).join("");
+  }
+
+  fetch(RSS2JSON)
+    .then((r) => r.json())
+    .then((data) => {
+      if (!data || !data.items) throw new Error("Feed unavailable");
+      render(data.items);
+    })
+    .catch(() => {
+      grid.innerHTML = `
+        <div class="substack-feature__loading">
+          Latest posts could not be loaded right now.
+          <a href="https://marshakerrtalley.substack.com" target="_blank" rel="noopener noreferrer">Read on Substack →</a>
+        </div>
+      `;
+    });
+})();
 </script>
-
 
   
 </body>
