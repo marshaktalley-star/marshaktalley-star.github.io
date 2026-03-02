@@ -258,6 +258,129 @@
         white-space: nowrap;
       }
     }
+
+/* ===== Featured Substack strip (compact, minimal real estate) ===== */
+.substack-feature {
+  margin: 28px auto 10px;
+  max-width: 1100px; /* adjust to match your content width */
+  padding: 0 16px;
+}
+
+.substack-feature__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.substack-feature__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #056367; /* deep teal */
+  letter-spacing: 0.2px;
+}
+
+.substack-feature__link {
+  font-size: 14px;
+  font-weight: 600;
+  color: #319fa2; /* muted teal */
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.substack-feature__link:hover {
+  text-decoration: underline;
+}
+
+.substack-feature__grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.substack-feature__card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f4fbfb;
+  border: 1px solid rgba(5, 99, 103, 0.12);
+  text-decoration: none;
+  min-height: 92px; /* keeps it compact */
+}
+
+.substack-feature__img {
+  width: 100%;
+  height: 92px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.95);
+}
+
+.substack-feature__fallback {
+  width: 100%;
+  height: 92px;
+  display: block;
+  background: linear-gradient(135deg, rgba(5,99,103,0.12), rgba(47,226,221,0.16));
+}
+
+.substack-feature__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%);
+}
+
+.substack-feature__text {
+  margin: 0;
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.substack-feature__loading {
+  font-size: 14px;
+  color: #4a4a4a;
+  padding: 10px 0;
+}
+
+.substack-feature__noscript {
+  font-size: 14px;
+  margin: 10px 0 0;
+}
+
+/* Make it minimal and scrollable on small screens */
+@media (max-width: 980px) {
+  .substack-feature__grid {
+    grid-template-columns: repeat(3, minmax(140px, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .substack-feature__grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(160px, 1fr);
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scroll-snap-type: x mandatory;
+  }
+  .substack-feature__card {
+    scroll-snap-align: start;
+  }
+}
+
+
+    
   </style>
 
   <!-- SUBSTACK PROMINENCE: HERO CTA + STICKY BAR -->
@@ -443,9 +566,33 @@
     ">
       None of us are strangers to adversity. We have all survived something we rarely speak about. 
       I write for those who refuse to let challenges define them. 
-      My lived experience shapes my professional practice, offering language for what hurt, so you can reclaim your strength and turn pain into possibility.
     </p>
 
+
+<!-- Featured Substack (insert under opening paragraph, above the "Receive future reflections" box) -->
+<section class="substack-feature" aria-labelledby="substackFeatureHeading">
+  <div class="substack-feature__header">
+    <h2 id="substackFeatureHeading" class="substack-feature__title">Latest on Substack</h2>
+    <a class="substack-feature__link" href="https://marshakerrtalley.substack.com" target="_blank" rel="noopener noreferrer">
+      View all →
+    </a>
+  </div>
+
+  <div id="substackFeaturedGrid" class="substack-feature__grid" role="list" aria-live="polite">
+    <div class="substack-feature__loading">Loading latest posts…</div>
+  </div>
+
+  <noscript>
+    <p class="substack-feature__noscript">
+      JavaScript is required to load the latest Substack posts.
+      <a href="https://marshakerrtalley.substack.com" target="_blank" rel="noopener noreferrer">Read on Substack →</a>
+    </p>
+  </noscript>
+</section>
+
+
+
+    
     <!-- NEW: Prominent Substack CTA right after intro -->
     <div class="continue-cta" aria-label="Continue reading options">
   <p class="continue-cta__text">
@@ -857,5 +1004,80 @@ This is not the end of family. It is the end of carrying the emotional weight al
   });
 </script>
 
+<script>
+  (function () {
+    const FEED_URL = "https://marshakerrtalley.substack.com/feed";
+    // rss2json helps avoid RSS/CORS issues on static sites
+    const RSS2JSON = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(FEED_URL);
+
+    const grid = document.getElementById("substackFeaturedGrid");
+    if (!grid) return;
+
+    function stripHtml(html) {
+      const tmp = document.createElement("div");
+      tmp.innerHTML = html || "";
+      return (tmp.textContent || tmp.innerText || "").trim();
+    }
+
+    function getImageFromItem(item) {
+      // rss2json sometimes provides `thumbnail`
+      if (item.thumbnail) return item.thumbnail;
+
+      // Try to extract first <img> from description/content
+      const html = item.description || item.content || "";
+      const match = html.match(/<img[^>]+src=["']([^"']+)["']/i);
+      if (match && match[1]) return match[1];
+
+      return ""; // no image found
+    }
+
+    function render(items) {
+      const posts = (items || []).slice(0, 6);
+      if (!posts.length) {
+        grid.innerHTML = '<div class="substack-feature__loading">No posts found yet.</div>';
+        return;
+      }
+
+      grid.innerHTML = posts.map((item) => {
+        const title = stripHtml(item.title);
+        const link = item.link;
+        const img = getImageFromItem(item);
+
+        return `
+          <a class="substack-feature__card" role="listitem"
+             href="${link}" target="_blank" rel="noopener noreferrer"
+             aria-label="${title}">
+            ${
+              img
+                ? `<img class="substack-feature__img" src="${img}" alt="" loading="lazy" />`
+                : `<span class="substack-feature__fallback" aria-hidden="true"></span>`
+            }
+            <span class="substack-feature__overlay" aria-hidden="true">
+              <p class="substack-feature__text">${title}</p>
+            </span>
+          </a>
+        `;
+      }).join("");
+    }
+
+    fetch(RSS2JSON)
+      .then((r) => r.json())
+      .then((data) => {
+        if (!data || !data.items) throw new Error("Feed unavailable");
+        render(data.items);
+      })
+      .catch(() => {
+        grid.innerHTML = `
+          <div class="substack-feature__loading">
+            Latest posts could not be loaded right now.
+            <a href="https://marshakerrtalley.substack.com" target="_blank" rel="noopener noreferrer">Read on Substack →</a>
+          </div>
+        `;
+      });
+  })();
+</script>
+
+
+  
 </body>
 </html>
