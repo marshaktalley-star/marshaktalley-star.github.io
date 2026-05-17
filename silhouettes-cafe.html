@@ -3,47 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marsha Kerr Talley | Turning Pain Into Possibilities</title>
+  <title>Silhouette’s Café | Wellness from Nature, for Life</title>
 
   <style>
     :root{
-      --teal:#1aa6a6;
-      --soft-teal:#6aa9a9;
-      --deep:#056367;
-      --text:#333;
-      --muted:#666;
-      --line:#e6f2f2;
+      --cream:#fff7ea;
+      --warm:#f7ead5;
+      --coffee:#4b2e1f;
+      --cacao:#2d1a12;
+      --sage:#6f8f68;
+      --deep-sage:#36543b;
+      --gold:#c79b46;
+      --rose:#8b2f2f;
+      --text:#2f261f;
+      --muted:#6b5b4b;
+      --line:#eadcc8;
+      --white:#fff;
     }
+
+    *{box-sizing:border-box;}
 
     body{
       margin:0;
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:#ffffff;
+      background:var(--cream);
       color:var(--text);
     }
 
-    /* ================= HEADER ================= */
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      color:var(--deep-sage);
+    }
+
     .site-header{
-      width:100%;
-      background:#ffffff;
+      background:#fff;
       border-bottom:1px solid var(--line);
     }
 
     .header-inner{
       max-width:1200px;
       margin:0 auto;
-      padding:20px 16px 12px;
+      padding:20px 16px 14px;
       display:flex;
       flex-direction:column;
       align-items:center;
-      box-sizing:border-box;
     }
 
     .site-logo img{
       max-width:220px;
-      width:100%;
-      height:auto;
-      display:block;
       margin:0 auto 12px;
     }
 
@@ -56,7 +67,7 @@
       flex-wrap:wrap;
       justify-content:center;
       font-size:14px;
-      letter-spacing:0.08em;
+      letter-spacing:.08em;
       text-transform:uppercase;
     }
 
@@ -66,150 +77,298 @@
     }
 
     .main-nav a.active{
-      color:var(--deep);
-      font-weight:600;
+      color:var(--deep-sage);
+      font-weight:700;
     }
 
-    /* ================= COMMON SECTIONS ================= */
     .section{
       max-width:1200px;
       margin:0 auto;
-      padding:3.5rem 1.5rem 4rem;
-      box-sizing:border-box;
+      padding:4rem 1.5rem;
     }
 
-    /* ================= SILHOUETTE CAFE ================= */
-    .headline{
-      display:flex;
-      align-items:center;
-      gap:1.5rem;
-      margin-bottom:4rem;
-      text-align:center;
-    }
-
-    .headline::before,
-    .headline::after{
-      content:"";
-      flex:1;
-      height:1px;
-      background:var(--soft-teal);
-    }
-
-    .headline h1{
-      margin:0;
-      font-size:clamp(1.6rem,3vw,2.4rem);
-      font-weight:500;
-      color:var(--soft-teal);
-    }
-
-    .content-grid{
+    .hero{
+      max-width:1200px;
+      margin:2rem auto 0;
+      padding:3rem 1.5rem 4rem;
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:3rem;
       align-items:center;
     }
 
-    .logo{text-align:center;}
-    .logo img{max-width:420px;width:100%;height:auto;}
+    .hero-card{
+      background:linear-gradient(135deg,#fffaf0,#f5dfbf);
+      border-radius:34px;
+      padding:3rem;
+      box-shadow:0 18px 45px rgba(75,46,31,.10);
+    }
 
-    .text{text-align:center;max-width:520px;margin:0 auto;}
-    .text p{font-size:1.05rem;line-height:1.8;margin-bottom:1.75rem;}
-    .tagline{font-style:italic;color:var(--muted);}
+    .eyebrow{
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--sage);
+      font-weight:800;
+      font-size:.85rem;
+      margin-bottom:.8rem;
+    }
 
-    /* ================= PRODUCTS ================= */
-    .section-title{
+    .hero h1{
+      font-family:Georgia,serif;
+      font-size:clamp(2.4rem,5vw,4.5rem);
+      line-height:1;
+      margin:.2rem 0 1.2rem;
+      color:var(--coffee);
+    }
+
+    .hero p{
+      font-size:1.08rem;
+      line-height:1.8;
+      color:var(--muted);
+    }
+
+    .hero-logo{
+      background:#fff;
+      border-radius:34px;
+      padding:1rem;
+      box-shadow:0 18px 45px rgba(75,46,31,.12);
+    }
+
+    .button-row{
       display:flex;
-      align-items:center;
-      gap:1.5rem;
-      margin-bottom:3rem;
+      flex-wrap:wrap;
+      gap:1rem;
+      margin-top:1.8rem;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:.9rem 1.3rem;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      border:1px solid var(--coffee);
+    }
+
+    .btn.primary{
+      background:var(--coffee);
+      color:white;
+    }
+
+    .btn.secondary{
+      color:var(--coffee);
+      background:transparent;
+    }
+
+    .section-title{
+      text-align:center;
+      max-width:760px;
+      margin:0 auto 3rem;
+    }
+
+    .section-title h2{
+      font-family:Georgia,serif;
+      font-size:clamp(2rem,4vw,3.2rem);
+      margin:0 0 .8rem;
+      color:var(--coffee);
+    }
+
+    .section-title p{
+      color:var(--muted);
+      line-height:1.7;
+      font-size:1.05rem;
+    }
+
+    .story{
+      background:#fff;
+      border-radius:34px;
+      padding:3rem;
+      box-shadow:0 14px 35px rgba(75,46,31,.08);
+    }
+
+    .story p{
+      line-height:1.85;
+      font-size:1.08rem;
+      color:var(--muted);
+      max-width:850px;
+      margin:0 auto 1.3rem;
       text-align:center;
     }
 
-    .section-title::before,
-    .section-title::after{
-      content:"";
-      flex:1;
-      height:1px;
-      background:var(--soft-teal);
+    .pillars{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:1.5rem;
     }
 
-    .section-title h1{
+    .pillar{
+      background:#fff;
+      border-radius:24px;
+      padding:1.8rem;
+      box-shadow:0 12px 28px rgba(75,46,31,.08);
+      border:1px solid #f0e3cf;
+    }
+
+    .pillar h3{
+      color:var(--coffee);
+      margin:.2rem 0 .7rem;
+      font-family:Georgia,serif;
+      font-size:1.4rem;
+    }
+
+    .pillar p{
+      color:var(--muted);
+      line-height:1.7;
       margin:0;
-      font-size:clamp(1.8rem,3vw,2.6rem);
-      font-weight:500;
-      color:var(--soft-teal);
+    }
+
+    .vision-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:1.5rem;
+      align-items:stretch;
+    }
+
+    .vision-grid img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:28px;
+      box-shadow:0 14px 35px rgba(75,46,31,.12);
+    }
+
+    .vision-side{
+      display:grid;
+      gap:1.5rem;
+    }
+
+    .note{
+      text-align:center;
+      color:var(--muted);
+      font-size:.95rem;
+      margin-top:1.2rem;
+      font-style:italic;
     }
 
     .product-row{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:3rem;
+      gap:2.5rem;
       align-items:center;
-      margin-bottom:5rem;
+      margin-bottom:3rem;
+      background:#fff;
+      border-radius:30px;
+      overflow:hidden;
+      box-shadow:0 14px 35px rgba(75,46,31,.08);
     }
 
-    /* === FIX: REMOVE ALL IMAGE BORDERS === */
-    .image-box{
-      border:none;
-      padding:0;
-      background:none;
-    }
-
-    .image-box img{
+    .product-row img{
       width:100%;
-      display:block;
+      height:100%;
+      object-fit:cover;
     }
 
-    .content-box{text-align:center;}
-
-    /* === FIX: REMOVE TEXT BORDER === */
-    .bordered-text{
-      border:none;
-      padding:0;
+    .product-copy{
+      padding:2.5rem;
     }
 
-    .simple-text{max-width:420px;margin:0 auto;}
+    .product-copy h3{
+      font-family:Georgia,serif;
+      color:var(--coffee);
+      font-size:2rem;
+      margin:0 0 1rem;
+    }
 
-    /* ================= ESSENTIALS ================= */
-    .row{
+    .product-copy p{
+      color:var(--muted);
+      line-height:1.75;
+      font-size:1.05rem;
+    }
+
+    .customer-love{
+      background:#fff7ea;
+    }
+
+    .testimonial-grid{
       display:grid;
-      grid-template-columns:1.1fr 0.9fr;
-      gap:3rem;
-      align-items:center;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1.5rem;
     }
 
-    .image img{
-      width:100%;
-      height:auto;
+    .testimonial-card{
+      background:white;
+      border-radius:24px;
+      padding:1.75rem;
+      box-shadow:0 12px 30px rgba(75,46,31,.08);
+      border:1px solid #f0e3cf;
+    }
+
+    .stars{
+      color:#d4a62a;
+      letter-spacing:.08em;
+      margin-bottom:.8rem;
+      font-size:1.1rem;
+    }
+
+    .testimonial-card p{
+      line-height:1.7;
+      font-style:italic;
+      color:var(--text);
+    }
+
+    .testimonial-card span{
       display:block;
+      margin-top:1rem;
+      color:var(--sage);
+      font-weight:700;
     }
 
-    .content{
-      text-align:center;
-      max-width:420px;
-      margin:0 auto;
-    }
-
-    /* ================= REVIEWS ================= */
     .reviews{
-      background:#f9fefe;
+      background:#f8fff9;
       padding:48px 16px;
     }
 
     .reviews h2{
-      color:var(--deep);
+      color:var(--deep-sage);
       text-align:center;
+      font-family:Georgia,serif;
+      font-size:2.3rem;
     }
 
-    /* ================= FOOTER ================= */
+    .trademark-note{
+      text-align:center;
+      padding:1.8rem 1.5rem;
+      background:#fff;
+      color:var(--muted);
+      font-size:.95rem;
+      border-top:1px solid var(--line);
+    }
+
     .site-footer{
-      background:#ffffff;
+      background:#fff;
       border-top:1px solid #eee;
       padding:2.5rem 1.5rem 2rem;
       text-align:center;
     }
 
-    .footer-inner{max-width:1200px;margin:0 auto;}
+    .footer-inner{
+      max-width:1200px;
+      margin:0 auto;
+    }
+
+    .social-links{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:16px;
+      margin:1rem 0 1.2rem;
+      flex-wrap:wrap;
+    }
+
+    .social-links a{
+      text-decoration:none;
+      font-weight:700;
+    }
 
     .footer-links{
       display:flex;
@@ -219,21 +378,28 @@
     }
 
     .footer-links a{
-      color:#319fa2;
+      color:var(--sage);
       text-decoration:none;
     }
 
     .footer-links a:hover{
-      color:#056367;
+      color:var(--deep-sage);
       text-decoration:underline;
     }
 
     @media (max-width:900px){
-      .content-grid,
+      .hero,
       .product-row,
-      .row{
+      .vision-grid{
         grid-template-columns:1fr;
-        gap:2.5rem;
+      }
+
+      .hero-card{
+        padding:2rem;
+      }
+
+      .product-row:nth-of-type(even) .product-copy{
+        order:2;
       }
     }
   </style>
@@ -246,9 +412,10 @@
     <a href="index.html" class="site-logo">
       <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired">
     </a>
+
     <nav class="main-nav" aria-label="Main navigation">
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="work-with-me.html">Work With Me</a></li>
         <li><a href="books.html">Books</a></li>
         <li><a href="podcast.html">Podcast</a></li>
@@ -258,124 +425,224 @@
   </div>
 </header>
 
-<section class="section">
-  <div class="headline">
-    <h1>Welcome to Silhouette's Cafe: Home of essential oils, herbal coffee and tea</h1>
-  </div>
+<main>
 
-  <div class="content-grid">
-    <div class="logo">
-      <img src="scafe.webp" alt="Silhouette's Cafe logo">
-    </div>
-    <div class="text">
+  <section class="hero">
+    <div class="hero-card">
+      <div class="eyebrow">Silhouette’s Café™</div>
+      <h1>Nourish. Heal. Thrive.</h1>
       <p>
-        Silhouette's Cafe is Marsha Kerr Talley's wellness brand. Here you can find
-        Silhouette's Essentials, a collection of essential oils, and Jamaican Delight,
-        her natural skin care line. Our mission at Silhouette's Café is to provide quality
-        products for a mind-body connection.
+        A wellness café concept rooted in herbal coffee, teas, essential oils,
+        natural skincare, healthy drinks, movement, plants, water, sunlight,
+        community, and sustainable living.
       </p>
-      <div class="tagline">What is in your cup?</div>
+      <p>
+        Originally founded in Texas and now being reimagined for Jamaica,
+        Silhouette’s Café is more than a café — it is a lifestyle, a healing space,
+        and a place to recharge.
+      </p>
+      <div class="button-row">
+        <a class="btn primary" href="#vision">See the Vision</a>
+        <a class="btn secondary" href="#customer-love">Read Reviews</a>
+      </div>
     </div>
-  </div>
-</section>
 
-<section class="section">
-  <div class="section-title"><h1>Our Products</h1></div>
-
-  <div class="product-row">
-    <div class="image-box">
-      <img src="care.webp" alt="Coffee and Teas">
+    <div class="hero-logo">
+      <img src="silhouettes-cafe-modern-logo.webp" alt="Silhouette’s Café modern wellness logo">
     </div>
-    <div class="content-box">
-      <h2>Coffee and Teas</h2>
-      <div class="bordered-text">
+  </section>
+
+  <section class="section">
+    <div class="story">
+      <div class="section-title">
+        <h2>The Story</h2>
+        <p>From a small wellness booth to a full tropical café vision.</p>
+      </div>
+
+      <p>
+        Silhouette’s Café began as Marsha Kerr Talley’s wellness brand, offering
+        essential oils, herbal coffee, teas, natural skincare, diffusers, apparel,
+        and education around alternative wellness.
+      </p>
+
+      <p>
+        The next chapter is a small but intentional wellness café in Jamaica —
+        a place where guests can enjoy fresh smoothies, herbal teas, healthy coffee,
+        simple tropical fruit blends, natural products, and empowering movement
+        experiences such as Body Combat-style fitness classes.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">
+      <h2>What Silhouette’s Café Will Offer</h2>
+      <p>
+        A grounded, relatable, eco-conscious wellness experience that feels warm,
+        tropical, energizing, and real.
+      </p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <h3>Café & Juice Bar</h3>
+        <p>Healthy coffee, herbal teas, smoothies, wellness shots, fruit cups, pastries, and healthier boba-inspired drinks.</p>
+      </div>
+
+      <div class="pillar">
+        <h3>Herbal Wellness</h3>
+        <p>Essential oils, herbs, spices, diffusers, natural skincare, and education around everyday wellness rituals.</p>
+      </div>
+
+      <div class="pillar">
+        <h3>Movement & Release</h3>
+        <p>Fitness experiences that include energetic classes like Body Combat for people who heal through movement and release.</p>
+      </div>
+
+      <div class="pillar">
+        <h3>Eco Recharge</h3>
+        <p>A future-forward café vision with plants, running water, natural light, outdoor seating, and eventual EV charging.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="vision">
+    <div class="section-title">
+      <h2>The Vision</h2>
+      <p>
+        These concept visuals capture the atmosphere: tropical, plant-filled,
+        sustainable, restorative, and community-centered.
+      </p>
+    </div>
+
+    <div class="vision-grid">
+      <img src="silhouettes-cafe-ev-charging-vision.webp" alt="Silhouette’s Café concept with EV charging and tropical wellness design">
+
+      <div class="vision-side">
+        <img src="silhouettes-cafe-combat-class.webp" alt="Black women in a Body Combat inspired wellness class">
+        <img src="silhouettes-cafe-drinks-lounge.webp" alt="Fresh smoothies, fruit cups, and relaxing water feature concept">
+      </div>
+    </div>
+
+    <p class="note">
+      Concept imagery is used to express the future brand atmosphere and design direction.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-title">
+      <h2>Products with a Purpose</h2>
+      <p>Silhouette’s Café is built from real products, real customers, and a real wellness story.</p>
+    </div>
+
+    <div class="product-row">
+      <img src="care.webp" alt="Coffee and teas">
+      <div class="product-copy">
+        <h3>Coffee, Teas & Herbal Drinks</h3>
         <p>
-          Silhouette's Cafe is a wellness company dedicated to promoting optimal health
-          through the use of high-quality herbal products...
+          Healthy coffee, herbal teas, tropical smoothies, and simple drinks made
+          to nourish the body while still feeling joyful, approachable, and flavorful.
         </p>
       </div>
     </div>
-  </div>
 
-  <div class="product-row">
-    <div class="content-box">
-      <h2>Jamaican Delight</h2>
-      <div class="simple-text">
+    <div class="product-row">
+      <div class="product-copy">
+        <h3>Jamaican Delight</h3>
         <p>
-          Marsha Kerr Talley's personal brand of skin care products to keep your skin soft
-          and glowing.
+          A natural skincare line created to help skin feel soft, glowing,
+          cared for, and connected to the beauty of simple ingredients.
+        </p>
+      </div>
+      <img src="sugar.webp" alt="Jamaican Delight skincare product">
+    </div>
+
+    <div class="product-row">
+      <img src="eoils.webp" alt="Silhouette’s Essentials essential oils">
+      <div class="product-copy">
+        <h3>Silhouette’s Essentials</h3>
+        <p>
+          Essential oils, diffuser blends, and wellness products created for
+          atmosphere, relaxation, ritual, and everyday self-care.
         </p>
       </div>
     </div>
-    <div class="image-box">
-      <img src="sugar.webp" alt="Jamaican Delight Sugar Scrub">
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <div class="row">
-    <div class="image">
-      <img src="eoils.webp" alt="Silhouette's Essentials essential oils">
+  <section class="section customer-love" id="customer-love">
+    <div class="section-title">
+      <h2>Customer Love</h2>
+      <p>Real feedback from customers who experienced Marsha’s books, oils, diffusers, skincare, and wellness products.</p>
     </div>
-    <div class="content">
-      <h2>Silhouette's Essentials</h2>
-      <p>Our brand of 100% certified pure and therapeutic grade essential oils.</p>
-    </div>
-  </div>
-</section>
 
-<section class="reviews">
-  <div class="footer-inner">
-    <h2>What Others Say</h2>
-    <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/AtKrwfdI2YVagQiXihl0WtyfVeCBrj9dy5E6KVOr" async></script>
-    <div class="yotpo-widget-instance" data-yotpo-instance-id="1056648"></div>
-  </div>
-</section>
+    <div class="testimonial-grid">
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>“This book is helping me to find my healthier self.”</p>
+        <span>— Ben, Healing from Emotional Traumas</span>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>“The pure honesty in this book is so monumental… I read the whole thing in one weekend.”</p>
+        <span>— Jerica B.</span>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>“Your oils seem to have more essence… They’re not watered down.”</p>
+        <span>— Anthony, Silhouette’s Essentials</span>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>“Marsha always ships in record time and follows up to ensure my order is perfect.”</p>
+        <span>— Kenneth G.</span>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>“One of the best pieces of jewelry I own! I plan on wearing it daily. The aroma, the vibe!”</p>
+        <span>— Tijahnni, Lifestyle Necklace</span>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>“It adds so much peace and tranquility to the atmosphere.”</p>
+        <span>— Dayahtra, Essential Oil Diffuser</span>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="reviews">
+    <div class="footer-inner">
+      <h2>More Reviews</h2>
+      <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/AtKrwfdI2YVagQiXihl0WtyfVeCBrj9dy5E6KVOr" async></script>
+      <div class="yotpo-widget-instance" data-yotpo-instance-id="1056648"></div>
+    </div>
+  </section>
+
+</main>
+
+<div class="trademark-note">
+  <p>Silhouette’s Café™ is a wellness café concept by Marsha Kerr Talley. All brand names, logos, and creative concepts are the property of their respective owner.</p>
+</div>
 
 <footer class="site-footer">
   <div class="footer-inner">
 
-    <!-- SOCIAL LINKS (add inside your footer, above or below .footer-links) -->
-<div class="social-links" style="
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:16px;
-  margin: 1rem 0 1.2rem;
-">
-
-  <a href="https://www.linkedin.com/in/marshakerrtalley" 
-     target="_blank" 
-     rel="noopener"
-     aria-label="Visit Marsha Kerr Talley on LinkedIn"
-     style="text-decoration:none;color:#0A66C2;font-weight:600;">
-    LinkedIn
-  </a>
-
-  <span aria-hidden="true" style="color:#ccc;">|</span>
-
-  <a href="https://www.youtube.com/c/marshakerrtalley"
-     target="_blank"
-     rel="noopener"
-     aria-label="Visit Marsha Kerr Talley on YouTube"
-     style="text-decoration:none;color:#FF0000;font-weight:600;">
-    YouTube
-  </a>
-
-  <span aria-hidden="true" style="color:#ccc;">|</span>
-
-  <a href="https://www.pinterest.com/marshakerrtalley"
-     target="_blank"
-     rel="noopener"
-     aria-label="Visit Marsha Kerr Talley on Pinterest"
-     style="text-decoration:none;color:#E60023;font-weight:600;">
-    Pinterest
-  </a>
-
-</div>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/marshakerrtalley" target="_blank" rel="noopener">LinkedIn</a>
+      <span aria-hidden="true" style="color:#ccc;">|</span>
+      <a href="https://www.youtube.com/c/marshakerrtalley" target="_blank" rel="noopener">YouTube</a>
+      <span aria-hidden="true" style="color:#ccc;">|</span>
+      <a href="https://www.pinterest.com/marshakerrtalley" target="_blank" rel="noopener">Pinterest</a>
+    </div>
 
     <p>Copyright © <span id="currentYear"></span> Marsha Kerr Talley — All Rights Reserved.</p>
+
     <nav class="footer-links">
       <a href="/privacy-policy">Privacy Policy</a>
       <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
