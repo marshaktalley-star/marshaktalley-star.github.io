@@ -445,7 +445,7 @@
 .community-text h2{
     font-size:3.2rem;
     line-height:1.1;
-    margin-bottom:30px;
+    margin-bottom:34px;
     color:#4d2b1f;
     font-weight:700;
 }
@@ -454,14 +454,23 @@
     font-size:1.15rem;
     line-height:2;
     color:#6a584d;
-    margin-bottom:28px;
+    margin-bottom:24px;
+    background:#fffaf3;
+    padding:26px 30px;
+    border-radius:24px;
+    box-shadow:0 10px 25px rgba(77,43,31,0.08);
+    border:1px solid rgba(77,43,31,0.08);
+    transition:all 0.35s ease;
+    cursor:pointer;
 }
 
-.community-highlight{
-    font-size:1.3rem !important;
-    color:#4d2b1f !important;
-    font-weight:600;
-    font-style:italic;
+.community-text p:hover,
+.community-text p:focus,
+.community-text p:active{
+    transform:translateY(-8px);
+    box-shadow:0 22px 45px rgba(77,43,31,0.16);
+    background:#fff7ed;
+    outline:none;
 }
 
 .linkedin-dropdown{
@@ -511,7 +520,6 @@
 }
 
 @media(max-width:992px){
-
     .community-container{
         grid-template-columns:1fr;
     }
@@ -523,9 +531,9 @@
     .community-text p{
         font-size:1.05rem;
         line-height:1.9;
+        padding:24px;
     }
 }
-
 
     
   </style>
@@ -652,21 +660,46 @@
         </p>
       </div>
 
-<p>
-  We spend so much of life isolated behind screens, disconnected from nature, culture, and one another. Silhouette’s Café is designed to bring people back together.
-</p>
+<section class="community-section">
+  <div class="community-container">
 
-<p>
-  For returning residents reconnecting with Jamaica after years away, the café becomes a bridge back to community, rhythm, culture, and belonging. For entrepreneurs, creatives, and professionals, it offers a space where authentic networking and meaningful relationships grow naturally. For singles, it creates a warm and welcoming environment to meet new people and reconnect in real life.
-</p>
+    <div class="community-text">
+      <h2>More Than a Café. A Place to Belong.</h2>
 
-<p>
-  Everything at Silhouette’s Café is intentionally designed to feel restorative, social, inspiring, and welcoming. It is not just about coffee or wellness products — it is about creating a lifestyle rooted in people, nature, and connection.
-</p>
+      <p tabindex="0">
+        We spend so much of life isolated behind screens, disconnected from nature, culture, and one another. Silhouette’s Café is designed to bring people back together.
+      </p>
 
-<p class="community-highlight">
-  This is more than a café. It is a gathering place for wellness, culture, purpose, inspiration, and genuine human connection.
-</p>
+      <p tabindex="0">
+        For returning residents reconnecting with Jamaica after years away, the café becomes a bridge back to community, rhythm, culture, and belonging. For entrepreneurs, creatives, and professionals, it offers a space where authentic networking and meaningful business relationships can grow organically. For singles, it provides a warm and welcoming place to meet new people.
+      </p>
+
+      <p tabindex="0">
+        Silhouette’s Café is not just about coffee or wellness products. It is about creating a lifestyle rooted in people, nature, and authentic connection.
+      </p>
+    </div>
+
+    <div class="community-post">
+      <details class="linkedin-dropdown">
+        <summary>
+          Read the story of the hidden woman in the cup
+        </summary>
+
+        <div class="linkedin-embed-wrapper">
+          <iframe
+            src="https://www.linkedin.com/embed/feed/update/urn:li:share:7461441378737098752?collapsed=1"
+            height="668"
+            width="100%"
+            frameborder="0"
+            allowfullscreen
+            title="Embedded LinkedIn Post">
+          </iframe>
+        </div>
+      </details>
+    </div>
+
+  </div>
+</section>
 
 
 
