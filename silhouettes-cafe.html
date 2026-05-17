@@ -580,8 +580,32 @@
         line-height:1.9;
         padding:24px;
     }
-  
+
+.music-player{
+  display:flex;
+  justify-content:center;
+  margin-top:1.5rem;
 }
+
+#musicToggle{
+  background:linear-gradient(135deg,#4b2e1f,#36543b);
+  color:white;
+  border:none;
+  border-radius:999px;
+  padding:14px 26px;
+  font-size:1rem;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 12px 28px rgba(75,46,31,.18);
+  transition:all .3s ease;
+}
+
+#musicToggle:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 35px rgba(75,46,31,.28);
+}
+  
+
 
     
   </style>
@@ -629,11 +653,19 @@
       </div>
     </div>
 
-    <div class="hero-logo">
-      <img src="silhouettes-cafe-modern-logo.webp" alt="Silhouette’s Café modern wellness logo">
-    </div>
+   <div class="hero-logo">
+  <img src="silhouettes-cafe-modern-logo.webp" alt="Silhouette’s Café modern wellness logo">
+
+  <div class="music-player">
+    <button id="musicToggle">
+      ♪ Play Relaxation Music
+    </button>
+  </div>
+</div>
   </section>
 
+
+  
   <section class="section">
     <div class="story">
       <div class="section-title">
@@ -904,5 +936,29 @@
   document.getElementById("currentYear").textContent = new Date().getFullYear();
 </script>
 
+<audio id="relaxMusic" loop>
+  <source src="kontraa-water-afro-pop-music-445661.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const music = document.getElementById("relaxMusic");
+  const button = document.getElementById("musicToggle");
+
+  music.volume = 0.22;
+
+  button.addEventListener("click", function () {
+
+    if (music.paused) {
+      music.play();
+      button.innerHTML = "❚❚ Pause Relaxation Music";
+    } else {
+      music.pause();
+      button.innerHTML = "♪ Play Relaxation Music";
+    }
+
+  });
+</script>
+
+  
 </body>
 </html>
