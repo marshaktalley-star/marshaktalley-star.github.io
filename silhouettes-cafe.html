@@ -427,6 +427,107 @@
         border-radius:18px;
       }
     }
+
+.community-section{
+    background:#f4ecdf;
+    padding:90px 6%;
+}
+
+.community-container{
+    max-width:1400px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1.2fr 0.9fr;
+    gap:60px;
+    align-items:start;
+}
+
+.community-text h2{
+    font-size:3.2rem;
+    line-height:1.1;
+    margin-bottom:30px;
+    color:#4d2b1f;
+    font-weight:700;
+}
+
+.community-text p{
+    font-size:1.15rem;
+    line-height:2;
+    color:#6a584d;
+    margin-bottom:28px;
+}
+
+.community-highlight{
+    font-size:1.3rem !important;
+    color:#4d2b1f !important;
+    font-weight:600;
+    font-style:italic;
+}
+
+.linkedin-dropdown{
+    background:#fffaf3;
+    border-radius:28px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    border:1px solid rgba(77,43,31,0.08);
+}
+
+.linkedin-dropdown summary{
+    cursor:pointer;
+    padding:26px 30px;
+    font-size:1.1rem;
+    font-weight:600;
+    color:#4d2b1f;
+    list-style:none;
+    position:relative;
+}
+
+.linkedin-dropdown summary::-webkit-details-marker{
+    display:none;
+}
+
+.linkedin-dropdown summary::after{
+    content:"+";
+    position:absolute;
+    right:30px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:1.6rem;
+    font-weight:400;
+}
+
+.linkedin-dropdown[open] summary::after{
+    content:"–";
+}
+
+.linkedin-embed-wrapper{
+    padding:0 20px 20px;
+}
+
+.linkedin-embed-wrapper iframe{
+    border-radius:20px;
+    width:100%;
+    background:white;
+}
+
+@media(max-width:992px){
+
+    .community-container{
+        grid-template-columns:1fr;
+    }
+
+    .community-text h2{
+        font-size:2.5rem;
+    }
+
+    .community-text p{
+        font-size:1.05rem;
+        line-height:1.9;
+    }
+}
+
+
+    
   </style>
 </head>
 
@@ -567,105 +668,6 @@
   This is more than a café. It is a gathering place for wellness, culture, purpose, inspiration, and genuine human connection.
 </p>
 
-<style>
-.community-section{
-    background:#f4ecdf;
-    padding:90px 6%;
-}
-
-.community-container{
-    max-width:1400px;
-    margin:0 auto;
-    display:grid;
-    grid-template-columns:1.2fr 0.9fr;
-    gap:60px;
-    align-items:start;
-}
-
-.community-text h2{
-    font-size:3.2rem;
-    line-height:1.1;
-    margin-bottom:30px;
-    color:#4d2b1f;
-    font-weight:700;
-}
-
-.community-text p{
-    font-size:1.15rem;
-    line-height:2;
-    color:#6a584d;
-    margin-bottom:28px;
-}
-
-.community-highlight{
-    font-size:1.3rem !important;
-    color:#4d2b1f !important;
-    font-weight:600;
-    font-style:italic;
-}
-
-.linkedin-dropdown{
-    background:#fffaf3;
-    border-radius:28px;
-    overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
-    border:1px solid rgba(77,43,31,0.08);
-}
-
-.linkedin-dropdown summary{
-    cursor:pointer;
-    padding:26px 30px;
-    font-size:1.1rem;
-    font-weight:600;
-    color:#4d2b1f;
-    list-style:none;
-    position:relative;
-}
-
-.linkedin-dropdown summary::-webkit-details-marker{
-    display:none;
-}
-
-.linkedin-dropdown summary::after{
-    content:"+";
-    position:absolute;
-    right:30px;
-    top:50%;
-    transform:translateY(-50%);
-    font-size:1.6rem;
-    font-weight:400;
-}
-
-.linkedin-dropdown[open] summary::after{
-    content:"–";
-}
-
-.linkedin-embed-wrapper{
-    padding:0 20px 20px;
-}
-
-.linkedin-embed-wrapper iframe{
-    border-radius:20px;
-    width:100%;
-    background:white;
-}
-
-@media(max-width:992px){
-
-    .community-container{
-        grid-template-columns:1fr;
-    }
-
-    .community-text h2{
-        font-size:2.5rem;
-    }
-
-    .community-text p{
-        font-size:1.05rem;
-        line-height:1.9;
-    }
-}
-</style>
 
 
 
