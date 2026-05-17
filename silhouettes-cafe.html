@@ -348,6 +348,50 @@
       font-size:2.3rem;
     }
 
+.reviews-dropdown{
+  max-width:1000px;
+  margin:0 auto;
+  background:#fffaf3;
+  border-radius:28px;
+  box-shadow:0 12px 30px rgba(75,46,31,.08);
+  border:1px solid #f0e3cf;
+  overflow:hidden;
+}
+
+.reviews-dropdown summary{
+  cursor:pointer;
+  list-style:none;
+  padding:26px 32px;
+  font-family:Georgia,serif;
+  font-size:2.3rem;
+  color:var(--deep-sage);
+  text-align:center;
+  position:relative;
+}
+
+.reviews-dropdown summary::-webkit-details-marker{
+  display:none;
+}
+
+.reviews-dropdown summary::after{
+  content:"+";
+  position:absolute;
+  right:32px;
+  top:50%;
+  transform:translateY(-50%);
+  font-family:system-ui, sans-serif;
+  font-size:2rem;
+  font-weight:400;
+}
+
+.reviews-dropdown[open] summary::after{
+  content:"–";
+}
+
+.reviews-content{
+  padding:0 24px 32px;
+}
+    
     .trademark-note{
       text-align:center;
       padding:1.8rem 1.5rem;
@@ -533,6 +577,16 @@
         line-height:1.9;
         padding:24px;
     }
+  .trademark-note{
+  text-align:center;
+  padding:1.8rem 1.5rem;
+  background:#fff;
+  color:var(--muted);
+  font-size:.95rem;
+  border-top:1px solid var(--line);
+  font-style:italic;
+  line-height:1.7;
+}
 }
 
     
@@ -810,18 +864,25 @@
     </div>
   </section>
 
-  <section class="reviews">
-    <div class="footer-inner">
-      <h2>More Reviews</h2>
-      <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/AtKrwfdI2YVagQiXihl0WtyfVeCBrj9dy5E6KVOr" async></script>
-      <div class="yotpo-widget-instance" data-yotpo-instance-id="1056648"></div>
-    </div>
-  </section>
+ <section class="reviews">
+  <div class="footer-inner">
+
+    <details class="reviews-dropdown">
+      <summary>More Reviews</summary>
+
+      <div class="reviews-content">
+        <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/AtKrwfdI2YVagQiXihl0WtyfVeCBrj9dy5E6KVOr" async></script>
+        <div class="yotpo-widget-instance" data-yotpo-instance-id="1056648"></div>
+      </div>
+    </details>
+
+  </div>
+</section>
 
 </main>
 
 <div class="trademark-note">
-  <p>Silhouette’s Café™ is a wellness café concept by Marsha Kerr Talley. All brand names, logos, and creative concepts are the property of their respective owner.</p>
+  <p>Silhouette’s Café™ is a wellness café brand and business originally operated in Texas and now being reimagined for Jamaica. All Silhouette’s Café names, logos, product ideas, visual concepts, café experiences, and creative direction are owned and protected by the brand.</p>
 </div>
 
 <footer class="site-footer">
