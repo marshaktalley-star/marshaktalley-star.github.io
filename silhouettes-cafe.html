@@ -606,67 +606,37 @@
 }
   
 
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 12px;
+}
 
-  .sc-carousel {
-    position: relative;
-    width: 100%;
-    max-width: 1100px;
-    margin: 30px auto;
-    overflow: hidden;
-    border-radius: 18px;
-  }
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
 
-  .sc-carousel-track {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    gap: 16px;
-    padding: 12px;
-    scrollbar-width: none;
-  }
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-  .sc-carousel-track::-webkit-scrollbar {
-    display: none;
-  }
+.fade {
+  animation: fadeEffect 1.5s;
+}
 
-  .sc-carousel-track img {
-    flex: 0 0 85%;
-    max-height: 600px;
-    object-fit: cover;
-    scroll-snap-align: center;
-    border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
-  }
+@keyframes fadeEffect {
+  from {opacity: .4;}
+  to {opacity: 1;}
+}
+</style>
 
-  .sc-carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    border: none;
-    background: rgba(0,0,0,0.55);
-    color: #fff;
-    font-size: 30px;
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-
-  .sc-prev { left: 14px; }
-  .sc-next { right: 14px; }
-
-  @media (min-width: 768px) {
-    .sc-carousel-track img {
-      flex-basis: 48%;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .sc-carousel-track img {
-      flex-basis: 32%;
-    }
+  
 
   }
     
@@ -750,33 +720,83 @@
     </div>
   </section>
 
-<section class="sc-carousel" aria-label="Silhouette's Cafe photo carousel">
-  <button class="sc-carousel-btn sc-prev" aria-label="Previous image">&#10094;</button>
 
-  <div class="sc-carousel-track">
-    <img src="/images/Frisco-SC.jpg" alt="Silhouette's Cafe product display">
-    <img src="/images/Frisco SC.jpg" alt="Silhouette's Cafe booth display">
-    <img src="/images/Screenshot_20200416-084446_Facebook.jpg" alt="Car diffuser product">
-    <img src="/images/20200427_141521-01.jpg" alt="Silhouette's Essentials necklace">
-    <img src="/images/SEoils.jpg" alt="Peppermint and eucalyptus essential oils">
-    <img src="/images/Marsha%20Reading.jpg" alt="Relaxing with a book and diffuser">
-    <img src="/images/Frisco.SC-TShirts.jpg" alt="Silhouette's Cafe shirts and products">
-    <img src="/images/Frisco--SC.jpg" alt="Essential oils display table">
-    <img src="/images/My books.jpg" alt="Books by Marsha Kerr Talley">
-    <img src="/images/Sky-Coffee Cup.jpg" alt="Coffee cup with latte art">
-    <img src="/images/Cup and Spoon-SC.jpg" alt="Silhouette's Cafe mug">
-    <img src="/images/Pink top me.jpg" alt="Silhouette's Cafe shirt">
-    <img src="/images/2_21_2022, 9_14_31 PM.jpg" alt="Good vibes shirt">
-    <img src="/images/2_13_2022, 8_38_03 PM.jpg" alt="Coffee coordinator outfit">
-    <img src="/images/FB_IMG_1586490375633.jpg" alt="Silhouette's Cafe rhinestone shirt">
-    <img src="/images/20200413_145010-01.jpg" alt="Diffuser and wellness product">
-    <img src="/images/20200416_191730-01.jpg" alt="Green diffuser outdoors">
-    <img src="/images/20200629_150511.jpg" alt="Silhouette's Essentials product bundle">
+<!-- SLIDESHOW CONTAINER -->
+<div class="slideshow-container">
+
+  <div class="slide fade">
+    <img src="Pink top me.jpg" alt="Pink Top Me">
   </div>
 
-  <button class="sc-carousel-btn sc-next" aria-label="Next image">&#10095;</button>
-</section>
+  <div class="slide fade">
+    <img src="2_21_2022, 9_14_31 PM.jpg" alt="Good Vibes">
+  </div>
 
+  <div class="slide fade">
+    <img src="2_13_2022, 8_38_03 PM.jpg" alt="Coffee Coordinator">
+  </div>
+
+  <div class="slide fade">
+    <img src="20200629_150511.jpg" alt="Essential Oils">
+  </div>
+
+  <div class="slide fade">
+    <img src="20200416_191730-01.jpg" alt="Diffuser Outside">
+  </div>
+
+  <div class="slide fade">
+    <img src="FB_IMG_1586490375633.jpg" alt="Silhouette Shirt">
+  </div>
+
+  <div class="slide fade">
+    <img src="20200413_145010-01.jpg" alt="Blue Diffuser">
+  </div>
+
+  <div class="slide fade">
+    <img src="Frisco-SC.jpg" alt="Shop Display">
+  </div>
+
+  <div class="slide fade">
+    <img src="Frisco SC.jpg" alt="Shop Interior">
+  </div>
+
+  <div class="slide fade">
+    <img src="Screenshot_20200416-084446_Facebook.jpg" alt="Car Diffuser">
+  </div>
+
+  <div class="slide fade">
+    <img src="20200427_141521-01.jpg" alt="Necklace Display">
+  </div>
+
+  <div class="slide fade">
+    <img src="Frisco--SC.jpg" alt="Shop Layout">
+  </div>
+
+  <div class="slide fade">
+    <img src="Frisco.SC-TShirts.jpg" alt="T-Shirt Display">
+  </div>
+
+  <div class="slide fade">
+    <img src="My books.jpg" alt="Books">
+  </div>
+
+  <div class="slide fade">
+    <img src="SEoils.jpg" alt="Essential Oils Outdoors">
+  </div>
+
+  <div class="slide fade">
+    <img src="Marsha%20Reading.jpg" alt="Reading">
+  </div>
+
+  <div class="slide fade">
+    <img src="Cup and Spoon-SC.jpg" alt="Coffee Mug">
+  </div>
+
+  <div class="slide fade">
+    <img src="Sky-Coffee Cup.jpg" alt="Coffee Cup">
+  </div>
+
+</div>
 
   
   <section class="section">
@@ -1052,18 +1072,28 @@
 
 
 <script>
-  const scTrack = document.querySelector('.sc-carousel-track');
-  const scNext = document.querySelector('.sc-next');
-  const scPrev = document.querySelector('.sc-prev');
+let slideIndex = 0;
+showSlides();
 
-  scNext.addEventListener('click', () => {
-    scTrack.scrollBy({ left: scTrack.clientWidth * 0.85, behavior: 'smooth' });
-  });
+function showSlides() {
+  let slides = document.getElementsByClassName("slide");
 
-  scPrev.addEventListener('click', () => {
-    scTrack.scrollBy({ left: -scTrack.clientWidth * 0.85, behavior: 'smooth' });
-  });
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slideIndex++;
+
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+
+  setTimeout(showSlides, 4000);
+}
 </script>
+
   
   
 </body>
