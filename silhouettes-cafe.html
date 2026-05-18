@@ -604,90 +604,7 @@
   transform:translateY(-2px);
   box-shadow:0 16px 35px rgba(75,46,31,.28);
 }
-  
 
-
-.sc-slideshow {
-    position: relative;
-    width: 100%;
-    max-width: 950px;
-    height: 540px;
-    margin: 40px auto;
-    overflow: hidden;
-    border-radius: 26px;
-    background: #1d120b;
-    box-shadow:
-      0 0 45px rgba(218, 156, 79, 0.18),
-      0 25px 80px rgba(0, 0, 0, 0.38);
-  }
-
-  .sc-slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 1.6s ease-in-out;
-  }
-
-  .sc-slide.active {
-    opacity: 1;
-    z-index: 1;
-  }
-
-  .sc-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    transform: scale(1);
-    animation: scSlowZoom 10s ease-in-out forwards;
-  }
-
-  .sc-slide.active img {
-    animation: scSlowZoom 10s ease-in-out forwards;
-  }
-
-  .sc-slide::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(
-        to bottom,
-        rgba(30, 16, 5, 0.08),
-        rgba(20, 10, 4, 0.28)
-      ),
-      radial-gradient(
-        circle at center,
-        rgba(255, 203, 128, 0.08),
-        rgba(0, 0, 0, 0.22)
-      );
-    pointer-events: none;
-  }
-
-  @keyframes scSlowZoom {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(1.06);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .sc-slideshow {
-      height: 420px;
-      max-width: 94%;
-      margin: 28px auto;
-      border-radius: 20px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .sc-slideshow {
-      height: 340px;
-    }
-  
 
   } 
   </style>
@@ -772,81 +689,7 @@
 
 
 <!-- Silhouette's Café Cinematic Slideshow -->
-<section class="sc-slideshow" aria-label="Silhouette's Café image slideshow">
 
-  <div class="sc-slide active">
-    <img src="Pink top me.jpg" alt="Silhouette's Café founder smiling in pink shirt">
-  </div>
-
-  <div class="sc-slide">
-    <img src="2_21_2022, 9_14_31 PM.jpg" alt="Silhouette's Café good vibes portrait">
-  </div>
-
-  <div class="sc-slide">
-    <img src="2_13_2022, 8_38_03 PM.jpg" alt="Silhouette's Café lifestyle portrait">
-  </div>
-
-  <div class="sc-slide">
-    <img src="20200629_150511.jpg" alt="Silhouette's Essentials wellness products">
-  </div>
-
-  <div class="sc-slide">
-    <img src="20200416_191730-01.jpg" alt="Green glowing essential oil diffuser">
-  </div>
-
-  <div class="sc-slide">
-    <img src="FB_IMG_1586490375633.jpg" alt="Silhouette's Café branded shirt">
-  </div>
-
-  <div class="sc-slide">
-    <img src="20200413_145010-01.jpg" alt="Blue essential oil diffuser lifestyle image">
-  </div>
-
-  <div class="sc-slide">
-    <img src="Frisco-SC.jpg" alt="Silhouette's Café product display">
-  </div>
-
-  <div class="sc-slide">
-    <img src="Frisco SC.jpg" alt="Silhouette's Café shop interior">
-  </div>
-
-  <div class="sc-slide">
-    <img src="Screenshot_20200416-084446_Facebook.jpg" alt="Car essential oil diffuser">
-  </div>
-
-  <div class="sc-slide">
-    <img src="20200427_141521-01.jpg" alt="Silhouette's Café necklace and diffuser">
-  </div>
-
-  <div class="sc-slide">
-    <img src="Frisco--SC.jpg" alt="Silhouette's Café retail and wellness display">
-  </div>
-
-  <div class="sc-slide">
-    <img src="Frisco.SC-TShirts.jpg" alt="Silhouette's Café apparel and wellness shop">
-  </div>
-
-  <div class="sc-slide">
-    <img src="My books.jpg" alt="Books by Marsha Kerr Talley">
-  </div>
-
-  <div class="sc-slide">
-    <img src="SEoils.jpg" alt="Silhouette's Essentials peppermint and eucalyptus oils">
-  </div>
-
-  <div class="sc-slide">
-    <img src="Marsha%20Reading.jpg" alt="Cozy wellness reading moment">
-  </div>
-
-  <div class="sc-slide">
-    <img src="Cup and Spoon-SC.jpg" alt="Silhouette's Café branded mug">
-  </div>
-
-  <div class="sc-slide">
-    <img src="Sky-Coffee Cup.jpg" alt="Coffee cup with latte art">
-  </div>
-
-</section>
 
   
   <section class="section">
@@ -1121,20 +964,7 @@
 </script>
 
 
-<script>
-  const scSlides = document.querySelectorAll(".sc-slide");
-  let scCurrentSlide = 0;
 
-  function scShowNextSlide() {
-    scSlides[scCurrentSlide].classList.remove("active");
-
-    scCurrentSlide = (scCurrentSlide + 1) % scSlides.length;
-
-    scSlides[scCurrentSlide].classList.add("active");
-  }
-
-  setInterval(scShowNextSlide, 5000);
-</script>
 
   
   
