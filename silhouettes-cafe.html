@@ -605,7 +605,145 @@
   box-shadow:0 16px 35px rgba(75,46,31,.28);
 }
 
+<!-- Silhouette's Cafe Slideshow Section -->
+ .sc-slideshow-section {
+    width: 100%;
+    background: linear-gradient(135deg, #2f4638, #6b3f2a, #c49a5a);
+    padding: 40px 0;
+  }
 
+  .sc-slideshow {
+    position: relative;
+    max-width: 1200px;
+    height: 380px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 28px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  }
+
+  .sc-slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sc-slide.active {
+    display: block;
+    animation: scFade 1.4s ease-in-out;
+  }
+
+  .sc-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.78) contrast(1.08) saturate(1.12);
+  }
+
+  .sc-slide-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 70px;
+    background: linear-gradient(
+      to top,
+      rgba(39, 31, 24, 0.72),
+      rgba(39, 31, 24, 0.25),
+      rgba(39, 31, 24, 0.05)
+    );
+    color: #fff8ee;
+  }
+
+  .sc-slide-overlay h2 {
+    font-size: clamp(2.5rem, 6vw, 5.8rem);
+    margin: 0;
+    font-family: Georgia, serif;
+    color: #f6d28b;
+    text-shadow: 0 4px 18px rgba(0,0,0,0.45);
+  }
+
+  .sc-slide-overlay p {
+    max-width: 760px;
+    font-size: clamp(1rem, 2vw, 1.45rem);
+    line-height: 1.6;
+    margin: 16px 0 28px;
+    color: #fff4df;
+  }
+
+  .sc-slide-button {
+    width: fit-content;
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 999px;
+    background: #c49a5a;
+    color: #1f1a14;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.28);
+  }
+
+  .sc-slide-button:hover {
+    background: #f0c978;
+  }
+
+  .sc-prev,
+  .sc-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 248, 238, 0.22);
+    color: #fff8ee;
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 16px 20px;
+    cursor: pointer;
+    font-size: 28px;
+    border-radius: 50%;
+    backdrop-filter: blur(8px);
+  }
+
+  .sc-prev {
+    left: 24px;
+  }
+
+  .sc-next {
+    right: 24px;
+  }
+
+  .sc-prev:hover,
+  .sc-next:hover {
+    background: rgba(246, 210, 139, 0.45);
+  }
+
+  @keyframes scFade {
+    from {
+      opacity: 0.35;
+      transform: scale(1.02);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .sc-slideshow {
+      height: 520px;
+      border-radius: 18px;
+    }
+
+    .sc-slide-overlay {
+      padding: 36px 24px;
+    }
+
+    .sc-prev,
+    .sc-next {
+      padding: 10px 14px;
+      font-size: 22px;
+    }
+
+  
   } 
   </style>
 </head>
@@ -688,8 +826,39 @@
   </section>
 
 
-<!-- Silhouette's Café Cinematic Slideshow -->
+<!-- Silhouette's Cafe Slideshow Section -->
+<section class="sc-slideshow-section">
+  <div class="sc-slideshow">
+    <div class="sc-slide active">
+      <img src="Frisco-SC.jpg" alt="Silhouette’s Café wellness product display">
+    </div>
 
+    <div class="sc-slide">
+      <img src="Frisco SC.jpg" alt="Silhouette’s Café retail café interior">
+    </div>
+
+    <div class="sc-slide">
+      <img src="Frisco--SC.jpg" alt="Silhouette’s Café essential oils and skincare display">
+    </div>
+
+    <div class="sc-slide">
+      <img src="Frisco.SC-TShirts.jpg" alt="Silhouette’s Café apparel and wellness café display">
+    </div>
+
+    <div class="sc-slide">
+      <img src="Marsha%20Reading.jpg" alt="Silhouette’s Café soulful wellness lifestyle moment">
+    </div>
+
+    <div class="sc-slide-overlay">
+      <h2>Silhouette’s Café in Texas</h2>
+      <p>Wellness • Herbal • Essential Oils • Healing Vibes</p>
+      <a href="/shop" class="sc-slide-button">Explore the Café</a>
+    </div>
+
+    <button class="sc-prev" onclick="scChangeSlide(-1)">&#10094;</button>
+    <button class="sc-next" onclick="scChangeSlide(1)">&#10095;</button>
+  </div>
+</section>
 
   
   <section class="section">
@@ -963,8 +1132,35 @@
   });
 </script>
 
+<!-- Silhouette's Cafe Slideshow Section -->
+<script>
+  let scSlideIndex = 0;
+  const scSlides = document.querySelectorAll(".sc-slide");
 
+  function scShowSlide(index) {
+    scSlides.forEach(slide => slide.classList.remove("active"));
 
+    if (index >= scSlides.length) {
+      scSlideIndex = 0;
+    }
+
+    if (index < 0) {
+      scSlideIndex = scSlides.length - 1;
+    }
+
+    scSlides[scSlideIndex].classList.add("active");
+  }
+
+  function scChangeSlide(direction) {
+    scSlideIndex += direction;
+    scShowSlide(scSlideIndex);
+  }
+
+  setInterval(() => {
+    scSlideIndex++;
+    scShowSlide(scSlideIndex);
+  }, 5000);
+</script>
 
   
   
