@@ -744,7 +744,123 @@
       font-size: 22px;
     }
 
-  
+
+    /* Founder Roots Section */
+
+.founder-roots-section {
+  width: 100%;
+  padding: 70px 7% 90px;
+  background:
+    radial-gradient(circle at top left, rgba(206, 154, 82, 0.18), transparent 35%),
+    linear-gradient(180deg, #fbf2e5 0%, #fff8ef 100%);
+}
+
+.founder-roots-card {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 48px;
+  align-items: center;
+  background: rgba(255, 252, 246, 0.92);
+  border: 1px solid rgba(124, 83, 52, 0.14);
+  border-radius: 34px;
+  padding: 34px;
+  box-shadow: 0 24px 70px rgba(72, 43, 25, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.founder-roots-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(130, 86, 48, 0.08), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(70, 115, 74, 0.12), transparent 35%);
+  pointer-events: none;
+}
+
+.founder-roots-image-wrap,
+.founder-roots-content {
+  position: relative;
+  z-index: 1;
+}
+
+.founder-roots-image-wrap {
+  text-align: center;
+}
+
+.founder-roots-image {
+  width: 100%;
+  max-height: 620px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 28px;
+  box-shadow: 0 20px 45px rgba(65, 38, 24, 0.22);
+  filter: sepia(0.13) saturate(1.05) contrast(1.03) brightness(1.02);
+}
+
+.founder-roots-caption {
+  margin-top: 16px;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #7a624f;
+  letter-spacing: 0.02em;
+}
+
+.founder-roots-kicker {
+  margin-bottom: 14px;
+  color: #9a6a35;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.founder-roots-content h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.1rem, 4vw, 4.2rem);
+  line-height: 1.05;
+  color: #4a2a1e;
+  margin: 0 0 26px;
+}
+
+.founder-roots-content p {
+  font-size: clamp(1rem, 1.35vw, 1.18rem);
+  line-height: 1.8;
+  color: #665342;
+  margin: 0 0 18px;
+}
+
+.founder-roots-closing {
+  margin-top: 24px;
+  font-weight: 700;
+  color: #4f2e20 !important;
+  font-size: clamp(1.08rem, 1.5vw, 1.28rem) !important;
+}
+
+@media (max-width: 900px) {
+  .founder-roots-section {
+    padding: 50px 5% 70px;
+  }
+
+  .founder-roots-card {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding: 24px;
+    border-radius: 26px;
+  }
+
+  .founder-roots-image {
+    max-height: 520px;
+  }
+
+  .founder-roots-content {
+    text-align: left;
+  }
+
+    
   } 
   </style>
 </head>
@@ -977,6 +1093,58 @@
     </p>
   </section>
 
+
+
+<!-- Founder Roots Section -->
+<section class="founder-roots-section">
+  <div class="founder-roots-card">
+
+    <div class="founder-roots-image-wrap">
+      <img 
+        src="Marsha-SC-Texas.png" 
+        alt="Marsha Kerr Talley at the original Silhouette's Café in Texas"
+        class="founder-roots-image"
+      />
+      <p class="founder-roots-caption">
+        Marsha Kerr Talley, The original Silhouette’s Café, Texas
+      </p>
+    </div>
+
+    <div class="founder-roots-content">
+      <p class="founder-roots-kicker">Founder Roots</p>
+
+      <h2>Rooted in Jamaica. Guided by Healing.</h2>
+
+      <p>
+        Long before Silhouette’s Café became a wellness vision, healing was already a part of my life in Jamaica.
+      </p>
+
+      <p>
+        We didn’t grow up relying on pharmaceutical medicine. At home, wellness came from the earth, bush teas, herbs, plants, and natural remedies passed down through generations.
+      </p>
+
+      <p>
+        When I was six years old, I split my head open on a rock. Instead of rushing to a hospital, my family treated me with banana sucker and healing bush medicine to stop the bleeding and support the healing naturally.
+      </p>
+
+      <p>
+        That experience stayed with me. It shaped the way I viewed plants, wellness, and the body’s connection to nature.
+      </p>
+
+      <p>
+        Silhouette’s Café is more than a café concept. It is a return to the healing traditions that raised me, reimagined through modern wellness, nourishment, movement, and community.
+      </p>
+
+      <p class="founder-roots-closing">
+        It is only fitting that this vision returns to the island that first gave it life.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+  
   <section class="section">
     <div class="section-title">
       <h2>Products with a Purpose</h2>
