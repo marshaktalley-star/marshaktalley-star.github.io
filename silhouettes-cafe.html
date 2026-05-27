@@ -1001,6 +1001,47 @@
   margin:0 auto;
   font-style:italic;
 }
+}.story-origin{
+  display:flex;
+  align-items:center;
+  gap:40px;
+  margin:50px 0;
+}
+
+.origin-logo{
+  width:200px;
+  max-width:40%;
+  border-radius:22px;
+  flex-shrink:0;
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.06);
+}
+
+.story-copy{
+  flex:1;
+}
+
+.origin-note{
+  margin-top:18px;
+  font-size:0.98rem;
+  color:var(--muted);
+  font-style:italic;
+  line-height:1.7;
+}
+
+@media (max-width:768px){
+
+  .story-origin{
+    flex-direction:column;
+    text-align:center;
+    gap:24px;
+  }
+
+  .origin-logo{
+    width:180px;
+    max-width:80%;
+  }
+
 }
 
 
@@ -1063,7 +1104,7 @@
 
 
   
- <section class="section">
+<section class="section">
   <div class="story">
 
     <div class="section-title">
@@ -1071,14 +1112,7 @@
       <p>From a small wellness booth to a full tropical café vision.</p>
     </div>
 
-    <p>
-      Silhouette’s Café began as Marsha Kerr Talley’s wellness brand, offering
-      essential oils, herbal coffee, teas, natural skincare, diffusers, apparel,
-      and education around alternative wellness.
-    </p>
-
-    <!-- ORIGINAL LOGO BLOCK -->
-    <div class="origin-logo-wrap">
+    <div class="story-origin">
 
       <img
         src="YOUR-ORIGINAL-LOGO.jpg"
@@ -1086,8 +1120,19 @@
         class="origin-logo"
       />
 
-      <div class="origin-caption">
-        The original hand-drawn Silhouette’s Café logo, created from Marsha Kerr Talley’s vision in the early years of the brand.
+      <div class="story-copy">
+
+        <p>
+          Silhouette’s Café began as Marsha Kerr Talley’s wellness brand, offering
+          essential oils, herbal coffee, teas, natural skincare, diffusers, apparel,
+          and education around alternative wellness.
+        </p>
+
+        <p class="origin-note">
+          The original logo was first hand-drawn by Marsha
+          long before the café vision evolved.
+        </p>
+
       </div>
 
     </div>
