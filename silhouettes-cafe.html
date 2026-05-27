@@ -862,70 +862,92 @@
     text-align: left;
   }
 
-  :root{
-  --cream:#fff7ea;
-  --warm:#f6ead7;
-  --coffee:#4b2e1f;
-  --deep:#2d1a12;
-  --gold:#c79b46;
+  .sc-products-video-section{
+  padding:70px 20px;
+  background:#fff7ea;
 }
 
-.sc-video-section{
-  position:relative;
-  padding:90px 20px;
-  background:linear-gradient(180deg,#fff7ea 0%,#f7ead5 100%);
-}
-
-.sc-video-content{
-  position:relative;
-  max-width:1200px;
+.sc-products-wrap{
+  max-width:1180px;
   margin:0 auto;
+  display:grid;
+  grid-template-columns:0.9fr 1.1fr;
+  gap:46px;
+  align-items:center;
 }
 
-.sc-heading-wrap{
-  text-align:center;
-  margin-bottom:45px;
+.sc-products-video{
+  border-radius:26px;
+  overflow:hidden;
+  background:#000;
+  box-shadow:0 18px 45px rgba(0,0,0,0.18);
+}
+
+.sc-products-video video{
+  width:100%;
+  aspect-ratio:9 / 16;
+  display:block;
+  object-fit:cover;
+}
+
+.sc-products-copy{
+  color:#2f261f;
 }
 
 .sc-eyebrow{
-  letter-spacing:3px;
+  margin:0 0 12px;
+  color:#c79b46;
   text-transform:uppercase;
-  color:var(--gold);
-  font-size:0.85rem;
-  font-weight:600;
+  letter-spacing:2.5px;
+  font-size:0.8rem;
+  font-weight:700;
 }
 
-.sc-heading-wrap h2{
-  margin:0;
-  font-size:clamp(2.5rem,5vw,4.5rem);
-  line-height:1.05;
-  color:var(--deep);
+.sc-products-copy h2{
+  margin:0 0 20px;
   font-family:Georgia, serif;
+  font-size:clamp(2rem,4vw,3.4rem);
+  line-height:1.08;
+  color:#2d1a12;
 }
 
-.sc-subtext{
-  max-width:760px;
-  margin:22px auto 0;
+.sc-products-copy p{
   font-size:1.05rem;
-  line-height:1.8;
-  color:#5f5145;
+  line-height:1.75;
+  margin:0 0 18px;
+  max-width:650px;
 }
 
-.sc-video-container{
-  overflow:hidden;
-  border-radius:28px;
-  background:#000;
-
-  box-shadow:
-    0 20px 60px rgba(0,0,0,0.18);
+.sc-products-copy ul{
+  margin:24px 0 0;
+  padding:0;
+  list-style:none;
+  display:grid;
+  gap:10px;
 }
 
-.sc-video-container video{
-  width:100%;
-  display:block;
+.sc-products-copy li{
+  padding:12px 16px;
+  background:#f7ead5;
+  border-left:4px solid #c79b46;
+  border-radius:14px;
+  font-size:1rem;
 }
-  
-  } 
+
+@media(max-width:850px){
+  .sc-products-wrap{
+    grid-template-columns:1fr;
+  }
+
+  .sc-products-video{
+    max-width:430px;
+    margin:0 auto;
+  }
+
+  .sc-products-copy{
+    text-align:left;
+  }
+}
   </style>
 </head>
 
@@ -1141,48 +1163,45 @@
 
 
 
+<!-- Products in Texas Video Section -->
+<section class="sc-products-video-section">
+  <div class="sc-products-wrap">
 
-<section class="sc-video-section">
-
-  <div class="sc-video-overlay"></div>
-
-  <div class="sc-video-content">
-
-    <div class="sc-heading-wrap">
-      <p class="sc-eyebrow">Silhouette’s Café</p>
-
-      <h2>
-        Wellness from Nature,<br>
-        for Life
-      </h2>
-
-      <p class="sc-subtext">
-        A calming tropical experience rooted in restoration,
-        warmth, natural wellness, and intentional living.
-      </p>
+    <div class="sc-products-video">
+      <video controls playsinline preload="metadata">
+        <source src="SC-Products-Mansfield-TX.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
 
-    <div class="sc-video-container">
+    <div class="sc-products-copy">
+      <p class="sc-eyebrow">Silhouette’s Café Products</p>
 
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        controls
-        preload="metadata">
+      <h2>Natural wellness products with scent, softness, and soul.</h2>
 
-        <source src="SC-Products-Mansfield-TX.mp4" type="video/mp4">
+      <p>
+        This video showcases a selection of Silhouette’s Café products that were sold
+        at locations in North Richland Hills and Mansfield, Texas.
+      </p>
 
-        Your browser does not support the video tag.
+      <p>
+        The collection included strongly scented CBD soaps, bath bombs with hemp,
+        CBD-infused products, essential oils, and other herbal wellness items created
+        for relaxation, restoration, wellness, and everyday self-care.
+      </p>
 
-      </video>
-
+      <ul>
+        <li>CBD soaps with rich, lasting scents</li>
+        <li>Hemp and CBD bath bombs</li>
+        <li>Essential oils</li>
+        <li>Herbal wellness products</li>
+        <li>Self-care items for bath, body, and restoration</li>
+      </ul>
     </div>
 
   </div>
-
 </section>
+
       
 
 
