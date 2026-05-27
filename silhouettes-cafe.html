@@ -978,14 +978,23 @@
 }
 
   
- .story-origin{
-  margin:32px 0 6px;
+.story{
+  background:#fff;
+  border-radius:34px;
+  padding:3rem;
+  box-shadow:0 14px 35px rgba(75,46,31,.08);
+}
+
+.story-origin{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:42px;
+  align-items:start;
+  margin-top:2.2rem;
+  margin-bottom:2rem;
 }
 
 .logo-block{
-  width:220px;
-  float:left;
-  margin:0 38px 18px 0;
   text-align:center;
 }
 
@@ -997,9 +1006,9 @@
 }
 
 .origin-caption{
-  margin-top:8px;
-  font-size:0.72rem;
-  line-height:1.45;
+  margin-top:10px;
+  font-size:0.78rem;
+  line-height:1.5;
   color:var(--muted);
   font-style:italic;
   max-width:190px;
@@ -1008,32 +1017,46 @@
 }
 
 .story-copy p{
-  max-width:none;
   margin:0;
+  max-width:none;
   text-align:left;
+  line-height:1.9;
+  font-size:1.08rem;
+  color:var(--muted);
 }
 
-.story-origin::after{
-  content:"";
-  display:block;
-  clear:both;
+.story > p{
+  max-width:980px;
+  margin:0 auto;
+  text-align:center;
+  line-height:1.9;
+  font-size:1.08rem;
+  color:var(--muted);
 }
 
 @media (max-width:768px){
 
-  .logo-block{
-    float:none;
-    margin:0 auto 24px;
-    width:180px;
+  .story{
+    padding:2rem 1.5rem;
   }
 
-  .story-copy p{
+  .story-origin{
+    grid-template-columns:1fr;
+    gap:24px;
+    margin-bottom:1.5rem;
+  }
+
+  .logo-block{
+    max-width:180px;
+    margin:0 auto;
+  }
+
+  .story-copy p,
+  .story > p{
     text-align:center;
   }
 
 }
-
-  
   </style>
 </head>
 
