@@ -862,92 +862,122 @@
     text-align: left;
   }
 
-  .sc-products-video-section{
-  padding:70px 20px;
+.sc-products-section{
+  padding:90px 30px;
   background:#fff7ea;
 }
 
-.sc-products-wrap{
-  max-width:1180px;
+.sc-products-container{
+  max-width:1350px;
   margin:0 auto;
-  display:grid;
-  grid-template-columns:0.9fr 1.1fr;
-  gap:46px;
+
+  display:flex;
   align-items:center;
+  gap:70px;
 }
 
-.sc-products-video{
-  border-radius:26px;
-  overflow:hidden;
-  background:#000;
-  box-shadow:0 18px 45px rgba(0,0,0,0.18);
+/* VIDEO SIDE */
+
+.sc-video-column{
+  flex:0 0 420px;
 }
 
-.sc-products-video video{
+.sc-product-video{
   width:100%;
-  aspect-ratio:9 / 16;
+  border-radius:28px;
   display:block;
-  object-fit:cover;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.16);
+
+  background:#000;
 }
 
-.sc-products-copy{
-  color:#2f261f;
+/* TEXT SIDE */
+
+.sc-text-column{
+  flex:1;
+  max-width:720px;
 }
 
-.sc-eyebrow{
-  margin:0 0 12px;
-  color:#c79b46;
+.sc-label{
+  margin:0 0 14px;
   text-transform:uppercase;
-  letter-spacing:2.5px;
+  letter-spacing:3px;
   font-size:0.8rem;
   font-weight:700;
+  color:#c79b46;
 }
 
-.sc-products-copy h2{
-  margin:0 0 20px;
-  font-family:Georgia, serif;
-  font-size:clamp(2rem,4vw,3.4rem);
-  line-height:1.08;
+.sc-text-column h2{
+  margin:0 0 24px;
+
+  font-size:clamp(2.6rem,5vw,5rem);
+  line-height:1.02;
+
   color:#2d1a12;
+  font-family:Georgia, serif;
 }
 
-.sc-products-copy p{
-  font-size:1.05rem;
-  line-height:1.75;
-  margin:0 0 18px;
-  max-width:650px;
+.sc-intro{
+  font-size:1.25rem;
+  line-height:1.8;
+  margin-bottom:26px;
+  color:#4b3a2f;
 }
 
-.sc-products-copy ul{
-  margin:24px 0 0;
-  padding:0;
-  list-style:none;
-  display:grid;
-  gap:10px;
+.sc-text-column p{
+  font-size:1.08rem;
+  line-height:1.9;
+  color:#4f4339;
 }
 
-.sc-products-copy li{
-  padding:12px 16px;
-  background:#f7ead5;
-  border-left:4px solid #c79b46;
-  border-radius:14px;
-  font-size:1rem;
+.sc-product-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+
+  margin-top:35px;
 }
 
-@media(max-width:850px){
-  .sc-products-wrap{
-    grid-template-columns:1fr;
+.sc-product-tags span{
+  padding:12px 18px;
+  border-radius:999px;
+
+  background:#f3e2c9;
+
+  color:#4b2e1f;
+
+  font-size:0.95rem;
+  font-weight:600;
+}
+
+/* MOBILE */
+
+@media(max-width:980px){
+
+  .sc-products-container{
+    flex-direction:column;
+    gap:40px;
   }
 
-  .sc-products-video{
+  .sc-video-column{
+    width:100%;
     max-width:430px;
-    margin:0 auto;
   }
 
-  .sc-products-copy{
-    text-align:left;
+  .sc-text-column{
+    max-width:100%;
   }
+
+  .sc-products-section{
+    padding:70px 20px;
+  }
+
 }
+
+
+  
   </style>
 </head>
 
@@ -1164,13 +1194,20 @@
 
 
 <!-- Products in Texas Video Section -->
-<section class="sc-products-video-section">
-  <div class="sc-products-wrap">
+<section class="sc-products-section">
 
-    <div class="sc-products-video">
-      <video controls playsinline preload="metadata">
+  <div class="sc-products-container">
+
+    <!-- VIDEO -->
+    <div class="sc-video-column">
+
+      <video
+        controls
+        playsinline
+        preload="metadata"
+        class="sc-product-video">
         <source src="SC-Products-Mansfield-TX.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        
       </video>
     </div>
 
@@ -1190,15 +1227,16 @@
         for relaxation, restoration, wellness, and everyday self-care.
       </p>
 
-      <ul>
-        <li>CBD soaps with rich, lasting scents</li>
-        <li>Hemp and CBD bath bombs</li>
-        <li>Essential oils</li>
-        <li>Herbal wellness products</li>
-        <li>Self-care items for bath, body, and restoration</li>
-      </ul>
-    </div>
+       <div class="sc-product-tags">
 
+        <span>CBD Soaps</span>
+        <span>Bath Bombs</span>
+        <span>Essential Oils</span>
+        <span>Herbal Wellness</span>
+        <span>Body Care</span>
+
+    </div>
+</div>
   </div>
 </section>
 
