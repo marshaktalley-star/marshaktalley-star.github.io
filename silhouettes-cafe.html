@@ -862,7 +862,69 @@
     text-align: left;
   }
 
-    
+  :root{
+  --cream:#fff7ea;
+  --warm:#f6ead7;
+  --coffee:#4b2e1f;
+  --deep:#2d1a12;
+  --gold:#c79b46;
+}
+
+.sc-video-section{
+  position:relative;
+  padding:90px 20px;
+  background:linear-gradient(180deg,#fff7ea 0%,#f7ead5 100%);
+}
+
+.sc-video-content{
+  position:relative;
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.sc-heading-wrap{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.sc-eyebrow{
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-size:0.85rem;
+  font-weight:600;
+}
+
+.sc-heading-wrap h2{
+  margin:0;
+  font-size:clamp(2.5rem,5vw,4.5rem);
+  line-height:1.05;
+  color:var(--deep);
+  font-family:Georgia, serif;
+}
+
+.sc-subtext{
+  max-width:760px;
+  margin:22px auto 0;
+  font-size:1.05rem;
+  line-height:1.8;
+  color:#5f5145;
+}
+
+.sc-video-container{
+  overflow:hidden;
+  border-radius:28px;
+  background:#000;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.18);
+}
+
+.sc-video-container video{
+  width:100%;
+  display:block;
+}
+  
   } 
   </style>
 </head>
@@ -1080,24 +1142,48 @@
 
 
 
+<section class="sc-video-section">
 
+  <div class="sc-video-overlay"></div>
 
-      
-      <div class="vision-image-card lounge-feature">
-        <img 
-          src="silhouettes-cafe-drinks-lounge.png" 
-          alt="Silhouette’s Café tropical lounge area with plants, warm lighting, drinks, seating, and waterfall">
-        <p class="vision-caption">
-          The lounge experience: sip, relax, recharge.
-        </p>
-      </div>
+  <div class="sc-video-content">
+
+    <div class="sc-heading-wrap">
+      <p class="sc-eyebrow">Silhouette’s Café</p>
+
+      <h2>
+        Wellness from Nature,<br>
+        for Life
+      </h2>
+
+      <p class="sc-subtext">
+        A calming tropical experience rooted in restoration,
+        warmth, natural wellness, and intentional living.
+      </p>
+    </div>
+
+    <div class="sc-video-container">
+
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        controls
+        preload="metadata">
+
+        <source src="SC-Products-Mansfield-TX.mp4" type="video/mp4">
+
+        Your browser does not support the video tag.
+
+      </video>
 
     </div>
 
-    <p class="note">
-      Concept imagery is used to express the future brand atmosphere and design direction.
-    </p>
-  </section>
+  </div>
+
+</section>
+      
 
 
 
