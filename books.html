@@ -372,10 +372,36 @@
   font-size: 0.9rem;
 }
 
+.ebook-row {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 900px) {
+  .ebook-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+  
 .current-work-secondary{
   padding: 0.58rem 1.1rem;
   font-size: 0.9rem;
 }
+
+/* Ebook mockups only */
+.ebook-cover {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
 
   
 </style>
@@ -404,11 +430,12 @@
 </div>
 
 <!-- The School Says Everything Is Fine. My Child Is Not Fine. -->
-<div class="book-row">
+<div class="ebook-row">
 
   <img
-    src="the-school-says-everything-is-fine-cover.jpg"
-    alt="The School Says Everything Is Fine. My Child Is Not Fine. ebook cover">
+  class="ebook-cover"
+  src="the-school-mockup.png"
+  alt="The School Says Everything Is Fine. My Child Is Not Fine. ebook">
 
   <div>
 
@@ -480,8 +507,11 @@
     
 
 <!-- Why Did I Become a Teacher? -->
-<div class="book-row">
-  <img src="why-did-i-become-a-teacher-cover.jpg" alt="Why Did I Become a Teacher? ebook cover">
+<div class="ebook-row">
+ <img
+  class="ebook-cover"
+  src="why-did-become-mockup.png"
+  alt="Why Did I Become a Teacher? ebook">
 
   <div>
 
