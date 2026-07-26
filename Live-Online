@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Keep search engines from indexing this page -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>Airbnb Hosting Live Class | Marsha Kerr Talley</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f4ef;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      background: white;
+      min-height: 100vh;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 330px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .content {
+      padding: 45px 30px 55px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #a83a25;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 38px;
+      line-height: 1.15;
+      margin: 0 0 20px;
+    }
+
+    .welcome {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .event-details {
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      padding: 22px 0;
+      margin: 30px 0;
+      font-size: 17px;
+    }
+
+    .event-details strong {
+      display: block;
+      font-size: 20px;
+    }
+
+    .zoom-button {
+      display: inline-block;
+      background: #a83a25;
+      color: white;
+      text-decoration: none;
+      padding: 17px 38px;
+      margin: 10px 0 20px;
+      border-radius: 4px;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .zoom-button:hover {
+      background: #842d1d;
+    }
+
+    .note {
+      font-size: 14px;
+      color: #666;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .tagline {
+      margin-top: 45px;
+      font-size: 21px;
+      font-style: italic;
+    }
+
+    footer {
+      margin-top: 45px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    @media (max-width: 600px) {
+      .hero-image {
+        height: 270px;
+      }
+
+      .content {
+        padding: 35px 22px 45px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .zoom-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <img
+      src="pexels-sucipta-mahendra-807856837-20901468.jpg"
+      alt="Electronic door lock representing prepared Airbnb hosting"
+      class="hero-image"
+    >
+
+    <section class="content">
+
+      <div class="eyebrow">You're Registered</div>
+
+      <h1>
+        Airbnb Hosting:<br>
+        What I Wish I Knew Before Becoming a Host
+      </h1>
+
+      <p class="welcome">
+        Thank you for registering! This page is your access point
+        for the live class. Please save this page and return when
+        it is time for the session.
+      </p>
+
+      <div class="event-details">
+        <strong>Wednesday, July 29, 2026</strong>
+        12:00 PM Jamaica Time<br>
+        Live Online via Zoom
+      </div>
+
+      <a
+        class="zoom-button"
+        href="https://us05web.zoom.us/j/3799247436?pwd=VElvZiticzZtNGd4TEVGbmdBYUNNZz09&amp;omn=81404991793"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ENTER LIVE CLASS
+      </a>
+
+      <p class="note">
+        The Zoom room may not be open until shortly before the scheduled
+        start time. Return to this page and click the button to join.
+      </p>
+
+      <div class="tagline">
+        Don't just be a good host. Be a prepared host.
+      </div>
+
+      <footer>
+        Hosted by <strong>Marsha Kerr Talley</strong><br>
+        Educator • Author • Host • Resilience Coordinator
+      </footer>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
