@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+ <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260728-05-94d8f20"}');</script><script src="/_sdk/a27874207e105461.telemetry_sdk.js" integrity="sha512-wgI5N9F7oA2h3vH+benMYIv4wGqTct4nKWakqgvfgRyBLmfYq8q/fi6gkfWKd2hMsyN+VQ/qOAOpxybwkcoxlA=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Would You Do?</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,700;9..144,800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #14213d;
+      --cream: #fff8e8;
+      --coral: #ff6b5f;
+      --lime: #d8f15a;
+      --slate: #2c3b59;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      width: 100%;
+      min-height: calc(100 * min(var(--vh, 1vh), 1vh));
+      font-family: "DM Sans", sans-serif;
+      color: var(--cream);
+      background: var(--ink);
+    }
+
+    .app-wrapper {
+      width: 100%;
+      min-height: calc(100 * min(var(--vh, 1vh), 1vh));
+      position: relative;
+      overflow: hidden;
+      background-color: var(--ink);
+      background-image:
+        linear-gradient(rgba(255, 248, 232, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 248, 232, 0.055) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    .app-wrapper::before,
+    .app-wrapper::after {
+      content: "";
+      position: absolute;
+      width: 26rem;
+      height: 26rem;
+      border-radius: 999px;
+      filter: blur(16px);
+      opacity: .15;
+      pointer-events: none;
+    }
+
+    .app-wrapper::before {
+      background: var(--coral);
+      top: -14rem;
+      right: -10rem;
+    }
+
+    .app-wrapper::after {
+      background: var(--lime);
+      bottom: -16rem;
+      left: -11rem;
+    }
+
+    .game-shell {
+      width: 100%;
+      max-width: 1040px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .display-font { font-family: "Fraunces", serif; }
+
+    .scenario-panel {
+      display: none;
+      animation: rise .42s ease-out both;
+    }
+
+    .scenario-panel.is-active { display: block; }
+
+    .final-panel {
+      display: none;
+      animation: rise .48s ease-out both;
+    }
+
+    .final-panel.is-active { display: block; }
+
+    .choice-button {
+      border: 2px solid rgba(255, 248, 232, .35);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
+    }
+
+    .choice-button:hover:not(:disabled),
+    .choice-button:focus-visible:not(:disabled) {
+      transform: translateY(-3px);
+      border-color: var(--lime);
+      outline: none;
+    }
+
+    .choice-button.is-picked {
+      background: var(--lime) !important;
+      color: var(--ink) !important;
+      border-color: var(--lime) !important;
+    }
+
+    .choice-button:disabled { cursor: default; }
+
+    .reflection-card {
+      display: none;
+      border-left: 5px solid var(--lime);
+      animation: rise .35s ease-out both;
+    }
+
+    .reflection-card.is-visible { display: block; }
+
+    .timer-ring {
+      border: 2px solid rgba(216, 241, 90, .4);
+    }
+
+    .timer-ring.is-urgent {
+      color: var(--coral);
+      border-color: var(--coral);
+      animation: pulse .75s ease-in-out infinite;
+    }
+
+    .progress-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 248, 232, .28);
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .progress-dot.is-current,
+    .progress-dot.is-complete {
+      background: var(--lime);
+      transform: scale(1.25);
+    }
+
+    .next-row { display: none; }
+    .next-row.is-visible { display: flex; }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      50% { transform: scale(1.08); }
+    }
+
+    @media (max-width: 640px) {
+      .choice-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
+  <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
+ </head>
+ <body data-template-id="__page-root">
+  <div class="app-wrapper">
+   <header class="w-full px-5 pt-6 sm:px-8 sm:pt-8">
+    <div class="game-shell flex items-center justify-between gap-4">
+     <div>
+      <p data-template-id="eyebrow" class="canva-text uppercase tracking-[0.22em] text-xs font-bold"></p>
+      <h1 data-template-id="game-title" class="canva-text display-font mt-1 font-extrabold leading-tight"></h1>
+     </div>
+     <div class="flex items-center gap-3" aria-label="Game progress">
+      <div class="flex gap-2" aria-hidden="true"><span class="progress-dot is-current"></span> <span class="progress-dot"></span> <span class="progress-dot"></span>
+      </div><span id="round-label" class="text-sm font-semibold text-[#fff8e8]/75">Round 1 of 3</span>
+     </div>
+    </div>
+   </header>
+   <main class="w-full px-5 pb-8 pt-8 sm:px-8 sm:pb-12 sm:pt-12">
+    <div class="game-shell">
+     <section class="mb-7 flex flex-wrap items-center justify-between gap-4">
+      <p data-template-id="instruction" class="canva-text max-w-xl text-base leading-relaxed sm:text-lg"></p>
+      <div class="timer-ring flex h-20 w-20 shrink-0 flex-col items-center justify-center rounded-full bg-[#0e1931]" id="timer-ring"><span id="timer-value" class="text-3xl font-bold tabular-nums" aria-live="polite">20</span> <span data-template-id="timer-label" class="canva-text text-[10px] font-bold uppercase tracking-[0.16em]"></span>
+      </div>
+     </section>
+     <section id="scenario-1" class="scenario-panel is-active" aria-labelledby="scenario-1-title">
+      <div data-template-id="scenario-1-card" class="canva-card rounded-[2rem] border border-[#fff8e8]/20 p-6 shadow-2xl sm:p-10">
+       <div class="mb-7 flex items-start justify-between gap-4">
+        <div>
+         <p data-template-id="scenario-1-kicker" class="canva-tag mb-3 inline-flex rounded-full px-3 py-1 text-xs font-bold uppercase tracking-[0.12em]"></p>
+         <h2 data-template-id="scenario-1-title" class="canva-text display-font font-bold leading-tight"></h2>
+        </div><i data-lucide="users-round" class="mt-1 h-9 w-9 shrink-0 text-[#d8f15a]" aria-hidden="true"></i>
+       </div>
+       <p data-template-id="scenario-1-copy" class="canva-text max-w-3xl text-lg leading-relaxed sm:text-xl"></p>
+       <div class="choice-grid mt-8 grid grid-cols-3 gap-3"><button type="button" data-choice="ignore" data-scenario="1" data-template-id="scenario-1-choice-ignore" class="canva-button choice-button rounded-2xl px-4 py-4 text-sm font-bold uppercase tracking-wide"></button> <button type="button" data-choice="message" data-scenario="1" data-template-id="scenario-1-choice-message" class="canva-button choice-button rounded-2xl px-4 py-4 text-sm font-bold uppercase tracking-wide"></button> <button type="button" data-choice="cancel" data-scenario="1" data-template-id="scenario-1-choice-cancel" class="canva-button choice-button rounded-2xl px-4 py-4 text-sm font-bold uppercase tracking-wide"></button>
+       </div>
+       <div id="s1-ignore" class="reflection-card mt-8 rounded-r-2xl bg-[#243553] p-5">
+        <p data-template-id="s1-ignore-title" class="canva-text mb-2 font-bold"></p>
+        <p data-template-id="s1-ignore-copy" class="canva-text leading-relaxed"></p>
+       </div>
+       <div id="s1-message" class="reflection-card mt-8 rounded-r-2xl bg-[#243553] p-5">
+        <p data-template-id="s1-message-title" class="canva-text mb-2 font-bold"></p>
+        <p data-template-id="s1-message-copy" class="canva-text leading-relaxed"></p>
+       </div>
+       <div id="s1-cancel" class="reflection-card mt-8 rounded-r-2xl bg-[#243553] p-5">
+        <p data-template-id="s1-cancel-title" class="canva-text mb-2 font-bold"></p>
+        <p data-template-id="s1-cancel-copy" class="canva-text leading-relaxed"></p>
+       </div>
+       <div id="s1-timeout" class="reflection-card mt-8 rounded-r-2xl bg-[#243553] p-5">
+        <p data-template-id="s1-timeout-title" class="canva-text mb-2 font-bold"></p>
+        <p data-template-id="s1-timeout-copy" class="canva-text leading-relaxed"></p>
+       </div>
+       <div id="next-1" class="next-row mt-8 justify-end"><button type="button" data-next="2" data-template-id="scenario-1-next" class="canva-button rounded-full px-6 py-3 text-sm font-bold"> <span class="flex items-center gap-2"><span class="button-label"></span><i data-lucide="arrow-right" class="h-4 w-4" aria-hidden="true"></i></span> </button>
+       </div>
+      </div>
+     </section>
+     <section id="scenario-2" class="scenario-panel" aria-labelledby="scenario-2-title">
+      <div data-template-id="scenario-2-card" class="canva-card rounded-[2rem] border border-[#fff8e8]/20 p-6 shadow-2xl sm:p-10">
+       <div class="mb-7 flex items-start justify-between gap-4">
+        <div>
+         <p data-template-id="scenario-2-kicker" class="canva-tag mb-3 inline-flex rounded-full px-3 py-1 text-xs font-bold uppercase tracking-[0.12em]"></p>
+         <h2 data-template-id="scenario-2-title" class="canva-text display-font font-bold leading-tight"></h2>
+        </div><i data-lucide="sparkles" class="mt-1 h-9 w-9 shrink-0 text-[#d8f15a]" aria-hidden="true"></i>
+       </div>
+       <p data-template-id="scenario-2-copy" class="canva-text max-w-3xl text-lg leading-relaxed sm:text-xl"></p>
+       <div class="choice-grid mt-8 grid grid-cols-3 gap-3"><button type="button" data-choice="refund" data-scenario="2" data-template-id="scenario-2-choice-refund" class="canva-button choice-button rounded-2xl px-4 py-4 text-sm font-bold uppercase tracking-wide"></button> <button type="button" data-choice="blame" data-scenario="2" data-template-id="scenario-2-choice-blame" class="canva-button choice-button rounded-2xl px-4 py-4 text-sm font-bold uppercase tracking-wide"></button> <button type="button" data-choice="resolve" data-scenario="2" data-template-id="scenario-2-choice-resolve" class="canva-button choice-button rounded-2xl px-4 py-4 text-sm font-bold uppercase tracking-wide"></button>
+       </div>
+       <div id="s2-refund" class="reflection-card mt-8 rounded-r-2xl bg-[#243553] p-5">
+        <p data-template-id="s2-refund-title" class="canva-text mb-2 font-bold"></p>
+        <p data-template-id="s2-refund-copy" class="canva-text leading-relaxed"></p>
+       </div>
+       <div id="s2-blame" class="reflection-card mt-8 rounded-r-2xl bg-[#243553] p-5">
+        <p data-template-id="s2-blame-title" class="canva-text mb-2 font-bold"></p>
+        <p data-template-id="s2-blame-copy" class="canva-text leading-relaxed"></p>
+       </div>
+       <div id="s2-resolve" class="reflection-card mt-8 rounded-r-2xl bg-[#243553] p-5">
+        <p data-template-id="s2-resolve-title" class="canva-text mb-2 font-bold"></p>
+        <p data-template-id="s2-resolve-copy" class="canva-text leading-relaxed"></p>
+       </div>
+       <div id="s2-timeout" class="reflection-card mt-8 rounded-r-2xl bg-[#243553] p-5">
+        <p data-template-id="s2-timeout-title" class="canva-text mb-2 font-bold"></p>
+        <p data-template-id="s2-timeout-copy" class="canva-text leading-relaxed"></p>
+       </div>
+       <div id="next-2" class="next-row mt-8 justify-end"><button type="button" data-next="3" data-template-id="scenario-2-next" class="canva-button rounded-full px-6 py-3 text-sm font-bold"> <span class="flex items-center gap-2"><span class="button-label"></span><i data-lucide="arrow-right" class="h-4 w-4" aria-hidden="true"></i></span> </button>
+       </div>
+      </div>
+     </section>
+     <section id="scenario-3" class="scenario-panel" aria-labelledby="scenario-3-title">
+      <div data-template-id="scenario-3-card" class="canva-card rounded-[2rem] border border-[#fff8e8]/20 p-6 shadow-2xl sm:p-10">
+       <div class="mb-7 flex items-start justify-between gap-4">
+        <div>
+         <p data-template-id="scenario-3-kicker" class="canva-tag mb-3 inline-flex rounded-full px-3 py-1 text-xs font-bold uppercase tracking-[0.12em]"></p>
+         <h2 data-template-id="scenario-3-title" class="canva-text display-font font-bold leading-tight"></h2>
+        </div><i data-lucide="calendar-clock" class="mt-1 h-9 w-9 shrink-0 text-[#d8f15a]" aria-hidden="true"></i>
+       </div>
+       <p data-template-id="scenario-3-copy" class="canva-text max-w-3xl text-lg leading-relaxed sm:text-xl"></p>
+       <div class="choice-grid mt-8 grid grid-cols-3 gap-3"><button type="button" data-choice="yes" data-scenario="3" data-template-id="scenario-3-choice-yes" class="canva-button choice-button rounded-2xl px-4 py-4 text-sm font-bold uppercase tracking-wide"></button> <button type="button" data-choice="no" data-scenario="3" data-template-id="scenario-3-choice-no" class="canva-button choice-button rounded-2xl px-4 py-4 text-sm font-bold uppercase tracking-wide"></button> <button type="button" data-choice="check" data-scenario="3" data-template-id="scenario-3-choice-check" class="canva-button choice-button rounded-2xl px-4 py-4 text-sm font-bold uppercase tracking-wide"></button>
+       </div>
+       <div id="s3-yes" class="reflection-card mt-8 rounded-r-2xl bg-[#243553] p-5">
+        <p data-template-id="s3-yes-title" class="canva-text mb-2 font-bold"></p>
+        <p data-template-id="s3-yes-copy" class="canva-text leading-relaxed"></p>
+       </div>
+       <div id="s3-no" class="reflection-card mt-8 rounded-r-2xl bg-[#243553] p-5">
+        <p data-template-id="s3-no-title" class="canva-text mb-2 font-bold"></p>
+        <p data-template-id="s3-no-copy" class="canva-text leading-relaxed"></p>
+       </div>
+       <div id="s3-check" class="reflection-card mt-8 rounded-r-2xl bg-[#243553] p-5">
+        <p data-template-id="s3-check-title" class="canva-text mb-2 font-bold"></p>
+        <p data-template-id="s3-check-copy" class="canva-text leading-relaxed"></p>
+       </div>
+       <div id="s3-timeout" class="reflection-card mt-8 rounded-r-2xl bg-[#243553] p-5">
+        <p data-template-id="s3-timeout-title" class="canva-text mb-2 font-bold"></p>
+        <p data-template-id="s3-timeout-copy" class="canva-text leading-relaxed"></p>
+       </div>
+       <div id="next-3" class="next-row mt-8 justify-end"><button type="button" data-next="final" data-template-id="scenario-3-next" class="canva-button rounded-full px-6 py-3 text-sm font-bold"> <span class="flex items-center gap-2"><span class="button-label"></span><i data-lucide="arrow-right" class="h-4 w-4" aria-hidden="true"></i></span> </button>
+       </div>
+      </div>
+     </section>
+     <section id="final-panel" class="final-panel" aria-labelledby="final-title">
+      <div data-template-id="final-card" class="canva-card overflow-hidden rounded-[2rem] border border-[#d8f15a]/60 p-7 shadow-2xl sm:p-12">
+       <div class="mb-7 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#d8f15a] text-[#14213d]"><i data-lucide="lightbulb" class="h-7 w-7" aria-hidden="true"></i>
+       </div>
+       <p data-template-id="final-kicker" class="canva-text mb-3 text-sm font-bold uppercase tracking-[0.18em]"></p>
+       <h2 id="final-title" data-template-id="final-title-text" class="canva-text display-font max-w-3xl font-extrabold leading-tight"></h2>
+       <p data-template-id="final-copy" class="canva-text mt-6 max-w-2xl text-lg leading-relaxed sm:text-xl"></p><button id="replay-button" type="button" data-template-id="replay-button-text" class="canva-button mt-9 rounded-full px-6 py-3 text-sm font-bold"> <span class="flex items-center gap-2"><i data-lucide="rotate-ccw" class="h-4 w-4" aria-hidden="true"></i><span class="button-label"></span></span> </button>
+      </div>
+     </section>
+     <p id="game-status" class="sr-only" aria-live="polite"></p>
+    </div>
+   </main>
+   <footer class="w-full px-5 pb-6 sm:px-8">
+    <div class="game-shell">
+     <p data-template-id="footer-note" class="canva-text text-xs font-medium tracking-wide"></p>
+    </div>
+   </footer>
+  </div>
+  <script src="/_sdk/1b56991da13617fe.editing_sdk.js" integrity="sha512-7QHNPLPvkV/StrSqMG/kmvYbG8mJP4lGjSAmVe52ZYilblz47/1vWJa6sAdgi1w/a7EbAadWwTEJWNjrpiUkfg=="></script>
+  <script>
+    let currentScenario = 1;
+    let secondsLeft = 20;
+    let timerId = null;
+    let answered = false;
+
+    const timerValue = document.getElementById("timer-value");
+    const timerRing = document.getElementById("timer-ring");
+    const status = document.getElementById("game-status");
+    const roundLabel = document.getElementById("round-label");
+
+    function updateTimer() {
+      timerValue.textContent = secondsLeft;
+      timerRing.classList.toggle("is-urgent", secondsLeft <= 5 && secondsLeft > 0);
+    }
+
+    function startTimer() {
+      clearInterval(timerId);
+      secondsLeft = 20;
+      answered = false;
+      updateTimer();
+
+      timerId = setInterval(() => {
+        secondsLeft -= 1;
+        updateTimer();
+
+        if (secondsLeft <= 0) {
+          clearInterval(timerId);
+          handleTimeout();
+        }
+      }, 1000);
+    }
+
+    function revealNext(scenario) {
+      document.getElementById("next-" + scenario).classList.add("is-visible");
+    }
+
+    function handleTimeout() {
+      if (answered) return;
+      answered = true;
+
+      const timeoutCard = document.getElementById("s" + currentScenario + "-timeout");
+      timeoutCard.classList.add("is-visible");
+      document.querySelectorAll('#scenario-' + currentScenario + ' .choice-button').forEach(button => {
+        button.disabled = true;
+      });
+      revealNext(currentScenario);
+      status.textContent = "Time is up. Consider the information you would need before acting.";
+    }
+
+    function chooseAction(button) {
+      if (answered) return;
+      answered = true;
+      clearInterval(timerId);
+
+      const scenario = button.dataset.scenario;
+      const choice = button.dataset.choice;
+
+      document.querySelectorAll('#scenario-' + scenario + ' .choice-button').forEach(choiceButton => {
+        choiceButton.disabled = true;
+      });
+
+      button.classList.add("is-picked");
+      document.getElementById("s" + scenario + "-" + choice).classList.add("is-visible");
+      revealNext(scenario);
+      status.textContent = "Choice selected. Your reflection prompt is now visible.";
+    }
+
+    function showScenario(nextScenario) {
+      document.querySelectorAll(".scenario-panel").forEach(panel => panel.classList.remove("is-active"));
+      document.getElementById("final-panel").classList.remove("is-active");
+
+      currentScenario = nextScenario;
+      document.getElementById("scenario-" + nextScenario).classList.add("is-active");
+      roundLabel.textContent = "Round " + nextScenario + " of 3";
+
+      document.querySelectorAll(".progress-dot").forEach((dot, index) => {
+        dot.classList.toggle("is-current", index === nextScenario - 1);
+        dot.classList.toggle("is-complete", index < nextScenario - 1);
+      });
+
+      status.textContent = "Round " + nextScenario + " of 3 has started. You have 20 seconds.";
+      startTimer();
+    }
+
+    function showFinal() {
+      clearInterval(timerId);
+      document.querySelectorAll(".scenario-panel").forEach(panel => panel.classList.remove("is-active"));
+      document.getElementById("final-panel").classList.add("is-active");
+      roundLabel.textContent = "Complete";
+      timerValue.textContent = "✓";
+      timerRing.classList.remove("is-urgent");
+      document.querySelectorAll(".progress-dot").forEach(dot => {
+        dot.classList.add("is-complete");
+        dot.classList.remove("is-current");
+      });
+      status.textContent = "Game complete. The final principle is visible.";
+    }
+
+    function resetGame() {
+      clearInterval(timerId);
+
+      document.querySelectorAll(".reflection-card").forEach(card => card.classList.remove("is-visible"));
+      document.querySelectorAll(".next-row").forEach(row => row.classList.remove("is-visible"));
+      document.querySelectorAll(".choice-button").forEach(button => {
+        button.disabled = false;
+        button.classList.remove("is-picked");
+      });
+
+      showScenario(1);
+    }
+
+    document.querySelectorAll(".choice-button").forEach(button => {
+      button.addEventListener("click", () => chooseAction(button));
+    });
+
+    document.querySelectorAll("[data-next]").forEach(button => {
+      button.addEventListener("click", () => {
+        const next = button.dataset.next;
+        if (next === "final") {
+          showFinal();
+        } else {
+          showScenario(Number(next));
+        }
+      });
+    });
+
+    document.getElementById("replay-button").addEventListener("click", resetGame);
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-template-id$='-next'] .button-label").forEach(label => {
+        const parent = label.closest("[data-template-id]");
+        label.textContent = parent.textContent.trim();
+      });
+      const replayLabel = document.querySelector("#replay-button .button-label");
+      replayLabel.textContent = document.getElementById("replay-button").textContent.trim();
+      lucide.createIcons();
+      startTimer();
+    });
+  </script>
+ </body>
+</html>
