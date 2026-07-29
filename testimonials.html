@@ -5,29 +5,122 @@
   <!-- ======================================================
        DOCUMENT METADATA
   ====================================================== -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
   <title>Marsha Kerr Talley | Turning Pain Into Possibilities</title>
 
   <!-- ======================================================
-       BANNER & TESTIMONIAL STYLES
+       TAILWIND CSS
+  ====================================================== -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ======================================================
+       FIREBASE SDK
+  ====================================================== -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <!-- ======================================================
+       PAGE STYLES
   ====================================================== -->
   <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: #ffffff;
-      color: #333;
+    :root {
+      --dark-teal: #056367;
+      --teal: #319fa2;
+      --light-teal: #6aa9a9;
+      --text: #555555;
+      --soft-grey: #eeeeee;
     }
 
-    /* ===== Banner ===== */
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Arial, sans-serif;
+      background: #ffffff;
+      color: #333333;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* ======================================================
+       HEADER
+    ====================================================== */
+
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e6f2f2;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 16px 14px;
+      text-align: center;
+    }
+
+    .logo-link {
+      display: inline-block;
+    }
+
+    .site-logo {
+      width: 220px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px 28px;
+      margin: 14px 0 0;
+      padding: 0;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .main-nav a {
+      color: #333333;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+      color: var(--teal);
+    }
+
+    /* ======================================================
+       HERO BANNER
+    ====================================================== */
+
     .banner {
       position: relative;
       width: 100%;
       overflow: hidden;
     }
 
-    .banner img {
+    .banner-image {
       width: 100%;
       height: auto;
       display: block;
@@ -40,32 +133,35 @@
       align-items: center;
       justify-content: center;
       padding: 2rem;
-      box-sizing: border-box;
-      background: linear-gradient(
-        to right,
-        rgba(0,0,0,0.55) 0%,
-        rgba(0,0,0,0.35) 45%,
-        rgba(0,0,0,0.15) 70%,
-        rgba(0,0,0,0) 100%
-      );
+      background:
+        linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.58) 0%,
+          rgba(0, 0, 0, 0.38) 45%,
+          rgba(0, 0, 0, 0.16) 72%,
+          rgba(0, 0, 0, 0) 100%
+        );
     }
 
     .quote-wrapper {
+      width: 100%;
       max-width: 760px;
       color: #ffffff;
     }
 
     .quote-mark {
-      font-size: 3rem;
-      opacity: 0.7;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 3.5rem;
+      line-height: 1;
+      opacity: 0.75;
     }
 
     .quote-text {
+      margin: 0 0 1.25rem;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-size: clamp(1.7rem, 4vw, 3rem);
       line-height: 1.25;
-      margin-bottom: 1.25rem;
     }
 
     .quote-author {
@@ -73,18 +169,9 @@
       letter-spacing: 0.04em;
     }
 
-    @media (max-width: 768px) {
-      .banner-content {
-        background: rgba(0,0,0,0.55);
-        text-align: center;
-      }
-    }
-
-    /* ===== Testimonials ===== */
-    :root {
-      --teal:#6aa9a9;
-      --text:#555;
-    }
+    /* ======================================================
+       TESTIMONIAL INTRODUCTION
+    ====================================================== */
 
     .testimonials-section {
       max-width: 1200px;
@@ -106,37 +193,265 @@
       content: "";
       flex: 1;
       height: 1px;
-      background: var(--teal);
+      background: var(--light-teal);
     }
 
-    .section-title h2 {
+    .section-title h1 {
       margin: 0;
+      color: var(--light-teal);
       font-size: clamp(1.8rem, 3vw, 2.6rem);
       font-weight: 500;
-      color: var(--teal);
       white-space: nowrap;
     }
 
     .testimonial-text {
       max-width: 900px;
       margin: 0 auto;
+      color: #666666;
       font-size: 1.15rem;
       line-height: 1.8;
-      color: #666;
     }
 
-    @media (max-width: 768px) {
-      .testimonial-text {
-        font-size: 1.05rem;
-      }
+    /* ======================================================
+       TESTIMONIAL FORM SECTION
+    ====================================================== */
+
+    .testimonial-form-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 700px;
+      padding: 4rem 1.25rem;
+      background:
+        linear-gradient(
+          to bottom,
+          #056367,
+          #319fa2,
+          #2fe2dd
+        );
     }
 
-    /* ===== Footer ===== */
+    .testimonial-form-card {
+      width: 100%;
+      max-width: 650px;
+      padding: 2.5rem;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 28px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(10px);
+    }
+
+    .testimonial-form-card h2 {
+      margin: 0 0 0.75rem;
+      color: var(--dark-teal);
+      font-size: clamp(2rem, 5vw, 2.7rem);
+      line-height: 1.15;
+      text-align: center;
+    }
+
+    .form-intro {
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      color: #555555;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 1.4rem;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 0.55rem;
+      color: var(--dark-teal);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .required-symbol {
+      color: #a52222;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      color: #333333;
+      background: #ffffff;
+      border: 1px solid #b7caca;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 1rem;
+      line-height: 1.5;
+      outline: none;
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .form-control:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(49, 159, 162, 0.18);
+    }
+
+    textarea.form-control {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .character-count {
+      margin: 0.4rem 0 0;
+      color: #777777;
+      font-size: 0.85rem;
+      text-align: right;
+    }
+
+    /* ======================================================
+       STAR RATING
+    ====================================================== */
+
+    .star-rating {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      min-height: 52px;
+    }
+
+    .star {
+      margin: 0;
+      padding: 0.1rem 0.2rem;
+      color: #c8c8c8;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 2.35rem;
+      line-height: 1;
+      transition:
+        color 0.15s ease,
+        transform 0.15s ease;
+    }
+
+    .star:hover,
+    .star:focus-visible {
+      transform: scale(1.12);
+      outline: none;
+    }
+
+    .star.selected {
+      color: #e5ad18;
+    }
+
+    .star:focus-visible {
+      border-radius: 6px;
+      box-shadow: 0 0 0 3px rgba(49, 159, 162, 0.3);
+    }
+
+    .rating-description {
+      margin: 0.35rem 0 0;
+      color: #666666;
+      font-size: 0.9rem;
+    }
+
+    /* ======================================================
+       CONSENT CHECKBOX
+    ====================================================== */
+
+    .checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .checkbox-group input {
+      width: 18px;
+      height: 18px;
+      margin-top: 0.2rem;
+      accent-color: var(--dark-teal);
+      flex: 0 0 auto;
+    }
+
+    .checkbox-group label {
+      color: #555555;
+      font-size: 0.93rem;
+      line-height: 1.5;
+    }
+
+    /* ======================================================
+       SUBMIT BUTTON
+    ====================================================== */
+
+    .submit-button {
+      width: 100%;
+      padding: 0.95rem 1.25rem;
+      color: #ffffff;
+      background: var(--dark-teal);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        opacity 0.2s ease;
+    }
+
+    .submit-button:hover:not(:disabled) {
+      background: #044f52;
+      transform: translateY(-1px);
+    }
+
+    .submit-button:focus-visible {
+      outline: 3px solid rgba(49, 159, 162, 0.35);
+      outline-offset: 3px;
+    }
+
+    .submit-button:disabled {
+      cursor: not-allowed;
+      opacity: 0.65;
+    }
+
+    /* ======================================================
+       FORM MESSAGE
+    ====================================================== */
+
+    .form-message {
+      margin: 1.25rem 0 0;
+      padding: 0.9rem 1rem;
+      border-radius: 10px;
+      font-weight: 600;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .form-message[hidden] {
+      display: none;
+    }
+
+    .form-message.success {
+      color: #075b40;
+      background: #dff6eb;
+      border: 1px solid #9dd9bd;
+    }
+
+    .form-message.error {
+      color: #842029;
+      background: #f8d7da;
+      border: 1px solid #f1aeb5;
+    }
+
+    /* ======================================================
+       FOOTER
+    ====================================================== */
+
     .site-footer {
-      background-color: #ffffff;
-      border-top: 1px solid #eee;
       padding: 2.5rem 1.5rem 2rem;
       text-align: center;
+      background: #ffffff;
+      border-top: 1px solid var(--soft-grey);
     }
 
     .footer-inner {
@@ -144,176 +459,882 @@
       margin: 0 auto;
     }
 
+    .footer-inner p {
+      margin: 0 0 1.25rem;
+      color: #555555;
+    }
+
     .footer-links {
       display: flex;
       justify-content: center;
-      gap: 2rem;
       flex-wrap: wrap;
+      gap: 1rem 2rem;
     }
 
     .footer-links a {
-      color: #319fa2;
+      color: var(--teal);
       text-decoration: none;
     }
 
-    .footer-links a:hover {
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
       text-decoration: underline;
     }
+
+    /* ======================================================
+       MOBILE STYLES
+    ====================================================== */
+
+    @media (max-width: 768px) {
+      .header-inner {
+        padding-top: 16px;
+      }
+
+      .main-nav ul {
+        gap: 12px 18px;
+        font-size: 12px;
+      }
+
+      .banner {
+        min-height: 420px;
+        background: #333333;
+      }
+
+      .banner-image {
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .banner-content {
+        padding: 1.5rem;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.55);
+      }
+
+      .quote-wrapper {
+        max-width: 600px;
+      }
+
+      .testimonials-section {
+        padding: 3rem 1.25rem;
+      }
+
+      .testimonial-text {
+        font-size: 1.05rem;
+      }
+
+      .section-title {
+        gap: 0.75rem;
+      }
+
+      .section-title h1 {
+        white-space: normal;
+      }
+
+      .testimonial-form-section {
+        min-height: auto;
+        padding: 3rem 1rem;
+      }
+
+      .testimonial-form-card {
+        padding: 2rem 1.25rem;
+        border-radius: 22px;
+      }
+
+      .star {
+        font-size: 2.15rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .main-nav ul {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+      }
+
+      .testimonial-form-card {
+        padding: 1.75rem 1rem;
+      }
+
+      .star-rating {
+        justify-content: center;
+      }
+
+      .rating-description {
+        text-align: center;
+      }
+    }
   </style>
-
-  <!-- ======================================================
-       TAILWIND CSS
-  ====================================================== -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- ======================================================
-       FIREBASE SDK
-  ====================================================== -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
 </head>
 
 <body>
 
-<!-- ======================================================
-     SITE HEADER / NAVIGATION
-====================================================== -->
-<header style="background:#ffffff;border-bottom:1px solid #e6f2f2;">
-  <div style="max-width:1200px;margin:0 auto;padding:20px 16px 12px;text-align:center;">
-    <a href="index.html">
-      <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired" style="max-width:220px;">
-    </a>
-    <nav aria-label="Main navigation">
-      <ul style="list-style:none;display:flex;gap:28px;justify-content:center;padding:0;margin-top:12px;font-size:14px;text-transform:uppercase;">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="work-with-me.html">Work With Me</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="podcast.html">Podcast</a></li>
-        <li><a href="reflections.html">Reflections</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <!-- ======================================================
+       SITE HEADER
+  ====================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
 
-<!-- ======================================================
-     HERO BANNER
-====================================================== -->
-<section class="banner">
-  <img src="Marsha-banner.png" alt="Marsha Kerr Talley banner">
-  <div class="banner-content">
-    <div class="quote-wrapper">
-      <div class="quote-mark">“</div>
-      <p class="quote-text">
-        Failure is not the worst thing that could happen. Regret is.<br>
-        Live life on your terms.
-      </p>
-      <div class="quote-author">Marsha Kerr Talley</div>
+      <a
+        href="index.html"
+        class="logo-link"
+        aria-label="Marsha Kerr Talley home page"
+      >
+        <img
+          src="MKT-logo-3.png"
+          alt="Marsha Kerr Talley – Live Inspired"
+          class="site-logo"
+        >
+      </a>
+
+      <nav
+        class="main-nav"
+        aria-label="Main navigation"
+      >
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+
+          <li>
+            <a href="work-with-me.html">Work With Me</a>
+          </li>
+
+          <li>
+            <a href="books.html">Books</a>
+          </li>
+
+          <li>
+            <a href="podcast.html">Podcast</a>
+          </li>
+
+          <li>
+            <a href="reflections.html">Reflections</a>
+          </li>
+        </ul>
+      </nav>
+
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- ======================================================
-     TESTIMONIALS
-====================================================== -->
-<section class="testimonials-section">
-  <div class="section-title">
-    <h2>Testimonials</h2>
-  </div>
-  <p class="testimonial-text">
-    Marsha Kerr Talley is a true life enthusiast who inspires others to live fully and intentionally.
-    Through her work as a lecturer, author, podcaster, and lifestyle coach, she empowers people to
-    transform their pain into purpose and discover the joy they deserve.
-  </p>
-</section>
+  <main>
 
-<!-- ======================================================
-     TESTIMONIAL SUBMISSION FORM
-====================================================== -->
-<div class="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#056367] via-[#319fa2] to-[#2fe2dd] py-12">
-  <div class="max-w-xl w-full p-8 bg-white/75 rounded-3xl shadow-2xl">
-    <h2 class="text-4xl font-bold text-center text-[#056367] mb-6">Share Your Experience</h2>
+    <!-- ======================================================
+         HERO BANNER
+    ====================================================== -->
+    <section
+      class="banner"
+      aria-label="Inspirational quote"
+    >
+      <img
+        src="Marsha-banner.png"
+        alt="Marsha Kerr Talley"
+        class="banner-image"
+      >
 
-    <form id="reviewForm" class="space-y-6">
-      <div>
-        <div id="starRating" class="flex gap-2 text-3xl cursor-pointer">
-          <span data-value="1" class="star text-gray-300">★</span>
-          <span data-value="2" class="star text-gray-300">★</span>
-          <span data-value="3" class="star text-gray-300">★</span>
-          <span data-value="4" class="star text-gray-300">★</span>
-          <span data-value="5" class="star text-gray-300">★</span>
+      <div class="banner-content">
+        <div class="quote-wrapper">
+
+          <div
+            class="quote-mark"
+            aria-hidden="true"
+          >
+            “
+          </div>
+
+          <p class="quote-text">
+            Failure is not the worst thing that could happen. Regret is.
+            <br>
+            Live life on your terms.
+          </p>
+
+          <div class="quote-author">
+            Marsha Kerr Talley
+          </div>
+
         </div>
       </div>
+    </section>
 
-      <textarea id="message" rows="4" required class="w-full p-3 border rounded-xl"></textarea>
+    <!-- ======================================================
+         TESTIMONIAL INTRODUCTION
+    ====================================================== -->
+    <section class="testimonials-section">
 
-      <button type="submit" class="w-full bg-[#056367] text-white p-3 rounded-xl">Submit</button>
-      <p id="successMsg" class="hidden text-center text-[#056367]">Thank you for sharing ✨</p>
-    </form>
-  </div>
-</div>
+      <div class="section-title">
+        <h1>Testimonials</h1>
+      </div>
 
-<!-- ======================================================
-     SITE FOOTER
-====================================================== -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p>Copyright © <span id="currentYear"></span> Marsha Kerr Talley</p>
-    <nav class="footer-links">
-      <a href="/privacy-policy">Privacy Policy</a>
-      <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
-      <a href="/terms-and-conditions">Terms and Conditions</a>
-    </nav>
-  </div>
-</footer>
+      <p class="testimonial-text">
+        Marsha Kerr Talley is a true life enthusiast who inspires
+        others to live fully and intentionally. Through her work as a
+        lecturer, author, podcaster, and lifestyle coach, she empowers
+        people to transform their pain into purpose and discover the
+        joy they deserve.
+      </p>
 
-<!-- ======================================================
-     SCRIPTS
-====================================================== -->
-<script>
-  document.getElementById("currentYear").textContent = new Date().getFullYear();
-</script>
+    </section>
 
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyBZCg70hhCkx01ccZWePeIKAZEPC3mejkc",
-    authDomain: "testimonials-8100a.firebaseapp.com",
-    projectId: "testimonials-8100a",
-    storageBucket: "testimonials-8100a.firebasestorage.app",
-    messagingSenderId: "718470051880",
-    appId: "1:718470051880:web:0e42651ea9db9201019d1d"
-  };
+    <!-- ======================================================
+         TESTIMONIAL SUBMISSION FORM
+    ====================================================== -->
+    <section
+      class="testimonial-form-section"
+      aria-labelledby="testimonialFormHeading"
+    >
 
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
+      <div class="testimonial-form-card">
 
-  let currentRating = 0;
-  const stars = document.querySelectorAll(".star");
+        <h2 id="testimonialFormHeading">
+          Share Your Experience
+        </h2>
 
-  stars.forEach(star => {
-    star.addEventListener("click", () => {
-      currentRating = parseInt(star.dataset.value);
+        <p class="form-intro">
+          Your feedback is appreciated. Submitted testimonials will
+          be reviewed before being published.
+        </p>
+
+        <form
+          id="reviewForm"
+          novalidate
+        >
+
+          <!-- Name -->
+          <div class="form-group">
+            <label
+              for="reviewerName"
+              class="form-label"
+            >
+              Your name
+              <span
+                class="required-symbol"
+                aria-hidden="true"
+              >
+                *
+              </span>
+            </label>
+
+            <input
+              type="text"
+              id="reviewerName"
+              name="reviewerName"
+              class="form-control"
+              maxlength="100"
+              autocomplete="name"
+              placeholder="Enter your name"
+              required
+            >
+          </div>
+
+          <!-- Optional role -->
+          <div class="form-group">
+            <label
+              for="reviewerRole"
+              class="form-label"
+            >
+              Role or organisation
+              <span style="font-weight: 400;">
+                (optional)
+              </span>
+            </label>
+
+            <input
+              type="text"
+              id="reviewerRole"
+              name="reviewerRole"
+              class="form-control"
+              maxlength="150"
+              placeholder="For example: Educator, Airbnb host or business owner"
+            >
+          </div>
+
+          <!-- Star rating -->
+          <div class="form-group">
+
+            <span class="form-label">
+              Your rating
+              <span
+                class="required-symbol"
+                aria-hidden="true"
+              >
+                *
+              </span>
+            </span>
+
+            <div
+              id="starRating"
+              class="star-rating"
+              role="radiogroup"
+              aria-label="Select a rating from one to five stars"
+            >
+              <button
+                type="button"
+                class="star"
+                data-value="1"
+                role="radio"
+                aria-checked="false"
+                aria-label="1 star"
+              >
+                ★
+              </button>
+
+              <button
+                type="button"
+                class="star"
+                data-value="2"
+                role="radio"
+                aria-checked="false"
+                aria-label="2 stars"
+              >
+                ★
+              </button>
+
+              <button
+                type="button"
+                class="star"
+                data-value="3"
+                role="radio"
+                aria-checked="false"
+                aria-label="3 stars"
+              >
+                ★
+              </button>
+
+              <button
+                type="button"
+                class="star"
+                data-value="4"
+                role="radio"
+                aria-checked="false"
+                aria-label="4 stars"
+              >
+                ★
+              </button>
+
+              <button
+                type="button"
+                class="star"
+                data-value="5"
+                role="radio"
+                aria-checked="false"
+                aria-label="5 stars"
+              >
+                ★
+              </button>
+            </div>
+
+            <p
+              id="ratingDescription"
+              class="rating-description"
+              aria-live="polite"
+            >
+              Select a star rating.
+            </p>
+
+          </div>
+
+          <!-- Testimonial -->
+          <div class="form-group">
+
+            <label
+              for="message"
+              class="form-label"
+            >
+              Your testimonial
+              <span
+                class="required-symbol"
+                aria-hidden="true"
+              >
+                *
+              </span>
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              class="form-control"
+              rows="5"
+              minlength="10"
+              maxlength="1500"
+              placeholder="Tell us about your experience"
+              required
+            ></textarea>
+
+            <p
+              id="characterCount"
+              class="character-count"
+            >
+              0 / 1500 characters
+            </p>
+
+          </div>
+
+          <!-- Permission -->
+          <div class="checkbox-group">
+
+            <input
+              type="checkbox"
+              id="permission"
+              name="permission"
+              required
+            >
+
+            <label for="permission">
+              I give permission for this testimonial, my name and
+              optional role or organisation to be published on Marsha
+              Kerr Talley’s website or promotional materials.
+            </label>
+
+          </div>
+
+          <!-- Submit -->
+          <button
+            type="submit"
+            id="submitButton"
+            class="submit-button"
+          >
+            Submit Testimonial
+          </button>
+
+          <!-- Success/error message -->
+          <p
+            id="formMessage"
+            class="form-message"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></p>
+
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================
+       SITE FOOTER
+  ====================================================== -->
+  <footer class="site-footer">
+
+    <div class="footer-inner">
+
+      <p>
+        Copyright ©
+        <span id="currentYear"></span>
+        Marsha Kerr Talley
+      </p>
+
+      <nav
+        class="footer-links"
+        aria-label="Footer navigation"
+      >
+        <a href="/privacy-policy">
+          Privacy Policy
+        </a>
+
+        <a href="/shipping-return-policy">
+          Shipping &amp; Return Policy
+        </a>
+
+        <a href="/terms-and-conditions">
+          Terms and Conditions
+        </a>
+      </nav>
+
+    </div>
+
+  </footer>
+
+  <!-- ======================================================
+       PAGE SCRIPTS
+  ====================================================== -->
+  <script>
+    "use strict";
+
+    /* ======================================================
+       CURRENT YEAR
+    ====================================================== */
+
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+
+
+    /* ======================================================
+       FIREBASE CONFIGURATION
+    ====================================================== */
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBZCg70hhCkx01ccZWePeIKAZEPC3mejkc",
+      authDomain: "testimonials-8100a.firebaseapp.com",
+      projectId: "testimonials-8100a",
+      storageBucket: "testimonials-8100a.firebasestorage.app",
+      messagingSenderId: "718470051880",
+      appId: "1:718470051880:web:0e42651ea9db9201019d1d"
+    };
+
+
+    /* ======================================================
+       INITIALISE FIREBASE
+    ====================================================== */
+
+    let db;
+
+    try {
+      if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
+      }
+
+      db = firebase.firestore();
+    } catch (error) {
+      console.error("Firebase could not be initialised:", error);
+    }
+
+
+    /* ======================================================
+       FORM ELEMENTS
+    ====================================================== */
+
+    const reviewForm =
+      document.getElementById("reviewForm");
+
+    const reviewerNameInput =
+      document.getElementById("reviewerName");
+
+    const reviewerRoleInput =
+      document.getElementById("reviewerRole");
+
+    const messageInput =
+      document.getElementById("message");
+
+    const permissionCheckbox =
+      document.getElementById("permission");
+
+    const submitButton =
+      document.getElementById("submitButton");
+
+    const formMessage =
+      document.getElementById("formMessage");
+
+    const ratingDescription =
+      document.getElementById("ratingDescription");
+
+    const characterCount =
+      document.getElementById("characterCount");
+
+    const stars =
+      Array.from(document.querySelectorAll(".star"));
+
+    let currentRating = 0;
+
+
+    /* ======================================================
+       RATING LABELS
+    ====================================================== */
+
+    const ratingLabels = {
+      0: "Select a star rating.",
+      1: "1 star — Poor",
+      2: "2 stars — Fair",
+      3: "3 stars — Good",
+      4: "4 stars — Very good",
+      5: "5 stars — Excellent"
+    };
+
+
+    /* ======================================================
+       STAR RATING FUNCTIONS
+    ====================================================== */
+
+    function updateStars() {
+      stars.forEach(function (star) {
+        const starValue = Number(star.dataset.value);
+        const selected = starValue <= currentRating;
+
+        star.classList.toggle("selected", selected);
+
+        star.setAttribute(
+          "aria-checked",
+          starValue === currentRating
+            ? "true"
+            : "false"
+        );
+      });
+
+      ratingDescription.textContent =
+        ratingLabels[currentRating];
+    }
+
+
+    function selectRating(value) {
+      currentRating = Number(value);
       updateStars();
-    });
-  });
+      hideFormMessage();
+    }
 
-  function updateStars() {
-    stars.forEach(s => {
-      s.classList.toggle("text-yellow-400", s.dataset.value <= currentRating);
-      s.classList.toggle("text-gray-300", s.dataset.value > currentRating);
-    });
-  }
 
-  document.getElementById("reviewForm").addEventListener("submit", async e => {
-    e.preventDefault();
-    const message = document.getElementById("message").value.trim();
-    if (!currentRating || !message) return;
-    await db.collection("reviews").add({ rating: currentRating, message, timestamp: Date.now() });
-    e.target.reset();
-    currentRating = 0;
+    stars.forEach(function (star) {
+      star.addEventListener("click", function () {
+        selectRating(star.dataset.value);
+      });
+
+      star.addEventListener("keydown", function (event) {
+        if (
+          event.key === "ArrowRight" ||
+          event.key === "ArrowUp"
+        ) {
+          event.preventDefault();
+
+          const nextRating =
+            Math.min(currentRating + 1, 5);
+
+          selectRating(nextRating);
+          stars[nextRating - 1].focus();
+        }
+
+        if (
+          event.key === "ArrowLeft" ||
+          event.key === "ArrowDown"
+        ) {
+          event.preventDefault();
+
+          const previousRating =
+            Math.max(currentRating - 1, 1);
+
+          selectRating(previousRating);
+          stars[previousRating - 1].focus();
+        }
+      });
+    });
+
+
+    /* ======================================================
+       CHARACTER COUNT
+    ====================================================== */
+
+    function updateCharacterCount() {
+      const count = messageInput.value.length;
+
+      characterCount.textContent =
+        count + " / 1500 characters";
+    }
+
+
+    messageInput.addEventListener(
+      "input",
+      updateCharacterCount
+    );
+
+
+    /* ======================================================
+       FORM MESSAGE FUNCTIONS
+    ====================================================== */
+
+    function showFormMessage(message, type) {
+      formMessage.textContent = message;
+      formMessage.className =
+        "form-message " + type;
+      formMessage.hidden = false;
+    }
+
+
+    function hideFormMessage() {
+      formMessage.textContent = "";
+      formMessage.className = "form-message";
+      formMessage.hidden = true;
+    }
+
+
+    /* ======================================================
+       FORM VALIDATION
+    ====================================================== */
+
+    function validateForm() {
+      const reviewerName =
+        reviewerNameInput.value.trim();
+
+      const testimonialMessage =
+        messageInput.value.trim();
+
+      if (!reviewerName) {
+        showFormMessage(
+          "Please enter your name.",
+          "error"
+        );
+
+        reviewerNameInput.focus();
+        return false;
+      }
+
+      if (reviewerName.length < 2) {
+        showFormMessage(
+          "Please enter at least two characters for your name.",
+          "error"
+        );
+
+        reviewerNameInput.focus();
+        return false;
+      }
+
+      if (currentRating === 0) {
+        showFormMessage(
+          "Please select a star rating.",
+          "error"
+        );
+
+        stars[0].focus();
+        return false;
+      }
+
+      if (!testimonialMessage) {
+        showFormMessage(
+          "Please write your testimonial.",
+          "error"
+        );
+
+        messageInput.focus();
+        return false;
+      }
+
+      if (testimonialMessage.length < 10) {
+        showFormMessage(
+          "Please write at least 10 characters in your testimonial.",
+          "error"
+        );
+
+        messageInput.focus();
+        return false;
+      }
+
+      if (!permissionCheckbox.checked) {
+        showFormMessage(
+          "Please confirm that you give permission for the testimonial to be published.",
+          "error"
+        );
+
+        permissionCheckbox.focus();
+        return false;
+      }
+
+      return true;
+    }
+
+
+    /* ======================================================
+       FORM SUBMISSION
+    ====================================================== */
+
+    reviewForm.addEventListener(
+      "submit",
+      async function (event) {
+        event.preventDefault();
+        hideFormMessage();
+
+        if (!validateForm()) {
+          return;
+        }
+
+        if (!db) {
+          showFormMessage(
+            "The testimonial service is currently unavailable. Please try again later.",
+            "error"
+          );
+
+          return;
+        }
+
+        const reviewerName =
+          reviewerNameInput.value.trim();
+
+        const reviewerRole =
+          reviewerRoleInput.value.trim();
+
+        const testimonialMessage =
+          messageInput.value.trim();
+
+        submitButton.disabled = true;
+        submitButton.textContent =
+          "Submitting...";
+
+        try {
+          await db
+            .collection("reviews")
+            .add({
+              name: reviewerName,
+              role: reviewerRole,
+              rating: currentRating,
+              message: testimonialMessage,
+              permissionToPublish: true,
+              approved: false,
+              createdAt:
+                firebase.firestore.FieldValue.serverTimestamp()
+            });
+
+          reviewForm.reset();
+
+          currentRating = 0;
+
+          updateStars();
+          updateCharacterCount();
+
+          showFormMessage(
+            "Thank you. Your testimonial has been submitted successfully and will be reviewed before publication. ✨",
+            "success"
+          );
+
+          formMessage.scrollIntoView({
+            behaviour: "smooth",
+            block: "nearest"
+          });
+
+        } catch (error) {
+          console.error(
+            "Testimonial submission failed:",
+            error
+          );
+
+          let errorMessage =
+            "Your testimonial could not be submitted. Please try again.";
+
+          if (
+            error &&
+            error.code === "permission-denied"
+          ) {
+            errorMessage =
+              "The testimonial could not be saved because the Firebase permissions have not been configured correctly.";
+          }
+
+          if (
+            error &&
+            error.code === "unavailable"
+          ) {
+            errorMessage =
+              "The testimonial service is temporarily unavailable. Please check your internet connection and try again.";
+          }
+
+          showFormMessage(
+            errorMessage,
+            "error"
+          );
+
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent =
+            "Submit Testimonial";
+        }
+      }
+    );
+
+
+    /* ======================================================
+       INITIAL FORM DISPLAY
+    ====================================================== */
+
     updateStars();
-    document.getElementById("successMsg").classList.remove("hidden");
-  });
-</script>
+    updateCharacterCount();
+  </script>
 
 </body>
 </html>
