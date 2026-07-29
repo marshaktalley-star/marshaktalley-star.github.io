@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,14 +17,16 @@
       --text-body: #5a5a5a;
       --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       --font-heading: "Playfair Display", serif;
-      --teal-main:#319fa2;
-      --teal-dark:#056367;
-      --teal-light:#2fe2dd;
-      --gray-soft:#f5f7f7;
-      --text-dark:#333;
+      --teal-main: #319fa2;
+      --teal-dark: #056367;
+      --teal-light: #2fe2dd;
+      --gray-soft: #f5f7f7;
+      --text-dark: #333;
     }
 
-    *, *::before, *::after { box-sizing: border-box; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -34,7 +37,10 @@
     }
 
     /* HEADER */
-    .site-header { width: 100%; background: #ffffff; }
+    .site-header {
+      width: 100%;
+      background: #ffffff;
+    }
 
     .site-header .page-wrap {
       max-width: 1200px;
@@ -92,18 +98,51 @@
     }
 
     @media (max-width: 768px) {
-      .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
-      .site-nav { display: none; width: 100%; }
-      .site-nav.open { display: block; }
-      .site-nav ul { flex-direction: column; gap: 16px; padding: 10px 0 6px; text-align: center; }
-      .site-nav a { font-size: 16px; letter-spacing: 0.06em; white-space: nowrap; }
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .site-nav {
+        display: none;
+        width: 100%;
+      }
+
+      .site-nav.open {
+        display: block;
+      }
+
+      .site-nav ul {
+        flex-direction: column;
+        gap: 16px;
+        padding: 10px 0 6px;
+        text-align: center;
+      }
+
+      .site-nav a {
+        font-size: 16px;
+        letter-spacing: 0.06em;
+        white-space: nowrap;
+      }
     }
 
-    h1, h2, h3 { font-weight: 500; margin: 0; }
-    p { line-height: 1.6; }
+    h1, h2, h3 {
+      font-weight: 500;
+      margin: 0;
+    }
 
-    .container { max-width: 1200px; margin: auto; padding: 3rem 1.5rem; }
+    p {
+      line-height: 1.6;
+    }
 
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+    }
+
+    /* HERO */
     .hero {
       position: relative;
       background: url("hero-kitchen.jpg") center/cover no-repeat;
@@ -115,15 +154,45 @@
       color: white;
     }
 
-    .hero-overlay { background: rgba(0,0,0,0.45); padding: 3rem 2rem; width: 100%; }
-    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-    .hero p { font-size: 1.1rem; letter-spacing: 0.5px; }
+    .hero-overlay {
+      background: rgba(0,0,0,0.45);
+      padding: 3rem 2rem;
+      width: 100%;
+    }
 
-    .brand-block { text-align: center; padding: 3rem 1.5rem 2rem; }
-    .brand-block h2 { color: var(--teal-main); font-size: 2.2rem; margin-bottom: 0.5rem; }
-    .brand-block p { font-size: 1rem; color: #666; }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
 
-    .cta-wrapper { text-align: center; margin: 2rem 0 1.5rem; }
+    .hero p {
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* BRAND */
+    .brand-block {
+      text-align: center;
+      padding: 3rem 1.5rem 2rem;
+    }
+
+    .brand-block h2 {
+      color: var(--teal-main);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .brand-block p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    /* GENERAL CTA */
+    .cta-wrapper {
+      text-align: center;
+      margin: 2rem 0 1.5rem;
+    }
+
     .cta-button {
       background: var(--teal-main);
       color: white;
@@ -135,10 +204,19 @@
       text-decoration: none;
       display: inline-block;
     }
-    .cta-button:hover { background: var(--teal-dark); }
 
+    .cta-button:hover {
+      background: var(--teal-dark);
+    }
+
+    /* RUNNER */
     .runner {
-      background: linear-gradient(to right, var(--teal-dark), var(--teal-main), var(--teal-light));
+      background: linear-gradient(
+        to right,
+        var(--teal-dark),
+        var(--teal-main),
+        var(--teal-light)
+      );
       color: white;
       text-align: center;
       padding: 1rem;
@@ -146,6 +224,7 @@
       letter-spacing: 0.6px;
     }
 
+    /* PROPERTY SECTION */
     .section-title {
       text-align: center;
       color: var(--teal-main);
@@ -160,8 +239,15 @@
       overflow: hidden;
     }
 
-    .property-content { padding: 2rem; }
-    .property h3 { color: var(--teal-dark); font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .property-content {
+      padding: 2rem;
+    }
+
+    .property h3 {
+      color: var(--teal-dark);
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
 
     .agent-grid {
       display: grid;
@@ -187,6 +273,99 @@
       font-size: 0.9rem;
     }
 
+    /* AIRBNB LIVE CLASS */
+    .airbnb-class {
+      max-width: 850px;
+      margin: 2.5rem auto;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+
+    .airbnb-class h2 {
+      font-family: var(--font-heading);
+      color: var(--teal-dark);
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .airbnb-class .class-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .airbnb-class .class-details {
+      margin: 1.5rem 0;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .stripe-buy-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    /* HOST CHALLENGE */
+    .host-game-section {
+      text-align: center;
+      margin: 28px auto 12px;
+      padding: 0 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .host-game-section p {
+      font-size: 18px;
+      color: #555;
+      margin: 0 0 12px;
+    }
+
+    .host-game-button {
+      display: inline-block;
+      padding: 12px 28px;
+      background-color: #ffffff;
+      color: #2fa3a8;
+      border: 2px solid #2fa3a8;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .host-game-button:hover {
+      background-color: #2fa3a8;
+      color: #ffffff;
+    }
+
+    /* PREPARED HOST TOOLKIT */
+    .toolkit-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 6px 20px 24px;
+      margin: 0;
+      width: 100%;
+    }
+
+    .toolkit-button {
+      display: inline-block;
+      background: #0F2A3D;
+      color: #F4C15D;
+      padding: 15px 28px;
+      border: 2px solid #F4C15D;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: Georgia, serif;
+      font-size: 17px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .toolkit-button:hover {
+      opacity: 0.9;
+    }
+
+    /* FOOTER */
     .site-footer {
       width: 100%;
       background-color: #ffffff;
@@ -202,255 +381,359 @@
       flex-wrap: wrap;
     }
 
-/* AIRBNB LIVE CLASS */
-.airbnb-class {
-  max-width: 850px;
-  margin: 2.5rem auto;
-  padding: 2.5rem 1.5rem;
-  text-align: center;
-}
-
-.airbnb-class h2 {
-  font-family: var(--font-heading);
-  color: var(--teal-dark);
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
-}
-
-.airbnb-class .class-subtitle {
-  font-size: 1.1rem;
-  color: var(--text-dark);
-  margin-bottom: 1.5rem;
-}
-
-.airbnb-class .class-details {
-  margin: 1.5rem 0;
-  font-weight: 600;
-  color: var(--text-dark);
-}
-
-.stripe-buy-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 1.5rem;
-}
-    
-    .footer-links a { font-size: 1rem; color: #319fa2; text-decoration: none; }
+    .footer-links a {
+      font-size: 1rem;
+      color: #319fa2;
+      text-decoration: none;
+    }
   </style>
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="page-wrap">
-    <a href="index.html"><img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired"></a>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-    <nav class="site-nav" aria-label="Main navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="work-with-me.html">Work With Me</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="podcast.html">Podcast</a></li>
-        <li><a href="reflections.html">Reflections</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="page-wrap">
 
-<section class="hero">
-  <div class="hero-overlay">
-    <h1>The Right Rental for Your Lifestyle</h1>
-    <p>Experience the Ultimate in Practical Living</p>
-  </div>
-</section>
+      <a href="index.html">
+        <img
+          src="MKT-logo-3.png"
+          alt="Marsha Kerr Talley – Live Inspired"
+        >
+      </a>
 
-<section class="brand-block">
-  <h2>Marsha Kerr Talley Management</h2>
-  <p>Clear expectations. Consistent standards. Respectful leasing.</p>
-</section>
+      <button
+        class="nav-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work-with-me.html">Work With Me</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="podcast.html">Podcast</a></li>
+          <li><a href="reflections.html">Reflections</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <h1>The Right Rental for Your Lifestyle</h1>
+      <p>Experience the Ultimate in Practical Living</p>
+    </div>
+  </section>
+
+
+  <!-- BRAND -->
+  <section class="brand-block">
+    <h2>Marsha Kerr Talley Management</h2>
+    <p>Clear expectations. Consistent standards. Respectful leasing.</p>
+  </section>
 
 
   <!-- LIVE ONLINE CLASS BANNER -->
-<div style="
-  background: #056367;
-  color: white;
-  text-align: center;
-  padding: 12px 20px;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-">
-  LIVE ONLINE CLASS
-</div>
-<!-- END BANNER -->
-
-  
-
-<!-- AIRBNB LIVE CLASS -->
-<section class="airbnb-class">
-
-  <h2>Airbnb Hosting: What I Wish I Knew Before Becoming a Host</h2>
-
-  <p class="class-subtitle">
-    A live, practical class for new, current and aspiring Airbnb hosts.
-  </p>
-
-  <p>
-    Drawing from years of Airbnb hosting experience and earning
-    Superhost status multiple times, I will share practical lessons
-    about setting expectations, protecting your property, handling
-    difficult guests and reviews, and creating systems that can save
-    time and reduce stress.
-  </p>
-
-  <div class="class-details">
-    Wednesday, July 29, 2026<br>
-    12:00 PM Jamaica Time<br>
-    Live Online via Zoom<br><br>
-    $10 USD
-  </div>
-
-  <p><strong>Don't just be a good host. Be a prepared host.</strong></p>
-
-  <div class="stripe-buy-wrapper">
-
-    <script async
-      src="https://js.stripe.com/v3/buy-button.js">
-    </script>
-
-    <stripe-buy-button
-      buy-button-id="buy_btn_1TxVt9Eh8djIZFgfIroZp9iO"
-      publishable-key="pk_live_6LEoVdcEMgIMTx3M2sd3XW26008MFD18hQ">
-    </stripe-buy-button>
-
-  </div>
-
-</section>
-<!-- END AIRBNB LIVE CLASS -->
-
-
-<!-- HOST GAME LINK -->
-<div style="
-  text-align: center;
-  margin: 28px auto 10px;
-  font-family: Arial, sans-serif;
-">
-
-  <p style="
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 12px;
+  <div style="
+    background: #056367;
+    color: white;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   ">
-    Think like a host. What would you do?
-  </p>
+    LIVE ONLINE CLASS
+  </div>
+  <!-- END BANNER -->
 
-  <a href="/host-game"
-     style="
-       display: inline-block;
-       padding: 12px 28px;
-       background-color: #ffffff;
-       color: #2fa3a8;
-       border: 2px solid #2fa3a8;
-       border-radius: 30px;
-       font-size: 16px;
-       font-weight: 700;
-       text-decoration: none;
-     ">
-    PLAY THE HOST CHALLENGE →
-  </a>
 
-</div>
-<!-- END HOST GAME LINK -->
+  <!-- AIRBNB LIVE CLASS -->
+  <section class="airbnb-class">
 
-<a href="https://payhip.com/b/LNfn2"
-   target="_blank"
-   rel="noopener noreferrer"
-   style="
-      display:inline-block;
-      background:#0F2A3D;
-      color:#F4C15D;
-      padding:15px 28px;
-      border:2px solid #F4C15D;
-      border-radius:8px;
-      text-decoration:none;
-      font-family:Georgia, serif;
-      font-size:17px;
-      font-weight:700;
-   ">
-   Get The Prepared Host Toolkit
-</a>
+    <h2>
+      Airbnb Hosting: What I Wish I Knew Before Becoming a Host
+    </h2>
 
-  
+    <p class="class-subtitle">
+      A live, practical class for new, current and aspiring Airbnb hosts.
+    </p>
 
-<div class="runner">Clear expectations. Consistent standards. Respectful leasing.</div>
+    <p>
+      Drawing from years of Airbnb hosting experience and earning
+      Superhost status multiple times, I will share practical lessons
+      about setting expectations, protecting your property, handling
+      difficult guests and reviews, and creating systems that can save
+      time and reduce stress.
+    </p>
 
-<div class="cta-wrapper">
-  <a href="RENTAL-MANAGEMENT-APP-LINK" class="cta-button">RENTAL MANAGEMENT APP</a>
-</div>
-
-<section class="container">
-  <h2 class="section-title">Available & Managed Properties</h2>
-
-  <div class="property">
-    <img src="meadowbrook-main.jpeg" alt="7013 Meadowbrook Drive Fort Worth" style="width:100%; height:auto;">
-    <div class="property-content">
-      <h3>7013 Meadowbrook Drive — Fort Worth, TX</h3>
-      <p>Spacious single-family home featuring comfortable living areas, modern updates, and a generous yard. Ideal for professionals or families seeking practical, well-maintained living.</p>
-      <a href="https://rental.turbotenant.com/p/7013-meadowbrook-drive-fort-worth-tx/1768893" class="cta-button" target="_blank">View Photos & Full Details</a>
+    <div class="class-details">
+      Wednesday, July 29, 2026<br>
+      12:00 PM Jamaica Time<br>
+      Live Online via Zoom<br><br>
+      $10 USD
     </div>
+
+    <p>
+      <strong>
+        Don't just be a good host. Be a prepared host.
+      </strong>
+    </p>
+
+    <div class="stripe-buy-wrapper">
+
+      <script
+        async
+        src="https://js.stripe.com/v3/buy-button.js">
+      </script>
+
+      <stripe-buy-button
+        buy-button-id="buy_btn_1TxVt9Eh8djIZFgfIroZp9iO"
+        publishable-key="pk_live_6LEoVdcEMgIMTx3M2sd3XW26008MFD18hQ">
+      </stripe-buy-button>
+
+    </div>
+
+  </section>
+  <!-- END AIRBNB LIVE CLASS -->
+
+
+  <!-- HOST GAME -->
+  <section class="host-game-section">
+
+    <p>
+      Think like a host. What would you do?
+    </p>
+
+    <a
+      href="/host-game"
+      class="host-game-button"
+    >
+      PLAY THE HOST CHALLENGE →
+    </a>
+
+  </section>
+  <!-- END HOST GAME -->
+
+
+  <!-- PREPARED HOST TOOLKIT -->
+  <div class="toolkit-wrapper">
+
+    <a
+      href="https://payhip.com/b/LNfn2"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="toolkit-button"
+    >
+      Get The Prepared Host Toolkit
+    </a>
+
+  </div>
+  <!-- END PREPARED HOST TOOLKIT -->
+
+
+  <!-- RUNNER -->
+  <div class="runner">
+    Clear expectations. Consistent standards. Respectful leasing.
   </div>
 
-  <div class="property">
-    <img src="bairdfarm.webp.png" alt="1700 Baird Farm Arlington" style="width:100%; height:auto;">
-    <div class="property-content">
-      <h3>1700 Baird Farm — Arlington, TX</h3>
-      <p>Well-located condo offering convenient access to Arlington amenities, comfortable interior layout, and community living in a maintained residential setting.</p>
-      <a href="https://rental.turbotenant.com/p/1700-baird-farm-arlington-tx/1642177" class="cta-button" target="_blank">View Photos & Full Details</a>
-    </div>
+
+  <!-- RENTAL MANAGEMENT CTA -->
+  <div class="cta-wrapper">
+    <a
+      href="RENTAL-MANAGEMENT-APP-LINK"
+      class="cta-button"
+    >
+      RENTAL MANAGEMENT APP
+    </a>
   </div>
 
-  <div class="property">
-    <img src="covecay.webp.png" alt="2618 Cove Cay Drive Clearwater" style="width:100%; height:auto;">
-    <div class="property-content">
-      <h3>2618 Cove Cay Drive — Clearwater, FL</h3>
-      <p>Bright Florida condo in a resort-style community with water views, maintained grounds, and convenient access to beaches, golf, and local amenities.</p>
-      <a href="https://rental.turbotenant.com/p/2618-cove-cay-drive-clearwater-fl/1627432" class="cta-button" target="_blank">View Photos & Full Details</a>
+
+  <!-- PROPERTIES -->
+  <section class="container">
+
+    <h2 class="section-title">
+      Available & Managed Properties
+    </h2>
+
+
+    <!-- MEADOWBROOK -->
+    <div class="property">
+
+      <img
+        src="meadowbrook-main.jpeg"
+        alt="7013 Meadowbrook Drive Fort Worth"
+        style="width:100%; height:auto;"
+      >
+
+      <div class="property-content">
+
+        <h3>
+          Meadowbrook Drive — Fort Worth, TX
+        </h3>
+
+        <p>
+          Spacious single-family home featuring comfortable living areas,
+          modern updates, and a generous yard. Ideal for professionals or
+          families seeking practical, well-maintained living.
+        </p>
+
+        <a
+          href="https://rental.turbotenant.com/p/7013-meadowbrook-drive-fort-worth-tx/1768893"
+          class="cta-button"
+          target="_blank"
+        >
+          View Photos & Full Details
+        </a>
+
+      </div>
     </div>
-  </div>
-</section>
 
-<footer class="site-footer">
-  <p>Copyright © <span id="currentYear"></span> Marsha Kerr Talley — All Rights Reserved.</p>
-  <nav class="footer-links">
-    <a href="/privacy-policy">Privacy Policy</a>
-    <a href="/shipping-return-policy">Shipping & Return Policy</a>
-    <a href="/terms-and-conditions">Terms and Conditions</a>
-  </nav>
-</footer>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("currentYear").textContent = new Date().getFullYear();
+    <!-- BAIRD FARM -->
+    <div class="property">
 
-  const toggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.site-nav');
+      <img
+        src="bairdfarm.webp.png"
+        alt="1700 Baird Farm Arlington"
+        style="width:100%; height:auto;"
+      >
 
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', isOpen);
+      <div class="property-content">
+
+        <h3>
+          Baird Farm — Arlington, TX
+        </h3>
+
+        <p>
+          Well-located condo offering convenient access to Arlington
+          amenities, comfortable interior layout, and community living
+          in a maintained residential setting.
+        </p>
+
+        <a
+          href="https://rental.turbotenant.com/p/1700-baird-farm-arlington-tx/1642177"
+          class="cta-button"
+          target="_blank"
+        >
+          View Photos & Full Details
+        </a>
+
+      </div>
+    </div>
+
+
+    <!-- COVE CAY -->
+    <div class="property">
+
+      <img
+        src="covecay.webp.png"
+        alt="2618 Cove Cay Drive Clearwater"
+        style="width:100%; height:auto;"
+      >
+
+      <div class="property-content">
+
+        <h3>
+          Cove Cay Drive — Clearwater, FL
+        </h3>
+
+        <p>
+          Bright Florida condo in a resort-style community with water
+          views, maintained grounds, and convenient access to beaches,
+          golf, and local amenities.
+        </p>
+
+        <a
+          href="https://rental.turbotenant.com/p/2618-cove-cay-drive-clearwater-fl/1627432"
+          class="cta-button"
+          target="_blank"
+        >
+          View Photos & Full Details
+        </a>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <p>
+      Copyright ©
+      <span id="currentYear"></span>
+      Marsha Kerr Talley — All Rights Reserved.
+    </p>
+
+    <nav class="footer-links">
+
+      <a href="/privacy-policy">
+        Privacy Policy
+      </a>
+
+      <a href="/shipping-return-policy">
+        Shipping & Return Policy
+      </a>
+
+      <a href="/terms-and-conditions">
+        Terms and Conditions
+      </a>
+
+    </nav>
+
+  </footer>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+      const toggle = document.querySelector(".nav-toggle");
+      const nav = document.querySelector(".site-nav");
+
+      if (toggle && nav) {
+
+        toggle.addEventListener("click", () => {
+
+          const isOpen = nav.classList.toggle("open");
+
+          toggle.setAttribute(
+            "aria-expanded",
+            isOpen
+          );
+
+        });
+
+      }
+
+      const currentPage =
+        (location.pathname.split("/").pop() || "index.html")
+        .toLowerCase();
+
+      document.querySelectorAll(".site-nav a").forEach(link => {
+
+        if (
+          link.getAttribute("href").toLowerCase() === currentPage
+        ) {
+          link.classList.add("active");
+        }
+
+      });
+
     });
-  }
-
-  const currentPage = (location.pathname.split("/").pop() || "index.html").toLowerCase();
-  document.querySelectorAll(".site-nav a").forEach(link => {
-    if (link.getAttribute("href").toLowerCase() === currentPage) {
-      link.classList.add("active");
-    }
-  });
-});
-</script>
+  </script>
 
 </body>
 </html>
+```
