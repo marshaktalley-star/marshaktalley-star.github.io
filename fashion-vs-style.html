@@ -30,7 +30,8 @@
                   radial-gradient(900px 700px at 75% 60%, rgba(5,99,103,.14), transparent 55%),
                   var(--bg);
       color: var(--ink);
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
     a { color: var(--brand); text-decoration: none; }
@@ -602,7 +603,248 @@
 }
     
     
-  </style>
+
+
+    /* ===== Production fixes: page turn + responsive phone layout ===== */
+
+    /* Hidden until JavaScript starts a page-turn animation. */
+    .turner {
+      display: none;
+    }
+
+    /* Improve keyboard accessibility. */
+    .pill:focus-visible,
+    .navBtn:focus-visible,
+    .cta:focus-visible,
+    .tocItem:focus-visible,
+    a:focus-visible {
+      outline: 3px solid rgba(5, 99, 103, .45);
+      outline-offset: 3px;
+    }
+
+    /* Prevent iOS from resizing text unexpectedly. */
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    @media (max-width: 640px) {
+      :root {
+        --gutter: 8px;
+        --radius: 12px;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+      }
+
+      body {
+        overflow-y: auto;
+      }
+
+      .app {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: var(--gutter);
+        align-items: start;
+      }
+
+      .frame {
+        width: 100%;
+        height: calc(100vh - (var(--gutter) * 2));
+        height: calc(100dvh - (var(--gutter) * 2));
+        min-height: 540px;
+        max-height: none;
+      }
+
+      .sheet {
+        border-radius: var(--radius);
+      }
+
+      .topBar {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: stretch;
+        gap: 8px;
+        padding: 10px;
+      }
+
+      .brandLeft {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .brandTitle {
+        font-size: .84rem;
+        line-height: 1.25;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+      }
+
+      .tools {
+        width: 100%;
+        max-width: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 6px;
+      }
+
+      .pill,
+      .counter {
+        font-size: .76rem;
+        padding: 7px 9px;
+      }
+
+      .pill {
+        min-height: 36px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .content {
+        min-height: 0;
+        overscroll-behavior: contain;
+      }
+
+      .bottomBar {
+        padding: 9px 10px;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .navBtns {
+        gap: 7px;
+      }
+
+      .navBtn {
+        min-height: 40px;
+        padding: 9px 12px;
+        font-size: .82rem;
+      }
+
+      .bottomBar .counter {
+        margin-left: auto;
+      }
+
+      .spread {
+        padding: 16px 14px 24px;
+      }
+
+      .h1 {
+        font-size: clamp(1.75rem, 9vw, 2.4rem);
+      }
+
+      .h2 {
+        font-size: clamp(1.25rem, 7vw, 1.75rem);
+      }
+
+      .subline {
+        font-size: .98rem;
+        line-height: 1.5;
+      }
+
+      .body {
+        font-size: .98rem;
+        line-height: 1.68;
+      }
+
+      .quoteBig {
+        font-size: 1.04rem;
+        line-height: 1.55;
+      }
+
+      .ctaRow {
+        gap: 9px;
+      }
+
+      .cta {
+        width: 100%;
+        min-height: 44px;
+        padding: 11px 14px;
+        text-align: center;
+      }
+
+      .mediaCard {
+        max-height: none;
+      }
+
+      .mediaCard img {
+        height: auto;
+        object-fit: contain;
+      }
+
+      .embedWrap.portrait {
+        aspect-ratio: 9 / 16;
+        max-height: 70dvh;
+      }
+
+      .tocPanel {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        left: 8px;
+        width: auto;
+        max-height: calc(100vh - 16px);
+        max-height: calc(100dvh - 16px);
+        overflow: hidden;
+      }
+
+      .tocList {
+        max-height: calc(100vh - 100px);
+        max-height: calc(100dvh - 100px);
+      }
+
+      .coverLine {
+        font-size: clamp(1.5rem, 9vw, 2.25rem);
+      }
+
+      .smallMeta {
+        font-size: .8rem;
+        letter-spacing: .09em;
+      }
+    }
+
+    @media (max-width: 380px) {
+      :root {
+        --gutter: 5px;
+      }
+
+      .frame {
+        min-height: 520px;
+      }
+
+      .topBar,
+      .bottomBar {
+        padding: 8px;
+      }
+
+      .pill,
+      .counter {
+        font-size: .72rem;
+        padding: 6px 8px;
+      }
+
+      .navBtn {
+        padding: 8px 10px;
+      }
+
+      .spread {
+        padding: 14px 12px 20px;
+      }
+    }
+
+</style>
 </head>
 
 <body>
@@ -610,7 +852,7 @@
     <div class="frame">
       <div class="sheet" role="application" aria-label="Flippable magazine">
 
-        <div class="tocPanel" id="tocPanel" aria-label="Table of contents">
+        <div class="tocPanel" id="tocPanel" aria-label="Table of contents" aria-hidden="true">
           <div class="tocTitle">Jump to a page</div>
           <div class="tocList" id="tocList"></div>
         </div>
@@ -629,7 +871,7 @@
               </div>
               <div class="tools">
                 <div class="counter" id="counterTop">1 / 12</div>
-                <button class="pill" id="tocBtn" type="button" aria-label="Open table of contents">TOC</button>
+                <button class="pill" id="tocBtn" type="button" aria-label="Open table of contents" aria-expanded="false" aria-controls="tocPanel">TOC</button>
                 <a class="pill" href="index.html" aria-label="Back to Home">Home</a>
               </div>
             </div>
@@ -668,7 +910,7 @@
               </div>
               <div class="tools">
                 <div class="counter">2 / 12</div>
-                <button class="pill tocInline" type="button">TOC</button>
+                <button class="pill tocInline" type="button" aria-label="Open table of contents" aria-controls="tocPanel">TOC</button>
                 <a class="pill" href="inspired-by-marsha.html">Inspired by Marsha</a>
               </div>
             </div>
@@ -712,7 +954,7 @@
               </div>
               <div class="tools">
                 <div class="counter">3 / 12</div>
-                <button class="pill tocInline" type="button">TOC</button>
+                <button class="pill tocInline" type="button" aria-label="Open table of contents" aria-controls="tocPanel">TOC</button>
                 <a class="pill" href="https://www.pinterest.com/MarshaKerrTalley" target="_blank" rel="noopener noreferrer">Pinterest</a>
               </div>
             </div>
@@ -760,7 +1002,7 @@
               </div>
               <div class="tools">
                 <div class="counter">4 / 12</div>
-                <button class="pill tocInline" type="button">TOC</button>
+                <button class="pill tocInline" type="button" aria-label="Open table of contents" aria-controls="tocPanel">TOC</button>
                 <a class="pill" href="inspired-by-marsha.html">Style page</a>
               </div>
             </div>
@@ -774,7 +1016,8 @@
                   </p>
                   <p class="body">
                     While fashion and style are different concepts, they are not mutually exclusive. You can use fashion as a tool to express your unique style, but it's essential to do so in a way that is authentic to yourself. Next, find tips for incorporating fashion into your personal style. 
-                    <br>Video credit: @wisdomekaye8335</br>
+                    <br>Video credit: @wisdomekaye8335
+                  </p>
                 </div>
 
                 <div class="mediaCard">
@@ -812,7 +1055,7 @@
               </div>
               <div class="tools">
                 <div class="counter">5 / 12</div>
-                <button class="pill tocInline" type="button">TOC</button>
+                <button class="pill tocInline" type="button" aria-label="Open table of contents" aria-controls="tocPanel">TOC</button>
                 <a class="pill" href="inspired-by-marsha.html">Page 2</a>
               </div>
             </div>
@@ -864,7 +1107,7 @@
               </div>
               <div class="tools">
                 <div class="counter">6 / 12</div>
-                <button class="pill tocInline" type="button">TOC</button>
+                <button class="pill tocInline" type="button" aria-label="Open table of contents" aria-controls="tocPanel">TOC</button>
                 <a class="pill" href="fashion-vs-style.html">Top</a>
               </div>
             </div>
@@ -911,7 +1154,7 @@
               </div>
               <div class="tools">
                 <div class="counter">7 / 12</div>
-                <button class="pill tocInline" type="button">TOC</button>
+                <button class="pill tocInline" type="button" aria-label="Open table of contents" aria-controls="tocPanel">TOC</button>
                 <a class="pill" href="inspired-by-marsha.html">Style page</a>
               </div>
             </div>
@@ -965,7 +1208,7 @@
               </div>
               <div class="tools">
                 <div class="counter">8 / 12</div>
-                <button class="pill tocInline" type="button">TOC</button>
+                <button class="pill tocInline" type="button" aria-label="Open table of contents" aria-controls="tocPanel">TOC</button>
                 <a class="pill" href="https://www.amazon.co.uk/shop/marshakerrtalley" target="_blank" rel="noopener noreferrer">Amazon UK</a>
               </div>
             </div>
@@ -1031,7 +1274,7 @@
               </div>
               <div class="tools">
                 <div class="counter">9 / 12</div>
-                <button class="pill tocInline" type="button">TOC</button>
+                <button class="pill tocInline" type="button" aria-label="Open table of contents" aria-controls="tocPanel">TOC</button>
                 <a class="pill" href="https://amzn.to/47TsPpc" target="_blank" rel="noopener noreferrer">Personal Shopper</a>
               </div>
             </div>
@@ -1132,7 +1375,7 @@
               </div>
               <div class="tools">
                 <div class="counter">10 / 12</div>
-                <button class="pill tocInline" type="button">TOC</button>
+                <button class="pill tocInline" type="button" aria-label="Open table of contents" aria-controls="tocPanel">TOC</button>
                 <a class="pill" href="https://www.shopltk.com/explore/MarshaKerrTalley" target="_blank" rel="noopener noreferrer">LTK</a>
               </div>
             </div>
@@ -1193,7 +1436,7 @@
               </div>
               <div class="tools">
                 <div class="counter">11 / 12</div>
-                <button class="pill tocInline" type="button">TOC</button>
+                <button class="pill tocInline" type="button" aria-label="Open table of contents" aria-controls="tocPanel">TOC</button>
                 <a class="pill" href="inspired-by-marsha.html">Inspired by Marsha</a>
               </div>
             </div>
@@ -1243,7 +1486,7 @@
               </div>
               <div class="tools">
                 <div class="counter">12 / 12</div>
-                <button class="pill tocInline" type="button">TOC</button>
+                <button class="pill tocInline" type="button" aria-label="Open table of contents" aria-controls="tocPanel">TOC</button>
                 <a class="pill" href="inspired-by-marsha.html">Go to Inspired by Marsha</a>
               </div>
             </div>
@@ -1292,6 +1535,7 @@
       const totalPages = 12;
       let index = 0;
       let isAnimating = false;
+      const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       const pages = Array.from({ length: totalPages }, (_, i) => document.getElementById(`page${i}`));
       const prevBtn = document.getElementById("prevBtn");
@@ -1344,58 +1588,67 @@
         clone.querySelectorAll("script").forEach(s => s.remove());
         el.appendChild(clone);
       }
+      function animateTurn(direction, targetIndex) {
+        if (isAnimating || targetIndex < 0 || targetIndex >= totalPages) return;
 
-     function animateTurn(direction, targetIndex) {
-  if (isAnimating || targetIndex < 0 || targetIndex >= totalPages) return;
-  isAnimating = true;
+        if (reduceMotion) {
+          setActivePage(targetIndex);
+          closeTOC();
+          return;
+        }
 
-  const current = pages[index];
-  const next = pages[targetIndex];
+        isAnimating = true;
+        const current = pages[index];
+        const nextPage = pages[targetIndex];
+        sheet.classList.add("animating");
 
-  // Lock real pages
-  sheet.classList.add("animating");
+        turner.className = "turner";
+        turner.style.display = "block";
+        turner.style.opacity = "1";
+        clonePageTo(turnerFront, current);
+        clonePageTo(turnerBack, nextPage);
 
-  // Reset + show turner
-  turner.className = "turner";
-  turner.style.display = "1";
+        void turner.offsetWidth;
 
-  // Clone pages
-  clonePageTo(turnerFront, current);
-  clonePageTo(turnerBack, next);
+        let cleaned = false;
+        const cleanup = () => {
+          if (cleaned) return;
+          cleaned = true;
+          setActivePage(targetIndex);
+          turner.className = "turner";
+          turnerFront.innerHTML = "";
+          turnerBack.innerHTML = "";
+          turner.style.display = "none";
+          turner.style.opacity = "0";
+          sheet.classList.remove("animating");
+          isAnimating = false;
+          closeTOC();
+        };
 
-  // 🔑 ONE-FRAME DELAY (THIS FIXES THE WHITE FLASH)
-  requestAnimationFrame(() => {
-    turner.classList.add(direction === "next" ? "flipNext" : "flipPrev");
-  });
+        const fallback = window.setTimeout(cleanup, 900);
+        turner.addEventListener("animationend", function onEnd() {
+          window.clearTimeout(fallback);
+          cleanup();
+        }, { once: true });
 
-  // Cleanup after animation
-  turner.addEventListener("animationend", function onEnd() {
-    turner.removeEventListener("animationend", onEnd);
-
-    setActivePage(targetIndex);
-
-    turner.className = "turner";
-    turnerFront.innerHTML = "";
-    turnerBack.innerHTML = "";
-    turner.style.display = "0";
-
-    sheet.classList.remove("animating");
-    isAnimating = false;
-  });
-}
-
-
-  
+        requestAnimationFrame(() => {
+          turner.classList.add(direction === "next" ? "flipNext" : "flipPrev");
+        });
+      }
 
       function next() { animateTurn("next", index + 1); }
       function prev() { animateTurn("prev", index - 1); }
 
       function closeTOC() {
         tocPanel.classList.remove("open");
+        tocPanel.setAttribute("aria-hidden", "true");
+        if (tocBtn) tocBtn.setAttribute("aria-expanded", "false");
       }
 
       function toggleTOC() {
-        tocPanel.classList.toggle("open");
+        const isOpen = tocPanel.classList.toggle("open");
+        tocPanel.setAttribute("aria-hidden", isOpen ? "false" : "true");
+        if (tocBtn) tocBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
       }
 
       function buildTOC() {
@@ -1426,9 +1679,18 @@
       });
 
       document.addEventListener("keydown", (e) => {
+        const tag = document.activeElement && document.activeElement.tagName;
+        const interactive = tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || tag === "IFRAME";
+
+        if (e.key === "Escape") {
+          closeTOC();
+          return;
+        }
+
+        if (interactive) return;
+
         if (e.key === "ArrowRight") next();
         if (e.key === "ArrowLeft") prev();
-        if (e.key === "Escape") closeTOC();
       });
 
       if (prevBtn) prevBtn.addEventListener("click", prev);
@@ -1474,9 +1736,12 @@
 
       function onTouchEnd() { tracking = false; }
 
-      document.querySelector(".sheet").addEventListener("touchstart", onTouchStart, { passive: true });
-      document.querySelector(".sheet").addEventListener("touchmove", onTouchMove, { passive: true });
-      document.querySelector(".sheet").addEventListener("touchend", onTouchEnd, { passive: true });
+      if (sheet) {
+        sheet.addEventListener("touchstart", onTouchStart, { passive: true });
+        sheet.addEventListener("touchmove", onTouchMove, { passive: true });
+        sheet.addEventListener("touchend", onTouchEnd, { passive: true });
+        sheet.addEventListener("touchcancel", onTouchEnd, { passive: true });
+      }
 
       buildTOC();
       updateCounters();
@@ -1484,134 +1749,145 @@
     })();
   </script>
   <!-- SITE FOOTER -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p class="copyright">
+  <footer class="site-footer">
+    <div class="footer-inner">
 
-      <!-- SOCIAL LINKS (add inside your footer, above or below .footer-links) -->
-<div class="social-links" style="
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:16px;
-  margin: 1rem 0 1.2rem;
-">
+      <div class="social-links" aria-label="Social media links">
+        <a href="https://www.linkedin.com/in/marshakerrtalley"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Visit Marsha Kerr Talley on LinkedIn">
+          LinkedIn
+        </a>
 
-  <a href="https://www.linkedin.com/in/marshakerrtalley" 
-     target="_blank" 
-     rel="noopener"
-     aria-label="Visit Marsha Kerr Talley on LinkedIn"
-     style="text-decoration:none;color:#0A66C2;font-weight:600;">
-    LinkedIn
-  </a>
+        <span aria-hidden="true">|</span>
 
-  <span aria-hidden="true" style="color:#ccc;">|</span>
+        <a href="https://www.youtube.com/c/marshakerrtalley"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Visit Marsha Kerr Talley on YouTube">
+          YouTube
+        </a>
 
-  <a href="https://www.youtube.com/c/marshakerrtalley"
-     target="_blank"
-     rel="noopener"
-     aria-label="Visit Marsha Kerr Talley on YouTube"
-     style="text-decoration:none;color:#FF0000;font-weight:600;">
-    YouTube
-  </a>
+        <span aria-hidden="true">|</span>
 
-  <span aria-hidden="true" style="color:#ccc;">|</span>
+        <a href="https://www.pinterest.com/marshakerrtalley"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Visit Marsha Kerr Talley on Pinterest">
+          Pinterest
+        </a>
+      </div>
 
-  <a href="https://www.pinterest.com/marshakerrtalley"
-     target="_blank"
-     rel="noopener"
-     aria-label="Visit Marsha Kerr Talley on Pinterest"
-     style="text-decoration:none;color:#E60023;font-weight:600;">
-    Pinterest
-  </a>
+      <p class="copyright">
+        Copyright © <span id="currentYear"></span>
+        Marsha Kerr Talley — All Rights Reserved.
+      </p>
 
-</div>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="privacy-policy">Privacy Policy</a>
+        <a href="shipping-return-policy">Shipping &amp; Return Policy</a>
+        <a href="terms-and-conditions">Terms and Conditions</a>
+      </nav>
+    </div>
+  </footer>
 
-      Copyright © <span id="currentYear"></span>
-      Marsha Kerr Talley — All Rights Reserved.
-    </p>
+  <!-- FOOTER STYLES -->
+  <style>
+    .site-footer {
+      width: 100%;
+      background-color: #ffffff;
+      border-top: 1px solid #eeeeee;
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+      box-sizing: border-box;
+    }
 
-    <nav class="footer-links" aria-label="Footer links">
-      <a href="/privacy-policy">Privacy Policy</a>
-      <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
-      <a href="/terms-and-conditions">Terms and Conditions</a>
-    </nav>
-  </div>
-</footer>
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-<!-- FOOTER STYLES -->
-<style>
-.site-footer {
-  width: 100%;
-  background-color: #ffffff;
-  border-top: 1px solid #eeeeee;
-  padding: 2.5rem 1.5rem 2rem;
-  text-align: center;
-  box-sizing: border-box;
-}
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 0 0 1rem;
+    }
 
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    .social-links a {
+      font-weight: 600;
+      color: #056367;
+      text-decoration: none;
+    }
 
-.site-footer p {
-  margin: 0 0 1.4rem;
-  font-size: 0.95rem;
-  color: #666666;
-}
+    .social-links a:hover,
+    .social-links a:focus-visible {
+      text-decoration: underline;
+    }
 
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: nowrap;
-}
+    .social-links span {
+      color: #cccccc;
+    }
 
-.footer-links a {
-  font-size: 1rem;
-  color: #319fa2;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  white-space: nowrap;
-}
+    .site-footer p {
+      margin: 0 0 1.4rem;
+      font-size: 0.95rem;
+      color: #666666;
+    }
 
-.footer-links a:hover {
-  color: #056367;
-  text-decoration: underline;
-}
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
 
-/* Mobile safety fixes */
-@media (max-width: 640px) {
-  .site-footer {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
+    .footer-links a {
+      font-size: 1rem;
+      color: #319fa2;
+      text-decoration: none;
+    }
 
-  .site-footer p {
-    margin-bottom: 0.75rem;
-  }
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
+      color: #056367;
+      text-decoration: underline;
+    }
 
-  .footer-links {
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
+    @media (max-width: 640px) {
+      .site-footer {
+        padding: 2rem 1.25rem 1.75rem;
+      }
 
-  .footer-links a {
-    font-size: 0.8rem;
-    white-space: normal;
-  }
-}
-</style>
+      .site-footer p {
+        margin-bottom: 0.85rem;
+      }
 
-<!-- AUTO-UPDATE COPYRIGHT YEAR -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const yearSpan = document.getElementById("currentYear");
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-  }
-});
-</script>
+      .social-links {
+        gap: 9px;
+      }
+
+      .footer-links {
+        gap: 0.75rem;
+      }
+
+      .footer-links a {
+        font-size: 0.82rem;
+      }
+    }
+  </style>
+
+  <!-- AUTO-UPDATE COPYRIGHT YEAR -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const yearSpan = document.getElementById("currentYear");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
 </body>
 </html>
