@@ -9,7 +9,8 @@
 
   <meta
     name="description"
-    content="Explore books and practical guides by Marsha Kerr Talley on healing, education, advocacy, decision-making, leadership and reflection."
+    content="Explore books and practical guides by Marsha Kerr Talley on healing, personal growth, 
+    and leadership development"
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +31,6 @@
 
       --gold: #c9a86a;
       --cream: #f8f5ef;
-      --white: #ffffff;
 
       --ink: #173234;
       --body: #526263;
@@ -52,6 +52,10 @@
       --page-width: 1200px;
     }
 
+
+    /* =====================================================
+       RESET
+    ===================================================== */
 
     *,
     *::before,
@@ -100,6 +104,7 @@
         calc(100% - 40px),
         var(--page-width)
       );
+
       margin: 0 auto;
     }
 
@@ -162,6 +167,7 @@
     .site-nav a {
       color: #343434;
       text-decoration: none;
+
       transition: color 0.2s ease;
     }
 
@@ -243,6 +249,7 @@
 
     .btn-outline {
       background: transparent;
+
       color: var(--teal-dark);
 
       border-color:
@@ -325,7 +332,7 @@
 
 
     /* =====================================================
-       HERO BANNER
+       BANNER
     ===================================================== */
 
     .books-banner {
@@ -429,16 +436,16 @@
       display: grid;
 
       grid-template-columns:
-        minmax(220px, 285px)
+        minmax(240px, 315px)
         minmax(0, 1fr);
 
       gap:
-        clamp(32px, 5vw, 58px);
+        clamp(34px, 5vw, 62px);
 
       align-items: center;
 
       padding:
-        44px 0;
+        46px 0;
 
       border-top:
         1px solid var(--line);
@@ -452,7 +459,7 @@
     .book-entry.reverse {
       grid-template-columns:
         minmax(0, 1fr)
-        minmax(220px, 285px);
+        minmax(240px, 315px);
     }
 
     .book-entry.reverse .book-cover {
@@ -474,23 +481,36 @@
       align-items: center;
     }
 
-    .book-cover img {
-      width: 100%;
+    /* STANDARD / PHYSICAL BOOK COVERS */
 
-      max-width: 255px;
-      max-height: 340px;
+    .book-cover img {
+      width: auto;
+
+      max-width: 285px;
+      max-height: 385px;
 
       object-fit: contain;
 
       border-radius: 10px;
 
       box-shadow:
-        0 15px 34px rgba(4,59,61,0.12);
+        0 16px 38px rgba(4,59,61,0.12);
     }
 
+
+    /* EBOOK MOCKUPS */
+
     .book-cover img.mockup-cover {
-      max-width: 235px;
-      max-height: 325px;
+      max-width: 240px;
+      max-height: 330px;
+    }
+
+
+    /* NEWER EBOOK COVERS THAT ARE NOT MOCKUPS */
+
+    .book-cover img.ebook-cover {
+      max-width: 255px;
+      max-height: 350px;
     }
 
 
@@ -634,7 +654,7 @@
 
 
     /* =====================================================
-       READER REFLECTIONS
+       REVIEWS
     ===================================================== */
 
     .reader-section {
@@ -843,8 +863,13 @@
       }
 
       .book-cover img {
-        max-width: 240px;
-        max-height: 320px;
+        max-width: 265px;
+        max-height: 360px;
+      }
+
+      .book-cover img.ebook-cover {
+        max-width: 235px;
+        max-height: 325px;
       }
 
       .book-cover img.mockup-cover {
@@ -934,13 +959,18 @@
       }
 
       .book-cover img {
+        max-width: 245px;
+        max-height: 330px;
+      }
+
+      .book-cover img.ebook-cover {
         max-width: 220px;
-        max-height: 300px;
+        max-height: 305px;
       }
 
       .book-cover img.mockup-cover {
         max-width: 205px;
-        max-height: 285px;
+        max-height: 290px;
       }
 
       .button-row {
@@ -1087,9 +1117,7 @@
         </h1>
 
         <p class="lead">
-          Books and practical guides that invite reflection,
-          challenge assumptions and offer something useful
-          to carry forward.
+          Books and practical guides with you in mind.
         </p>
 
       </div>
@@ -1150,6 +1178,7 @@
           <div class="book-cover">
 
             <img
+              class="ebook-cover"
               src="What Nobody Bookcover.png"
               alt="What Nobody Wants to Admit About Special Education"
             >
@@ -1230,6 +1259,7 @@
           <div class="book-cover">
 
             <img
+              class="ebook-cover"
               src="getting-your-child-identified-book cover.jpg"
               alt="Getting Your Child Identified Without Losing Your Mind"
             >
@@ -2117,11 +2147,16 @@
 
 
 
+  <!-- =====================================================
+       JAVASCRIPT
+  ===================================================== -->
+
   <script>
 
     document.addEventListener(
       "DOMContentLoaded",
       function () {
+
 
         const year =
           document.getElementById(
@@ -2129,8 +2164,10 @@
           );
 
         if (year) {
+
           year.textContent =
             new Date().getFullYear();
+
         }
 
 
@@ -2167,6 +2204,7 @@
           );
 
         }
+
 
       }
     );
