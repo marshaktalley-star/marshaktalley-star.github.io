@@ -1,40 +1,1644 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Live Inspired Reflections | Marsha Kerr Talley</title>
 
-  <!-- Google Fonts -->
+  <meta
+    name="description"
+    content="Candid Conversations with Marsha Kerr Talley — thoughtful reflections on challenge, change, identity, healing, leadership and what it means to keep moving without rushing yourself."
+  >
+
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- GLOBAL STYLES -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
+
+    /* =====================================================
+       BRAND
+    ===================================================== */
+
     :root {
-      --brand-primary: #056367;
-      --brand-secondary: #319fa2;
-      --brand-accent: #2fe2dd;
-      --text-body: #5a5a5a;
-      --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      --font-heading: "Playfair Display", serif;
+      --teal-deep: #043b3d;
+      --teal-dark: #056367;
+      --teal: #319fa2;
+      --teal-pale: #eefafa;
+
+      --gold: #c9a86a;
+      --cream: #f8f5ef;
+
+      --ink: #173234;
+      --body: #526263;
+      --muted: #718080;
+      --line: #dce9e8;
+
+      --heading:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      --body-font:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      --page-width: 1200px;
     }
 
-    *, *::before, *::after {
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
-      font-family: var(--font-body);
-      color: #333;
-      line-height: 1.65;
       background: #ffffff;
+      color: var(--body);
+      font-family: var(--body-font);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
     }
 
     a {
-      color: var(--brand-primary);
+      color: inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin-top: 0;
+      font-family: var(--heading);
+      color: var(--ink);
+      line-height: 1.08;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .page-wrap {
+      width: min(
+        calc(100% - 40px),
+        var(--page-width)
+      );
+
+      margin: 0 auto;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .site-header {
+      width: 100%;
+      background: #ffffff;
+    }
+
+    .header-inner {
+      width: min(
+        calc(100% - 40px),
+        var(--page-width)
+      );
+
+      margin: 0 auto;
+      padding: 20px 0 13px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      position: relative;
+    }
+
+    .site-logo {
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .site-logo img {
+      width: 220px;
+      height: auto;
+      margin: 0 auto 13px;
+    }
+
+    .site-nav ul {
+      list-style: none;
+
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 27px;
+
+      padding: 0;
+      margin: 0;
+
+      font-size: 14px;
+      font-weight: 500;
+
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .site-nav a {
+      color: #343434;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .site-nav a:hover,
+    .site-nav a.active {
+      color: var(--teal-dark);
+      font-weight: 600;
+    }
+
+    .nav-toggle {
+      display: none;
+
+      position: absolute;
+      top: 20px;
+      right: 0;
+
+      width: 44px;
+      height: 44px;
+
+      border: 0;
+      background: transparent;
+
+      color: var(--teal-dark);
+
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+
+    /* =====================================================
+       HERO IMAGE
+    ===================================================== */
+
+    .podcast-hero {
+      padding: 24px 0 0;
+    }
+
+    .podcast-hero-inner {
+      width: min(
+        calc(100% - 40px),
+        1040px
+      );
+
+      margin: 0 auto;
+
+      position: relative;
+
+      min-height: 430px;
+
+      border-radius: 18px;
+      overflow: hidden;
+
+      background-image:
+        linear-gradient(
+          rgba(0,0,0,0.30),
+          rgba(0,0,0,0.30)
+        ),
+        url("4-EGL_3367.jpg");
+
+      background-size: cover;
+      background-position: center 12%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      box-shadow:
+        0 18px 42px rgba(5,99,103,0.10);
+    }
+
+    .podcast-hero-copy {
+      position: relative;
+      z-index: 2;
+
+      max-width: 820px;
+
+      padding: 40px 28px;
+
+      color: #ffffff;
+    }
+
+    .podcast-hero-copy blockquote {
+      margin: 0;
+
+      color: #ffffff;
+
+      font-family: var(--heading);
+
+      font-size:
+        clamp(2rem, 4.5vw, 3.8rem);
+
+      font-weight: 600;
+
+      line-height: 1.35;
+
+      letter-spacing: -0.03em;
+    }
+
+    .podcast-hero-copy cite {
+      display: block;
+
+      margin-top: 20px;
+
+      color: rgba(255,255,255,0.86);
+
+      font-family: var(--body-font);
+
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 700;
+
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+
+    /* =====================================================
+       PODCAST INTRO
+    ===================================================== */
+
+    .podcast-intro {
+      padding:
+        75px 20px
+        45px;
+
+      text-align: center;
+    }
+
+    .podcast-intro-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin-bottom: 13px;
+
+      color: var(--gold);
+
+      font-size: 13px;
+      font-weight: 700;
+
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .podcast-intro h1 {
+      margin-bottom: 16px;
+
+      color: var(--teal-dark);
+
+      font-size:
+        clamp(3.4rem, 7vw, 6rem);
+
+      font-weight: 600;
+
+      letter-spacing: -0.05em;
+    }
+
+    .podcast-subtitle {
+      margin-bottom: 25px;
+
+      color: var(--teal);
+
+      font-family: var(--heading);
+
+      font-size:
+        clamp(1.45rem, 3vw, 2rem);
+
+      font-weight: 600;
+    }
+
+    .podcast-intro .lead {
+      max-width: 730px;
+
+      margin: 0 auto;
+
+      color: #455b5c;
+
+      font-size:
+        clamp(1.05rem, 2vw, 1.22rem);
+
+      line-height: 1.75;
+    }
+
+
+    /* =====================================================
+       ACTIONS
+    ===================================================== */
+
+    .podcast-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 30px;
+    }
+
+    .btn {
+      min-height: 52px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 14px 27px;
+
+      border-radius: 999px;
+      border: 1px solid transparent;
+
+      text-decoration: none;
+
+      font-size: 16px;
+      font-weight: 700;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--teal-dark);
+      color: #ffffff;
+
+      box-shadow:
+        0 11px 25px rgba(5,99,103,0.18);
+    }
+
+    .btn-primary:hover {
+      background: var(--teal-deep);
+    }
+
+    .btn-outline {
+      background: transparent;
+
+      color: var(--teal-dark);
+
+      border-color:
+        rgba(5,99,103,0.25);
+    }
+
+    .btn-outline:hover {
+      background: var(--teal-pale);
+    }
+
+
+    /* =====================================================
+       EPISODES
+    ===================================================== */
+
+    .episodes-section {
+      padding:
+        70px 0
+        95px;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 13px;
+
+      color: var(--teal-dark);
+
+      font-size:
+        clamp(2.7rem, 5vw, 4.5rem);
+
+      font-weight: 600;
+
+      letter-spacing: -0.04em;
+    }
+
+    .section-heading p {
+      max-width: 620px;
+
+      color: var(--muted);
+
+      font-size: 1.02rem;
+    }
+
+    .episode {
+      padding:
+        34px 0;
+
+      border-top:
+        1px solid var(--line);
+    }
+
+    .episode:last-child {
+      border-bottom:
+        1px solid var(--line);
+    }
+
+    .episode-theme {
+      margin-bottom: 10px;
+
+      color: var(--gold);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .episode h3 {
+      margin-bottom: 13px;
+
+      color: var(--teal-dark);
+
+      font-size:
+        clamp(1.6rem, 3vw, 2.4rem);
+
+      font-weight: 600;
+
+      letter-spacing: -0.025em;
+    }
+
+    .episode p {
+      max-width: 780px;
+
+      margin-bottom: 18px;
+
+      color: #556667;
+
+      font-size: 1rem;
+    }
+
+    .episode audio {
+      width: 100%;
+      max-width: 820px;
+    }
+
+    .episodes-fallback {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+
+    /* =====================================================
+       AFTER THE CONVERSATION
+    ===================================================== */
+
+    .reflection-section {
+      padding:
+        90px 20px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #fbfdfc 0%,
+          #f6fbfb 100%
+        );
+    }
+
+    .reflection-inner {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .reflection-heading {
+      margin-bottom: 34px;
+    }
+
+    .reflection-heading h2 {
+      margin-bottom: 13px;
+
+      color: var(--teal-dark);
+
+      font-size:
+        clamp(2.6rem, 5vw, 4.2rem);
+
+      font-weight: 600;
+    }
+
+    .reflection-heading p {
+      max-width: 650px;
+
+      color: var(--muted);
+
+      font-size: 1.02rem;
+    }
+
+    .reflection-option {
+      padding:
+        18px 0;
+
+      border-bottom:
+        1px solid var(--line);
+
+      color: var(--teal-deep);
+
+      font-family: var(--heading);
+
+      font-size:
+        clamp(1.2rem, 2.5vw, 1.55rem);
+
+      font-weight: 600;
+
+      cursor: pointer;
+
+      transition: color 0.2s ease;
+    }
+
+    .reflection-option:first-of-type {
+      border-top:
+        1px solid var(--line);
+    }
+
+    .reflection-option:hover {
+      color: var(--teal);
+    }
+
+    .reflection-response {
+      display: none;
+
+      margin-top: 10px;
+
+      color: var(--muted);
+
+      font-family: var(--body-font);
+
+      font-size: 0.95rem;
+      font-style: italic;
+      font-weight: 400;
+
+      line-height: 1.6;
+    }
+
+    .reflection-option.open .reflection-response {
+      display: block;
+    }
+
+
+    /* =====================================================
+       CLOSING CTA
+    ===================================================== */
+
+    .closing-cta {
+      padding:
+        85px 20px;
+
+      background: var(--cream);
+
+      text-align: center;
+    }
+
+    .closing-cta-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .closing-cta h2 {
+      margin-bottom: 16px;
+
+      color: var(--teal-dark);
+
+      font-size:
+        clamp(2.5rem, 5vw, 4rem);
+
+      font-weight: 600;
+    }
+
+    .closing-cta p {
+      margin-bottom: 28px;
+
+      color: var(--muted);
+
+      font-size: 1.04rem;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .site-footer {
+      padding:
+        38px 20px
+        30px;
+
+      background: #ffffff;
+
+      border-top:
+        1px solid var(--line);
+
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
+      gap:
+        10px 16px;
+
+      margin-bottom: 22px;
+    }
+
+    .social-links a {
+      color: var(--teal-dark);
+
+      text-decoration: none;
+
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+
+    .social-links span {
+      color: var(--gold);
+    }
+
+    .copyright {
+      margin:
+        0 0
+        18px;
+
+      color: #777f80;
+
+      font-size: 13px;
+    }
+
+    .legal-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap:
+        10px 22px;
+    }
+
+    .legal-links a {
+      color: var(--teal);
+
+      text-decoration: none;
+
+      font-size: 13px;
+    }
+
+    .legal-links a:hover {
+      color: var(--teal-dark);
+      text-decoration: underline;
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 700px) {
+
+      .page-wrap,
+      .header-inner {
+        width: min(
+          calc(100% - 30px),
+          var(--page-width)
+        );
+      }
+
+      .header-inner {
+        align-items: flex-start;
+      }
+
+      .site-logo img {
+        width: 190px;
+        margin-bottom: 0;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .site-nav {
+        display: none;
+
+        width: 100%;
+
+        padding-top: 20px;
+      }
+
+      .site-nav.open {
+        display: block;
+      }
+
+      .site-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 14px;
+
+        padding:
+          8px 0 5px;
+      }
+
+      .podcast-hero-inner {
+        width: min(
+          calc(100% - 30px),
+          1040px
+        );
+
+        min-height: 310px;
+
+        background-position:
+          center 16%;
+      }
+
+      .podcast-hero-copy blockquote {
+        font-size:
+          clamp(1.8rem, 8vw, 2.8rem);
+      }
+
+      .podcast-intro {
+        padding-top: 58px;
+      }
+
+      .podcast-intro h1 {
+        font-size:
+          clamp(3.1rem, 15vw, 4.6rem);
+      }
+
+      .podcast-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .podcast-actions .btn {
+        width: 100%;
+      }
+
+    }
+
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       HEADER
+  ===================================================== -->
+
+  <header class="site-header">
+
+    <div class="header-inner">
+
+      <a
+        href="index.html"
+        class="site-logo"
+        aria-label="Marsha Kerr Talley home"
+      >
+        <img
+          src="MKT-logo-3.png"
+          alt="Marsha Kerr Talley"
+        >
+      </a>
+
+
+      <button
+        class="nav-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+
+      <nav
+        class="site-nav"
+        aria-label="Main navigation"
+      >
+
+        <ul>
+
+          <li>
+            <a href="index.html">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="about.html">
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="work-with-me.html">
+              Work With Me
+            </a>
+          </li>
+
+          <li>
+            <a href="books.html">
+              Books
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="podcast.html"
+              class="active"
+            >
+              Podcast
+            </a>
+          </li>
+
+          <li>
+            <a href="reflections.html">
+              Reflections
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO IMAGE
+    ===================================================== -->
+
+    <section class="podcast-hero">
+
+      <div class="podcast-hero-inner">
+
+        <div class="podcast-hero-copy">
+
+          <blockquote>
+            “Let’s make space for conversations that matter.”
+          </blockquote>
+
+          <cite>
+            — Marsha Kerr Talley
+          </cite>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PODCAST INTRO
+    ===================================================== -->
+
+    <section class="podcast-intro">
+
+      <div class="podcast-intro-inner">
+
+        <p class="eyebrow">
+          Live Inspired Reflections
+        </p>
+
+        <h1>
+          Candid Conversations with Marsha.
+        </h1>
+
+        <p class="podcast-subtitle">
+          Thoughtful conversation. Grounded reflection.
+        </p>
+
+        <p class="lead">
+          In these conversations, I reflect on how people make sense
+          of challenge, navigate change, and stay anchored in themselves
+          when life feels demanding. This is space to think,
+          not a place for quick fixes.
+        </p>
+
+
+        <div class="podcast-actions">
+
+          <a
+            class="btn btn-primary"
+            href="#episodes"
+          >
+            Choose a Conversation
+          </a>
+
+          <a
+            class="btn btn-outline"
+            href="https://open.spotify.com/show/0xWznKWex06z0oxqUk3dVs"
+            target="_blank"
+            rel="noopener"
+          >
+            Listen on Spotify
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         EPISODES
+    ===================================================== -->
+
+    <section
+      class="episodes-section"
+      id="episodes"
+    >
+
+      <div class="page-wrap">
+
+        <div class="section-heading">
+
+          <p class="eyebrow">
+            Listen
+          </p>
+
+          <h2>
+            Choose a conversation.
+          </h2>
+
+          <p>
+            Explore recent episodes and reflections.
+          </p>
+
+        </div>
+
+
+        <div id="podcast-episodes">
+
+          <p class="episodes-fallback">
+            Loading conversations...
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         AFTER THE CONVERSATION
+    ===================================================== -->
+
+    <section class="reflection-section">
+
+      <div class="reflection-inner">
+
+        <div class="reflection-heading">
+
+          <p class="eyebrow">
+            After the Conversation
+          </p>
+
+          <h2>
+            Take something with you.
+          </h2>
+
+          <p>
+            A few thoughts to sit with after listening.
+            Click one and notice what comes up.
+          </p>
+
+        </div>
+
+
+        <div
+          class="reflection-option"
+          tabindex="0"
+          role="button"
+          aria-expanded="false"
+        >
+
+          I am allowed to change.
+
+          <span class="reflection-response">
+            Notice where this feels true — or difficult —
+            without needing to act.
+          </span>
+
+        </div>
+
+
+        <div
+          class="reflection-option"
+          tabindex="0"
+          role="button"
+          aria-expanded="false"
+        >
+
+          I don’t need to rush healing.
+
+          <span class="reflection-response">
+            What might soften if you trusted
+            the pace you’re already moving at?
+          </span>
+
+        </div>
+
+
+        <div
+          class="reflection-option"
+          tabindex="0"
+          role="button"
+          aria-expanded="false"
+        >
+
+          My needs are valid.
+
+          <span class="reflection-response">
+            Where have you learned to minimise this truth?
+          </span>
+
+        </div>
+
+
+        <div
+          class="reflection-option"
+          tabindex="0"
+          role="button"
+          aria-expanded="false"
+        >
+
+          I am more capable than I realised.
+
+          <span class="reflection-response">
+            Let this be information, not a demand.
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CLOSING CTA
+    ===================================================== -->
+
+    <section class="closing-cta">
+
+      <div class="closing-cta-inner">
+
+        <p class="eyebrow">
+          Keep the Conversation Going
+        </p>
+
+        <h2>
+          The thinking continues.
+        </h2>
+
+        <p>
+          For written reflections, current commentary,
+          and ideas still taking shape, visit Reflections
+          or follow along on Substack.
+        </p>
+
+
+        <div class="podcast-actions">
+
+          <a
+            class="btn btn-primary"
+            href="reflections.html"
+          >
+            Read Reflections
+          </a>
+
+          <a
+            class="btn btn-outline"
+            href="https://marshakerrtalley.substack.com"
+            target="_blank"
+            rel="noopener"
+          >
+            Subscribe on Substack
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ===================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="page-wrap footer-inner">
+
+      <div class="social-links">
+
+        <a
+          href="https://www.linkedin.com/in/marshakerrtalley"
+          target="_blank"
+          rel="noopener"
+        >
+          LinkedIn
+        </a>
+
+        <span aria-hidden="true">
+          ·
+        </span>
+
+        <a
+          href="https://substack.com/@marshakerrtalley"
+          target="_blank"
+          rel="noopener"
+        >
+          Substack
+        </a>
+
+        <span aria-hidden="true">
+          ·
+        </span>
+
+        <a
+          href="https://marshakerrtalley.com/silhouettes-cafe.html"
+          target="_blank"
+          rel="noopener"
+        >
+          Silhouette's Café
+        </a>
+
+      </div>
+
+
+      <p class="copyright">
+
+        Copyright ©
+        <span id="currentYear"></span>
+        Marsha Kerr Talley — All Rights Reserved.
+
+      </p>
+
+
+      <nav
+        class="legal-links"
+        aria-label="Legal"
+      >
+
+        <a href="/privacy-policy">
+          Privacy Policy
+        </a>
+
+        <a href="/shipping-return-policy">
+          Shipping & Return Policy
+        </a>
+
+        <a href="/terms-and-conditions">
+          Terms & Conditions
+        </a>
+
+      </nav>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ===================================================== -->
+
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+
+
+        /* COPYRIGHT YEAR */
+
+        const year =
+          document.getElementById(
+            "currentYear"
+          );
+
+        if (year) {
+          year.textContent =
+            new Date().getFullYear();
+        }
+
+
+
+        /* MOBILE MENU */
+
+        const toggle =
+          document.querySelector(
+            ".nav-toggle"
+          );
+
+        const nav =
+          document.querySelector(
+            ".site-nav"
+          );
+
+        if (toggle && nav) {
+
+          toggle.addEventListener(
+            "click",
+            function () {
+
+              const open =
+                nav.classList.toggle(
+                  "open"
+                );
+
+              toggle.setAttribute(
+                "aria-expanded",
+                open
+              );
+
+              toggle.textContent =
+                open ? "×" : "☰";
+
+            }
+          );
+
+        }
+
+
+
+        /* REFLECTION INTERACTIONS */
+
+        const reflectionOptions =
+          document.querySelectorAll(
+            ".reflection-option"
+          );
+
+        reflectionOptions.forEach(
+          function (option) {
+
+            function toggleReflection() {
+
+              const open =
+                option.classList.toggle(
+                  "open"
+                );
+
+              option.setAttribute(
+                "aria-expanded",
+                open ? "true" : "false"
+              );
+
+            }
+
+            option.addEventListener(
+              "click",
+              toggleReflection
+            );
+
+            option.addEventListener(
+              "keydown",
+              function (event) {
+
+                if (
+                  event.key === "Enter" ||
+                  event.key === " "
+                ) {
+
+                  event.preventDefault();
+
+                  toggleReflection();
+
+                }
+
+              }
+            );
+
+          }
+        );
+
+
+
+        /* =================================================
+           PODCAST RSS FEED
+        ================================================= */
+
+        const RSS_FEED_URL =
+          "https://anchor.fm/s/10639d260/podcast/rss";
+
+        const FEED =
+          "https://api.rss2json.com/v1/api.json?rss_url=" +
+          encodeURIComponent(
+            RSS_FEED_URL
+          );
+
+        const episodeContainer =
+          document.getElementById(
+            "podcast-episodes"
+          );
+
+
+        fetch(FEED)
+
+          .then(
+            function (response) {
+
+              if (!response.ok) {
+                throw new Error(
+                  "Podcast feed could not be loaded."
+                );
+              }
+
+              return response.json();
+
+            }
+          )
+
+          .then(
+            function (data) {
+
+              if (
+                !data ||
+                !Array.isArray(data.items) ||
+                data.items.length === 0
+              ) {
+
+                episodeContainer.innerHTML =
+                  `
+                  <p class="episodes-fallback">
+                    Episodes are not available right now.
+                    Please check back soon.
+                  </p>
+                  `;
+
+                return;
+
+              }
+
+
+              episodeContainer.innerHTML = "";
+
+
+              data.items
+                .slice(0, 9)
+                .forEach(
+                  function (item) {
+
+
+                    const rawDescription =
+                      (
+                        item.description ||
+                        ""
+                      ).toString();
+
+
+                    const cleanDescription =
+                      rawDescription
+                        .replace(
+                          /(<([^>]+)>)/gi,
+                          ""
+                        )
+                        .trim();
+
+
+                    const text =
+                      cleanDescription
+                        .toLowerCase();
+
+
+                    let theme =
+                      "Reflection";
+
+
+                    if (
+                      text.includes("belief") ||
+                      text.includes("identity")
+                    ) {
+
+                      theme =
+                        "Belief & Identity";
+
+                    }
+
+
+                    if (
+                      text.includes("burnout") ||
+                      text.includes("stress")
+                    ) {
+
+                      theme =
+                        "Burnout & Boundaries";
+
+                    }
+
+
+                    if (
+                      text.includes("grief") ||
+                      text.includes("loss")
+                    ) {
+
+                      theme =
+                        "Grief & Meaning";
+
+                    }
+
+
+                    const audioSrc =
+                      item.enclosure &&
+                      (
+                        item.enclosure.link ||
+                        item.enclosure.url ||
+                        item.enclosure.href
+                      )
+                        ?
+                        (
+                          item.enclosure.link ||
+                          item.enclosure.url ||
+                          item.enclosure.href
+                        )
+                        :
+                        "";
+
+
+                    const description =
+                      cleanDescription.length > 220
+                        ?
+                        cleanDescription.slice(
+                          0,
+                          220
+                        ) + "…"
+                        :
+                        cleanDescription;
+
+
+                    const episode =
+                      document.createElement(
+                        "article"
+                      );
+
+
+                    episode.className =
+                      "episode";
+
+
+                    episode.innerHTML =
+                      `
+                      <p class="episode-theme">
+                        ${theme}
+                      </p>
+
+                      <h3>
+                        ${item.title || ""}
+                      </h3>
+
+                      <p>
+                        ${description}
+                      </p>
+
+                      ${
+                        audioSrc
+                          ?
+                          `
+                          <audio controls preload="none">
+                            <source
+                              src="${audioSrc}"
+                              type="audio/mpeg"
+                            >
+                            Your browser does not support
+                            the audio element.
+                          </audio>
+                          `
+                          :
+                          `
+                          <p class="episodes-fallback">
+                            Audio preview is not available
+                            for this episode.
+                          </p>
+                          `
+                      }
+                      `;
+
+
+                    episodeContainer.appendChild(
+                      episode
+                    );
+
+                  }
+                );
+
+            }
+          )
+
+          .catch(
+            function () {
+
+              episodeContainer.innerHTML =
+                `
+                <p class="episodes-fallback">
+                  Episodes are not available right now.
+                  Please check back soon.
+                </p>
+                `;
+
+            }
+          );
+
+
+      }
+    );
+
+  </script>
+
+
+</body>
+
+</html>      color: var(--brand-primary);
       text-decoration: none;
     }
 
