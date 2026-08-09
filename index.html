@@ -5,14 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Marsha Kerr Talley | Consultant, Educator, Facilitator & Author</title>
+  <title>Marsha Kerr Talley | Turning Pain Into Possibility™</title>
 
   <meta
     name="description"
-    content="Marsha Kerr Talley works with leaders and organisations to look beneath visible problems, examine the conditions shaping people and performance, and turn insight into practical change."
+    content="Marsha Kerr Talley works with leaders and organisations to look beneath visible problems, examine the conditions affecting people and performance, and turn insight into practical change."
   >
 
-  <!-- Google Fonts -->
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -23,52 +23,49 @@
 
   <style>
 
-    /* ==================================================
+    /* =====================================================
        BRAND
-    ================================================== */
+    ===================================================== */
 
     :root {
+
       --teal-deep: #043b3d;
       --teal-dark: #056367;
       --teal: #319fa2;
-      --teal-soft: #e8f6f6;
+      --teal-mid: #5aa3a6;
+      --teal-light: #2fe2dd;
+      --teal-pale: #eefafa;
 
       --gold: #c9a86a;
       --gold-soft: #eadbc1;
 
       --cream: #f8f5ef;
-      --paper: #ffffff;
+      --white: #ffffff;
 
       --ink: #173234;
-      --text: #4e5f60;
-      --muted: #6f7f80;
-      --line: #dfe8e7;
+      --body: #526263;
+      --muted: #718080;
+      --line: #dce9e8;
 
-      --shadow:
-        0 24px 60px rgba(8, 63, 66, 0.10);
-
-      --shadow-soft:
-        0 14px 34px rgba(8, 63, 66, 0.08);
-
-      --font-heading:
+      --heading:
         "Playfair Display",
         Georgia,
         serif;
 
-      --font-body:
+      --body-font:
         "Inter",
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
         sans-serif;
 
-      --page-width: 1180px;
+      --page-width: 1200px;
     }
 
 
-    /* ==================================================
+    /* =====================================================
        RESET
-    ================================================== */
+    ===================================================== */
 
     *,
     *::before,
@@ -82,9 +79,9 @@
 
     body {
       margin: 0;
-      background: var(--paper);
-      color: var(--text);
-      font-family: var(--font-body);
+      background: var(--white);
+      color: var(--body);
+      font-family: var(--body-font);
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
@@ -98,17 +95,12 @@
       color: inherit;
     }
 
-    button,
-    input {
-      font: inherit;
-    }
-
     h1,
     h2,
     h3 {
       margin-top: 0;
+      font-family: var(--heading);
       color: var(--ink);
-      font-family: var(--font-heading);
       line-height: 1.08;
     }
 
@@ -118,7 +110,7 @@
 
     .page-wrap {
       width: min(
-        calc(100% - 42px),
+        calc(100% - 40px),
         var(--page-width)
       );
 
@@ -126,26 +118,24 @@
     }
 
 
-    /* ==================================================
+    /* =====================================================
        HEADER
-    ================================================== */
+    ===================================================== */
 
     .site-header {
       width: 100%;
-      background: rgba(255,255,255,0.97);
-      border-bottom: 1px solid rgba(223,232,231,0.85);
-      position: relative;
-      z-index: 50;
+      background: #ffffff;
     }
 
     .header-inner {
       width: min(
-        calc(100% - 42px),
+        calc(100% - 40px),
         var(--page-width)
       );
 
       margin: 0 auto;
-      padding: 18px 0 15px;
+
+      padding: 20px 0 13px;
 
       display: flex;
       flex-direction: column;
@@ -154,36 +144,41 @@
       position: relative;
     }
 
-    .logo {
+    .site-logo {
       display: inline-block;
       text-decoration: none;
     }
 
-    .logo img {
-      width: 215px;
+    .site-logo img {
+      width: 220px;
       height: auto;
-      margin: 0 auto 12px;
+      margin: 0 auto 13px;
     }
 
+
+    /* NAV */
+
     .site-nav ul {
+      list-style: none;
+
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
 
-      gap: 24px;
+      gap: 27px;
 
-      list-style: none;
       padding: 0;
       margin: 0;
 
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.09em;
+      font-size: 13px;
+      font-weight: 500;
+
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
     .site-nav a {
-      color: #354647;
+      color: #343434;
       text-decoration: none;
       transition: color 0.2s ease;
     }
@@ -191,51 +186,54 @@
     .site-nav a:hover,
     .site-nav a.active {
       color: var(--teal-dark);
+      font-weight: 600;
     }
+
+
+    /* MOBILE MENU */
 
     .nav-toggle {
       display: none;
 
       position: absolute;
+      top: 20px;
       right: 0;
-      top: 23px;
 
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
 
       border: 0;
       background: transparent;
 
       color: var(--teal-dark);
 
+      font-size: 28px;
       cursor: pointer;
-      font-size: 27px;
     }
 
 
-    /* ==================================================
+    /* =====================================================
        BUTTONS
-    ================================================== */
+    ===================================================== */
 
     .button-row {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .button-row.center {
       justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
+      gap: 12px;
     }
 
     .btn {
+
       min-height: 52px;
 
       display: inline-flex;
       align-items: center;
       justify-content: center;
 
-      padding: 13px 26px;
+      padding: 13px 28px;
 
       border-radius: 999px;
       border: 1px solid transparent;
@@ -244,7 +242,6 @@
 
       font-size: 14px;
       font-weight: 700;
-      letter-spacing: 0.01em;
 
       transition:
         transform 0.2s ease,
@@ -261,26 +258,35 @@
       color: #ffffff;
 
       box-shadow:
-        0 12px 28px rgba(5,99,103,0.18);
+        0 11px 26px rgba(5,99,103,0.20);
     }
 
     .btn-primary:hover {
       background: var(--teal-deep);
 
       box-shadow:
-        0 17px 34px rgba(5,99,103,0.23);
+        0 15px 32px rgba(5,99,103,0.25);
+    }
+
+    .btn-soft {
+      background: var(--teal-mid);
+      color: #ffffff;
+
+      box-shadow:
+        0 10px 25px rgba(90,163,166,0.18);
     }
 
     .btn-outline {
-      background: #ffffff;
-      color: var(--teal-dark);
+      background: transparent;
 
       border-color:
-        rgba(5,99,103,0.24);
+        rgba(5,99,103,0.28);
+
+      color: var(--teal-dark);
     }
 
     .btn-outline:hover {
-      background: var(--teal-soft);
+      background: var(--teal-pale);
     }
 
     .btn-light {
@@ -288,1533 +294,31 @@
       color: var(--teal-deep);
 
       box-shadow:
-        0 12px 26px rgba(0,0,0,0.12);
+        0 12px 28px rgba(0,0,0,0.13);
     }
 
 
-    /* ==================================================
-       SMALL LABEL
-    ================================================== */
+    /* =====================================================
+       BANNER IMAGE
+    ===================================================== */
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-
-      margin-bottom: 18px;
-
-      color: var(--teal-dark);
-
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
+    .banner-section {
+      padding: 24px 0 0;
     }
 
-    .eyebrow::before {
-      content: "";
+    .banner-image {
 
-      width: 30px;
-      height: 1px;
-
-      background: var(--gold);
-    }
-
-
-    /* ==================================================
-       HERO
-    ================================================== */
-
-    .hero {
-      overflow: hidden;
-      position: relative;
-
-      padding:
-        clamp(60px, 7vw, 100px)
-        0
-        clamp(70px, 8vw, 110px);
-
-      background:
-        radial-gradient(
-          circle at 94% 10%,
-          rgba(201,168,106,0.12),
-          transparent 28%
-        ),
-        radial-gradient(
-          circle at 6% 16%,
-          rgba(49,159,162,0.08),
-          transparent 25%
-        ),
-        linear-gradient(
-          180deg,
-          #ffffff 0%,
-          #fbfdfc 100%
-        );
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns:
-        minmax(0, 1fr)
-        minmax(340px, 0.92fr);
-
-      gap: clamp(44px, 6vw, 78px);
-      align-items: center;
-    }
-
-    .hero-copy {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-name {
-      margin-bottom: 14px;
-
-      color: var(--teal);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .hero h1 {
-      max-width: 750px;
-
-      margin-bottom: 26px;
-
-      font-size:
-        clamp(3.4rem, 6.7vw, 6.4rem);
-
-      font-weight: 600;
-      letter-spacing: -0.05em;
-    }
-
-    .hero h1 .accent {
-      color: var(--teal-dark);
-    }
-
-    .hero-lead {
-      max-width: 650px;
-
-      margin-bottom: 18px;
-
-      color: #354d4e;
-
-      font-size:
-        clamp(1.08rem, 1.55vw, 1.28rem);
-
-      line-height: 1.7;
-    }
-
-    .hero-support {
-      max-width: 620px;
-
-      margin-bottom: 32px;
-
-      color: var(--muted);
-
-      font-size: 1rem;
-    }
-
-    .professional-line {
-      margin: 0 0 32px;
-
-      color: var(--teal-dark);
-
-      font-size: 13px;
-      font-weight: 700;
-
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-
-    /* HERO IMAGE */
-
-    .hero-media {
-      position: relative;
-    }
-
-    .hero-image-frame {
-      position: relative;
-
-      padding: 10px;
-
-      background: #ffffff;
-
-      border:
-        1px solid rgba(5,99,103,0.10);
-
-      border-radius: 28px;
-
-      box-shadow:
-        0 30px 70px rgba(8,63,66,0.15);
-    }
-
-    .hero-image-frame img {
       width: 100%;
-      height: auto;
 
-      border-radius: 20px;
-    }
-
-    .hero-image-frame::before {
-      content: "";
-
-      position: absolute;
-
-      left: -28px;
-      bottom: -28px;
-
-      width: 125px;
-      height: 125px;
-
-      border-left:
-        1px solid rgba(201,168,106,0.55);
-
-      border-bottom:
-        1px solid rgba(201,168,106,0.55);
-
-      border-radius:
-        0 0 0 28px;
-
-      z-index: -1;
-    }
-
-    .image-note {
-      position: absolute;
-
-      right: -14px;
-      bottom: -24px;
-
-      max-width: 220px;
-
-      padding: 16px 19px;
-
-      background: var(--teal-deep);
-      color: #ffffff;
-
-      border-radius: 16px;
+      border-radius: 17px;
 
       box-shadow:
-        0 18px 40px rgba(8,63,66,0.22);
-
-      font-size: 13px;
-      line-height: 1.45;
-    }
-
-    .image-note strong {
-      display: block;
-
-      margin-bottom: 3px;
-
-      font-family: var(--font-heading);
-      font-size: 18px;
-      font-weight: 600;
+        0 20px 48px rgba(5,99,103,0.09);
     }
 
 
-    /* ==================================================
-       SIGNATURE LINE
-    ================================================== */
-
-    .signature-strip {
-      padding: 26px 0;
-
-      background: var(--teal-deep);
-      color: #ffffff;
-
-      text-align: center;
-    }
-
-    .signature-strip p {
-      margin: 0;
-
-      font-family: var(--font-heading);
-
-      font-size:
-        clamp(1.2rem, 2.3vw, 1.65rem);
-
-      letter-spacing: -0.01em;
-    }
-
-    .signature-strip span {
-      color: #b9e2e3;
-    }
-
-
-    /* ==================================================
-       POINT OF VIEW CARDS
-    ================================================== */
-
-    .perspectives {
-      padding:
-        clamp(80px, 9vw, 125px)
-        0;
-
-      background: #ffffff;
-    }
-
-    .perspective-heading {
-      max-width: 720px;
-
-      margin: 0 auto 55px;
-
-      text-align: center;
-    }
-
-    .perspective-heading h2 {
-      margin-bottom: 14px;
-
-      font-size:
-        clamp(2.5rem, 4.5vw, 4.2rem);
-
-      font-weight: 600;
-      letter-spacing: -0.035em;
-    }
-
-    .perspective-heading p {
-      margin: 0 auto;
-
-      max-width: 590px;
-
-      color: var(--muted);
-      font-size: 1.03rem;
-    }
-
-    .perspective-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-      gap: 26px;
-    }
-
-    .perspective-card {
-      position: relative;
-
-      min-height: 100%;
-
-      padding:
-        clamp(34px, 4vw, 52px);
-
-      background:
-        linear-gradient(
-          145deg,
-          #ffffff 0%,
-          #fbfdfc 100%
-        );
-
-      border:
-        1px solid var(--line);
-
-      border-radius: 24px;
-
-      box-shadow: var(--shadow-soft);
-
-      transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        border-color 0.25s ease;
-    }
-
-    .perspective-card:hover {
-      transform: translateY(-6px);
-
-      box-shadow: var(--shadow);
-
-      border-color:
-        rgba(5,99,103,0.18);
-    }
-
-    .perspective-card::before {
-      content: "";
-
-      display: block;
-
-      width: 44px;
-      height: 3px;
-
-      margin-bottom: 30px;
-
-      border-radius: 99px;
-
-      background: var(--gold);
-    }
-
-    .perspective-card h2 {
-      margin-bottom: 23px;
-
-      color: var(--teal-deep);
-
-      font-size:
-        clamp(2rem, 3.5vw, 3.35rem);
-
-      font-weight: 600;
-      letter-spacing: -0.03em;
-    }
-
-    .perspective-card p {
-      margin-bottom: 17px;
-
-      color: #4a5d5e;
-      font-size: 1rem;
-    }
-
-    .perspective-card p:last-child {
-      margin-bottom: 0;
-    }
-
-    .perspective-card .strong-line {
-      color: var(--teal-dark);
-      font-weight: 700;
-    }
-
-    .perspective-card .questions {
-      margin: 26px 0;
-
-      padding: 22px 0;
-
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-
-      color: var(--ink);
-
-      font-family: var(--font-heading);
-
-      font-size:
-        clamp(1.13rem, 1.8vw, 1.35rem);
-
-      line-height: 1.55;
-    }
-
-
-    /* ==================================================
-       SELECTED WORK PATHWAY
-    ================================================== */
-
-    .selected-work {
-      padding:
-        clamp(70px, 8vw, 105px)
-        0;
-
-      background: var(--cream);
-    }
-
-    .work-panel {
-      max-width: 940px;
-
-      margin: 0 auto;
-
-      padding:
-        clamp(38px, 5vw, 62px);
-
-      background: #ffffff;
-
-      border:
-        1px solid rgba(201,168,106,0.34);
-
-      border-radius: 26px;
-
-      box-shadow: var(--shadow-soft);
-
-      text-align: center;
-    }
-
-    .work-panel h2 {
-      margin-bottom: 17px;
-
-      font-size:
-        clamp(2.4rem, 4vw, 3.8rem);
-
-      font-weight: 600;
-      letter-spacing: -0.035em;
-    }
-
-    .work-panel p {
-      max-width: 660px;
-
-      margin:
-        0 auto 30px;
-
-      color: var(--muted);
-
-      font-size: 1.04rem;
-    }
-
-
-    /* ==================================================
-       EXPERIENCE / FEEDBACK PATHWAY
-    ================================================== */
-
-    .experience {
-      padding:
-        clamp(90px, 10vw, 135px)
-        0;
-
-      background: #ffffff;
-    }
-
-    .experience-heading {
-      max-width: 700px;
-
-      margin-bottom: 52px;
-    }
-
-    .experience-heading h2 {
-      margin-bottom: 17px;
-
-      font-size:
-        clamp(2.7rem, 4.7vw, 4.4rem);
-
-      font-weight: 600;
-      letter-spacing: -0.04em;
-    }
-
-    .experience-heading p {
-      max-width: 570px;
-
-      color: var(--muted);
-      font-size: 1.03rem;
-    }
-
-    .experience-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 18px;
-
-      margin-bottom: 38px;
-    }
-
-    .experience-item {
-      padding: 30px 26px;
-
-      background: #fbfcfc;
-
-      border:
-        1px solid var(--line);
-
-      border-radius: 18px;
-    }
-
-    .experience-number {
-      display: block;
-
-      margin-bottom: 20px;
-
-      color: var(--gold);
-
-      font-family: var(--font-heading);
-      font-size: 17px;
-    }
-
-    .experience-item h3 {
-      margin-bottom: 9px;
-
-      color: var(--teal-deep);
-
-      font-family: var(--font-body);
-
-      font-size: 1rem;
-      font-weight: 700;
-
-      line-height: 1.5;
-    }
-
-    .experience-item p {
-      margin: 0;
-
-      color: var(--muted);
-
-      font-size: 0.91rem;
-      line-height: 1.65;
-    }
-
-
-    /* ==================================================
-       FINAL CTA
-    ================================================== */
-
-    .final-cta {
-      position: relative;
-      overflow: hidden;
-
-      padding:
-        clamp(85px, 10vw, 135px)
-        0;
-
-      background:
-        radial-gradient(
-          circle at 90% 10%,
-          rgba(49,159,162,0.25),
-          transparent 30%
-        ),
-        var(--teal-deep);
-
-      color: #ffffff;
-    }
-
-    .final-cta::after {
-      content: "";
-
-      position: absolute;
-
-      right: -150px;
-      bottom: -210px;
-
-      width: 470px;
-      height: 470px;
-
-      border:
-        1px solid rgba(201,168,106,0.26);
-
-      border-radius: 50%;
-    }
-
-    .cta-inner {
-      max-width: 820px;
-
-      margin: 0 auto;
-
-      position: relative;
-      z-index: 2;
-
-      text-align: center;
-    }
-
-    .final-cta .eyebrow {
-      color: #a8d8da;
-    }
-
-    .final-cta h2 {
-      margin-bottom: 23px;
-
-      color: #ffffff;
-
-      font-size:
-        clamp(3rem, 5vw, 5rem);
-
-      font-weight: 600;
-      letter-spacing: -0.04em;
-    }
-
-    .pressure-line {
-      margin-bottom: 20px;
-
-      color: #ffffff;
-
-      font-family: var(--font-heading);
-
-      font-size:
-        clamp(1.3rem, 2.4vw, 1.75rem);
-
-      line-height: 1.5;
-    }
-
-    .cta-copy {
-      max-width: 680px;
-
-      margin:
-        0 auto 34px;
-
-      color: rgba(255,255,255,0.76);
-
-      font-size: 1.02rem;
-    }
-
-
-    /* ==================================================
-       FOOTER
-    ================================================== */
-
-    .site-footer {
-      padding: 46px 0 34px;
-
-      background: #ffffff;
-
-      border-top:
-        1px solid var(--line);
-
-      text-align: center;
-    }
-
-    .footer-name {
-      margin-bottom: 7px;
-
-      color: var(--teal-deep);
-
-      font-family: var(--font-heading);
-
-      font-size: 1.4rem;
-      font-weight: 600;
-    }
-
-    .footer-tagline {
-      margin-bottom: 25px;
-
-      color: var(--muted);
-
-      font-size: 13px;
-    }
-
-    .footer-nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-
-      gap: 12px 25px;
-
-      margin-bottom: 25px;
-    }
-
-    .footer-nav a {
-      color: var(--teal-dark);
-
-      text-decoration: none;
-
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .footer-nav a:hover {
-      text-decoration: underline;
-    }
-
-    .copyright {
-      margin: 0;
-
-      color: #7b8585;
-
-      font-size: 12px;
-    }
-
-
-    /* ==================================================
-       TABLET
-    ================================================== */
-
-    @media (max-width: 900px) {
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-copy {
-        max-width: 760px;
-      }
-
-      .hero-media {
-        max-width: 720px;
-      }
-
-      .perspective-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .experience-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .image-note {
-        right: 18px;
-      }
-
-    }
-
-
-    /* ==================================================
-       MOBILE
-    ================================================== */
-
-    @media (max-width: 720px) {
-
-      .page-wrap,
-      .header-inner {
-        width: min(
-          calc(100% - 30px),
-          var(--page-width)
-        );
-      }
-
-      .header-inner {
-        align-items: flex-start;
-      }
-
-      .logo img {
-        width: 185px;
-        margin-bottom: 0;
-      }
-
-      .nav-toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .site-nav {
-        display: none;
-
-        width: 100%;
-
-        padding-top: 20px;
-      }
-
-      .site-nav.open {
-        display: block;
-      }
-
-      .site-nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-
-        gap: 13px;
-
-        padding:
-          8px 0 5px;
-      }
-
-      .site-nav a {
-        font-size: 13px;
-      }
-
-      .hero {
-        padding-top: 58px;
-      }
-
-      .hero h1 {
-        font-size:
-          clamp(3rem, 15vw, 4.5rem);
-      }
-
-      .button-row {
-        align-items: stretch;
-      }
-
-      .button-row .btn {
-        width: 100%;
-      }
-
-      .hero-image-frame::before {
-        display: none;
-      }
-
-      .image-note {
-        position: static;
-
-        max-width: none;
-
-        margin:
-          -3px 12px 0;
-
-        border-radius:
-          0 0 16px 16px;
-      }
-
-      .perspective-card {
-        padding: 34px 26px;
-      }
-
-      .work-panel {
-        padding: 38px 25px;
-      }
-
-    }
-
-
-    /* ==================================================
-       REDUCED MOTION
-    ================================================== */
-
-    @media (prefers-reduced-motion: reduce) {
-
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition: none !important;
-      }
-
-    }
-
-  </style>
-</head>
-
-
-<body>
-
-
-  <!-- ==================================================
-       HEADER
-  ================================================== -->
-
-  <header class="site-header">
-
-    <div class="header-inner">
-
-      <a
-        href="index.html"
-        class="logo"
-        aria-label="Marsha Kerr Talley home"
-      >
-
-        <img
-          src="MKT-logo-3.png"
-          alt="Marsha Kerr Talley"
-        >
-
-      </a>
-
-
-      <button
-        class="nav-toggle"
-        aria-label="Open menu"
-        aria-expanded="false"
-      >
-        ☰
-      </button>
-
-
-      <nav
-        class="site-nav"
-        aria-label="Main navigation"
-      >
-
-        <ul>
-
-          <li>
-            <a href="index.html" class="active">
-              Home
-            </a>
-          </li>
-
-          <li>
-            <a href="about.html">
-              About
-            </a>
-          </li>
-
-          <li>
-            <a href="work-with-me.html">
-              Work With Me
-            </a>
-          </li>
-
-          <li>
-            <a href="books.html">
-              Books
-            </a>
-          </li>
-
-          <li>
-            <a href="podcast.html">
-              Podcast
-            </a>
-          </li>
-
-          <li>
-            <a href="reflections.html">
-              Reflections
-            </a>
-          </li>
-
-        </ul>
-
-      </nav>
-
-    </div>
-
-  </header>
-
-
-
-  <main>
-
-
-    <!-- ==================================================
-         HERO
-    ================================================== -->
-
-    <section class="hero">
-
-      <div class="page-wrap hero-grid">
-
-
-        <div class="hero-copy">
-
-          <p class="hero-name">
-            Marsha Kerr Talley
-          </p>
-
-
-          <h1>
-            People are
-            <span class="accent">not the problem.</span>
-          </h1>
-
-
-          <p class="hero-lead">
-            When morale falls and good people begin to disengage,
-            the temptation is to focus on the individual.
-          </p>
-
-
-          <p class="hero-lead">
-            <strong>I look at what is happening around them.</strong>
-          </p>
-
-
-          <p class="hero-support">
-            Instead of zeroing in on the person alone, I work with
-            leaders and organisations to examine the conditions
-            affecting how people learn, lead, work and perform —
-            turning insight into practical change.
-          </p>
-
-
-          <p class="professional-line">
-            Consultant · Educator · Facilitator · Author
-          </p>
-
-
-          <div class="button-row">
-
-            <a
-              class="btn btn-primary"
-              href="https://calendly.com/marsha-k-talley/15min"
-              target="_blank"
-              rel="noopener"
-            >
-              Discuss an Engagement
-            </a>
-
-
-            <a
-              class="btn btn-outline"
-              href="work-with-me.html"
-            >
-              Explore My Work
-            </a>
-
-          </div>
-
-        </div>
-
-
-
-        <div class="hero-media">
-
-          <div class="hero-image-frame">
-
-            <!-- Existing homepage image -->
-            <img
-              src="MKT Website Banner-3.png"
-              alt="Marsha Kerr Talley"
-            >
-
-          </div>
-
-
-          <div class="image-note">
-
-            <strong>
-              Turning Pain Into Possibility™
-            </strong>
-
-            Looking beneath what is visible.
-
-          </div>
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ==================================================
-         SIGNATURE STATEMENT
-    ================================================== -->
-
-    <section
-      class="signature-strip"
-      aria-label="Signature statement"
-    >
-
-      <div class="page-wrap">
-
-        <p>
-          Look beneath the behaviour.
-          <span>
-            Pay attention to the conditions.
-          </span>
-        </p>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ==================================================
-         POINT OF VIEW
-    ================================================== -->
-
-    <section class="perspectives">
-
-      <div class="page-wrap">
-
-
-        <div class="perspective-heading">
-
-          <div class="eyebrow">
-            How I see the work
-          </div>
-
-          <h2>
-            What is happening beneath the surface?
-          </h2>
-
-        </div>
-
-
-
-        <div class="perspective-grid">
-
-
-          <!-- BURNOUT CARD -->
-
-          <article class="perspective-card">
-
-            <h2>
-              Burnout is a symptom.
-            </h2>
-
-
-            <p>
-              What we see on the surface rarely tells the whole story.
-            </p>
-
-
-            <p>
-              Behaviour shifts, disengagement, resistance and turnover
-              tell us something about the environments people are
-              trying to survive.
-            </p>
-
-
-            <p>
-              My work looks beneath the visible problem and points
-              a lens at leadership, culture, expectations and systems
-              to understand what may need to change.
-            </p>
-
-
-            <p class="strong-line">
-              People should not have to shrink to exist in their environment.
-            </p>
-
-          </article>
-
-
-
-          <!-- INSIDE PERSPECTIVE CARD -->
-
-          <article class="perspective-card">
-
-            <h2>
-              A perspective shaped from the inside.
-            </h2>
-
-
-            <p>
-              My work has taken me across classrooms, leadership,
-              adult learning, Special Education, professional development,
-              entrepreneurship, consultancy and public conversation.
-            </p>
-
-
-            <p class="strong-line">
-              Different environments. Different people. Different pressures.
-            </p>
-
-
-            <div class="questions">
-
-              What helps people thrive?
-
-              <br><br>
-
-              What gets in the way?
-
-              <br><br>
-
-              What are we asking individuals to carry that the
-              environment itself needs to address?
-
-            </div>
-
-
-            <p>
-              Working inside complex systems taught me to pay attention
-              to people's needs, not just their behaviours.
-            </p>
-
-
-            <p class="strong-line">
-              That perspective now shapes how I do my work.
-            </p>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ==================================================
-         SELECTED WORK
-    ================================================== -->
-
-    <section class="selected-work">
-
-      <div class="page-wrap">
-
-        <div class="work-panel">
-
-          <div class="eyebrow">
-            Selected Work
-          </div>
-
-
-          <h2>
-            Trusted to deliver, train and engage.
-          </h2>
-
-
-          <p>
-            My work reaches across education, professional learning,
-            organisational training, speaking and consultancy in
-            varied settings and countries.
-          </p>
-
-
-          <div class="button-row center">
-
-            <a
-              class="btn btn-primary"
-              href="work-with-me.html#featured-work"
-            >
-              View Selected Work
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ==================================================
-         EXPERIENCE / FEEDBACK
-    ================================================== -->
-
-    <section class="experience">
-
-      <div class="page-wrap">
-
-
-        <div class="experience-heading">
-
-          <div class="eyebrow">
-            The Experience
-          </div>
-
-
-          <h2>
-            Substance people can use.
-          </h2>
-
-
-          <p>
-            The aim is not simply to leave a good impression.
-            The work should change what people notice, understand
-            or are prepared to do next.
-          </p>
-
-        </div>
-
-
-
-        <div class="experience-grid">
-
-
-          <article class="experience-item">
-
-            <span class="experience-number">
-              01
-            </span>
-
-            <h3>
-              Clearer thinking under pressure
-            </h3>
-
-            <p>
-              Making room to see the issue beyond its most visible symptom.
-            </p>
-
-          </article>
-
-
-
-          <article class="experience-item">
-
-            <span class="experience-number">
-              02
-            </span>
-
-            <h3>
-              Greater confidence in difficult decisions
-            </h3>
-
-            <p>
-              Turning reflection into choices that can actually be acted on.
-            </p>
-
-          </article>
-
-
-
-          <article class="experience-item">
-
-            <span class="experience-number">
-              03
-            </span>
-
-            <h3>
-              Practical ideas people can use
-            </h3>
-
-            <p>
-              Useful thinking should continue working after the conversation ends.
-            </p>
-
-          </article>
-
-
-        </div>
-
-
-
-        <div class="button-row">
-
-          <a
-            class="btn btn-outline"
-            href="https://marshakerrtalley.com/work-with-me.html#feedback"
-          >
-            Read Client & Participant Feedback
-          </a>
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ==================================================
-         FINAL CTA
-    ================================================== -->
-
-    <section class="final-cta">
-
-      <div class="page-wrap cta-inner">
-
-
-        <div class="eyebrow">
-          Start with the real issue
-        </div>
-
-
-        <h2>
-          What needs to shift?
-        </h2>
-
-
-        <p class="pressure-line">
-          I understand pressure.
-          I know what it asks of you and what it quietly takes.
-        </p>
-
-
-        <p class="cta-copy">
-          If something in your organisation, team or work is no longer
-          working as it should, let us look beneath the surface.
-        </p>
-
-
-        <div class="button-row center">
-
-          <a
-            class="btn btn-light"
-            href="https://calendly.com/marsha-k-talley/15min"
-            target="_blank"
-            rel="noopener"
-          >
-            Discuss an Engagement
-          </a>
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-  </main>
-
-
-
-  <!-- ==================================================
-       FOOTER
-  ================================================== -->
-
-  <footer class="site-footer">
-
-    <div class="page-wrap">
-
-
-      <div class="footer-name">
-        Marsha Kerr Talley
-      </div>
-
-
-      <p class="footer-tagline">
-        Live Inspired · Turning Pain Into Possibility™
-      </p>
-
-
-      <nav
-        class="footer-nav"
-        aria-label="Footer navigation"
-      >
-
-        <a href="about.html">
-          About
-        </a>
-
-        <a href="work-with-me.html">
-          Work With Me
-        </a>
-
-        <a href="books.html">
-          Books
-        </a>
-
-        <a href="podcast.html">
-          Podcast
-        </a>
-
-        <a href="reflections.html">
-          Reflections
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/marshakerrtalley"
-          target="_blank"
-          rel="noopener"
-        >
-          LinkedIn
-        </a>
-
-      </nav>
-
-
-      <p class="copyright">
-        Copyright ©
-        <span id="currentYear"></span>
-        Marsha Kerr Talley. All Rights Reserved.
-      </p>
-
-
-    </div>
-
-  </footer>
-
-
-
-  <!-- ==================================================
-       JAVASCRIPT
-  ================================================== -->
-
-  <script>
-
-    document.addEventListener("DOMContentLoaded", function () {
-
-      /* Current year */
-
-      const year =
-        document.getElementById("currentYear");
-
-      if (year) {
-        year.textContent =
-          new Date().getFullYear();
-      }
-
-
-      /* Mobile navigation */
-
-      const toggle =
-        document.querySelector(".nav-toggle");
-
-      const nav =
-        document.querySelector(".site-nav");
-
-      if (toggle && nav) {
-
-        toggle.addEventListener(
-          "click",
-          function () {
-
-            const open =
-              nav.classList.toggle("open");
-
-            toggle.setAttribute(
-              "aria-expanded",
-              open
-            );
-
-            toggle.textContent =
-              open ? "×" : "☰";
-
-          }
-        );
-
-      }
-
-    });
-
-  </script>
-
-
-</body>
-
-</html>
+    /* =====================================================
+       INTRO / HERO COPY
+    ===================================================== */
+
+    .intro
