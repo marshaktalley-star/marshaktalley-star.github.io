@@ -361,6 +361,9 @@
     }
 
     .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       padding: 8px 12px;
       border-radius: 999px;
       border: 1px solid rgba(5, 99, 103, 0.15);
@@ -368,6 +371,14 @@
       color: var(--brand-deep);
       font-size: 0.78rem;
       font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .hero-tag:hover {
+      transform: translateY(-1px);
+      background: var(--brand-soft);
+      border-color: rgba(5, 99, 103, 0.32);
     }
 
     /* ================= CREDIBILITY STRIP ================= */
@@ -1268,10 +1279,15 @@
 
             <div class="toolkit-offer">
               <strong>Airbnb Hosting Toolkit</strong>
-              <p>A practical companion resource created from my Airbnb hosting training.</p>
-              <a class="btn btn-outline" href="https://payhip.com/b/LNfn2" target="_blank" rel="noopener">
-                Buy / Download the Toolkit
-              </a>
+              <p>A practical resource for new and existing Airbnb hosts.</p>
+              <div class="button-row">
+                <a class="btn btn-outline" href="https://payhip.com/b/LNfn2" target="_blank" rel="noopener">
+                  Buy / Download the Toolkit
+                </a>
+                <a class="btn btn-primary" href="https://calendly.com/marsha-k-talley/15min" target="_blank" rel="noopener">
+                  Enquire About Airbnb Property Management
+                </a>
+              </div>
             </div>
           </div>
 
@@ -1284,16 +1300,16 @@
             </p>
 
             <div class="hero-positioning">
-              My work brings together more than 20 years of international experience in education, leadership, behaviour, professional development and adult learning with practical expertise in AI, digital tools, entrepreneurship, wellbeing and people-centred performance.
+              My work is a collection of more than 20 years of experience in education, leadership, behaviour, professional development and adult learning, combined with practical expertise in AI, digital tools, entrepreneurship, wellbeing and people-centred performance.
             </div>
 
-            <div class="hero-tags" aria-label="Areas of expertise">
-              <span class="hero-tag">AI & Digital Innovation</span>
-              <span class="hero-tag">Leadership Development</span>
-              <span class="hero-tag">Professional Learning</span>
-              <span class="hero-tag">Entrepreneurship</span>
-              <span class="hero-tag">Behaviour & Culture</span>
-              <span class="hero-tag">Wellbeing & Burnout Prevention</span>
+            <div class="hero-tags" aria-label="Page navigation">
+              <a class="hero-tag" href="#services">Ways to Work With Me</a>
+              <a class="hero-tag" href="#featured-work">Featured Work</a>
+              <a class="hero-tag" href="#consultancy">Private Consultancy</a>
+              <a class="hero-tag" href="#feedback">Client Feedback</a>
+              <a class="hero-tag" href="#people-performance">People-Centred Performance</a>
+              <a class="hero-tag" href="#speaking">Speaking</a>
             </div>
 
             <div class="button-row">
@@ -1405,6 +1421,48 @@
             </div>
           </article>
 
+          <!-- MACARTHUR HIGH SCHOOL -->
+          <article class="trusted-organisation">
+            <div class="trusted-logo-wrap">
+              <img
+                src="macarthur-high-school-logo.png"
+                alt="MacArthur High School logo"
+                class="trusted-logo"
+              >
+            </div>
+
+            <div class="trusted-organisation-info">
+              <h3>MacArthur High School</h3>
+              <p class="trusted-engagement">
+                Teaching, Leadership Development, Training &amp; Facilitation
+              </p>
+              <p class="trusted-location">
+                Irving ISD • Irving, Texas, USA
+              </p>
+            </div>
+          </article>
+
+          <!-- LINK3 RECRUITMENT -->
+          <article class="trusted-organisation">
+            <div class="trusted-logo-wrap">
+              <img
+                src="link3-recruitment-logo.png"
+                alt="Link3 Recruitment logo"
+                class="trusted-logo"
+              >
+            </div>
+
+            <div class="trusted-organisation-info">
+              <h3>Link3 Recruitment</h3>
+              <p class="trusted-engagement">
+                Secondary Education Delivery Across Multiple Schools
+              </p>
+              <p class="trusted-location">
+                Nottingham • United Kingdom
+              </p>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -1416,7 +1474,7 @@
           <div class="eyebrow">Ways to work with me</div>
           <h2>Designed around the outcome you need.</h2>
           <p>
-            Every engagement is shaped around your audience, objectives and context. The goal is not simply to deliver information. It is to create learning that people can use.
+            Every engagement is designed around your audience, objectives and context. I focus on learning people can actually use.
           </p>
         </div>
 
@@ -1530,7 +1588,7 @@
     </section>
 
     <!-- ================= PRIVATE CONSULTANCY ================= -->
-    <section class="private-consulting">
+    <section class="private-consulting" id="consultancy">
       <div class="page-wrap">
         <div class="private-grid">
 
@@ -1546,10 +1604,7 @@
             <div class="eyebrow">Private consultancy</div>
             <h2>Sometimes you do not need another course. You need focused expertise.</h2>
             <p>
-              A participant at a recent workshop approached me afterwards because she wanted individual help with her website. That conversation reinforced something important: people often know what they want to build, but they need a knowledgeable partner who can help them make it clearer, stronger and more achievable.
-            </p>
-            <p>
-              My private consultancy sessions are designed for exactly that kind of work. We focus on the challenge in front of you, identify what matters, and work toward a practical next step.
+              Private consultancy gives you focused support around the challenge in front of you. We identify what matters, work through the problem and turn it into a practical next step.
             </p>
 
             <div class="private-list">
@@ -1581,7 +1636,7 @@
     </section>
 
     <!-- ================= TESTIMONIALS ================= -->
-    <section class="proof">
+    <section class="proof" id="feedback">
       <div class="page-wrap">
         <div class="section-heading center">
           <div class="eyebrow">Client & participant feedback</div>
@@ -1620,17 +1675,17 @@
     </section>
 
     <!-- ================= WELLBEING / PERFORMANCE ================= -->
-    <section class="people-performance">
+    <section class="people-performance" id="people-performance">
       <div class="page-wrap">
         <div class="people-grid">
           <div>
             <div class="eyebrow">People-centred performance</div>
             <h2>High performance should not require people to break themselves.</h2>
             <p>
-              Burnout prevention remains part of my work, but it sits within a wider question: what helps people learn, contribute, perform and stay engaged over time?
+              Burnout prevention remains part of my work, with the bigger picture in mind: what helps people learn, contribute, perform and stay engaged over time?
             </p>
             <p>
-              I help organisations think about the human conditions that sit underneath performance — leadership, behaviour, culture, communication, psychological safety, workload, dignity and whether people feel seen, heard and supported.
+              I help organisations think about the workplace conditions that affect performance, including leadership style, culture, communication, workload and whether people feel supported.
             </p>
             <a class="btn btn-gold" href="https://www.marshakerrtalley.com/turning-pain-into-possibilities" target="_blank" rel="noopener">Explore Turning Pain Into Possibilities™</a>
           </div>
@@ -1658,7 +1713,7 @@
     </section>
 
     <!-- ================= SPEAKING ================= -->
-    <section class="speaking-section">
+    <section class="speaking-section" id="speaking">
       <div class="page-wrap">
         <div class="speaking-grid">
           <div class="speaking-copy">
@@ -1666,10 +1721,10 @@
             <h2>Presence matters.</h2>
             <p class="statement">I do not just speak at audiences. I create an experience in the room.</p>
             <p>
-              My approach brings energy, personality, movement and real presence into professional spaces. Sessions can include curated visuals, music, reflective moments, participation and practical activities that help audiences see themselves in the conversation.
+              Whether I am facilitating a workshop, leading a professional conversation or speaking from a stage, my work is relatable and shaped by real-world experience.
             </p>
             <p>
-              My work is grounded, relatable and shaped by real-world experience. Whether I am facilitating a workshop, leading a professional conversation or speaking from a stage, I want people to feel the difference between simply receiving information and genuinely being engaged by it.
+              I want people to be fully engaged in the process instead of simply receiving information passively.
             </p>
             <div class="button-row">
               <a class="btn btn-primary" href="speaking.html">View Speaking Details</a>
@@ -1715,6 +1770,7 @@
         <div class="button-row">
           <a class="btn btn-gold" href="https://calendly.com/marsha-k-talley/15min" target="_blank" rel="noopener">Book a 15-Minute Consultation</a>
           <a class="btn btn-outline" href="mailto:info@marshakerrtalley.com?subject=Consultancy%20or%20Training%20Enquiry%20for%20Marsha%20Kerr%20Talley">Email an Enquiry</a>
+          <a class="btn btn-outline" href="index.html#about">About &amp; Experience</a>
         </div>
       </div>
     </section>
