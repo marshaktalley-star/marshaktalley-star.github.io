@@ -291,17 +291,21 @@
     }
 
     .hero-video-shell {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      aspect-ratio: 4 / 5;
       overflow: hidden;
       border-radius: 20px;
-      background: #0b2627;
-      aspect-ratio: 16 / 10;
+      background: var(--brand-deep);
     }
 
     .hero-video-shell video {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      background: #0b2627;
+      object-fit: contain;
+      object-position: center;
+      background: var(--brand-deep);
     }
 
     .toolkit-offer {
@@ -1203,6 +1207,11 @@
 
       .hero-video-card {
         padding: 8px;
+      }
+
+      .hero-video-shell {
+        max-width: 420px;
+        aspect-ratio: 9 / 16;
       }
 
       .toolkit-offer {
