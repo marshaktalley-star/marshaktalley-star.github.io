@@ -1,131 +1,874 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marsha Kerr Talley | Turning Pain Into Possibilities</title>
 
-  <!-- Google Fonts -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Books by Marsha Kerr Talley | Food for Thought</title>
+
+  <meta
+    name="description"
+    content="Explore books and practical guides by Marsha Kerr Talley on healing, education, advocacy, decision-making, leadership and personal reflection."
+  >
+
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- GLOBAL STYLES -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
-    :root {
-      --brand-primary: #056367;
-      --brand-secondary: #319fa2;
-      --brand-soft: #f3fbfb;
-      --text-body: #5a5a5a;
-      --text-dark: #102f30;
 
-      --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      --font-heading: "Playfair Display", serif;
+    /* =====================================================
+       BRAND
+    ===================================================== */
+
+    :root {
+
+      --teal-deep: #043b3d;
+      --teal-dark: #056367;
+      --teal: #319fa2;
+      --teal-mid: #5aa3a6;
+      --teal-pale: #eefafa;
+
+      --gold: #c9a86a;
+      --gold-soft: #eadbc1;
+
+      --cream: #f8f5ef;
+      --white: #ffffff;
+
+      --ink: #173234;
+      --body: #526263;
+      --muted: #718080;
+      --line: #dce9e8;
+
+      --heading:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      --body-font:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      --page-width: 1200px;
     }
 
-    *, *::before, *::after {
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
-      font-family: var(--font-body);
-      color: var(--text-body);
       background: #ffffff;
-      line-height: 1.6;
+      color: var(--body);
+      font-family: var(--body-font);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
     }
 
-    h1, h2, h3, h4, h5, h6 {
-      font-family: var(--font-heading);
-      font-weight: 500;
-      color: var(--brand-primary);
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin-top: 0;
+      font-family: var(--heading);
+      color: var(--ink);
+      line-height: 1.08;
+    }
+
+    p {
       margin-top: 0;
     }
 
     .page-wrap {
-      max-width: 1200px;
+      width: min(
+        calc(100% - 40px),
+        var(--page-width)
+      );
+
       margin: 0 auto;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
     }
 
-    @media (max-width: 640px) {
-      .page-wrap {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
-      }
-    }
 
-    .buy-btn,
-    .newsletter-form button {
-      display: inline-block;
-      padding: 0.9rem 2rem;
-      border-radius: 999px;
-      font-weight: 600;
-    }
-  </style>
+    /* =====================================================
+       HEADER
+    ===================================================== */
 
-  <!-- HEADER / NAVIGATION STYLES -->
-  <style>
     .site-header {
       width: 100%;
       background: #ffffff;
     }
 
-    .site-header .page-wrap {
-      padding: 20px 16px 12px;
+    .header-inner {
+      width: min(
+        calc(100% - 40px),
+        var(--page-width)
+      );
+
+      margin: 0 auto;
+
+      padding: 20px 0 13px;
+
       display: flex;
       flex-direction: column;
       align-items: center;
+
       position: relative;
     }
 
-    .site-header img {
-      max-width: 220px;
-      width: 100%;
-      height: auto;
-      margin-bottom: 12px;
-      display: block;
+    .site-logo {
+      display: inline-block;
+      text-decoration: none;
     }
+
+    .site-logo img {
+      width: 220px;
+      height: auto;
+      margin: 0 auto 13px;
+    }
+
+
+    /* NAV */
 
     .site-nav ul {
       list-style: none;
+
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 27px;
+
       padding: 0;
       margin: 0;
-      display: flex;
-      gap: 28px;
-      justify-content: center;
+
       font-size: 14px;
-      letter-spacing: 0.08em;
+      font-weight: 500;
+
+      letter-spacing: 0.07em;
       text-transform: uppercase;
     }
 
     .site-nav a {
+      color: #343434;
       text-decoration: none;
-      color: #2f2f2f;
-      font-weight: 500;
+      transition: color 0.2s ease;
     }
 
+    .site-nav a:hover,
     .site-nav a.active {
-      color: var(--brand-primary);
+      color: var(--teal-dark);
       font-weight: 600;
     }
 
+
+    /* MOBILE MENU */
+
     .nav-toggle {
       display: none;
+
       position: absolute;
-      right: 16px;
       top: 20px;
+      right: 0;
+
       width: 44px;
       height: 44px;
-      border: none;
+
+      border: 0;
       background: transparent;
+
+      color: var(--teal-dark);
+
       font-size: 28px;
-      color: var(--brand-primary);
       cursor: pointer;
     }
 
-    @media (max-width: 768px) {
+
+    /* =====================================================
+       BUTTONS
+    ===================================================== */
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      min-height: 52px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 14px 27px;
+
+      border-radius: 999px;
+      border: 1px solid transparent;
+
+      text-decoration: none;
+
+      font-size: 16px;
+      font-weight: 700;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--teal-dark);
+      color: #ffffff;
+
+      box-shadow:
+        0 11px 25px rgba(5,99,103,0.18);
+    }
+
+    .btn-primary:hover {
+      background: var(--teal-deep);
+    }
+
+    .btn-outline {
+      background: transparent;
+
+      color: var(--teal-dark);
+
+      border-color:
+        rgba(5,99,103,0.25);
+    }
+
+    .btn-outline:hover {
+      background: var(--teal-pale);
+    }
+
+    .text-link {
+      color: var(--teal-dark);
+
+      font-size: 15px;
+      font-weight: 700;
+
+      text-decoration: none;
+    }
+
+    .text-link:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .books-hero {
+      padding:
+        clamp(70px, 8vw, 110px)
+        20px
+        54px;
+
+      text-align: center;
+    }
+
+    .books-hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin-bottom: 13px;
+
+      color: var(--gold);
+
+      font-size: 13px;
+      font-weight: 700;
+
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .books-hero h1 {
+      margin-bottom: 22px;
+
+      color: var(--teal-dark);
+
+      font-size:
+        clamp(3.8rem, 7vw, 6.8rem);
+
+      font-weight: 600;
+
+      letter-spacing: -0.05em;
+    }
+
+    .books-hero .lead {
+      max-width: 720px;
+
+      margin: 0 auto;
+
+      color: #455b5c;
+
+      font-size:
+        clamp(1.08rem, 2vw, 1.25rem);
+
+      line-height: 1.75;
+    }
+
+
+    /* =====================================================
+       BANNER
+    ===================================================== */
+
+    .books-banner {
+      padding:
+        5px 0
+        95px;
+    }
+
+    .books-banner img {
+      width: 100%;
+      height: auto;
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 22px 54px rgba(5,99,103,0.10);
+    }
+
+
+    /* =====================================================
+       SECTION HEADERS
+    ===================================================== */
+
+    .section-heading {
+      max-width: 760px;
+
+      margin-bottom: 55px;
+    }
+
+    .section-heading.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 15px;
+
+      color: var(--teal-dark);
+
+      font-size:
+        clamp(2.8rem, 5vw, 4.7rem);
+
+      font-weight: 600;
+
+      letter-spacing: -0.04em;
+    }
+
+    .section-heading p {
+      max-width: 650px;
+
+      color: var(--muted);
+
+      font-size: 1.02rem;
+    }
+
+    .section-heading.center p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+
+    /* =====================================================
+       BOOK COLLECTION
+    ===================================================== */
+
+    .collection {
+      padding:
+        20px 0
+        105px;
+    }
+
+    .collection.alt {
+      padding-top: 95px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #fbfdfc 0%,
+          #ffffff 100%
+        );
+    }
+
+
+    /* =====================================================
+       BOOK ROWS
+    ===================================================== */
+
+    .book-entry {
+      display: grid;
+
+      grid-template-columns:
+        minmax(240px, 350px)
+        minmax(0, 1fr);
+
+      gap:
+        clamp(38px, 6vw, 78px);
+
+      align-items: center;
+
+      padding:
+        55px 0;
+
+      border-top:
+        1px solid var(--line);
+    }
+
+    .book-entry:last-child {
+      border-bottom:
+        1px solid var(--line);
+    }
+
+
+    /* ALTERNATING ROW */
+
+    .book-entry.reverse {
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(240px, 350px);
+    }
+
+    .book-entry.reverse .book-cover {
+      order: 2;
+    }
+
+    .book-entry.reverse .book-copy {
+      order: 1;
+    }
+
+
+    /* COVER */
+
+    .book-cover {
+      display: flex;
+      justify-content: center;
+    }
+
+    .book-cover img {
+      width: 100%;
+      max-width: 325px;
+      height: auto;
+
+      border-radius: 12px;
+
+      box-shadow:
+        0 18px 45px rgba(4,59,61,0.12);
+    }
+
+
+    /* TEXT */
+
+    .book-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      gap: 10px 16px;
+
+      margin-bottom: 14px;
+    }
+
+    .release-pill {
+      display: inline-flex;
+
+      padding:
+        6px 12px;
+
+      border-radius: 999px;
+
+      background: var(--teal-dark);
+      color: #ffffff;
+
+      font-size: 12px;
+      font-weight: 700;
+
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .book-price {
+      color: var(--gold);
+
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .book-copy h3 {
+      margin-bottom: 18px;
+
+      color: var(--teal-dark);
+
+      font-size:
+        clamp(2rem, 4vw, 3.4rem);
+
+      font-weight: 600;
+
+      letter-spacing: -0.035em;
+    }
+
+    .book-description {
+      max-width: 690px;
+
+      margin-bottom: 19px;
+
+      color: #506263;
+
+      font-size: 1rem;
+    }
+
+    .book-hook {
+      margin-bottom: 24px;
+
+      color: var(--teal-dark);
+
+      font-family: var(--heading);
+
+      font-size:
+        clamp(1.1rem, 2vw, 1.35rem);
+
+      font-weight: 600;
+
+      line-height: 1.55;
+    }
+
+    .format-note {
+      margin-bottom: 24px;
+
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+
+    /* =====================================================
+       FEATURED AUTHOR QUOTE
+    ===================================================== */
+
+    .author-quote {
+      padding:
+        95px 20px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--teal-deep),
+          var(--teal-dark)
+        );
+
+      text-align: center;
+    }
+
+    .author-quote blockquote {
+      max-width: 900px;
+
+      margin: 0 auto;
+
+      color: #ffffff;
+
+      font-family: var(--heading);
+
+      font-size:
+        clamp(2rem, 4vw, 3.5rem);
+
+      line-height: 1.45;
+
+      letter-spacing: -0.025em;
+    }
+
+    .author-quote cite {
+      display: block;
+
+      margin-top: 23px;
+
+      color: #b7dfe0;
+
+      font-family: var(--body-font);
+
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+
+    /* =====================================================
+       READER REFLECTIONS
+    ===================================================== */
+
+    .reader-section {
+      padding:
+        100px 0
+        110px;
+    }
+
+    .reviews {
+      max-width: 930px;
+      margin: 0 auto;
+    }
+
+    .review {
+      padding:
+        32px 0;
+
+      border-bottom:
+        1px solid var(--line);
+    }
+
+    .review:first-child {
+      border-top:
+        1px solid var(--line);
+    }
+
+    .stars {
+      margin-bottom: 10px;
+
+      color: var(--gold);
+
+      font-size: 20px;
+
+      letter-spacing: 0.08em;
+    }
+
+    .review h3 {
+      margin-bottom: 10px;
+
+      color: var(--teal-dark);
+
+      font-family: var(--body-font);
+
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .review blockquote {
+      margin: 0 0 12px;
+
+      color: #526364;
+
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .review cite {
+      color: var(--teal);
+
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+    }
+
+
+    /* =====================================================
+       REFLECTIONS CTA
+    ===================================================== */
+
+    .current-thinking {
+      padding:
+        90px 20px;
+
+      background: var(--cream);
+
+      text-align: center;
+    }
+
+    .current-thinking-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .current-thinking h2 {
+      margin-bottom: 16px;
+
+      color: var(--teal-dark);
+
+      font-size:
+        clamp(2.5rem, 5vw, 4rem);
+
+      font-weight: 600;
+    }
+
+    .current-thinking p {
+      margin-bottom: 28px;
+
+      color: var(--muted);
+
+      font-size: 1.04rem;
+    }
+
+    .current-thinking .button-row {
+      justify-content: center;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .site-footer {
+      padding:
+        38px 20px
+        30px;
+
+      background: #ffffff;
+
+      border-top:
+        1px solid var(--line);
+
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
+      gap:
+        10px 16px;
+
+      margin-bottom: 22px;
+    }
+
+    .social-links a {
+      color: var(--teal-dark);
+
+      text-decoration: none;
+
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+
+    .social-links span {
+      color: var(--gold);
+    }
+
+    .copyright {
+      margin:
+        0 0
+        18px;
+
+      color: #777f80;
+
+      font-size: 13px;
+    }
+
+    .legal-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap:
+        10px 22px;
+    }
+
+    .legal-links a {
+      color: var(--teal);
+
+      text-decoration: none;
+
+      font-size: 13px;
+    }
+
+    .legal-links a:hover {
+      color: var(--teal-dark);
+      text-decoration: underline;
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
+    @media (max-width: 850px) {
+
+      .book-entry,
+      .book-entry.reverse {
+        grid-template-columns: 1fr;
+      }
+
+      .book-entry.reverse .book-cover,
+      .book-entry.reverse .book-copy {
+        order: initial;
+      }
+
+      .book-copy {
+        max-width: 700px;
+      }
+
+    }
+
+
+    @media (max-width: 700px) {
+
+      .page-wrap,
+      .header-inner {
+        width: min(
+          calc(100% - 30px),
+          var(--page-width)
+        );
+      }
+
+      .header-inner {
+        align-items: flex-start;
+      }
+
+      .site-logo img {
+        width: 190px;
+        margin-bottom: 0;
+      }
+
       .nav-toggle {
         display: inline-flex;
         align-items: center;
@@ -134,7 +877,10 @@
 
       .site-nav {
         display: none;
+
         width: 100%;
+
+        padding-top: 20px;
       }
 
       .site-nav.open {
@@ -143,1016 +889,1307 @@
 
       .site-nav ul {
         flex-direction: column;
-        gap: 16px;
-        padding: 10px 0 6px;
-        text-align: center;
+        align-items: flex-start;
+
+        gap: 14px;
+
+        padding:
+          8px 0 5px;
       }
 
-      .site-nav a {
-        font-size: 16px;
-        letter-spacing: 0.06em;
-        white-space: nowrap;
+      .books-hero {
+        padding-top: 58px;
       }
+
+      .books-hero h1 {
+        font-size:
+          clamp(3.4rem, 16vw, 4.8rem);
+      }
+
+      .books-banner {
+        padding-bottom: 70px;
+      }
+
+      .book-entry {
+        padding:
+          45px 0;
+      }
+
+      .button-row {
+        align-items: stretch;
+      }
+
+      .button-row .btn {
+        width: 100%;
+      }
+
+      .text-link {
+        display: block;
+        text-align: center;
+        padding: 8px 0;
+      }
+
     }
+
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+
+    }
+
   </style>
+
 </head>
+
 
 <body>
 
-<!-- SITE HEADER -->
-<header class="site-header">
-  <div class="page-wrap">
 
-    <a href="index.html">
-      <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired" />
-    </a>
+  <!-- =====================================================
+       HEADER
+  ===================================================== -->
 
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  <header class="site-header">
 
-    <nav class="site-nav" aria-label="Main navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="work-with-me.html">Work With Me</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="podcast.html">Podcast</a></li>
-        <li><a href="reflections.html">Reflections</a></li>
-      </ul>
-    </nav>
+    <div class="header-inner">
 
-  </div>
-</header>
+      <a
+        href="index.html"
+        class="site-logo"
+        aria-label="Marsha Kerr Talley home"
+      >
 
-<!-- BOOKS INTRO SECTION -->
-<section style="margin:4rem auto;text-align:center;">
-  <div class="page-wrap">
+        <img
+          src="MKT-logo-3.png"
+          alt="Marsha Kerr Talley"
+        >
 
-    <div style="display:flex;align-items:center;justify-content:center;margin-bottom:2.5rem;">
-      <span style="flex:1;height:1px;background:#319fa2;max-width:200px;"></span>
-      <h2 style="margin:0 1.5rem;font-size:clamp(2rem,3vw,2.6rem);color:#319fa2;">
-        Books by Marsha Kerr Talley
-      </h2>
-      <span style="flex:1;height:1px;background:#319fa2;max-width:200px;"></span>
+      </a>
+
+
+      <button
+        class="nav-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+
+      <nav
+        class="site-nav"
+        aria-label="Main navigation"
+      >
+
+        <ul>
+
+          <li>
+            <a href="index.html">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="about.html">
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="work-with-me.html">
+              Work With Me
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="books.html"
+              class="active"
+            >
+              Books
+            </a>
+          </li>
+
+          <li>
+            <a href="podcast.html">
+              Podcast
+            </a>
+          </li>
+
+          <li>
+            <a href="reflections.html">
+              Reflections
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
     </div>
 
-    <div style="border-radius:14px;overflow:hidden;margin-bottom:2.5rem;">
-      <img
-        src="13-EGL_4825.jpg"
-        alt="Marsha Kerr Talley facilitating a reflective group discussion"
-        style="width:100%;height:auto;display:block;"
-      />
-    </div>
+  </header>
 
-    <h3 style="color:#056367;font-size:1.4rem;margin-bottom:1.2rem;">
-      Written for Thoughtful Living
-    </h3>
 
-    <p style="max-width:900px;margin:0 auto 1.2rem;color:#245b5d;">
-      My books are self-paced guides grounded in lived experience and reflective insight for personal and professional growth. 
-      Each page invites deliberate reflection and intentional living.
-    </p>
 
-    <!-- Read My Current Work (Option 1) -->
-<section class="current-work-box" aria-label="Read my current work">
-  <div class="page-wrap">
-    <div class="current-work-card">
-    
-      <p>
-        For real-time commentary on current issues, subscribe to my latest Reflections.
-      </p>
+  <main>
 
-      <div class="current-work-actions">
-        <a class="buy-btn current-work-primary" href="reflections.html">Read Reflections</a>
-        <a class="current-work-secondary" href="https://marshakerrtalley.substack.com" target="_blank" rel="noopener">
-          Subscribe on Substack
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section class="books-hero">
+
+      <div class="books-hero-inner">
+
+        <p class="eyebrow">
+          Books by Marsha Kerr Talley
+        </p>
+
+
+        <h1>
+          Food for Thought.
+        </h1>
+
+
+        <p class="lead">
+          Books and practical guides that invite reflection,
+          challenge assumptions and offer something useful
+          to carry forward.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BANNER
+    ===================================================== -->
+
+    <section class="books-banner">
+
+      <div class="page-wrap">
+
+        <img
+          src="13-EGL_4825.jpg"
+          alt="Marsha Kerr Talley facilitating a reflective group discussion"
+        >
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         LATEST RELEASES
+    ===================================================== -->
+
+    <section class="collection">
+
+      <div class="page-wrap">
+
+
+        <div class="section-heading">
+
+          <p class="eyebrow">
+            Latest Releases
+          </p>
+
+
+          <h2>
+            For the questions people are already asking.
+          </h2>
+
+        </div>
+
+
+
+        <!-- =================================================
+             WHAT NOBODY WANTS TO ADMIT
+        ================================================= -->
+
+        <article
+          class="book-entry"
+          id="what-nobody-wants-to-admit-about-special-education"
+        >
+
+          <div class="book-cover">
+
+            <img
+              src="What Nobody Bookcover.png"
+              alt="What Nobody Wants to Admit About Special Education"
+            >
+
+          </div>
+
+
+          <div class="book-copy">
+
+            <div class="book-meta">
+
+              <span class="release-pill">
+                New Release
+              </span>
+
+              <span class="book-price">
+                £7.99
+              </span>
+
+            </div>
+
+
+            <h3>
+              What Nobody Wants to Admit About Special Education
+            </h3>
+
+
+            <p class="book-description">
+              An honest look at low expectations, behaviour,
+              inclusion, independence and the balance between
+              compassion and accountability.
+            </p>
+
+
+            <p class="book-hook">
+              Honest insights. Stronger practices. Better futures.
+            </p>
+
+
+            <p class="format-note">
+              Digital ebook · Instant access after purchase
+            </p>
+
+
+            <div class="button-row">
+
+              <a
+                class="btn btn-primary"
+                href="/what-nobody-wants-to-admit-about-special-education/"
+              >
+                Explore the Book
+              </a>
+
+
+              <a
+                class="text-link"
+                href="https://payhip.com/b/6JETz"
+                target="_blank"
+                rel="noopener"
+              >
+                Buy & Download →
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             GETTING YOUR CHILD IDENTIFIED
+        ================================================= -->
+
+        <article
+          class="book-entry reverse"
+          id="getting-your-child-identified"
+        >
+
+          <div class="book-cover">
+
+            <img
+              src="getting-your-child-identified-book cover.jpg"
+              alt="Getting Your Child Identified Without Losing Your Mind"
+            >
+
+          </div>
+
+
+          <div class="book-copy">
+
+            <div class="book-meta">
+
+              <span class="book-price">
+                £7.99
+              </span>
+
+            </div>
+
+
+            <h3>
+              Getting Your Child Identified Without Losing Your Mind
+            </h3>
+
+
+            <p class="book-description">
+              A practical guide for parents navigating assessments,
+              school support and Special Education with greater
+              understanding and confidence.
+            </p>
+
+
+            <p class="book-hook">
+              Understand the process. Ask better questions.
+              Advocate with confidence.
+            </p>
+
+
+            <p class="format-note">
+              Digital ebook · Instant access after purchase
+            </p>
+
+
+            <div class="button-row">
+
+              <a
+                class="btn btn-primary"
+                href="/getting-your-child-identified/"
+              >
+                Explore the Book
+              </a>
+
+
+              <a
+                class="text-link"
+                href="https://payhip.com/b/Jg7HR"
+                target="_blank"
+                rel="noopener"
+              >
+                Buy & Download →
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             SCHOOL SAYS EVERYTHING IS FINE
+        ================================================= -->
+
+        <article
+          class="book-entry"
+          id="the-school-says-everything-is-fine"
+        >
+
+          <div class="book-cover">
+
+            <img
+              src="the-school-mockup.png"
+              alt="The School Says Everything Is Fine. My Child Is Not Fine."
+            >
+
+          </div>
+
+
+          <div class="book-copy">
+
+            <div class="book-meta">
+
+              <span class="release-pill">
+                New Release
+              </span>
+
+              <span class="book-price">
+                £4.99
+              </span>
+
+            </div>
+
+
+            <h3>
+              The School Says Everything Is Fine. My Child Is Not Fine.
+            </h3>
+
+
+            <p class="book-description">
+              For parents who know something is not quite right,
+              even when school reports suggest otherwise.
+            </p>
+
+
+            <p class="book-hook">
+              Trust your instincts. Ask better questions.
+              Advocate with confidence.
+            </p>
+
+
+            <p class="format-note">
+              Digital EPUB · Instant access after purchase
+            </p>
+
+
+            <div class="button-row">
+
+              <a
+                class="btn btn-primary"
+                href="/the-school-says-everything-is-fine/"
+              >
+                Explore the Book
+              </a>
+
+
+              <a
+                class="text-link"
+                href="https://payhip.com/b/aEyAI"
+                target="_blank"
+                rel="noopener"
+              >
+                Buy & Download →
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             WHY DID I BECOME A TEACHER
+        ================================================= -->
+
+        <article
+          class="book-entry reverse"
+          id="why-did-i-become-a-teacher"
+        >
+
+          <div class="book-cover">
+
+            <img
+              src="why-did-become-mockup.png"
+              alt="Why Did I Become a Teacher?"
+            >
+
+          </div>
+
+
+          <div class="book-copy">
+
+            <div class="book-meta">
+
+              <span class="release-pill">
+                New Release
+              </span>
+
+              <span class="book-price">
+                £4.99
+              </span>
+
+            </div>
+
+
+            <h3>
+              Why Did I Become a Teacher?
+            </h3>
+
+
+            <p class="book-description">
+              For educators questioning what comes next as workload,
+              expectations and responsibilities begin to reshape
+              the profession they once chose.
+            </p>
+
+
+            <p class="book-hook">
+              This book will not tell you to stay.
+              It will not tell you to leave.
+              It will help you think more clearly.
+            </p>
+
+
+            <p class="format-note">
+              Digital EPUB · Instant access after purchase
+            </p>
+
+
+            <div class="button-row">
+
+              <a
+                class="btn btn-primary"
+                href="/why-did-i-become-a-teacher/"
+              >
+                Explore the Book
+              </a>
+
+
+              <a
+                class="text-link"
+                href="https://payhip.com/b/4AKGL"
+                target="_blank"
+                rel="noopener"
+              >
+                Buy & Download →
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BOOKS & WORKBOOKS
+    ===================================================== -->
+
+    <section class="collection alt">
+
+      <div class="page-wrap">
+
+
+        <div class="section-heading">
+
+          <p class="eyebrow">
+            Books & Workbooks
+          </p>
+
+
+          <h2>
+            Reflection that continues beyond the page.
+          </h2>
+
+        </div>
+
+
+
+        <!-- =================================================
+             TURNING PAIN INTO POSSIBILITY
+        ================================================= -->
+
+        <article
+          class="book-entry"
+          id="turning-pain-into-possibility"
+        >
+
+          <div class="book-cover">
+
+            <img
+              src="turning-pain-into-possibility-cover.png"
+              alt="Turning Pain Into Possibility Professional Development Workbook"
+            >
+
+          </div>
+
+
+          <div class="book-copy">
+
+            <div class="book-meta">
+
+              <span class="book-price">
+                £34.00
+              </span>
+
+            </div>
+
+
+            <h3>
+              Turning Pain Into Possibility™
+            </h3>
+
+
+            <p class="book-description">
+              A professional development workbook supporting
+              reflective leadership practice, emotional regulation
+              and healthier organisational environments.
+            </p>
+
+
+            <p class="book-hook">
+              Designed to accompany Turning Pain Into Possibility™
+              workshops and professional learning.
+            </p>
+
+
+            <div class="button-row">
+
+              <a
+                class="btn btn-primary"
+                href="/turning-pain-into-possibility/"
+              >
+                Explore the Workbook
+              </a>
+
+
+              <a
+                class="text-link"
+                href="https://buy.stripe.com/cNifZhd0V4jEgKl64x4ZG0b"
+                target="_blank"
+                rel="noopener"
+              >
+                Order Now →
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             HEALING FROM EMOTIONAL TRAUMAS
+        ================================================= -->
+
+        <article
+          class="book-entry reverse"
+          id="healing-from-emotional-traumas"
+        >
+
+          <div class="book-cover">
+
+            <img
+              src="healing-from-emotional-traumas.jpg"
+              alt="Healing from Emotional Traumas"
+            >
+
+          </div>
+
+
+          <div class="book-copy">
+
+            <div class="book-meta">
+
+              <span class="book-price">
+                £21.99
+              </span>
+
+            </div>
+
+
+            <h3>
+              Healing from Emotional Traumas
+            </h3>
+
+
+            <p class="book-description">
+              Drawing on personal experience, reflection and
+              practical exercises, this book explores the emotional
+              baggage that can continue shaping life long after
+              difficult experiences have passed.
+            </p>
+
+
+            <p class="book-hook">
+              Understand the patterns. Release what no longer serves.
+              Make room for healing.
+            </p>
+
+
+            <div class="button-row">
+
+              <a
+                class="btn btn-primary"
+                href="/healing-from-emotional-traumas/"
+              >
+                Explore the Book
+              </a>
+
+
+              <a
+                class="text-link"
+                href="https://buy.stripe.com/fZe6sj8dg67i7ba28d"
+                target="_blank"
+                rel="noopener"
+              >
+                Buy Now →
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             THE DECISION IS JUST THE BEGINNING
+        ================================================= -->
+
+        <article
+          class="book-entry"
+          id="the-decision-is-just-the-beginning"
+        >
+
+          <div class="book-cover">
+
+            <img
+              src="the-decision-is-just-the-beginning.jpg"
+              alt="The Decision Is Just the Beginning"
+            >
+
+          </div>
+
+
+          <div class="book-copy">
+
+            <div class="book-meta">
+
+              <span class="book-price">
+                £13.95
+              </span>
+
+            </div>
+
+
+            <h3>
+              The Decision Is Just the Beginning
+            </h3>
+
+
+            <p class="book-description">
+              Stories, reflection and guided writing space for
+              anyone navigating decisions, change and the work
+              that begins after a choice has been made.
+            </p>
+
+
+            <p class="book-hook">
+              A decision opens the door. What happens next
+              is where the work begins.
+            </p>
+
+
+            <div class="button-row">
+
+              <a
+                class="btn btn-primary"
+                href="/the-decision-is-just-the-beginning/"
+              >
+                Explore the Book
+              </a>
+
+
+              <a
+                class="text-link"
+                href="https://buy.stripe.com/28o8AreBE53e3YYaEI"
+                target="_blank"
+                rel="noopener"
+              >
+                Buy Now →
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             NARCISSIST
+        ================================================= -->
+
+        <article
+          class="book-entry reverse"
+          id="a-guide-to-dealing-with-a-narcissist"
+        >
+
+          <div class="book-cover">
+
+            <img
+              src="a-guide-to-dealing-with-a-narcissist.jpg"
+              alt="A Guide to Dealing with a Narcissist"
+            >
+
+          </div>
+
+
+          <div class="book-copy">
+
+            <div class="book-meta">
+
+              <span class="book-price">
+                £4.99
+              </span>
+
+            </div>
+
+
+            <h3>
+              A Guide to Dealing with a Narcissist
+            </h3>
+
+
+            <p class="book-description">
+              Research and lived experience come together
+              in this practical guide to recognising difficult
+              relational dynamics, manipulation and patterns
+              that can leave people questioning themselves.
+            </p>
+
+
+            <p class="book-hook">
+              Understand the pattern. Strengthen your boundaries.
+              Reclaim clarity.
+            </p>
+
+
+            <div class="button-row">
+
+              <a
+                class="btn btn-primary"
+                href="/a-guide-to-dealing-with-a-narcissist/"
+              >
+                Explore the Book
+              </a>
+
+
+              <a
+                class="text-link"
+                href="https://buy.stripe.com/6oE03V9hk7bmanmfZ1"
+                target="_blank"
+                rel="noopener"
+              >
+                Buy Now →
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             SURVIVING COVID-19
+        ================================================= -->
+
+        <article
+          class="book-entry"
+          id="surviving-covid-19"
+        >
+
+          <div class="book-cover">
+
+            <img
+              src="surviving-covid-19.jpg"
+              alt="Surviving Covid-19"
+            >
+
+          </div>
+
+
+          <div class="book-copy">
+
+            <div class="book-meta">
+
+              <span class="book-price">
+                £5.99
+              </span>
+
+            </div>
+
+
+            <h3>
+              Surviving Covid-19
+            </h3>
+
+
+            <p class="book-description">
+              A personal account of anxiety, uncertainty,
+              resilience and connection during an extraordinary
+              period of collective disruption.
+            </p>
+
+
+            <p class="book-hook">
+              A moment in history, experienced from the inside.
+            </p>
+
+
+            <div class="button-row">
+
+              <a
+                class="btn btn-primary"
+                href="/surviving-covid-19/"
+              >
+                Explore the Book
+              </a>
+
+
+              <a
+                class="text-link"
+                href="https://buy.stripe.com/00gaIzbps7bmgLK4gi"
+                target="_blank"
+                rel="noopener"
+              >
+                Buy Now →
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         QUOTE
+    ===================================================== -->
+
+    <section class="author-quote">
+
+      <blockquote>
+
+        “Pain doesn't have to be the end of the story.
+        It can be the beginning of something more aligned.”
+
+        <cite>
+          — Marsha Kerr Talley
+        </cite>
+
+      </blockquote>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         READER REFLECTIONS
+    ===================================================== -->
+
+    <section class="reader-section">
+
+      <div class="page-wrap">
+
+
+        <div class="section-heading center">
+
+          <p class="eyebrow">
+            Reader Reflections
+          </p>
+
+
+          <h2>
+            In their words.
+          </h2>
+
+        </div>
+
+
+
+        <div class="reviews">
+
+
+          <article class="review">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+
+            <h3>
+              Incredibly Helpful
+            </h3>
+
+
+            <blockquote>
+              “I received this book as a gift after suffering
+              a traumatic pregnancy loss. Releasing shame and anger
+              with tools learned in this book allowed space for healing.”
+            </blockquote>
+
+
+            <cite>
+              — Chris
+            </cite>
+
+          </article>
+
+
+
+          <article class="review">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+
+            <h3>
+              Awesome Book
+            </h3>
+
+
+            <blockquote>
+              “It's a book you must take your time with,
+              pause, reflect and continue.
+              That's what healing truly is.”
+            </blockquote>
+
+
+            <cite>
+              — Sherica
+            </cite>
+
+          </article>
+
+
+
+          <article class="review">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+
+            <h3>
+              Game Changer
+            </h3>
+
+
+            <blockquote>
+              “The honesty in this book is monumental without
+              being heavy. Marsha shares truth while offering
+              tools for real healing.”
+            </blockquote>
+
+
+            <cite>
+              — Jerica B.
+            </cite>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CURRENT THINKING
+    ===================================================== -->
+
+    <section class="current-thinking">
+
+      <div class="current-thinking-inner">
+
+        <p class="eyebrow">
+          Beyond the Books
+        </p>
+
+
+        <h2>
+          The thinking continues.
+        </h2>
+
+
+        <p>
+          For current commentary, reflection and ideas
+          still taking shape, read my latest Reflections.
+        </p>
+
+
+        <div class="button-row">
+
+          <a
+            class="btn btn-primary"
+            href="reflections.html"
+          >
+            Read Reflections
+          </a>
+
+
+          <a
+            class="btn btn-outline"
+            href="https://marshakerrtalley.substack.com"
+            target="_blank"
+            rel="noopener"
+          >
+            Subscribe on Substack
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ===================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="page-wrap footer-inner">
+
+
+      <div class="social-links">
+
+        <a
+          href="https://www.linkedin.com/in/marshakerrtalley"
+          target="_blank"
+          rel="noopener"
+        >
+          LinkedIn
         </a>
+
+        <span aria-hidden="true">
+          ·
+        </span>
+
+
+        <a
+          href="https://substack.com/@marshakerrtalley"
+          target="_blank"
+          rel="noopener"
+        >
+          Substack
+        </a>
+
       </div>
-    </div>
-  </div>
-</section>
-   
 
-  </div>
-</section>
 
-<!-- BOOK LIST STYLES -->
-<style>
-  .book-section {
-    max-width: 1200px;
-    margin: 4rem auto;
-    padding: 0 1.5rem;
-  }
 
-  .book-row {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 3rem;
-    align-items: center;
-    margin-bottom: 3.5rem;
-  }
+      <p class="copyright">
 
-  .book-row img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    display: block;
-  }
+        Copyright ©
+        <span id="currentYear"></span>
+        Marsha Kerr Talley — All Rights Reserved.
 
-  .book-price {
-    color: #777;
-    font-size: 1rem;
-    margin-bottom: .4rem;
-  }
-
-  .book-title {
-    color: #319fa2;
-    font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    font-family: var(--font-heading);
-  }
-
-  .book-desc {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #555;
-    margin-bottom: 1.6rem;
-  }
-
-  .buy-btn {
-    background: #319fa2;
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .buy-btn:hover {
-    background: #056367;
-  }
-
-  .reader-box {
-    background: #f3fbfb;
-    border-radius: 14px;
-    padding: 1.8rem;
-    margin-bottom: 4rem;
-    max-width: 900px;
-  }
-
-  .reader-box h4 {
-    color: #056367;
-    margin-bottom: .6rem;
-    font-family: var(--font-heading);
-  }
-
-  .reader-box p {
-    margin: .3rem 0;
-    color: #245b5d;
-    line-height: 1.6;
-  }
-
-  @media (max-width: 900px) {
-    .book-row {
-      grid-template-columns: 1fr;
-    }
-  }
-
-
- .current-work-box{
-  margin: 2.5rem 0 3rem;
-  display: flex;
-  justify-content: center;   /* forces true centering */
-}
-
-.current-work-card{
-  background:#fbfefe;
-  border: 1px solid rgba(5,99,103,.10);
-  border-radius: 12px;
-  padding: 1.2rem 1.6rem;
-  max-width: 720px;
-  width: 100%;               /* prevents awkward shrink */
-  text-align: center;
-}
-
-.current-work-card h3{
-  color: #056367;
-  font-size: 1.35rem;               /* smaller */
-  margin-bottom: 0.6rem;
-  font-weight: 500;                 /* lighter weight */
-}
-
-.current-work-card p{
-  font-size: 0.92rem;                 /* slightly smaller */
-  margin-bottom: 0.9rem;
-}
-
-.current-work-actions{
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* Make primary button less dominant */
-.current-work-primary{
-  padding: 0.58rem 1.25rem;           /* smaller button */
-  font-size: 0.92rem;
-  background: rgba(49,159,162,.92);   /* slightly softened teal */
-}
-
-.current-work-primary:hover{
-  background: #056367;
-}
-
-/* Make Substack button lighter */
-.current-work-secondary{
-  padding: 0.65rem 1.2rem;
-  border-radius: 999px;
-  border: 1px solid rgba(5,99,103,.22);
-  color: #056367;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
-.ebook-row {
-  display: grid;
-  grid-template-columns: 340px 1fr;
-  gap: 3rem;
-  align-items: center;
-  margin-bottom: 3.5rem;
-}
-
-@media (max-width: 900px) {
-  .ebook-row {
-    grid-template-columns: 1fr;
-  }
-}
-
-  
-.current-work-secondary{
-  padding: 0.58rem 1.1rem;
-  font-size: 0.9rem;
-}
-
-/* Ebook mockups only */
-.ebook-cover {
-  width: 100%;
-  max-width: 320px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 12px;
-}
-
-
-  
-</style>
-
-<!-- BOOK LIST -->
-<section class="book-section">
-  <div class="page-wrap">
-
-
-<!-- EBOOKS SECTION -->
-<div style="text-align:center;margin:4rem 0 3rem;">
-  <h2 style="
-      color:#056367;
-      font-size:clamp(2rem,3vw,2.6rem);
-      margin-bottom:.75rem;">
-    Ebooks
-  </h2>
-
-  <p style="
-      max-width:700px;
-      margin:0 auto;
-      color:#5a5a5a;">
-    Practical, reflective guides to help readers navigate
-    education and advocacy.
-  </p>
-</div>
-
-
-<!-- What Nobody Wants to Admit About Special Education -->
-<div class="ebook-row">
-
-  <img
-    class="ebook-cover"
-    src="What Nobody Bookcover.png"
-    alt="What Nobody Wants to Admit About Special Education ebook">
-
-  <div>
-
-    <div style="display:inline-block;
-                background:#056367;
-                color:#ffffff;
-                padding:6px 12px;
-                border-radius:999px;
-                font-size:.8rem;
-                font-weight:600;
-                margin-bottom:12px;">
-      NEW RELEASE
-    </div>
-
-    <div class="book-price">£7.99</div>
-
-    <div class="book-title">
-      What Nobody Wants to Admit<br>
-      About Special Education
-    </div>
-
-    <p class="book-desc">
-      An honest look at some of the conversations many people avoid. Through
-      Marsha Kerr Talley's real classroom experiences and practical reflections,
-      this ebook explores low expectations, behaviour, inclusion, independence,
-      classroom environments, and the balance between compassion and accountability.
-    </p>
-
-    <p style="color:#056367;font-weight:600;margin-bottom:1rem;">
-      Honest insights.<br>
-      Stronger practices.<br>
-      Better futures.
-    </p>
-
-    <p style="font-size:.95rem;color:#777;margin-bottom:1.5rem;">
-      Digital ebook download • Instant access after purchase
-    </p>
-
-    <a class="buy-btn"
-       href="https://payhip.com/b/6JETz"
-       target="_blank"
-       rel="noopener">
-       BUY NOW
-    </a>
-
-  </div>
-
-</div>
-
-<div class="reader-box">
-  <h4>For Parents, Educators, and School Leaders</h4>
-
-  <p>
-    This ebook invites honest reflection on the beliefs and practices that shape
-    children’s experiences in Special Education, while encouraging support that
-    builds confidence, independence, and meaningful progress.
-  </p>
-
-  <p>
-    <em>Digital ebook • Instant download after purchase</em>
-  </p>
-</div>
-
-
-    
-<!-- Getting Your Child Identified -->
-<div class="ebook-row">
-
-  <img
-    class="ebook-cover"
-    src="getting-your-child-identified-book cover.jpg"
-    alt="Getting Your Child Identified Without Losing Your Mind ebook">
-
-  <div>
-
-  
-
-    <div class="book-price">£7.99</div>
-
-    <div class="book-title">
-      Getting Your Child Identified<br>
-      Without Losing Your Mind
-    </div>
-
-    <p class="book-desc">
-      When your child is struggling, it is easy to feel overwhelmed by unanswered
-      questions, conflicting advice, and unfamiliar educational terminology.
-      This practical guide helps parents understand assessments, support, and
-      special education with greater confidence.
-    </p>
-
-    <p class="book-desc">
-      Written with families in Jamaica in mind while also guiding parents in
-      the United Kingdom and the United States, this book helps you ask better
-      questions, work more effectively with schools, and make informed decisions
-      based on understanding rather than fear.
-    </p>
-
-    <p style="color:#056367;font-weight:600;margin-bottom:1rem;">
-      Understand the process.<br>
-      Ask better questions.<br>
-      Advocate with confidence.
-    </p>
-
-    <p style="font-size:.95rem;color:#777;margin-bottom:1.5rem;">
-      Digital ebook download • Instant access after purchase
-    </p>
-
-    <a class="buy-btn"
-       href="https://payhip.com/b/Jg7HR"
-       target="_blank"
-       rel="noopener">
-       BUY NOW
-    </a>
-
-  </div>
-
-</div>
-
-<div class="reader-box">
-  <h4>For Parents Navigating Assessments and Support</h4>
-
-  <p>
-    This guide supports parents who know their child needs help but feel unsure
-    about where to begin. It offers clear, practical guidance for understanding
-    the identification process and securing the support children need to learn,
-    develop confidence, and thrive.
-  </p>
-
-  <p>
-    <em>Digital ebook • Instant download after purchase</em>
-  </p>
-</div>
-
-    
-    
-<!-- The School Says Everything Is Fine. My Child Is Not Fine. -->
-<div class="ebook-row">
-
-  <img
-  class="ebook-cover"
-  src="the-school-mockup.png"
-  alt="The School Says Everything Is Fine. My Child Is Not Fine. ebook">
-
-  <div>
-
-    <div style="display:inline-block;
-                background:#056367;
-                color:#ffffff;
-                padding:6px 12px;
-                border-radius:999px;
-                font-size:.8rem;
-                font-weight:600;
-                margin-bottom:12px;">
-      NEW RELEASE
-    </div>
-
-    <div class="book-price">£4.99</div>
-
-    <div class="book-title">
-      The School Says Everything Is Fine.<br>
-      My Child Is Not Fine.
-    </div>
-
-    <p class="book-desc">
-      A practical guide for parents who feel something is not quite right,
-      even when school reports suggest otherwise.
-
-      Learn how to trust your instincts, ask better questions,
-      gather meaningful information, and advocate confidently for
-      your child without unnecessary conflict.
-
-      Designed for parents navigating concerns around learning,
-      wellbeing, behaviour, special educational needs, or unexplained changes
-      in their child's experience at school.
-    </p>
-
-    <p style="color:#056367;font-weight:600;margin-bottom:1rem;">
-      Trust your instincts.<br>
-      Ask better questions.<br>
-      Advocate with confidence.
-    </p>
-
-    <p style="font-size:.95rem;color:#777;margin-bottom:1.5rem;">
-      Digital EPUB download • Instant access after purchase
-    </p>
-
-    <a class="buy-btn"
-       href="https://payhip.com/b/aEyAI"
-       target="_blank"
-       rel="noopener">
-       BUY NOW
-    </a>
-
-  </div>
-
-</div>
-
-<div class="reader-box">
-  <h4>For Parents Who Know Something Isn't Right</h4>
-
-  <p>
-    Parents often notice subtle changes long before concerns become visible to others.
-    This guide helps you recognise those signals, communicate effectively with schools,
-    and become a stronger advocate for your child.
-  </p>
-
-  <p>
-    <em>Digital EPUB • Instant download after purchase</em>
-  </p>
-</div>
-    
-
-<!-- Why Did I Become a Teacher? -->
-<div class="ebook-row">
- <img
-  class="ebook-cover"
-  src="why-did-become-mockup.png"
-  alt="Why Did I Become a Teacher? ebook">
-
-  <div>
-
-    <div style="display:inline-block;
-                background:#056367;
-                color:#ffffff;
-                padding:6px 12px;
-                border-radius:999px;
-                font-size:.8rem;
-                font-weight:600;
-                margin-bottom:12px;">
-      NEW RELEASE
-    </div>
-
-    <div class="book-price">£4.99</div>
-
-    <div class="book-title">
-      Why Did I Become a Teacher?
-    </div>
-
-    <p class="book-desc">
-      Teachers enter the profession because they want to make a difference.
-
-      Along the way, something changes.
-
-      The workload increases. Expectations grow. Responsibilities expand.
-      The profession they once loved begins to feel very different from the one
-      they originally chose.
-    </p>
-
-    <p style="color:#056367;font-weight:600;margin-bottom:1rem;">
-      This book will not tell you to stay.<br>
-      It will not tell you to leave.<br>
-      It will help you think more clearly about your next chapter.
-    </p>
-
-    <p style="font-size:.95rem;color:#777;margin-bottom:1.5rem;">
-      Digital EPUB download (3 MB) • Instant access after purchase
-    </p>
-
-    <a class="buy-btn"
-       href="https://payhip.com/b/4AKGL"
-       target="_blank"
-       rel="noopener">
-       BUY NOW
-    </a>
-
-  </div>
-</div>
-
-<div class="reader-box">
-  <h4>For Educators Reflecting on What Comes Next</h4>
-
-  <p>
-    Whether you are considering a new role, questioning your future in education,
-    or simply seeking space to reflect, this book provides practical prompts and
-    guided reflection to help you make decisions with greater clarity and confidence.
-  </p>
-
-  <p>
-    <em>Digital EPUB • Instant download after purchase</em>
-  </p>
-</div>
-
-    
-    
-  <!-- Turning Pain Into Possibility Workbook -->
-<div class="book-row">
-  <img src="turning-pain-into-possibility-cover.png" alt="Turning Pain Into Possibility Professional Development Workbook cover">
-  <div>
-    <div class="book-price">£34.00</div>
-    <div class="book-title">Turning Pain Into Possibility™</div>
-    <p class="book-desc">
-      This professional development workbook is designed to accompany the 
-      <strong>Turning Pain Into Possibility™ workshops</strong> for leaders and their organisations. 
-      It supports reflective leadership practice, emotional regulation, and the development of 
-      healthier, more sustainable workplace cultures.
-    </p>
-    <a class="buy-btn" href="https://buy.stripe.com/cNifZhd0V4jEgKl64x4ZG0b" target="_blank">ORDER NOW</a>
-  </div>
-</div>
-
-    
- 
-
-
-    
-    
-    <div class="book-row">
-      <img src="healing-from-emotional-traumas.jpg" alt="Healing from Emotional Traumas book cover">
-      <div>
-        <div class="book-price">£21.99</div>
-        <div class="book-title">Healing from Emotional Traumas</div>
-        <p class="book-desc">
-          Drawing on personal experiences, Marsha Kerr Talley helps readers confront their past that still impacts their lives today.
-          This book can help you break free from the emotional baggage through insightful reflections and practical exercises.
-        </p>
-        <a class="buy-btn" href="https://buy.stripe.com/fZe6sj8dg67i7ba28d">BUY NOW!</a>
-      </div>
-    </div>
-
-    <div class="reader-box">
-      <h4>⭐ ⭐ ⭐ ⭐ ⭐ &nbsp; Reader Rating</h4>
-      <p>
-        Readers frequently describe this book as compassionate and validating.
-        It is often experienced as a steady companion for understanding emotional pain,
-        recognising patterns, and approaching healing with patience and self-awareness.
       </p>
-      <p><em>Based on reader reflections and lived experience shared over time.</em></p>
+
+
+
+      <nav
+        class="legal-links"
+        aria-label="Legal"
+      >
+
+        <a href="/privacy-policy">
+          Privacy Policy
+        </a>
+
+        <a href="/shipping-return-policy">
+          Shipping & Return Policy
+        </a>
+
+        <a href="/terms-and-conditions">
+          Terms & Conditions
+        </a>
+
+      </nav>
+
+
     </div>
 
-    <div class="book-row">
-      <img src="the-decision-is-just-the-beginning.jpg" alt="The Decision Is Just the Beginning book cover">
-      <div>
-        <div class="book-price">£13.95</div>
-        <div class="book-title">The Decision Is Just the Beginning</div>
-        <p class="book-desc">
-          With relatable stories and dedicated sections to write down your thoughts and feelings,
-          this workbook invites reflection and helps turn aspirations into reality.
-          Start your journey to better decision-making today!
-        </p>
-        <a class="buy-btn" href="https://buy.stripe.com/28o8AreBE53e3YYaEI">BUY NOW!</a>
-      </div>
-    </div>
-
-    <div class="reader-box">
-      <h4>⭐ ⭐ ⭐ ⭐ ⭐ &nbsp; Reader Rating</h4>
-      <p>
-        Readers often describe this book as grounding and clarifying, particularly during moments when change feels uncertain.
-        Many reflect on how it helped them pause, reflect, and make more intentional choices without pressure or urgency.
-      </p>
-      <p><em>Based on reader reflections and feedback over time.</em></p>
-    </div>
-
-    <div class="book-row">
-      <img src="a-guide-to-dealing-with-a-narcissist.jpg" alt="A Guide to Dealing with a Narcissist book cover">
-      <div>
-        <div class="book-price">£4.99</div>
-        <div class="book-title">A Guide to Dealing with A Narcissist</div>
-        <p class="book-desc">
-          Blending research with real-life anecdotes to shed light on their manipulative behaviours,
-          "A Guide to Dealing with a Narcissist" offers strategies for navigating relationships with those
-          who exhibit narcissistic tendencies.
-        </p>
-        <a class="buy-btn" href="https://buy.stripe.com/6oE03V9hk7bmanmfZ1">BUY NOW!</a>
-      </div>
-    </div>
-
-    <div class="reader-box">
-      <h4>Reader Context</h4>
-      <p>
-        This guide is often used as a practical starting point for understanding challenging relational dynamics.
-        Readers typically engage with it during periods of confusion, boundary-setting, or emotional recalibration.
-      </p>
-      <p><em>Designed as an informational and reflective resource.</em></p>
-    </div>
-
-    <div class="book-row">
-      <img src="surviving-covid-19.jpg" alt="Surviving Covid-19 book cover">
-      <div>
-        <div class="book-price">£5.99</div>
-        <div class="book-title">Surviving Covid-19</div>
-        <p class="book-desc">
-          Recounting the challenges she faced as anxiety grew and lockdowns began,
-          Marsha Kerr Talley's story highlights resilience, hope, and community strength during difficult times.
-          "Surviving Covid-19" is a powerful reminder of our shared humanity during adversity.
-        </p>
-        <a class="buy-btn" href="https://buy.stripe.com/00gaIzbps7bmgLK4gi">BUY NOW!</a>
-      </div>
-    </div>
-
-    <div class="reader-box">
-      <h4>Reader Context</h4>
-      <p>
-        This book captures lived experience and reflection during a time of collective uncertainty.
-        Readers often approach it as a moment-in-time narrative offering perspective, meaning, and human connection.
-      </p>
-      <p><em>Shared as a reflective account rather than an evaluative text.</em></p>
-    </div>
-
-  </div>
-</section>
-
-<!-- QUOTE -->
-<div class="page-wrap">
-  <blockquote style="
-    margin:40px auto;
-    padding:30px 32px;
-    max-width:880px;
-    background:#f7fbfb;
-    border-left:10px solid #056367;
-    border-radius:14px;
-    font-size:1.35rem;
-    line-height:1.7;
-    font-weight:500;
-    color:#102f30;
-  ">
-    “Pain doesn’t have to be the end of the story. It can be the beginning of something more aligned.”
-    <div style="margin-top:16px;font-size:1.05rem;font-weight:600;color:#056367;">
-      — Marsha Kerr Talley
-    </div>
-  </blockquote>
-</div>
-
-<!-- READER REVIEWS -->
-<section aria-label="Reader Reviews" style="padding:48px 0;background:#f9fefe;">
-  <div class="page-wrap">
-
-    <h2 style="text-align:center;color:#056367;font-size:clamp(26px,4.5vw,34px);margin-bottom:40px;">
-      Reader Reflections
-    </h2>
-
-    <article style="background:#fff;border-radius:18px;padding:26px;margin-bottom:28px;box-shadow:0 10px 30px rgba(0,0,0,0.06);">
-      <div style="color:#f5b301;font-size:20px;margin-bottom:10px;">★★★★★</div>
-      <h3 style="margin:0 0 12px;color:#056367;">Incredibly Helpful</h3>
-      <p style="line-height:1.7;">
-        </strong> I received this book as a gift after suffering a traumatic pregnancy loss.
-        I cannot begin to tell you how helpful it was in my grieving process. Before reading, I felt so much shame
-        and struggled to find hope. Releasing that shame and anger with tools learned in this book allowed space for healing.
-      </p>
-      <p style="margin-top:12px;font-weight:600;color:#319fa2;">— Chris</p>
-    </article>
-
-    <article style="background:#fff;border-radius:18px;padding:26px;margin-bottom:28px;box-shadow:0 10px 30px rgba(0,0,0,0.06);">
-      <div style="color:#f5b301;font-size:20px;margin-bottom:10px;">★★★★★</div>
-      <h3 style="margin:0 0 12px;color:#056367;">Unexpected and Unique</h3>
-      <p style="line-height:1.7;">
-        This book is a short, easy read from an unexpected perspective of the COVID-19 experience.
-        The journal-like style allows for candor, nuance, and personal growth rather than rigid conclusions.
-      </p>
-      <p style="margin-top:12px;font-weight:600;color:#319fa2;">— Asia</p>
-    </article>
-
-    <article style="background:#fff;border-radius:18px;padding:26px;margin-bottom:28px;box-shadow:0 10px 30px rgba(0,0,0,0.06);">
-      <div style="color:#f5b301;font-size:20px;margin-bottom:10px;">★★★★★</div>
-      <h3 style="margin:0 0 12px;color:#056367;">Awesome Book</h3>
-      <p style="line-height:1.7;">
-        I remember thinking I could read this book in a day or two — I can’t. It’s a book you must
-        take your time with, pause, reflect, and continue. That’s what healing truly is.
-      </p>
-      <p style="margin-top:12px;font-weight:600;color:#319fa2;">— Sherica</p>
-    </article>
-
-    <article style="background:#fff;border-radius:18px;padding:26px;margin-bottom:28px;box-shadow:0 10px 30px rgba(0,0,0,0.06);">
-      <div style="color:#f5b301;font-size:20px;margin-bottom:10px;">★★★★☆</div>
-      <h3 style="margin:0 0 12px;color:#056367;">Selfless Offering</h3>
-      <p style="line-height:1.7;">
-        Thank you for sharing your life experiences with us. Many hold similar confessions but fear judgment.
-        Reading this created connection and deep emotional resonance.
-      </p>
-      <p style="margin-top:12px;font-weight:600;color:#319fa2;">— Majilé M.</p>
-    </article>
-
-    <article style="background:#fff;border-radius:18px;padding:26px;margin-bottom:28px;box-shadow:0 10px 30px rgba(0,0,0,0.06);">
-      <div style="color:#f5b301;font-size:20px;margin-bottom:10px;">★★★★★</div>
-      <h3 style="margin:0 0 12px;color:#056367;">I’m Still Healing</h3>
-      <p style="line-height:1.7;">
-        A must-read for anyone dealing with mental or emotional trauma. We attend to physical wounds,
-        yet often avoid psychological ones. This book meets you honestly in that space.
-      </p>
-      <p style="margin-top:12px;font-weight:600;color:#319fa2;">— Ben</p>
-    </article>
-
-    <article style="background:#fff;border-radius:18px;padding:26px;margin-bottom:28px;box-shadow:0 10px 30px rgba(0,0,0,0.06);">
-      <div style="color:#f5b301;font-size:20px;margin-bottom:10px;">★★★★★</div>
-      <h3 style="margin:0 0 12px;color:#056367;">Wonderful Read</h3>
-      <p style="line-height:1.7;">
-        I appreciate how Marsha weaves personal testimony with data and the experiences of others.
-        This is not opinion — it is thoughtful, grounded, and deeply compassionate.
-      </p>
-      <p style="margin-top:12px;font-weight:600;color:#319fa2;">— Stephanie</p>
-    </article>
-
-    <article style="background:#fff;border-radius:18px;padding:26px;margin-bottom:28px;box-shadow:0 10px 30px rgba(0,0,0,0.06);">
-      <div style="color:#f5b301;font-size:20px;margin-bottom:10px;">★★★★★</div>
-      <h3 style="margin:0 0 12px;color:#056367;">Game Changer</h3>
-      <p style="line-height:1.7;">
-        The honesty in this book is monumental without being heavy.
-        Marsha shares truth while offering tools for real healing.
-      </p>
-      <p style="margin-top:12px;font-weight:600;color:#319fa2;">— Jerica B.</p>
-    </article>
-
-    <article style="background:#fff;border-radius:18px;padding:26px;box-shadow:0 10px 30px rgba(0,0,0,0.06);">
-      <div style="color:#f5b301;font-size:20px;margin-bottom:10px;">★★★★★</div>
-      <h3 style="margin:0 0 12px;color:#056367;">Healing from Emotional Trauma</h3>
-      <p style="line-height:1.7;">
-        This book is a masterpiece that supports healing from life’s scars.
-        It encourages wholeness and gentle self-restoration.
-      </p>
-      <p style="margin-top:12px;font-weight:600;color:#319fa2;">— Taras A.</p>
-    </article>
-
-  </div>
-</section>
-
-<!-- NEWSLETTER -->
-<section class="newsletter-section">
-  <div class="newsletter-inner page-wrap">
-
-    <div class="newsletter-icon">+</div>
-
-    <h2>Stay Connected</h2>
-
-    <p>
-      Occasional reflections, resources, and updates shared with care.
-    </p>
-
-    <form
-      action="https://marshakerrtalley.substack.com/api/v1/free"
-      method="post"
-      target="_blank"
-      class="newsletter-form"
-    >
-      <input type="email" name="email" placeholder="Email" required />
-      <button type="submit">SIGN UP</button>
-    </form>
-
-  </div>
-</section>
-
-<style>
-.newsletter-section {
-  padding: 4.5rem 1.5rem;
-  background: #ffffff;
-  text-align: center;
-}
-
-.newsletter-inner {
-  max-width: 760px;
-  margin: 0 auto;
-}
-
-.newsletter-icon {
-  width: 68px;
-  height: 68px;
-  border-radius: 50%;
-  background: #319fa2;
-  color: #ffffff;
-  font-size: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 2rem;
-}
-
-.newsletter-section h2 {
-  font-size: clamp(2.2rem, 3vw, 2.8rem);
-  color: #319fa2;
-  margin-bottom: 0.8rem;
-  font-weight: 500;
-  font-family: var(--font-heading);
-}
-
-.newsletter-section p {
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 2.2rem;
-}
-
-.newsletter-form {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.newsletter-form input {
-  width: min(420px, 100%);
-  padding: 0.9rem 1.1rem;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-}
-</style>
+  </footer>
 
 
- <div style="text-align:center; margin:1.5rem 0 2rem;">
 
-  <a href="https://www.linkedin.com/in/marshakerrtalley"
-     target="_blank"
-     rel="noopener"
-     aria-label="Visit Marsha Kerr Talley on LinkedIn"
-     style="text-decoration:none;color:#0A66C2;font-weight:600;">
-    LinkedIn
-  </a>
+  <!-- =====================================================
+       JAVASCRIPT
+  ===================================================== -->
 
-  <span aria-hidden="true" style="color:#ccc;"> | </span>
+  <script>
 
-  <a href="https://substack.com/@marshakerrtalley"
-     target="_blank"
-     rel="noopener"
-     aria-label="Visit Marsha Kerr Talley on Substack"
-     style="text-decoration:none;color:#c96b2c;font-weight:600;">
-    Substack
-  </a>
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
 
-  <span aria-hidden="true" style="color:#ccc;"> | </span>
 
-  <a href="https://www.silhouettescafe.com/"
-     target="_blank"
-     rel="noopener"
-     aria-label="Explore Silhouette's Café"
-     style="text-decoration:none;color:#4b2e1f;font-weight:600;">
-    Silhouette's Café
-  </a>
+        /* COPYRIGHT YEAR */
 
-</div>
+        const year =
+          document.getElementById(
+            "currentYear"
+          );
 
-  
-<!-- SITE FOOTER -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p class="copyright">
-      Copyright © <span id="currentYear"></span>
-      Marsha Kerr Talley — All Rights Reserved.
-    </p>
+        if (year) {
 
-    <nav class="footer-links" aria-label="Footer links">
-      <a href="/privacy-policy">Privacy Policy</a>
-      <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
-      <a href="/terms-and-conditions">Terms and Conditions</a>
-    </nav>
-  </div>
-</footer>
+          year.textContent =
+            new Date().getFullYear();
 
-<style>
-.site-footer {
-  width: 100%;
-  background-color: #ffffff;
-  border-top: 1px solid #eeeeee;
-  padding: 2.5rem 1.5rem 2rem;
-  text-align: center;
-  box-sizing: border-box;
-}
+        }
 
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
 
-.site-footer p {
-  margin: 0 0 1.4rem;
-  font-size: 0.95rem;
-  color: #666666;
-}
 
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: nowrap;
-}
+        /* MOBILE MENU */
 
-.footer-links a {
-  font-size: 1rem;
-  color: #319fa2;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  white-space: nowrap;
-}
+        const toggle =
+          document.querySelector(
+            ".nav-toggle"
+          );
 
-.footer-links a:hover {
-  color: #056367;
-  text-decoration: underline;
-}
+        const nav =
+          document.querySelector(
+            ".site-nav"
+          );
 
-@media (max-width: 640px) {
-  .footer-links {
-    flex-wrap: wrap;
-  }
-}
-</style>
+        if (toggle && nav) {
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const yearSpan = document.getElementById("currentYear");
-  if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+          toggle.addEventListener(
+            "click",
+            function () {
 
-  const toggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.site-nav');
+              const open =
+                nav.classList.toggle(
+                  "open"
+                );
 
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', isOpen);
-    });
-  }
+              toggle.setAttribute(
+                "aria-expanded",
+                open
+              );
 
-  const currentPage = (location.pathname.split("/").pop() || "index.html").toLowerCase();
-  document.querySelectorAll(".site-nav a").forEach(link => {
-    if (link.getAttribute("href").toLowerCase() === currentPage) {
-      link.classList.add("active");
-    }
-  });
-});
-</script>
+              toggle.textContent =
+                open ? "×" : "☰";
+
+            }
+          );
+
+        }
+
+
+      }
+    );
+
+  </script>
+
 
 </body>
+
 </html>
