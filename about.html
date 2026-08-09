@@ -5,14 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>About Marsha Kerr Talley | Education, Leadership & Consultancy</title>
+  <title>About Marsha Kerr Talley | Educator, Author & Consultant</title>
 
   <meta
     name="description"
-    content="Learn about Marsha Kerr Talley, an educator, teacher educator, leadership specialist, author, facilitator and consultant with more than two decades of international experience."
+    content="Learn more about Marsha Kerr Talley, an educator, author, consultant and teacher educator with more than two decades of international experience."
   >
 
   <style>
+
+    /* ========================================
+       ROOT
+    ======================================== */
+
     :root {
       --teal-dark: #056367;
       --teal: #319fa2;
@@ -21,12 +26,17 @@
 
       --text: #263d3e;
       --text-soft: #566869;
+
       --white: #ffffff;
       --border: #dceaea;
-      --cream: #faf8f4;
 
       --max-width: 1120px;
     }
+
+
+    /* ========================================
+       RESET
+    ======================================== */
 
     * {
       box-sizing: border-box;
@@ -35,6 +45,1588 @@
     html {
       scroll-behavior: smooth;
     }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--text);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      line-height: 1.7;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(100% - 40px, var(--max-width));
+      margin: 0 auto;
+    }
+
+
+    /* ========================================
+       HEADER
+    ======================================== */
+
+    .site-header {
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid #e6f2f2;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 16px 12px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      display: inline-block;
+    }
+
+    .logo img {
+      width: 220px;
+      height: auto;
+      margin: 0 auto 12px;
+    }
+
+
+    /* NAVIGATION */
+
+    .main-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 28px;
+
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .main-nav a {
+      color: #2f2f2f;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .main-nav a:hover {
+      color: var(--teal-dark);
+    }
+
+
+    /* ========================================
+       PAGE TITLE
+    ======================================== */
+
+    .page-intro {
+      padding: 48px 20px 34px;
+      text-align: center;
+    }
+
+    .page-intro h1 {
+      margin: 0;
+
+      color: var(--teal-dark);
+
+      font-size: clamp(34px, 5vw, 54px);
+      line-height: 1.1;
+
+      letter-spacing: -0.03em;
+      font-weight: 700;
+    }
+
+    .tagline {
+      margin: 14px 0 0;
+
+      color: var(--teal);
+      font-size: clamp(16px, 2vw, 18px);
+      font-weight: 600;
+    }
+
+
+    /* ========================================
+       HERO IMAGE
+    ======================================== */
+
+    .hero-image {
+      margin-top: 8px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+
+    /* PROFESSIONAL IDENTIFIERS BELOW PHOTO */
+
+    .profile-identifiers {
+      margin: 24px auto 58px;
+
+      text-align: center;
+
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 700;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+
+    /* ========================================
+       GENERAL SECTION ELEMENTS
+    ======================================== */
+
+    .section-title {
+      margin: 0 0 30px;
+
+      color: var(--teal-dark);
+
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.08;
+
+      letter-spacing: -0.04em;
+      font-weight: 700;
+    }
+
+    .section-label {
+      margin: 0 0 10px;
+
+      color: var(--teal);
+
+      font-size: 13px;
+      font-weight: 700;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+
+    /* ========================================
+       ABOUT
+    ======================================== */
+
+    .about-section {
+      padding: 0 0 90px;
+    }
+
+    .about-copy {
+      max-width: 920px;
+    }
+
+    .about-copy p {
+      margin: 0 0 24px;
+
+      color: var(--text);
+
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .about-copy p:first-of-type {
+      color: #294243;
+      font-size: clamp(19px, 2.1vw, 22px);
+      line-height: 1.7;
+    }
+
+
+    /* ========================================
+       GLIMPSE OF THE JOURNEY
+    ======================================== */
+
+    .journey-wrap {
+      max-width: 920px;
+      margin-top: 54px;
+    }
+
+    details.journey {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    details.journey summary {
+      position: relative;
+
+      padding: 25px 52px 25px 0;
+
+      cursor: pointer;
+      list-style: none;
+
+      color: var(--teal-dark);
+
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    details.journey summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.journey summary::after {
+      content: "+";
+
+      position: absolute;
+      right: 0;
+      top: 50%;
+
+      width: 34px;
+      height: 34px;
+
+      transform: translateY(-50%);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid var(--teal);
+      border-radius: 50%;
+
+      color: var(--teal-dark);
+
+      font-size: 23px;
+      font-weight: 400;
+
+      transition: transform 0.2s ease;
+    }
+
+    details.journey[open] summary::after {
+      content: "−";
+    }
+
+    .journey-content {
+      padding: 5px 0 42px;
+    }
+
+    .journey-item {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 42px;
+
+      padding: 31px 0;
+
+      border-bottom: 1px solid #e7eeee;
+    }
+
+    .journey-item:last-of-type {
+      border-bottom: 0;
+    }
+
+    .journey-item h3 {
+      margin: 0;
+
+      color: var(--teal-dark);
+
+      font-size: 18px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .journey-item p {
+      margin: 0;
+
+      color: var(--text-soft);
+
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .journey-close {
+      margin: 32px 0 0;
+      padding: 28px 0 0;
+
+      border-top: 3px solid var(--teal-light);
+
+      color: var(--teal-dark);
+
+      font-size: 18px;
+      font-weight: 650;
+      line-height: 1.7;
+    }
+
+
+    /* ========================================
+       EXPERIENCE
+    ======================================== */
+
+    .experience-section {
+      padding: 90px 0 96px;
+      background: var(--teal-pale);
+    }
+
+    .experience-header {
+      max-width: 900px;
+      margin-bottom: 60px;
+    }
+
+    .experience-header .section-title {
+      max-width: 900px;
+    }
+
+    .experience-intro {
+      margin: 0;
+
+      color: var(--text-soft);
+
+      font-size: clamp(18px, 2vw, 20px);
+      line-height: 1.8;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      column-gap: 64px;
+      row-gap: 0;
+    }
+
+    .experience-item {
+      padding: 34px 0 40px;
+      border-top: 1px solid #cfe2e2;
+    }
+
+    .experience-number {
+      margin: 0 0 12px;
+
+      color: var(--teal);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .experience-item h3 {
+      margin: 0 0 17px;
+
+      color: var(--teal-dark);
+
+      font-size: 23px;
+      line-height: 1.3;
+    }
+
+    .experience-item p {
+      margin: 0 0 17px;
+
+      color: var(--text-soft);
+
+      font-size: 16.5px;
+      line-height: 1.75;
+    }
+
+    .experience-item ul {
+      margin: 20px 0 0;
+      padding: 0;
+
+      list-style: none;
+    }
+
+    .experience-item li {
+      position: relative;
+
+      margin: 9px 0;
+      padding-left: 18px;
+
+      color: var(--text-soft);
+
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .experience-item li::before {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      top: 0.72em;
+
+      width: 6px;
+      height: 6px;
+
+      background: var(--teal);
+      border-radius: 50%;
+    }
+
+
+    /* ========================================
+       EDUCATION & CREDENTIALS
+    ======================================== */
+
+    .credentials-section {
+      padding: 94px 0;
+      background: #ffffff;
+    }
+
+    .credentials-layout {
+      display: grid;
+
+      grid-template-columns: 0.85fr 1.4fr;
+
+      gap: 85px;
+
+      align-items: start;
+    }
+
+    .credentials-heading h2 {
+      margin: 0;
+
+      color: var(--teal-dark);
+
+      font-size: clamp(34px, 5vw, 48px);
+      line-height: 1.12;
+
+      letter-spacing: -0.025em;
+    }
+
+    .credentials-list {
+      border-top: 1px solid var(--border);
+    }
+
+    .credential {
+      padding: 24px 0;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .credential-category {
+      margin: 0 0 6px;
+
+      color: var(--teal);
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .credential h3 {
+      margin: 0;
+
+      color: var(--teal-dark);
+
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .credential p {
+      margin: 7px 0 0;
+
+      color: var(--text-soft);
+
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+
+    /* ========================================
+       CONNECT
+    ======================================== */
+
+    .connect-section {
+      padding: 100px 0;
+
+      background: var(--teal-dark);
+      color: #ffffff;
+
+      text-align: center;
+    }
+
+    .connect-inner {
+      max-width: 790px;
+      margin: 0 auto;
+    }
+
+    .connect-section .section-label {
+      color: #9adddf;
+    }
+
+    .connect-section h2 {
+      margin: 0 0 22px;
+
+      color: #ffffff;
+
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.08;
+
+      letter-spacing: -0.03em;
+    }
+
+    .connect-section p {
+      max-width: 690px;
+
+      margin: 0 auto 34px;
+
+      color: #d9eeee;
+
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+
+    /* BUTTONS */
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 14px;
+
+      margin-bottom: 38px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-width: 168px;
+
+      padding: 14px 28px;
+
+      border-radius: 999px;
+
+      text-decoration: none;
+
+      font-size: 15px;
+      font-weight: 700;
+
+      transition:
+        transform 0.15s ease,
+        background 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: #ffffff;
+      color: var(--teal-dark);
+    }
+
+    .btn-primary:hover {
+      background: #eafafa;
+    }
+
+    .btn-secondary {
+      background: transparent;
+
+      border: 1px solid rgba(255,255,255,0.6);
+
+      color: #ffffff;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+
+    /* SOCIAL LINKS */
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 10px 24px;
+
+      margin-top: 5px;
+    }
+
+    .social-links a {
+      color: #ffffff;
+
+      text-decoration: none;
+
+      font-size: 15px;
+
+      border-bottom: 1px solid transparent;
+    }
+
+    .social-links a:hover {
+      border-bottom-color: #ffffff;
+    }
+
+    .social-links a:not(:last-child)::after {
+      content: "·";
+
+      margin-left: 24px;
+
+      color: #78c7c9;
+    }
+
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    .site-footer {
+      padding: 42px 20px 32px;
+
+      background: #ffffff;
+
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .copyright {
+      margin: 0 0 20px;
+
+      color: #707b7b;
+
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 16px 28px;
+    }
+
+    .footer-links a {
+      color: var(--teal);
+
+      text-decoration: none;
+
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: var(--teal-dark);
+      text-decoration: underline;
+    }
+
+
+    /* ========================================
+       RESPONSIVE
+    ======================================== */
+
+    @media (max-width: 800px) {
+
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .credentials-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .journey-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .page-intro {
+        padding-top: 40px;
+      }
+
+      .profile-identifiers {
+        margin-bottom: 48px;
+      }
+
+      .experience-section,
+      .credentials-section {
+        padding-top: 70px;
+        padding-bottom: 70px;
+      }
+
+      .connect-section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .container {
+        width: min(100% - 30px, var(--max-width));
+      }
+
+      .logo img {
+        width: 190px;
+      }
+
+      .main-nav ul {
+        gap: 14px 20px;
+      }
+
+      .main-nav a {
+        font-size: 11px;
+      }
+
+      .page-intro {
+        padding: 36px 15px 26px;
+      }
+
+      .profile-identifiers {
+        margin-top: 20px;
+
+        font-size: 11px;
+        letter-spacing: 0.12em;
+      }
+
+      .about-copy p {
+        font-size: 17px;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .social-links {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .social-links a:not(:last-child)::after {
+        content: "";
+        margin: 0;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ========================================
+       HEADER
+  ======================================== -->
+
+  <header class="site-header">
+
+    <div class="header-inner">
+
+      <a href="index.html" class="logo">
+
+        <img
+          src="MKT-logo-3.png"
+          alt="Marsha Kerr Talley - Live Inspired"
+        >
+
+      </a>
+
+
+      <nav
+        class="main-nav"
+        aria-label="Main navigation"
+      >
+
+        <ul>
+
+          <li>
+            <a href="index.html">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="work-with-me.html">
+              Work With Me
+            </a>
+          </li>
+
+          <li>
+            <a href="books.html">
+              Books
+            </a>
+          </li>
+
+          <li>
+            <a href="podcast.html">
+              Podcast
+            </a>
+          </li>
+
+          <li>
+            <a href="reflections.html">
+              Reflections
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- ========================================
+         PAGE INTRO
+    ======================================== -->
+
+    <section class="page-intro">
+
+      <h1>
+        About Marsha
+      </h1>
+
+      <p class="tagline">
+        Live Inspired | Turning Pain Into Possibility™
+      </p>
+
+    </section>
+
+
+
+    <!-- ========================================
+         HERO IMAGE
+    ======================================== -->
+
+    <div class="hero-image container">
+
+      <img
+        src="MKT-About-Banner.png"
+        alt="Marsha Kerr Talley"
+      >
+
+    </div>
+
+
+    <!-- PROFESSIONAL IDENTIFIERS -->
+
+    <div class="profile-identifiers">
+      EDUCATOR · AUTHOR · CONSULTANT
+    </div>
+
+
+
+    <!-- ========================================
+         ABOUT
+    ======================================== -->
+
+    <section
+      class="about-section container"
+      id="about"
+    >
+
+      <div class="about-copy">
+
+        <h2 class="section-title">
+          A life sculpted by education, possibility and creating another way.
+        </h2>
+
+
+        <p>
+          Born in Jamaica's capital, Kingston, I had my fair share of
+          experiences that would later prepare me to lead in places that
+          sometimes sought to limit me.
+        </p>
+
+
+        <p>
+          My journey has rarely followed a straight line. From education
+          to writing books, entrepreneurship to consultancy, I have found
+          ways to forge through hardship and, at times, create something
+          out of seemingly nothing.
+        </p>
+
+
+        <p>
+          Education has been the longest thread running through my
+          professional life. For more than two decades, I have worked
+          across the United States and United Kingdom as an educator,
+          teacher educator and leader, working with children, young people
+          and adults with diverse learning needs. Those experiences taught
+          me as much about people, systems and leadership as they did
+          about pedagogy.
+        </p>
+
+
+        <p>
+          Beyond the classroom, I became an author, entrepreneur, podcast
+          host, facilitator and consultant. Each chapter expanded how I
+          understood the relationship between people, their environments
+          and their ability to thrive.
+        </p>
+
+
+        <p>
+          Today, those experiences come together in my work with educators,
+          leaders and organisations. I bring the perspective of someone
+          who has worked inside complex systems, led through challenge,
+          built ideas from the ground up and continually found ways to
+          turn difficult experiences into possibilities.
+        </p>
+
+      </div>
+
+
+
+      <!-- ====================================
+           GLIMPSE OF THE JOURNEY
+      ==================================== -->
+
+      <div class="journey-wrap">
+
+        <details class="journey">
+
+          <summary>
+            Glimpse of the Journey
+          </summary>
+
+
+          <div class="journey-content">
+
+
+            <article class="journey-item">
+
+              <h3>
+                Early Years and Education
+              </h3>
+
+              <p>
+                Education became one of my greatest teachers. Teaching
+                students with diverse academic, behaviour and other needs
+                gave me a close-up view of what helps people flourish beyond
+                societal expectations and limitations. I also learned
+                firsthand what happens when systems make it unnecessarily
+                difficult for them to thrive.
+              </p>
+
+            </article>
+
+
+
+            <article class="journey-item">
+
+              <h3>
+                Finding Another Way
+              </h3>
+
+              <p>
+                Some of my most important professional thinking emerged
+                from difficult periods in my own life and career. They
+                forced me to question conventional ideas about resilience,
+                leadership and wellbeing and to think more deeply about
+                the environments we create for people.
+              </p>
+
+            </article>
+
+
+
+            <article class="journey-item">
+
+              <h3>
+                Building Silhouette's Café
+              </h3>
+
+              <p>
+                Entrepreneurship gave me another classroom. I founded
+                Silhouette's Café as a wellness brand centred on relaxation,
+                natural living and intentional care. Building something of
+                my own strengthened my understanding of vision, creativity,
+                risk and what it means to turn an idea into something
+                tangible.
+              </p>
+
+            </article>
+
+
+
+            <article class="journey-item">
+
+              <h3>
+                Becoming an Author
+              </h3>
+
+              <p>
+                Writing gave me a different way to teach.
+                <em>The Decision Is Just the Beginning</em> and
+                <em>Healing from Emotional Traumas</em> grew from
+                experiences and lessons I believed deserved to be shared
+                beyond a classroom or workshop.
+              </p>
+
+            </article>
+
+
+
+            <article class="journey-item">
+
+              <h3>
+                Expanding the Classroom
+              </h3>
+
+              <p>
+                Over time, my classroom became larger. Teacher development,
+                leadership, professional learning, speaking, podcasting and
+                consultancy allowed me to work with people and organisations
+                in new ways while remaining grounded in the principles that
+                have shaped my career.
+              </p>
+
+            </article>
+
+
+
+            <article class="journey-item">
+
+              <h3>
+                Returning to Jamaica
+              </h3>
+
+              <p>
+                Returning to the country where my story began represents
+                another chapter. I bring home more than two decades of
+                international education experience alongside everything I
+                have learned through leadership, entrepreneurship, writing
+                and life.
+              </p>
+
+            </article>
+
+
+            <p class="journey-close">
+              The thread connecting it all is simple: I believe people can
+              create possibilities even when circumstances suggest otherwise.
+            </p>
+
+
+          </div>
+
+        </details>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         EXPERIENCE
+    ======================================== -->
+
+    <section
+      class="experience-section"
+      id="experience"
+    >
+
+      <div class="container">
+
+
+        <div class="experience-header">
+
+          <p class="section-label">
+            Experience
+          </p>
+
+
+          <h2 class="section-title">
+            More than two decades across education, leadership and professional learning.
+          </h2>
+
+
+          <p class="experience-intro">
+            My career extends across the United States, United Kingdom,
+            and Jamaica, from academia and professional learning to life
+            skills and personal development with one common thread:
+            improving how people learn, lead and function within the
+            environments around them.
+          </p>
+
+        </div>
+
+
+
+        <div class="experience-grid">
+
+
+          <!-- EDUCATION -->
+
+          <article class="experience-item">
+
+            <p class="experience-number">
+              01
+            </p>
+
+            <h3>
+              Education & Leadership
+            </h3>
+
+            <p>
+              My career in education includes work across secondary,
+              further and adult education, Special Education, English
+              Language Arts and literacy, behaviour, curriculum development
+              and inclusive practice.
+            </p>
+
+            <p>
+              My experience includes classroom teaching, instructional
+              leadership, teacher development, mentoring and coaching,
+              programme development and supporting educators working
+              within complex learning environments.
+            </p>
+
+          </article>
+
+
+
+          <!-- PROFESSIONAL LEARNING -->
+
+          <article class="experience-item">
+
+            <p class="experience-number">
+              02
+            </p>
+
+            <h3>
+              Professional Learning & Facilitation
+            </h3>
+
+            <p>
+              I design and facilitate professional learning for educators,
+              leaders and organisations, turning complex ideas into
+              practical strategies people can apply in their own settings.
+            </p>
+
+            <ul>
+
+              <li>
+                Educational and instructional leadership
+              </li>
+
+              <li>
+                Teacher development and professional learning
+              </li>
+
+              <li>
+                Special Education and inclusive practice
+              </li>
+
+              <li>
+                Behaviour and classroom ecology
+              </li>
+
+              <li>
+                Preventive wellbeing and burnout prevention
+              </li>
+
+              <li>
+                Trauma-informed and therapeutic approaches
+              </li>
+
+              <li>
+                Leadership development and organisational culture
+              </li>
+
+              <li>
+                Curriculum and programme development
+              </li>
+
+              <li>
+                Adult learning
+              </li>
+
+              <li>
+                AI, digital tools and entrepreneurship education
+              </li>
+
+            </ul>
+
+          </article>
+
+
+
+          <!-- CONSULTANCY -->
+
+          <article class="experience-item">
+
+            <p class="experience-number">
+              03
+            </p>
+
+            <h3>
+              Consultancy
+            </h3>
+
+            <p>
+              Through my consultancy work, I support organisations in
+              examining the environments, practices and systems that
+              influence how people learn, lead and work.
+            </p>
+
+            <p>
+              My approach brings together educational leadership,
+              organisational culture, preventive wellbeing and practical
+              implementation rather than treating them as separate
+              concerns.
+            </p>
+
+          </article>
+
+
+
+          <!-- ENTREPRENEURSHIP -->
+
+          <article class="experience-item">
+
+            <p class="experience-number">
+              04
+            </p>
+
+            <h3>
+              Entrepreneurship, Writing & Media
+            </h3>
+
+            <p>
+              My career extends beyond education into entrepreneurship,
+              writing, podcasting, radio and public speaking.
+            </p>
+
+            <p>
+              I am the founder of Silhouette's Café™, creator of
+              Turning Pain Into Possibility™, author of
+              <em>The Decision Is Just the Beginning</em> and
+              <em>Healing from Emotional Traumas</em>, and host of
+              <em>Candid Conversations with Marsha</em>.
+            </p>
+
+            <p>
+              These platforms have allowed me to communicate ideas,
+              facilitate conversations and reach audiences beyond
+              traditional education settings.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         EDUCATION & CREDENTIALS
+    ======================================== -->
+
+    <section class="credentials-section">
+
+      <div class="container credentials-layout">
+
+
+        <div class="credentials-heading">
+
+          <p class="section-label">
+            Professional Foundations
+          </p>
+
+          <h2>
+            Education & Credentials
+          </h2>
+
+        </div>
+
+
+
+        <div class="credentials-list">
+
+
+          <div class="credential">
+
+            <p class="credential-category">
+              Graduate Education
+            </p>
+
+            <h3>
+              Master of Science in Special Education
+            </h3>
+
+          </div>
+
+
+
+          <div class="credential">
+
+            <p class="credential-category">
+              Undergraduate Education
+            </p>
+
+            <h3>
+              Bachelor's Degree in Dance Performance
+            </h3>
+
+          </div>
+
+
+
+          <div class="credential">
+
+            <p class="credential-category">
+              Professional Credentials
+            </p>
+
+            <h3>
+              Texas Teaching & Instructional Leadership Credentials
+            </h3>
+
+            <p>
+              Professional preparation spanning instructional leadership,
+              curriculum, inclusive practice and educational leadership.
+            </p>
+
+          </div>
+
+
+
+          <div class="credential">
+
+            <p class="credential-category">
+              Additional Professional Learning
+            </p>
+
+            <h3>
+              Counselling Skills & Preventive Health
+            </h3>
+
+            <p>
+              Additional study includes person-centred counselling skills
+              and nutrition and health.
+            </p>
+
+          </div>
+
+
+
+          <div class="credential">
+
+            <p class="credential-category">
+              International Experience
+            </p>
+
+            <h3>
+              United States · United Kingdom · Jamaica
+            </h3>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         CONNECT
+    ======================================== -->
+
+    <section
+      class="connect-section"
+      id="connect"
+    >
+
+      <div class="container connect-inner">
+
+
+        <p class="section-label">
+          Connect
+        </p>
+
+
+        <h2>
+          Interested in working together?
+        </h2>
+
+
+        <p>
+          I work with educators, leaders and organisations through
+          consultancy, professional learning, facilitation, speaking
+          and collaborative projects.
+        </p>
+
+
+
+        <div class="cta-buttons">
+
+
+          <a
+            href="https://marshakerrtalley.com/work-with-me.html#feedback"
+            class="btn btn-primary"
+          >
+            Work With Me
+          </a>
+
+
+          <a
+            href="https://www.linkedin.com/in/marshakerrtalley"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+          >
+            LinkedIn
+          </a>
+
+
+        </div>
+
+
+
+        <div
+          class="social-links"
+          aria-label="Connect with Marsha Kerr Talley online"
+        >
+
+          <a
+            href="https://www.linkedin.com/in/marshakerrtalley"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+
+
+          <a
+            href="https://substack.com/@marshakerrtalley"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Substack
+          </a>
+
+
+          <a href="podcast.html">
+            Candid Conversations
+          </a>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+
+  <footer class="site-footer">
+
+
+    <div class="footer-inner">
+
+
+      <p
+        class="copyright"
+        id="copyright"
+      >
+        Copyright © Marsha Kerr Talley — All Rights Reserved.
+      </p>
+
+
+
+      <nav
+        class="footer-links"
+        aria-label="Footer navigation"
+      >
+
+        <a href="/privacy-policy">
+          Privacy Policy
+        </a>
+
+        <a href="/shipping-return-policy">
+          Shipping &amp; Return Policy
+        </a>
+
+        <a href="/terms-and-conditions">
+          Terms and Conditions
+        </a>
+
+      </nav>
+
+
+    </div>
+
+
+  </footer>
+
+
+
+  <!-- CURRENT YEAR -->
+
+  <script>
+
+    const copyright =
+      document.getElementById("copyright");
+
+    const year =
+      new Date().getFullYear();
+
+    copyright.textContent =
+      "Copyright © " +
+      year +
+      " Marsha Kerr Talley — All Rights Reserved.";
+
+  </script>
+
+
+</body>
+
+</html>    }
 
     body {
       margin: 0;
