@@ -170,10 +170,10 @@
       padding: 0;
       margin: 0;
 
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 500;
 
-      letter-spacing: 0.08em;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
     }
 
@@ -227,21 +227,22 @@
 
     .btn {
 
-      min-height: 52px;
+      min-height: 54px;
 
       display: inline-flex;
       align-items: center;
       justify-content: center;
 
-      padding: 13px 28px;
+      padding: 15px 30px;
 
       border-radius: 999px;
       border: 1px solid transparent;
 
       text-decoration: none;
 
-      font-size: 14px;
+      font-size: clamp(16px, 1.5vw, 17px);
       font-weight: 700;
+      line-height: 1.25;
 
       transition:
         transform 0.2s ease,
@@ -276,6 +277,10 @@
         0 10px 25px rgba(90,163,166,0.18);
     }
 
+    .btn-soft:hover {
+      background: var(--teal-dark);
+    }
+
     .btn-outline {
       background: transparent;
 
@@ -295,6 +300,11 @@
 
       box-shadow:
         0 12px 28px rgba(0,0,0,0.13);
+    }
+
+    .btn-light:hover {
+      box-shadow:
+        0 16px 34px rgba(0,0,0,0.17);
     }
 
 
@@ -426,10 +436,10 @@
 
       color: var(--teal-dark);
 
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 700;
 
-      letter-spacing: 0.14em;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
@@ -504,10 +514,10 @@
 
       color: var(--gold);
 
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 700;
 
-      letter-spacing: 0.18em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
@@ -742,13 +752,14 @@
     }
 
 
-    /* OPEN STAR LIST - NO BOXES */
+    /* OPEN STAR LIST */
 
     .experience-list {
 
       list-style: none;
 
       padding: 0;
+
       margin:
         0 0
         42px;
@@ -783,7 +794,7 @@
 
       color: var(--gold);
 
-      font-size: 23px;
+      font-size: 24px;
       line-height: 1.2;
     }
 
@@ -805,7 +816,7 @@
 
       color: var(--muted);
 
-      font-size: 0.94rem;
+      font-size: 0.96rem;
     }
 
 
@@ -917,6 +928,10 @@
       margin: 0 auto;
     }
 
+    .final-cta .section-kicker {
+      color: #b6dedf;
+    }
+
     .final-cta h2 {
 
       margin-bottom: 22px;
@@ -940,9 +955,9 @@
         32px;
 
       color:
-        rgba(255,255,255,0.78);
+        rgba(255,255,255,0.82);
 
-      font-size: 1.05rem;
+      font-size: 1.06rem;
     }
 
 
@@ -953,68 +968,100 @@
     .site-footer {
 
       padding:
-        48px 20px
-        34px;
+        38px 20px
+        30px;
 
       background: #ffffff;
+
+      border-top:
+        1px solid var(--line);
 
       text-align: center;
     }
 
-    .footer-name {
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
-      margin-bottom: 5px;
 
-      color: var(--teal-deep);
+    /* SOCIAL */
 
-      font-family: var(--heading);
+    .social-links {
 
-      font-size: 1.45rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
+      gap:
+        10px 16px;
+
+      margin-bottom: 22px;
+    }
+
+    .social-links a {
+
+      color: var(--teal-dark);
+
+      text-decoration: none;
+
+      font-size: 15px;
       font-weight: 600;
     }
 
-    .footer-tagline {
-
-      margin-bottom: 23px;
+    .social-links a:hover {
 
       color: var(--teal);
+
+      text-decoration: underline;
+    }
+
+    .social-links span {
+      color: var(--gold);
+    }
+
+
+    /* COPYRIGHT */
+
+    .copyright {
+
+      margin:
+        0 0
+        18px;
+
+      color: #777f80;
 
       font-size: 13px;
     }
 
-    .footer-nav {
+
+    /* LEGAL */
+
+    .legal-links {
 
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
 
       gap:
-        12px 24px;
-
-      margin-bottom: 24px;
+        10px 22px;
     }
 
-    .footer-nav a {
+    .legal-links a {
 
-      color: var(--teal-dark);
+      color: var(--teal);
 
       text-decoration: none;
 
       font-size: 13px;
-      font-weight: 600;
     }
 
-    .footer-nav a:hover {
+    .legal-links a:hover {
+
+      color: var(--teal-dark);
+
       text-decoration: underline;
-    }
-
-    .copyright {
-
-      margin: 0;
-
-      color: #7b8585;
-
-      font-size: 12px;
     }
 
 
@@ -1052,6 +1099,7 @@
       }
 
       .nav-toggle {
+
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -1081,6 +1129,10 @@
           8px 0 5px;
       }
 
+      .site-nav a {
+        font-size: 14px;
+      }
+
       .intro {
 
         padding:
@@ -1092,6 +1144,16 @@
 
         font-size:
           clamp(3rem, 15vw, 4.5rem);
+      }
+
+      .btn {
+
+        font-size: 16px;
+
+        min-height: 56px;
+
+        padding:
+          15px 24px;
       }
 
       .button-row {
@@ -1114,6 +1176,33 @@
 
         grid-template-columns:
           27px 1fr;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .site-footer {
+
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .social-links {
+
+        gap:
+          8px 12px;
+      }
+
+      .legal-links {
+
+        gap:
+          10px 16px;
+      }
+
+      .legal-links a {
+        font-size: 12px;
       }
 
     }
@@ -1385,7 +1474,7 @@
 
 
             <p>
-              Behaviour shifts, disengagement, resistance,
+              Behaviour shifts, disengagement, resistance
               and turnover tell us something about the environments
               people are trying to survive.
             </p>
@@ -1393,7 +1482,7 @@
 
             <p>
               My work looks beneath the visible problem and points
-              a lens at leadership, culture, expectations,
+              a lens at leadership, culture, expectations
               and systems to understand what may need to change.
             </p>
 
@@ -1672,8 +1761,7 @@
       <div class="cta-inner">
 
 
-        <p class="section-kicker"
-           style="color:#b6dedf;">
+        <p class="section-kicker">
           Start with the real issue
         </p>
 
@@ -1719,43 +1807,12 @@
 
   <footer class="site-footer">
 
-    <div class="page-wrap">
+    <div class="page-wrap footer-inner">
 
 
-      <div class="footer-name">
-        Marsha Kerr Talley
-      </div>
+      <!-- SOCIAL LINKS -->
 
-
-      <p class="footer-tagline">
-        Live Inspired · Turning Pain Into Possibility™
-      </p>
-
-
-      <nav
-        class="footer-nav"
-        aria-label="Footer navigation"
-      >
-
-        <a href="about.html">
-          About
-        </a>
-
-        <a href="work-with-me.html">
-          Work With Me
-        </a>
-
-        <a href="books.html">
-          Books
-        </a>
-
-        <a href="podcast.html">
-          Podcast
-        </a>
-
-        <a href="reflections.html">
-          Reflections
-        </a>
+      <div class="social-links">
 
         <a
           href="https://www.linkedin.com/in/marshakerrtalley"
@@ -1765,17 +1822,68 @@
           LinkedIn
         </a>
 
-      </nav>
+        <span aria-hidden="true">
+          ·
+        </span>
 
+
+        <a
+          href="https://substack.com/@marshakerrtalley"
+          target="_blank"
+          rel="noopener"
+        >
+          Substack
+        </a>
+
+        <span aria-hidden="true">
+          ·
+        </span>
+
+
+        <a
+          href="https://www.silhouettes.com/"
+          target="_blank"
+          rel="noopener"
+        >
+          Silhouette's Café
+        </a>
+
+      </div>
+
+
+
+      <!-- COPYRIGHT -->
 
       <p class="copyright">
 
         Copyright ©
         <span id="currentYear"></span>
-        Marsha Kerr Talley.
-        All Rights Reserved.
+        Marsha Kerr Talley — All Rights Reserved.
 
       </p>
+
+
+
+      <!-- LEGAL LINKS -->
+
+      <nav
+        class="legal-links"
+        aria-label="Legal"
+      >
+
+        <a href="/privacy-policy">
+          Privacy Policy
+        </a>
+
+        <a href="/shipping-return-policy">
+          Shipping & Return Policy
+        </a>
+
+        <a href="/terms-and-conditions">
+          Terms & Conditions
+        </a>
+
+      </nav>
 
 
     </div>
@@ -1793,6 +1901,7 @@
     document.addEventListener(
       "DOMContentLoaded",
       function () {
+
 
         /* COPYRIGHT YEAR */
 
@@ -1852,4 +1961,5 @@
 
 
 </body>
+
 </html>
