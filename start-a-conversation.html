@@ -1,0 +1,2036 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Start a Conversation | Marsha Kerr Talley</title>
+
+  <meta
+    name="description"
+    content="Start a conversation with Marsha Kerr Talley about what you are noticing, what needs to shift, and the possibilities ahead."
+  >
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* =====================================================
+       BRAND
+    ===================================================== */
+
+    :root {
+
+      --teal-deep: #043b3d;
+      --teal-dark: #056367;
+      --teal: #319fa2;
+      --teal-mid: #5aa3a6;
+      --teal-pale: #eefafa;
+
+      --gold: #c9a86a;
+      --cream: #f8f5ef;
+
+      --white: #ffffff;
+
+      --ink: #173234;
+      --body: #526263;
+      --muted: #718080;
+      --line: #dce9e8;
+
+      --heading:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      --body-font:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      --page-width: 1200px;
+    }
+
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          #ffffff 0%,
+          #fbfdfc 100%
+        );
+
+      color: var(--body);
+
+      font-family: var(--body-font);
+      line-height: 1.7;
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin-top: 0;
+
+      color: var(--ink);
+
+      font-family: var(--heading);
+      line-height: 1.08;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .page-wrap {
+      width: min(
+        calc(100% - 40px),
+        var(--page-width)
+      );
+
+      margin: 0 auto;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .site-header {
+      width: 100%;
+      background: #ffffff;
+    }
+
+    .header-inner {
+      width: min(
+        calc(100% - 40px),
+        var(--page-width)
+      );
+
+      margin: 0 auto;
+
+      padding: 20px 0 13px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      position: relative;
+    }
+
+    .site-logo {
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .site-logo img {
+      width: 220px;
+      height: auto;
+
+      margin: 0 auto 13px;
+    }
+
+
+    /* NAV */
+
+    .site-nav ul {
+      list-style: none;
+
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 27px;
+
+      padding: 0;
+      margin: 0;
+
+      font-size: 14px;
+      font-weight: 500;
+
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .site-nav a {
+      color: #343434;
+      text-decoration: none;
+
+      transition: color 0.2s ease;
+    }
+
+    .site-nav a:hover {
+      color: var(--teal-dark);
+    }
+
+
+    /* MOBILE MENU */
+
+    .nav-toggle {
+      display: none;
+
+      position: absolute;
+
+      top: 20px;
+      right: 0;
+
+      width: 44px;
+      height: 44px;
+
+      border: 0;
+
+      background: transparent;
+      color: var(--teal-dark);
+
+      font-size: 28px;
+
+      cursor: pointer;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .conversation-hero {
+
+      padding:
+        clamp(70px, 8vw, 110px)
+        20px
+        46px;
+
+      text-align: center;
+    }
+
+    .conversation-hero-inner {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+
+      margin-bottom: 14px;
+
+      color: var(--gold);
+
+      font-size: 13px;
+      font-weight: 700;
+
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .conversation-hero h1 {
+
+      margin-bottom: 22px;
+
+      color: var(--teal-dark);
+
+      font-size:
+        clamp(3.4rem, 7vw, 6.4rem);
+
+      font-weight: 600;
+
+      letter-spacing: -0.05em;
+    }
+
+    .conversation-hero .lead {
+
+      max-width: 680px;
+
+      margin: 0 auto 14px;
+
+      color: #3e5657;
+
+      font-size:
+        clamp(1.08rem, 2vw, 1.3rem);
+
+      line-height: 1.75;
+    }
+
+    .conversation-hero .support {
+
+      max-width: 620px;
+
+      margin: 0 auto;
+
+      color: var(--muted);
+
+      font-size: 1rem;
+    }
+
+
+    /* =====================================================
+       OPENING LINE
+    ===================================================== */
+
+    .question-intro {
+
+      max-width: 760px;
+
+      margin: 0 auto;
+
+      padding:
+        6px 20px
+        48px;
+
+      text-align: center;
+    }
+
+    .question-intro p {
+
+      margin: 0;
+
+      color: var(--teal-deep);
+
+      font-family: var(--heading);
+
+      font-size:
+        clamp(1.45rem, 3vw, 2rem);
+
+      line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       FORM
+    ===================================================== */
+
+    .form-section {
+
+      padding:
+        20px 20px
+        110px;
+    }
+
+    .conversation-form {
+
+      max-width: 780px;
+
+      margin: 0 auto;
+    }
+
+    .field-group {
+      margin-bottom: 32px;
+    }
+
+    .field-row {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 22px;
+    }
+
+    label {
+
+      display: block;
+
+      margin-bottom: 9px;
+
+      color: var(--teal-deep);
+
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .optional {
+
+      color: var(--muted);
+
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    input,
+    select,
+    textarea {
+
+      width: 100%;
+
+      border:
+        1px solid #cfdedd;
+
+      border-radius: 12px;
+
+      background: #ffffff;
+
+      color: var(--ink);
+
+      padding:
+        15px 16px;
+
+      font-size: 16px;
+
+      outline: none;
+
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+    textarea {
+
+      min-height: 150px;
+
+      resize: vertical;
+
+      line-height: 1.6;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+
+      border-color: var(--teal);
+
+      box-shadow:
+        0 0 0 4px rgba(49,159,162,0.10);
+
+      background: #ffffff;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+
+      color: #9aa8a8;
+    }
+
+
+    /* HELPER TEXT */
+
+    .field-help {
+
+      margin:
+        -2px 0
+        10px;
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.55;
+    }
+
+
+    /* RADIO OPTIONS */
+
+    .radio-group {
+
+      display: grid;
+
+      gap: 11px;
+    }
+
+    .radio-option {
+
+      display: flex;
+
+      gap: 11px;
+
+      align-items: flex-start;
+
+      padding:
+        13px 4px;
+
+      border-bottom:
+        1px solid var(--line);
+    }
+
+    .radio-option:last-child {
+      border-bottom: 0;
+    }
+
+    .radio-option input {
+
+      width: 18px;
+      height: 18px;
+
+      margin-top: 4px;
+
+      flex: 0 0 auto;
+
+      accent-color: var(--teal-dark);
+    }
+
+    .radio-option label {
+
+      margin: 0;
+
+      color: #405556;
+
+      font-size: 15px;
+      font-weight: 500;
+
+      cursor: pointer;
+    }
+
+
+    /* =====================================================
+       CONSENT
+    ===================================================== */
+
+    .consent-group {
+
+      margin:
+        38px 0
+        28px;
+
+      padding:
+        22px 0 0;
+
+      border-top:
+        1px solid var(--line);
+    }
+
+    .consent-option {
+
+      display: flex;
+
+      gap: 12px;
+
+      align-items: flex-start;
+
+      margin: 0;
+
+      cursor: pointer;
+    }
+
+    .consent-option input {
+
+      width: 19px;
+      height: 19px;
+
+      flex: 0 0 auto;
+
+      margin-top: 4px;
+
+      accent-color: var(--teal-dark);
+    }
+
+    .consent-option span {
+
+      color: #4d6162;
+
+      font-size: 14px;
+      font-weight: 500;
+
+      line-height: 1.65;
+    }
+
+    .privacy-note {
+
+      margin:
+        14px 0 0
+        31px;
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.6;
+    }
+
+    .privacy-note a {
+
+      color: var(--teal-dark);
+
+      font-weight: 600;
+    }
+
+
+    /* =====================================================
+       SUBMIT
+    ===================================================== */
+
+    .submit-row {
+      text-align: center;
+    }
+
+    .submit-btn {
+
+      min-height: 58px;
+
+      border: 0;
+      border-radius: 999px;
+
+      padding:
+        16px 38px;
+
+      background: var(--teal-dark);
+      color: #ffffff;
+
+      font-size: 17px;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 13px 30px rgba(5,99,103,0.20);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .submit-btn:hover {
+
+      transform: translateY(-2px);
+
+      background: var(--teal-deep);
+
+      box-shadow:
+        0 17px 36px rgba(5,99,103,0.25);
+    }
+
+    .submit-btn:disabled {
+
+      opacity: 0.6;
+
+      cursor: not-allowed;
+
+      transform: none;
+    }
+
+
+    /* =====================================================
+       FORM STATUS
+    ===================================================== */
+
+    .form-status {
+
+      display: none;
+
+      max-width: 650px;
+
+      margin:
+        30px auto 0;
+
+      padding:
+        18px 20px;
+
+      border-radius: 12px;
+
+      text-align: center;
+
+      font-size: 15px;
+    }
+
+    .form-status.error {
+
+      display: block;
+
+      background: #fff5f3;
+
+      color: #8a3428;
+
+      border:
+        1px solid #f0d5cf;
+    }
+
+
+    /* =====================================================
+       SUCCESS PANEL
+    ===================================================== */
+
+    .success-panel {
+
+      display: none;
+
+      max-width: 700px;
+
+      margin: 0 auto;
+
+      padding:
+        70px 20px
+        120px;
+
+      text-align: center;
+    }
+
+    .success-panel.visible {
+      display: block;
+    }
+
+    .success-panel h2 {
+
+      margin-bottom: 18px;
+
+      color: var(--teal-dark);
+
+      font-size:
+        clamp(2.7rem, 5vw, 4.3rem);
+
+      font-weight: 600;
+    }
+
+    .success-panel p {
+
+      max-width: 600px;
+
+      margin:
+        0 auto
+        15px;
+
+      color: #4e6263;
+
+      font-size: 1.04rem;
+    }
+
+    .success-signature {
+
+      margin-top: 30px !important;
+
+      color: var(--teal-dark) !important;
+
+      font-family: var(--heading);
+
+      font-size: 1.25rem !important;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .site-footer {
+
+      padding:
+        38px 20px
+        30px;
+
+      background: #ffffff;
+
+      border-top:
+        1px solid var(--line);
+
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .social-links {
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
+      gap:
+        10px 16px;
+
+      margin-bottom: 22px;
+    }
+
+    .social-links a {
+
+      color: var(--teal-dark);
+
+      text-decoration: none;
+
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+
+    .social-links span {
+      color: var(--gold);
+    }
+
+    .copyright {
+
+      margin:
+        0 0
+        18px;
+
+      color: #777f80;
+
+      font-size: 13px;
+    }
+
+    .legal-links {
+
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap:
+        10px 22px;
+    }
+
+    .legal-links a {
+
+      color: var(--teal);
+
+      text-decoration: none;
+
+      font-size: 13px;
+    }
+
+    .legal-links a:hover {
+
+      color: var(--teal-dark);
+
+      text-decoration: underline;
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 700px) {
+
+      .page-wrap,
+      .header-inner {
+
+        width: min(
+          calc(100% - 30px),
+          var(--page-width)
+        );
+      }
+
+      .header-inner {
+        align-items: flex-start;
+      }
+
+      .site-logo img {
+
+        width: 190px;
+
+        margin-bottom: 0;
+      }
+
+      .nav-toggle {
+
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+      }
+
+      .site-nav {
+
+        display: none;
+
+        width: 100%;
+
+        padding-top: 20px;
+      }
+
+      .site-nav.open {
+        display: block;
+      }
+
+      .site-nav ul {
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 14px;
+
+        padding:
+          8px 0 5px;
+      }
+
+      .field-row {
+        grid-template-columns: 1fr;
+      }
+
+      .conversation-hero {
+
+        padding-top: 58px;
+        padding-bottom: 38px;
+      }
+
+      .conversation-hero h1 {
+
+        font-size:
+          clamp(3rem, 15vw, 4.5rem);
+      }
+
+      .form-section {
+
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .submit-btn {
+        width: 100%;
+      }
+
+      .privacy-note {
+        margin-left: 0;
+      }
+
+    }
+
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       HEADER
+  ===================================================== -->
+
+  <header class="site-header">
+
+    <div class="header-inner">
+
+      <a
+        href="index.html"
+        class="site-logo"
+        aria-label="Marsha Kerr Talley home"
+      >
+
+        <img
+          src="MKT-logo-3.png"
+          alt="Marsha Kerr Talley"
+        >
+
+      </a>
+
+
+      <button
+        class="nav-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+
+      <nav
+        class="site-nav"
+        aria-label="Main navigation"
+      >
+
+        <ul>
+
+          <li>
+            <a href="index.html">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="about.html">
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="work-with-me.html">
+              Work With Me
+            </a>
+          </li>
+
+          <li>
+            <a href="books.html">
+              Books
+            </a>
+          </li>
+
+          <li>
+            <a href="podcast.html">
+              Podcast
+            </a>
+          </li>
+
+          <li>
+            <a href="reflections.html">
+              Reflections
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section class="conversation-hero">
+
+      <div class="conversation-hero-inner">
+
+        <p class="eyebrow">
+          Start a Conversation
+        </p>
+
+
+        <h1>
+          Tell me what's happening.
+        </h1>
+
+
+        <p class="lead">
+          You don't need to have the solution figured out.
+          Start with what you're noticing.
+        </p>
+
+
+        <p class="support">
+          Share enough for me to understand the context,
+          what you would like to be different,
+          and whether a conversation may be the right next step.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         OPENING QUESTION
+    ===================================================== -->
+
+    <section class="question-intro">
+
+      <p>
+        What are you seeing that tells you something needs to shift?
+      </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FORM
+    ===================================================== -->
+
+    <section
+      class="form-section"
+      id="formSection"
+    >
+
+      <form
+        class="conversation-form"
+        id="conversationForm"
+      >
+
+
+        <!-- NAME -->
+
+        <div class="field-row">
+
+          <div class="field-group">
+
+            <label for="firstname">
+              Your first name
+            </label>
+
+            <input
+              type="text"
+              id="firstname"
+              name="firstname"
+              autocomplete="given-name"
+              required
+            >
+
+          </div>
+
+
+          <div class="field-group">
+
+            <label for="lastname">
+              Your last name
+            </label>
+
+            <input
+              type="text"
+              id="lastname"
+              name="lastname"
+              autocomplete="family-name"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+
+        <!-- EMAIL -->
+
+        <div class="field-group">
+
+          <label for="email">
+            Work email
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            required
+          >
+
+        </div>
+
+
+
+        <!-- ORGANISATION + ROLE -->
+
+        <div class="field-row">
+
+          <div class="field-group">
+
+            <label for="company">
+              Organisation
+            </label>
+
+            <input
+              type="text"
+              id="company"
+              name="company"
+              autocomplete="organization"
+              required
+            >
+
+          </div>
+
+
+          <div class="field-group">
+
+            <label for="jobtitle">
+              Your role
+            </label>
+
+            <input
+              type="text"
+              id="jobtitle"
+              name="jobtitle"
+              autocomplete="organization-title"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+
+        <!-- WHAT ARE YOU NOTICING -->
+
+        <div class="field-group">
+
+          <label for="what_are_you_noticing">
+            What are you noticing?
+          </label>
+
+          <p class="field-help">
+            Tell me what is happening now.
+            You do not need to diagnose the problem.
+          </p>
+
+          <textarea
+            id="what_are_you_noticing"
+            name="what_are_you_noticing"
+            required
+            placeholder="What are you seeing, hearing or experiencing that has brought you here?"
+          ></textarea>
+
+        </div>
+
+
+
+        <!-- DESIRED CHANGE -->
+
+        <div class="field-group">
+
+          <label for="desired_change">
+            What would you like to be different?
+          </label>
+
+          <p class="field-help">
+            Think about what you would like to see,
+            feel or function differently.
+          </p>
+
+          <textarea
+            id="desired_change"
+            name="desired_change"
+            required
+            placeholder="What would meaningful progress or change look like?"
+          ></textarea>
+
+        </div>
+
+
+
+        <!-- TIMEFRAME -->
+
+        <div class="field-group">
+
+          <label>
+            When are you hoping to begin?
+          </label>
+
+          <div class="radio-group">
+
+            <div class="radio-option">
+
+              <input
+                type="radio"
+                id="time_soon"
+                name="timeframe"
+                value="As soon as possible"
+                required
+              >
+
+              <label for="time_soon">
+                As soon as possible
+              </label>
+
+            </div>
+
+
+            <div class="radio-option">
+
+              <input
+                type="radio"
+                id="time_1_3"
+                name="timeframe"
+                value="Within 1–3 months"
+              >
+
+              <label for="time_1_3">
+                Within 1–3 months
+              </label>
+
+            </div>
+
+
+            <div class="radio-option">
+
+              <input
+                type="radio"
+                id="time_3_6"
+                name="timeframe"
+                value="Within 3–6 months"
+              >
+
+              <label for="time_3_6">
+                Within 3–6 months
+              </label>
+
+            </div>
+
+
+            <div class="radio-option">
+
+              <input
+                type="radio"
+                id="time_exploring"
+                name="timeframe"
+                value="Exploring possibilities"
+              >
+
+              <label for="time_exploring">
+                I am exploring possibilities
+              </label>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- FUNDING -->
+
+        <div class="field-group">
+
+          <label>
+            Has funding been identified for this work?
+
+            <span class="optional">
+              Optional
+            </span>
+          </label>
+
+          <div class="radio-group">
+
+            <div class="radio-option">
+
+              <input
+                type="radio"
+                id="funding_yes"
+                name="funding_status"
+                value="Yes"
+              >
+
+              <label for="funding_yes">
+                Yes
+              </label>
+
+            </div>
+
+
+            <div class="radio-option">
+
+              <input
+                type="radio"
+                id="funding_establishing"
+                name="funding_status"
+                value="We are establishing the budget"
+              >
+
+              <label for="funding_establishing">
+                We are establishing the budget
+              </label>
+
+            </div>
+
+
+            <div class="radio-option">
+
+              <input
+                type="radio"
+                id="funding_not_yet"
+                name="funding_status"
+                value="Not yet"
+              >
+
+              <label for="funding_not_yet">
+                Not yet
+              </label>
+
+            </div>
+
+
+            <div class="radio-option">
+
+              <input
+                type="radio"
+                id="funding_unsure"
+                name="funding_status"
+                value="I am not sure"
+              >
+
+              <label for="funding_unsure">
+                I am not sure
+              </label>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- ADDITIONAL CONTEXT -->
+
+        <div class="field-group">
+
+          <label for="additional_context">
+
+            Is there anything else I should know?
+
+            <span class="optional">
+              Optional
+            </span>
+
+          </label>
+
+          <textarea
+            id="additional_context"
+            name="additional_context"
+            placeholder="Anything else that would help me understand the situation?"
+          ></textarea>
+
+        </div>
+
+
+
+        <!-- CONSENT -->
+
+        <div class="consent-group">
+
+          <label class="consent-option">
+
+            <input
+              type="checkbox"
+              id="privacy_consent"
+              name="privacy_consent"
+              required
+            >
+
+            <span>
+              I agree to allow Marsha Kerr Talley to store and process
+              the information I have provided and to contact me about this enquiry.
+            </span>
+
+          </label>
+
+
+          <p class="privacy-note">
+
+            Your information will be handled in accordance with my
+
+            <a href="/privacy-policy">
+              Privacy Policy
+            </a>.
+
+          </p>
+
+        </div>
+
+
+
+        <!-- SUBMIT -->
+
+        <div class="submit-row">
+
+          <button
+            type="submit"
+            class="submit-btn"
+            id="submitButton"
+          >
+            Send Your Enquiry
+          </button>
+
+        </div>
+
+
+        <!-- STATUS -->
+
+        <div
+          id="formStatus"
+          class="form-status"
+          role="status"
+          aria-live="polite"
+        ></div>
+
+
+      </form>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SUCCESS
+    ===================================================== -->
+
+    <section
+      class="success-panel"
+      id="successPanel"
+    >
+
+      <h2>
+        Thank you.
+      </h2>
+
+
+      <p>
+        I've received your enquiry and will review
+        what you've shared.
+      </p>
+
+
+      <p>
+        If a conversation is the right next step,
+        I'll be in touch.
+      </p>
+
+
+      <p class="success-signature">
+        Marsha Kerr Talley
+      </p>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ===================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="page-wrap footer-inner">
+
+
+      <div class="social-links">
+
+        <a
+          href="https://www.linkedin.com/in/marshakerrtalley"
+          target="_blank"
+          rel="noopener"
+        >
+          LinkedIn
+        </a>
+
+        <span aria-hidden="true">
+          ·
+        </span>
+
+
+        <a
+          href="https://substack.com/@marshakerrtalley"
+          target="_blank"
+          rel="noopener"
+        >
+          Substack
+        </a>
+
+      </div>
+
+
+
+      <p class="copyright">
+
+        Copyright ©
+        <span id="currentYear"></span>
+        Marsha Kerr Talley — All Rights Reserved.
+
+      </p>
+
+
+
+      <nav
+        class="legal-links"
+        aria-label="Legal"
+      >
+
+        <a href="/privacy-policy">
+          Privacy Policy
+        </a>
+
+        <a href="/terms-and-conditions">
+          Terms & Conditions
+        </a>
+
+      </nav>
+
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ===================================================== -->
+
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+
+
+        /* ================================================
+           COPYRIGHT YEAR
+        ================================================ */
+
+        const year =
+          document.getElementById(
+            "currentYear"
+          );
+
+        if (year) {
+
+          year.textContent =
+            new Date().getFullYear();
+
+        }
+
+
+
+        /* ================================================
+           MOBILE MENU
+        ================================================ */
+
+        const toggle =
+          document.querySelector(
+            ".nav-toggle"
+          );
+
+        const nav =
+          document.querySelector(
+            ".site-nav"
+          );
+
+        if (toggle && nav) {
+
+          toggle.addEventListener(
+            "click",
+            function () {
+
+              const open =
+                nav.classList.toggle(
+                  "open"
+                );
+
+              toggle.setAttribute(
+                "aria-expanded",
+                open
+              );
+
+              toggle.textContent =
+                open ? "×" : "☰";
+
+            }
+          );
+
+        }
+
+
+
+        /* ================================================
+           HUBSPOT SETTINGS
+        ================================================ */
+
+        const HUBSPOT_PORTAL_ID =
+          "51851179";
+
+        const HUBSPOT_FORM_ID =
+          "24ec035a-87a9-4814-a7bd-ece795e7a879";
+
+        const HUBSPOT_ENDPOINT =
+          `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`;
+
+
+
+        /* ================================================
+           FORM ELEMENTS
+        ================================================ */
+
+        const form =
+          document.getElementById(
+            "conversationForm"
+          );
+
+        const formSection =
+          document.getElementById(
+            "formSection"
+          );
+
+        const successPanel =
+          document.getElementById(
+            "successPanel"
+          );
+
+        const submitButton =
+          document.getElementById(
+            "submitButton"
+          );
+
+        const formStatus =
+          document.getElementById(
+            "formStatus"
+          );
+
+
+
+        /* ================================================
+           FORM SUBMISSION
+        ================================================ */
+
+        form.addEventListener(
+          "submit",
+          async function (event) {
+
+            event.preventDefault();
+
+
+            /* BROWSER VALIDATION */
+
+            if (!form.checkValidity()) {
+
+              form.reportValidity();
+
+              return;
+            }
+
+
+            submitButton.disabled =
+              true;
+
+            submitButton.textContent =
+              "Sending...";
+
+
+            formStatus.className =
+              "form-status";
+
+            formStatus.textContent =
+              "";
+
+
+            const formData =
+              new FormData(form);
+
+
+
+            /* ==========================================
+               BUILD HUBSPOT FIELD ARRAY
+            ========================================== */
+
+            const fields = [
+
+              {
+                name: "firstname",
+                value:
+                  formData.get("firstname") || ""
+              },
+
+              {
+                name: "lastname",
+                value:
+                  formData.get("lastname") || ""
+              },
+
+              {
+                name: "email",
+                value:
+                  formData.get("email") || ""
+              },
+
+              {
+                name: "company",
+                value:
+                  formData.get("company") || ""
+              },
+
+              {
+                name: "jobtitle",
+                value:
+                  formData.get("jobtitle") || ""
+              },
+
+              {
+                name:
+                  "what_are_you_noticing_",
+
+                value:
+                  formData.get(
+                    "what_are_you_noticing"
+                  ) || ""
+              },
+
+              {
+                name:
+                  "what_would_you_like_to_be_different_",
+
+                value:
+                  formData.get(
+                    "desired_change"
+                  ) || ""
+              },
+
+              {
+                name:
+                  "when_are_you_hoping_to_begin_",
+
+                value:
+                  formData.get(
+                    "timeframe"
+                  ) || ""
+              }
+
+            ];
+
+
+            /* FUNDING IS OPTIONAL */
+
+            const fundingStatus =
+              formData.get(
+                "funding_status"
+              );
+
+            if (fundingStatus) {
+
+              fields.push({
+
+                name:
+                  "has_funding_been_identified_",
+
+                value:
+                  fundingStatus
+
+              });
+
+            }
+
+
+            /* ADDITIONAL CONTEXT IS OPTIONAL */
+
+            const additionalContext =
+              formData.get(
+                "additional_context"
+              );
+
+            if (
+              additionalContext &&
+              additionalContext.trim()
+            ) {
+
+              fields.push({
+
+                name:
+                  "anything_else_i_should_know_",
+
+                value:
+                  additionalContext.trim()
+
+              });
+
+            }
+
+
+
+            /* ==========================================
+               HUBSPOT PAYLOAD
+            ========================================== */
+
+            const payload = {
+
+              submittedAt:
+                Date.now().toString(),
+
+              fields: fields,
+
+              context: {
+
+                pageUri:
+                  window.location.href,
+
+                pageName:
+                  document.title
+
+              },
+
+              legalConsentOptions: {
+
+                consent: {
+
+                  consentToProcess: true,
+
+                  text:
+                    "I agree to allow Marsha Kerr Talley to store and process the information I have provided and to contact me about this enquiry."
+
+                }
+
+              }
+
+            };
+
+
+
+            /* ==========================================
+               SEND TO HUBSPOT
+            ========================================== */
+
+            try {
+
+              const response =
+                await fetch(
+                  HUBSPOT_ENDPOINT,
+                  {
+
+                    method: "POST",
+
+                    headers: {
+
+                      "Content-Type":
+                        "application/json"
+
+                    },
+
+                    body:
+                      JSON.stringify(
+                        payload
+                      )
+
+                  }
+                );
+
+
+
+              /* ========================================
+                 HANDLE HUBSPOT ERROR
+              ======================================== */
+
+              if (!response.ok) {
+
+                const errorData =
+                  await response
+                    .json()
+                    .catch(
+                      () => null
+                    );
+
+
+                console.error(
+                  "HubSpot submission error:",
+                  errorData
+                );
+
+
+                throw new Error(
+                  "HubSpot rejected the submission."
+                );
+
+              }
+
+
+
+              /* ========================================
+                 SUCCESS
+              ======================================== */
+
+              form.reset();
+
+
+              formSection.style.display =
+                "none";
+
+
+              successPanel.classList.add(
+                "visible"
+              );
+
+
+              window.scrollTo({
+
+                top:
+                  successPanel.offsetTop - 80,
+
+                behavior:
+                  "smooth"
+
+              });
+
+
+            } catch (error) {
+
+
+              console.error(
+                "Form submission failed:",
+                error
+              );
+
+
+              formStatus.className =
+                "form-status error";
+
+
+              formStatus.textContent =
+                "Your enquiry could not be sent. Please try again.";
+
+
+              submitButton.disabled =
+                false;
+
+
+              submitButton.textContent =
+                "Send Your Enquiry";
+
+            }
+
+          }
+        );
+
+
+      }
+    );
+
+  </script>
+
+
+</body>
+
+</html>
