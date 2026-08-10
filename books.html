@@ -9,8 +9,7 @@
 
   <meta
     name="description"
-    content="Explore books and practical guides by Marsha Kerr Talley on healing, personal growth, 
-    and leadership development"
+    content="Explore books and practical guides by Marsha Kerr Talley on education, leadership, healing and personal growth."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,10 +27,8 @@
       --teal-dark: #056367;
       --teal: #319fa2;
       --teal-pale: #eefafa;
-
       --gold: #c9a86a;
       --cream: #f8f5ef;
-
       --ink: #173234;
       --body: #526263;
       --muted: #718080;
@@ -100,11 +97,7 @@
     }
 
     .page-wrap {
-      width: min(
-        calc(100% - 40px),
-        var(--page-width)
-      );
-
+      width: min(calc(100% - 40px), var(--page-width));
       margin: 0 auto;
     }
 
@@ -119,11 +112,7 @@
     }
 
     .header-inner {
-      width: min(
-        calc(100% - 40px),
-        var(--page-width)
-      );
-
+      width: min(calc(100% - 40px), var(--page-width));
       margin: 0 auto;
       padding: 20px 0 13px;
 
@@ -147,11 +136,9 @@
 
     .site-nav ul {
       list-style: none;
-
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-
       gap: 27px;
 
       padding: 0;
@@ -159,7 +146,6 @@
 
       font-size: 14px;
       font-weight: 500;
-
       letter-spacing: 0.07em;
       text-transform: uppercase;
     }
@@ -167,7 +153,6 @@
     .site-nav a {
       color: #343434;
       text-decoration: none;
-
       transition: color 0.2s ease;
     }
 
@@ -179,7 +164,6 @@
 
     .nav-toggle {
       display: none;
-
       position: absolute;
       top: 20px;
       right: 0;
@@ -189,7 +173,6 @@
 
       border: 0;
       background: transparent;
-
       color: var(--teal-dark);
 
       font-size: 28px;
@@ -240,7 +223,7 @@
       color: #ffffff;
 
       box-shadow:
-        0 11px 25px rgba(5,99,103,0.18);
+        0 11px 25px rgba(5, 99, 103, 0.18);
     }
 
     .btn-primary:hover {
@@ -249,11 +232,8 @@
 
     .btn-outline {
       background: transparent;
-
       color: var(--teal-dark);
-
-      border-color:
-        rgba(5,99,103,0.25);
+      border-color: rgba(5, 99, 103, 0.25);
     }
 
     .btn-outline:hover {
@@ -262,10 +242,8 @@
 
     .text-link {
       color: var(--teal-dark);
-
       font-size: 15px;
       font-weight: 700;
-
       text-decoration: none;
     }
 
@@ -313,13 +291,11 @@
         clamp(3.5rem, 7vw, 6.2rem);
 
       font-weight: 600;
-
       letter-spacing: -0.05em;
     }
 
     .books-hero .lead {
       max-width: 720px;
-
       margin: 0 auto;
 
       color: #455b5c;
@@ -332,21 +308,15 @@
 
 
     /* =====================================================
-       BANNER
+       HERO IMAGE
     ===================================================== */
 
     .books-banner {
-      padding:
-        0 0
-        68px;
+      padding: 0 0 68px;
     }
 
     .books-banner-inner {
-      width: min(
-        calc(100% - 40px),
-        980px
-      );
-
+      width: min(calc(100% - 40px), 980px);
       margin: 0 auto;
     }
 
@@ -360,12 +330,12 @@
       border-radius: 16px;
 
       box-shadow:
-        0 18px 42px rgba(5,99,103,0.10);
+        0 18px 42px rgba(5, 99, 103, 0.10);
     }
 
 
     /* =====================================================
-       SECTION HEADERS
+       SECTION HEADINGS
     ===================================================== */
 
     .section-heading {
@@ -388,7 +358,6 @@
         clamp(2.6rem, 5vw, 4.4rem);
 
       font-weight: 600;
-
       letter-spacing: -0.04em;
     }
 
@@ -396,7 +365,6 @@
       max-width: 650px;
 
       color: var(--muted);
-
       font-size: 1.02rem;
     }
 
@@ -411,9 +379,7 @@
     ===================================================== */
 
     .collection {
-      padding:
-        10px 0
-        95px;
+      padding: 10px 0 95px;
     }
 
     .collection.alt {
@@ -436,7 +402,7 @@
       display: grid;
 
       grid-template-columns:
-        minmax(240px, 315px)
+        minmax(250px, 330px)
         minmax(0, 1fr);
 
       gap:
@@ -444,8 +410,7 @@
 
       align-items: center;
 
-      padding:
-        46px 0;
+      padding: 50px 0;
 
       border-top:
         1px solid var(--line);
@@ -459,7 +424,7 @@
     .book-entry.reverse {
       grid-template-columns:
         minmax(0, 1fr)
-        minmax(240px, 315px);
+        minmax(250px, 330px);
     }
 
     .book-entry.reverse .book-cover {
@@ -473,6 +438,10 @@
 
     /* =====================================================
        BOOK COVERS
+
+       Physical books are intentionally larger.
+       Digital books remain slightly smaller so they
+       do not dominate the collection.
     ===================================================== */
 
     .book-cover {
@@ -481,36 +450,31 @@
       align-items: center;
     }
 
-    /* STANDARD / PHYSICAL BOOK COVERS */
-
     .book-cover img {
       width: auto;
-
-      max-width: 285px;
-      max-height: 385px;
+      max-width: 315px;
+      max-height: 425px;
 
       object-fit: contain;
 
       border-radius: 10px;
 
       box-shadow:
-        0 16px 38px rgba(4,59,61,0.12);
+        0 16px 38px rgba(4, 59, 61, 0.12);
     }
 
-
-    /* EBOOK MOCKUPS */
-
-    .book-cover img.mockup-cover {
-      max-width: 240px;
-      max-height: 330px;
-    }
-
-
-    /* NEWER EBOOK COVERS THAT ARE NOT MOCKUPS */
+    /* DIGITAL BOOK COVERS */
 
     .book-cover img.ebook-cover {
-      max-width: 255px;
-      max-height: 350px;
+      max-width: 245px;
+      max-height: 340px;
+    }
+
+    /* DIGITAL MOCKUPS */
+
+    .book-cover img.mockup-cover {
+      max-width: 235px;
+      max-height: 325px;
     }
 
 
@@ -524,15 +488,13 @@
       align-items: center;
 
       gap: 10px 16px;
-
       margin-bottom: 14px;
     }
 
     .release-pill {
       display: inline-flex;
 
-      padding:
-        6px 12px;
+      padding: 6px 12px;
 
       border-radius: 999px;
 
@@ -562,17 +524,14 @@
         clamp(2rem, 4vw, 3.2rem);
 
       font-weight: 600;
-
       letter-spacing: -0.035em;
     }
 
     .book-description {
       max-width: 690px;
-
       margin-bottom: 18px;
 
       color: #506263;
-
       font-size: 1rem;
     }
 
@@ -587,7 +546,6 @@
         clamp(1.08rem, 2vw, 1.3rem);
 
       font-weight: 600;
-
       line-height: 1.55;
     }
 
@@ -595,7 +553,6 @@
       margin-bottom: 23px;
 
       color: var(--muted);
-
       font-size: 13px;
     }
 
@@ -605,8 +562,7 @@
     ===================================================== */
 
     .author-quote {
-      padding:
-        85px 20px;
+      padding: 85px 20px;
 
       background:
         linear-gradient(
@@ -620,7 +576,6 @@
 
     .author-quote blockquote {
       max-width: 900px;
-
       margin: 0 auto;
 
       color: #ffffff;
@@ -631,7 +586,6 @@
         clamp(2rem, 4vw, 3.3rem);
 
       line-height: 1.45;
-
       letter-spacing: -0.025em;
     }
 
@@ -654,13 +608,11 @@
 
 
     /* =====================================================
-       REVIEWS
+       READER REFLECTIONS
     ===================================================== */
 
     .reader-section {
-      padding:
-        90px 0
-        100px;
+      padding: 90px 0 100px;
     }
 
     .reviews {
@@ -669,8 +621,7 @@
     }
 
     .review {
-      padding:
-        30px 0;
+      padding: 30px 0;
 
       border-bottom:
         1px solid var(--line);
@@ -687,7 +638,6 @@
       color: var(--gold);
 
       font-size: 20px;
-
       letter-spacing: 0.08em;
     }
 
@@ -725,11 +675,9 @@
     ===================================================== */
 
     .current-thinking {
-      padding:
-        82px 20px;
+      padding: 82px 20px;
 
       background: var(--cream);
-
       text-align: center;
     }
 
@@ -753,7 +701,6 @@
       margin-bottom: 28px;
 
       color: var(--muted);
-
       font-size: 1.04rem;
     }
 
@@ -767,9 +714,7 @@
     ===================================================== */
 
     .site-footer {
-      padding:
-        38px 20px
-        30px;
+      padding: 38px 20px 30px;
 
       background: #ffffff;
 
@@ -790,9 +735,7 @@
       align-items: center;
       flex-wrap: wrap;
 
-      gap:
-        10px 16px;
-
+      gap: 10px 16px;
       margin-bottom: 22px;
     }
 
@@ -814,12 +757,9 @@
     }
 
     .copyright {
-      margin:
-        0 0
-        18px;
+      margin: 0 0 18px;
 
       color: #777f80;
-
       font-size: 13px;
     }
 
@@ -828,8 +768,7 @@
       justify-content: center;
       flex-wrap: wrap;
 
-      gap:
-        10px 22px;
+      gap: 10px 22px;
     }
 
     .legal-links a {
@@ -863,8 +802,8 @@
       }
 
       .book-cover img {
-        max-width: 265px;
-        max-height: 360px;
+        max-width: 285px;
+        max-height: 390px;
       }
 
       .book-cover img.ebook-cover {
@@ -876,7 +815,6 @@
         max-width: 220px;
         max-height: 305px;
       }
-
     }
 
 
@@ -909,7 +847,6 @@
         display: none;
 
         width: 100%;
-
         padding-top: 20px;
       }
 
@@ -922,9 +859,7 @@
         align-items: flex-start;
 
         gap: 14px;
-
-        padding:
-          8px 0 5px;
+        padding: 8px 0 5px;
       }
 
       .books-hero {
@@ -948,19 +883,20 @@
       }
 
       .books-banner img {
-        height: 280px;
+        height: 300px;
+
         object-position: center 24%;
+
         border-radius: 14px;
       }
 
       .book-entry {
-        padding:
-          42px 0;
+        padding: 42px 0;
       }
 
       .book-cover img {
-        max-width: 245px;
-        max-height: 330px;
+        max-width: 270px;
+        max-height: 365px;
       }
 
       .book-cover img.ebook-cover {
@@ -983,10 +919,10 @@
 
       .text-link {
         display: block;
+
         text-align: center;
         padding: 8px 0;
       }
-
     }
 
 
@@ -1001,7 +937,6 @@
       *::after {
         transition: none !important;
       }
-
     }
 
   </style>
@@ -1127,7 +1062,7 @@
 
 
     <!-- =====================================================
-         BANNER
+         HERO IMAGE
     ===================================================== -->
 
     <section class="books-banner">
@@ -1146,26 +1081,29 @@
 
 
     <!-- =====================================================
-         LATEST RELEASES
+         PROFESSIONAL DEVELOPMENT
     ===================================================== -->
 
     <section class="collection">
 
       <div class="page-wrap">
 
-
         <div class="section-heading">
 
           <p class="eyebrow">
-            Latest Releases
+            Professional Development
           </p>
 
           <h2>
-            For the questions people are already asking.
+            For educators, leaders and the people supporting them.
           </h2>
 
-        </div>
+          <p>
+            Practical thinking for Special Education, teaching,
+            leadership and healthier professional practice.
+          </p>
 
+        </div>
 
 
         <!-- WHAT NOBODY WANTS TO ADMIT -->
@@ -1185,7 +1123,6 @@
 
           </div>
 
-
           <div class="book-copy">
 
             <div class="book-meta">
@@ -1200,11 +1137,9 @@
 
             </div>
 
-
             <h3>
               What Nobody Wants to Admit About Special Education
             </h3>
-
 
             <p class="book-description">
               An honest look at low expectations, behaviour,
@@ -1212,16 +1147,13 @@
               compassion and accountability.
             </p>
 
-
             <p class="book-hook">
               Honest insights. Stronger practices. Better futures.
             </p>
 
-
             <p class="format-note">
               Digital ebook · Instant access after purchase
             </p>
-
 
             <div class="button-row">
 
@@ -1266,7 +1198,6 @@
 
           </div>
 
-
           <div class="book-copy">
 
             <div class="book-meta">
@@ -1277,11 +1208,9 @@
 
             </div>
 
-
             <h3>
               Getting Your Child Identified Without Losing Your Mind
             </h3>
-
 
             <p class="book-description">
               A practical guide for parents navigating assessments,
@@ -1289,17 +1218,14 @@
               understanding and confidence.
             </p>
 
-
             <p class="book-hook">
               Understand the process. Ask better questions.
               Advocate with confidence.
             </p>
 
-
             <p class="format-note">
               Digital ebook · Instant access after purchase
             </p>
-
 
             <div class="button-row">
 
@@ -1344,7 +1270,6 @@
 
           </div>
 
-
           <div class="book-copy">
 
             <div class="book-meta">
@@ -1359,28 +1284,23 @@
 
             </div>
 
-
             <h3>
               The School Says Everything Is Fine. My Child Is Not Fine.
             </h3>
-
 
             <p class="book-description">
               For parents who know something is not quite right,
               even when school reports suggest otherwise.
             </p>
 
-
             <p class="book-hook">
               Trust your instincts. Ask better questions.
               Advocate with confidence.
             </p>
 
-
             <p class="format-note">
               Digital EPUB · Instant access after purchase
             </p>
-
 
             <div class="button-row">
 
@@ -1425,7 +1345,6 @@
 
           </div>
 
-
           <div class="book-copy">
 
             <div class="book-meta">
@@ -1440,11 +1359,9 @@
 
             </div>
 
-
             <h3>
               Why Did I Become a Teacher?
             </h3>
-
 
             <p class="book-description">
               For educators questioning what comes next as workload,
@@ -1452,18 +1369,15 @@
               the profession they once chose.
             </p>
 
-
             <p class="book-hook">
               This book will not tell you to stay.
               It will not tell you to leave.
               It will help you think more clearly.
             </p>
 
-
             <p class="format-note">
               Digital EPUB · Instant access after purchase
             </p>
-
 
             <div class="button-row">
 
@@ -1490,34 +1404,6 @@
         </article>
 
 
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         BOOKS & WORKBOOKS
-    ===================================================== -->
-
-    <section class="collection alt">
-
-      <div class="page-wrap">
-
-
-        <div class="section-heading">
-
-          <p class="eyebrow">
-            Books & Workbooks
-          </p>
-
-          <h2>
-            Reflection that continues beyond the page.
-          </h2>
-
-        </div>
-
-
 
         <!-- TURNING PAIN INTO POSSIBILITY -->
 
@@ -1535,7 +1421,6 @@
 
           </div>
 
-
           <div class="book-copy">
 
             <div class="book-meta">
@@ -1546,11 +1431,9 @@
 
             </div>
 
-
             <h3>
               Turning Pain Into Possibility™
             </h3>
-
 
             <p class="book-description">
               A professional development workbook supporting
@@ -1558,12 +1441,10 @@
               and healthier organisational environments.
             </p>
 
-
             <p class="book-hook">
               Designed to accompany Turning Pain Into Possibility™
               workshops and professional learning.
             </p>
-
 
             <div class="button-row">
 
@@ -1589,12 +1470,42 @@
 
         </article>
 
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PERSONAL GROWTH
+    ===================================================== -->
+
+    <section class="collection alt">
+
+      <div class="page-wrap">
+
+        <div class="section-heading">
+
+          <p class="eyebrow">
+            Personal Growth
+          </p>
+
+          <h2>
+            For the work that happens within.
+          </h2>
+
+          <p>
+            Books for reflection, healing, decision-making,
+            relationships and navigating life's difficult seasons.
+          </p>
+
+        </div>
 
 
         <!-- HEALING FROM EMOTIONAL TRAUMAS -->
 
         <article
-          class="book-entry reverse"
+          class="book-entry"
           id="healing-from-emotional-traumas"
         >
 
@@ -1607,7 +1518,6 @@
 
           </div>
 
-
           <div class="book-copy">
 
             <div class="book-meta">
@@ -1618,11 +1528,9 @@
 
             </div>
 
-
             <h3>
               Healing from Emotional Traumas
             </h3>
-
 
             <p class="book-description">
               Drawing on personal experience, reflection and
@@ -1631,12 +1539,10 @@
               difficult experiences have passed.
             </p>
 
-
             <p class="book-hook">
               Understand the patterns. Release what no longer serves.
               Make room for healing.
             </p>
-
 
             <div class="button-row">
 
@@ -1667,7 +1573,7 @@
         <!-- THE DECISION IS JUST THE BEGINNING -->
 
         <article
-          class="book-entry"
+          class="book-entry reverse"
           id="the-decision-is-just-the-beginning"
         >
 
@@ -1680,7 +1586,6 @@
 
           </div>
 
-
           <div class="book-copy">
 
             <div class="book-meta">
@@ -1691,11 +1596,9 @@
 
             </div>
 
-
             <h3>
               The Decision Is Just the Beginning
             </h3>
-
 
             <p class="book-description">
               Stories, reflection and guided writing space for
@@ -1703,12 +1606,10 @@
               that begins after a choice has been made.
             </p>
 
-
             <p class="book-hook">
               A decision opens the door. What happens next
               is where the work begins.
             </p>
-
 
             <div class="button-row">
 
@@ -1739,7 +1640,7 @@
         <!-- GUIDE TO DEALING WITH A NARCISSIST -->
 
         <article
-          class="book-entry reverse"
+          class="book-entry"
           id="a-guide-to-dealing-with-a-narcissist"
         >
 
@@ -1752,7 +1653,6 @@
 
           </div>
 
-
           <div class="book-copy">
 
             <div class="book-meta">
@@ -1763,11 +1663,9 @@
 
             </div>
 
-
             <h3>
               A Guide to Dealing with a Narcissist
             </h3>
-
 
             <p class="book-description">
               Research and lived experience come together
@@ -1776,12 +1674,10 @@
               that can leave people questioning themselves.
             </p>
 
-
             <p class="book-hook">
               Understand the pattern. Strengthen your boundaries.
               Reclaim clarity.
             </p>
-
 
             <div class="button-row">
 
@@ -1812,7 +1708,7 @@
         <!-- SURVIVING COVID-19 -->
 
         <article
-          class="book-entry"
+          class="book-entry reverse"
           id="surviving-covid-19"
         >
 
@@ -1825,7 +1721,6 @@
 
           </div>
 
-
           <div class="book-copy">
 
             <div class="book-meta">
@@ -1836,11 +1731,9 @@
 
             </div>
 
-
             <h3>
               Surviving Covid-19
             </h3>
-
 
             <p class="book-description">
               A personal account of anxiety, uncertainty,
@@ -1848,11 +1741,9 @@
               period of collective disruption.
             </p>
 
-
             <p class="book-hook">
               A moment in history, experienced from the inside.
             </p>
-
 
             <div class="button-row">
 
@@ -1878,7 +1769,6 @@
 
         </article>
 
-
       </div>
 
     </section>
@@ -1886,7 +1776,7 @@
 
 
     <!-- =====================================================
-         QUOTE
+         AUTHOR QUOTE
     ===================================================== -->
 
     <section class="author-quote">
@@ -1914,7 +1804,6 @@
 
       <div class="page-wrap">
 
-
         <div class="section-heading center">
 
           <p class="eyebrow">
@@ -1928,9 +1817,10 @@
         </div>
 
 
-
         <div class="reviews">
 
+
+          <!-- CHRIS -->
 
           <article class="review">
 
@@ -1943,8 +1833,10 @@
             </h3>
 
             <blockquote>
-              “I received this book as a gift after suffering
-              a traumatic pregnancy loss. Releasing shame and anger
+              “I received this book as a gift after suffering a traumatic
+              pregnancy loss. I cannot begin to tell you how helpful it was
+              in my grieving process. Before reading, I felt so much shame
+              and struggled to find hope. Releasing that shame and anger
               with tools learned in this book allowed space for healing.”
             </blockquote>
 
@@ -1955,6 +1847,34 @@
           </article>
 
 
+
+          <!-- ASIA -->
+
+          <article class="review">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <h3>
+              Unexpected and Unique
+            </h3>
+
+            <blockquote>
+              “This book is a short, easy read from an unexpected perspective
+              of the COVID-19 experience. The journal-like style allows for
+              candor, nuance, and personal growth rather than rigid conclusions.”
+            </blockquote>
+
+            <cite>
+              — Asia
+            </cite>
+
+          </article>
+
+
+
+          <!-- SHERICA -->
 
           <article class="review">
 
@@ -1967,9 +1887,9 @@
             </h3>
 
             <blockquote>
-              “It's a book you must take your time with,
-              pause, reflect and continue.
-              That's what healing truly is.”
+              “I remember thinking I could read this book in a day or two —
+              I can’t. It’s a book you must take your time with, pause,
+              reflect, and continue. That’s what healing truly is.”
             </blockquote>
 
             <cite>
@@ -1979,6 +1899,86 @@
           </article>
 
 
+
+          <!-- MAJILE -->
+
+          <article class="review">
+
+            <div class="stars">
+              ★★★★☆
+            </div>
+
+            <h3>
+              Selfless Offering
+            </h3>
+
+            <blockquote>
+              “Thank you for sharing your life experiences with us.
+              Many hold similar confessions but fear judgment.
+              Reading this created connection and deep emotional resonance.”
+            </blockquote>
+
+            <cite>
+              — Majilé M.
+            </cite>
+
+          </article>
+
+
+
+          <!-- BEN -->
+
+          <article class="review">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <h3>
+              I’m Still Healing
+            </h3>
+
+            <blockquote>
+              “A must-read for anyone dealing with mental or emotional trauma.
+              We attend to physical wounds, yet often avoid psychological ones.
+              This book meets you honestly in that space.”
+            </blockquote>
+
+            <cite>
+              — Ben
+            </cite>
+
+          </article>
+
+
+
+          <!-- STEPHANIE -->
+
+          <article class="review">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <h3>
+              Wonderful Read
+            </h3>
+
+            <blockquote>
+              “I appreciate how Marsha weaves personal testimony with data
+              and the experiences of others. This is not opinion — it is
+              thoughtful, grounded, and deeply compassionate.”
+            </blockquote>
+
+            <cite>
+              — Stephanie
+            </cite>
+
+          </article>
+
+
+
+          <!-- JERICA -->
 
           <article class="review">
 
@@ -1991,13 +1991,37 @@
             </h3>
 
             <blockquote>
-              “The honesty in this book is monumental without
-              being heavy. Marsha shares truth while offering
-              tools for real healing.”
+              “The honesty in this book is monumental without being heavy.
+              Marsha shares truth while offering tools for real healing.”
             </blockquote>
 
             <cite>
               — Jerica B.
+            </cite>
+
+          </article>
+
+
+
+          <!-- TARAS -->
+
+          <article class="review">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <h3>
+              Healing from Emotional Trauma
+            </h3>
+
+            <blockquote>
+              “This book is a masterpiece that supports healing from life’s
+              scars. It encourages wholeness and gentle self-restoration.”
+            </blockquote>
+
+            <cite>
+              — Taras A.
             </cite>
 
           </article>
@@ -2031,7 +2055,6 @@
           For current commentary, reflection and ideas
           still taking shape, read my latest Reflections.
         </p>
-
 
         <div class="button-row">
 
@@ -2070,7 +2093,6 @@
 
     <div class="page-wrap footer-inner">
 
-
       <div class="social-links">
 
         <a
@@ -2085,7 +2107,6 @@
           ·
         </span>
 
-
         <a
           href="https://substack.com/@marshakerrtalley"
           target="_blank"
@@ -2098,7 +2119,6 @@
           ·
         </span>
 
-
         <a
           href="https://www.silhouettescafe.com/"
           target="_blank"
@@ -2110,7 +2130,6 @@
       </div>
 
 
-
       <p class="copyright">
 
         Copyright ©
@@ -2118,7 +2137,6 @@
         Marsha Kerr Talley — All Rights Reserved.
 
       </p>
-
 
 
       <nav
@@ -2140,7 +2158,6 @@
 
       </nav>
 
-
     </div>
 
   </footer>
@@ -2157,29 +2174,20 @@
       "DOMContentLoaded",
       function () {
 
-
         const year =
-          document.getElementById(
-            "currentYear"
-          );
+          document.getElementById("currentYear");
 
         if (year) {
-
           year.textContent =
             new Date().getFullYear();
-
         }
 
 
         const toggle =
-          document.querySelector(
-            ".nav-toggle"
-          );
+          document.querySelector(".nav-toggle");
 
         const nav =
-          document.querySelector(
-            ".site-nav"
-          );
+          document.querySelector(".site-nav");
 
         if (toggle && nav) {
 
@@ -2188,9 +2196,7 @@
             function () {
 
               const open =
-                nav.classList.toggle(
-                  "open"
-                );
+                nav.classList.toggle("open");
 
               toggle.setAttribute(
                 "aria-expanded",
@@ -2199,12 +2205,9 @@
 
               toggle.textContent =
                 open ? "×" : "☰";
-
             }
           );
-
         }
-
 
       }
     );
@@ -2213,5 +2216,4 @@
 
 
 </body>
-
 </html>
