@@ -1749,6 +1749,36 @@
       "DOMContentLoaded",
       function () {
 
+        /* =================================================
+   BRANDED SUBSTACK ARTICLE LINKS
+
+   Example:
+   marshakerrtalley.com/reflections.html#why
+
+   redirects to:
+   marshakerrtalley.substack.com/p/why
+================================================= */
+
+const reflectionSlug =
+  window.location.hash
+    .replace("#", "")
+    .trim();
+
+
+if (reflectionSlug) {
+
+  const substackArticle =
+    "https://marshakerrtalley.substack.com/p/" +
+    encodeURIComponent(reflectionSlug);
+
+
+  window.location.replace(
+    substackArticle
+  );
+
+  return;
+
+}
 
         /* =================================================
            COPYRIGHT YEAR
