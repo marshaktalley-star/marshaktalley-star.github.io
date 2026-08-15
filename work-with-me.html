@@ -701,123 +701,6 @@
       border-radius: 0 10px 10px 0;
     }
 
-    /* ================= SDC WORKSHOP PHOTO SLIDESHOW ================= */
-    .sdc-slideshow-wrap {
-      max-width: 920px;
-      margin: 58px auto 0;
-    }
-
-    .sdc-slideshow-heading {
-      text-align: center;
-      margin-bottom: 22px;
-    }
-
-    .sdc-slideshow-heading h3 {
-      margin-bottom: 7px;
-      font-size: clamp(1.7rem, 3vw, 2.35rem);
-      font-weight: 600;
-    }
-
-    .sdc-slideshow-heading p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    .sdc-slideshow {
-      position: relative;
-      overflow: hidden;
-      border-radius: 24px;
-      background: var(--brand-deep);
-      box-shadow: var(--shadow);
-    }
-
-    .sdc-slide {
-      display: none;
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      background: var(--brand-deep);
-    }
-
-    .sdc-slide.active {
-      display: block;
-    }
-
-    .sdc-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-    }
-
-    .sdc-slide-number {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      z-index: 2;
-      padding: 6px 11px;
-      border-radius: 999px;
-      background: rgba(8, 63, 66, 0.82);
-      color: #fff;
-      font-size: 0.76rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-    }
-
-    .sdc-slide-btn {
-      position: absolute;
-      top: 50%;
-      z-index: 3;
-      transform: translateY(-50%);
-      width: 46px;
-      height: 46px;
-      border: 0;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.9);
-      color: var(--brand-deep);
-      font-size: 1.6rem;
-      line-height: 1;
-      cursor: pointer;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.16);
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-
-    .sdc-slide-btn:hover {
-      background: #fff;
-      transform: translateY(-50%) scale(1.05);
-    }
-
-    .sdc-slide-btn.prev {
-      left: 16px;
-    }
-
-    .sdc-slide-btn.next {
-      right: 16px;
-    }
-
-    .sdc-slide-dots {
-      display: flex;
-      justify-content: center;
-      gap: 9px;
-      margin-top: 18px;
-    }
-
-    .sdc-dot {
-      width: 10px;
-      height: 10px;
-      padding: 0;
-      border: 0;
-      border-radius: 50%;
-      background: #c7d2d1;
-      cursor: pointer;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-
-    .sdc-dot.active {
-      background: var(--brand-primary);
-      transform: scale(1.25);
-    }
-
     /* ================= PRIVATE CONSULTANCY ================= */
     .private-consulting {
       padding: 110px 0;
@@ -1302,27 +1185,6 @@
         margin-top: 12px;
       }
 
-      .sdc-slideshow-wrap {
-        margin-top: 42px;
-      }
-
-      .sdc-slide {
-        aspect-ratio: 4 / 3;
-      }
-
-      .sdc-slide-btn {
-        width: 40px;
-        height: 40px;
-      }
-
-      .sdc-slide-btn.prev {
-        left: 10px;
-      }
-
-      .sdc-slide-btn.next {
-        right: 10px;
-      }
-
       .framework-box {
         grid-template-columns: 1fr;
         padding: 32px 26px;
@@ -1724,52 +1586,6 @@
           </div>
 
         </div>
-
-        <div class="sdc-slideshow-wrap" aria-label="Photos from the SDC Youth Digital Creators Summer Workshop">
-          <div class="sdc-slideshow-heading">
-            <h3>Inside the Two-Day Workshop</h3>
-            <p>Participants learning, creating and putting Canva, AI and digital tools into practice.</p>
-          </div>
-
-          <div class="sdc-slideshow">
-            <div class="sdc-slide active">
-              <span class="sdc-slide-number">1 / 6</span>
-              <img src="SDC-workshop-photo-1.jpeg" alt="Participants at the SDC Youth Digital Creators Summer Workshop">
-            </div>
-            <div class="sdc-slide">
-              <span class="sdc-slide-number">2 / 6</span>
-              <img src="SDC-workshop-photo-2.jpeg" alt="Hands-on learning during the SDC Youth Digital Creators Summer Workshop">
-            </div>
-            <div class="sdc-slide">
-              <span class="sdc-slide-number">3 / 6</span>
-              <img src="SDC-workshop-photo-3.jpeg" alt="Participants working with digital tools during the SDC workshop">
-            </div>
-            <div class="sdc-slide">
-              <span class="sdc-slide-number">4 / 6</span>
-              <img src="SDC-workshop-photo-4.jpeg" alt="Interactive Canva and AI training at the SDC workshop">
-            </div>
-            <div class="sdc-slide">
-              <span class="sdc-slide-number">5 / 6</span>
-              <img src="SDC-workshop-photo-5.jpeg" alt="Youth participants creating during the SDC Digital Creators workshop">
-            </div>
-            <div class="sdc-slide">
-              <span class="sdc-slide-number">6 / 6</span>
-              <img src="SDC-workshop-photo-6.jpeg" alt="SDC Youth Digital Creators Summer Workshop in St. Ann, Jamaica">
-            </div>
-
-            <button class="sdc-slide-btn prev" type="button" aria-label="Previous workshop photo">&#8249;</button>
-            <button class="sdc-slide-btn next" type="button" aria-label="Next workshop photo">&#8250;</button>
-          </div>
-
-          <div class="sdc-slide-dots" aria-label="Choose workshop photo">
-            <button class="sdc-dot active" type="button" aria-label="Show photo 1"></button>
-            <button class="sdc-dot" type="button" aria-label="Show photo 2"></button>
-            <button class="sdc-dot" type="button" aria-label="Show photo 3"></button>
-            <button class="sdc-dot" type="button" aria-label="Show photo 4"></button>
-            <button class="sdc-dot" type="button" aria-label="Show photo 5"></button>
-            <button class="sdc-dot" type="button" aria-label="Show photo 6"></button>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -2093,60 +1909,6 @@
         const href = (link.getAttribute("href") || "").toLowerCase();
         if (href === currentPage) link.classList.add("active");
       });
-
-      const sdcSlides = Array.from(document.querySelectorAll(".sdc-slide"));
-      const sdcDots = Array.from(document.querySelectorAll(".sdc-dot"));
-      const sdcPrev = document.querySelector(".sdc-slide-btn.prev");
-      const sdcNext = document.querySelector(".sdc-slide-btn.next");
-      let sdcSlideIndex = 0;
-      let sdcTimer;
-
-      function showSdcSlide(index) {
-        if (!sdcSlides.length) return;
-
-        sdcSlideIndex = (index + sdcSlides.length) % sdcSlides.length;
-
-        sdcSlides.forEach(function (slide, i) {
-          slide.classList.toggle("active", i === sdcSlideIndex);
-        });
-
-        sdcDots.forEach(function (dot, i) {
-          dot.classList.toggle("active", i === sdcSlideIndex);
-        });
-      }
-
-      function restartSdcTimer() {
-        if (sdcTimer) clearInterval(sdcTimer);
-        sdcTimer = setInterval(function () {
-          showSdcSlide(sdcSlideIndex + 1);
-        }, 5000);
-      }
-
-      if (sdcSlides.length) {
-        if (sdcPrev) {
-          sdcPrev.addEventListener("click", function () {
-            showSdcSlide(sdcSlideIndex - 1);
-            restartSdcTimer();
-          });
-        }
-
-        if (sdcNext) {
-          sdcNext.addEventListener("click", function () {
-            showSdcSlide(sdcSlideIndex + 1);
-            restartSdcTimer();
-          });
-        }
-
-        sdcDots.forEach(function (dot, i) {
-          dot.addEventListener("click", function () {
-            showSdcSlide(i);
-            restartSdcTimer();
-          });
-        });
-
-        showSdcSlide(0);
-        restartSdcTimer();
-      }
     });
   </script>
 </body>
