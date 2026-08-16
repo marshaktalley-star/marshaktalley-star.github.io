@@ -86,9 +86,10 @@
       gap: 10px;
       margin-bottom: 18px;
       color: var(--brand-primary);
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       font-weight: 700;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.13em;
+      line-height: 1.45;
       text-transform: uppercase;
     }
 
@@ -355,23 +356,27 @@
     }
 
     .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin: 28px 0 32px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 26px 0 30px;
+      max-width: 760px;
     }
 
     .hero-tag {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: center;
-      padding: 8px 12px;
+      min-height: 44px;
+      padding: 9px 14px;
       border-radius: 999px;
       border: 1px solid rgba(5, 99, 103, 0.15);
       background: rgba(255, 255, 255, 0.85);
       color: var(--brand-deep);
       font-size: 0.78rem;
       font-weight: 600;
+      line-height: 1.25;
+      text-align: center;
       text-decoration: none;
       transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
     }
@@ -1129,6 +1134,17 @@
     }
 
     @media (max-width: 768px) {
+      .hero-tags {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+      }
+
+      .hero-tag {
+        min-height: 42px;
+        padding: 9px 10px;
+        font-size: 0.74rem;
+      }
+
       .page-wrap {
         width: min(100% - 28px, 1200px);
       }
@@ -1246,6 +1262,18 @@
     }
 
     @media (max-width: 520px) {
+      .hero-tags {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin: 22px 0 26px;
+      }
+
+      .hero-tag {
+        min-height: 40px;
+        padding: 8px 8px;
+        font-size: 0.7rem;
+      }
+
       .credibility-grid {
         grid-template-columns: 1fr;
       }
@@ -1316,7 +1344,7 @@
           </div>
 
           <div class="hero-copy">
-            <div class="eyebrow">Consultancy • Training • Workshops • Speaking</div>
+            <div class="eyebrow">Education &amp; Leadership Consultant • Trainer • Facilitator • Speaker</div>
             <h1>I turn learning into <span>action.</span></h1>
 
             <p class="hero-lead">
@@ -1340,7 +1368,7 @@
 
             <div class="button-row">
               <a class="btn btn-primary" href="https://calendly.com/marsha-k-talley/15min" target="_blank" rel="noopener">
-                Discuss an Engagement
+                Let’s Work Together
               </a>
               <a class="btn btn-outline" href="about.html">About &amp; Experience</a>
             </div>
