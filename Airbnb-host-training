@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Airbnb host training, practical hosting support, property management and the Airbnb Hosting Toolkit from Marsha Kerr Talley." />
+  <title>Airbnb Host Training & Support | Marsha Kerr Talley</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand-primary: #056367;
+      --brand-secondary: #319fa2;
+      --brand-deep: #083f42;
+      --brand-soft: #e8f6f6;
+      --gold: #c9a86a;
+      --gold-soft: #eadbc1;
+      --ink: #173234;
+      --text: #4e5f60;
+      --muted: #728081;
+      --cream: #f7f4ef;
+      --paper: #ffffff;
+      --line: #dfe7e6;
+      --shadow: 0 24px 60px rgba(12, 64, 66, 0.12);
+      --shadow-soft: 0 14px 36px rgba(12, 64, 66, 0.08);
+      --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-heading: "Playfair Display", Georgia, serif;
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--text);
+      background: #ffffff;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: var(--font-heading);
+      color: var(--ink);
+      line-height: 1.12;
+      margin-top: 0;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    .page-wrap {
+      width: min(1200px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--brand-primary);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-heading {
+      max-width: 780px;
+      margin-bottom: 46px;
+    }
+
+    .section-heading.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      margin-bottom: 16px;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+    }
+
+    .section-heading p {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    .section-heading.center p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 13px 24px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--brand-primary);
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(5, 99, 103, 0.18);
+    }
+
+    .btn-primary:hover {
+      background: var(--brand-deep);
+      box-shadow: 0 16px 34px rgba(5, 99, 103, 0.24);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: rgba(5, 99, 103, 0.28);
+      color: var(--brand-primary);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--brand-primary);
+      background: var(--brand-soft);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #173234;
+      box-shadow: 0 12px 26px rgba(201, 168, 106, 0.2);
+    }
+
+    .btn-gold:hover {
+      background: #b99450;
+      color: #fff;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    /* ================= HEADER / NAV ================= */
+    .site-header {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.97);
+      border-bottom: 1px solid rgba(223, 231, 230, 0.85);
+      position: relative;
+      z-index: 20;
+    }
+
+    .site-header .page-wrap {
+      padding-top: 20px;
+      padding-bottom: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .site-header img {
+      width: 220px;
+      height: auto;
+      margin-bottom: 12px;
+    }
+
+    .site-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .site-nav a {
+      text-decoration: none;
+      color: #2f2f2f;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .site-nav a:hover,
+    .site-nav a.active {
+      color: var(--brand-primary);
+      font-weight: 600;
+    }
+
+    .nav-toggle {
+      display: none;
+      position: absolute;
+      right: 16px;
+      top: 20px;
+      width: 44px;
+      height: 44px;
+      border: none;
+      background: transparent;
+      font-size: 28px;
+      color: var(--brand-primary);
+      cursor: pointer;
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 86px 0 72px;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(49,159,162,0.09), transparent 30%),
+        radial-gradient(circle at 94% 14%, rgba(201,168,106,0.12), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #fbfdfc 100%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -180px;
+      top: 110px;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(201, 168, 106, 0.2);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.02fr);
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-video-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 12px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(5, 99, 103, 0.08);
+    }
+
+    .hero-video-shell {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border-radius: 20px;
+      background: var(--brand-deep);
+    }
+
+    .hero-video-shell video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      background: var(--brand-deep);
+    }
+
+    .toolkit-offer {
+      margin-top: 14px;
+      padding: 18px 18px 8px;
+      border-top: 1px solid var(--line);
+    }
+
+    .toolkit-offer strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 5px;
+    }
+
+    .toolkit-offer p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .hero-copy h1 {
+      margin-bottom: 22px;
+      font-size: clamp(3rem, 6vw, 5.9rem);
+      font-weight: 600;
+      letter-spacing: -0.045em;
+    }
+
+    .hero-copy h1 span {
+      color: var(--brand-primary);
+    }
+
+    .hero-lead {
+      font-size: clamp(1.1rem, 1.6vw, 1.32rem);
+      color: #405455;
+      max-width: 650px;
+      margin-bottom: 22px;
+    }
+
+    .hero-positioning {
+      margin: 22px 0 28px;
+      padding: 20px 22px;
+      border-left: 3px solid var(--gold);
+      background: rgba(247, 244, 239, 0.72);
+      color: #334849;
+      font-size: 0.98rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 28px 0 32px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(5, 99, 103, 0.15);
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--brand-deep);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .hero-tag:hover {
+      transform: translateY(-1px);
+      background: var(--brand-soft);
+      border-color: rgba(5, 99, 103, 0.32);
+    }
+
+
+    .airbnb-why-box {
+      margin-top: 16px;
+      padding: 18px 20px;
+      background: var(--cream);
+      border: 1px solid rgba(201, 168, 106, 0.42);
+      border-radius: 16px;
+    }
+
+    .airbnb-why-box strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--ink);
+      font-family: var(--font-heading);
+      font-size: 1.18rem;
+    }
+
+    .airbnb-why-box p {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .airbnb-why-box a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--brand-primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .airbnb-why-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* ================= CREDIBILITY STRIP ================= */
+    .credibility-strip {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .credibility-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .credibility-item {
+      padding: 24px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .credibility-item:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 24%;
+      bottom: 24%;
+      width: 1px;
+      background: var(--line);
+    }
+
+    .credibility-item strong {
+      display: block;
+      color: var(--ink);
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    .credibility-item span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+
+    /* ================= TRUSTED / COLLABORATION ================= */
+    .trusted-section {
+      padding: 76px 0;
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .trusted-heading {
+      max-width: 760px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .trusted-heading .trusted-kicker {
+      margin: 0 0 10px;
+      color: var(--brand-secondary);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .trusted-heading h2 {
+      margin: 0;
+      color: var(--brand-deep);
+      font-size: clamp(2rem, 3.7vw, 3.35rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .trusted-organisations {
+      max-width: 940px;
+      margin: 0 auto;
+      display: grid;
+      gap: 22px;
+    }
+
+    .trusted-organisation {
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      gap: 34px;
+      align-items: center;
+      padding: 30px 34px;
+      background:
+        linear-gradient(135deg, rgba(232,246,246,0.46), rgba(255,255,255,0.95));
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .trusted-logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 120px;
+      padding: 20px;
+      background: #ffffff;
+      border: 1px solid rgba(5,99,103,0.08);
+      border-radius: 14px;
+    }
+
+    .trusted-logo {
+      width: 100%;
+      max-width: 190px;
+      max-height: 88px;
+      object-fit: contain;
+    }
+
+    .trusted-organisation-info h3 {
+      margin: 0 0 8px;
+      color: var(--ink);
+      font-size: clamp(1.55rem, 2.4vw, 2rem);
+      font-weight: 600;
+    }
+
+    .trusted-engagement {
+      margin: 0 0 5px;
+      color: var(--brand-primary);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .trusted-location {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    /* ================= SERVICES ================= */
+    .services {
+      padding: 105px 0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      min-height: 430px;
+      padding: 34px 30px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: rgba(5, 99, 103, 0.18);
+    }
+
+    .service-number {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 1px solid var(--gold-soft);
+      color: #8b6a2d;
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      margin-bottom: 28px;
+    }
+
+    .service-card h3 {
+      font-size: 1.75rem;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .service-card ul {
+      margin: 0 0 28px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .service-card li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 8px;
+      font-size: 0.92rem;
+      color: #425657;
+    }
+
+    .service-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.68em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .service-card .btn {
+      margin-top: auto;
+      align-self: flex-start;
+    }
+
+    /* ================= FEATURED SDC ENGAGEMENT ================= */
+    .featured-engagement {
+      padding: 104px 0;
+      background: var(--cream);
+    }
+
+    .engagement-grid {
+      display: grid;
+      grid-template-columns: 0.78fr 1.22fr;
+      gap: 62px;
+      align-items: center;
+    }
+
+    .engagement-media {
+      position: relative;
+    }
+
+    .engagement-media img {
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .engagement-badge {
+      position: absolute;
+      right: -18px;
+      bottom: 28px;
+      width: 150px;
+      padding: 17px;
+      background: var(--brand-primary);
+      color: #fff;
+      border-radius: 18px;
+      box-shadow: 0 18px 42px rgba(5, 99, 103, 0.24);
+    }
+
+    .engagement-badge strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      margin-bottom: 2px;
+    }
+
+    .engagement-badge span {
+      font-size: 0.75rem;
+      opacity: 0.88;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .engagement-copy h2 {
+      font-size: clamp(2.4rem, 4vw, 4.2rem);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .engagement-copy .lead {
+      font-size: 1.1rem;
+      color: #3f5455;
+      margin-bottom: 25px;
+    }
+
+    .outcome-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin: 30px 0 32px;
+    }
+
+    .outcome-card {
+      padding: 18px 18px;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid rgba(5, 99, 103, 0.08);
+    }
+
+    .outcome-card strong {
+      display: block;
+      color: var(--brand-primary);
+      margin-bottom: 4px;
+      font-size: 0.92rem;
+    }
+
+    .outcome-card span {
+      display: block;
+      color: #56696a;
+      font-size: 0.86rem;
+    }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .mini-quote {
+      margin: 0;
+      padding: 17px 18px;
+      background: rgba(255, 255, 255, 0.7);
+      border-left: 2px solid var(--gold);
+      color: #435556;
+      font-size: 0.9rem;
+      font-style: italic;
+      border-radius: 0 10px 10px 0;
+    }
+
+    /* ================= PRIVATE CONSULTANCY ================= */
+    .private-consulting {
+      padding: 110px 0;
+      background: #fff;
+    }
+
+    .private-grid {
+      display: grid;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: 68px;
+      align-items: center;
+    }
+
+    .private-image-wrap {
+      position: relative;
+    }
+
+    .private-image-wrap img {
+      width: 100%;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .private-caption {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 22px;
+      padding: 18px 20px;
+      border-radius: 16px;
+      background: rgba(8, 63, 66, 0.93);
+      color: #fff;
+      backdrop-filter: blur(8px);
+    }
+
+    .private-caption strong {
+      font-family: var(--font-heading);
+      font-size: 1.28rem;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .private-copy h2 {
+      font-size: clamp(2.4rem, 4vw, 4.25rem);
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .private-list {
+      display: grid;
+      gap: 12px;
+      margin: 28px 0 32px;
+    }
+
+    .private-list div {
+      padding: 15px 17px;
+      border-radius: 12px;
+      background: #fbfcfc;
+      border: 1px solid var(--line);
+    }
+
+    .private-list strong {
+      color: var(--ink);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .private-list span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+
+    /* ================= TESTIMONIALS ================= */
+    .proof {
+      padding: 110px 0;
+      background: linear-gradient(180deg, #f7fbfb 0%, #ffffff 100%);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .review-text-card {
+      padding: 34px;
+      border-radius: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .review-stars {
+      letter-spacing: 0.2em;
+      color: #b8842c;
+      font-size: 1rem;
+      margin-top: 22px;
+    }
+
+    .review-text-card blockquote {
+      margin: 0 0 18px;
+      padding: 0;
+      color: var(--ink);
+      font-family: var(--font-heading);
+      font-size: 1.42rem;
+      line-height: 1.45;
+      flex-grow: 1;
+    }
+
+    .review-text-card cite {
+      color: var(--muted);
+      font-style: normal;
+      font-size: 0.9rem;
+    }
+
+    /* ================= PEOPLE / BURNOUT INTEGRATION ================= */
+    .people-performance {
+      padding: 100px 0;
+      background: var(--brand-deep);
+      color: rgba(255,255,255,0.86);
+    }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .people-performance .eyebrow {
+      color: #9ed6d8;
+    }
+
+    .people-performance h2 {
+      color: #fff;
+      font-size: clamp(2.4rem, 4vw, 4.2rem);
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .people-performance p {
+      color: rgba(255,255,255,0.78);
+    }
+
+    .people-points {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .people-point {
+      padding: 22px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.13);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .people-point strong {
+      display: block;
+      color: #fff;
+      font-family: var(--font-heading);
+      font-size: 1.16rem;
+      margin-bottom: 6px;
+    }
+
+    .people-point span {
+      color: rgba(255,255,255,0.68);
+      font-size: 0.87rem;
+    }
+
+    /* ================= SPEAKING ================= */
+    .speaking-section {
+      padding: 110px 0;
+      background: #fff;
+    }
+
+    .speaking-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .speaking-copy h2 {
+      font-size: clamp(2.4rem, 4vw, 4.2rem);
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .speaking-copy .statement {
+      color: var(--brand-primary);
+      font-size: 1.08rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .speaking-media {
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #fff;
+    }
+
+    .speaking-media img {
+      width: 100%;
+    }
+
+    .speaking-media div {
+      padding: 18px 20px;
+    }
+
+    .speaking-media strong {
+      color: var(--brand-primary);
+    }
+
+    /* ================= FRAMEWORK ================= */
+    .framework-section {
+      padding: 90px 0;
+      background: var(--cream);
+    }
+
+    .framework-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: center;
+      padding: 42px 44px;
+      border: 1px solid rgba(201, 168, 106, 0.32);
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .framework-box h2 {
+      font-size: clamp(2rem, 3vw, 3.2rem);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .framework-box p {
+      max-width: 760px;
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    /* ================= FINAL CTA ================= */
+    .cta-section {
+      padding: 110px 0;
+      background:
+        linear-gradient(rgba(5, 99, 103, 0.93), rgba(5, 99, 103, 0.93)),
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), transparent 28%);
+      color: #fff;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      color: #fff;
+      font-size: clamp(2.5rem, 5vw, 4.8rem);
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .cta-section p {
+      max-width: 760px;
+      margin: 0 auto 30px;
+      color: rgba(255,255,255,0.82);
+      font-size: 1.08rem;
+    }
+
+    .cta-section .button-row {
+      justify-content: center;
+    }
+
+    .cta-section .btn-outline {
+      color: #fff;
+      border-color: rgba(255,255,255,0.38);
+    }
+
+    .cta-section .btn-outline:hover {
+      background: rgba(255,255,255,0.09);
+      border-color: #fff;
+    }
+
+    /* ================= FOOTER ================= */
+    .site-footer {
+      width: 100%;
+      background-color: #ffffff;
+      border-top: 1px solid #eeeeee;
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin: 1rem 0 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .site-footer p {
+      margin: 0 0 1.4rem;
+      font-size: 0.95rem;
+      color: #666666;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 1rem;
+      color: var(--brand-secondary);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--brand-primary);
+      text-decoration: underline;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 1020px) {
+      .hero-grid,
+      .engagement-grid,
+      .private-grid,
+      .people-grid,
+      .speaking-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 44px;
+      }
+
+      .hero-copy {
+        order: -1;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .proof-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: 0;
+      }
+
+      .credibility-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .credibility-item:nth-child(2)::after {
+        display: none;
+      }
+
+      .engagement-media {
+        max-width: 620px;
+      }
+
+      .private-image-wrap {
+        max-width: 700px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-wrap {
+        width: min(100% - 28px, 1200px);
+      }
+
+      .site-header .page-wrap {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .trusted-section {
+        padding: 58px 0;
+      }
+
+      .trusted-organisation {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 26px 22px;
+        text-align: center;
+      }
+
+      .trusted-logo-wrap {
+        width: min(260px, 100%);
+        margin: 0 auto;
+        min-height: 105px;
+      }
+
+      .trusted-organisation-info {
+        text-align: center;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .site-nav {
+        display: none;
+        width: 100%;
+      }
+
+      .site-nav.open {
+        display: block;
+      }
+
+      .site-nav ul {
+        flex-direction: column;
+        gap: 16px;
+        padding: 10px 0 6px;
+        text-align: center;
+      }
+
+      .hero {
+        padding: 62px 0 54px;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.65rem, 12vw, 4.5rem);
+      }
+
+      .services,
+      .featured-engagement,
+      .private-consulting,
+      .proof,
+      .people-performance,
+      .speaking-section,
+      .cta-section {
+        padding-top: 76px;
+        padding-bottom: 76px;
+      }
+
+      .credibility-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .credibility-item {
+        padding: 20px 12px;
+      }
+
+      .credibility-item::after {
+        display: none;
+      }
+
+      .outcome-grid,
+      .quote-grid,
+      .proof-grid,
+      .people-points {
+        grid-template-columns: 1fr;
+      }
+
+      .engagement-badge {
+        position: static;
+        width: 100%;
+        margin-top: 12px;
+      }
+
+      .framework-box {
+        grid-template-columns: 1fr;
+        padding: 32px 26px;
+      }
+
+      .framework-box .btn {
+        justify-self: start;
+      }
+
+      .private-caption {
+        position: static;
+        margin-top: 12px;
+        border-radius: 16px;
+      }
+
+      .review-text-card blockquote {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .credibility-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .button-row {
+        align-items: stretch;
+      }
+
+      .button-row .btn {
+        width: 100%;
+      }
+
+      .hero-video-card {
+        padding: 8px;
+      }
+
+      .hero-video-shell {
+        max-width: 420px;
+        aspect-ratio: 9 / 16;
+      }
+
+      .toolkit-offer {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      .service-card,
+      .review-text-card {
+        padding: 26px 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="page-wrap">
+      <a href="index.html" aria-label="Marsha Kerr Talley home">
+        <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired" />
+      </a>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work-with-me.html">Work With Me</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="podcast.html">Podcast</a></li>
+          <li><a href="reflections.html">Reflections</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= AIRBNB HOSTING ================= -->
+    <section class="hero">
+      <div class="page-wrap">
+        <div class="hero-grid">
+
+          <div class="hero-video-card">
+            <div class="hero-video-shell">
+              <video controls playsinline preload="metadata" aria-label="Marsha Kerr Talley introduction video">
+                <source src="Post-Airbnb-Training-CTA.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+              </video>
+            </div>
+
+            <div class="toolkit-offer">
+              <strong>Airbnb Hosting Toolkit</strong>
+              <p>A practical resource for new and existing Airbnb hosts.</p>
+              <div class="button-row">
+                <a class="btn btn-outline" href="https://payhip.com/b/LNfn2" target="_blank" rel="noopener">
+                  Buy / Download the Toolkit
+                </a>
+                <a class="btn btn-gold" href="https://calendly.com/marsha-k-talley/15min" target="_blank" rel="noopener">
+                  Enquire About Property Management
+                </a>
+              </div>
+            </div>
+
+            <div class="airbnb-why-box">
+              <strong>This Is Why I Train Hosts</strong>
+              <p>
+                Real guest experiences show how quickly communication, expectations and service
+                can shape an Airbnb stay.
+              </p>
+              <a
+                href="https://www.facebook.com/reel/1395009472567617/"
+                target="_blank"
+                rel="noopener">
+                View this public Facebook post →
+              </a>
+            </div>
+
+          <div class="hero-copy">
+            <div class="eyebrow">Airbnb Host Training • Practical Support • Property Management</div>
+            <h1>Better hosting starts with <span>better preparation.</span></h1>
+
+            <p class="hero-lead">
+              Practical training and support for new and existing Airbnb hosts who want to strengthen the guest experience, avoid common mistakes and manage their property with greater confidence.
+            </p>
+
+            <div class="hero-positioning">
+              From guest communication and expectations to service, problem-solving and the details that shape a stay, my Airbnb host training focuses on what hosts need to think about before problems become reviews.
+            </div>
+
+            <div class="button-row">
+              <a class="btn btn-primary" href="https://calendly.com/marsha-k-talley/15min" target="_blank" rel="noopener">
+                Enquire About Airbnb Host Training
+              </a>
+              <a class="btn btn-outline" href="https://payhip.com/b/LNfn2" target="_blank" rel="noopener">
+                Get the Hosting Toolkit
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= AIRBNB FEEDBACK ================= -->
+    <section class="proof" id="feedback">
+      <div class="page-wrap">
+
+        <div class="section-heading center">
+          <div class="eyebrow">Airbnb host feedback</div>
+          <h2>Practical learning hosts can use.</h2>
+          <p>
+            Feedback from Airbnb hosts and property professionals who have participated in my training and webinars.
+          </p>
+        </div>
+
+        <div class="proof-grid">
+          <div class="review-text-card">
+        <blockquote>
+          “The Airbnb hosting meeting with Marsha was very informative and
+          useful about the dos and don’ts of hosting on Airbnb — only thing
+          it was too short.”
+        </blockquote>
+
+        <cite>
+          Anthony and Sandra — Airbnb Hosting Training
+        </cite>
+
+        <div class="review-stars" aria-label="Five-star review">
+          ★★★★★
+        </div>
+
+<div class="review-text-card">
+        <blockquote>
+          “The training was really well done. Marsha was engaging, and I
+          learned a lot about how to improve my Airbnb.”
+        </blockquote>
+
+        <cite>
+          Participant feedback — Airbnb Hosting Training
+        </cite>
+
+        <div class="review-stars" aria-label="Five-star review">
+          ★★★★★
+        </div>
+
+<div class="review-text-card">
+        <blockquote>
+          “Your webinar was great and very informative. You are a terrific
+          presenter.”
+        </blockquote>
+
+        <cite>
+          Experienced landlord &amp; short-term rental host
+        </cite>
+
+        <div class="review-stars" aria-label="Five-star review">
+          ★★★★★
+        </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/marshakerrtalley" target="_blank" rel="noopener" aria-label="Visit Marsha Kerr Talley on LinkedIn" style="color:#0A66C2;">LinkedIn</a>
+        <span aria-hidden="true" style="color:#ccc;">|</span>
+        <a href="https://substack.com/@marshakerrtalley" target="_blank" rel="noopener" aria-label="Visit Marsha Kerr Talley on Substack" style="color:#c96b2c;">Substack</a>
+        <span aria-hidden="true" style="color:#ccc;">|</span>
+        <a href="https://marshakerrtalley.com/silhouettes-cafe.html" target="_blank" rel="noopener" aria-label="Explore Silhouette's Café" style="color:#4b2e1f;">Silhouette's Café</a>
+      </div>
+
+      <p class="copyright">
+        Copyright © <span id="currentYear"></span> Marsha Kerr Talley — All Rights Reserved.
+      </p>
+
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
+        <a href="/terms-and-conditions">Terms and Conditions</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const yearSpan = document.getElementById("currentYear");
+      if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+      const toggle = document.querySelector(".nav-toggle");
+      const nav = document.querySelector(".site-nav");
+
+      if (toggle && nav) {
+        toggle.addEventListener("click", function () {
+          const isOpen = nav.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", String(isOpen));
+        });
+      }
+
+      const currentPage = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+      document.querySelectorAll(".site-nav a").forEach(function (link) {
+        const href = (link.getAttribute("href") || "").toLowerCase();
+        if (href === currentPage) link.classList.add("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
