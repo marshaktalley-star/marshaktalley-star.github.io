@@ -881,6 +881,95 @@
     }
 
 
+
+
+
+
+    /* ================= AIRBNB CASE STUDY ================= */
+    .airbnb-case-study {
+      padding: 104px 0;
+      background: #fff;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .airbnb-case-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
+      gap: 64px;
+      align-items: center;
+    }
+
+    .airbnb-case-media {
+      display: flex;
+      justify-content: center;
+    }
+
+    .airbnb-facebook-shell {
+      width: min(100%, 330px);
+      padding: 16px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .airbnb-facebook-shell iframe {
+      display: block;
+      width: 100%;
+      max-width: 267px;
+      height: 591px;
+      margin: 0 auto;
+      border: 0;
+    }
+
+    .airbnb-case-copy h2 {
+      font-size: clamp(2.35rem, 4vw, 4.15rem);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .airbnb-case-copy .case-lead {
+      font-size: 1.08rem;
+      color: #3f5455;
+      margin-bottom: 18px;
+    }
+
+    .airbnb-case-note {
+      margin: 24px 0 28px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--gold);
+      background: var(--cream);
+      color: #435556;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .airbnb-case-points {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin: 26px 0 30px;
+    }
+
+    .airbnb-case-point {
+      padding: 18px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #fbfcfc;
+    }
+
+    .airbnb-case-point strong {
+      display: block;
+      color: var(--brand-primary);
+      margin-bottom: 4px;
+      font-size: 0.92rem;
+    }
+
+    .airbnb-case-point span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
     /* ================= TESTIMONIALS ================= */
     .proof {
       padding: 110px 0;
@@ -1155,7 +1244,8 @@
       .engagement-grid,
       .private-grid,
       .people-grid,
-      .speaking-grid {
+      .speaking-grid,
+      .airbnb-case-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1471,6 +1561,90 @@
       </div>
     </section>
 
+
+
+
+
+
+    <!-- ================= AIRBNB REAL-WORLD CASE STUDY ================= -->
+    <section class="airbnb-case-study" aria-label="Real-world Airbnb guest experience">
+      <div class="page-wrap">
+        <div class="airbnb-case-grid">
+
+          <div class="airbnb-case-media">
+            <div class="airbnb-facebook-shell">
+              <iframe
+                src="https://www.facebook.com/plugins/video.php?height=476&amp;href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1395009472567617%2F&amp;show_text=true&amp;width=267&amp;t=0"
+                width="267"
+                height="591"
+                style="border:none;overflow:hidden"
+                scrolling="no"
+                frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                title="Public Facebook video sharing a guest's Airbnb experience">
+              </iframe>
+            </div>
+          </div>
+
+          <div class="airbnb-case-copy">
+            <div class="eyebrow">A real guest experience</div>
+            <h2>Why good hosting requires more than a property.</h2>
+
+            <p class="case-lead">
+              Guest experiences are shaped by far more than the accommodation itself. Communication,
+              expectations, responsiveness, cleanliness, problem-solving and the way concerns are handled
+              can determine whether someone leaves recommending a property or warning others about it.
+            </p>
+
+            <p>
+              This publicly shared experience — and the conversation it generated — is a useful example of
+              why host preparation matters. Individual experiences should not be treated as a reflection of
+              Jamaica or Jamaican hospitality as a whole; they are better used to examine the specific
+              hosting practices, decisions and service gaps that guests encounter.
+            </p>
+
+            <div class="airbnb-case-note">
+              The video and comments are embedded from the original public Facebook post for educational
+              discussion. Views expressed by the creator or commenters are their own.
+            </div>
+
+            <div class="airbnb-case-points">
+              <div class="airbnb-case-point">
+                <strong>Guest Communication</strong>
+                <span>Set clear expectations before arrival and communicate quickly when something changes.</span>
+              </div>
+
+              <div class="airbnb-case-point">
+                <strong>Arrival Experience</strong>
+                <span>Think through what a tired guest needs when arriving after travel, not only what the listing promises.</span>
+              </div>
+
+              <div class="airbnb-case-point">
+                <strong>Service Recovery</strong>
+                <span>Problems happen. The response often determines whether the experience becomes a complaint or a recovery.</span>
+              </div>
+
+              <div class="airbnb-case-point">
+                <strong>Host Readiness</strong>
+                <span>Strong hosting requires systems, standards and judgement — not simply access to a rentable property.</span>
+              </div>
+            </div>
+
+            <div class="button-row">
+              <a class="btn btn-primary" href="https://calendly.com/marsha-k-talley/15min" target="_blank" rel="noopener">
+                Enquire About Airbnb Host Training
+              </a>
+
+              <a class="btn btn-outline" href="https://payhip.com/b/LNfn2" target="_blank" rel="noopener">
+                Get the Airbnb Hosting Toolkit
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
     <!-- ================= HOST TRAINING & RESOURCES ================= -->
     <section class="airbnb-options" id="host-resources">
