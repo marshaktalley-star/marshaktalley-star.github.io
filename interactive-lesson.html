@@ -93,9 +93,12 @@ textarea{min-height:90px;resize:vertical}
 }
 .moods{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:14px 0}
 .mood-btn{
-  border:1px solid var(--border);border-radius:15px;padding:14px 8px;background:#fff;cursor:pointer;font-weight:700;color:var(--ink)
+  border:1px solid var(--border);border-radius:15px;padding:14px 8px;background:#fff;cursor:pointer;font-weight:700;color:var(--ink);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:118px
 }
-.mood-btn.active{background:var(--deep);color:#fff;border-color:var(--deep)}
+.mood-face{font-size:2.9rem;line-height:1;filter:saturate(.9)}
+.mood-label{font-size:.92rem}
+.mood-btn.active{background:var(--deep);color:#fff;border-color:var(--deep);transform:translateY(-1px)}
 .days{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:16px}
 .day-card{padding:12px;border:1px solid var(--border);border-radius:12px;background:#fff}
 .day-card b{color:var(--deep)}
@@ -231,11 +234,11 @@ footer{text-align:center;color:var(--muted);padding:30px}
   <h2>1. Emotional Bank</h2>
   <p class="subtitle">A private, low-pressure check-in. No learner is required to explain personal history.</p>
   <div class="moods" id="moods">
-    <button class="mood-btn" data-mood="Happy">Happy</button>
-    <button class="mood-btn" data-mood="Sad">Sad</button>
-    <button class="mood-btn" data-mood="Confused">Confused</button>
-    <button class="mood-btn" data-mood="Angry">Angry</button>
-    <button class="mood-btn" data-mood="Optimistic">Optimistic</button>
+    <button class="mood-btn" data-mood="Happy" aria-label="Happy"><span class="mood-face" aria-hidden="true">😄</span><span class="mood-label">Happy</span></button>
+    <button class="mood-btn" data-mood="Sad" aria-label="Sad"><span class="mood-face" aria-hidden="true">😔</span><span class="mood-label">Sad</span></button>
+    <button class="mood-btn" data-mood="Confused" aria-label="Confused"><span class="mood-face" aria-hidden="true">😕</span><span class="mood-label">Confused</span></button>
+    <button class="mood-btn" data-mood="Angry" aria-label="Angry"><span class="mood-face" aria-hidden="true">😠</span><span class="mood-label">Angry</span></button>
+    <button class="mood-btn" data-mood="Optimistic" aria-label="Optimistic"><span class="mood-face" aria-hidden="true">😎</span><span class="mood-label">Optimistic</span></button>
   </div>
   <label for="moodStatement">Write, type, dictate or tell the teacher one sentence about how you feel:</label>
   <textarea id="moodStatement" placeholder="I am feeling ______ because ______."></textarea>
