@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build the Space | CPFSA Intensive Youth Lesson</title>
+<style>
+:root{
+  --deep:#056367;
+  --teal:#319fa2;
+  --bright:#2fe2dd;
+  --ink:#173b3d;
+  --paper:#f7fbfa;
+  --white:#ffffff;
+  --soft:#e8f5f3;
+  --gold:#f3c969;
+  --border:#c9dcda;
+  --muted:#5b6f70;
+  --danger:#9c3d3d;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  color:var(--ink);
+  background:linear-gradient(180deg,#eef8f7 0%,#f9fbfb 45%,#eef8f7 100%);
+  line-height:1.55;
+}
+button,input,textarea,select{font:inherit}
+a{color:var(--deep)}
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(5,99,103,.96);
+  color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.18);
+}
+.topbar-inner{
+  max-width:1180px;margin:auto;padding:10px 18px;
+  display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap;
+}
+.brand{font-weight:800;letter-spacing:.02em}
+.nav{display:flex;gap:7px;flex-wrap:wrap}
+.nav a,.toolbar button{
+  border:1px solid rgba(255,255,255,.35);background:transparent;color:white;
+  padding:7px 10px;border-radius:999px;text-decoration:none;cursor:pointer;font-size:.88rem;
+}
+.toolbar{display:flex;gap:7px;flex-wrap:wrap}
+.hero{
+  max-width:1180px;margin:0 auto;padding:50px 22px 28px;
+  display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center;
+}
+.kicker{font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:var(--teal);font-size:.82rem}
+h1{font-size:clamp(2.2rem,5vw,4.7rem);line-height:.96;margin:.2em 0;color:var(--deep)}
+.hero p{font-size:1.08rem;max-width:760px}
+.hero-card{
+  background:var(--deep);color:white;border-radius:24px;padding:26px;
+  box-shadow:0 16px 45px rgba(5,99,103,.18)
+}
+.hero-card .big{font-size:2.2rem;font-weight:900;color:var(--bright)}
+.hero-card ul{padding-left:20px}
+.container{max-width:1180px;margin:auto;padding:0 22px 70px}
+.section{
+  background:rgba(255,255,255,.94);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:26px;
+  margin:20px 0;
+  box-shadow:0 8px 24px rgba(28,74,76,.06);
+}
+.section h2{margin-top:0;color:var(--deep);font-size:1.8rem}
+.section h3{color:var(--teal)}
+.subtitle{color:var(--muted);margin-top:-8px}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.card{
+  border:1px solid var(--border);border-radius:16px;padding:18px;background:#fff
+}
+.callout{
+  border-left:5px solid var(--teal);background:var(--soft);padding:16px 18px;border-radius:12px;
+}
+.question-box{
+  background:var(--deep);color:#fff;padding:20px;border-radius:16px;font-size:1.2rem;font-weight:700;
+}
+label{font-weight:700;display:block;margin-bottom:6px}
+input[type="text"],input[type="number"],textarea,select{
+  width:100%;border:1px solid #a9c7c5;border-radius:10px;padding:11px;background:#fff;color:var(--ink)
+}
+textarea{min-height:90px;resize:vertical}
+.wordbank{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px}
+.word{
+  border:1px solid var(--teal);background:var(--soft);padding:6px 10px;border-radius:999px;font-weight:700;
+}
+.moods{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:14px 0}
+.mood-btn{
+  border:1px solid var(--border);border-radius:15px;padding:14px 8px;background:#fff;cursor:pointer;font-weight:700;color:var(--ink)
+}
+.mood-btn.active{background:var(--deep);color:#fff;border-color:var(--deep)}
+.days{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:16px}
+.day-card{padding:12px;border:1px solid var(--border);border-radius:12px;background:#fff}
+.day-card b{color:var(--deep)}
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid var(--border);padding:10px;vertical-align:top}
+th{background:var(--soft);text-align:left;color:var(--deep)}
+.price-table input[type="number"]{max-width:78px}
+.total-panel{
+  position:sticky;bottom:12px;background:var(--deep);color:#fff;border-radius:16px;padding:14px 18px;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+  box-shadow:0 10px 32px rgba(0,0,0,.18);margin-top:18px
+}
+.money{font-size:1.45rem;font-weight:900}
+.status{font-weight:800}
+.over{color:#ffd5d5}
+.under{color:#c9ffdc}
+.btn{
+  border:0;border-radius:999px;background:var(--deep);color:#fff;padding:10px 16px;font-weight:800;cursor:pointer
+}
+.btn.secondary{background:#fff;color:var(--deep);border:1px solid var(--deep)}
+.btn.gold{background:var(--gold);color:#362b10}
+.role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.role{border:1px dashed var(--teal);padding:12px;border-radius:12px;text-align:center;font-weight:700}
+.step{
+  display:flex;gap:14px;align-items:flex-start;margin:14px 0
+}
+.step-no{
+  min-width:38px;height:38px;border-radius:50%;background:var(--deep);color:#fff;
+  display:grid;place-items:center;font-weight:900
+}
+.spelling-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.spell{
+  border:1px solid var(--border);border-radius:12px;padding:13px;background:#fff;
+  display:flex;justify-content:space-between;gap:8px;align-items:center
+}
+.speak{font-size:.8rem;border:1px solid var(--teal);background:var(--soft);border-radius:999px;padding:5px 8px;cursor:pointer}
+.abc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.abc-card{border-radius:15px;padding:16px;border:1px solid var(--border)}
+.abc-letter{font-size:2rem;font-weight:900;color:var(--deep)}
+.assess-item{border-bottom:1px solid var(--border);padding:18px 0}
+.assess-item:last-child{border:0}
+.choice-row{display:flex;gap:12px;flex-wrap:wrap;margin:8px 0}
+.choice-row label{font-weight:500}
+.tag{
+  display:inline-block;padding:4px 9px;border-radius:999px;background:var(--soft);border:1px solid var(--border);font-size:.82rem;font-weight:700
+}
+.teacher-note{
+  display:none;background:#fff6d9;border:1px solid #e5c35f;border-radius:14px;padding:15px;margin-top:12px
+}
+body.interview .teacher-note{display:block}
+.small{font-size:.9rem;color:var(--muted)}
+.ecology{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:12px
+}
+.eco-card{padding:16px;border-radius:16px;background:var(--soft);border:1px solid var(--border)}
+.eco-card strong{display:block;color:var(--deep);margin-bottom:6px}
+footer{text-align:center;color:var(--muted);padding:30px}
+@media(max-width:900px){
+  .hero,.grid-2,.grid-3,.abc-grid{grid-template-columns:1fr}
+  .moods,.days,.ecology{grid-template-columns:repeat(2,1fr)}
+  .spelling-grid,.role-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:540px){
+  .moods,.days,.ecology,.spelling-grid,.role-grid{grid-template-columns:1fr}
+  .section{padding:18px}
+}
+@media print{
+  .topbar,.toolbar,.btn,.speak,.total-panel{display:none!important}
+  body{background:#fff}
+  .section{box-shadow:none;break-inside:avoid}
+  .teacher-note{display:block!important}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">BUILD THE SPACE • CPFSA INTENSIVE YOUTH</div>
+    <nav class="nav">
+      <a href="#checkin">Check-in</a>
+      <a href="#plan">Lesson</a>
+      <a href="#budget">Budget</a>
+      <a href="#literacy">Literacy</a>
+      <a href="#assessment">Assessment</a>
+    </nav>
+    <div class="toolbar">
+      <button onclick="toggleInterview()">Interview Notes</button>
+      <button onclick="savePage()">Save</button>
+      <button onclick="window.print()">Print</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="kicker">Project-based • Functional literacy • Numeracy • Classroom ecology</div>
+    <h1>BUILD<br>THE SPACE</h1>
+    <p><strong>Question:</strong> If you had the power to redesign this room, what would you change—and what would it cost?</p>
+    <p>This lesson treats adolescents as adolescents. Reading and mathematics are embedded in a real design challenge, with multiple ways to participate, communicate, move, calculate and create.</p>
+  </div>
+  <aside class="hero-card">
+    <div class="big">J$50,000</div>
+    <p>Your team has a fixed budget to improve the learning space.</p>
+    <ul>
+      <li>Measure the room</li>
+      <li>Choose what matters</li>
+      <li>Build a realistic budget</li>
+      <li>Create the design</li>
+      <li>Pitch the decision</li>
+    </ul>
+    <p><strong>Duration:</strong> 60–75 minutes</p>
+  </aside>
+</section>
+
+<main class="container">
+
+<section id="ecology" class="section">
+  <h2>Classroom Ecology in Practice</h2>
+  <p class="subtitle">The environment is part of the intervention, not background scenery.</p>
+  <div class="ecology">
+    <div class="eco-card"><strong>Movement</strong>Students measure, rotate roles, inspect and build rather than remain seated for the whole lesson.</div>
+    <div class="eco-card"><strong>Light</strong>Use softer lamps or indirect lighting where facility rules allow; avoid unnecessary sensory harshness.</div>
+    <div class="eco-card"><strong>Nature</strong>Plants can soften an institutional environment and give learners responsibility for a shared space.</div>
+    <div class="eco-card"><strong>Voice</strong>Learners are asked what they would change. Their observations become legitimate lesson content.</div>
+    <div class="eco-card"><strong>Structure</strong>Clear stages, visible expectations and predictable transitions reduce uncertainty without lowering expectations.</div>
+  </div>
+  <div class="teacher-note">
+    <strong>Interview rationale:</strong> Discipline is only one part of classroom behaviour. The design of the environment, opportunities for movement, sensory load, learner voice and predictability can influence regulation and engagement. The aim is not to make the space decorative; it is to make learning more accessible and the room more human.
+  </div>
+</section>
+
+<section id="checkin" class="section">
+  <h2>1. Emotional Bank</h2>
+  <p class="subtitle">A private, low-pressure check-in. No learner is required to explain personal history.</p>
+  <div class="moods" id="moods">
+    <button class="mood-btn" data-mood="Happy">Happy</button>
+    <button class="mood-btn" data-mood="Sad">Sad</button>
+    <button class="mood-btn" data-mood="Confused">Confused</button>
+    <button class="mood-btn" data-mood="Angry">Angry</button>
+    <button class="mood-btn" data-mood="Optimistic">Optimistic</button>
+  </div>
+  <label for="moodStatement">Write, type, dictate or tell the teacher one sentence about how you feel:</label>
+  <textarea id="moodStatement" placeholder="I am feeling ______ because ______."></textarea>
+  <div class="days">
+    <div class="day-card"><b>Monday</b><br><input type="text" placeholder="Mood / note"></div>
+    <div class="day-card"><b>Tuesday</b><br><input type="text" placeholder="Mood / note"></div>
+    <div class="day-card"><b>Wednesday</b><br><input type="text" placeholder="Mood / note"></div>
+    <div class="day-card"><b>Thursday</b><br><input type="text" placeholder="Mood / note"></div>
+    <div class="day-card"><b>Friday</b><br><input type="text" placeholder="Mood / note"></div>
+  </div>
+</section>
+
+<section id="target" class="section">
+  <h2>2. Learning Target</h2>
+  <div class="question-box">
+    I can use reading, speaking, measurement and money skills to design a better learning space and explain the choices I make.
+  </div>
+  <h3>Learning Outcomes</h3>
+  <div class="grid-2">
+    <div class="card">
+      <strong>By the end of the lesson, I can:</strong>
+      <ul>
+        <li>contribute an idea to redesign a real space;</li>
+        <li>measure or estimate dimensions and quantities;</li>
+        <li>work within a J$50,000 budget;</li>
+        <li>read or interpret prices, numbers, symbols and functional words.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <strong>I can also:</strong>
+      <ul>
+        <li>communicate and defend a decision;</li>
+        <li>work independently or collaboratively;</li>
+        <li>use literacy and numeracy in a meaningful task;</li>
+        <li>identify how the physical environment can affect learning and behaviour.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="plan" class="section">
+  <h2>3. Assignment Sequence</h2>
+  <p class="subtitle">The original Weekly Assignment structure is retained as a reusable Monday–Friday extension, while today's core lesson can be completed in one 60–75 minute session.</p>
+  <table>
+    <thead><tr><th>Day Assigned</th><th>Assignment</th><th>Date Completed / Evidence</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Monday</strong></td><td><strong>Observe + Move:</strong> Emotional Bank; inspect the room; identify what helps or interferes with learning; take measurements; record numbers and words.</td><td contenteditable="true"></td></tr>
+      <tr><td><strong>Tuesday</strong></td><td><strong>Read + Compare:</strong> Review two short sources/visuals about learning environments. Complete the compare-and-contrast section. Practise spelling words.</td><td contenteditable="true"></td></tr>
+      <tr><td><strong>Wednesday</strong></td><td><strong>Budget + Design:</strong> Complete the J$50,000 challenge. Calculate costs. Build the proposed room layout.</td><td contenteditable="true"></td></tr>
+      <tr><td><strong>Thursday</strong></td><td><strong>Speak + Write:</strong> Present the pitch. Complete the ABC paragraph and vocabulary practice.</td><td contenteditable="true"></td></tr>
+      <tr><td><strong>Friday</strong></td><td><strong>Reflect + Assess:</strong> Complete the summary frame and assessment. Revise one design choice using feedback or new information.</td><td contenteditable="true"></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="entry" class="section">
+  <h2>4. Entry — 5 minutes</h2>
+  <div class="grid-2">
+    <div class="card">
+      <h3>Look at the room.</h3>
+      <p><strong>What would you change about this space?</strong></p>
+      <p><strong>What would you need to improve it?</strong></p>
+      <div class="wordbank"><span class="word">money</span><span class="word">everything</span><span class="word">nothing</span><span class="word">lighting</span><span class="word">space</span><span class="word">seating</span></div>
+      <label>I would change...</label>
+      <input type="text" placeholder="I would change __________ about this room.">
+      <label style="margin-top:10px">I would need...</label>
+      <input type="text" placeholder="I would need __________ to improve it.">
+    </div>
+    <div class="card">
+      <h3>Ways to respond</h3>
+      <p>A learner may <strong>speak, point, choose a word, type, write, sketch or dictate</strong>. The academic demand is not reduced simply because the response mode changes.</p>
+      <div class="teacher-note">
+        This protects adolescent dignity. A learner who is not yet a conventional reader can still analyse a real environment and contribute an intelligent idea.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="measure" class="section">
+  <h2>5. Walk the Room — 10 minutes</h2>
+  <div class="role-grid">
+    <div class="role">Measurer</div><div class="role">Recorder</div><div class="role">Checker</div>
+    <div class="role">Budget Keeper</div><div class="role">Designer</div><div class="role">Presenter</div>
+  </div>
+  <div class="grid-3" style="margin-top:18px">
+    <div class="card"><label>Room length</label><input type="number" id="length" step="0.1" placeholder="metres"></div>
+    <div class="card"><label>Room width</label><input type="number" id="width" step="0.1" placeholder="metres"></div>
+    <div class="card"><label>Area</label><input type="text" id="area" readonly placeholder="Length × width"></div>
+    <div class="card"><label>Seats</label><input type="number" placeholder="Count"></div>
+    <div class="card"><label>Windows</label><input type="number" placeholder="Count"></div>
+    <div class="card"><label>Lights</label><input type="number" placeholder="Count"></div>
+  </div>
+  <p class="small">A learner may hold the tape, call out a number, enter a measurement, check a calculation or explain what the number means.</p>
+</section>
+
+<section id="budget" class="section">
+  <h2>6. The J$50,000 Challenge — 20 minutes</h2>
+  <div class="question-box">DESIGN THE ROOM WITHOUT EXCEEDING J$50,000.</div>
+  <p>Choose quantities. The page calculates the running total automatically.</p>
+  <table class="price-table">
+    <thead><tr><th>Item</th><th>Unit Cost</th><th>Quantity</th><th>Subtotal</th></tr></thead>
+    <tbody id="budgetRows">
+      <tr data-price="8500"><td>Floor lamp</td><td>J$8,500</td><td><input type="number" min="0" value="0"></td><td class="sub">J$0</td></tr>
+      <tr data-price="4500"><td>Large plant</td><td>J$4,500</td><td><input type="number" min="0" value="0"></td><td class="sub">J$0</td></tr>
+      <tr data-price="2000"><td>Small plant</td><td>J$2,000</td><td><input type="number" min="0" value="0"></td><td class="sub">J$0</td></tr>
+      <tr data-price="12000"><td>Rug</td><td>J$12,000</td><td><input type="number" min="0" value="0"></td><td class="sub">J$0</td></tr>
+      <tr data-price="9500"><td>Storage unit</td><td>J$9,500</td><td><input type="number" min="0" value="0"></td><td class="sub">J$0</td></tr>
+      <tr data-price="4000"><td>Cushion / seat</td><td>J$4,000</td><td><input type="number" min="0" value="0"></td><td class="sub">J$0</td></tr>
+      <tr data-price="3500"><td>Wall art</td><td>J$3,500</td><td><input type="number" min="0" value="0"></td><td class="sub">J$0</td></tr>
+      <tr data-price="11000"><td>Table</td><td>J$11,000</td><td><input type="number" min="0" value="0"></td><td class="sub">J$0</td></tr>
+      <tr data-price="15000"><td>Projector / display contribution</td><td>J$15,000</td><td><input type="number" min="0" value="0"></td><td class="sub">J$0</td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid-2" style="margin-top:18px">
+    <div class="card">
+      <label>Which item matters most? Why?</label>
+      <textarea placeholder="We chose __________ because __________."></textarea>
+    </div>
+    <div class="card">
+      <label>What could you substitute if it costs too much?</label>
+      <textarea placeholder="Instead of __________, we could __________ because __________."></textarea>
+    </div>
+  </div>
+
+  <div class="total-panel">
+    <div><span>Budget: </span><span class="money" id="budgetLimit">J$50,000</span></div>
+    <div><span>Spent: </span><span class="money" id="spent">J$0</span></div>
+    <div><span>Balance: </span><span class="money" id="balance">J$50,000</span></div>
+    <div class="status under" id="budgetStatus">Within budget</div>
+  </div>
+</section>
+
+<section id="build" class="section">
+  <h2>7. Build It — 15 minutes</h2>
+  <div class="step"><div class="step-no">1</div><div><strong>Sketch or arrange the room.</strong><br>Use a floor plan, paper cut-outs, actual movable objects or a digital sketch.</div></div>
+  <div class="step"><div class="step-no">2</div><div><strong>Label what matters.</strong><br>Use words such as LIGHTING, SPACE, STORAGE, PRIVACY, COMFORT and MOVEMENT.</div></div>
+  <div class="step"><div class="step-no">3</div><div><strong>Check your numbers.</strong><br>Confirm quantities, subtotals and final balance.</div></div>
+  <label>Design notes / sketch description</label>
+  <textarea placeholder="Describe or dictate the layout here..."></textarea>
+</section>
+
+<section id="pitch" class="section">
+  <h2>8. The Pitch — 10 minutes</h2>
+  <div class="abc-grid">
+    <div class="abc-card"><div class="abc-letter">1</div><strong>What did you change?</strong><textarea></textarea></div>
+    <div class="abc-card"><div class="abc-letter">2</div><strong>Why?</strong><textarea></textarea></div>
+    <div class="abc-card"><div class="abc-letter">3</div><strong>How much did you spend?</strong><textarea></textarea></div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <label>What makes your design better for learning?</label>
+    <textarea></textarea>
+  </div>
+</section>
+
+<section id="curveball" class="section">
+  <h2>9. Curve Ball</h2>
+  <div class="question-box">Management just cut your budget by J$10,000. What goes?</div>
+  <p>Click to activate the reduced budget. Teams then have three minutes to negotiate.</p>
+  <button class="btn gold" id="curveBtn" onclick="toggleCurve()">Activate J$40,000 Budget</button>
+  <div class="grid-2" style="margin-top:16px">
+    <div class="card"><label>What will you remove?</label><textarea></textarea></div>
+    <div class="card"><label>Why is that the best compromise?</label><textarea></textarea></div>
+  </div>
+</section>
+
+<section id="literacy" class="section">
+  <h2>10. Spelling & Functional Vocabulary</h2>
+  <p class="subtitle">Age-appropriate words taken directly from the project. Use sound, syllables, meaning, speaking and writing—not copying alone.</p>
+  <div class="spelling-grid">
+    <div class="spell"><strong>budget</strong><button class="speak" onclick="say('budget')">Hear</button></div>
+    <div class="spell"><strong>design</strong><button class="speak" onclick="say('design')">Hear</button></div>
+    <div class="spell"><strong>measure</strong><button class="speak" onclick="say('measure')">Hear</button></div>
+    <div class="spell"><strong>calculate</strong><button class="speak" onclick="say('calculate')">Hear</button></div>
+    <div class="spell"><strong>projector</strong><button class="speak" onclick="say('projector')">Hear</button></div>
+    <div class="spell"><strong>lighting</strong><button class="speak" onclick="say('lighting')">Hear</button></div>
+    <div class="spell"><strong>furniture</strong><button class="speak" onclick="say('furniture')">Hear</button></div>
+    <div class="spell"><strong>improve</strong><button class="speak" onclick="say('improve')">Hear</button></div>
+    <div class="spell"><strong>balance</strong><button class="speak" onclick="say('balance')">Hear</button></div>
+    <div class="spell"><strong>compare</strong><button class="speak" onclick="say('compare')">Hear</button></div>
+    <div class="spell"><strong>negotiate</strong><button class="speak" onclick="say('negotiate')">Hear</button></div>
+    <div class="spell"><strong>exceeding</strong><button class="speak" onclick="say('exceeding')">Hear</button></div>
+  </div>
+  <div class="grid-2" style="margin-top:18px">
+    <div class="card"><label>Choose one spelling word and break it into syllables or sound parts.</label><input type="text" placeholder="Example: cal-cu-late"></div>
+    <div class="card"><label>Use one spelling word in your own sentence.</label><input type="text"></div>
+  </div>
+</section>
+
+<section id="compare" class="section">
+  <h2>11. Compare & Contrast</h2>
+  <p>Use two sources: for example, a photo of a traditional institutional classroom and a photo/article about a more flexible learning environment.</p>
+  <table>
+    <thead><tr><th>Source A: What do you notice?</th><th>Source B: What do you notice?</th><th>What is similar?</th></tr></thead>
+    <tbody>
+      <tr><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td></tr>
+      <tr><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td></tr>
+      <tr><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td></tr>
+    </tbody>
+  </table>
+  <div class="teacher-note">
+    Use images and short, readable text so nonreaders can participate through observation and discussion. Do not use infantile clip art. A learner can compare visual evidence before being asked to decode a paragraph.
+  </div>
+</section>
+
+<section id="abc" class="section">
+  <h2>12. ABC Paragraph</h2>
+  <p><strong>Learning Target:</strong> I can express and support my opinion using an ABC response.</p>
+  <div class="abc-grid">
+    <div class="abc-card"><div class="abc-letter">A</div><strong>Answer</strong><p>Answer the question with a <em>because</em> statement.</p></div>
+    <div class="abc-card"><div class="abc-letter">B</div><strong>Back it up</strong><p>Use evidence and a <em>For example...</em> statement.</p></div>
+    <div class="abc-card"><div class="abc-letter">C</div><strong>Connect</strong><p>Explain how the evidence supports your answer.</p></div>
+  </div>
+  <div class="question-box" style="margin-top:16px">Prompt: Does the way a classroom is designed affect how people learn and behave?</div>
+  <label style="margin-top:16px">Write, type or dictate your ABC response:</label>
+  <textarea style="min-height:180px" placeholder="I believe... because... For example... This matters because..."></textarea>
+</section>
+
+<section id="vocab" class="section">
+  <h2>13. Vocabulary Practice</h2>
+  <p><strong>Learning Target:</strong> I can improve my vocabulary by learning the meaning of a word I use in this project.</p>
+  <div class="grid-2">
+    <div class="card">
+      <label>Vocabulary Word</label>
+      <input type="text" value="environment">
+      <label style="margin-top:10px">Part of Speech</label>
+      <input type="text" placeholder="noun / verb / adjective...">
+      <label style="margin-top:10px">Dictionary Definition (Denotation)</label>
+      <textarea></textarea>
+      <label style="margin-top:10px">Self-Definition (In your own words)</label>
+      <textarea></textarea>
+    </div>
+    <div class="card">
+      <label>Illustration / What would this look like?</label>
+      <textarea></textarea>
+      <label style="margin-top:10px">Synonyms</label>
+      <textarea></textarea>
+      <label style="margin-top:10px">Antonyms</label>
+      <textarea></textarea>
+      <label style="margin-top:10px">Use the word in your own sentence</label>
+      <textarea></textarea>
+    </div>
+  </div>
+</section>
+
+<section id="summary" class="section">
+  <h2>14. Summary Frame</h2>
+  <p>Use this scaffold after the design, reading or discussion. A learner may complete it in writing or use it as a speaking frame.</p>
+  <div class="card">
+    <p>The lesson/source, <input type="text" style="width:260px;display:inline-block" placeholder="title">, is about
+    <input type="text" style="width:300px;display:inline-block">.</p>
+    <p>From this lesson, I learned that <input type="text" style="width:72%;display:inline-block">.</p>
+    <p>For example, <input type="text" style="width:80%;display:inline-block">.</p>
+    <p>In the end, I will use this information to <input type="text" style="width:70%;display:inline-block">.</p>
+  </div>
+</section>
+
+<section id="closing" class="section">
+  <h2>15. Closing Discussion</h2>
+  <div class="grid-2">
+    <div class="card">
+      <h3>Does your environment affect how you behave?</h3>
+      <textarea placeholder="Speak, write or dictate..."></textarea>
+    </div>
+    <div class="card">
+      <h3>What makes a space feel safe without somebody having to tell you it is safe?</h3>
+      <textarea placeholder="Speak, write or dictate..."></textarea>
+    </div>
+  </div>
+  <div class="callout" style="margin-top:14px">
+    The discussion is about the environment—not personal trauma. Learners are never required to disclose abuse, abandonment, family relationships or the reasons they are in care.
+  </div>
+</section>
+
+<section id="assessment" class="section">
+  <h2>16. Assessment</h2>
+  <p class="subtitle">Choose an answer and explain why. The explanation is more important than guessing correctly.</p>
+
+  <div class="assess-item">
+    <strong>1. Your budget is J$50,000. You spend J$32,000. What is your balance?</strong>
+    <div class="choice-row"><label><input type="radio" name="q1"> J$18,000</label><label><input type="radio" name="q1"> J$22,000</label><label><input type="radio" name="q1"> J$82,000</label></div>
+    <textarea placeholder="I chose that answer because..."></textarea>
+  </div>
+
+  <div class="assess-item">
+    <strong>2. Which word best means the amount of money you still have left?</strong>
+    <div class="choice-row"><label><input type="radio" name="q2"> balance</label><label><input type="radio" name="q2"> furniture</label><label><input type="radio" name="q2"> projector</label></div>
+    <textarea placeholder="I chose that answer because..."></textarea>
+  </div>
+
+  <div class="assess-item">
+    <strong>3. A small plant costs J$2,000. What do four small plants cost?</strong>
+    <div class="choice-row"><label><input type="radio" name="q3"> J$6,000</label><label><input type="radio" name="q3"> J$8,000</label><label><input type="radio" name="q3"> J$10,000</label></div>
+    <textarea placeholder="I chose that answer because..."></textarea>
+  </div>
+
+  <div class="assess-item">
+    <strong>4. Why do we measure the room before planning the layout?</strong>
+    <div class="choice-row"><label><input type="radio" name="q4"> To make sure items fit</label><label><input type="radio" name="q4"> To make the lesson longer</label><label><input type="radio" name="q4"> To avoid using numbers</label></div>
+    <textarea placeholder="I chose that answer because..."></textarea>
+  </div>
+
+  <div class="assess-item">
+    <strong>5. Which is the best example of a design decision?</strong>
+    <div class="choice-row"><label><input type="radio" name="q5"> Choosing softer lighting for a reading area</label><label><input type="radio" name="q5"> Copying a word ten times</label><label><input type="radio" name="q5"> Ignoring the budget</label></div>
+    <textarea placeholder="I chose that answer because..."></textarea>
+  </div>
+
+  <div class="assess-item">
+    <strong>6. What does exceeding the budget mean?</strong>
+    <div class="choice-row"><label><input type="radio" name="q6"> Spending more than allowed</label><label><input type="radio" name="q6"> Spending nothing</label><label><input type="radio" name="q6"> Measuring the room</label></div>
+    <textarea placeholder="I chose that answer because..."></textarea>
+  </div>
+
+  <div class="assess-item">
+    <strong>7. A rug costs J$12,000 and a floor lamp costs J$8,500. What is the total?</strong>
+    <div class="choice-row"><label><input type="radio" name="q7"> J$20,500</label><label><input type="radio" name="q7"> J$19,500</label><label><input type="radio" name="q7"> J$3,500</label></div>
+    <textarea placeholder="I chose that answer because..."></textarea>
+  </div>
+
+  <div class="assess-item">
+    <strong>8. Which sentence best supports an opinion with evidence?</strong>
+    <div class="choice-row"><label><input type="radio" name="q8"> I like it.</label><label><input type="radio" name="q8"> Softer lighting may work better because the current lights are harsh in the reading area.</label><label><input type="radio" name="q8"> Whatever.</label></div>
+    <textarea placeholder="I chose that answer because..."></textarea>
+  </div>
+
+  <div class="assess-item">
+    <strong>9. Your budget is cut from J$50,000 to J$40,000. How much was removed?</strong>
+    <div class="choice-row"><label><input type="radio" name="q9"> J$5,000</label><label><input type="radio" name="q9"> J$10,000</label><label><input type="radio" name="q9"> J$90,000</label></div>
+    <textarea placeholder="I chose that answer because..."></textarea>
+  </div>
+
+  <div class="assess-item">
+    <strong>10. Which statement best explains the lesson?</strong>
+    <div class="choice-row"><label><input type="radio" name="q10"> Reading and maths can be used to solve real problems.</label><label><input type="radio" name="q10"> Only strong readers can design a room.</label><label><input type="radio" name="q10"> The cheapest room is always the best room.</label></div>
+    <textarea placeholder="I chose that answer because..."></textarea>
+  </div>
+</section>
+
+<section id="access" class="section">
+  <h2>17. Special Education Access & Differentiation</h2>
+  <div class="grid-3">
+    <div class="card"><span class="tag">Reading</span><p>Use photographs, prices, symbols, oral directions, repeated functional words and modelling. Keep the content adolescent.</p></div>
+    <div class="card"><span class="tag">Writing</span><p>Allow dictation, sketching, selecting, typing, recording numbers or oral presentation.</p></div>
+    <div class="card"><span class="tag">Numeracy</span><p>Use real money contexts, calculators, measuring tapes and concrete quantities.</p></div>
+    <div class="card"><span class="tag">Attention / regulation</span><p>Give an active role and allow purposeful movement rather than treating movement as automatic noncompliance.</p></div>
+    <div class="card"><span class="tag">Group access</span><p>Offer an individual design route when group interaction is too demanding.</p></div>
+    <div class="card"><span class="tag">Re-entry</span><p>Allow a learner to step away briefly and return without humiliation or a public power struggle.</p></div>
+  </div>
+</section>
+
+<section id="environment" class="section">
+  <h2>18. Classroom Environment</h2>
+  <div class="callout">
+    Use plants, warmer/indirect lighting, organised zones and age-appropriate displays where facility rules allow. Essential oils should only be considered with facility approval and after checking asthma, allergies, medication and sensory sensitivities. Fragrance should never be necessary for participation.
+  </div>
+  <p><strong>The objective is not to make the classroom “pretty.” The objective is to create conditions that make learning, regulation, dignity and participation more possible.</strong></p>
+</section>
+
+<section id="future" class="section">
+  <h2>19. Future Lessons From the Same Model</h2>
+  <div class="grid-3">
+    <div class="card"><strong>Run a Barbershop</strong><br>Price services, calculate change, design advertising and schedule clients.</div>
+    <div class="card"><strong>Start a Food Business</strong><br>Read recipes, measure ingredients, calculate cost and profit.</div>
+    <div class="card"><strong>Build a Garden</strong><br>Measure plots, calculate spacing and cost, grow food or herbs.</div>
+    <div class="card"><strong>Plan a Music Event</strong><br>Create a budget, timetable, promotion and equipment list.</div>
+    <div class="card"><strong>Design a Clothing Brand</strong><br>Measure garments, calculate production costs, price and pitch.</div>
+    <div class="card"><strong>Plan a Weekly Food Budget</strong><br>Compare prices, calculate quantities, read labels and make decisions.</div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>Build the Space</strong> • Reusable CPFSA Intensive Youth / Interview Lesson</p>
+  <p class="small">Designed as a single offline HTML file. Responses can be saved to this browser using the Save button.</p>
+</footer>
+
+<script>
+let currentBudget = 50000;
+
+function formatJMD(n){ return 'J$' + Number(n).toLocaleString('en-US'); }
+
+function recalcBudget(){
+  let total = 0;
+  document.querySelectorAll('#budgetRows tr').forEach(row=>{
+    const price = Number(row.dataset.price || 0);
+    const qty = Math.max(0, Number(row.querySelector('input').value || 0));
+    const sub = price * qty;
+    row.querySelector('.sub').textContent = formatJMD(sub);
+    total += sub;
+  });
+  const balance = currentBudget - total;
+  document.getElementById('spent').textContent = formatJMD(total);
+  document.getElementById('balance').textContent = formatJMD(balance);
+  document.getElementById('budgetLimit').textContent = formatJMD(currentBudget);
+  const status = document.getElementById('budgetStatus');
+  if(balance < 0){
+    status.textContent = 'Over budget by ' + formatJMD(Math.abs(balance));
+    status.className = 'status over';
+  } else {
+    status.textContent = 'Within budget';
+    status.className = 'status under';
+  }
+}
+document.querySelectorAll('#budgetRows input').forEach(i=>i.addEventListener('input',recalcBudget));
+
+function toggleCurve(){
+  currentBudget = currentBudget === 50000 ? 40000 : 50000;
+  document.getElementById('curveBtn').textContent =
+    currentBudget === 40000 ? 'Restore J$50,000 Budget' : 'Activate J$40,000 Budget';
+  recalcBudget();
+}
+
+document.getElementById('length').addEventListener('input',areaCalc);
+document.getElementById('width').addEventListener('input',areaCalc);
+function areaCalc(){
+  const l = Number(document.getElementById('length').value);
+  const w = Number(document.getElementById('width').value);
+  document.getElementById('area').value = l && w ? (l*w).toFixed(2) + ' m²' : '';
+}
+
+document.querySelectorAll('.mood-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.mood-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const field = document.getElementById('moodStatement');
+    if(!field.value) field.value = 'I am feeling ' + btn.dataset.mood.toLowerCase() + ' because ';
+  });
+});
+
+function say(word){
+  if('speechSynthesis' in window){
+    speechSynthesis.cancel();
+    speechSynthesis.speak(new SpeechSynthesisUtterance(word));
+  } else {
+    alert(word);
+  }
+}
+
+function toggleInterview(){
+  document.body.classList.toggle('interview');
+}
+
+function savePage(){
+  const data = {};
+  document.querySelectorAll('input, textarea, select').forEach((el,i)=>{
+    if(el.type === 'radio') data['field_'+i] = el.checked;
+    else data['field_'+i] = el.value;
+  });
+  data.currentBudget = currentBudget;
+  data.mood = document.querySelector('.mood-btn.active')?.dataset.mood || '';
+  localStorage.setItem('buildTheSpaceLesson', JSON.stringify(data));
+  alert('Saved on this browser.');
+}
+
+function loadPage(){
+  const raw = localStorage.getItem('buildTheSpaceLesson');
+  if(!raw) return;
+  try{
+    const data = JSON.parse(raw);
+    document.querySelectorAll('input, textarea, select').forEach((el,i)=>{
+      const key='field_'+i;
+      if(!(key in data)) return;
+      if(el.type === 'radio') el.checked = !!data[key];
+      else el.value = data[key];
+    });
+    if(data.currentBudget) currentBudget = data.currentBudget;
+    if(data.mood){
+      const m = document.querySelector('.mood-btn[data-mood="'+data.mood+'"]');
+      if(m) m.classList.add('active');
+    }
+    areaCalc(); recalcBudget();
+  }catch(e){}
+}
+window.addEventListener('DOMContentLoaded',loadPage);
+</script>
+</body>
+</html>
