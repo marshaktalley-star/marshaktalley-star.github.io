@@ -1222,6 +1222,324 @@
 
     }
 
+
+    /* =====================================================
+       SMART LEAD CONCIERGE
+       ===================================================== */
+
+    .lead-path-section {
+      padding: 72px 20px 80px;
+      background: linear-gradient(180deg, #f8fcfc 0%, #ffffff 100%);
+      text-align: center;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .lead-path-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .lead-path-section h2 {
+      margin-bottom: 14px;
+      color: var(--teal-dark);
+      font-size: clamp(2.35rem, 5vw, 4rem);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+    }
+
+    .lead-path-intro {
+      max-width: 680px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .lead-path-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .lead-path-choice {
+      min-height: 116px;
+      padding: 22px 18px;
+      border: 1px solid rgba(5,99,103,0.18);
+      border-radius: 18px;
+      background: #ffffff;
+      color: var(--teal-deep);
+      font: inherit;
+      font-weight: 700;
+      line-height: 1.35;
+      cursor: pointer;
+      box-shadow: 0 10px 28px rgba(5,99,103,0.07);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .lead-path-choice:hover,
+    .lead-path-choice:focus-visible {
+      transform: translateY(-3px);
+      border-color: var(--teal);
+      box-shadow: 0 16px 34px rgba(5,99,103,0.13);
+      outline: none;
+    }
+
+    .concierge-launcher {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 9998;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 13px 18px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--teal-dark);
+      color: #fff;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 14px 38px rgba(5,99,103,0.28);
+    }
+
+    .concierge-launcher:hover {
+      background: var(--teal-deep);
+    }
+
+    .concierge-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--teal-light);
+      box-shadow: 0 0 0 5px rgba(47,226,221,0.14);
+    }
+
+    .concierge-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      place-items: center;
+      padding: 20px;
+      background: rgba(2, 32, 33, .58);
+      backdrop-filter: blur(4px);
+    }
+
+    .concierge-overlay.open {
+      display: grid;
+    }
+
+    .concierge-panel {
+      position: relative;
+      width: min(100%, 660px);
+      max-height: min(88vh, 820px);
+      overflow-y: auto;
+      padding: clamp(28px, 5vw, 44px);
+      border-radius: 26px;
+      background: #ffffff;
+      box-shadow: 0 28px 80px rgba(0,0,0,.24);
+      text-align: left;
+    }
+
+    .concierge-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--teal-pale);
+      color: var(--teal-dark);
+      font-size: 26px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .concierge-kicker {
+      margin: 0 0 10px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .concierge-panel h2 {
+      margin: 0 38px 12px 0;
+      color: var(--teal-deep);
+      font-size: clamp(2rem, 5vw, 3.1rem);
+    }
+
+    .concierge-copy {
+      margin-bottom: 24px;
+      color: var(--muted);
+    }
+
+    .concierge-options {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .concierge-option {
+      width: 100%;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      color: var(--teal-deep);
+      font: inherit;
+      font-weight: 700;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .concierge-option:hover,
+    .concierge-option:focus-visible {
+      background: var(--teal-pale);
+      border-color: rgba(5,99,103,.35);
+      outline: none;
+    }
+
+    .concierge-response {
+      display: none;
+      margin: 22px 0;
+      padding: 18px 20px;
+      border-left: 4px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      background: #fbf8f2;
+      color: #435657;
+    }
+
+    .concierge-response.show {
+      display: block;
+    }
+
+    .lead-form {
+      display: none;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .lead-form.show {
+      display: block;
+    }
+
+    .lead-form h3 {
+      margin-bottom: 6px;
+      color: var(--teal-dark);
+      font-size: 1.55rem;
+    }
+
+    .lead-form-note {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .lead-field {
+      margin-bottom: 13px;
+    }
+
+    .lead-field label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink);
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    .lead-field input,
+    .lead-field textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #ccdedd;
+      border-radius: 11px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+    }
+
+    .lead-field input:focus,
+    .lead-field textarea:focus {
+      border-color: var(--teal);
+      outline: 3px solid rgba(49,159,162,.12);
+    }
+
+    .lead-field textarea {
+      min-height: 104px;
+      resize: vertical;
+    }
+
+    .lead-submit {
+      width: 100%;
+      min-height: 52px;
+      margin-top: 4px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--teal-dark);
+      color: #fff;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .lead-submit:hover {
+      background: var(--teal-deep);
+    }
+
+    .lead-privacy {
+      margin: 12px 0 0;
+      color: #788687;
+      font-size: .78rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .lead-success {
+      display: none;
+      position: fixed;
+      right: 22px;
+      bottom: 90px;
+      z-index: 10000;
+      max-width: 360px;
+      padding: 17px 20px;
+      border-radius: 14px;
+      background: var(--teal-deep);
+      color: #fff;
+      box-shadow: 0 18px 50px rgba(0,0,0,.2);
+    }
+
+    .lead-success.show {
+      display: block;
+    }
+
+    @media (max-width: 760px) {
+      .lead-path-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lead-path-choice {
+        min-height: auto;
+      }
+
+      .concierge-launcher {
+        right: 14px;
+        bottom: 14px;
+        max-width: calc(100vw - 28px);
+      }
+
+      .concierge-panel {
+        padding: 32px 22px 26px;
+        border-radius: 20px;
+      }
+    }
+
   </style>
 
 </head>
@@ -1411,6 +1729,49 @@
 
       </div>
 
+    </section>
+
+
+
+    <!-- =====================================================
+         SMART VISITOR PATH
+    ===================================================== -->
+
+    <section class="lead-path-section" id="start">
+      <div class="lead-path-inner">
+        <p class="section-kicker">Start here</p>
+        <h2>What brought you here today?</h2>
+        <p class="lead-path-intro">
+          You do not need to know which service fits. Choose what you are trying
+          to solve and I will point you in the right direction.
+        </p>
+
+        <div class="lead-path-grid">
+          <button class="lead-path-choice" type="button" data-interest="Organisation / Team Training">
+            I need training for my organisation or team
+          </button>
+
+          <button class="lead-path-choice" type="button" data-interest="Behaviour / Special Education Support">
+            I need behaviour or Special Education support
+          </button>
+
+          <button class="lead-path-choice" type="button" data-interest="Digital Creators Lab">
+            I am interested in the Digital Creators Lab
+          </button>
+
+          <button class="lead-path-choice" type="button" data-interest="Speaking / Facilitation">
+            I want to invite Marsha to speak or facilitate
+          </button>
+
+          <button class="lead-path-choice" type="button" data-interest="Books / Resources">
+            I am looking for books or practical resources
+          </button>
+
+          <button class="lead-path-choice" type="button" data-interest="Not Sure">
+            I am not sure what I need yet
+          </button>
+        </div>
+      </div>
     </section>
 
 
@@ -1802,6 +2163,126 @@
 
 
   <!-- =====================================================
+       SMART LEAD CONCIERGE
+       ===================================================== -->
+
+  <button
+    class="concierge-launcher"
+    id="conciergeLauncher"
+    type="button"
+    aria-haspopup="dialog"
+    aria-controls="conciergeOverlay"
+  >
+    <span class="concierge-dot" aria-hidden="true"></span>
+    Find what you need
+  </button>
+
+  <div
+    class="concierge-overlay"
+    id="conciergeOverlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="conciergeTitle"
+  >
+    <div class="concierge-panel">
+      <button
+        class="concierge-close"
+        id="conciergeClose"
+        type="button"
+        aria-label="Close"
+      >×</button>
+
+      <p class="concierge-kicker">Marsha's Smart Site Guide</p>
+
+      <h2 id="conciergeTitle">What can I help you find?</h2>
+
+      <p class="concierge-copy">
+        Choose the closest fit. I will suggest the next step, and you can leave
+        your details if you would like Marsha to follow up.
+      </p>
+
+      <div class="concierge-options">
+        <button class="concierge-option" type="button" data-interest="Organisation / Team Training">
+          Training for an organisation or team
+        </button>
+
+        <button class="concierge-option" type="button" data-interest="Behaviour / Special Education Support">
+          Behaviour or Special Education support
+        </button>
+
+        <button class="concierge-option" type="button" data-interest="Digital Creators Lab">
+          Digital Creators Lab
+        </button>
+
+        <button class="concierge-option" type="button" data-interest="Speaking / Facilitation">
+          Speaking or facilitation
+        </button>
+
+        <button class="concierge-option" type="button" data-interest="Books / Resources">
+          Books and practical resources
+        </button>
+
+        <button class="concierge-option" type="button" data-interest="Not Sure">
+          I am not sure yet
+        </button>
+      </div>
+
+      <div class="concierge-response" id="conciergeResponse" aria-live="polite"></div>
+
+      <form
+        class="lead-form"
+        id="leadForm"
+        action="https://formsubmit.co/info@marshakerrtalley.com"
+        method="POST"
+      >
+        <h3>Would you like Marsha to contact you?</h3>
+        <p class="lead-form-note">
+          Leave only what is useful. This goes directly to Marsha's inbox.
+        </p>
+
+        <input type="hidden" name="_subject" value="New website lead">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://marshakerrtalley.com/?lead=sent">
+        <input type="hidden" name="_url" value="https://marshakerrtalley.com/">
+        <input type="hidden" name="interest" id="leadInterest" value="">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+
+        <div class="lead-field">
+          <label for="leadName">Name</label>
+          <input id="leadName" name="name" type="text" autocomplete="name" required>
+        </div>
+
+        <div class="lead-field">
+          <label for="leadEmail">Email</label>
+          <input id="leadEmail" name="email" type="email" autocomplete="email" required>
+        </div>
+
+        <div class="lead-field">
+          <label for="leadOrganisation">Organisation <span style="font-weight:400">(optional)</span></label>
+          <input id="leadOrganisation" name="organisation" type="text" autocomplete="organization">
+        </div>
+
+        <div class="lead-field">
+          <label for="leadMessage">What would you like help with?</label>
+          <textarea id="leadMessage" name="message" placeholder="A sentence or two is enough."></textarea>
+        </div>
+
+        <button class="lead-submit" type="submit">Send my enquiry</button>
+
+        <p class="lead-privacy">
+          Your details are used only to respond to your enquiry.
+          See the Privacy Policy for more information.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <div class="lead-success" id="leadSuccess" role="status">
+    Thank you. Your enquiry has been sent.
+  </div>
+
+
+  <!-- =====================================================
        FOOTER
   ===================================================== -->
 
@@ -1952,6 +2433,284 @@
             }
           );
 
+        }
+
+
+        /* SMART LEAD CONCIERGE */
+
+        const conciergeLauncher =
+          document.getElementById("conciergeLauncher");
+
+        const conciergeOverlay =
+          document.getElementById("conciergeOverlay");
+
+        const conciergeClose =
+          document.getElementById("conciergeClose");
+
+        const conciergeResponse =
+          document.getElementById("conciergeResponse");
+
+        const leadForm =
+          document.getElementById("leadForm");
+
+        const leadInterest =
+          document.getElementById("leadInterest");
+
+        const leadMessage =
+          document.getElementById("leadMessage");
+
+        const pathChoices =
+          document.querySelectorAll(
+            ".lead-path-choice, .concierge-option"
+          );
+
+        const guideCopy = {
+          "Organisation / Team Training":
+            "If morale, behaviour, burnout, retention or team culture is becoming difficult, Marsha can help you look beneath the visible problem and turn that insight into practical action.",
+
+          "Behaviour / Special Education Support":
+            "Marsha's work in behaviour and Special Education focuses on what may be shaping behaviour, what the environment is communicating, and what practical support can change the experience for learners and staff.",
+
+          "Digital Creators Lab":
+            "The Digital Creators Lab is practical, hands-on training in AI and digital tools for employment, entrepreneurship and real-world productivity. It can be adapted for young people, adults or organisations.",
+
+          "Speaking / Facilitation":
+            "Marsha facilitates conversations and learning around behaviour, leadership, wellbeing, culture, education and the conditions that affect how people learn, work and perform.",
+
+          "Books / Resources":
+            "Marsha's books and resources bring together lived experience, education, behaviour, healing and practical reflection. You can explore the Books page, or leave your email if you want help finding the right resource.",
+
+          "Not Sure":
+            "That is completely fine. Tell Marsha what is happening or what you are trying to achieve. You do not need to know the name of the service before starting the conversation."
+        };
+
+        function openConcierge(interest) {
+          if (!conciergeOverlay) return;
+
+          conciergeOverlay.classList.add("open");
+          document.body.style.overflow = "hidden";
+
+          if (interest) {
+            selectInterest(interest);
+          }
+
+          setTimeout(function () {
+            if (conciergeClose) conciergeClose.focus();
+          }, 30);
+        }
+
+        function closeConcierge() {
+          if (!conciergeOverlay) return;
+
+          conciergeOverlay.classList.remove("open");
+          document.body.style.overflow = "";
+
+          if (conciergeLauncher) {
+            conciergeLauncher.focus();
+          }
+        }
+
+        function selectInterest(interest) {
+          if (!interest) return;
+
+          if (leadInterest) {
+            leadInterest.value = interest;
+          }
+
+          if (conciergeResponse) {
+            conciergeResponse.textContent =
+              guideCopy[interest] || guideCopy["Not Sure"];
+
+            conciergeResponse.classList.add("show");
+          }
+
+          if (leadForm) {
+            leadForm.classList.add("show");
+          }
+
+          if (leadMessage && !leadMessage.value) {
+            leadMessage.placeholder =
+              interest === "Not Sure"
+                ? "Tell me what is happening or what you are trying to achieve."
+                : "Tell me a little about what you need.";
+          }
+        }
+
+        if (conciergeLauncher) {
+          conciergeLauncher.addEventListener(
+            "click",
+            function () {
+              openConcierge();
+            }
+          );
+        }
+
+        if (conciergeClose) {
+          conciergeClose.addEventListener(
+            "click",
+            closeConcierge
+          );
+        }
+
+        if (conciergeOverlay) {
+          conciergeOverlay.addEventListener(
+            "click",
+            function (event) {
+              if (event.target === conciergeOverlay) {
+                closeConcierge();
+              }
+            }
+          );
+        }
+
+        document.addEventListener(
+          "keydown",
+          function (event) {
+            if (
+              event.key === "Escape" &&
+              conciergeOverlay &&
+              conciergeOverlay.classList.contains("open")
+            ) {
+              closeConcierge();
+            }
+          }
+        );
+
+        pathChoices.forEach(
+          function (button) {
+            button.addEventListener(
+              "click",
+              function () {
+                const interest =
+                  button.getAttribute("data-interest");
+
+                if (
+                  button.classList.contains(
+                    "lead-path-choice"
+                  )
+                ) {
+                  openConcierge(interest);
+                } else {
+                  selectInterest(interest);
+                }
+              }
+            );
+          }
+        );
+
+        /* Gentle popup:
+           - once every 7 days
+           - after 45 seconds OR meaningful scroll
+           - never on a return visit during the 7-day window */
+
+        const popupKey =
+          "mktLeadGuideLastShown";
+
+        const sevenDays =
+          7 * 24 * 60 * 60 * 1000;
+
+        let popupEligible = true;
+
+        try {
+          const lastShown =
+            Number(
+              localStorage.getItem(popupKey) || 0
+            );
+
+          popupEligible =
+            Date.now() - lastShown > sevenDays;
+        } catch (error) {
+          popupEligible = true;
+        }
+
+        let autoOpened = false;
+
+        function autoOpenConcierge() {
+          if (
+            autoOpened ||
+            !popupEligible ||
+            !conciergeOverlay ||
+            conciergeOverlay.classList.contains("open")
+          ) {
+            return;
+          }
+
+          autoOpened = true;
+
+          try {
+            localStorage.setItem(
+              popupKey,
+              String(Date.now())
+            );
+          } catch (error) {}
+
+          openConcierge();
+        }
+
+        if (popupEligible) {
+          setTimeout(
+            autoOpenConcierge,
+            45000
+          );
+
+          window.addEventListener(
+            "scroll",
+            function onScroll() {
+              const doc =
+                document.documentElement;
+
+              const maxScroll =
+                doc.scrollHeight -
+                window.innerHeight;
+
+              if (
+                maxScroll > 0 &&
+                window.scrollY / maxScroll >= 0.55
+              ) {
+                autoOpenConcierge();
+
+                window.removeEventListener(
+                  "scroll",
+                  onScroll
+                );
+              }
+            },
+            { passive: true }
+          );
+        }
+
+        /* Confirmation toast after successful return */
+
+        const params =
+          new URLSearchParams(
+            window.location.search
+          );
+
+        if (params.get("lead") === "sent") {
+          const success =
+            document.getElementById(
+              "leadSuccess"
+            );
+
+          if (success) {
+            success.classList.add("show");
+
+            setTimeout(
+              function () {
+                success.classList.remove("show");
+              },
+              6500
+            );
+          }
+
+          if (window.history.replaceState) {
+            window.history.replaceState(
+              {},
+              document.title,
+              window.location.pathname +
+                window.location.hash
+            );
+          }
         }
 
       }
