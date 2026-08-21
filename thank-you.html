@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Thank You | Marsha Kerr Talley</title>
+
+  <meta
+    name="description"
+    content="Thank you for contacting Marsha Kerr Talley."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --teal-deep: #043b3d;
+      --teal-dark: #056367;
+      --teal: #319fa2;
+      --teal-light: #2fe2dd;
+      --teal-pale: #eefafa;
+      --gold: #c9a86a;
+      --cream: #f8f5ef;
+      --white: #ffffff;
+      --ink: #173234;
+      --body: #526263;
+      --muted: #718080;
+      --line: #dce9e8;
+      --heading: "Playfair Display", Georgia, serif;
+      --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --page-width: 1200px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top right, rgba(47,226,221,0.08), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #f8fcfc 100%);
+      color: var(--body);
+      font-family: var(--body-font);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin-top: 0;
+      font-family: var(--heading);
+      color: var(--ink);
+      line-height: 1.08;
+    }
+
+    .page-wrap {
+      width: min(calc(100% - 40px), var(--page-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      width: 100%;
+      background: rgba(255,255,255,0.94);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      width: min(calc(100% - 40px), var(--page-width));
+      margin: 0 auto;
+      padding: 20px 0 13px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .site-logo {
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .site-logo img {
+      width: 220px;
+      height: auto;
+      margin: 0 auto 13px;
+    }
+
+    .site-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 27px;
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .site-nav a {
+      color: #343434;
+      text-decoration: none;
+    }
+
+    .site-nav a:hover {
+      color: var(--teal-dark);
+    }
+
+    main {
+      min-height: calc(100vh - 240px);
+      display: grid;
+      place-items: center;
+      padding: 72px 20px 84px;
+    }
+
+    .thank-you-card {
+      width: min(100%, 860px);
+      padding: clamp(42px, 7vw, 76px);
+      background: rgba(255,255,255,0.96);
+      border: 1px solid rgba(5,99,103,0.10);
+      border-radius: 28px;
+      box-shadow: 0 24px 65px rgba(5,99,103,0.12);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .thank-you-card::before {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      top: -145px;
+      right: -120px;
+      border: 1px solid rgba(49,159,162,0.18);
+    }
+
+    .thank-you-card::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      left: -90px;
+      bottom: -90px;
+      border: 1px solid rgba(201,168,106,0.25);
+    }
+
+    .success-mark {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      background: var(--teal-pale);
+      color: var(--teal-dark);
+      display: grid;
+      place-items: center;
+      font-size: 31px;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+    }
+
+    .kicker {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+
+    .thank-you-card h1 {
+      margin-bottom: 20px;
+      color: var(--teal-deep);
+      font-size: clamp(3rem, 7vw, 5.6rem);
+      font-weight: 600;
+      letter-spacing: -0.05em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .lead {
+      max-width: 650px;
+      margin: 0 auto 14px;
+      color: #3f595a;
+      font-size: clamp(1.06rem, 2vw, 1.24rem);
+      line-height: 1.75;
+      position: relative;
+      z-index: 1;
+    }
+
+    .secondary {
+      max-width: 610px;
+      margin: 0 auto 34px;
+      color: var(--muted);
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+
+    .explore-label {
+      margin: 0 0 18px;
+      color: var(--teal-dark);
+      font-family: var(--heading);
+      font-size: 1.35rem;
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-wrap: wrap;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 25px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--teal-dark);
+      color: #ffffff;
+      box-shadow: 0 10px 26px rgba(5,99,103,0.20);
+    }
+
+    .btn-primary:hover {
+      background: var(--teal-deep);
+    }
+
+    .btn-soft {
+      background: var(--teal-pale);
+      color: var(--teal-dark);
+      border-color: rgba(5,99,103,0.18);
+    }
+
+    .btn-soft:hover {
+      background: #e4f6f6;
+    }
+
+    .home-link {
+      display: inline-block;
+      margin-top: 28px;
+      color: var(--teal);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      position: relative;
+      z-index: 1;
+    }
+
+    .home-link:hover {
+      color: var(--teal-dark);
+      text-decoration: underline;
+    }
+
+    .site-footer {
+      padding: 32px 20px 28px;
+      background: #ffffff;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      margin-bottom: 18px;
+    }
+
+    .social-links a {
+      color: var(--teal-dark);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .social-links span {
+      color: var(--gold);
+    }
+
+    .copyright {
+      margin: 0;
+      color: #777f80;
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      .header-inner {
+        align-items: center;
+      }
+
+      .site-logo img {
+        width: 190px;
+        margin-bottom: 8px;
+      }
+
+      .site-nav ul {
+        gap: 12px 18px;
+        font-size: 12px;
+      }
+
+      main {
+        padding: 45px 15px 55px;
+      }
+
+      .thank-you-card {
+        padding: 42px 24px;
+        border-radius: 22px;
+      }
+
+      .button-row {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a
+        href="index.html"
+        class="site-logo"
+        aria-label="Marsha Kerr Talley home"
+      >
+        <img
+          src="MKT-logo-3.png"
+          alt="Marsha Kerr Talley"
+        >
+      </a>
+
+      <nav
+        class="site-nav"
+        aria-label="Main navigation"
+      >
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="work-with-me.html">Work With Me</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="podcast.html">Podcast</a></li>
+          <li><a href="reflections.html">Reflections</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <section class="thank-you-card">
+
+      <div class="success-mark" aria-hidden="true">✓</div>
+
+      <p class="kicker">Message received</p>
+
+      <h1>Thank you.</h1>
+
+      <p class="lead">
+        Your message has been sent. I appreciate you taking the time
+        to reach out, and I will be in touch as soon as I can.
+      </p>
+
+      <p class="secondary">
+        While you are here, you are welcome to explore more of my work,
+        resources and reflections.
+      </p>
+
+      <p class="explore-label">
+        Where would you like to go next?
+      </p>
+
+      <div class="button-row">
+
+        <a
+          class="btn btn-primary"
+          href="work-with-me.html"
+        >
+          Explore My Work
+        </a>
+
+        <a
+          class="btn btn-soft"
+          href="books.html"
+        >
+          Books & Resources
+        </a>
+
+        <a
+          class="btn btn-soft"
+          href="reflections.html"
+        >
+          Read My Reflections
+        </a>
+
+      </div>
+
+      <a
+        class="home-link"
+        href="index.html"
+      >
+        Return to Home
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <footer class="site-footer">
+
+    <div class="social-links">
+
+      <a
+        href="https://www.linkedin.com/in/marshakerrtalley"
+        target="_blank"
+        rel="noopener"
+      >
+        LinkedIn
+      </a>
+
+      <span aria-hidden="true">·</span>
+
+      <a
+        href="https://substack.com/@marshakerrtalley"
+        target="_blank"
+        rel="noopener"
+      >
+        Substack
+      </a>
+
+      <span aria-hidden="true">·</span>
+
+      <a
+        href="https://www.silhouettes.com/"
+        target="_blank"
+        rel="noopener"
+      >
+        Silhouette's Café
+      </a>
+
+    </div>
+
+    <p class="copyright">
+      Copyright © <span id="currentYear"></span>
+      Marsha Kerr Talley — All Rights Reserved.
+    </p>
+
+  </footer>
+
+
+  <script>
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
