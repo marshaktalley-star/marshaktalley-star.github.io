@@ -357,7 +357,7 @@
 
     .hero-tags {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 10px;
       margin: 26px 0 30px;
       max-width: 760px;
@@ -471,7 +471,7 @@
 
     /* ================= TRUSTED / COLLABORATION ================= */
     .trusted-section {
-      padding: 76px 0;
+      padding: 62px 0;
       background: #ffffff;
       border-bottom: 1px solid var(--line);
     }
@@ -508,10 +508,10 @@
 
     .trusted-organisation {
       display: grid;
-      grid-template-columns: 230px 1fr;
-      gap: 34px;
+      grid-template-columns: 180px 1fr;
+      gap: 26px;
       align-items: center;
-      padding: 30px 34px;
+      padding: 22px 26px;
       background:
         linear-gradient(135deg, rgba(232,246,246,0.46), rgba(255,255,255,0.95));
       border: 1px solid var(--line);
@@ -523,8 +523,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 120px;
-      padding: 20px;
+      min-height: 92px;
+      padding: 14px;
       background: #ffffff;
       border: 1px solid rgba(5,99,103,0.08);
       border-radius: 14px;
@@ -532,15 +532,15 @@
 
     .trusted-logo {
       width: 100%;
-      max-width: 190px;
-      max-height: 88px;
+      max-width: 155px;
+      max-height: 70px;
       object-fit: contain;
     }
 
     .trusted-organisation-info h3 {
       margin: 0 0 8px;
       color: var(--ink);
-      font-size: clamp(1.55rem, 2.4vw, 2rem);
+      font-size: clamp(1.35rem, 2.1vw, 1.72rem);
       font-weight: 600;
     }
 
@@ -620,7 +620,8 @@
       position: relative;
       padding-left: 18px;
       margin-bottom: 8px;
-      font-size: 0.92rem;
+      font-size: 1rem;
+      line-height: 1.55;
       color: #425657;
     }
 
@@ -725,7 +726,7 @@
     .outcome-card span {
       display: block;
       color: #56696a;
-      font-size: 0.86rem;
+      font-size: 0.94rem;
     }
 
     .quote-grid {
@@ -809,12 +810,31 @@
     .private-list strong {
       color: var(--ink);
       display: block;
-      margin-bottom: 2px;
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+      line-height: 1.35;
     }
 
     .private-list span {
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 1.03rem;
+      line-height: 1.62;
+    }
+
+    #parent-support {
+      background: var(--brand-soft);
+      border-color: rgba(5, 99, 103, 0.2);
+    }
+
+    #parent-support::before {
+      content: "For Parents & Caregivers";
+      display: block;
+      margin-bottom: 5px;
+      color: var(--brand-primary);
+      font-size: 0.73rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
 
@@ -855,7 +875,7 @@
       padding: 0;
       color: var(--ink);
       font-family: var(--font-heading);
-      font-size: 1.42rem;
+      font-size: 1.25rem;
       line-height: 1.45;
       flex-grow: 1;
     }
@@ -918,7 +938,8 @@
 
     .people-point span {
       color: rgba(255,255,255,0.68);
-      font-size: 0.87rem;
+      font-size: 0.96rem;
+      line-height: 1.55;
     }
 
     /* ================= SPEAKING ================= */
@@ -969,7 +990,7 @@
 
     /* ================= BRAND & CREATIVE COLLABORATIONS ================= */
     .brand-collab-section {
-      padding: 82px 0;
+      padding: 58px 0;
       background: var(--cream);
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
@@ -979,7 +1000,7 @@
       grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
       gap: 42px;
       align-items: center;
-      padding: 38px 40px;
+      padding: 30px 32px;
       background: #fff;
       border: 1px solid var(--line);
       border-radius: 24px;
@@ -1319,7 +1340,7 @@
       .hero-tag {
         min-height: 40px;
         padding: 8px 8px;
-        font-size: 0.7rem;
+        font-size: 0.76rem;
       }
 
       .credibility-grid {
@@ -1407,12 +1428,9 @@
 
             <div class="hero-tags" aria-label="Page navigation">
               <a class="hero-tag" href="#services">Services</a>
-              <a class="hero-tag" href="#featured-work">Featured Work</a>
-              <a class="hero-tag" href="#consultancy">Consultancy</a>
               <a class="hero-tag" href="#parent-support">Parent Support</a>
-              <a class="hero-tag" href="#feedback">Client Feedback</a>
-              <a class="hero-tag" href="#people-performance">People-Centred Performance</a>
               <a class="hero-tag" href="#speaking">Speaking</a>
+              <a class="hero-tag" href="#feedback">Client Feedback</a>
             </div>
 
             <div class="button-row">
@@ -1592,8 +1610,7 @@
               <li>AI and digital innovation</li>
               <li>Canva, content creation and digital presence</li>
               <li>Entrepreneurship and business development</li>
-              <li>Leadership, culture and team development</li>
-              <li>Behaviour, engagement and professional wellbeing</li>
+              <li>Leadership, culture, behaviour and wellbeing</li>
               <li>Custom programmes built around organisational priorities</li>
             </ul>
             <div class="button-row">
@@ -1601,7 +1618,7 @@
                 Bring Marsha to Your Organisation
               </a>
 
-              <a class="btn btn-gold" href="airbnb-host-training.html">
+              <a class="btn btn-outline" href="airbnb-host-training.html">
                 Explore Airbnb Host Training →
               </a>
             </div>
@@ -1614,11 +1631,9 @@
               Focused one-to-one or small-team support for people who need clarity, strategy, hands-on guidance or a practical route from idea to execution.
             </p>
             <ul>
-              <li>Website and digital presence strategy</li>
-              <li>AI tools for work, business and productivity</li>
-              <li>Content and offer development</li>
-              <li>Business and programme ideas</li>
-              <li>Professional positioning and problem-solving</li>
+              <li>Digital presence, AI and productivity</li>
+              <li>Content, offers and programme development</li>
+              <li>Professional positioning and strategic problem-solving</li>
               <li>Special education support and advocacy guidance for parents</li>
               <li>Custom advisory sessions for specific goals</li>
             </ul>
@@ -1634,8 +1649,7 @@
             <ul>
               <li>Keynotes and featured talks</li>
               <li>Conference and panel facilitation</li>
-              <li>Staff development sessions</li>
-              <li>Leadership and wellbeing conversations</li>
+              <li>Staff development and leadership conversations</li>
               <li>Interactive audience experiences</li>
               <li>Custom topics aligned to your event</li>
             </ul>
@@ -1665,7 +1679,7 @@
               A two-day practical learning experience delivered for the Social Development Commission at The Moneague College in St. Ann, Jamaica.
             </p>
             <p>
-              The programme moved participants beyond simply hearing about technology. They explored how digital tools can be used to create, communicate, build businesses and solve practical problems. Sessions included Canva, AI, website creation, content development and digital entrepreneurship, with participants learning through hands-on activities and real-time creation.
+              Participants moved beyond simply hearing about technology and used Canva, AI, website creation and digital entrepreneurship tools to create, solve problems and explore practical opportunities.
             </p>
 
             <div class="outcome-grid">
@@ -1690,8 +1704,7 @@
             <div class="quote-grid" aria-label="Participant feedback from the SDC workshop">
               <blockquote class="mini-quote">“Awesome. Teacher was engaging and fun.”</blockquote>
               <blockquote class="mini-quote">“I am really grateful for this experience learning about the different ways on using Canva, creating websites and to properly use AI.”</blockquote>
-              <blockquote class="mini-quote">“It was enjoyable.”</blockquote>
-              <blockquote class="mini-quote">“Very informative session. Learned a lot.”</blockquote>
+
             </div>
           </div>
 
@@ -1737,14 +1750,14 @@
                 <span>A focused session for a specific professional, organisational or business challenge.</span>
               </div>
               <div id="parent-support">
-                <strong>Parent Support for Special Education</strong>
+                <strong>Special Education Support</strong>
                 <span>Private guidance for parents and caregivers who need help understanding their child’s special education needs, school support, accommodations, behaviour, meetings, services or next steps. I help you make sense of what is happening, prepare the questions to ask and advocate more confidently for your child.</span>
               </div>
             </div>
 
             <div class="button-row">
               <a class="btn btn-primary" href="https://calendly.com/marsha-k-talley/15min" target="_blank" rel="noopener">Enquire About Private Consulting</a>
-              <a class="btn btn-outline" href="#parent-support">Special Education Parent Support</a>
+              <a class="btn btn-outline" href="https://calendly.com/marsha-k-talley/15min" target="_blank" rel="noopener">Request Parent Consultation</a>
             </div>
           </div>
 
@@ -1858,21 +1871,6 @@
       </div>
 
 
-      <div class="review-text-card">
-        <blockquote>
-          “Your webinar was great and very informative. You are a terrific
-          presenter.”
-        </blockquote>
-
-        <cite>
-          Experienced landlord &amp; short-term rental host
-        </cite>
-
-        <div class="review-stars" aria-label="Five-star review">
-          ★★★★★
-        </div>
-      </div>
-
     </div>
 
   </div>
@@ -1891,7 +1889,7 @@
             <p>
               I help organisations think about the workplace conditions that affect performance, including leadership style, culture, communication, workload and whether people feel supported.
             </p>
-            <a class="btn btn-gold" href="https://www.marshakerrtalley.com/turning-pain-into-possibilities" target="_blank" rel="noopener">Explore Turning Pain Into Possibilities™</a>
+            <a class="btn btn-gold" href="https://calendly.com/marsha-k-talley/15min" target="_blank" rel="noopener">Discuss Leadership &amp; Culture Support</a>
           </div>
 
           <div class="people-points">
@@ -1963,9 +1961,7 @@
 
           <div class="brand-collab-links">
             <a class="btn btn-primary" href="mailto:info@marshakerrtalley.com?subject=Brand%20Collaboration%20Enquiry">Brand Enquiries</a>
-            <a class="btn btn-gold" href="media-kit.html">View Media Kit</a>
-            <a class="btn btn-outline" href="fashion-vs-style.html">Fashion &amp; Style</a>
-            <a class="btn btn-outline" href="inspired-by-marsha.html">Inspired by Marsha</a>
+            <a class="btn btn-outline" href="media-kit.html">View Media Kit</a>
           </div>
         </div>
       </div>
@@ -1991,14 +1987,14 @@
     <!-- ================= CTA ================= -->
     <section class="cta-section">
       <div class="page-wrap">
-        <div class="eyebrow" style="color:#d7eeee;">Bring the right experience into the room</div>
-        <h2>What does your organisation need people to do differently?</h2>
+        <div class="eyebrow" style="color:#d7eeee;">Start with what you need</div>
+        <h2>Ready to work through what comes next?</h2>
         <p>
-          Tell me what you are trying to achieve. We can explore the audience, challenge, outcomes and format, then shape an engagement around what will create the most value.
+          Whether you are planning training, facing a leadership or people challenge, building an idea, or seeking special education support for your child, we can start with a focused conversation about what you need.
         </p>
         <div class="button-row">
-          <a class="btn btn-gold" href="https://calendly.com/marsha-k-talley/15min" target="_blank" rel="noopener">Book a 15-Minute Consultation</a>
-          <a class="btn btn-outline" href="mailto:info@marshakerrtalley.com?subject=Consultancy%20or%20Training%20Enquiry%20for%20Marsha%20Kerr%20Talley">Email an Enquiry</a>
+          <a class="btn btn-gold" href="https://calendly.com/marsha-k-talley/15min" target="_blank" rel="noopener">Discuss Training or Consultancy</a>
+          <a class="btn btn-outline" href="#parent-support">Parent Special Education Support</a>
         </div>
       </div>
     </section>
