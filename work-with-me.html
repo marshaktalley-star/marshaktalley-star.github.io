@@ -641,6 +641,21 @@
       align-self: flex-start;
     }
 
+    .service-specialist-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin: 2px 0 20px;
+      color: var(--brand-primary);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .service-specialist-link:hover {
+      text-decoration: underline;
+    }
+
     /* ================= FEATURED SDC ENGAGEMENT ================= */
     .featured-engagement {
       padding: 104px 0;
@@ -1374,6 +1389,26 @@
         padding: 26px 22px;
       }
     }
+  
+    /* ===== FINAL CLARITY PASS ===== */
+    .four-way-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .four-way-grid .service-card { min-height: 100%; }
+    .four-way-grid .service-card p, .four-way-grid .service-card li { font-size: 1rem; line-height: 1.65; }
+    .education-card { border-color: rgba(49,159,162,.35); background: linear-gradient(180deg,#fff 0%,#f7fbfb 100%); }
+    .selected-work-clean { padding-top: 82px; padding-bottom: 82px; }
+    .selected-work-intro { max-width: 760px; margin: 12px auto 0; color: var(--muted); }
+    .compact-trust { margin-top: 34px; }
+    .compact-trust .trusted-organisation { padding-top: 18px; padding-bottom: 18px; }
+    .selected-case { margin-top: 38px; display:grid; grid-template-columns:.72fr 1.28fr; gap:32px; align-items:center; padding:28px; border:1px solid var(--line); border-radius:24px; background:#fff; box-shadow:var(--shadow-soft); }
+    .selected-case-media img { width:100%; border-radius:18px; display:block; }
+    .selected-case-copy h3 { font-family:var(--font-heading); font-size:clamp(1.8rem,3vw,2.6rem); margin:6px 0 12px; color:var(--ink); }
+    .selected-case-copy p { color:var(--muted); }
+    .selected-case-copy blockquote { margin:18px 0 0; padding-left:18px; border-left:3px solid var(--brand-primary); font-family:var(--font-heading); font-size:1.15rem; color:var(--ink); }
+    .parent-support-section { background:linear-gradient(180deg,#fff 0%,#f7fbfb 100%); }
+    .parent-list span { font-size:1.02rem; line-height:1.55; }
+    .parent-list strong { font-size:1.08rem; }
+    @media (max-width: 900px) { .four-way-grid, .selected-case { grid-template-columns:1fr; } }
+
   </style>
 </head>
 <body>
@@ -1417,19 +1452,17 @@
             <h1>I turn learning into <span>action.</span></h1>
 
             <p class="hero-lead">
-              I design and deliver high-impact learning experiences that help organisations develop people, embrace innovation, strengthen culture and move ideas from conversation into practical action.
+              I help organisations, educators and families move from uncertainty to practical action through training, consultancy, special education support and speaking.
             </p>
 
             <div class="hero-positioning">
-              My work is a collection of more than 20 years of experience in education, adult learning, leadership and 
-              professional development, combined with practical expertise in entrepreneurship, wellbeing, 
-              people-centred performance, and digital tools.
+              More than 20 years across education, leadership and adult learning shape how I work: understand the people, understand the environment, then build something useful.
             </div>
 
             <div class="hero-tags" aria-label="Page navigation">
-              <a class="hero-tag" href="#services">Services</a>
+              <a class="hero-tag" href="#services">Ways to Work With Me</a>
               <a class="hero-tag" href="#parent-support">Parent Support</a>
-              <a class="hero-tag" href="#speaking">Speaking</a>
+              <a class="hero-tag" href="#selected-work">Selected Work</a>
               <a class="hero-tag" href="#feedback">Client Feedback</a>
             </div>
 
@@ -1469,298 +1502,108 @@
       </div>
     </section>
 
-    <!-- ================= TRUSTED / COLLABORATION EXPERIENCE ================= -->
-    <section class="trusted-section" aria-label="Selected training and collaboration experience">
-      <div class="page-wrap">
-        <div class="trusted-heading">
-          <p class="trusted-kicker">Selected Training &amp; Collaboration Experience</p>
-          <h2>Trusted to Deliver, Train &amp; Engage</h2>
-        </div>
-
-        <div class="trusted-organisations">
-
-          <!-- SOCIAL DEVELOPMENT COMMISSION -->
-          <article class="trusted-organisation">
-            <div class="trusted-logo-wrap">
-              <img
-                src="sdc-logo.png"
-                alt="Social Development Commission (SDC) logo"
-                class="trusted-logo"
-              >
-            </div>
-
-            <div class="trusted-organisation-info">
-              <h3>Social Development Commission (SDC)</h3>
-              <p class="trusted-engagement">
-                Youth Digital Creators Summer Workshop
-              </p>
-              <p class="trusted-location">
-                Two-Day Training Engagement • St. Ann, Jamaica
-              </p>
-            </div>
-          </article>
-
-          <!-- NOTTINGHAM TRENT UNIVERSITY -->
-          <article class="trusted-organisation">
-            <div class="trusted-logo-wrap">
-              <img
-                src="ntu-logo.png"
-                alt="Nottingham Trent University (NTU) logo"
-                class="trusted-logo"
-              >
-            </div>
-
-            <div class="trusted-organisation-info">
-              <h3>Nottingham Trent University (NTU)</h3>
-              <p class="trusted-engagement">
-                Speaking Engagement
-              </p>
-              <p class="trusted-location">
-                Nottingham, United Kingdom
-              </p>
-            </div>
-          </article>
-
-          <!-- CHESTERFIELD COLLEGE -->
-          <article class="trusted-organisation">
-            <div class="trusted-logo-wrap">
-              <img
-                src="chesterfield-college-logo.png"
-                alt="Chesterfield College logo"
-                class="trusted-logo"
-              >
-            </div>
-
-            <div class="trusted-organisation-info">
-              <h3>Chesterfield College</h3>
-              <p class="trusted-engagement">
-                Online Course Development &amp; Delivery
-              </p>
-              <p class="trusted-location">
-                Adult Learning • United Kingdom
-              </p>
-            </div>
-          </article>
-
-          <!-- MACARTHUR HIGH SCHOOL -->
-          <article class="trusted-organisation">
-            <div class="trusted-logo-wrap">
-              <img
-                src="macarthur-high-school-logo.png"
-                alt="MacArthur High School logo"
-                class="trusted-logo"
-              >
-            </div>
-
-            <div class="trusted-organisation-info">
-              <h3>MacArthur High School</h3>
-              <p class="trusted-engagement">
-                Teaching, Leadership Development, Training &amp; Facilitation
-              </p>
-              <p class="trusted-location">
-                Irving ISD • Irving, Texas, USA
-              </p>
-            </div>
-          </article>
-
-          <!-- LINK3 RECRUITMENT -->
-          <article class="trusted-organisation">
-            <div class="trusted-logo-wrap">
-              <img
-                src="link3-recruitment-logo.png"
-                alt="Link3 Recruitment logo"
-                class="trusted-logo"
-              >
-            </div>
-
-            <div class="trusted-organisation-info">
-              <h3>Link3 Recruitment</h3>
-              <p class="trusted-engagement">
-                Secondary Education Delivery Across Multiple Schools
-              </p>
-              <p class="trusted-location">
-                Nottingham • United Kingdom
-              </p>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= SERVICES ================= -->
+    <!-- ================= FOUR CLEAR WAYS TO WORK TOGETHER ================= -->
     <section class="services" id="services">
       <div class="page-wrap">
         <div class="section-heading center">
           <div class="eyebrow">Ways to work with me</div>
-          <h2>Designed around the outcome you need.</h2>
-          <p>
-            Every engagement is designed around your audience, objectives and context. I focus on learning people can actually use.
-          </p>
+          <h2>Four clear ways I can help.</h2>
+          <p>You do not need to fit yourself into a programme. Start with what you need, and we will shape the right support around it.</p>
         </div>
 
-        <div class="services-grid">
+        <div class="services-grid four-way-grid">
           <article class="service-card">
             <div class="service-number">01</div>
-            <h3>Organisational Training & Workshops</h3>
-            <p>
-              Interactive, practical learning experiences for organisations, agencies, companies, schools, universities, NGOs and community programmes.
-            </p>
+            <h3>Training &amp; Development</h3>
+            <p>Practical, participatory learning for organisations, schools, agencies, universities, NGOs and community programmes.</p>
             <ul>
-              <li>AI and digital innovation</li>
-              <li>Canva, content creation and digital presence</li>
-              <li>Entrepreneurship and business development</li>
               <li>Leadership, culture, behaviour and wellbeing</li>
-              <li>Custom programmes built around organisational priorities</li>
+              <li>AI, digital skills and innovation</li>
+              <li>Entrepreneurship and professional development</li>
             </ul>
-            <div class="button-row">
-              <a class="btn btn-primary" href="https://calendly.com/marsha-k-talley/15min" target="_blank" rel="noopener">
-                Bring Marsha to Your Organisation
-              </a>
-
-              <a class="btn btn-outline" href="airbnb-host-training.html">
-                Explore Airbnb Host Training →
-              </a>
-            </div>
+            <a class="service-specialist-link" href="airbnb-host-training.html">Specialist training: Airbnb Host Training →</a>
+            <a class="btn btn-primary" href="https://calendly.com/marsha-k-talley/15min" target="_blank" rel="noopener">Discuss Training</a>
           </article>
 
-          <article class="service-card">
+          <article class="service-card education-card">
             <div class="service-number">02</div>
-            <h3>Private Consultancy & Strategy Sessions</h3>
-            <p>
-              Focused one-to-one or small-team support for people who need clarity, strategy, hands-on guidance or a practical route from idea to execution.
-            </p>
+            <h3>Education &amp; Special Education</h3>
+            <p>Experienced support for the people navigating learning, behaviour, inclusion and special education.</p>
             <ul>
-              <li>Digital presence, AI and productivity</li>
-              <li>Content, offers and programme development</li>
-              <li>Professional positioning and strategic problem-solving</li>
-              <li>Special education support and advocacy guidance for parents</li>
-              <li>Custom advisory sessions for specific goals</li>
+              <li>Educator and school support</li>
+              <li>Behaviour, engagement and learning environments</li>
+              <li>Private guidance for parents and caregivers</li>
             </ul>
-            <a class="btn btn-primary" href="https://calendly.com/marsha-k-talley/15min" target="_blank" rel="noopener">Request Private Consulting</a>
+            <a class="btn btn-primary" href="#parent-support">Explore Parent Support</a>
           </article>
 
           <article class="service-card">
             <div class="service-number">03</div>
-            <h3>Speaking & Facilitation</h3>
-            <p>
-              Energetic, thoughtful and participatory speaking for conferences, retreats, panels, professional development events and special engagements.
-            </p>
+            <h3>Consultancy &amp; Strategy</h3>
+            <p>Focused expertise when you need clarity, a second set of eyes or a practical route from an idea or challenge to action.</p>
+            <ul>
+              <li>Strategic problem-solving</li>
+              <li>Programme, offer and digital direction</li>
+              <li>One-to-one or small-team advisory support</li>
+            </ul>
+            <a class="btn btn-primary" href="https://calendly.com/marsha-k-talley/15min" target="_blank" rel="noopener">Request Consultancy</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">04</div>
+            <h3>Speaking &amp; Facilitation</h3>
+            <p>Thoughtful, engaging experiences for conferences, panels, professional learning, retreats and special events.</p>
             <ul>
               <li>Keynotes and featured talks</li>
-              <li>Conference and panel facilitation</li>
-              <li>Staff development and leadership conversations</li>
+              <li>Panels and facilitated conversations</li>
               <li>Interactive audience experiences</li>
-              <li>Custom topics aligned to your event</li>
             </ul>
-            <a class="btn btn-primary" href="speaking.html">Explore Speaking</a>
+            <a class="btn btn-primary" href="#speaking">Explore Speaking</a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ================= FEATURED ENGAGEMENT ================= -->
-    <section class="featured-engagement" id="featured-work">
+    <!-- ================= SELECTED WORK / TRUST ================= -->
+    <section class="trusted-section selected-work-clean" id="selected-work" aria-label="Selected work and experience">
       <div class="page-wrap">
-        <div class="engagement-grid">
-
-          <div class="engagement-media">
-            <img src="SDC-two-day-workshop.JPG" alt="Social Development Commission Youth Digital Creators Summer Workshop flyer">
-            <div class="engagement-badge">
-              <strong>2 Days</strong>
-              <span>Interactive learning</span>
-            </div>
-          </div>
-
-          <div class="engagement-copy">
-            <div class="eyebrow">Featured training engagement</div>
-            <h2>Youth Digital Creators Summer Workshop</h2>
-            <p class="lead">
-              A two-day practical learning experience delivered for the Social Development Commission at The Moneague College in St. Ann, Jamaica.
-            </p>
-            <p>
-              Participants moved beyond simply hearing about technology and used Canva, AI, website creation and digital entrepreneurship tools to create, solve problems and explore practical opportunities.
-            </p>
-
-            <div class="outcome-grid">
-              <div class="outcome-card">
-                <strong>AI in Practice</strong>
-                <span>Using AI more purposefully for ideas, productivity and problem-solving.</span>
-              </div>
-              <div class="outcome-card">
-                <strong>Digital Creation</strong>
-                <span>Canva, websites, content and visual communication.</span>
-              </div>
-              <div class="outcome-card">
-                <strong>Entrepreneurial Thinking</strong>
-                <span>Connecting digital tools to products, services, marketing and income.</span>
-              </div>
-              <div class="outcome-card">
-                <strong>Hands-On Engagement</strong>
-                <span>Interactive activities designed to keep participants creating and participating.</span>
-              </div>
-            </div>
-
-            <div class="quote-grid" aria-label="Participant feedback from the SDC workshop">
-              <blockquote class="mini-quote">“Awesome. Teacher was engaging and fun.”</blockquote>
-              <blockquote class="mini-quote">“I am really grateful for this experience learning about the different ways on using Canva, creating websites and to properly use AI.”</blockquote>
-
-            </div>
-          </div>
-
+        <div class="trusted-heading">
+          <p class="trusted-kicker">Selected Work &amp; Experience</p>
+          <h2>Experience across classrooms, organisations and communities.</h2>
+          <p class="selected-work-intro">My work has crossed the USA, UK and Jamaica—from education and adult learning to organisational training and community programmes.</p>
+        </div>
+        <div class="trusted-organisations compact-trust">
+          <article class="trusted-organisation"><div class="trusted-logo-wrap"><img src="sdc-logo.png" alt="Social Development Commission logo" class="trusted-logo"></div><div class="trusted-organisation-info"><h3>Social Development Commission</h3><p class="trusted-engagement">Youth Digital Creators Workshop</p><p class="trusted-location">St. Ann, Jamaica</p></div></article>
+          <article class="trusted-organisation"><div class="trusted-logo-wrap"><img src="ntu-logo.png" alt="Nottingham Trent University logo" class="trusted-logo"></div><div class="trusted-organisation-info"><h3>Nottingham Trent University</h3><p class="trusted-engagement">Speaking Engagement</p><p class="trusted-location">United Kingdom</p></div></article>
+          <article class="trusted-organisation"><div class="trusted-logo-wrap"><img src="chesterfield-college-logo.png" alt="Chesterfield College logo" class="trusted-logo"></div><div class="trusted-organisation-info"><h3>Chesterfield College</h3><p class="trusted-engagement">Adult Learning &amp; Course Delivery</p><p class="trusted-location">United Kingdom</p></div></article>
+          <article class="trusted-organisation"><div class="trusted-logo-wrap"><img src="macarthur-high-school-logo.png" alt="MacArthur High School logo" class="trusted-logo"></div><div class="trusted-organisation-info"><h3>MacArthur High School</h3><p class="trusted-engagement">Education, Leadership &amp; Facilitation</p><p class="trusted-location">Texas, USA</p></div></article>
+        </div>
+        <div class="selected-case">
+          <div class="selected-case-media"><img src="SDC-two-day-workshop.JPG" alt="Social Development Commission Youth Digital Creators Summer Workshop"></div>
+          <div class="selected-case-copy"><div class="eyebrow">A recent example</div><h3>Youth Digital Creators Summer Workshop</h3><p>A two-day hands-on programme for the Social Development Commission in St. Ann, where participants used AI, Canva, website creation and digital entrepreneurship tools to create, solve problems and explore practical opportunities.</p><blockquote>“Awesome. Teacher was engaging and fun.”</blockquote></div>
         </div>
       </div>
     </section>
 
-    <!-- ================= PRIVATE CONSULTANCY ================= -->
-    <section class="private-consulting" id="consultancy">
+    <!-- ================= PARENT SUPPORT ================= -->
+    <section class="private-consulting parent-support-section" id="parent-support">
       <div class="page-wrap">
         <div class="private-grid">
-
           <div class="private-image-wrap">
-            <img src="16-EGL_5085.jpg" alt="Marsha Kerr Talley providing individual consultancy support">
-            <div class="private-caption">
-              <strong>Focused. Practical. Personal.</strong>
-              Private sessions are built around the problem you need to solve next.
-            </div>
+            <img src="16-EGL_5085.jpg" alt="Marsha Kerr Talley providing individual support">
+            <div class="private-caption"><strong>You know your child.</strong>I help you make sense of the system around them.</div>
           </div>
-
           <div class="private-copy">
-            <div class="eyebrow">Private consultancy</div>
-            <h2>Sometimes you do not need another course. You need focused expertise.</h2>
-            <p>
-              Private consultancy gives you focused support around the challenge in front of you. We identify what matters, work through the problem and turn it into a practical next step.
-            </p>
-
-            <div class="private-list">
-              <div>
-                <strong>Digital Presence</strong>
-                <span>Website direction, content, structure and user experience.</span>
-              </div>
-              <div>
-                <strong>AI & Productivity</strong>
-                <span>Choosing and using tools that support the work you actually need to do.</span>
-              </div>
-              <div>
-                <strong>Ideas Into Offers</strong>
-                <span>Clarifying products, services, workshops, resources and business ideas.</span>
-              </div>
-              <div>
-                <strong>Strategic Problem-Solving</strong>
-                <span>A focused session for a specific professional, organisational or business challenge.</span>
-              </div>
-              <div id="parent-support">
-                <strong>Special Education Support</strong>
-                <span>Private guidance for parents and caregivers who need help understanding their child’s special education needs, school support, accommodations, behaviour, meetings, services or next steps. I help you make sense of what is happening, prepare the questions to ask and advocate more confidently for your child.</span>
-              </div>
+            <div class="eyebrow">For parents &amp; caregivers</div>
+            <h2>Special education can feel overwhelming. You do not have to figure out every next step alone.</h2>
+            <p>If you are trying to understand what your child needs, what the school is offering, what questions to ask or how to advocate more confidently, I offer private, practical guidance.</p>
+            <div class="private-list parent-list">
+              <div><strong>Understand What Is Happening</strong><span>Make sense of learning, behaviour, accommodations, services and the support being discussed.</span></div>
+              <div><strong>Prepare for School Conversations</strong><span>Clarify your concerns, organise your questions and go into meetings better prepared.</span></div>
+              <div><strong>Decide What Comes Next</strong><span>Work through your options and identify practical next steps for your child and family.</span></div>
             </div>
-
-            <div class="button-row">
-              <a class="btn btn-primary" href="https://calendly.com/marsha-k-talley/15min" target="_blank" rel="noopener">Enquire About Private Consulting</a>
-              <a class="btn btn-outline" href="https://calendly.com/marsha-k-talley/15min" target="_blank" rel="noopener">Request Parent Consultation</a>
-            </div>
+            <a class="btn btn-primary" href="https://calendly.com/marsha-k-talley/15min" target="_blank" rel="noopener">Request a Parent Consultation</a>
           </div>
-
         </div>
       </div>
     </section>
