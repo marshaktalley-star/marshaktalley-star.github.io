@@ -1577,6 +1577,16 @@
     }
     .concierge-response.show { display: block; }
 
+    .concierge-read-more {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--brand-primary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .concierge-read-more:hover { text-decoration: underline; }
+
     .lead-form {
       display: none;
       margin-top: 24px;
@@ -2176,6 +2186,14 @@
         "Not Sure": "That is completely fine. Tell Marsha what is happening or what you are trying to achieve. You do not need to know the name of the service before starting the conversation."
       };
 
+      const guideLinks = {
+        "Organisation / Team Training": "#services",
+        "Behaviour / Special Education Support": "#parent-support",
+        "Digital Creators Lab": "#selected-work",
+        "Speaking / Facilitation": "#speaking",
+        "Books / Resources": "books.html"
+      };
+
       function openConcierge(interest) {
         if (!conciergeOverlay) return;
         conciergeOverlay.classList.add("open");
@@ -2195,6 +2213,15 @@
         if (leadInterest) leadInterest.value = interest;
         if (conciergeResponse) {
           conciergeResponse.textContent = guideCopy[interest] || guideCopy["Not Sure"];
+          const readMoreHref = guideLinks[interest];
+          if (readMoreHref) {
+            const readMoreLink = document.createElement("a");
+            readMoreLink.className = "concierge-read-more";
+            readMoreLink.href = readMoreHref;
+            readMoreLink.textContent = "Read more →";
+            conciergeResponse.appendChild(document.createElement("br"));
+            conciergeResponse.appendChild(readMoreLink);
+          }
           conciergeResponse.classList.add("show");
         }
         if (leadForm) leadForm.classList.add("show");
