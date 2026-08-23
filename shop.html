@@ -35,9 +35,13 @@
       --font-body:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    *{box-sizing:border-box}
+    *{
+      box-sizing:border-box;
+    }
 
-    html{scroll-behavior:smooth}
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       margin:0;
@@ -53,7 +57,9 @@
       max-width:100%;
     }
 
-    a{color:inherit}
+    a{
+      color:inherit;
+    }
 
     h1,h2,h3{
       margin-top:0;
@@ -115,18 +121,15 @@
 
     /* HERO */
     .hero{
-      padding:68px 0 82px;
+      padding:70px 0 72px;
       background:
         radial-gradient(circle at 14% 6%,rgba(199,155,70,.13),transparent 27%),
         radial-gradient(circle at 90% 10%,rgba(111,143,104,.13),transparent 30%),
         linear-gradient(180deg,#fffaf3 0%,var(--cream) 100%);
     }
 
-    .hero-grid{
-      display:grid;
-      grid-template-columns:.92fr 1.08fr;
-      gap:58px;
-      align-items:center;
+    .hero-copy{
+      max-width:900px;
     }
 
     .eyebrow{
@@ -139,8 +142,9 @@
     }
 
     .hero h1{
-      margin-bottom:23px;
-      font-size:clamp(3.2rem,6.5vw,6.3rem);
+      max-width:850px;
+      margin-bottom:25px;
+      font-size:clamp(3.7rem,7vw,6.8rem);
       font-weight:600;
       letter-spacing:-.045em;
     }
@@ -150,17 +154,10 @@
     }
 
     .hero-lead{
-      max-width:640px;
-      margin-bottom:15px;
+      max-width:720px;
+      margin:0;
       color:#554a41;
       font-size:clamp(1.05rem,1.7vw,1.27rem);
-    }
-
-    .hero-note{
-      max-width:620px;
-      margin:0;
-      color:var(--muted);
-      font-size:.98rem;
     }
 
     .hero-actions{
@@ -183,7 +180,9 @@
       transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
     }
 
-    .btn:hover{transform:translateY(-2px)}
+    .btn:hover{
+      transform:translateY(-2px);
+    }
 
     .btn-primary{
       background:var(--coffee);
@@ -191,7 +190,9 @@
       box-shadow:0 12px 28px rgba(75,46,31,.18);
     }
 
-    .btn-primary:hover{background:var(--cacao)}
+    .btn-primary:hover{
+      background:var(--cacao);
+    }
 
     .btn-outline{
       border-color:rgba(75,46,31,.26);
@@ -199,30 +200,14 @@
       background:rgba(255,255,255,.55);
     }
 
-    .hero-image{
-      padding:12px;
-      background:#fff;
-      border:1px solid rgba(75,46,31,.08);
-      border-radius:32px;
-      box-shadow:var(--shadow);
-      transform:rotate(.4deg);
-    }
-
-    .hero-image img{
-      width:100%;
-      aspect-ratio:3/2;
-      object-fit:cover;
-      border-radius:23px;
-    }
-
     /* INTRO */
     .shop-intro{
-      padding:85px 0 38px;
+      padding:75px 0 38px;
       text-align:center;
     }
 
     .shop-intro-inner{
-      max-width:780px;
+      max-width:850px;
       margin:0 auto;
     }
 
@@ -278,7 +263,9 @@
       transition:transform .35s ease;
     }
 
-    .product-card:hover img{transform:scale(1.025)}
+    .product-card:hover img{
+      transform:scale(1.025);
+    }
 
     .badge{
       position:absolute;
@@ -393,7 +380,9 @@
       font-size:1.04rem;
     }
 
-    .story-card p:last-child{margin-bottom:0}
+    .story-card p:last-child{
+      margin-bottom:0;
+    }
 
     .story-signoff{
       color:var(--coffee)!important;
@@ -530,24 +519,61 @@
     }
 
     @media(max-width:980px){
-      .hero-grid{grid-template-columns:1fr}
-      .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .hero-copy{text-align:center}
-      .hero-lead,.hero-note{margin-left:auto;margin-right:auto}
-      .hero-actions{justify-content:center}
+      .product-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
     }
 
     @media(max-width:680px){
-      .page-wrap,.header-inner{width:min(calc(100% - 28px),1180px)}
-      .site-logo img{width:190px}
-      .main-nav ul{gap:12px 18px;font-size:12px}
-      .hero{padding:48px 0 60px}
-      .hero h1{font-size:clamp(3rem,14vw,4.4rem)}
-      .product-grid{grid-template-columns:1fr}
-      .story-card{padding:34px 25px}
-      .proof-grid{grid-template-columns:1fr}
-      .hero-actions{flex-direction:column}
-      .hero-actions .btn{width:100%}
+      .page-wrap,
+      .header-inner{
+        width:min(calc(100% - 28px),1180px);
+      }
+
+      .site-logo img{
+        width:190px;
+      }
+
+      .main-nav ul{
+        gap:12px 18px;
+        font-size:12px;
+      }
+
+      .hero{
+        padding:48px 0 52px;
+      }
+
+      .hero h1{
+        font-size:clamp(3rem,14vw,4.4rem);
+      }
+
+      .hero-lead{
+        font-size:1rem;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+      }
+
+      .hero-actions .btn{
+        width:100%;
+      }
+
+      .shop-intro{
+        padding:58px 0 28px;
+      }
+
+      .product-grid{
+        grid-template-columns:1fr;
+      }
+
+      .story-card{
+        padding:34px 25px;
+      }
+
+      .proof-grid{
+        grid-template-columns:1fr;
+      }
     }
   </style>
 
@@ -559,55 +585,112 @@
         "@type":"Store",
         "name":"Silhouette’s Café Shop",
         "description":"A wellness shop offering thoughtful products for calm, sustainability, everyday wellness and vibrant living.",
-        "brand":{"@type":"Brand","name":"Silhouette’s Café"}
+        "brand":{
+          "@type":"Brand",
+          "name":"Silhouette’s Café"
+        }
       },
       {
         "@type":"Product",
         "name":"Wear Your Calm Lifestyle Necklace",
         "image":"silhouettes-lifestyle-necklace.webp",
         "description":"A bohemian-style necklace with a small glass pendant designed to hold your favourite essential oil or fragrance. The cork fits securely into the bottle so you can carry a scent you love with you throughout the day.",
-        "brand":{"@type":"Brand","name":"Silhouette’s Café"},
-        "offers":{"@type":"Offer","priceCurrency":"JMD","price":"4500","availability":"https://schema.org/InStock","url":"https://buy.stripe.com/aFa9ATaSN7vQ79LcsV4ZG0k"}
+        "brand":{
+          "@type":"Brand",
+          "name":"Silhouette’s Café"
+        },
+        "offers":{
+          "@type":"Offer",
+          "priceCurrency":"JMD",
+          "price":"4500",
+          "availability":"https://schema.org/InStock",
+          "url":"https://buy.stripe.com/aFa9ATaSN7vQ79LcsV4ZG0k"
+        }
       },
       {
         "@type":"Product",
         "name":"Silhouette’s Essentials Peppermint",
         "image":"silhouettes-peppermint.webp",
         "description":"A versatile peppermint essential oil with a fresh, crisp scent for diffusers and everyday aromatherapy. A simple way to refresh your space and shift the atmosphere.",
-        "brand":{"@type":"Brand","name":"Silhouette’s Essentials"},
-        "offers":{"@type":"Offer","priceCurrency":"JMD","price":"1500","availability":"https://schema.org/InStock","url":"https://buy.stripe.com/14A6oH7GB7vQbq19gJ4ZG0m"}
+        "brand":{
+          "@type":"Brand",
+          "name":"Silhouette’s Essentials"
+        },
+        "offers":{
+          "@type":"Offer",
+          "priceCurrency":"JMD",
+          "price":"1500",
+          "availability":"https://schema.org/InStock",
+          "url":"https://buy.stripe.com/14A6oH7GB7vQbq19gJ4ZG0m"
+        }
       },
       {
         "@type":"Product",
         "name":"Soft Cycle Reusable Menstrual Pads | Set of 5",
         "image":"silhouettes-reusable-pads.webp",
         "description":"A set of five washable reusable menstrual pads for a practical, lower-waste period routine. Hygienic, reusable and made to use again and again. Colours and prints vary.",
-        "brand":{"@type":"Brand","name":"Silhouette’s Café"},
-        "offers":{"@type":"Offer","priceCurrency":"JMD","price":"3000","availability":"https://schema.org/InStock","url":"https://buy.stripe.com/7sY14n9OJ4jE9hT50t4ZG0n"}
+        "brand":{
+          "@type":"Brand",
+          "name":"Silhouette’s Café"
+        },
+        "offers":{
+          "@type":"Offer",
+          "priceCurrency":"JMD",
+          "price":"3000",
+          "availability":"https://schema.org/InStock",
+          "url":"https://buy.stripe.com/7sY14n9OJ4jE9hT50t4ZG0n"
+        }
       },
       {
         "@type":"Product",
         "name":"Healing Rose Water",
         "image":"silhouettes-healing-rose-water.webp",
         "description":"A proprietary blend of rose water with essential and fragrance oils for simple everyday use. Take it with you to freshen spaces, then spray, breathe, reset and carry on.",
-        "brand":{"@type":"Brand","name":"Silhouette’s Café"},
-        "offers":{"@type":"Offer","priceCurrency":"JMD","price":"1400","availability":"https://schema.org/InStock","url":"https://buy.stripe.com/00w6oH9OJaI279L2Sl4ZG0o"}
+        "brand":{
+          "@type":"Brand",
+          "name":"Silhouette’s Café"
+        },
+        "offers":{
+          "@type":"Offer",
+          "priceCurrency":"JMD",
+          "price":"1400",
+          "availability":"https://schema.org/InStock",
+          "url":"https://buy.stripe.com/00w6oH9OJaI279L2Sl4ZG0o"
+        }
       },
       {
         "@type":"Product",
         "name":"Return to Stillness Tibetan Singing Bowl Set",
         "image":"silhouettes-singing-bowl.webp",
         "description":"A small but powerful Tibetan singing bowl with wooden striker and decorative cushion. Made for quiet moments, meditation, reflection and creating a calmer space.",
-        "brand":{"@type":"Brand","name":"Silhouette’s Café"},
-        "offers":{"@type":"Offer","priceCurrency":"JMD","price":"5500","availability":"https://schema.org/InStock","url":"https://buy.stripe.com/bJe6oH9OJ2bwdy964x4ZG0p"}
+        "brand":{
+          "@type":"Brand",
+          "name":"Silhouette’s Café"
+        },
+        "offers":{
+          "@type":"Offer",
+          "priceCurrency":"JMD",
+          "price":"5500",
+          "availability":"https://schema.org/InStock",
+          "url":"https://buy.stripe.com/bJe6oH9OJ2bwdy964x4ZG0p"
+        }
       },
       {
         "@type":"Product",
         "name":"Calm Me Down | Essential Oil Roll-On",
         "image":"silhouettes-calm-me-down-roll-on.webp",
         "description":"A proprietary blend of lavender essential oil, peppermint essential oil and fractionated coconut oil for practical application to your temples, wrists or other preferred points. Keep it nearby for your everyday pause.",
-        "brand":{"@type":"Brand","name":"Silhouette’s Café"},
-        "offers":{"@type":"Offer","priceCurrency":"JMD","price":"2200","availability":"https://schema.org/InStock","url":"https://buy.stripe.com/cNi8wP8KF8zU79L8cF4ZG0l"}
+        "brand":{
+          "@type":"Brand",
+          "name":"Silhouette’s Café"
+        },
+        "offers":{
+          "@type":"Offer",
+          "priceCurrency":"JMD",
+          "price":"2200",
+          "availability":"https://schema.org/InStock",
+          "url":"https://buy.stripe.com/cNi8wP8KF8zU79L8cF4ZG0l"
+        }
       }
     ]
   }
@@ -618,6 +701,7 @@
 
 <header class="site-header">
   <div class="header-inner">
+
     <a href="index.html" class="site-logo" aria-label="Marsha Kerr Talley home">
       <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired">
     </a>
@@ -632,208 +716,287 @@
         <li><a href="#shop" class="active">Shop</a></li>
       </ul>
     </nav>
+
   </div>
 </header>
 
 <main>
 
+  <!-- HERO -->
   <section class="hero">
-    <div class="page-wrap hero-grid">
+    <div class="page-wrap">
 
       <div class="hero-copy">
+
         <p class="eyebrow">Silhouette’s Café Shop</p>
-        <h1>Keep what brings you <span>back to yourself.</span></h1>
+
+        <h1>
+          Keep what brings you <span>back to yourself.</span>
+        </h1>
 
         <p class="hero-lead">
-          I have always believed that wellness does not have to be complicated.
-          Sometimes it is a scent, a sound, something soft against the body,
-          something beautiful you wear, or a small moment that reminds you to come back to yourself.
-        </p>
-
-        <p class="hero-note">
-          This is a small collection of Silhouette’s Café products for people who value
-          peace, nature, softness, sustainability and intentional living.
+          Wellness does not have to be complicated. Sometimes it is a scent,
+          a sound, softness, or something beautiful you wear that reminds you
+          how to reconnect with yourself.
         </p>
 
         <div class="hero-actions">
           <a class="btn btn-primary" href="#shop">Shop What’s Available</a>
           <a class="btn btn-outline" href="#story">The Story Behind Silhouette’s</a>
         </div>
-      </div>
 
-      <div class="hero-image">
-        <img src="quiet-in-the-hardness.jpg" alt="Silhouette’s Café wellness collection including essential oils, rose water, reusable menstrual pads, lifestyle necklace and singing bowl">
       </div>
 
     </div>
   </section>
 
+
+  <!-- SHOP INTRO -->
   <section class="shop-intro" id="shop">
     <div class="page-wrap shop-intro-inner">
+
       <p class="eyebrow">Available Now</p>
-      <h2>Things for the life you are trying to protect.</h2>
+
+      <h2>Protect Your Peace, Your Body, and Everyday Wellbeing</h2>
+
       <p>
-        Your peace. Your body. Your atmosphere. Your everyday wellbeing.
-        These are not things to be collected.
-        They are supposed to be used.
+        This is a small collection of Silhouette’s Café products for people who value
+        peace, nature, softness, sustainability and intentional living.
       </p>
+
     </div>
   </section>
 
+
+  <!-- PRODUCTS -->
   <section class="products">
     <div class="page-wrap">
+
       <div class="product-grid">
 
         <!-- LIFESTYLE NECKLACE -->
         <article class="product-card">
+
           <div class="product-image-wrap">
             <img src="silhouettes-lifestyle-necklace.webp" alt="Silhouette’s Café lifestyle aromatherapy necklace">
             <span class="badge">Wearable Wellness</span>
           </div>
+
           <div class="product-copy">
+
             <p class="product-kicker">Silhouette’s Lifestyle</p>
+
             <h3>Wear Your Calm Lifestyle Necklace</h3>
+
             <p class="product-description">
               A bohemian-style necklace with a small glass pendant designed to hold your favourite essential oil or fragrance.
               The cork fits securely into the bottle, so you can carry a scent you love with you throughout the day.
               Earthy, colourful and full of character, it is jewellery with a little purpose.
             </p>
+
             <p class="product-detail">
               <strong>Fill it. Wear it. Take your favourite scent with you.</strong>
             </p>
+
             <div class="product-bottom">
               <p class="price">J$4,500</p>
-              <a class="buy-btn" href="https://buy.stripe.com/aFa9ATaSN7vQ79LcsV4ZG0k" target="_blank" rel="noopener">Buy Securely</a>
+              <a class="buy-btn" href="https://buy.stripe.com/aFa9ATaSN7vQ79LcsV4ZG0k" target="_blank" rel="noopener">
+                Buy Securely
+              </a>
             </div>
+
           </div>
         </article>
 
+
         <!-- PEPPERMINT -->
         <article class="product-card">
+
           <div class="product-image-wrap">
             <img src="silhouettes-peppermint.webp" alt="Silhouette’s Essentials peppermint essential oil">
             <span class="badge">Fresh + Grounding</span>
           </div>
+
           <div class="product-copy">
+
             <p class="product-kicker">Silhouette’s Essentials</p>
+
             <h3>Silhouette’s Essentials Peppermint</h3>
+
             <p class="product-description">
               Silhouette’s Essentials Peppermint is a versatile essential oil that you can use in a variety of ways.
               Its fresh, crisp scent is great for your diffuser and everyday aromatherapy needs.
               A simple way to refresh your space and shift the atmosphere.
             </p>
+
             <p class="product-detail">
               <strong>Bring the freshness home.</strong>
             </p>
+
             <div class="product-bottom">
               <p class="price">J$1,500</p>
-              <a class="buy-btn" href="https://buy.stripe.com/14A6oH7GB7vQbq19gJ4ZG0m" target="_blank" rel="noopener">Buy Securely</a>
+              <a class="buy-btn" href="https://buy.stripe.com/14A6oH7GB7vQbq19gJ4ZG0m" target="_blank" rel="noopener">
+                Buy Securely
+              </a>
             </div>
+
           </div>
         </article>
 
+
         <!-- REUSABLE PADS -->
         <article class="product-card">
+
           <div class="product-image-wrap">
             <img src="silhouettes-reusable-pads.webp" alt="Reusable menstrual pads with pineapple print">
             <span class="badge">Set of 5</span>
           </div>
+
           <div class="product-copy">
+
             <p class="product-kicker">Sustainable Everyday Care</p>
+
             <h3>Soft Cycle Reusable Pads</h3>
+
             <p class="product-description">
               This set of five washable reusable menstrual pads is a practical, lower-waste option for your period routine.
               Hygienic, reusable and made to use again and again.
             </p>
+
             <p class="product-detail">
               Colours and prints vary. <strong>Make the switch.</strong>
             </p>
+
             <div class="product-bottom">
               <p class="price">J$3,000</p>
-              <a class="buy-btn" href="https://buy.stripe.com/7sY14n9OJ4jE9hT50t4ZG0n" target="_blank" rel="noopener">Buy the Set</a>
+              <a class="buy-btn" href="https://buy.stripe.com/7sY14n9OJ4jE9hT50t4ZG0n" target="_blank" rel="noopener">
+                Buy the Set
+              </a>
             </div>
+
           </div>
         </article>
 
+
         <!-- ROSE WATER -->
         <article class="product-card">
+
           <div class="product-image-wrap">
             <img src="silhouettes-healing-rose-water.webp" alt="Silhouette’s Café Healing Rose Water spray">
             <span class="badge">2 oz Rose Mist</span>
           </div>
+
           <div class="product-copy">
+
             <p class="product-kicker">Silhouette’s Café</p>
+
             <h3>Healing Rose Water</h3>
+
             <p class="product-description">
               Healing Rose Water is a proprietary blend of rose water with essential and fragrance oils for simple everyday use.
               Take it with you to freshen spaces that need a little lift.
             </p>
+
             <p class="product-detail">
-              Spray, breathe, reset and carry on. <strong>Add a little softness to your day.</strong>
+              Spray, breathe, reset and carry on.
+              <strong>Add a little softness to your day.</strong>
             </p>
+
             <div class="product-bottom">
               <p class="price">J$1,400</p>
-              <a class="buy-btn" href="https://buy.stripe.com/00w6oH9OJaI279L2Sl4ZG0o" target="_blank" rel="noopener">Buy Securely</a>
+              <a class="buy-btn" href="https://buy.stripe.com/00w6oH9OJaI279L2Sl4ZG0o" target="_blank" rel="noopener">
+                Buy Securely
+              </a>
             </div>
+
           </div>
         </article>
 
+
         <!-- SINGING BOWL -->
         <article class="product-card">
+
           <div class="product-image-wrap">
             <img src="silhouettes-singing-bowl.webp" alt="Bronze-toned singing bowl with striker and cushion">
             <span class="badge">Sound + Stillness</span>
           </div>
+
           <div class="product-copy">
+
             <p class="product-kicker">Mindful Living</p>
+
             <h3>Return to Stillness Tibetan Singing Bowl</h3>
+
             <p class="product-description">
               A small but powerful Tibetan singing bowl with wooden striker and decorative cushion.
               Made for quiet moments, meditation, reflection and creating a calmer space.
             </p>
+
             <p class="product-detail">
               <strong>Create your moment of stillness.</strong>
             </p>
+
             <div class="product-bottom">
               <p class="price">J$5,500</p>
-              <a class="buy-btn" href="https://buy.stripe.com/bJe6oH9OJ2bwdy964x4ZG0p" target="_blank" rel="noopener">Buy the Bowl</a>
+              <a class="buy-btn" href="https://buy.stripe.com/bJe6oH9OJ2bwdy964x4ZG0p" target="_blank" rel="noopener">
+                Buy the Bowl
+              </a>
             </div>
+
           </div>
         </article>
 
+
         <!-- ROLL ON -->
         <article class="product-card">
+
           <div class="product-image-wrap">
             <img src="silhouettes-calm-me-down-roll-on.webp" alt="Calm Me Down lavender and peppermint essential oil roll-on">
             <span class="badge">Pocket Calm</span>
           </div>
+
           <div class="product-copy">
+
             <p class="product-kicker">Take the Pause With You</p>
+
             <h3>Calm Me Down Roll-On</h3>
+
             <p class="product-description">
               Calm Me Down Essential Oil Roll-On is a proprietary blend of lavender essential oil,
               peppermint essential oil and fractionated coconut oil. Apply a small amount to your temples,
               wrists or other preferred points when you want a practical pause in your day.
             </p>
+
             <p class="product-detail">
-              Keep it in your handbag, desk or bedside. <strong>Take your little moment of calm with you.</strong>
+              Keep it in your handbag, desk or bedside.
+              <strong>Take your little moment of calm with you.</strong>
               For external use only. Avoid eyes and sensitive areas.
             </p>
+
             <div class="product-bottom">
               <p class="price">J$2,200</p>
-              <a class="buy-btn" href="https://buy.stripe.com/cNi8wP8KF8zU79L8cF4ZG0l" target="_blank" rel="noopener">Buy Securely</a>
+              <a class="buy-btn" href="https://buy.stripe.com/cNi8wP8KF8zU79L8cF4ZG0l" target="_blank" rel="noopener">
+                Buy Securely
+              </a>
             </div>
+
           </div>
         </article>
 
       </div>
+
     </div>
   </section>
 
+
+  <!-- STORY -->
   <section class="story-section" id="story">
     <div class="page-wrap">
+
       <div class="story-card">
+
         <p class="eyebrow">Why Silhouette’s Café Exists</p>
+
         <h2>Wellness was part of my life before it became a brand.</h2>
 
         <p>
@@ -854,69 +1017,121 @@
           you want to live in.
         </p>
 
-        <p class="story-signoff">Peace is something we have to protect on purpose.</p>
+        <p class="story-signoff">
+          Peace is something we have to protect on purpose.
+        </p>
+
       </div>
+
     </div>
   </section>
 
+
+  <!-- CUSTOMER PROOF -->
   <section class="proof">
     <div class="page-wrap">
 
       <div class="proof-heading">
+
         <p class="eyebrow">From Earlier Silhouette’s Customers</p>
+
         <h2>These products have a history.</h2>
-        <p>Silhouette’s Café is not an idea that started yesterday. Some customers remember the earlier collection.</p>
+
+        <p>
+          Silhouette’s Café is not an idea that started yesterday.
+          Some customers remember the earlier collection.
+        </p>
+
       </div>
 
       <div class="proof-grid">
+
         <div class="quote-card">
+
           <div class="stars">★★★★★</div>
-          <blockquote>“Your oils seem to have more essence… They’re not watered down.”</blockquote>
+
+          <blockquote>
+            “Your oils seem to have more essence… They’re not watered down.”
+          </blockquote>
+
           <cite>- Anthony, Silhouette’s Essentials</cite>
+
         </div>
 
         <div class="quote-card">
+
           <div class="stars">★★★★★</div>
-          <blockquote>“One of the best pieces of jewelry I own! I plan on wearing it daily. The aroma, the vibe!”</blockquote>
+
+          <blockquote>
+            “One of the best pieces of jewelry I own! I plan on wearing it daily. The aroma, the vibe!”
+          </blockquote>
+
           <cite>- Tijahnni, Lifestyle Necklace</cite>
+
         </div>
+
       </div>
 
     </div>
   </section>
 
+
+  <!-- CLOSING -->
   <section class="closing">
+
     <div class="closing-inner">
-      <p class="eyebrow" style="color:#d6bd87;">Silhouette’s Café</p>
-      <h2>Live softly. Live fully. Live inspired.</h2>
+
+      <p class="eyebrow" style="color:#d6bd87;">
+        Silhouette’s Café
+      </p>
+
+      <h2>
+        Live softly. Live fully. Live inspired.
+      </h2>
+
       <p>
         Choose what supports the way you want your home, your body and your everyday life to feel.
       </p>
+
     </div>
+
   </section>
 
 </main>
 
+
+<!-- WELLNESS NOTE -->
 <div class="wellness-note">
+
   <p>
-    Silhouette’s Café wellness products are currently available in Jamaica. Prices are shown in Jamaican dollars.
+    Silhouette’s Café wellness products are currently available in Jamaica.
+    Prices are shown in Jamaican dollars.
     Products are offered for personal care, lifestyle and aromatherapy use and are not intended to diagnose,
     treat, cure or prevent disease. Follow product directions, use essential oils appropriately,
     and discontinue use if irritation occurs.
   </p>
+
 </div>
 
+
+<!-- FOOTER -->
 <footer class="site-footer">
+
   <div class="footer-links">
+
     <a href="index.html">Home</a>
     <a href="/shipping-return-policy">Shipping &amp; Returns</a>
     <a href="/privacy-policy">Privacy Policy</a>
     <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+
   </div>
+
   <p class="copyright">
     Copyright © <span id="currentYear"></span> Marsha Kerr Talley | Silhouette’s Café™. All Rights Reserved.
   </p>
+
 </footer>
+
 
 <script>
   document.getElementById("currentYear").textContent = new Date().getFullYear();
