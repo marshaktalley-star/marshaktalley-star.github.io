@@ -352,6 +352,204 @@ details[open] summary:after{content:"–"}
 }
 .story-body p{font-size:1rem}
 
+
+
+
+/* WARM LIVED-EXPERIENCE ELEMENTS */
+.home-reflection{
+  margin-top:34px;
+  padding:30px 32px;
+  border-radius:26px;
+  background:#fffaf1;
+  border:1px solid rgba(186,145,69,.18);
+  box-shadow:0 12px 32px rgba(80,67,35,.06);
+}
+.home-reflection .hand{
+  display:block;
+  margin-bottom:10px;
+  color:var(--deep);
+  font-size:.8rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+}
+.home-reflection p:last-child{margin-bottom:0}
+.voice-line{
+  margin:28px 0;
+  padding:24px 26px;
+  border-radius:22px;
+  background:linear-gradient(135deg,#f6fbf9,#fffaf1);
+  border-left:5px solid var(--aqua);
+  font-size:1.15rem;
+  line-height:1.58;
+  color:#315759;
+}
+.voice-line strong{color:var(--deep)}
+.chapter-comfort{
+  margin-top:32px;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:18px;
+  align-items:start;
+  padding:24px;
+  background:rgba(255,255,255,.78);
+  border-radius:22px;
+  border:1px solid var(--line);
+}
+.chapter-comfort .mark{
+  display:grid;
+  place-items:center;
+  width:48px;height:48px;
+  border-radius:50%;
+  background:var(--soft);
+  font-size:1.3rem;
+}
+.chapter-comfort p{margin:0}
+
+/* HOUSING VISUAL */
+.housing-visual{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  height:480px;
+}
+.housing-scene{
+  border-radius:28px;
+  padding:28px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  min-height:100%;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  position:relative;
+}
+.housing-scene:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+.housing-scene > *{position:relative;z-index:1}
+.housing-scene span{
+  display:inline-block;
+  width:max-content;
+  max-width:100%;
+  margin-bottom:12px;
+  padding:7px 11px;
+  border-radius:999px;
+  font-size:.76rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+.housing-scene strong{
+  font-size:1.35rem;
+  line-height:1.18;
+  margin-bottom:8px;
+}
+.housing-scene small{
+  font-size:.9rem;
+  line-height:1.45;
+}
+.housing-scene-gated{
+  color:#fff;
+  background:
+    linear-gradient(180deg,rgba(5,99,103,.05),rgba(5,54,57,.94)),
+    linear-gradient(145deg,#68c9c8,#08666a);
+}
+.housing-scene-gated:before{
+  background:
+    repeating-linear-gradient(90deg,transparent 0 34px,rgba(255,255,255,.08) 34px 36px),
+    linear-gradient(180deg,transparent 45%,rgba(255,255,255,.05) 45%);
+}
+.housing-scene-gated span{background:rgba(255,255,255,.16)}
+.housing-scene-local{
+  color:#143d3e;
+  background:
+    radial-gradient(circle at 30% 20%,rgba(47,226,221,.2),transparent 26%),
+    linear-gradient(145deg,#eaf6e8,#c8e1c7);
+}
+.housing-scene-local:before{
+  background:
+    radial-gradient(circle at 20% 26%,rgba(5,99,103,.18) 0 34px,transparent 35px),
+    radial-gradient(circle at 72% 18%,rgba(5,99,103,.15) 0 55px,transparent 56px),
+    radial-gradient(circle at 48% 38%,rgba(5,99,103,.12) 0 45px,transparent 46px);
+}
+.housing-scene-local span{background:rgba(255,255,255,.65);color:var(--deep)}
+@media(max-width:680px){
+  .housing-visual{grid-template-columns:1fr;height:auto}
+  .housing-scene{min-height:290px}
+}
+
+/* VOICE NOTE / IDENTITY SECTION */
+.voice-note-section{
+  padding:94px 0;
+  background:#fff;
+}
+.voice-note-shell{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:54px;
+  align-items:center;
+  background:linear-gradient(135deg,#f5fbfa,#ffffff);
+  border:1px solid var(--line);
+  border-radius:34px;
+  padding:42px;
+  box-shadow:var(--shadow);
+}
+.voice-note-art{
+  min-height:430px;
+  border-radius:28px;
+  padding:34px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  color:#fff;
+  background:
+    radial-gradient(circle at 80% 15%,rgba(47,226,221,.24),transparent 28%),
+    linear-gradient(155deg,#073f42,#056367);
+}
+.voice-note-art .quote{
+  font-size:clamp(1.7rem,3.3vw,2.65rem);
+  font-weight:900;
+  line-height:1.16;
+  letter-spacing:-.03em;
+}
+.voice-note-copy audio{
+  width:100%;
+  margin:14px 0 22px;
+}
+.audio-label{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  font-size:.82rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--deep);
+  margin-bottom:10px;
+}
+.context-box{
+  margin-top:24px;
+  padding:20px;
+  border-radius:18px;
+  background:var(--soft);
+  border-left:5px solid var(--aqua);
+}
+.voice-note-copy details{
+  margin-top:22px;
+}
+@media(max-width:960px){
+  .voice-note-shell{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+  .voice-note-section{padding:66px 0}
+  .voice-note-shell{padding:24px}
+  .voice-note-art{min-height:330px}
+}
+
 /* CHECKLIST */
 .check-section{padding:94px 0;background:#eef9f7}
 .progress-label{font-weight:900;color:var(--deep);margin:24px 0 10px}
@@ -498,7 +696,9 @@ footer{
     <a href="#vehicle">Vehicle</a>
     <a href="#arrival">Arrive</a>
     <a href="#power">Power + Internet</a>
+    <a href="#housing">Housing</a>
     <a href="#living">Live Well</a>
+    <a href="#accent">Accent + Belonging</a>
     <a href="#checklist">Checklist</a>
     <a href="#help">Get Help</a>
   </div>
@@ -528,6 +728,29 @@ footer{
       </p>
       <div class="pullquote">
         Prepare early. Ask more questions than you think you need to. Trust — but verify.
+      </div>
+      <div class="home-reflection">
+        <span class="hand">What coming home has felt like for me</span>
+        <p>
+          I have had some hard lessons since returning to Jamaica, and you will read about some of them here.
+          But that is not the whole story. I have also had a tremendous amount of help.
+        </p>
+        <p>
+          I have literally made more contacts here in Jamaica in weeks than I did in the UK in three years.
+          People have not gate-kept important information from me. They have put me on — told me who to call,
+          where to go, what to ask, and sometimes helped me get into rooms I would not have known how to enter on my own.
+          My experience so far is that when people realise you are ambitious, driven and serious about what you are trying
+          to build, some people genuinely want to help you move forward.
+        </p>
+        <p>
+          My aunt told me I would regret moving back to Jamaica, and yes, there are moments when I ask myself,
+          <em>“Marsha, did you make the right choice?”</em> So far, though, what I am realising is that
+          <strong>I can make it here. I just need to learn HOW to make it here.</strong>
+        </p>
+        <p>
+          Living in Jamaica is not the same as living in the US or the UK — and that is okay. I do not need Jamaica
+          to operate like somewhere else. I need to learn how to live here.
+        </p>
       </div>
     </div>
   </div>
@@ -586,6 +809,20 @@ footer{
         </div>
       </details>
       <details>
+        <summary>Will everyday processes feel different from the UK or US?</summary>
+        <div class="detail-body">
+          Yes — and some of them may work your last nerve. I recently had to print a physical copy of an invoice,
+          physically sign it, and physically take it to a local business in order to get paid. In my mind, the exact
+          same invoice submitted electronically should be just as valid for an audit. To me, that process felt redundant.
+          <p>
+            I am learning, though, that constantly comparing every Jamaican process with how I did things in the UK or US
+            will frustrate me. Ask what the process is, prepare for it, and where you can respectfully suggest a more efficient
+            way, do that. Sometimes the quickest route is simply learning how things currently work here.
+          </p>
+        </div>
+      </details>
+
+      <details>
         <summary>What else should I budget for besides shipping?</summary>
         <div class="detail-body">
           Broker fees, port/storage charges, transport, housing deposits, utilities, temporary transport, insurance,
@@ -601,7 +838,7 @@ footer{
   <div class="wrap">
     <div class="chapter-top">
       <div class="chapter-media">
-        <img src="https://marshakerrtalley.com/16-EGL_5085.jpg" alt="Marsha Kerr Talley in consultation">
+        <img src="broker-at-jamaica-wharf.png" alt="Illustration of a Customs broker assisting a returning resident at a cargo wharf">
       </div>
       <div class="chapter-copy">
         <span class="chapter-label">02</span>
@@ -736,6 +973,12 @@ footer{
         <p class="lead">
           Use JMD intentionally, compare normal prices, keep payment records and learn quickly where residents actually shop.
         </p>
+        <div class="voice-line">
+          <strong>Do not underestimate the value of people.</strong> “Links” can sound negative when you first hear it,
+          but some of what I have experienced is simply people sharing information and opening doors instead of gate-keeping.
+          Someone knows somebody. Someone tells you where to go. Someone gives you a number. That kind of help has made a real
+          difference for me since I came home.
+        </div>
       </div>
     </div>
 
@@ -841,13 +1084,24 @@ footer{
       <details>
         <summary>What happened with the unexpected “Digicel technicians”?</summary>
         <div class="detail-body">
-          A man called saying he was coming to check my internet and gave me his name and a colleague’s name for my gated-community security.
-          When they arrived, neither their clothing nor vehicle displayed Digicel branding. Digicel later told me there was no work order or record
-          of the visit. The caller then explained that they were subcontractors through Konnex and that nearby jobs were distributed through a WhatsApp group.
-          I could not independently reconcile that explanation with what Digicel customer service told me.
+          A man called saying he was coming to check my Digicel internet and gave me his name and a colleague’s name.
+          Because I live in a gated community, I gave those names to security so the men could be admitted. When they arrived,
+          neither their clothing nor their vehicle displayed Digicel branding.
+          <p>
+            Afterwards, I called Digicel to discuss the visit and was told there was no record of Digicel sending anyone out
+            and no work order showing that technicians had been assigned to my home. Understandably, that frightened me. Security
+            confirmed that the men had checked out of the community.
+          </p>
+          <p>
+            I then called the person who had originally contacted me. He explained that they did not work directly for Digicel,
+            but were subcontractors working through Konnex, and that jobs could be shared through a WhatsApp group for technicians
+            in the area to pick up. I could not independently reconcile that explanation with what Digicel customer service had told me.
+          </p>
           <div class="tip warn">
-            My takeaway: ask the provider for the technician’s name, contractor company and work-order/reference number. If anything does not match,
-            do not feel pressured to let someone into your home while you are sorting it out.
+            <strong>My takeaway:</strong> even when a caller knows details about your service problem, verify the visit.
+            Ask the provider for the technician’s name, contractor company and work-order/reference number. If you live in a
+            gated community, give security only verified names. If anything does not match, do not feel pressured to let someone
+            into your home while you are trying to sort it out.
           </div>
         </div>
       </details>
@@ -876,6 +1130,202 @@ footer{
   </div>
 </section>
 
+
+
+<!-- HOUSING -->
+<section class="chapter sand" id="housing">
+  <div class="wrap">
+    <div class="chapter-top">
+      <div class="chapter-copy">
+        <span class="chapter-label">06</span>
+        <span class="kicker">Renting, buying + choosing where to live</span>
+        <h2>Choose the home that fits your life — not somebody else’s commission.</h2>
+        <p class="lead">
+          Whether you rent first or buy immediately, be clear about your real budget, the kind of community you want,
+          and the trade-offs you are actually willing to make.
+        </p>
+        <div class="tip">
+          A good local agent should help you work within your budget and priorities. Give them your comfortable range
+          and your absolute ceiling before they start sending properties.
+        </div>
+      </div>
+
+      <div class="chapter-media housing-visual" aria-label="Housing choices in Jamaica">
+        <div class="housing-scene housing-scene-gated">
+          <span>Gated</span>
+          <strong>Modern amenities + controlled access</strong>
+          <small>But still assess security, fees, rules and how much freedom you want.</small>
+        </div>
+        <div class="housing-scene housing-scene-local">
+          <span>Established community</span>
+          <strong>Mature trees + individuality + local character</strong>
+          <small>But inspect the specific road, property and neighbourhood rather than relying on stereotypes.</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="key-grid">
+      <article class="key">
+        <div class="num">Your budget</div>
+        <h3>Make the budget a boundary</h3>
+        <p>
+          Tell the agent what you can comfortably afford, not simply the largest number a lender says you qualify for.
+          If most of the properties being shown are above your range, redirect the search.
+        </p>
+      </article>
+
+      <article class="key">
+        <div class="num">Buying</div>
+        <h3>Get mortgage pre-approval first</h3>
+        <p>
+          If you plan to finance the purchase, obtain a current mortgage pre-approval — or refresh an older one — before
+          seriously viewing properties. That gives you a clearer ceiling and can make the process smoother when you find a house you want.
+        </p>
+      </article>
+
+      <article class="key">
+        <div class="num">Agent fit</div>
+        <h3>Work with someone who listens</h3>
+        <p>
+          Commission is part of real-estate transactions, so your interests and the agent’s incentives are not automatically identical.
+          You want an agent who respects your limits instead of continually steering you toward a more expensive sale.
+        </p>
+      </article>
+    </div>
+
+    <div class="story" style="margin-top:36px">
+      <div class="story-badge">
+        “Gated” does not automatically mean safe. “Ungated” does not automatically mean unsafe.
+      </div>
+      <div class="story-body">
+        <h3>Do not buy the stigma. Look at the actual community.</h3>
+        <p>
+          There can be a stigma around older or ungated Jamaican communities — that they are dirty, run-down or unsafe.
+          That is too simplistic. Some established communities have mature trees, larger lots, individuality, long-term neighbours
+          and the Jamaican residential feel that some returnees are actually looking for.
+        </p>
+        <p>
+          Gated developments can offer newer homes, pools, gyms, landscaping, controlled entry and other conveniences. They can also
+          experience security incidents, and the lifestyle can come with association fees and rules governing things such as exterior
+          changes, parking, landscaping or even what colours a house may be painted.
+        </p>
+      </div>
+    </div>
+
+    <div class="details-wrap">
+      <details>
+        <summary>Should I rent first or buy right away?</summary>
+        <div class="detail-body">
+          Renting first can give you time to learn traffic patterns, utility reliability, internet options, noise, shopping,
+          flooding/drainage, commute times and the personality of different communities before making a long-term commitment.
+          Buying immediately may make sense if you already know the area well, have financing or cash organised and have done
+          appropriate property due diligence. Neither route is automatically better.
+        </div>
+      </details>
+
+      <details>
+        <summary>What should I tell a real-estate agent before we start?</summary>
+        <div class="detail-body">
+          Give them your preferred area, realistic monthly rent or purchase range, absolute maximum, number of bedrooms,
+          must-have features, deal-breakers and whether you want gated, established, rural, town-centre or resort-style living.
+          Ask them not to send properties above your ceiling unless you specifically request comparisons.
+        </div>
+      </details>
+
+      <details>
+        <summary>What should I check before renting?</summary>
+        <div class="detail-body">
+          Test water pressure, internet availability, mobile signal, AC units, appliances, doors, windows and security features.
+          Ask who pays utilities and maintenance, what is included in the rent, how deposits are handled, whether there are community
+          fees or rules, and what happens when something breaks. Photograph the condition of the property when you move in.
+        </div>
+      </details>
+
+      <details>
+        <summary>What should I check before buying?</summary>
+        <div class="detail-body">
+          Beyond the appearance of the house, investigate title and legal ownership, boundaries/survey information, property taxes,
+          community or maintenance fees, access roads, drainage/flooding, water storage, electricity, internet, structural condition,
+          insurance considerations and any restrictions that affect how you can use or alter the property. Use qualified Jamaican
+          legal and property professionals for the formal checks.
+        </div>
+      </details>
+
+      <details>
+        <summary>How should I compare gated and ungated communities?</summary>
+        <div class="detail-body">
+          Visit at different times of day. Talk to people who actually live there. Look at lighting, pedestrian activity, road condition,
+          drainage, access to shops and transport, noise, trees and shade, lot size, privacy, community rules and actual security practices.
+          If you are looking for mature trees and that real Jamaican feel, a gated, resort-style community with cookie-cutter houses
+          and an association telling you what colour you can paint your house may not be it. On the other hand, if controlled entry,
+          newer amenities and a more uniform community are what make you comfortable, that may be exactly what you want.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+
+<section class="voice-note-section" id="accent">
+  <div class="wrap">
+    <div class="voice-note-shell">
+      <div class="voice-note-art">
+        <span class="kicker" style="color:#bdfcf8">Accent, belonging + coming home</span>
+        <div class="quote">
+          “I know when to speak patois. Having to perform it to be respected is a different issue.”
+        </div>
+      </div>
+
+      <div class="voice-note-copy">
+        <span class="audio-label">🎧 A real conversation from my return</span>
+        <h2>Coming home should not require proving that you are Jamaican.</h2>
+
+        <p class="lead">
+          One of the more unexpected parts of returning has been thinking about when I speak patois,
+          when I use Standard English, and how people sometimes respond to the accent I brought home with me.
+        </p>
+
+        <audio controls preload="metadata">
+          <source src="returning-resident-patois-advice.m4a" type="audio/mp4">
+          Your browser does not support the audio element.
+        </audio>
+
+        <p>
+          In this private conversation, a local driver was advising me about situations in which speaking
+          patois may change how people respond to me. I understand the practical point. I know how to speak
+          patois and I know when I naturally use it. What sits differently with me is the idea that I should
+          have to switch how I speak in order to receive fair treatment, a fair price or basic respect.
+        </p>
+
+        <div class="context-box">
+          <strong>My perspective:</strong> Jamaicans who remained on the island are not unfamiliar with
+          Jamaicans leaving, living “foreign,” and returning with a different accent or a little twang.
+          That does not make us less Jamaican. A returning resident should not have to cuss someone out,
+          exaggerate patois, or prove cultural belonging before being treated properly.
+        </div>
+
+        <details>
+          <summary>Why this matters for returning residents</summary>
+          <div class="detail-body">
+            You may notice that people read your accent before they know your story. Sometimes code-switching
+            is simply natural communication. Sometimes it can feel like pressure to perform familiarity so
+            that you are not overcharged, dismissed or treated as an outsider. Learn the local rhythms,
+            ask what things normally cost, and build relationships — but do not feel that you have to erase
+            the person you became while living abroad in order to belong at home.
+          </div>
+        </details>
+
+        <p class="small muted" style="margin-top:18px">
+          Privacy note: because this recording came from a private conversation, publish the audio only with
+          the other speaker’s permission. The written reflection can stand on its own if you prefer not to
+          make his voice public.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- LIVE WELL -->
 <section class="chapter tint" id="living">
   <div class="wrap">
@@ -884,12 +1334,21 @@ footer{
         <img src="https://marshakerrtalley.com/9-EGL_3969.jpg" alt="Marsha Kerr Talley speaking">
       </div>
       <div class="chapter-copy">
-        <span class="chapter-label">06</span>
+        <span class="chapter-label">07</span>
         <span class="kicker">Actually living here</span>
         <h2>Build a life — not just a successful move.</h2>
         <p class="lead">
           Community, healthcare, transportation, security and knowing who to call matter just as much as clearing the container.
         </p>
+        <div class="chapter-comfort">
+          <div class="mark">🤝</div>
+          <p>
+            <strong>Give yourself time to learn Jamaica again.</strong> Returning home does not mean you automatically know how
+            everything works here now. You may know the culture, the food, the language and the people, yet still have to relearn
+            systems, prices, places and everyday ways of doing things. That does not mean you made the wrong decision. It means you
+            are settling in.
+          </p>
+        </div>
       </div>
     </div>
 
@@ -965,6 +1424,9 @@ footer{
       <label class="check"><input type="checkbox" data-key="inspection">Complete vehicle pre-shipment inspection</label>
       <label class="check"><input type="checkbox" data-key="tcc">Prepare TCC for vehicle clearance</label>
       <label class="check"><input type="checkbox" data-key="transport">Plan temporary transport</label>
+      <label class="check"><input type="checkbox" data-key="housingbudget">Set my housing budget + absolute ceiling</label>
+      <label class="check"><input type="checkbox" data-key="preapproval">Get / refresh mortgage pre-approval if buying</label>
+      <label class="check"><input type="checkbox" data-key="community">Compare gated and established communities in person</label>
       <label class="check"><input type="checkbox" data-key="internet">Confirm internet + backup connection</label>
       <label class="check"><input type="checkbox" data-key="power">Plan backup power for essentials</label>
       <label class="check"><input type="checkbox" data-key="nis">Check NIS registration</label>
@@ -1012,6 +1474,44 @@ footer{
 
       <div class="actions"><button class="btn light" id="scoreQuiz">Show my readiness</button></div>
       <div id="quizResult"></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="voice-note-section" id="can-i-live-here">
+  <div class="wrap">
+    <div class="voice-note-shell">
+      <div class="voice-note-art">
+        <span class="kicker" style="color:#bdfcf8">The question underneath all the checklists</span>
+        <div class="quote">“Can I actually make a life in Jamaica?”</div>
+      </div>
+      <div class="voice-note-copy">
+        <span class="audio-label">My answer so far</span>
+        <h2>I think I can. I am learning how.</h2>
+        <p class="lead">
+          If you are reading pages like this because you are thinking about coming home, I know you are probably not
+          only looking for Customs forms and phone numbers. You are trying to imagine yourself here.
+        </p>
+        <p>
+          You want to know what happens when the excitement of moving wears off. Will you find your people? Can you get
+          things done? Will you feel safe? Can you afford to live? Will people help you? Will you regret it?
+        </p>
+        <p>
+          I cannot answer all of that for you because your experience will be your own. I can tell you that mine has been
+          a mixture. Some processes have frustrated me. Some things have cost more than I expected. I have had moments of
+          wondering what on earth I was doing.
+        </p>
+        <p>
+          I have also met people who have freely shared information, made introductions, helped me solve problems and
+          encouraged what I am trying to build. That matters. I have been able to create connections here remarkably quickly.
+        </p>
+        <div class="context-box">
+          <strong>So this is where I am right now:</strong> I do not think the question is whether Jamaica can be exactly like
+          the life I had somewhere else. It cannot, and I do not need it to be. The question for me is whether I can learn how
+          to build a good life here. So far, I believe I can.
+        </div>
+      </div>
     </div>
   </div>
 </section>
