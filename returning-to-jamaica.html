@@ -406,80 +406,142 @@ details[open] summary:after{content:"–"}
 }
 .chapter-comfort p{margin:0}
 
+
+/* GETTING AROUND + USEFUL APPS */
+.everyday-panel{
+  margin-top:34px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+.everyday-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:25px;
+  box-shadow:0 8px 24px rgba(5,99,103,.06);
+  transition:transform .22s ease, box-shadow .22s ease;
+}
+.everyday-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 18px 34px rgba(5,99,103,.12);
+}
+.everyday-card .app-tag{
+  display:inline-block;
+  margin-bottom:10px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:var(--soft);
+  color:var(--deep);
+  font-size:.74rem;
+  font-weight:900;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.everyday-card h3{margin-bottom:9px}
+.everyday-card p:last-child{margin-bottom:0}
+.safety-box{
+  margin-top:28px;
+  padding:28px;
+  border-radius:26px;
+  background:linear-gradient(135deg,#073f42,#056367);
+  color:#fff;
+  box-shadow:var(--shadow);
+}
+.safety-box h3{color:#fff}
+.safety-box p{color:#e9f7f6}
+.safety-steps{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.safety-step{
+  padding:16px;
+  border-radius:18px;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.13);
+}
+.safety-step strong{
+  display:block;
+  color:#fff;
+  margin-bottom:5px;
+}
+.resource-links{
+  margin-top:20px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.resource-links a{
+  text-decoration:none;
+  font-weight:850;
+  font-size:.86rem;
+  color:var(--deep);
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:.65rem .9rem;
+}
+@media(max-width:760px){
+  .everyday-panel,.safety-steps{grid-template-columns:1fr}
+}
+
 /* HOUSING VISUAL */
 .housing-visual{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:14px;
-  height:480px;
+  gap:18px;
+  height:auto;
 }
-.housing-scene{
-  border-radius:28px;
-  padding:28px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  min-height:100%;
-  box-shadow:var(--shadow);
+.housing-photo-card{
   overflow:hidden;
-  position:relative;
+  border-radius:28px;
+  background:#fff;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
 }
-.housing-scene:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:0;
+.housing-illustration{
+  height:300px;
+  overflow:hidden;
+  background:#eef7f5;
 }
-.housing-scene > *{position:relative;z-index:1}
-.housing-scene span{
+.housing-illustration svg{
+  width:100%;
+  height:100%;
+  display:block;
+}
+.housing-photo-copy{
+  padding:24px 24px 26px;
+}
+.housing-photo-copy span{
   display:inline-block;
-  width:max-content;
-  max-width:100%;
-  margin-bottom:12px;
+  margin-bottom:10px;
   padding:7px 11px;
   border-radius:999px;
+  background:var(--soft);
+  color:var(--deep);
   font-size:.76rem;
   font-weight:900;
   text-transform:uppercase;
   letter-spacing:.1em;
 }
-.housing-scene strong{
-  font-size:1.35rem;
+.housing-photo-copy strong{
+  display:block;
+  color:var(--deep);
+  font-size:1.28rem;
   line-height:1.18;
-  margin-bottom:8px;
+  margin-bottom:10px;
 }
-.housing-scene small{
-  font-size:.9rem;
-  line-height:1.45;
+.housing-photo-copy small{
+  display:block;
+  color:#4b6667;
+  font-size:.95rem;
+  line-height:1.55;
 }
-.housing-scene-gated{
-  color:#fff;
-  background:
-    linear-gradient(180deg,rgba(5,99,103,.05),rgba(5,54,57,.94)),
-    linear-gradient(145deg,#68c9c8,#08666a);
-}
-.housing-scene-gated:before{
-  background:
-    repeating-linear-gradient(90deg,transparent 0 34px,rgba(255,255,255,.08) 34px 36px),
-    linear-gradient(180deg,transparent 45%,rgba(255,255,255,.05) 45%);
-}
-.housing-scene-gated span{background:rgba(255,255,255,.16)}
-.housing-scene-local{
-  color:#143d3e;
-  background:
-    radial-gradient(circle at 30% 20%,rgba(47,226,221,.2),transparent 26%),
-    linear-gradient(145deg,#eaf6e8,#c8e1c7);
-}
-.housing-scene-local:before{
-  background:
-    radial-gradient(circle at 20% 26%,rgba(5,99,103,.18) 0 34px,transparent 35px),
-    radial-gradient(circle at 72% 18%,rgba(5,99,103,.15) 0 55px,transparent 56px),
-    radial-gradient(circle at 48% 38%,rgba(5,99,103,.12) 0 45px,transparent 46px);
-}
-.housing-scene-local span{background:rgba(255,255,255,.65);color:var(--deep)}
 @media(max-width:680px){
-  .housing-visual{grid-template-columns:1fr;height:auto}
-  .housing-scene{min-height:290px}
+  .housing-visual{grid-template-columns:1fr}
+  .housing-illustration{height:260px}
 }
 
 /* VOICE NOTE / IDENTITY SECTION */
@@ -909,8 +971,7 @@ footer{
         </div>
       </div>
       <div class="chapter-media">
-        <img src="https://images.unsplash.com/photo-1692880559049-e074fcfe7e90?auto=format&fit=crop&q=85&w=1600"
-             alt="House with solar panels and palm tree">
+        <img src="cargo-ship-importing-car.png" alt="Cargo ship loaded with containers at port">
       </div>
     </div>
 
@@ -1012,7 +1073,9 @@ footer{
         <summary>What about transport while I wait for my car?</summary>
         <div class="detail-body">
           If route taxis are limited where you live, a short-term rental can be more practical and sometimes more economical than repeated
-          private taxis or ride-hailing. Ask residents what normal fares are before agreeing to regular transport arrangements.
+          private taxis or ride-hailing. Uber and other app-based options are available in parts of Jamaica, but availability can change by
+          exact location. If you are going somewhere remote, think about the return trip before you leave and keep the number of a reliable
+          local driver. See the <a href="#getting-around">Getting Around + Useful Apps</a> section for the fuller transport and safety notes.
         </div>
       </details>
       <details>
@@ -1026,12 +1089,160 @@ footer{
   </div>
 </section>
 
+
+<!-- GETTING AROUND + USEFUL APPS -->
+<section class="chapter sand" id="getting-around">
+  <div class="wrap">
+    <div class="section-intro">
+      <span class="chapter-label">05</span>
+      <span class="kicker">Getting around + useful local apps</span>
+      <h2>You can manage without a car — but plan the ride back before you go.</h2>
+      <p class="lead">
+        This was one of those things I learned very quickly. You can get taxis and, in some areas, use ride-hailing apps.
+        I have even been able to get an Uber up into more remote places. The problem is not always getting there. Sometimes
+        the bigger question is: <em>how are you getting back?</em>
+      </p>
+
+      <div class="home-reflection">
+        <span class="hand">What I would do</span>
+        <p>
+          If a driver takes you somewhere that is harder to reach, ask whether they are available to collect you later.
+          Save the number of a reliable local taxi driver. If you decide to arrange a return trip directly with a ride-hailing
+          driver, remember that a trip arranged outside the app may not have the same in-app tracking or protections.
+        </p>
+        <p>
+          Local people can also be a huge help here. A driver who cannot collect you may know another driver who can.
+          That has been part of my experience of Jamaica too — people will often give you the link rather than leave you to figure
+          everything out alone.
+        </p>
+      </div>
+    </div>
+
+    <div class="safety-box">
+      <h3>Before you get into an Uber or other app-booked car, CHECK.</h3>
+      <p>
+        Do not get into a vehicle simply because someone says they are your driver. Match what is in the app first.
+      </p>
+      <div class="safety-steps">
+        <div class="safety-step">
+          <strong>1. Match the licence plate</strong>
+          Check the plate against the one shown in the app. If it does not match, do not get in.
+        </div>
+        <div class="safety-step">
+          <strong>2. Check the driver + vehicle</strong>
+          Compare the driver's photo and the vehicle make/model with what the app shows.
+        </div>
+        <div class="safety-step">
+          <strong>3. Use the PIN + share your trip</strong>
+          If your app offers ride PIN verification, use it and wait for the trip to verify before you leave. Share your live trip/location with someone you trust.
+        </div>
+      </div>
+      <p class="small" style="margin-top:16px;color:#cfe9e7">
+        Uber's Jamaica safety guidance specifically tells riders to match the plate, vehicle and driver before entering,
+        and its Verify Your Ride feature can require a four-digit PIN before the driver starts the trip.
+      </p>
+    </div>
+
+    <div class="everyday-panel">
+      <article class="everyday-card">
+        <span class="app-tag">Ride options</span>
+        <h3>Uber is not the only name to know</h3>
+        <p>
+          Uber currently lists service in Jamaican markets including Kingston and Ocho Rios, and its Montego Bay page also
+          confirms availability there. Supply can still change by the exact pickup point.
+        </p>
+        <p>
+          Jamaica's Fair Trading Commission has also identified <strong>inDrive, Ride Jamaica and 876 On The Go</strong> as
+          ride-hailing operators. 876 On The Go advertises islandwide transportation and its app allows advance bookings,
+          but availability can still vary by area. Check the app or company directly before depending on any service for a time-sensitive trip.
+        </p>
+      </article>
+
+      <article class="everyday-card">
+        <span class="app-tag">Local SIM</span>
+        <h3>Get a Jamaican number early</h3>
+        <p>
+          A local number becomes useful almost immediately — for brokers, shipping calls, deliveries, drivers, WhatsApp,
+          banking verification and everyday life.
+        </p>
+        <p>
+          Flow supports eSIM on compatible devices. In my case, an eSIM is particularly useful because you can get local mobile
+          service without depending on a removable physical SIM. Check Flow's current activation instructions for your device and plan.
+        </p>
+      </article>
+
+      <article class="everyday-card">
+        <span class="app-tag">Food + groceries</span>
+        <h3>Delivery exists outside Kingston</h3>
+        <p>
+          Do not assume every errand requires a drive. <strong>7Krave</strong> offers restaurant delivery and also has
+          <strong>7Kravemart</strong> for groceries. Its current delivery policy lists Kingston &amp; St Andrew, Portmore,
+          Ocho Rios and Montego Bay, with charges varying by area.
+        </p>
+        <p>
+          Coverage changes, so enter your actual address in the app rather than assuming a service reaches your community.
+        </p>
+      </article>
+
+      <article class="everyday-card">
+        <span class="app-tag">Electric vehicles</span>
+        <h3>If you bring an EV, map chargers before long trips</h3>
+        <p>
+          Jamaica has public EV charging networks. JPS says its Charge 'N Go network has more than 39 fast-charging points islandwide,
+          including locations in St Ann, and currently uses the <strong>ChargeLab app</strong> for station access and payment.
+        </p>
+        <p>
+          <strong>Evergo</strong> also operates a Jamaican charging network. Its app shows charger locations, availability,
+          connector type, hours and pricing. I would download the charging apps before you need them and check your route before setting off.
+        </p>
+      </article>
+
+      <article class="everyday-card">
+        <span class="app-tag">Buy + sell used</span>
+        <h3>There are local alternatives to Marketplace-style browsing</h3>
+        <p>
+          <strong>Amber Eazzy</strong> is a Jamaican marketplace for buying, selling, renting and finding items and services.
+          Listings can include cars, furniture, property, electronics and more, and the app supports filtering by parish.
+        </p>
+        <p>
+          Use the same caution you would on any marketplace: verify what you are buying, meet safely, keep payment records
+          and do not let urgency push you into an irreversible payment.
+        </p>
+      </article>
+
+      <article class="everyday-card">
+        <span class="app-tag">A simple habit</span>
+        <h3>Save good numbers</h3>
+        <p>
+          When you find a reliable taxi driver, tradesperson, broker, delivery person or service contact, save the number.
+          Jamaica becomes much easier when you begin building your own trusted little network of people you can actually call.
+        </p>
+        <p>
+          That is one of the biggest differences I have experienced since coming home: people have given me contacts instead
+          of gate-keeping them.
+        </p>
+      </article>
+    </div>
+
+    <div class="resource-links" aria-label="Useful public resources">
+      <a href="https://www.uber.com/global/en/r/jamaica/cities/" target="_blank" rel="noopener">Uber Jamaica</a>
+      <a href="https://876onthego.com/" target="_blank" rel="noopener">876 On The Go</a>
+      <a href="https://discoverflow.co/jamaica/esim-flow" target="_blank" rel="noopener">Flow eSIM</a>
+      <a href="https://www.7krave.com/" target="_blank" rel="noopener">7Krave</a>
+      <a href="https://www.jpsco.com/chargengo/" target="_blank" rel="noopener">JPS Charge 'N Go</a>
+      <a href="https://evergo.com/en/support/frequent-questions/" target="_blank" rel="noopener">Evergo</a>
+      <a href="https://ambereazzy.com/" target="_blank" rel="noopener">Amber Eazzy</a>
+    </div>
+  </div>
+</section>
+
+
 <!-- POWER + INTERNET -->
 <section class="chapter dark" id="power">
   <div class="wrap">
     <div class="chapter-top">
       <div class="chapter-copy">
-        <span class="chapter-label">05</span>
+        <span class="chapter-label">06</span>
         <span class="kicker">Power + connectivity</span>
         <h2>Use the sun. Build backups. Verify every service visit.</h2>
         <p class="lead">
@@ -1137,7 +1348,7 @@ footer{
   <div class="wrap">
     <div class="chapter-top">
       <div class="chapter-copy">
-        <span class="chapter-label">06</span>
+        <span class="chapter-label">07</span>
         <span class="kicker">Renting, buying + choosing where to live</span>
         <h2>Choose the home that fits your life — not somebody else’s commission.</h2>
         <p class="lead">
@@ -1150,18 +1361,77 @@ footer{
         </div>
       </div>
 
-      <div class="chapter-media housing-visual" aria-label="Housing choices in Jamaica">
-        <div class="housing-scene housing-scene-gated">
-          <span>Gated</span>
-          <strong>Modern amenities + controlled access</strong>
-          <small>But still assess security, fees, rules and how much freedom you want.</small>
-        </div>
-        <div class="housing-scene housing-scene-local">
-          <span>Established community</span>
-          <strong>Mature trees + individuality + local character</strong>
-          <small>But inspect the specific road, property and neighbourhood rather than relying on stereotypes.</small>
-        </div>
-      </div>
+      
+<div class="chapter-media housing-visual" aria-label="Housing choices in Jamaica">
+  <article class="housing-photo-card">
+    <div class="housing-illustration gated-illustration" aria-hidden="true">
+      <svg viewBox="0 0 600 420" role="img" aria-label="Illustration of a gated resort-style Jamaican community">
+        <rect width="600" height="420" fill="#bfe9e7"/>
+        <rect y="285" width="600" height="135" fill="#8bc9a2"/>
+        <circle cx="510" cy="70" r="36" fill="#ffe29a"/>
+        <g fill="#ffffff" stroke="#0b6569" stroke-width="7">
+          <path d="M90 230 L190 150 L290 230 V330 H90Z"/>
+          <path d="M300 230 L400 150 L500 230 V330 H300Z"/>
+        </g>
+        <g fill="#e7b66f" stroke="#0b6569" stroke-width="7">
+          <path d="M78 230 L190 132 L302 230Z"/>
+          <path d="M288 230 L400 132 L512 230Z"/>
+        </g>
+        <g fill="#87cfd0">
+          <rect x="125" y="245" width="45" height="45" rx="4"/>
+          <rect x="210" y="245" width="45" height="45" rx="4"/>
+          <rect x="335" y="245" width="45" height="45" rx="4"/>
+          <rect x="420" y="245" width="45" height="45" rx="4"/>
+        </g>
+        <g stroke="#234f52" stroke-width="7" fill="none">
+          <path d="M30 335 H570"/>
+          <path d="M55 335 V270 M545 335 V270"/>
+          <path d="M55 275 H545"/>
+          <path d="M250 335 V260 M350 335 V260"/>
+        </g>
+        <g fill="#2d7f63">
+          <circle cx="58" cy="260" r="34"/><rect x="52" y="260" width="12" height="55"/>
+          <circle cx="545" cy="250" r="40"/><rect x="539" y="250" width="12" height="65"/>
+        </g>
+      </svg>
+    </div>
+    <div class="housing-photo-copy">
+      <span>Gated community</span>
+      <strong>Modern amenities + controlled access</strong>
+      <small>Newer homes, pools, gyms and maintained common areas can be appealing — but still check security, fees, rules and how much freedom you really have.</small>
+    </div>
+  </article>
+
+  <article class="housing-photo-card">
+    <div class="housing-illustration established-illustration" aria-hidden="true">
+      <svg viewBox="0 0 600 420" role="img" aria-label="Illustration of an established Jamaican neighbourhood with mature trees">
+        <rect width="600" height="420" fill="#dff1dc"/>
+        <rect y="300" width="600" height="120" fill="#9fc486"/>
+        <path d="M80 285 L200 190 L320 285 V345 H80Z" fill="#f6d7a7" stroke="#315e53" stroke-width="7"/>
+        <path d="M65 285 L200 170 L335 285Z" fill="#b55c45" stroke="#315e53" stroke-width="7"/>
+        <rect x="125" y="255" width="52" height="52" fill="#9bd1d1" stroke="#315e53" stroke-width="6"/>
+        <rect x="220" y="255" width="52" height="90" fill="#855f49" stroke="#315e53" stroke-width="6"/>
+        <g>
+          <rect x="435" y="140" width="22" height="200" fill="#765b40"/>
+          <circle cx="445" cy="120" r="88" fill="#4f8a58"/>
+          <circle cx="395" cy="145" r="62" fill="#5c995f"/>
+          <circle cx="500" cy="155" r="70" fill="#68a568"/>
+        </g>
+        <g>
+          <rect x="40" y="220" width="16" height="120" fill="#765b40"/>
+          <circle cx="50" cy="205" r="64" fill="#4f8a58"/>
+        </g>
+        <path d="M0 365 C120 330, 220 400, 350 360 C450 330, 520 365, 600 350 V420 H0Z" fill="#d6c49a"/>
+      </svg>
+    </div>
+    <div class="housing-photo-copy">
+      <span>Established community</span>
+      <strong>Mature trees + individuality + local character</strong>
+      <small>If you want mature trees and that real Jamaican feel, a gated resort-style community with cookie-cutter houses and an association telling you what colour you can paint your house may not be it.</small>
+    </div>
+  </article>
+</div>
+</div>
     </div>
 
     <div class="key-grid">
@@ -1334,7 +1604,7 @@ footer{
         <img src="https://marshakerrtalley.com/9-EGL_3969.jpg" alt="Marsha Kerr Talley speaking">
       </div>
       <div class="chapter-copy">
-        <span class="chapter-label">07</span>
+        <span class="chapter-label">08</span>
         <span class="kicker">Actually living here</span>
         <h2>Build a life — not just a successful move.</h2>
         <p class="lead">
@@ -1424,6 +1694,10 @@ footer{
       <label class="check"><input type="checkbox" data-key="inspection">Complete vehicle pre-shipment inspection</label>
       <label class="check"><input type="checkbox" data-key="tcc">Prepare TCC for vehicle clearance</label>
       <label class="check"><input type="checkbox" data-key="transport">Plan temporary transport</label>
+      <label class="check"><input type="checkbox" data-key="localsim">Set up a Jamaican SIM / eSIM</label>
+      <label class="check"><input type="checkbox" data-key="ridesafety">Turn on ride PIN / trip-sharing safety features</label>
+      <label class="check"><input type="checkbox" data-key="drivers">Save at least one reliable local driver's number</label>
+      <label class="check"><input type="checkbox" data-key="evapps">If bringing an EV, download charging apps + map stations</label>
       <label class="check"><input type="checkbox" data-key="housingbudget">Set my housing budget + absolute ceiling</label>
       <label class="check"><input type="checkbox" data-key="preapproval">Get / refresh mortgage pre-approval if buying</label>
       <label class="check"><input type="checkbox" data-key="community">Compare gated and established communities in person</label>
