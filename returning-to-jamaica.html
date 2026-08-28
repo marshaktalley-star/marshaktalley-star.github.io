@@ -350,7 +350,10 @@ details[open] summary:after{content:"–"}
   font-size:1.15rem;
   line-height:1.5;
 }
-.story-body p{font-size:1rem}
+/* Keep story text readable when a white story card sits inside a dark chapter. */
+.story-body{color:var(--ink)}
+.story-body h3{color:var(--deepest)}
+.story-body p{font-size:1rem;color:#4b6768}
 
 
 
@@ -1218,8 +1221,8 @@ section[id]{scroll-margin-top:112px}
       </article>
       <article class="key">
         <div class="num">Clearance</div>
-        <h3>Prepare TCC + broker</h3>
-        <p>Motor vehicles require a TCC for clearance and must be cleared through a licensed Customs Broker.</p>
+        <h3>Prepare your TCC + broker</h3>
+        <p>A TCC (Tax Compliance Certificate) is required for motor-vehicle clearance. The vehicle must also be cleared through a licensed Customs Broker.</p>
       </article>
     </div>
 
@@ -1922,7 +1925,7 @@ section[id]{scroll-margin-top:112px}
       <label class="check"><input type="checkbox" data-key="broker">Verify licensed Customs Broker</label>
       <label class="check"><input type="checkbox" data-key="permit">Complete vehicle permit before shipping</label>
       <label class="check"><input type="checkbox" data-key="inspection">Complete vehicle pre-shipment inspection</label>
-      <label class="check"><input type="checkbox" data-key="tcc">Prepare TCC for vehicle clearance</label>
+      <label class="check"><input type="checkbox" data-key="tcc">Prepare Tax Compliance Certificate (TCC) for vehicle clearance</label>
       <label class="check"><input type="checkbox" data-key="transport">Plan temporary transport</label>
       <label class="check"><input type="checkbox" data-key="localsim">Set up a Jamaican SIM / eSIM</label>
       <label class="check"><input type="checkbox" data-key="ridesafety">Turn on ride PIN / trip-sharing safety features</label>
