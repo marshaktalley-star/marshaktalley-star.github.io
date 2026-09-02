@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Differentiation in Jamaican Classrooms | Teacher Workshop</title>
+  <meta name="description" content="Interactive professional learning resource for teachers serving in Jamaican schools, focused on practical differentiation, Special Education, inclusion, literacy, autism, dyslexia, ADHD, behaviour, and classroom access." />
+
+  <style>
+    :root{
+      --teal:#319fa2;
+      --aqua:#2fe2dd;
+      --deep:#056367;
+      --cream:#f8f7f2;
+      --paper:#ffffff;
+      --ink:#222;
+      --muted:#666;
+      --soft:#eaf8f7;
+      --line:#d9e7e6;
+      --gold:#c49435;
+      --green:#237a52;
+      --green-bg:#eaf7ef;
+      --red:#a63d40;
+      --red-bg:#fff0f0;
+      --blue-bg:#eef5ff;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --radius:20px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Georgia,"Times New Roman",serif;
+      background:var(--cream);
+      color:var(--ink);
+      line-height:1.65;
+    }
+
+    button,input,textarea,select{font:inherit}
+    button{cursor:pointer}
+    .container{max-width:1120px;margin:auto;padding:0 20px}
+
+    .hero{
+      background:
+        radial-gradient(circle at 85% 10%, rgba(47,226,221,.22), transparent 28%),
+        linear-gradient(135deg,var(--deep),#0d7c7e);
+      color:#fff;
+      padding:72px 0 58px;
+    }
+
+    .eyebrow{
+      font-family:Arial,Helvetica,sans-serif;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-size:.78rem;
+      font-weight:800;
+      opacity:.9;
+    }
+
+    h1{
+      font-size:clamp(2.6rem,6vw,5rem);
+      line-height:.98;
+      margin:12px 0 16px;
+      max-width:900px;
+    }
+
+    .hero p{
+      max-width:820px;
+      font-size:1.18rem;
+      margin:0 0 26px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .btn{
+      border:0;
+      border-radius:999px;
+      padding:13px 19px;
+      font-family:Arial,Helvetica,sans-serif;
+      font-weight:800;
+      transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--aqua);color:#063f41}
+    .btn-light{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3)}
+    .btn-soft{background:var(--soft);color:var(--deep)}
+    .btn-dark{background:var(--deep);color:#fff}
+
+    .progress-wrap{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+    }
+    .progress-row{
+      max-width:1120px;
+      margin:auto;
+      padding:11px 20px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:.88rem;
+    }
+    .progress-track{
+      flex:1;
+      height:9px;
+      background:#e7ecec;
+      border-radius:30px;
+      overflow:hidden;
+    }
+    .progress-bar{height:100%;width:0;background:var(--teal);transition:width .25s ease}
+
+    main{padding:46px 0 80px}
+    section{margin-bottom:62px;scroll-margin-top:85px}
+
+    .tag{
+      display:inline-block;
+      background:var(--soft);
+      color:var(--deep);
+      font-family:Arial,Helvetica,sans-serif;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.1em;
+      font-size:.73rem;
+      padding:6px 11px;
+      border-radius:999px;
+      margin-bottom:7px;
+    }
+
+    h2{
+      color:var(--deep);
+      font-size:clamp(1.9rem,4vw,2.9rem);
+      line-height:1.1;
+      margin:5px 0 13px;
+    }
+
+    h3{font-size:1.35rem;line-height:1.2;margin-top:0}
+    .lead{font-size:1.1rem;max-width:870px}
+    .small{font-size:.9rem;color:var(--muted)}
+
+    .principle{
+      background:var(--deep);
+      color:white;
+      padding:28px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      font-size:1.2rem;
+      margin:24px 0;
+    }
+    .principle strong{color:var(--aqua)}
+
+    .reality-grid,.two-col,.four-col{
+      display:grid;
+      gap:18px;
+    }
+    .reality-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .two-col{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .four-col{grid-template-columns:repeat(4,minmax(0,1fr))}
+
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:0 5px 18px rgba(0,0,0,.04);
+    }
+
+    .case{
+      border-left:6px solid var(--teal);
+    }
+
+    .case-label{
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:.77rem;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--deep);
+    }
+
+    .prompt{
+      margin:18px 0;
+      padding:19px 20px;
+      background:#fffdf5;
+      border-left:5px solid var(--gold);
+      border-radius:14px;
+    }
+
+    .oral{
+      background:var(--blue-bg);
+      border-left-color:#5075a8;
+    }
+
+    .question{
+      margin:22px 0;
+      padding:22px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+    }
+    .qnum{
+      font-family:Arial,Helvetica,sans-serif;
+      font-weight:800;
+      color:var(--deep);
+      margin-bottom:8px;
+    }
+
+    .options{display:grid;gap:10px;margin-top:15px}
+    .option{
+      width:100%;
+      text-align:left;
+      background:#fafafa;
+      border:2px solid #e7e7e7;
+      border-radius:13px;
+      padding:13px 15px;
+      color:var(--ink);
+    }
+    .option:hover{border-color:var(--teal);background:var(--soft)}
+    .option.correct{border-color:var(--green);background:var(--green-bg)}
+    .option.incorrect{border-color:var(--red);background:var(--red-bg)}
+
+    .feedback{
+      display:none;
+      margin-top:13px;
+      padding:13px 15px;
+      border-radius:12px;
+    }
+    .feedback.show{display:block}
+    .feedback.good{background:var(--green-bg);color:#155838}
+    .feedback.try{background:#fff5e7;color:#72501e}
+
+    textarea,input[type="text"],select{
+      width:100%;
+      border:1px solid #ccd9d8;
+      border-radius:13px;
+      padding:13px;
+      background:#fff;
+      color:var(--ink);
+    }
+    textarea{min-height:110px;resize:vertical}
+    textarea:focus,input:focus,select:focus,button:focus{
+      outline:3px solid rgba(49,159,162,.24);
+      outline-offset:2px;
+    }
+
+    .micro{
+      background:var(--soft);
+      padding:17px;
+      border-radius:15px;
+    }
+    .micro strong{display:block;color:var(--deep);margin-bottom:4px}
+
+    details{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:15px;
+      margin-bottom:12px;
+      overflow:hidden;
+    }
+    summary{
+      padding:18px 20px;
+      cursor:pointer;
+      font-weight:bold;
+      color:var(--deep);
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    details[open] summary{background:var(--soft)}
+    .detail-content{padding:0 20px 20px}
+
+    .quote{
+      font-size:1.2rem;
+      border-left:5px solid var(--teal);
+      padding:14px 18px;
+      margin:18px 0;
+      background:#f8ffff;
+    }
+
+    .scenario-builder{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:25px;
+    }
+    .builder-row{margin-bottom:17px}
+    .builder-row label{
+      display:block;
+      font-family:Arial,Helvetica,sans-serif;
+      font-weight:800;
+      margin-bottom:5px;
+    }
+    #challengeResult{
+      display:none;
+      margin-top:20px;
+      background:var(--soft);
+      border-radius:15px;
+      padding:20px;
+    }
+
+    .myth-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+
+    .back-room{
+      background:linear-gradient(135deg,#153c3d,var(--deep));
+      color:#fff;
+      padding:30px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .back-room h2{color:#fff}
+    .contrast{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin:20px 0;
+    }
+    .contrast-box{
+      background:rgba(255,255,255,.09);
+      border:1px solid rgba(255,255,255,.17);
+      border-radius:15px;
+      padding:18px;
+    }
+
+    .completion{
+      background:linear-gradient(135deg,var(--deep),#158b8d);
+      color:#fff;
+      padding:32px;
+      border-radius:var(--radius);
+      text-align:center;
+    }
+    .completion h2{color:#fff}
+    .completion textarea{text-align:left}
+
+    footer{
+      background:#153c3d;
+      color:#fff;
+      text-align:center;
+      padding:30px 20px;
+      font-family:Arial,Helvetica,sans-serif;
+    }
+
+    @media(max-width:850px){
+      .reality-grid{grid-template-columns:1fr 1fr}
+      .four-col{grid-template-columns:1fr 1fr}
+    }
+
+    @media(max-width:680px){
+      .reality-grid,.two-col,.four-col,.contrast{grid-template-columns:1fr}
+      .hero{padding-top:52px}
+      .progress-row{font-size:.8rem}
+    }
+
+    @media print{
+      body{background:#fff}
+      .hero{background:#fff!important;color:#000!important;padding:22px 0}
+      .progress-wrap,.hide-print,.option,footer{display:none!important}
+      .card,.question,.scenario-builder,.back-room{box-shadow:none;break-inside:avoid}
+      .back-room{background:#fff!important;color:#000!important;border:1px solid #bbb}
+      .back-room h2{color:#000!important}
+      .contrast-box{border:1px solid #ccc;background:#fff;color:#000}
+    }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <div class="eyebrow">Interactive Professional Learning for Teachers Serving in Jamaican Schools</div>
+    <h1>Differentiation in Jamaican Classrooms</h1>
+    <p>
+      Practical strategies for helping learners with diverse educational needs participate,
+      understand and demonstrate learning—even when classes are large, resources are limited,
+      and a formal diagnosis or specialist support is not yet available.
+    </p>
+
+    <div class="hero-actions">
+      <button class="btn btn-primary" onclick="document.querySelector('#start').scrollIntoView()">
+        Start the Activities
+      </button>
+      <button class="btn btn-light" onclick="window.print()">Print / Save Responses</button>
+    </div>
+  </div>
+</header>
+
+<div class="progress-wrap">
+  <div class="progress-row">
+    <strong>Workshop Progress</strong>
+    <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+    <span id="progressText">0 completed</span>
+  </div>
+</div>
+
+<main>
+<div class="container">
+
+<section id="start">
+  <span class="tag">Start Here</span>
+  <h2>The learner is already in your classroom.</h2>
+  <p class="lead">
+    Some students arrive in Jamaican classrooms with needs that have never been formally identified.
+    Others may have a diagnosis but little classroom support. A teacher may be expected to respond
+    without an aide, specialist, psychologist, specialised equipment or a separate programme.
+  </p>
+
+  <div class="principle">
+    <strong>The question is not only “What does this child have?”</strong><br>
+    The more useful classroom question is: “What is getting in the way of learning, and what can I change?”
+  </div>
+
+  <div class="prompt oral">
+    <strong>Talk with someone beside you.</strong><br>
+    Think of a learner who was physically in the classroom but was not meaningfully participating in the lesson.
+    What was the learner doing? What was the class doing? What support was missing?
+  </div>
+
+  <label for="openingResponse"><strong>Write one observation from your discussion:</strong></label>
+  <textarea id="openingResponse" class="track-response" placeholder="The learner was present, but..."></textarea>
+</section>
+
+<section>
+  <span class="tag">Jamaican Classroom Reality</span>
+  <h2>Differentiation has to work in the classroom teachers actually have.</h2>
+  <p class="lead">
+    This workshop does not assume a small class, unlimited resources or a specialist beside every teacher.
+    The activities ask what can be done within real teaching conditions while keeping the learner connected
+    to meaningful curriculum.
+  </p>
+
+  <div class="reality-grid">
+    <div class="card"><strong>Large classes</strong><br>One teacher may be responsible for many learners with very different levels of readiness.</div>
+    <div class="card"><strong>Unidentified needs</strong><br>A learner may show significant difficulty without having a formal diagnosis.</div>
+    <div class="card"><strong>Literacy gaps</strong><br>A student can reach upper primary or secondary school while reading far below the level of the assigned text.</div>
+    <div class="card"><strong>Limited specialist support</strong><br>Teachers may need practical classroom strategies while referrals or assessments are unavailable or delayed.</div>
+    <div class="card"><strong>Curriculum pressure</strong><br>Teachers still have content to cover and students may be preparing for PEP, CSEC or other assessments.</div>
+    <div class="card"><strong>Behaviour concerns</strong><br>Learning difficulty, frustration, sensory overload or executive-function needs can sometimes appear first as “indiscipline.”</div>
+  </div>
+
+  <div class="prompt">
+    <strong>Important:</strong> Teachers do not need to diagnose students in order to respond to observed learning needs.
+    Support can begin with what the teacher sees, hears and notices in the classroom.
+  </div>
+</section>
+
+<section>
+  <span class="tag">A Simple Thinking Framework</span>
+  <h2>Look at the learner, task, barrier and adjustment.</h2>
+
+  <div class="four-col">
+    <div class="micro"><strong>1. Learner</strong>What can this learner already do? What strengths, interests and needs do you notice?</div>
+    <div class="micro"><strong>2. Task</strong>What is the actual learning objective? What must every learner understand or demonstrate?</div>
+    <div class="micro"><strong>3. Barrier</strong>What part of the lesson is creating unnecessary difficulty?</div>
+    <div class="micro"><strong>4. Adjustment</strong>What can change without removing the core learning?</div>
+  </div>
+</section>
+
+<section>
+  <span class="tag">Case Study 1 • Form 1 English Language</span>
+  <h2>When “misbehaviour” begins with a reading task</h2>
+
+  <div class="card case">
+    <div class="case-label">Meet Dwayne</div>
+    <h3>Dwayne talks, walks around and avoids the worksheet.</h3>
+    <p>
+      A Form 1 class is asked to read a two-page passage independently and answer eight comprehension questions.
+      Dwayne looks at the page for several minutes, begins talking to the boy beside him and eventually walks
+      across the room. The teacher tells him, “Every day is the same thing with you. Sit down and do your work.”
+    </p>
+    <p>
+      Later, the teacher discovers that Dwayne is struggling to decode much of the passage.
+    </p>
+  </div>
+
+  <div class="question" data-question>
+    <div class="qnum">Decision 1</div>
+    <strong>If the learning objective is identifying the main idea, which response is the strongest starting point?</strong>
+
+    <div class="options">
+      <button class="option" data-correct="false">A. Give Dwayne colouring while the class completes the comprehension.</button>
+      <button class="option" data-correct="false">B. Send Dwayne outside so the rest of the class can work.</button>
+      <button class="option" data-correct="true">C. Reduce the reading barrier while keeping Dwayne involved in identifying the main idea.</button>
+      <button class="option" data-correct="false">D. Tell him he must finish because everyone else has the same work.</button>
+    </div>
+
+    <div class="feedback good">
+      Yes. If reading fluency is not the skill being assessed, the teacher can change the route into the content while preserving the learning goal.
+    </div>
+    <div class="feedback try">
+      Ask whether the response helps Dwayne reach the learning objective—or simply removes him from the learning.
+    </div>
+  </div>
+
+  <div class="prompt">
+    <strong>Your turn.</strong> Name two low-cost ways Dwayne could still work on identifying the main idea.
+  </div>
+  <textarea class="track-response" placeholder="1.&#10;2."></textarea>
+</section>
+
+<section>
+  <span class="tag">Case Study 2 • Grade 5 Mathematics</span>
+  <h2>“Miss, what we supposed to do?”</h2>
+
+  <div class="card case">
+    <div class="case-label">Meet Shanice</div>
+    <p>
+      Shanice frequently misses instructions, loses track of where the class is, starts the wrong question,
+      looks around the room and repeatedly asks the teacher what she should be doing. There is no formal ADHD diagnosis.
+    </p>
+    <p>
+      The teacher has explained all six steps verbally and tells Shanice that she needs to pay better attention.
+    </p>
+  </div>
+
+  <div class="question" data-question>
+    <div class="qnum">Decision 2</div>
+    <strong>Which adjustment can the teacher use without diagnosing Shanice?</strong>
+
+    <div class="options">
+      <button class="option" data-correct="true">A. Put the steps visibly on the board, give one chunk at a time and check that she understands the next step.</button>
+      <button class="option" data-correct="false">B. Wait for a diagnosis before providing any support.</button>
+      <button class="option" data-correct="false">C. Remove Mathematics from her timetable.</button>
+      <button class="option" data-correct="false">D. Give her more work so she learns to focus.</button>
+    </div>
+
+    <div class="feedback good">
+      Correct. Classroom support can respond to observed attention, memory and organisation needs without the teacher making a diagnosis.
+    </div>
+    <div class="feedback try">
+      Choose the option that adds structure to the lesson without changing the mathematics she is expected to learn.
+    </div>
+  </div>
+
+  <div class="prompt oral">
+    <strong>Discuss:</strong> Which of these supports would also help students who do not have identified Special Educational Needs?
+  </div>
+</section>
+
+<section>
+  <span class="tag">Case Study 3 • Autism & Sensory Needs</span>
+  <h2>What changed before the response?</h2>
+
+  <div class="card case">
+    <div class="case-label">Meet Kemar</div>
+    <p>
+      Kemar usually participates when lessons are predictable. Today the teacher changes the seating plan,
+      places him in a new group, turns on a video and asks groups to begin immediately while the room is very noisy.
+    </p>
+    <p>
+      Kemar covers his ears, refuses to move and repeatedly says, “No.”
+    </p>
+  </div>
+
+  <div class="question" data-question>
+    <div class="qnum">Decision 3</div>
+    <strong>Before treating Kemar's response as deliberate defiance, what should the teacher consider?</strong>
+
+    <div class="options">
+      <button class="option" data-correct="false">A. Whether punishment will make him comply faster.</button>
+      <button class="option" data-correct="true">B. Whether unexpected change, noise, communication demands or uncertainty may be affecting his ability to participate.</button>
+      <button class="option" data-correct="false">C. Whether he should permanently work alone.</button>
+      <button class="option" data-correct="false">D. Whether he should be excluded from all group work.</button>
+    </div>
+
+    <div class="feedback good">
+      Yes. The teacher should first examine the environment and demands surrounding the behaviour.
+    </div>
+    <div class="feedback try">
+      Look at what changed in the classroom immediately before Kemar's response.
+    </div>
+  </div>
+
+  <div class="prompt">
+    <strong>Write one adjustment the teacher could make before the next group activity:</strong>
+  </div>
+  <textarea class="track-response" placeholder="Before the activity, the teacher could..."></textarea>
+</section>
+
+<section>
+  <span class="tag">Case Study 4 • Dyslexia & Literacy</span>
+  <h2>She knows the answer when she can say it.</h2>
+
+  <div class="card case">
+    <div class="case-label">Meet Rochelle</div>
+    <p>
+      Rochelle contributes thoughtful answers during Social Studies discussions. When she must read several
+      paragraphs and write extended responses, she works slowly, loses her place and produces much less than she
+      can explain orally.
+    </p>
+  </div>
+
+  <div class="question" data-question>
+    <div class="qnum">Decision 4</div>
+    <strong>If the objective is explaining causes and effects, which approach best preserves the learning?</strong>
+
+    <div class="options">
+      <button class="option" data-correct="false">A. Replace the lesson with a colouring sheet.</button>
+      <button class="option" data-correct="true">B. Provide supported access to the text and allow Rochelle to organise ideas orally or visually before writing.</button>
+      <button class="option" data-correct="false">C. Mark only spelling and handwriting.</button>
+      <button class="option" data-correct="false">D. Stop asking Rochelle to complete academic work.</button>
+    </div>
+
+    <div class="feedback good">
+      Correct. The support addresses literacy access while keeping Rochelle engaged with the same core concept.
+    </div>
+    <div class="feedback try">
+      Focus on preserving the concept being taught rather than replacing it with unrelated work.
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="tag">Case Study 5 • Behaviour & Regulation</span>
+  <h2>“He is disruptive.” What else do we know?</h2>
+
+  <div class="card case">
+    <div class="case-label">Meet Malik</div>
+    <p>
+      Malik calls out, jokes with peers and leaves his seat during long independent written tasks.
+      During practical demonstrations, debates and activities where he can move and contribute, he is engaged
+      and often gives useful answers.
+    </p>
+  </div>
+
+  <div class="question" data-question>
+    <div class="qnum">Decision 5</div>
+    <strong>Which question gives the teacher the most useful information?</strong>
+
+    <div class="options">
+      <button class="option" data-correct="false">A. What punishment have we not tried yet?</button>
+      <button class="option" data-correct="false">B. How can we make Malik stop talking?</button>
+      <button class="option" data-correct="true">C. What happens before, during and after the behaviour, and what task or environmental demands may be contributing?</button>
+      <button class="option" data-correct="false">D. Should Malik always work at the back of the classroom?</button>
+    </div>
+
+    <div class="feedback good">
+      Exactly. Behaviour becomes more understandable when the teacher examines antecedents, task demands,
+      environment, regulation and what happens after the behaviour.
+    </div>
+    <div class="feedback try">
+      The behaviour itself is only one part of the information.
+    </div>
+  </div>
+
+  <div class="prompt">
+    <strong>Complete the sentence:</strong><br>
+    Instead of asking “How do I stop this behaviour?” I can ask...
+  </div>
+  <input type="text" class="track-response" placeholder="What might...">
+</section>
+
+<section>
+  <span class="tag">The Question Teachers Ask</span>
+  <h2>“But I have 40 students.”</h2>
+
+  <div class="card">
+    <p class="quote">
+      “I cannot teach one lesson for the class, another for the child with autism,
+      another for the child who cannot read and another for the child who cannot sit still.”
+    </p>
+
+    <p>
+      That concern is reasonable. Differentiation should not require forty separate lesson plans.
+      Often one change in lesson design improves access for several learners at the same time.
+    </p>
+
+    <div class="two-col">
+      <div class="micro">
+        <strong>Instead of</strong>
+        A long verbal explanation with all instructions given at once.
+      </div>
+      <div class="micro">
+        <strong>Try</strong>
+        Short explanation + steps on the board + worked example + quick partner check.
+      </div>
+
+      <div class="micro">
+        <strong>Instead of</strong>
+        One long written task for everyone with no checkpoints.
+      </div>
+      <div class="micro">
+        <strong>Try</strong>
+        Chunk the task, check after each section and give a model of the expected response.
+      </div>
+
+      <div class="micro">
+        <strong>Instead of</strong>
+        Assuming quiet sitting is the only evidence of attention.
+      </div>
+      <div class="micro">
+        <strong>Try</strong>
+        Purposeful movement, response cards, paired talk, mini-whiteboards or brief active checks.
+      </div>
+
+      <div class="micro">
+        <strong>Instead of</strong>
+        Sending one learner to the back with unrelated work.
+      </div>
+      <div class="micro">
+        <strong>Try</strong>
+        Keep the same learning goal and change the level of support, text access, response method or pacing.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="tag">Strategy Bank</span>
+  <h2>Low-cost strategies teachers can use tomorrow</h2>
+
+  <details>
+    <summary>Dyslexia & significant reading difficulty</summary>
+    <div class="detail-content">
+      Chunk text; pre-teach vocabulary; read key sections aloud; allow paired reading; reduce unnecessary copying;
+      use larger spacing and clear formatting; provide sentence starters; let students explain ideas orally before writing;
+      use audio where available; and separate the skill being assessed from reading speed when reading fluency is not the objective.
+    </div>
+  </details>
+
+  <details>
+    <summary>Autism, predictability & sensory needs</summary>
+    <div class="detail-content">
+      Use clear routines; show the sequence of the lesson; warn students before changes; reduce unnecessary ambiguity;
+      offer structured choices; use visual instructions; allow processing time; consider noise, lighting and seating;
+      and create predictable routes for asking for help or taking a brief regulation break.
+    </div>
+  </details>
+
+  <details>
+    <summary>ADHD, attention & executive-function needs</summary>
+    <div class="detail-content">
+      Give one step at a time when needed; write steps visibly; use checklists; shorten teacher-talk segments;
+      provide purposeful movement; use quick feedback; break larger assignments into checkpoints;
+      organise materials consistently; use timers where helpful; and check that the learner knows what “finished” looks like.
+    </div>
+  </details>
+
+  <details>
+    <summary>Behaviour, regulation & disengagement</summary>
+    <div class="detail-content">
+      Look at what happens before the behaviour; consider task difficulty, boredom, embarrassment, communication,
+      peer attention, sensory load, fatigue and emotional regulation; teach replacement behaviours;
+      reinforce successful participation; provide choices where possible; and avoid assuming that all refusal is deliberate defiance.
+    </div>
+  </details>
+
+  <details>
+    <summary>Very low literacy in a secondary classroom</summary>
+    <div class="detail-content">
+      Keep the learner connected to age-appropriate concepts while adjusting how information is accessed.
+      Use oral explanation, images, diagrams, key vocabulary, paired work, short accessible text, teacher read-aloud,
+      matching, sequencing, labelling, demonstrations and structured response frames rather than giving unrelated primary-level work.
+    </div>
+  </details>
+</section>
+
+<section>
+  <span class="tag">Quick Check</span>
+  <h2>Myth or accurate?</h2>
+
+  <div class="question" data-myth>
+    <strong>“A teacher should wait for a formal diagnosis before adjusting instruction for a learner who is clearly struggling.”</strong>
+    <div class="myth-buttons">
+      <button class="btn btn-primary myth-answer" data-answer="false">Myth</button>
+      <button class="btn btn-soft myth-answer" data-answer="true">Accurate</button>
+    </div>
+    <div class="feedback good">
+      Correct. A diagnosis may guide support, but teachers can respond immediately to observable learning barriers.
+    </div>
+    <div class="feedback try">
+      Consider what the teacher can change based on classroom evidence without attempting to diagnose the learner.
+    </div>
+  </div>
+
+  <div class="question" data-myth>
+    <strong>“Differentiation means making the lesson easier for students with Special Educational Needs.”</strong>
+    <div class="myth-buttons">
+      <button class="btn btn-primary myth-answer" data-answer="false">Myth</button>
+      <button class="btn btn-soft myth-answer" data-answer="true">Accurate</button>
+    </div>
+    <div class="feedback good">
+      Correct. Differentiation changes access, support, pacing, grouping, materials or response options while preserving meaningful learning.
+    </div>
+    <div class="feedback try">
+      The aim is access—not automatically lower expectations.
+    </div>
+  </div>
+
+  <div class="question" data-myth>
+    <strong>“A strategy designed for a learner with Special Educational Needs may also improve learning for other students.”</strong>
+    <div class="myth-buttons">
+      <button class="btn btn-soft myth-answer" data-answer="false">Myth</button>
+      <button class="btn btn-primary myth-answer" data-answer="true">Accurate</button>
+    </div>
+    <div class="feedback good">
+      Correct. Clear steps, modelling, visuals, chunking, movement and multiple response methods often strengthen instruction for many learners.
+    </div>
+    <div class="feedback try">
+      Think about whether good instructional design benefits only students with identified needs.
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="tag">Interactive Planning Tool</span>
+  <h2>Build the adjustment</h2>
+
+  <p class="lead">
+    Choose the barrier you are observing and identify the learning goal you want to preserve.
+    The page will generate a planning question for the teacher.
+  </p>
+
+  <div class="scenario-builder">
+    <div class="builder-row">
+      <label for="barrier">Observed barrier</label>
+      <select id="barrier">
+        <option value="">Choose one...</option>
+        <option value="reading">Heavy reading demand</option>
+        <option value="writing">Difficulty expressing learning in writing</option>
+        <option value="attention">Attention / organisation / working-memory demands</option>
+        <option value="sensory">Sensory or environmental overload</option>
+        <option value="language">Language or processing difficulty</option>
+        <option value="behaviour">Behaviour or disengagement</option>
+        <option value="pace">Learner cannot keep pace with the class</option>
+      </select>
+    </div>
+
+    <div class="builder-row">
+      <label for="goal">What is the actual learning goal?</label>
+      <input id="goal" type="text" placeholder="Example: Explain two causes of soil erosion...">
+    </div>
+
+    <button class="btn btn-dark" onclick="buildChallenge()">Generate Planning Question</button>
+
+    <div id="challengeResult"></div>
+  </div>
+</section>
+
+<section>
+  <span class="tag">5-Minute Lesson Redesign</span>
+  <h2>Do not redesign everything. Change one barrier.</h2>
+
+  <div class="two-col">
+    <div class="card">
+      <h3>1. Learning Goal</h3>
+      <textarea class="track-response" placeholder="What must students understand or be able to do?"></textarea>
+    </div>
+
+    <div class="card">
+      <h3>2. Barrier</h3>
+      <textarea class="track-response" placeholder="What could prevent one or more learners from accessing this lesson?"></textarea>
+    </div>
+
+    <div class="card">
+      <h3>3. Adjustment</h3>
+      <textarea class="track-response" placeholder="What can you change about access, instruction, pacing, materials, environment or response?"></textarea>
+    </div>
+
+    <div class="card">
+      <h3>4. Evidence of Learning</h3>
+      <textarea class="track-response" placeholder="How will the learner still demonstrate the intended learning?"></textarea>
+    </div>
+  </div>
+</section>
+
+<section class="back-room">
+  <span class="tag">Final Case</span>
+  <h2>The student at the back of the room</h2>
+
+  <p>
+    You enter a classroom during a Science lesson. Most students are examining a diagram,
+    discussing the topic and answering questions.
+  </p>
+
+  <div class="contrast">
+    <div class="contrast-box">
+      <strong>THE CLASS</strong><br>
+      Learning about the human digestive system, discussing vocabulary and completing a labelled diagram.
+    </div>
+    <div class="contrast-box">
+      <strong>THE STUDENT AT THE BACK</strong><br>
+      Colouring an unrelated worksheet alone.
+    </div>
+  </div>
+
+  <p>A member of staff explains:</p>
+
+  <div class="quote" style="background:rgba(255,255,255,.09);color:#fff;">
+    “He has Special Educational Needs. He cannot really do what the rest of them are doing.”
+  </div>
+
+  <h3 style="font-size:1.6rem;">Is the learner included—or merely present?</h3>
+
+  <div class="prompt oral" style="color:#222;">
+    <strong>Discuss:</strong> What would you need to know before accepting the conclusion that the learner cannot participate?
+  </div>
+
+  <textarea class="track-response" placeholder="I would want to know..."></textarea>
+
+  <div class="prompt" style="color:#222;">
+    <strong>Now redesign the situation.</strong><br>
+    How could the learner participate meaningfully in the same Science topic with appropriate support?
+  </div>
+
+  <textarea class="track-response" placeholder="One possible approach would be..."></textarea>
+</section>
+
+<section>
+  <span class="tag">Oral Reflection</span>
+  <h2>Finish these sentences with your group.</h2>
+
+  <div class="two-col">
+    <div class="card">
+      <strong>“A student does not need to be able to ______ before they can learn ______.”</strong>
+    </div>
+    <div class="card">
+      <strong>“Before I say a child cannot do the work, I should first ask ______.”</strong>
+    </div>
+    <div class="card">
+      <strong>“One thing I can change in a large class without creating 40 lesson plans is ______.”</strong>
+    </div>
+    <div class="card">
+      <strong>“One behaviour I might now interpret differently is ______.”</strong>
+    </div>
+  </div>
+</section>
+
+<section class="completion">
+  <span class="tag">Commitment</span>
+  <h2>What will you do differently tomorrow?</h2>
+
+  <p>
+    Inclusion is not determined only by where the learner sits.
+    It is visible in whether the learner has meaningful access to teaching, participation and learning.
+  </p>
+
+  <label for="commitment"><strong>Write one action you will take:</strong></label>
+  <textarea id="commitment" class="track-response" placeholder="One thing I will do differently is..."></textarea>
+
+  <button class="btn btn-primary hide-print" onclick="window.print()" style="margin-top:18px;">
+    Print / Save My Responses
+  </button>
+</section>
+
+</div>
+</main>
+
+<footer>
+  <p><strong>Differentiation in Jamaican Classrooms</strong></p>
+  <p>Interactive Teacher Professional Learning Resource</p>
+  <p>Meaningful access. Meaningful participation. Meaningful learning.</p>
+</footer>
+
+<script>
+  const completedItems = new Set();
+
+  function updateProgress(){
+    const total =
+      document.querySelectorAll("[data-question]").length +
+      document.querySelectorAll("[data-myth]").length +
+      document.querySelectorAll(".track-response").length;
+
+    const percent = Math.min(100, Math.round((completedItems.size / total) * 100));
+
+    document.getElementById("progressBar").style.width = percent + "%";
+    document.getElementById("progressText").textContent = completedItems.size + " completed";
+  }
+
+  document.querySelectorAll("[data-question]").forEach((question,qIndex)=>{
+    const options = question.querySelectorAll(".option");
+    const good = question.querySelector(".feedback.good");
+    const retry = question.querySelector(".feedback.try");
+
+    options.forEach(option=>{
+      option.addEventListener("click",()=>{
+        options.forEach(item=>item.classList.remove("correct","incorrect"));
+        good.classList.remove("show");
+        retry.classList.remove("show");
+
+        if(option.dataset.correct === "true"){
+          option.classList.add("correct");
+          good.classList.add("show");
+        }else{
+          option.classList.add("incorrect");
+          retry.classList.add("show");
+        }
+
+        completedItems.add("question-"+qIndex);
+        updateProgress();
+      });
+    });
+  });
+
+  document.querySelectorAll("[data-myth]").forEach((myth,index)=>{
+    const buttons = myth.querySelectorAll(".myth-answer");
+    const good = myth.querySelector(".feedback.good");
+    const retry = myth.querySelector(".feedback.try");
+
+    buttons.forEach(button=>{
+      button.addEventListener("click",()=>{
+        good.classList.remove("show");
+        retry.classList.remove("show");
+
+        const statementIsAccurate = button.dataset.answer === "true";
+        const text = myth.querySelector("strong").textContent;
+
+        let correct;
+        if(text.includes("wait for a formal diagnosis")) correct = !statementIsAccurate;
+        else if(text.includes("making the lesson easier")) correct = !statementIsAccurate;
+        else correct = statementIsAccurate;
+
+        if(correct) good.classList.add("show");
+        else retry.classList.add("show");
+
+        completedItems.add("myth-"+index);
+        updateProgress();
+      });
+    });
+  });
+
+  document.querySelectorAll(".track-response").forEach((field,index)=>{
+    field.addEventListener("input",()=>{
+      if(field.value.trim().length > 2) completedItems.add("response-"+index);
+      else completedItems.delete("response-"+index);
+      updateProgress();
+    });
+  });
+
+  function buildChallenge(){
+    const barrier = document.getElementById("barrier").value;
+    const goal = document.getElementById("goal").value.trim();
+    const result = document.getElementById("challengeResult");
+
+    if(!barrier || !goal){
+      result.style.display = "block";
+      result.innerHTML = "<strong>Please complete both fields first.</strong>";
+      return;
+    }
+
+    const prompts = {
+      reading:
+        "If reading fluency is not the skill being assessed, how else could the learner access the information and still work toward this goal?",
+      writing:
+        "If written production is the barrier, what oral, visual, structured or supported response could still demonstrate the learning?",
+      attention:
+        "How could you change the length of teacher talk, number of steps, visibility of instructions, movement or checkpoints while keeping the learning goal?",
+      sensory:
+        "What part of the environment could be reduced, explained or made more predictable without isolating the learner from the lesson?",
+      language:
+        "What modelling, visuals, examples, vocabulary support or additional processing time could improve access without unnecessarily simplifying the concept?",
+      behaviour:
+        "What happens immediately before the behaviour? Consider task difficulty, embarrassment, boredom, regulation, peer attention, communication and classroom environment before choosing a response.",
+      pace:
+        "Can the learner work toward the same essential goal with fewer items, more time, smaller chunks, guided practice or a model response?"
+    };
+
+    result.style.display = "block";
+    result.innerHTML = `
+      <strong>Learning goal:</strong> ${escapeHTML(goal)}
+      <br><br>
+      <strong>Planning question:</strong><br>
+      ${prompts[barrier]}
+      <br><br>
+      <strong>Keep asking:</strong> What can I change while keeping
+      <em>${escapeHTML(goal)}</em> meaningful?
+    `;
+  }
+
+  function escapeHTML(value){
+    const div = document.createElement("div");
+    div.textContent = value;
+    return div.innerHTML;
+  }
+
+  updateProgress();
+</script>
+
+</body>
+</html>
