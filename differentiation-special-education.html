@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Differentiation in Action | Special Education Workshop</title>
+
+  <meta
+    name="description"
+    content="An interactive professional learning resource exploring differentiation, inclusion, autism, dyslexia, ADHD, behaviour and Special Education."
+  />
+
+  <style>
+    :root {
+      --teal: #319fa2;
+      --bright-teal: #2fe2dd;
+      --deep-teal: #056367;
+      --cream: #f8f7f2;
+      --white: #ffffff;
+      --ink: #242424;
+      --muted: #636363;
+      --light-teal: #e8f8f7;
+      --border: #d9e7e6;
+      --green: #237a52;
+      --green-light: #e9f7ef;
+      --red: #a63d40;
+      --red-light: #fff0f0;
+      --gold: #c49435;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    button,
+    textarea,
+    input {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at top right, rgba(47,226,221,0.23), transparent 30%),
+        linear-gradient(135deg, var(--deep-teal), #0b7778);
+      color: white;
+      padding: 72px 20px 58px;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+      font-size: 0.78rem;
+      opacity: 0.88;
+    }
+
+    h1 {
+      margin: 10px 0 14px;
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      line-height: 0.98;
+      max-width: 850px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      font-size: 1.15rem;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 999px;
+      padding: 13px 20px;
+      cursor: pointer;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--bright-teal);
+      color: #053e40;
+    }
+
+    .btn-light {
+      background: rgba(255,255,255,0.12);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .progress-wrap {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .progress-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.9rem;
+    }
+
+    .progress-track {
+      flex: 1;
+      height: 9px;
+      background: #e8ecec;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      background: var(--teal);
+      transition: width 0.3s ease;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 42px 20px 80px;
+    }
+
+    .section {
+      margin-bottom: 58px;
+      scroll-margin-top: 90px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--deep-teal);
+      background: var(--light-teal);
+      border-radius: 999px;
+      padding: 6px 11px;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.1;
+      margin: 4px 0 12px;
+      color: var(--deep-teal);
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      margin-top: 0;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      max-width: 820px;
+    }
+
+    .principle {
+      background: var(--deep-teal);
+      color: white;
+      padding: 30px;
+      border-radius: var(--radius);
+      margin: 25px 0;
+      font-size: 1.25rem;
+      box-shadow: var(--shadow);
+    }
+
+    .principle strong {
+      color: var(--bright-teal);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    }
+
+    .case-card {
+      border-left: 6px solid var(--teal);
+    }
+
+    .case-label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--deep-teal);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .question {
+      margin: 24px 0;
+      padding: 22px;
+      background: white;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+
+    .question-number {
+      color: var(--deep-teal);
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .options {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .option {
+      background: #fafafa;
+      border: 2px solid #e5e5e5;
+      border-radius: 13px;
+      padding: 13px 15px;
+      text-align: left;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    .option:hover {
+      border-color: var(--teal);
+      background: var(--light-teal);
+    }
+
+    .option.correct {
+      border-color: var(--green);
+      background: var(--green-light);
+    }
+
+    .option.incorrect {
+      border-color: var(--red);
+      background: var(--red-light);
+    }
+
+    .feedback {
+      display: none;
+      margin-top: 13px;
+      padding: 13px 15px;
+      border-radius: 12px;
+      font-size: 0.98rem;
+    }
+
+    .feedback.show {
+      display: block;
+    }
+
+    .feedback.good {
+      background: var(--green-light);
+      color: #155838;
+    }
+
+    .feedback.try {
+      background: #fff5e7;
+      color: #72501e;
+    }
+
+    textarea,
+    input[type="text"] {
+      width: 100%;
+      border: 1px solid #cfdada;
+      border-radius: 13px;
+      padding: 13px;
+      margin-top: 8px;
+      background: white;
+      color: var(--ink);
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    textarea:focus,
+    input:focus,
+    button:focus {
+      outline: 3px solid rgba(49,159,162,0.25);
+      outline-offset: 2px;
+    }
+
+    .prompt-box {
+      background: #fffdf5;
+      border-left: 5px solid var(--gold);
+      padding: 20px;
+      border-radius: 14px;
+      margin: 18px 0;
+    }
+
+    .oral {
+      background: #f1f6ff;
+      border-left-color: #5075a8;
+    }
+
+    details {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 18px 20px;
+      font-weight: bold;
+      color: var(--deep-teal);
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details[open] summary {
+      background: var(--light-teal);
+    }
+
+    .details-content {
+      padding: 0 20px 20px;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .mini-card {
+      background: var(--light-teal);
+      border-radius: 14px;
+      padding: 15px;
+      min-height: 135px;
+    }
+
+    .mini-card strong {
+      display: block;
+      color: var(--deep-teal);
+      margin-bottom: 4px;
+    }
+
+    .scenario-builder {
+      background: white;
+      border-radius: var(--radius);
+      padding: 25px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .builder-row {
+      margin-bottom: 18px;
+    }
+
+    .builder-row label {
+      display: block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    select {
+      width: 100%;
+      border: 1px solid #cfdada;
+      border-radius: 13px;
+      padding: 13px;
+      background: white;
+      font: inherit;
+    }
+
+    #challengeResult {
+      display: none;
+      margin-top: 20px;
+      background: var(--light-teal);
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .myth {
+      font-size: 1.08rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .myth-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .small-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .completion {
+      background: linear-gradient(135deg, var(--deep-teal), #168c8b);
+      color: white;
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+    }
+
+    .completion h2 {
+      color: white;
+    }
+
+    .completion textarea {
+      text-align: left;
+    }
+
+    footer {
+      background: #153c3d;
+      color: white;
+      padding: 32px 20px;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    footer p {
+      margin: 4px;
+    }
+
+    .hide-print {
+      display: inline-flex;
+    }
+
+    @media (max-width: 760px) {
+      .grid,
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 50px;
+      }
+
+      .progress-inner {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media print {
+      .hero {
+        background: white !important;
+        color: black !important;
+        padding: 25px 0;
+      }
+
+      .progress-wrap,
+      .hide-print,
+      .option,
+      footer {
+        display: none !important;
+      }
+
+      body {
+        background: white;
+      }
+
+      .card,
+      .question,
+      .scenario-builder {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      details {
+        break-inside: avoid;
+      }
+
+      details .details-content {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Interactive Professional Learning Resource</div>
+
+      <h1>Differentiation in Action</h1>
+
+      <p>
+        Moving from inclusion on paper to meaningful access, participation
+        and learning for students with diverse educational needs.
+      </p>
+
+      <div class="hero-buttons">
+        <button
+          class="btn btn-primary"
+          onclick="document.querySelector('#start').scrollIntoView()"
+        >
+          Start the Workshop Activities
+        </button>
+
+        <button class="btn btn-light" onclick="window.print()">
+          Print My Responses
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="progress-wrap">
+    <div class="progress-inner">
+      <strong>Activity Progress</strong>
+
+      <div class="progress-track">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <span id="progressText">0 completed</span>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- SECTION 1 -->
+    <section class="section" id="start">
+
+      <span class="section-tag">Start Here</span>
+      <h2>In the room is not the same as included.</h2>
+
+      <p class="lead">
+        A student can sit in a mainstream classroom all day and still have
+        very little access to the learning taking place. Differentiation asks
+        us to examine the barriers between the learner and the lesson—and
+        intentionally remove or reduce them.
+      </p>
+
+      <div class="principle">
+        <strong>Differentiation does not mean lowering expectations.</strong>
+        It means creating different pathways through which learners can
+        access, engage with and demonstrate learning.
+      </div>
+
+      <div class="prompt-box oral">
+        <strong>Talk first.</strong>
+        Think about a student you have taught, observed or supported who was
+        physically present in the classroom but academically disconnected.
+        What was happening?
+      </div>
+
+      <label for="openingResponse">
+        Write one observation from your discussion:
+      </label>
+
+      <textarea
+        id="openingResponse"
+        class="track-response"
+        placeholder="The student was present, but..."
+      ></textarea>
+
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="section">
+
+      <span class="section-tag">Think Differently</span>
+      <h2>Begin with the barrier—not the label.</h2>
+
+      <p>
+        A diagnosis can help us understand a learner, but it should never
+        become the entire explanation for that learner. Two students with the
+        same identified need may require very different support.
+      </p>
+
+      <div class="mini-grid">
+
+        <div class="mini-card">
+          <strong>1. Learner</strong>
+          What strengths, needs, interests and prior knowledge does this
+          learner bring?
+        </div>
+
+        <div class="mini-card">
+          <strong>2. Task</strong>
+          What exactly are we asking the student to understand or do?
+        </div>
+
+        <div class="mini-card">
+          <strong>3. Barrier</strong>
+          What may be preventing meaningful access or participation?
+        </div>
+
+        <div class="mini-card">
+          <strong>4. Adjustment</strong>
+          What can we change without removing the core learning goal?
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CASE 1 -->
+    <section class="section">
+
+      <span class="section-tag">Case Study 1</span>
+      <h2>Dyslexia: When reading becomes the barrier</h2>
+
+      <div class="card case-card">
+        <div class="case-label">Meet Andre</div>
+
+        <h3>Andre knows more than his written work suggests.</h3>
+
+        <p>
+          Andre is 13. During class discussions he demonstrates strong
+          understanding and often makes thoughtful connections. When students
+          are asked to read a long passage independently and answer written
+          questions, however, he works slowly, skips words and sometimes
+          stops altogether.
+        </p>
+
+        <p>
+          A teacher tells him, “You need to try harder. Everyone else has
+          finished.”
+        </p>
+      </div>
+
+      <div class="question" data-question>
+        <div class="question-number">Decision 1</div>
+
+        <strong>
+          Which response provides the strongest starting point for
+          differentiation?
+        </strong>
+
+        <div class="options">
+
+          <button class="option" data-correct="false">
+            A. Give Andre a much easier worksheet.
+          </button>
+
+          <button class="option" data-correct="false">
+            B. Excuse Andre from reading activities.
+          </button>
+
+          <button class="option" data-correct="true">
+            C. Identify whether decoding and reading load are preventing him
+            from demonstrating understanding, then provide another route to
+            the content.
+          </button>
+
+          <button class="option" data-correct="false">
+            D. Move Andre to the back of the classroom with separate work.
+          </button>
+
+        </div>
+
+        <div class="feedback good">
+          Yes. The goal is not simply to remove the task. Determine the
+          barrier and preserve access to the important learning.
+        </div>
+
+        <div class="feedback try">
+          Consider whether this response changes the barrier or simply removes
+          Andre from the learning.
+        </div>
+      </div>
+
+      <div class="prompt-box">
+        <strong>Your turn:</strong>
+        The learning goal is understanding the causes of a historical event.
+        Reading fluency is not the skill being assessed. Name two ways Andre
+        could access the content.
+      </div>
+
+      <textarea
+        class="track-response"
+        placeholder="1.&#10;2."
+      ></textarea>
+
+    </section>
+
+    <!-- CASE 2 -->
+    <section class="section">
+
+      <span class="section-tag">Case Study 2</span>
+      <h2>Autism: Look beneath the behaviour</h2>
+
+      <div class="card case-card">
+        <div class="case-label">Meet Kayla</div>
+
+        <h3>A classroom change creates a sudden response.</h3>
+
+        <p>
+          Kayla usually participates well when the class follows a predictable
+          routine. Today the teacher unexpectedly changes the seating plan,
+          introduces a group task and turns on a video while students are
+          talking loudly.
+        </p>
+
+        <p>
+          Kayla covers her ears, refuses to join her group and repeatedly
+          says, “No.”
+        </p>
+      </div>
+
+      <div class="question" data-question>
+        <div class="question-number">Decision 2</div>
+
+        <strong>
+          What should the teacher consider before interpreting Kayla's
+          response as deliberate defiance?
+        </strong>
+
+        <div class="options">
+
+          <button class="option" data-correct="false">
+            A. Whether Kayla is trying to avoid all academic work.
+          </button>
+
+          <button class="option" data-correct="true">
+            B. Whether unexpected change, sensory load, communication demands
+            or uncertainty may be contributing to the response.
+          </button>
+
+          <button class="option" data-correct="false">
+            C. Whether a punishment will encourage immediate compliance.
+          </button>
+
+          <button class="option" data-correct="false">
+            D. Whether she should permanently work alone.
+          </button>
+
+        </div>
+
+        <div class="feedback good">
+          Correct. Behaviour provides information. Context matters before we
+          decide what a student's behaviour means.
+        </div>
+
+        <div class="feedback try">
+          Look at what changed in the environment immediately before the
+          behaviour.
+        </div>
+      </div>
+
+      <div class="prompt-box oral">
+        <strong>Discuss aloud:</strong>
+        What could the teacher have done before the activity to increase
+        predictability without excluding Kayla from collaborative learning?
+      </div>
+
+    </section>
+
+    <!-- CASE 3 -->
+    <section class="section">
+
+      <span class="section-tag">Case Study 3</span>
+      <h2>ADHD & executive function: “He knows it—but doesn't do it.”</h2>
+
+      <div class="card case-card">
+        <div class="case-label">Meet Daniel</div>
+
+        <p>
+          Daniel frequently begins assignments but does not finish them.
+          His desk contains unfinished papers. During long teacher explanations
+          he begins tapping, looking around the room and talking to peers.
+          When given a complicated six-step task, he completes the first
+          instruction and then asks, “What am I supposed to do?”
+        </p>
+      </div>
+
+      <div class="question" data-question>
+        <div class="question-number">Decision 3</div>
+
+        <strong>
+          Which adjustment most directly addresses the demands described?
+        </strong>
+
+        <div class="options">
+
+          <button class="option" data-correct="false">
+            A. Give Daniel additional homework so he learns responsibility.
+          </button>
+
+          <button class="option" data-correct="true">
+            B. Break instructions into visible steps, check understanding,
+            provide purposeful movement and use shorter work intervals.
+          </button>
+
+          <button class="option" data-correct="false">
+            C. Remove all challenging work.
+          </button>
+
+          <button class="option" data-correct="false">
+            D. Require him to sit completely still throughout instruction.
+          </button>
+
+        </div>
+
+        <div class="feedback good">
+          Exactly. The support reduces executive-function demands while
+          preserving the academic expectation.
+        </div>
+
+        <div class="feedback try">
+          Ask yourself which response provides structure without reducing the
+          learning expectation.
+        </div>
+      </div>
+
+    </section>
+
+    <!-- CASE 4 -->
+    <section class="section">
+
+      <span class="section-tag">Case Study 4</span>
+      <h2>Behaviour: What happened before the disruption?</h2>
+
+      <div class="card case-card">
+        <div class="case-label">Meet Malik</div>
+
+        <p>
+          Malik regularly calls out, walks around the classroom and jokes with
+          other students during independent written work. Staff describe him
+          as disruptive.
+        </p>
+
+        <p>
+          During practical activities, demonstrations and class debates,
+          however, Malik is engaged and frequently contributes useful ideas.
+        </p>
+      </div>
+
+      <div class="question" data-question>
+        <div class="question-number">Decision 4</div>
+
+        <strong>
+          Which question would provide the most useful information?
+        </strong>
+
+        <div class="options">
+
+          <button class="option" data-correct="false">
+            A. How can we make Malik stop talking?
+          </button>
+
+          <button class="option" data-correct="false">
+            B. What punishment has not been tried yet?
+          </button>
+
+          <button class="option" data-correct="true">
+            C. What happens before, during and after the behaviour, and what
+            demands or needs might the behaviour be communicating?
+          </button>
+
+          <button class="option" data-correct="false">
+            D. Should Malik always complete separate work?
+          </button>
+
+        </div>
+
+        <div class="feedback good">
+          Yes. Looking at antecedents, task demands, context and consequences
+          gives us far more useful information than the label “disruptive.”
+        </div>
+
+        <div class="feedback try">
+          Behaviour itself is only part of the information. Look at the whole
+          classroom situation.
+        </div>
+      </div>
+
+      <div class="prompt-box">
+        <strong>Complete the sentence:</strong>
+        Instead of asking “How do I stop this behaviour?” I could ask...
+      </div>
+
+      <input
+        type="text"
+        class="track-response"
+        placeholder="What might..."
+      />
+
+    </section>
+
+    <!-- STRATEGIES -->
+    <section class="section">
+
+      <span class="section-tag">Strategy Bank</span>
+      <h2>Different pathways. Shared learning.</h2>
+
+      <p>
+        Open each section during the workshop and ask participants which
+        strategies could be used immediately in their own classrooms.
+      </p>
+
+      <details>
+        <summary>Dyslexia & literacy-related barriers</summary>
+
+        <div class="details-content">
+          Consider text-to-speech or audio access where appropriate, shorter
+          chunks of text, explicit vocabulary instruction, visual support,
+          structured literacy approaches, additional processing time,
+          alternatives to unnecessary copying, and opportunities to
+          demonstrate understanding orally when writing is not the skill
+          being assessed.
+        </div>
+      </details>
+
+      <details>
+        <summary>Autism & differences in communication, sensory processing and predictability</summary>
+
+        <div class="details-content">
+          Consider visual schedules, advance warning of changes, explicit
+          instructions, reduced ambiguity, sensory-aware environments,
+          structured choices, processing time, predictable routines and
+          multiple ways to participate. Support should be individualized
+          rather than based solely on diagnosis.
+        </div>
+      </details>
+
+      <details>
+        <summary>ADHD, attention & executive-function needs</summary>
+
+        <div class="details-content">
+          Consider visible steps, chunked assignments, timers, checklists,
+          purposeful movement, frequent feedback, reduced unnecessary
+          distractions, shorter instructional segments, organizational
+          supports and opportunities for active participation.
+        </div>
+      </details>
+
+      <details>
+        <summary>Behaviour, regulation & emotional needs</summary>
+
+        <div class="details-content">
+          Consider antecedents, relationship, task difficulty, boredom,
+          communication, regulation, environmental stressors, reinforcement,
+          choice and opportunities for success. Ask what the behaviour may be
+          communicating before relying solely on consequences.
+        </div>
+      </details>
+
+    </section>
+
+    <!-- MYTH -->
+    <section class="section">
+
+      <span class="section-tag">Quick Check</span>
+      <h2>Myth or accurate?</h2>
+
+      <div class="question" data-myth>
+        <div class="myth">
+          “Differentiation means creating an entirely different lesson for
+          every student.”
+        </div>
+
+        <div class="myth-buttons">
+          <button class="btn btn-primary myth-answer" data-answer="false">
+            Myth
+          </button>
+
+          <button class="btn myth-answer" data-answer="true">
+            Accurate
+          </button>
+        </div>
+
+        <div class="feedback good">
+          Correct. Effective differentiation often involves adjusting access,
+          support, grouping, pacing, materials, response options or the
+          learning environment—not writing thirty separate lessons.
+        </div>
+
+        <div class="feedback try">
+          Think about whether one lesson can contain several pathways to the
+          same important learning.
+        </div>
+      </div>
+
+    </section>
+
+    <!-- DIFFERENTIATION BUILDER -->
+    <section class="section">
+
+      <span class="section-tag">Interactive Challenge</span>
+      <h2>Build the adjustment</h2>
+
+      <p>
+        Choose the barrier you are observing and the learning goal you need
+        to preserve. The tool will give you a planning question to discuss.
+      </p>
+
+      <div class="scenario-builder">
+
+        <div class="builder-row">
+          <label for="barrier">Observed barrier</label>
+
+          <select id="barrier">
+            <option value="">Choose one...</option>
+            <option value="reading">Heavy reading demand</option>
+            <option value="writing">Written-expression difficulty</option>
+            <option value="attention">Sustaining attention / organization</option>
+            <option value="sensory">Sensory or environmental overload</option>
+            <option value="language">Language / processing difficulty</option>
+            <option value="behaviour">Behaviour or disengagement</option>
+          </select>
+        </div>
+
+        <div class="builder-row">
+          <label for="goal">What is the real learning goal?</label>
+
+          <input
+            id="goal"
+            type="text"
+            placeholder="Example: Explain the causes of photosynthesis..."
+          />
+        </div>
+
+        <button class="btn btn-primary" onclick="buildChallenge()">
+          Generate Planning Question
+        </button>
+
+        <div id="challengeResult"></div>
+
+      </div>
+
+    </section>
+
+    <!-- DESIGN CHALLENGE -->
+    <section class="section">
+
+      <span class="section-tag">Apply It</span>
+      <h2>The 5-minute lesson redesign</h2>
+
+      <p>
+        Choose a lesson you currently teach. Do not redesign the entire lesson.
+        Identify one barrier and make one intentional adjustment.
+      </p>
+
+      <div class="grid">
+
+        <div class="card">
+          <h3>1. Learning Goal</h3>
+
+          <textarea
+            class="track-response"
+            placeholder="What must students understand or be able to do?"
+          ></textarea>
+        </div>
+
+        <div class="card">
+          <h3>2. Possible Barrier</h3>
+
+          <textarea
+            class="track-response"
+            placeholder="What could make this lesson unnecessarily difficult to access?"
+          ></textarea>
+        </div>
+
+        <div class="card">
+          <h3>3. Adjustment</h3>
+
+          <textarea
+            class="track-response"
+            placeholder="What can you change about access, instruction, materials, environment or response?"
+          ></textarea>
+        </div>
+
+        <div class="card">
+          <h3>4. Evidence of Learning</h3>
+
+          <textarea
+            class="track-response"
+            placeholder="How will the student still demonstrate the intended learning?"
+          ></textarea>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FINAL CASE -->
+    <section class="section">
+
+      <span class="section-tag">Final Case</span>
+      <h2>The student at the back of the room</h2>
+
+      <div class="card case-card">
+
+        <p>
+          You enter a classroom and notice one student sitting at the back.
+          While the class works on a science activity, the student colours a
+          worksheet unrelated to the lesson.
+        </p>
+
+        <p>
+          A member of staff explains:
+        </p>
+
+        <blockquote>
+          “He has Special Educational Needs. He can't really do what the rest
+          of them are doing.”
+        </blockquote>
+
+      </div>
+
+      <div class="prompt-box oral">
+        <strong>Discuss:</strong>
+        What questions would you ask before accepting that conclusion?
+      </div>
+
+      <textarea
+        class="track-response"
+        placeholder="I would want to know..."
+      ></textarea>
+
+      <div class="prompt-box">
+        <strong>Now redesign the situation.</strong>
+        How could this learner participate meaningfully in the science lesson
+        while receiving the support he needs?
+      </div>
+
+      <textarea
+        class="track-response"
+        placeholder="One possible approach would be..."
+      ></textarea>
+
+    </section>
+
+    <!-- REFLECTION -->
+    <section class="section completion">
+
+      <span class="section-tag">Reflection</span>
+      <h2>What will you change?</h2>
+
+      <p>
+        Inclusion becomes meaningful through what happens in tomorrow's
+        lesson—not simply through where a student's chair is placed.
+      </p>
+
+      <label for="commitment">
+        <strong>
+          Write one action you will take in your classroom, supervision,
+          teacher training or planning:
+        </strong>
+      </label>
+
+      <textarea
+        id="commitment"
+        class="track-response"
+        placeholder="One thing I will do differently is..."
+      ></textarea>
+
+      <br />
+
+      <button
+        class="btn btn-primary hide-print"
+        onclick="window.print()"
+        style="margin-top:18px;"
+      >
+        Print / Save My Workshop Responses
+      </button>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Differentiation in Action</strong></p>
+    <p>Professional Learning Resource</p>
+    <p>Turning access into participation. Turning participation into learning.</p>
+  </footer>
+
+  <script>
+    const completedItems = new Set();
+
+    function updateProgress() {
+      const total =
+        document.querySelectorAll("[data-question]").length +
+        document.querySelectorAll("[data-myth]").length +
+        document.querySelectorAll(".track-response").length;
+
+      const percent = Math.min(
+        100,
+        Math.round((completedItems.size / total) * 100)
+      );
+
+      document.getElementById("progressBar").style.width = percent + "%";
+      document.getElementById("progressText").textContent =
+        completedItems.size + " completed";
+    }
+
+    document.querySelectorAll("[data-question]").forEach((question, qIndex) => {
+
+      const options = question.querySelectorAll(".option");
+      const goodFeedback = question.querySelector(".feedback.good");
+      const tryFeedback = question.querySelector(".feedback.try");
+
+      options.forEach((option) => {
+
+        option.addEventListener("click", () => {
+
+          options.forEach((item) => {
+            item.classList.remove("correct", "incorrect");
+          });
+
+          goodFeedback.classList.remove("show");
+          tryFeedback.classList.remove("show");
+
+          if (option.dataset.correct === "true") {
+            option.classList.add("correct");
+            goodFeedback.classList.add("show");
+          } else {
+            option.classList.add("incorrect");
+            tryFeedback.classList.add("show");
+          }
+
+          completedItems.add("question-" + qIndex);
+          updateProgress();
+        });
+
+      });
+
+    });
+
+    document.querySelectorAll("[data-myth]").forEach((myth, index) => {
+
+      const buttons = myth.querySelectorAll(".myth-answer");
+      const good = myth.querySelector(".feedback.good");
+      const retry = myth.querySelector(".feedback.try");
+
+      buttons.forEach((button) => {
+
+        button.addEventListener("click", () => {
+
+          good.classList.remove("show");
+          retry.classList.remove("show");
+
+          if (button.dataset.answer === "false") {
+            good.classList.add("show");
+          } else {
+            retry.classList.add("show");
+          }
+
+          completedItems.add("myth-" + index);
+          updateProgress();
+        });
+
+      });
+
+    });
+
+    document.querySelectorAll(".track-response").forEach((field, index) => {
+
+      field.addEventListener("input", () => {
+
+        if (field.value.trim().length > 2) {
+          completedItems.add("response-" + index);
+        } else {
+          completedItems.delete("response-" + index);
+        }
+
+        updateProgress();
+
+      });
+
+    });
+
+    function buildChallenge() {
+
+      const barrier = document.getElementById("barrier").value;
+      const goal = document.getElementById("goal").value.trim();
+      const result = document.getElementById("challengeResult");
+
+      if (!barrier || !goal) {
+        result.style.display = "block";
+        result.innerHTML =
+          "<strong>Complete both fields first.</strong>";
+        return;
+      }
+
+      const prompts = {
+
+        reading:
+          "If reading fluency is not the skill being assessed, how else could the learner access the information while still working toward this learning goal?",
+
+        writing:
+          "If written production is creating the barrier, what alternative response format could allow the learner to demonstrate this learning without removing the academic demand?",
+
+        attention:
+          "How could you restructure the timing, instructions, movement or organization of this task while preserving the learning goal?",
+
+        sensory:
+          "What environmental demand could be reduced or made more predictable without isolating the learner from the learning experience?",
+
+        language:
+          "What visual, verbal, modelling or processing support could make the instruction more accessible without simplifying the core concept unnecessarily?",
+
+        behaviour:
+          "What is happening before the disengagement or behaviour? Consider task difficulty, boredom, communication, regulation, relationship and environment before choosing an intervention."
+
+      };
+
+      result.style.display = "block";
+
+      result.innerHTML = `
+        <strong>Learning goal:</strong> ${escapeHTML(goal)}
+        <br><br>
+        <strong>Your differentiation question:</strong>
+        <br>
+        ${prompts[barrier]}
+        <br><br>
+        <strong>Now ask:</strong>
+        What can I change while keeping <em>${escapeHTML(goal)}</em> intact?
+      `;
+
+    }
+
+    function escapeHTML(value) {
+      const div = document.createElement("div");
+      div.textContent = value;
+      return div.innerHTML;
+    }
+
+    updateProgress();
+  </script>
+
+</body>
+</html>
