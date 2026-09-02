@@ -445,6 +445,71 @@
       color: var(--muted);
     }
 
+    .jamaica-transition {
+      background:
+        radial-gradient(circle at top right, rgba(47,226,221,0.20), transparent 32%),
+        linear-gradient(135deg, #053f42, var(--deep-teal));
+      color: white;
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .jamaica-transition h2 {
+      color: white;
+      margin-bottom: 14px;
+    }
+
+    .jamaica-transition .section-tag {
+      background: rgba(255,255,255,0.14);
+      color: var(--bright-teal);
+    }
+
+    .jamaica-transition .jamaica-lead {
+      font-size: 1.12rem;
+      max-width: 860px;
+    }
+
+    .jamaica-reality-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 25px;
+    }
+
+    .jamaica-reality {
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 14px;
+      padding: 15px 17px;
+    }
+
+    .jamaica-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      background: var(--bright-teal);
+      color: #053e40;
+      border-radius: 999px;
+      padding: 14px 21px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .jamaica-link:hover {
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 760px) {
+      .jamaica-reality-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .completion {
       background: linear-gradient(135deg, var(--deep-teal), #168c8b);
       color: white;
@@ -1172,6 +1237,61 @@
         class="track-response"
         placeholder="One possible approach would be..."
       ></textarea>
+
+    </section>
+
+    <!-- JAMAICAN CLASSROOM APPLICATION -->
+    <section class="section jamaica-transition">
+
+      <span class="section-tag">Next Step: Apply It in Jamaica</span>
+      <h2>What does differentiation look like in Jamaican classrooms?</h2>
+
+      <p class="jamaica-lead">
+        The principles you have explored matter most when they can work in the
+        classrooms teachers actually serve. The next interactive page moves from
+        the general principles of differentiation to the realities teachers may
+        encounter across Jamaican schools.
+      </p>
+
+      <div class="jamaica-reality-grid">
+        <div class="jamaica-reality">
+          <strong>Large classes</strong><br>
+          How can one teacher support different needs without creating a separate
+          lesson for every student?
+        </div>
+
+        <div class="jamaica-reality">
+          <strong>Students without formal diagnoses</strong><br>
+          What can a teacher do now when a learner is clearly struggling but
+          specialist assessment or support is not yet available?
+        </div>
+
+        <div class="jamaica-reality">
+          <strong>Literacy gaps & curriculum demands</strong><br>
+          How do we keep learners connected to meaningful, age-appropriate
+          content when reading or writing is a major barrier?
+        </div>
+
+        <div class="jamaica-reality">
+          <strong>Limited resources & behaviour concerns</strong><br>
+          What practical, low-cost adjustments can improve access, participation
+          and regulation within the classroom we already have?
+        </div>
+      </div>
+
+      <p>
+        Continue with Jamaican primary and secondary classroom scenarios,
+        practical low-cost strategies, the “But I have 40 students” challenge,
+        and the question at the centre of the next activity:
+        <strong>Is the learner included—or merely present?</strong>
+      </p>
+
+      <a
+        class="jamaica-link hide-print"
+        href="differentiation-jamaican-classrooms.html"
+      >
+        Explore Jamaican Classroom Scenarios →
+      </a>
 
     </section>
 
