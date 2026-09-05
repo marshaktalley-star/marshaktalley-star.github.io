@@ -746,7 +746,25 @@ details[open] summary:after{content:"–"}
 .cta h2{color:#fff}
 .cta .lead{color:#d7efed}
 .cta img{height:100%;min-height:470px;object-fit:cover}
-.cta .btn.light{background:#fff}
+.cta .btn.light{
+  background:#fff;
+  color:var(--deepest);
+  border:2px solid #fff;
+}
+.cta .btn.ghost{
+  background:var(--aqua);
+  color:var(--deepest);
+  border:2px solid var(--aqua);
+  box-shadow:0 10px 24px rgba(47,226,221,.18);
+}
+.cta .btn.light:hover{
+  background:#f3fffe;
+  border-color:var(--aqua);
+}
+.cta .btn.ghost:hover{
+  background:#fff;
+  border-color:#fff;
+}
 
 footer{
   padding:48px 0;
@@ -1225,10 +1243,15 @@ section[id]{scroll-margin-top:112px}
 
     <div class="experience-video">
       <div style="flex-direction:column;align-items:center;">
-        <video controls playsinline preload="metadata">
-          <source src="Got-my-car-UK.mov" type="video/quicktime">
-          Your browser does not support the video element.
-        </video>
+        <div class="story-video-embed" style="width:100%;max-width:360px;aspect-ratio:9/16;overflow:hidden;border-radius:24px;background:#000;">
+          <iframe
+            src="https://www.youtube.com/embed/LbtHCjfQYp8"
+            title="My experience getting my car shipped from the UK to Jamaica"
+            style="width:100%;height:100%;border:0;display:block;"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
         <div class="experience-photo-gallery" aria-label="Damage and marks visible on my car after collection">
           <img src="IMG_1696.jpg" alt="Marks around the charging-port area of my Nissan Leaf after collection" loading="lazy">
           <img src="IMG_1697.jpg" alt="Dark scrape on the white body panel of my Nissan Leaf after collection" loading="lazy">
