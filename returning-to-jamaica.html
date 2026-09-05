@@ -1243,6 +1243,132 @@ section[id]{scroll-margin-top:112px}
   }
 }
 
+
+/* Car story layout: Reel stays visible; the accordion sits directly under the video description. */
+.experience-video.car-story{
+  display:block;
+  padding:30px;
+}
+.car-story-top{
+  display:grid;
+  grid-template-columns:minmax(260px,360px) minmax(0,1fr);
+  gap:38px;
+  align-items:start;
+}
+.car-story-right{
+  min-width:0;
+}
+.car-story-intro{
+  max-width:820px;
+}
+.car-story-details{
+  width:100%;
+  margin-top:18px;
+  border-top:1px solid var(--line);
+}
+.car-story-details summary{
+  padding:20px 2px;
+}
+.car-story-expanded{
+  max-width:none;
+  padding:6px 0 8px;
+}
+
+/* Photos + walk-around video now share one slideshow instead of a tall grid. */
+.car-media-slideshow{
+  width:100%;
+  max-width:760px;
+  margin:4px 0 28px;
+}
+.car-slide-stage{
+  position:relative;
+  width:100%;
+  aspect-ratio:4 / 3;
+  overflow:hidden;
+  border-radius:22px;
+  background:#f3f7f6;
+  border:1px solid var(--line);
+}
+.car-slide{
+  position:absolute;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
+.car-slide.active{
+  display:flex;
+}
+.car-slide img,
+.car-slide video{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+  background:#f3f7f6;
+}
+.car-slide video{
+  background:#000;
+}
+.car-slide-controls{
+  margin-top:12px;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:12px;
+  align-items:center;
+}
+.car-slide-btn{
+  width:44px;
+  height:44px;
+  border:1px solid var(--line);
+  border-radius:50%;
+  background:#fff;
+  color:var(--deep);
+  font-size:1.45rem;
+  cursor:pointer;
+}
+.car-slide-btn:hover{
+  background:var(--soft);
+}
+.car-slide-count{
+  text-align:center;
+  color:#52696a;
+  font-size:.9rem;
+  font-weight:800;
+}
+.car-slide-dots{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:10px;
+}
+.car-dot{
+  width:9px;
+  height:9px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:#c8d9d8;
+  cursor:pointer;
+}
+.car-dot.active{
+  background:var(--deep);
+  transform:scale(1.25);
+}
+.car-story-copy{
+  max-width:950px;
+}
+@media(max-width:820px){
+  .experience-video.car-story{padding:20px}
+  .car-story-top{grid-template-columns:1fr}
+  .story-video-embed{margin-inline:auto}
+  .car-media-slideshow{max-width:none}
+}
+@media(max-width:560px){
+  .car-slide-stage{aspect-ratio:3 / 4}
+}
+
 </style>
 </head>
 
@@ -1311,7 +1437,7 @@ section[id]{scroll-margin-top:112px}
       </p>
       <p>
         I am sharing the good, the frustrating and the things I wish somebody had told me before I packed a container,
-        shipped my car and started rebuilding my life here. Where something went wrong, I will tell you that too — and, where I can,
+        shipped my car and started rebuilding my life here. Where something went wrong, I will tell you that too. Where I can,
         what I did next.
       </p>
       <div class="pullquote">
@@ -1325,7 +1451,7 @@ section[id]{scroll-margin-top:112px}
         </p>
         <p>
           I have literally made more contacts here in Jamaica in weeks than I did in the UK in three years.
-          People have not gate-kept important information from me. They have put me on — told me who to call,
+          People have not gate-kept important information from me. They have put me on, told me who to call,
           where to go, what to ask, and sometimes helped me get into rooms I would not have known how to enter on my own.
           My experience so far is that when people realise you are ambitious, driven and serious about what you are trying
           to build, some people genuinely want to help you move forward.
@@ -1336,7 +1462,7 @@ section[id]{scroll-margin-top:112px}
           <strong>I can make it here. I just need to learn HOW to make it here.</strong>
         </p>
         <p>
-          Living in Jamaica is not the same as living in the US or the UK — and that is okay. I do not need Jamaica
+          Living in Jamaica is not the same as living in the US or the UK, and that is okay. I do not need Jamaica
           to operate like somewhere else. I need to learn how to live here.
         </p>
       </div>
@@ -1398,7 +1524,7 @@ section[id]{scroll-margin-top:112px}
       <details>
         <summary>Will everyday processes feel different from the UK or US?</summary>
         <div class="detail-body">
-          Yes — and some of them may work your last nerve. I recently had to print a physical copy of an invoice,
+          Yes, and some of them may work your last nerve. I recently had to print a physical copy of an invoice,
           physically sign it, and physically take it to a local business in order to get paid. In my mind, the exact
           same invoice submitted electronically should be just as valid for an audit. To me, that process felt redundant.
           <p>
@@ -1456,6 +1582,7 @@ section[id]{scroll-margin-top:112px}
 
     
 
+
 <div class="experience-video car-story">
   <div class="car-story-top">
     <div class="story-video-embed">
@@ -1467,48 +1594,75 @@ section[id]{scroll-margin-top:112px}
       </iframe>
     </div>
 
-    <div class="car-story-intro">
+    <div class="car-story-right">
+      <div class="car-story-intro">
+
       <span class="kicker">The day I had enough</span>
       <h3>I finally got my car. The process of getting it was another story.</h3>
       <p>
         I recorded this sitting in my car after dealing with all sorts of nonsense regarding my car and personal belongings.
-        I was so tired, not to mention sweaty, and completely irritated at this point. The day before was a whole other ordeal,
+        I was tired, sweaty and completely irritated at this point. The day before was a whole other ordeal,
         but I will save that story for another day.
       </p>
       <p>
         Initially, I posted the video to Facebook, but quickly decided to delete it. I wanted to share it here with context.
-        Instead of just sharing my frustration, I wanted to share what I learned from the process and give you practical ways
+        Instead of only sharing my frustration, I wanted to share what I learned from the process and give you practical ways
         to avoid some of what happened to me.
       </p>
-    </div>
-  </div>
+    
+      </div>
 
-  <details class="car-story-details">
-    <summary>What happened — and why I am sharing it</summary>
+      <details class="car-story-details">
+    <summary>What happened and why I am sharing it</summary>
     <div class="detail-body car-story-expanded">
-      <div class="car-story-media">
-<div class="car-condition-media">
-          <h4>What I found when I collected the car</h4>
-          <div class="experience-photo-gallery" aria-label="Damage, missing trim and condition of my car after collection">
-            <img src="IMG-1696-2.jpg" alt="Marks and scrapes around the charging-port area of my Nissan Leaf after collection" loading="lazy">
-            <img src="IMG-1697-2.jpg" alt="Dark scrape on the white side body panel of my Nissan Leaf after collection" loading="lazy">
-            <img src="IMG-1699-2.jpg" alt="Scratches and marks on the rear bumper of my Nissan Leaf after collection" loading="lazy">
-            <img src="IMG-1700-2.jpg" alt="Scrape near the rear wheel arch of my Nissan Leaf after collection" loading="lazy">
-            <img src="IMG-1702-2.jpg" alt="Exterior roof area of my Nissan Leaf photographed after collection" loading="lazy">
-            <img src="IMG-1704-2.jpg" alt="Open interior trim compartment visible inside my Nissan Leaf after collection" loading="lazy">
-            <img src="IMG-1705-2.jpg" alt="Dirty driver footwell and loose trim piece inside my Nissan Leaf after collection" loading="lazy">
+      <div class="car-media-slideshow" aria-label="Photos and walk-around video showing the condition of my car after collection">
+        <div class="car-slide-stage">
+          <div class="car-slide active">
+            <img src="IMG-1696-2.jpg" alt="Marks and scrapes around the charging-port area of my Nissan Leaf after collection">
           </div>
-          <p class="small-note">These are some of the photos I took after receiving the car.</p>
-
-          <div class="car-walkaround">
-            <h4>Walk-around of the car when I received it</h4>
+          <div class="car-slide">
+            <img src="IMG-1697-2.jpg" alt="Dark scrape on the white side body panel of my Nissan Leaf after collection">
+          </div>
+          <div class="car-slide">
+            <img src="IMG-1699-2.jpg" alt="Scratches and marks on the rear bumper of my Nissan Leaf after collection">
+          </div>
+          <div class="car-slide">
+            <img src="IMG-1700-2.jpg" alt="Scrape near the rear wheel arch of my Nissan Leaf after collection">
+          </div>
+          <div class="car-slide">
+            <img src="IMG-1702-2.jpg" alt="Exterior roof area of my Nissan Leaf photographed after collection">
+          </div>
+          <div class="car-slide">
+            <img src="IMG-1704-2.jpg" alt="Open interior trim compartment visible inside my Nissan Leaf after collection">
+          </div>
+          <div class="car-slide">
+            <img src="IMG-1705-2.jpg" alt="Dirty driver footwell and loose trim piece inside my Nissan Leaf after collection">
+          </div>
+          <div class="car-slide car-video-slide">
             <video controls playsinline preload="metadata">
               <source src="IMG-1695-2.MOV" type="video/quicktime">
               Your browser does not support this video format.
             </video>
-            <p class="small-note">This is the longer walk-around I recorded showing the overall condition of the car.</p>
           </div>
         </div>
+
+        <div class="car-slide-controls">
+          <button type="button" class="car-slide-btn prev" aria-label="Previous photo or video">&#10094;</button>
+          <div class="car-slide-count" aria-live="polite">1 / 8</div>
+          <button type="button" class="car-slide-btn next" aria-label="Next photo or video">&#10095;</button>
+        </div>
+
+        <div class="car-slide-dots" aria-label="Choose a photo or video">
+          <button type="button" class="car-dot active" aria-label="Show slide 1"></button>
+          <button type="button" class="car-dot" aria-label="Show slide 2"></button>
+          <button type="button" class="car-dot" aria-label="Show slide 3"></button>
+          <button type="button" class="car-dot" aria-label="Show slide 4"></button>
+          <button type="button" class="car-dot" aria-label="Show slide 5"></button>
+          <button type="button" class="car-dot" aria-label="Show slide 6"></button>
+          <button type="button" class="car-dot" aria-label="Show slide 7"></button>
+          <button type="button" class="car-dot" aria-label="Show walk-around video"></button>
+        </div>
+        <p class="small-note">Seven photos and the longer walk-around video I recorded after receiving the car.</p>
       </div>
 
       <div class="car-story-copy">
@@ -1526,7 +1680,7 @@ section[id]{scroll-margin-top:112px}
         </p>
 
         <div class="accountability-note">
-          <strong>The bigger issue for me is accountability.</strong> Jamaica runs heavily on “links” — somebody knows somebody,
+          <strong>The bigger issue for me is accountability.</strong> Jamaica runs heavily on “links.” Somebody knows somebody,
           somebody can give you a number, somebody can make a call. I have benefited from that generosity since coming home, and I am grateful for it.
           But links alone cannot be the entire system. When friends know friends, it can also become difficult to challenge poor service.
           A returning resident who knows nobody should still be able to understand the process, see what they are paying for, know who is responsible
@@ -1541,6 +1695,8 @@ section[id]{scroll-margin-top:112px}
       </div>
     </div>
   </details>
+    </div>
+  </div>
 </div>
 
     <div class="details-wrap">
@@ -1579,7 +1735,7 @@ section[id]{scroll-margin-top:112px}
           and do not assume Returning Resident status means the vehicle is duty-free.
         </p>
         <div class="tip warn">
-          <strong>Important:</strong> the current ownership requirement is at least six months before the Returning Resident vehicle permit application — not one year.
+          <strong>Important:</strong> the current ownership requirement is at least six months before the Returning Resident vehicle permit application, not one year.
         </div>
       </div>
       <div class="chapter-media">
@@ -1758,7 +1914,7 @@ section[id]{scroll-margin-top:112px}
       <p>
         <strong>What I am learning:</strong> relationships matter here, but intentional relationships matter more.
         Build your circle. Show up. Talk to people. Take the number. Join the group. Then use your judgement.
-        You do not need 500 contacts. You need good people you can actually call — and people who know they can call you too.
+        You do not need 500 contacts. You need good people you can actually call, and people who know they can call you too.
       </p>
     </div>
   </div>
@@ -1769,7 +1925,7 @@ section[id]{scroll-margin-top:112px}
     <div class="section-intro">
       <span class="chapter-label">05</span>
       <span class="kicker">Getting around + useful local apps</span>
-      <h2>You can manage without a car — but plan the ride back before you go.</h2>
+      <h2>You can manage without a car, but plan the ride back before you go.</h2>
       <p class="lead">
         This was one of those things I learned very quickly. You can get taxis and, in some areas, use ride-hailing apps.
         I have even been able to get an Uber up into more remote places. The problem is not always getting there. Sometimes
@@ -1785,7 +1941,7 @@ section[id]{scroll-margin-top:112px}
         </p>
         <p>
           Local people can also be a huge help here. A driver who cannot collect you may know another driver who can.
-          That has been part of my experience of Jamaica too — people will often give you the link rather than leave you to figure
+          That has been part of my experience of Jamaica too. People will often give you the link rather than leave you to figure
           everything out alone.
         </p>
       </div>
@@ -1835,7 +1991,7 @@ section[id]{scroll-margin-top:112px}
         <span class="app-tag">Local SIM</span>
         <h3>Get a Jamaican number early</h3>
         <p>
-          A local number becomes useful almost immediately — for brokers, shipping calls, deliveries, drivers, WhatsApp,
+          A local number becomes useful almost immediately for brokers, shipping calls, deliveries, drivers, WhatsApp,
           banking verification and everyday life.
         </p>
         <p>
@@ -2023,7 +2179,7 @@ section[id]{scroll-margin-top:112px}
       <div class="chapter-copy">
         <span class="chapter-label">07</span>
         <span class="kicker">Renting, buying + choosing where to live</span>
-        <h2>Choose the home that fits your life — not somebody else’s commission.</h2>
+        <h2>Choose the home that fits your life, not somebody else’s commission.</h2>
         <p class="lead">
           Know your real budget before somebody starts showing you houses. Know the kind of community you actually want too.
           A pretty house is not enough if the location, cost or lifestyle does not fit your life.
@@ -2070,7 +2226,7 @@ section[id]{scroll-margin-top:112px}
     <div class="housing-photo-copy">
       <span>Gated community</span>
       <strong>Modern amenities + controlled access</strong>
-      <small>Newer homes, pools, gyms and maintained common areas can be appealing — but still check security, fees, rules and how much freedom you really have.</small>
+      <small>Newer homes, pools, gyms and maintained common areas can be appealing, but still check security, fees, rules and how much freedom you really have.</small>
     </div>
   </article>
 
@@ -2120,7 +2276,7 @@ section[id]{scroll-margin-top:112px}
         <div class="num">Buying</div>
         <h3>Get mortgage pre-approval first</h3>
         <p>
-          If you plan to finance the purchase, obtain a current mortgage pre-approval — or refresh an older one — before
+          If you plan to finance the purchase, obtain a current mortgage pre-approval, or refresh an older one, before
           seriously viewing properties. That gives you a clearer ceiling and can make the process smoother when you find a house you want.
         </p>
       </article>
@@ -2142,7 +2298,7 @@ section[id]{scroll-margin-top:112px}
       <div class="story-body">
         <h3>Do not buy the stigma. Look at the actual community.</h3>
         <p>
-          There can be a stigma around older or ungated Jamaican communities — that they are dirty, run-down or unsafe.
+          There can be a stigma around older or ungated Jamaican communities: that they are dirty, run-down or unsafe.
           That is too simplistic. Some established communities have mature trees, larger lots, individuality, long-term neighbours
           and the Jamaican residential feel that some returnees are actually looking for.
         </p>
@@ -2291,7 +2447,7 @@ section[id]{scroll-margin-top:112px}
     <div class="key-grid">
       <article class="key">
         <div class="num">Community</div>
-        <h3>Build your circle — carefully</h3>
+        <h3>Build your circle carefully</h3>
         <p>WhatsApp groups can connect you to jobs, events, services and people quickly. Join them, but do not let every group have unlimited access to your time.</p>
       </article>
       <article class="key">
@@ -2482,11 +2638,11 @@ section[id]{scroll-margin-top:112px}
   <div class="wrap">
     <strong>Important:</strong> Jamaican government requirements, fees and processes can change. Always reconfirm official requirements before paying, shipping or submitting an application.
     <div class="sources">
-      <a href="https://jca.gov.jm/returning-residents/" target="_blank" rel="noopener">Jamaica Customs — Returning Residents</a>
-      <a href="https://www.tradeboard.gov.jm/ttbl/MV_RR.php" target="_blank" rel="noopener">Trade Board — Vehicle permits</a>
-      <a href="https://jca.gov.jm/business/motor-vehicle-processing/documents-required-to-import-a-motor-vehicle-or-motor-cycle/" target="_blank" rel="noopener">Jamaica Customs — Vehicle documents</a>
-      <a href="https://mlss.gov.jm/departments/national-insurance-scheme/" target="_blank" rel="noopener">MLSS — NIS</a>
-      <a href="https://www.jpsco.com/net-billing/" target="_blank" rel="noopener">JPS — Net Billing</a>
+      <a href="https://jca.gov.jm/returning-residents/" target="_blank" rel="noopener">Jamaica Customs: Returning Residents</a>
+      <a href="https://www.tradeboard.gov.jm/ttbl/MV_RR.php" target="_blank" rel="noopener">Trade Board: Vehicle permits</a>
+      <a href="https://jca.gov.jm/business/motor-vehicle-processing/documents-required-to-import-a-motor-vehicle-or-motor-cycle/" target="_blank" rel="noopener">Jamaica Customs: Vehicle documents</a>
+      <a href="https://mlss.gov.jm/departments/national-insurance-scheme/" target="_blank" rel="noopener">MLSS: NIS</a>
+      <a href="https://www.jpsco.com/net-billing/" target="_blank" rel="noopener">JPS: Net Billing</a>
       <a href="https://www.moh.gov.jm/" target="_blank" rel="noopener">Ministry of Health</a>
     </div>
     <p style="margin-top:22px">©  Marsha Kerr Talley.</p>
@@ -2502,7 +2658,7 @@ function updateProgress(){
   const done=checks.filter(c=>c.checked).length;
   const pct=Math.round(done/checks.length*100);
   bar.style.width=pct+'%';
-  label.textContent=pct+'% ready — '+done+' of '+checks.length+' completed';
+  label.textContent=pct+'% ready: '+done+' of '+checks.length+' completed';
 }
 checks.forEach(c=>{
   c.checked=localStorage.getItem('jamaicaMove_'+c.dataset.key)==='true';
@@ -2536,7 +2692,7 @@ document.getElementById('scoreQuiz').addEventListener('click',()=>{
   }else if(total>=12){
     r.innerHTML='<strong>You are well prepared.</strong> Your focus now is verification, timing and keeping every document and contact organised.';
   }else if(total>=7){
-    r.innerHTML='<strong>You have a good start.</strong> Close the gaps before committing more money — especially approvals, shipping contacts, internet/power and your contingency fund.';
+    r.innerHTML='<strong>You have a good start.</strong> Close the gaps before committing more money, especially approvals, shipping contacts, internet/power and your contingency fund.';
   }else{
     r.innerHTML='<strong>Do more preparation before shipping.</strong> Start with eligibility, TRN, money, verified shipping contacts and a clear document file.';
   }
@@ -2581,6 +2737,44 @@ document.getElementById('year').textContent=new Date().getFullYear();
       setActive(id);
     });
   });
+})();
+</script>
+
+
+<script>
+(function(){
+  const slider = document.querySelector('.car-media-slideshow');
+  if(!slider) return;
+
+  const slides = Array.from(slider.querySelectorAll('.car-slide'));
+  const dots = Array.from(slider.querySelectorAll('.car-dot'));
+  const count = slider.querySelector('.car-slide-count');
+  const prev = slider.querySelector('.car-slide-btn.prev');
+  const next = slider.querySelector('.car-slide-btn.next');
+  let index = 0;
+
+  function showSlide(newIndex){
+    const oldVideo = slides[index] && slides[index].querySelector('video');
+    if(oldVideo) oldVideo.pause();
+
+    index = (newIndex + slides.length) % slides.length;
+    slides.forEach((slide,i) => slide.classList.toggle('active', i === index));
+    dots.forEach((dot,i) => dot.classList.toggle('active', i === index));
+    if(count) count.textContent = (index + 1) + ' / ' + slides.length;
+  }
+
+  prev && prev.addEventListener('click', () => showSlide(index - 1));
+  next && next.addEventListener('click', () => showSlide(index + 1));
+  dots.forEach((dot,i) => dot.addEventListener('click', () => showSlide(i)));
+
+  document.addEventListener('keydown', function(e){
+    const details = slider.closest('details');
+    if(details && !details.open) return;
+    if(e.key === 'ArrowLeft') showSlide(index - 1);
+    if(e.key === 'ArrowRight') showSlide(index + 1);
+  });
+
+  showSlide(0);
 })();
 </script>
 
