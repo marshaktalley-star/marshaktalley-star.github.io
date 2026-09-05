@@ -1095,6 +1095,109 @@ section[id]{scroll-margin-top:112px}
   line-height:1.5;
 }
 
+
+/* Car story: media stays inside the accordion so the page does not hold empty space when collapsed. */
+.experience-video.car-story{
+  display:block;
+  padding:30px;
+}
+.car-story-intro{
+  max-width:920px;
+}
+.car-story-details{
+  margin-top:18px;
+  border-top:1px solid var(--line);
+}
+.car-story-details summary{
+  padding:22px 2px;
+}
+.car-story-expanded{
+  max-width:none;
+  padding:8px 0 6px;
+}
+.car-story-media{
+  display:grid;
+  grid-template-columns:minmax(260px,360px) minmax(0,1fr);
+  gap:28px;
+  align-items:start;
+  margin-bottom:28px;
+}
+.story-video-embed{
+  width:100%;
+  max-width:360px;
+  aspect-ratio:9 / 16;
+  overflow:hidden;
+  border-radius:24px;
+  background:#000;
+}
+.story-video-embed iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+.car-condition-media h4,
+.car-walkaround h4{
+  margin:0 0 10px;
+  color:var(--deep);
+  font-size:1.05rem;
+}
+.experience-photo-gallery{
+  width:100%;
+  max-width:620px;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin-top:10px;
+}
+.experience-photo-gallery img{
+  width:100%;
+  aspect-ratio:4 / 5;
+  object-fit:cover;
+  border-radius:12px;
+  display:block;
+}
+.experience-photo-gallery img:last-child{
+  grid-column:1 / -1;
+  aspect-ratio:16 / 9;
+}
+.car-walkaround{
+  width:100%;
+  max-width:620px;
+  margin-top:20px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+}
+.car-walkaround video{
+  width:100%;
+  max-height:520px;
+  height:auto;
+  display:block;
+  border-radius:18px;
+  background:#000;
+}
+.small-note{
+  margin:8px 0 0;
+  color:#52696a;
+  font-size:.9rem;
+  line-height:1.5;
+}
+.car-story-copy{
+  max-width:950px;
+}
+@media(max-width:820px){
+  .experience-video.car-story{padding:20px}
+  .car-story-media{grid-template-columns:1fr}
+  .story-video-embed{margin-inline:auto}
+}
+@media(max-width:560px){
+  .experience-photo-gallery{grid-template-columns:1fr}
+  .experience-photo-gallery img:last-child{
+    grid-column:auto;
+    aspect-ratio:4 / 5;
+  }
+}
+
 </style>
 </head>
 
@@ -1306,85 +1409,91 @@ section[id]{scroll-margin-top:112px}
       </article>
     </div>
 
-    <div class="experience-video">
-      <div style="flex-direction:column;align-items:center;">
-        <div class="story-video-embed" style="width:100%;max-width:360px;aspect-ratio:9/16;overflow:hidden;border-radius:24px;background:#000;">
+    
+<div class="experience-video car-story">
+  <div class="car-story-intro">
+    <span class="kicker">The day I had enough</span>
+    <h3>I finally got my car. The process of getting it was another story.</h3>
+    <p>
+      I recorded this sitting in my car after dealing with all sorts of nonsense regarding my car and personal belongings.
+      I was so tired, not to mention sweaty, and completely irritated at this point. The day before was a whole other ordeal,
+      but I will save that story for another day.
+    </p>
+    <p>
+      Initially, I posted the video to Facebook, but quickly decided to delete it. I wanted to share it here with context.
+      Instead of just sharing my frustration, I wanted to share what I learned from the process and give you practical ways
+      to avoid some of what happened to me.
+    </p>
+  </div>
+
+  <details class="car-story-details">
+    <summary>What happened — and why I am sharing it</summary>
+    <div class="detail-body car-story-expanded">
+      <div class="car-story-media">
+        <div class="story-video-embed">
           <iframe
             src="https://www.youtube.com/embed/LbtHCjfQYp8"
             title="My experience getting my car shipped from the UK to Jamaica"
-            style="width:100%;height:100%;border:0;display:block;"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen>
           </iframe>
         </div>
-        <div style="width:100%;max-width:520px;margin-top:18px;">
-          <p style="margin:0 0 10px;font-weight:800;color:#056367;">What I found when I collected the car</p>
+
+        <div class="car-condition-media">
+          <h4>What I found when I collected the car</h4>
           <div class="experience-photo-gallery" aria-label="Damage, missing trim and condition of my car after collection">
-            <img src="IMG_1696%202(1).jpg" alt="Marks and scrapes around the charging-port area of my Nissan Leaf after collection" loading="lazy">
-            <img src="IMG_1697%202(1).jpg" alt="Dark scrape on the white side body panel of my Nissan Leaf after collection" loading="lazy">
-            <img src="IMG_1699%202(1).jpg" alt="Scratches and marks on the rear bumper of my Nissan Leaf after collection" loading="lazy">
-            <img src="IMG_1700%202(1).jpg" alt="Scrape near the rear wheel arch of my Nissan Leaf after collection" loading="lazy">
-            <img src="IMG_1702%202(1).jpg" alt="Exterior roof area of my Nissan Leaf photographed after collection" loading="lazy">
-            <img src="IMG_1704%202.jpg" alt="Open interior trim compartment visible inside my Nissan Leaf after collection" loading="lazy">
-            <img src="IMG_1705%202.jpg" alt="Dirty driver footwell and loose trim piece inside my Nissan Leaf after collection" loading="lazy">
+            <img src="IMG-1696-2.jpg" alt="Marks and scrapes around the charging-port area of my Nissan Leaf after collection" loading="lazy">
+            <img src="IMG-1697-2.jpg" alt="Dark scrape on the white side body panel of my Nissan Leaf after collection" loading="lazy">
+            <img src="IMG-1699-2.jpg" alt="Scratches and marks on the rear bumper of my Nissan Leaf after collection" loading="lazy">
+            <img src="IMG-1700-2.jpg" alt="Scrape near the rear wheel arch of my Nissan Leaf after collection" loading="lazy">
+            <img src="IMG-1702-2.jpg" alt="Exterior roof area of my Nissan Leaf photographed after collection" loading="lazy">
+            <img src="IMG-1704-2.jpg" alt="Open interior trim compartment visible inside my Nissan Leaf after collection" loading="lazy">
+            <img src="IMG-1705-2.jpg" alt="Dirty driver footwell and loose trim piece inside my Nissan Leaf after collection" loading="lazy">
           </div>
-          <p style="margin:10px 0 0;font-size:.9rem;line-height:1.5;color:#52696a;">These are some of the photos I took after receiving the car.</p>
+          <p class="small-note">These are some of the photos I took after receiving the car.</p>
+
           <div class="car-walkaround">
             <h4>Walk-around of the car when I received it</h4>
             <video controls playsinline preload="metadata">
-              <source src="IMG_1695.MOV" type="video/quicktime">
+              <source src="IMG-1695-2.MOV" type="video/quicktime">
               Your browser does not support this video format.
             </video>
             <p class="small-note">This is the longer walk-around I recorded showing the overall condition of the car.</p>
           </div>
         </div>
       </div>
-      <div>
-        <span class="kicker">The day I had enough</span>
-        <h3>I finally got my car. The process of getting it was another story.</h3>
+
+      <div class="car-story-copy">
         <p>
-          I recorded this sitting in my car after dealing with all sorts of nonsense, regarding my car and personal belongings.
-          I was so tired, not to mention sweaty, and completely irritated at this point. The day before was a
-          whole other ordeal, but I will save that story for another day. 
-      Initially, I had posted the video to Facebook, but quickly decided to delete it.
-          I wanted to share it here with context. Instead of just sharing my frustration, I wanted to share what I had 
-          learned from the process and provide you with practical ways of avoiding it happening to you. 
-      
+          I hate posting anything negative online about my people or country, but the way many in Jamaica run businesses
+          have got to change.
         </p>
-        <details>
-          <summary>What happened — and why I am sharing it</summary>
-          <div class="detail-body">
-            <p>
-              I hate posting anything negative online about my people or country, but the way many in Jamaica run businesses
-              have got to change.
-            </p>
-            <p>
-              Imagine you spend yuh big big money fi ship yuh tings dem from farin. Only to end up in hell and powda house 
-              fi get them.
-              It does not need to be this way, but the lack of accountability here is a problem.
-            </p>
-            <p>
-              We need systems in place that can hold Customs, wharf employees, brokers and the other people we depend on in 
-              this process accountable.
-              Jamaica wants to become a developed nation, and this is one of the places where we can lead the way.
-            </p>
-            <div class="accountability-note">
-              <strong>The bigger issue for me is accountability.</strong> Jamaica runs heavily on “links” — somebody knows somebody,
-              somebody can give you a number, somebody can make a call. I have benefited from that generosity since coming home, and I am grateful for it.
-              But links alone cannot be the entire system. When friends know friends, it can also become difficult to
-              challenge poor service. A returning resident
-              who knows nobody should still be able to understand the process, see what they are paying for, know who is responsible and have somewhere
-              meaningful to go when something goes wrong.
-            </div>
-            <p style="margin-top:18px">
-              My advice now: get names, fees and responsibilities in writing; keep every receipt and payment record; ask for the official document
-              behind any charge you do not understand; and move important conversations out of phone calls and into writing. A “link” can help you
-              find the right person. It should never replace a transparent process.
-            </p>
-          </div>
-        </details>
+        <p>
+          Imagine you spend yuh big big money fi ship yuh tings dem from farin. Only to end up in hell and powda house fi get them.
+          It does not need to be this way, but the lack of accountability here is a problem.
+        </p>
+        <p>
+          We need systems in place that can hold Customs, wharf employees, brokers and the other people we depend on in this process accountable.
+          Jamaica wants to become a developed nation, and this is one of the places where we can lead the way.
+        </p>
+
+        <div class="accountability-note">
+          <strong>The bigger issue for me is accountability.</strong> Jamaica runs heavily on “links” — somebody knows somebody,
+          somebody can give you a number, somebody can make a call. I have benefited from that generosity since coming home, and I am grateful for it.
+          But links alone cannot be the entire system. When friends know friends, it can also become difficult to challenge poor service.
+          A returning resident who knows nobody should still be able to understand the process, see what they are paying for, know who is responsible
+          and have somewhere meaningful to go when something goes wrong.
+        </div>
+
+        <p style="margin-top:18px">
+          My advice now: get names, fees and responsibilities in writing; keep every receipt and payment record; ask for the official document
+          behind any charge you do not understand; and move important conversations out of phone calls and into writing. A “link” can help you
+          find the right person. It should never replace a transparent process.
+        </p>
       </div>
     </div>
+  </details>
+</div>
 
     <div class="details-wrap">
       <details>
