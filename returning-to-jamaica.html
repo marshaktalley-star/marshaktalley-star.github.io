@@ -629,11 +629,37 @@ details[open] summary:after{content:"–"}
   border:1px solid var(--line);
   box-shadow:0 12px 34px rgba(5,99,103,.07);
 }
+.experience-video > div:first-child{
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+}
 .experience-video video{
-  width:100%;
-  max-height:620px;
+  display:block;
+  width:min(100%,360px);
+  aspect-ratio:9 / 16;
+  height:auto;
+  object-fit:cover;
   background:#000;
   border-radius:22px;
+}
+.experience-photo-gallery{
+  width:min(100%,360px);
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:8px;
+  margin-top:12px;
+}
+.experience-photo-gallery img{
+  width:100%;
+  aspect-ratio:1 / 1;
+  object-fit:cover;
+  border-radius:12px;
+  display:block;
+}
+.experience-photo-gallery img:last-child{
+  grid-column:1 / -1;
+  aspect-ratio:16 / 9;
 }
 .experience-video h3{margin-top:4px}
 .experience-video details{margin-top:18px;border-top:1px solid var(--line)}
@@ -1198,11 +1224,18 @@ section[id]{scroll-margin-top:112px}
     </div>
 
     <div class="experience-video">
-      <div>
+      <div style="flex-direction:column;align-items:center;">
         <video controls playsinline preload="metadata">
-          <source src="returning-to-jamaica-shipping-car-experience.mp4" type="video/mp4">
+          <source src="Got-my-car-UK.mov" type="video/quicktime">
           Your browser does not support the video element.
         </video>
+        <div class="experience-photo-gallery" aria-label="Damage and marks visible on my car after collection">
+          <img src="IMG_1696.jpg" alt="Marks around the charging-port area of my Nissan Leaf after collection" loading="lazy">
+          <img src="IMG_1697.jpg" alt="Dark scrape on the white body panel of my Nissan Leaf after collection" loading="lazy">
+          <img src="IMG_1699.jpg" alt="Scratches and marks on the rear bumper of my Nissan Leaf after collection" loading="lazy">
+          <img src="IMG_1700.jpg" alt="Scrape near the rear wheel arch of my Nissan Leaf after collection" loading="lazy">
+          <img src="IMG_1702.jpg" alt="Roof area of my Nissan Leaf photographed after collection" loading="lazy">
+        </div>
       </div>
       <div>
         <span class="kicker">The day I had enough</span>
@@ -1499,15 +1532,20 @@ section[id]{scroll-margin-top:112px}
 
       <article class="everyday-card">
         <span class="app-tag">Electric vehicles</span>
-        <h3>If you bring an EV, map chargers before long trips</h3>
-        <p>
-          Jamaica has public EV charging networks. JPS says its Charge 'N Go network has more than 39 fast-charging points islandwide,
-          including locations in St Ann, and currently uses the <strong>ChargeLab app</strong> for station access and payment.
-        </p>
-        <p>
-          <strong>Evergo</strong> also operates a Jamaican charging network. Its app shows charger locations, availability,
-          connector type, hours and pricing. I would download the charging apps before you need them and check your route before setting off.
-        </p>
+        <h3>If you bring an EV, set up charging before you need it</h3>
+        <ul>
+          <li><strong>Download both apps early:</strong> Evergo and ChargeLab for JPS Charge 'N Go.</li>
+          <li><strong>Create your accounts on reliable Wi-Fi:</strong> add your payment details and make sure you can log in before setting off.</li>
+          <li><strong>Get the RFID cards too:</strong> weak Wi-Fi or mobile data can make it difficult to start a charge through an app. Keep the cards in the car as your backup.</li>
+          <li><strong>JPS Charge 'N Go card:</strong> create your ChargeLab account, then request/register an RFID card through the ChargeLab/JPS process. JPS also provides EV support for card pickup or delivery.</li>
+          <li><strong>Evergo card:</strong> create your Evergo account and use the app to buy, link and manage an RFID card.</li>
+          <li><strong>Fund the account before travelling:</strong> do not wait until your battery is low to discover that your wallet, card or app still needs setup.</li>
+          <li><strong>Test both networks while you still have range:</strong> learn how the charger, app and RFID card work before you are depending on them.</li>
+          <li><strong>When using Evergo:</strong> disconnect and move the car when charging is finished so you do not risk additional occupancy charges.</li>
+        </ul>
+        <div class="tip">
+          <strong>My tip:</strong> The app is convenient when your signal is good. The RFID card is what I want in the car when it is not.
+        </div>
       </article>
 
       <article class="everyday-card">
