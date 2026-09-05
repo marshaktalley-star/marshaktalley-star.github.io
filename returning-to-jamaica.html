@@ -665,6 +665,49 @@ details[open] summary:after{content:"–"}
   border-radius:16px;
   background:#fff;
 }
+
+.accountability-grid{
+  margin-top:22px;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+.accountability-card{
+  padding:20px;
+  border-radius:18px;
+  background:#fff;
+  border:1px solid var(--line);
+}
+.accountability-card strong{
+  display:block;
+  margin-bottom:7px;
+  color:var(--deep);
+}
+.accountability-card p{
+  margin:0;
+  font-size:.96rem;
+  line-height:1.58;
+  color:#4b6768;
+}
+.citizenship-story{
+  margin-top:34px;
+  padding:30px;
+  border-radius:26px;
+  background:linear-gradient(135deg,#f7fbfa,#fffaf1);
+  border:1px solid var(--line);
+  box-shadow:0 12px 34px rgba(5,99,103,.07);
+}
+.citizenship-story h3{margin-top:4px}
+.citizenship-story .timeline-note{
+  margin-top:18px;
+  padding:18px 20px;
+  border-left:5px solid var(--aqua);
+  border-radius:16px;
+  background:#fff;
+}
+@media(max-width:760px){
+  .accountability-grid{grid-template-columns:1fr}
+}
 @media(max-width:820px){.experience-video{grid-template-columns:1fr;padding:20px}}
 
 .check-section{padding:94px 0;background:#eef9f7}
@@ -1561,6 +1604,52 @@ section[id]{scroll-margin-top:112px}
         </div>
       </details>
     </div>
+
+    <div class="citizenship-story">
+      <span class="kicker">Citizenship paperwork can become part of the move too</span>
+      <h3>My daughter's Jamaican citizenship took about a year.</h3>
+      <p>
+        I started my daughter's citizenship process while we were still living in the UK and followed up religiously.
+        A couple of months before we moved to Jamaica, I found out that her name had been misspelled in the process.
+        I then had to spend more money getting photographs done again and paying to resend documents to the Jamaican High Commission in London.
+      </p>
+      <p>
+        One thing that helped was keeping the same email thread going. I spoke with different people and emailed managers,
+        but keeping the history together made it much easier to show what had already been said, what I had sent and what I was waiting for.
+      </p>
+      <p>
+        When we arrived in Jamaica in July, we went to PICA in person to check the progress. We were told to write a letter
+        asking for the citizenship certificate to be collected locally when it was ready. Later, someone called and told me
+        we had to come back to PICA and write a second letter because the first one had been written on the wrong paper.
+        We got a ride there and did it again.
+      </p>
+      <p>
+        Yet when I followed up in August, I was told the certificate had been mailed back to the UK because our request to collect it
+        in Jamaica had not been received in time. That was after I had sent several emails saying that we were now living in Jamaica,
+        asked whether the requested letter could be sent electronically, sent one electronically anyway, and physically went to PICA twice.
+      </p>
+      <p>
+        I initially asked for a digital copy and was told that could not be done. After I asked both PICA and the Jamaican High Commission
+        in London for the information I needed to make a formal complaint, someone sent me an electronic copy of my daughter's citizenship
+        certificate and said the physical document would be sent back to the local office. I am still following up for the formal complaint
+        information because this is exactly why keeping a paper trail matters.
+      </p>
+      <div class="timeline-note">
+        <strong>For context:</strong> PICA currently says compliant Citizenship by Descent applications are processed within
+        90 working days under regular service. PICA also currently offers a 45-working-day expedited service for local applicants
+        and London applicants. My experience took far longer than that.
+      </div>
+      <p class="small" style="margin-top:18px">
+        At one point I was so frustrated I wondered whether I had pissed somebody off. I have no evidence that was why the document
+        was sent back overseas. I simply could not understand why it happened after all the emails and the two visits to PICA.
+      </p>
+      <div class="resource-links">
+        <a href="https://www.pica.gov.jm/citizenship/categories-citizenship" target="_blank" rel="noopener">PICA: Citizenship by Descent</a>
+        <a href="https://www.pica.gov.jm/contact-us/" target="_blank" rel="noopener">PICA contact</a>
+        <a href="https://www.pica.gov.jm/crm/" target="_blank" rel="noopener">PICA REL-M support</a>
+        <a href="https://mfaft.gov.jm/" target="_blank" rel="noopener">Foreign Affairs + Consular Services</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1633,7 +1722,7 @@ section[id]{scroll-margin-top:112px}
       <details class="car-story-details">
     <summary>What happened and why I am sharing it</summary>
     <div class="detail-body car-story-expanded">
-      <div class="car-media-slideshow" aria-label="Photos and walk-around video showing the condition of my car after collection">
+      <div class="car-media-slideshow" aria-label="Photos showing the condition of my car after collection">
         <div class="car-slide-stage">
           <div class="car-slide active">
             <img src="IMG-1696-2.jpg" alt="Marks and scrapes around the charging-port area of my Nissan Leaf after collection">
@@ -1659,12 +1748,12 @@ section[id]{scroll-margin-top:112px}
         </div>
 
         <div class="car-slide-controls">
-          <button type="button" class="car-slide-btn prev" aria-label="Previous photo or video">&#10094;</button>
+          <button type="button" class="car-slide-btn prev" aria-label="Previous photo">&#10094;</button>
           <div class="car-slide-count" aria-live="polite">1 / 7</div>
-          <button type="button" class="car-slide-btn next" aria-label="Next photo or video">&#10095;</button>
+          <button type="button" class="car-slide-btn next" aria-label="Next photo">&#10095;</button>
         </div>
 
-        <div class="car-slide-dots" aria-label="Choose a photo or video">
+        <div class="car-slide-dots" aria-label="Choose a photo">
           <button type="button" class="car-dot active" aria-label="Show slide 1"></button>
           <button type="button" class="car-dot" aria-label="Show slide 2"></button>
           <button type="button" class="car-dot" aria-label="Show slide 3"></button>
@@ -1691,6 +1780,13 @@ section[id]{scroll-margin-top:112px}
           Jamaica wants to become a developed nation, and this is one of the places where we can lead the way.
         </p>
 
+        <p>
+          My experience is not the only story I have heard. People have shared their own shipping and vehicle-damage experiences with me.
+          One man told me about a vehicle where part of the top was cut so it could fit in a container. Another told me about a car being badly
+          scratched by the straps used to secure it. Those are accounts people told me directly, not incidents I independently verified, but they
+          are another reason I now tell people to photograph and video the vehicle carefully before it is loaded and again before accepting it after shipping.
+        </p>
+
         <div class="accountability-note">
           <strong>The bigger issue for me is accountability.</strong> Jamaica runs heavily on “links.” Somebody knows somebody,
           somebody can give you a number, somebody can make a call. I have benefited from that generosity since coming home, and I am grateful for it.
@@ -1704,6 +1800,50 @@ section[id]{scroll-margin-top:112px}
           behind any charge you do not understand; and move important conversations out of phone calls and into writing. A “link” can help you
           find the right person. It should never replace a transparent process.
         </p>
+
+        <h3 style="margin-top:30px">If something goes wrong, create a paper trail and escalate it.</h3>
+        <p>
+          Start with the company that actually handled the part of the process you are challenging. The shipping line, freight forwarder,
+          terminal operator, broker and Jamaica Customs do not all perform the same role, so send the complaint to the organisation that was
+          responsible for the disputed service. Ask for a written response, a claim or reference number, the company's claims procedure and any
+          applicable insurance information. Attach the bill of lading, invoices, receipts, before-and-after photographs, collection documents,
+          dates, names and repair estimates where relevant.
+        </p>
+
+        <div class="accountability-grid">
+          <div class="accountability-card">
+            <strong>Shipping company, freight forwarder or terminal</strong>
+            <p>Make the written claim directly first. Check the bill of lading or contract for notice deadlines and claim requirements. If you are unsure which local company handled the cargo, the Shipping Association of Jamaica directory can help identify shipping agents, freight forwarders and terminal operators.</p>
+          </div>
+          <div class="accountability-card">
+            <strong>Licensed Customs Broker</strong>
+            <p>Complain to the broker in writing first. Jamaica Customs licenses Customs Brokers. If the problem concerns a broker's customs work or conduct and is not resolved, contact Jamaica Customs Customer Service and provide the broker's name and your supporting documents.</p>
+          </div>
+          <div class="accountability-card">
+            <strong>Jamaica Customs Agency</strong>
+            <p>For a Customs service complaint, use the JCA General Queries or Complaints Form, email public.relations@jca.gov.jm, or call Customer Service at 876-948-7849 or toll-free 1-888-287-8667. JCA also lists quick.response@jca.gov.jm for general contact.</p>
+          </div>
+          <div class="accountability-card">
+            <strong>Consumer Affairs Commission</strong>
+            <p>If you paid a Jamaican business for a product or service and the complaint remains unresolved, the CAC accepts formal consumer complaints. Its current contacts include complaints@cac.gov.jm, info@cac.gov.jm, 876-906-5425 and 876-619-4222.</p>
+          </div>
+          <div class="accountability-card">
+            <strong>PICA or citizenship service problem</strong>
+            <p>Keep one email thread and ask for a case or ticket number. PICA currently lists 876-754-PICA (7422) and support@picahelpeu.freshdesk.com. Its REL-M customer relationship system is also designed to track issues. Citizenship services are handled at 8 Waterloo Road in Kingston and through Jamaican overseas missions.</p>
+          </div>
+          <div class="accountability-card">
+            <strong>If the problem crosses an overseas Mission and Jamaica</strong>
+            <p>For a citizenship matter involving an overseas Jamaican Mission, copy the Mission and PICA so both sides can see the same chronology. The Jamaican High Commission in London is currently listed at jamhigh@jhcuk.com and +44 20 7823 9911. The Ministry of Foreign Affairs and Foreign Trade also lists consular@mfaft.gov.jm for Consular Affairs.</p>
+          </div>
+        </div>
+
+        <div class="resource-links" style="margin-top:22px">
+          <a href="https://jca.gov.jm/e-services/customer-feedback-and-relation/general-queries-or-complaints-form/" target="_blank" rel="noopener">JCA complaint form</a>
+          <a href="https://jca.gov.jm/contact-us/" target="_blank" rel="noopener">JCA contacts</a>
+          <a href="https://www.cac.gov.jm/portal/index.php/component/visforms/?id=1&view=visforms" target="_blank" rel="noopener">CAC complaint form</a>
+          <a href="https://www.jamports.com/directory" target="_blank" rel="noopener">Shipping Association directory</a>
+          <a href="https://www.pica.gov.jm/contact-us/" target="_blank" rel="noopener">PICA contacts</a>
+        </div>
       </div>
     </div>
   </details>
@@ -1744,10 +1884,11 @@ section[id]{scroll-margin-top:112px}
         <h2>Do not put your car on the water and then start figuring out the paperwork.</h2>
         <p class="lead">
           Car-import mistakes can get expensive very quickly. Know the ownership requirement, get the permit sorted before shipping,
-          and do not assume Returning Resident status means the vehicle is duty-free.
+          and do not assume Returning Resident status means the vehicle is duty-free. Under the current Returning Resident rules,
+          an eligible returnee may import a motor vehicle up to 10 years old, with full duty and taxes payable.
         </p>
         <div class="tip warn">
-          <strong>Important:</strong> the current ownership requirement is at least six months before the Returning Resident vehicle permit application, not one year.
+          <strong>Important:</strong> under the current Returning Resident motor-vehicle rules, the vehicle must have been in your possession for at least six months. Returning Resident status does not make the vehicle duty-free.
         </div>
       </div>
       <div class="chapter-media">
@@ -1784,8 +1925,8 @@ section[id]{scroll-margin-top:112px}
       <details>
         <summary>Does a used UK vehicle need inspection?</summary>
         <div class="detail-body">
-          Current rules include pre-shipment inspection/sanitisation requirements for used vehicles shipped from the UK.
-          Confirm the approved inspection process before the vehicle leaves.
+          Imported motor vehicles require a pre-inspection certificate from the country of export before importation.
+          If you are shipping from the UK, confirm the current approved inspection process before the vehicle leaves.
         </div>
       </details>
       <details>
@@ -1993,9 +2134,9 @@ section[id]{scroll-margin-top:112px}
           confirms availability there. Supply can still change by the exact pickup point.
         </p>
         <p>
-          Jamaica's Fair Trading Commission has also identified <strong>inDrive, Ride Jamaica and 876 On The Go</strong> as
-          ride-hailing operators. 876 On The Go advertises islandwide transportation and its app allows advance bookings,
-          but availability can still vary by area. Check the app or company directly before depending on any service for a time-sensitive trip.
+          Jamaica's Fair Trading Commission has also discussed <strong>inDrive, Ride Jamaica and 876 On The Go</strong> as
+          ride-hailing model operators. The 876 On The Go app allows people to book rides now or later with a licensed taxi company,
+          but the app itself warns that vehicles may not be available in every area. Check the app before depending on any service for a time-sensitive trip.
         </p>
       </article>
 
@@ -2439,15 +2580,15 @@ section[id]{scroll-margin-top:112px}
       <details>
         <summary>Should I apply for NIS?</summary>
         <div class="detail-body">
-          NIS is Jamaica’s contributory social-security programme. If you are working or self-employed, check whether registration applies to your situation and complete it early.
+          NIS is Jamaica’s compulsory contributory social-security programme for people in insurable employment. Generally, people ages 18 to 70 who are gainfully occupied, including employed and self-employed persons, are required to be registered. Check your category and complete registration early.
         </div>
       </details>
       <details>
         <summary>What about a Jamaican driving licence?</summary>
         <div class="detail-body">
-          Do not assume one rule fits every returning resident. Requirements can depend on your existing licence, status, insurance and the transaction you are completing.
-          Confirm current requirements with the Island Traffic Authority / Tax Administration. If you need a provisional licence, prepare the required photographs,
-          medical certificate, identity/residence evidence and TRN.
+          Do not assume one rule fits every returning resident. Requirements can depend on your existing licence and the transaction you are completing.
+          Confirm current requirements with the Island Traffic Authority and Tax Administration Jamaica. For a first learner's permit, the current process includes
+          the Road Code Test and supporting documents such as certified passport photographs, proof of residence/identity, a medical certificate, TRN and proof of age.
         </div>
       </details>
       <details>
@@ -2603,12 +2744,20 @@ section[id]{scroll-margin-top:112px}
 <footer>
   <div class="wrap">
     <strong>Important:</strong> Jamaican government requirements, fees and processes can change. Always reconfirm official requirements before paying, shipping or submitting an application.
+    <p class="small" style="margin:8px 0 0">Government and service information on this page was fact-checked against current public sources on 5 September 2026.</p>
     <div class="sources">
       <a href="https://jca.gov.jm/returning-residents/" target="_blank" rel="noopener">Jamaica Customs: Returning Residents</a>
+      <a href="https://jca.gov.jm/individual/returning-resident-duplicate/motor-vehicle/" target="_blank" rel="noopener">Jamaica Customs: Returning Resident vehicles</a>
+      <a href="https://jca.gov.jm/business/motor-vehicle-processing/" target="_blank" rel="noopener">Jamaica Customs: Motor Vehicle Processing</a>
+      <a href="https://jca.gov.jm/faq/what-are-the-required-documents-to-import-a-motor-vehicle/" target="_blank" rel="noopener">Jamaica Customs: Vehicle documents</a>
       <a href="https://www.tradeboard.gov.jm/ttbl/MV_RR.php" target="_blank" rel="noopener">Trade Board: Vehicle permits</a>
-      <a href="https://jca.gov.jm/business/motor-vehicle-processing/documents-required-to-import-a-motor-vehicle-or-motor-cycle/" target="_blank" rel="noopener">Jamaica Customs: Vehicle documents</a>
-      <a href="https://mlss.gov.jm/departments/national-insurance-scheme/" target="_blank" rel="noopener">MLSS: NIS</a>
-      <a href="https://www.jpsco.com/net-billing/" target="_blank" rel="noopener">JPS: Net Billing</a>
+      <a href="https://www.pica.gov.jm/citizenship/categories-citizenship" target="_blank" rel="noopener">PICA: Citizenship</a>
+      <a href="https://www.pica.gov.jm/contact-us/" target="_blank" rel="noopener">PICA: Contact</a>
+      <a href="https://www.cac.gov.jm/portal/index.php/component/visforms/?id=1&view=visforms" target="_blank" rel="noopener">Consumer Affairs: File a complaint</a>
+      <a href="https://www.mlss.gov.jm/departments/national-insurance-scheme/" target="_blank" rel="noopener">MLSS: NIS</a>
+      <a href="https://mtm.gov.jm/ita/obtaining-a-drivers-licence/" target="_blank" rel="noopener">ITA: Driver's Licence</a>
+      <a href="https://www.jpsco.com/chargengo/" target="_blank" rel="noopener">JPS Charge 'N Go</a>
+      <a href="https://evergo.com/en/support/frequent-questions/" target="_blank" rel="noopener">Evergo</a>
       <a href="https://www.moh.gov.jm/" target="_blank" rel="noopener">Ministry of Health</a>
     </div>
     <p style="margin-top:22px">©  Marsha Kerr Talley.</p>
