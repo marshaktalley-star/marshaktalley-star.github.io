@@ -1198,6 +1198,51 @@ section[id]{scroll-margin-top:112px}
   }
 }
 
+
+/* Restore the YouTube Story/Reel as the visible lead-in to the car story. */
+.car-story-top{
+  display:grid;
+  grid-template-columns:minmax(260px,360px) minmax(0,1fr);
+  gap:38px;
+  align-items:start;
+}
+.car-story-top .story-video-embed{
+  width:100%;
+  max-width:360px;
+  aspect-ratio:9 / 16;
+  overflow:hidden;
+  border-radius:24px;
+  background:#000;
+}
+.car-story-top .story-video-embed iframe{
+  width:100%;
+  height:100%;
+  display:block;
+  border:0;
+}
+.car-story-top .car-story-intro{
+  max-width:820px;
+}
+.car-story-details{
+  width:100%;
+  margin-top:28px;
+}
+.car-story-details .car-story-media{
+  display:block;
+}
+.car-story-details .car-condition-media{
+  width:100%;
+  max-width:760px;
+}
+@media(max-width:820px){
+  .car-story-top{
+    grid-template-columns:1fr;
+  }
+  .car-story-top .story-video-embed{
+    margin-inline:auto;
+  }
+}
+
 </style>
 </head>
 
@@ -1410,36 +1455,39 @@ section[id]{scroll-margin-top:112px}
     </div>
 
     
+
 <div class="experience-video car-story">
-  <div class="car-story-intro">
-    <span class="kicker">The day I had enough</span>
-    <h3>I finally got my car. The process of getting it was another story.</h3>
-    <p>
-      I recorded this sitting in my car after dealing with all sorts of nonsense regarding my car and personal belongings.
-      I was so tired, not to mention sweaty, and completely irritated at this point. The day before was a whole other ordeal,
-      but I will save that story for another day.
-    </p>
-    <p>
-      Initially, I posted the video to Facebook, but quickly decided to delete it. I wanted to share it here with context.
-      Instead of just sharing my frustration, I wanted to share what I learned from the process and give you practical ways
-      to avoid some of what happened to me.
-    </p>
+  <div class="car-story-top">
+    <div class="story-video-embed">
+      <iframe
+        src="https://www.youtube.com/embed/LbtHCjfQYp8"
+        title="My experience getting my car shipped from the UK to Jamaica"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="car-story-intro">
+      <span class="kicker">The day I had enough</span>
+      <h3>I finally got my car. The process of getting it was another story.</h3>
+      <p>
+        I recorded this sitting in my car after dealing with all sorts of nonsense regarding my car and personal belongings.
+        I was so tired, not to mention sweaty, and completely irritated at this point. The day before was a whole other ordeal,
+        but I will save that story for another day.
+      </p>
+      <p>
+        Initially, I posted the video to Facebook, but quickly decided to delete it. I wanted to share it here with context.
+        Instead of just sharing my frustration, I wanted to share what I learned from the process and give you practical ways
+        to avoid some of what happened to me.
+      </p>
+    </div>
   </div>
 
   <details class="car-story-details">
     <summary>What happened — and why I am sharing it</summary>
     <div class="detail-body car-story-expanded">
       <div class="car-story-media">
-        <div class="story-video-embed">
-          <iframe
-            src="https://www.youtube.com/embed/LbtHCjfQYp8"
-            title="My experience getting my car shipped from the UK to Jamaica"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-
-        <div class="car-condition-media">
+<div class="car-condition-media">
           <h4>What I found when I collected the car</h4>
           <div class="experience-photo-gallery" aria-label="Damage, missing trim and condition of my car after collection">
             <img src="IMG-1696-2.jpg" alt="Marks and scrapes around the charging-port area of my Nissan Leaf after collection" loading="lazy">
