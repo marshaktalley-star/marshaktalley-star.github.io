@@ -1,17 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Special Education & Behaviour Support | Marsha Kerr Talley</title>
-
-  <meta
-    name="description"
-    content="Special Education and behaviour support for parents, students, teachers and schools in Jamaica and online, including consultation, private tutoring, workshops and practical resources."
-  />
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Special Education &amp; Behaviour Support | Marsha Kerr Talley</title>
+<meta content="Special Education and behaviour support for parents, students, teachers and schools in Jamaica and online, including consultation, private tutoring, workshops and practical resources." name="description"/>
+<style>
     :root {
       --teal: #319fa2;
       --bright-teal: #2fe2dd;
@@ -897,586 +892,582 @@
       .card, .question, .service-card, .intro-panel, details { border-width:2px; }
     }
 
-  </style>
+  
+
+/* 2026-09-09 refined Special Education page */
+:root {
+  --page-warm:#fbf8f2;
+  --page-soft:#f3f7f5;
+  --brand-teal:#319fa2;
+  --brand-bright:#2fe2dd;
+  --brand-deep:#056367;
+  --brand-gold:#c49435;
+  --brand-gold-soft:#ead8af;
+  --soft-border:#d6e4e1;
+  --navy:#183947;
+}
+body { background:var(--page-warm); }
+.site-header { background:#fff; border-bottom:1px solid #e8ecea; position:relative; z-index:120; }
+.site-nav-wrap { max-width:1240px; margin:auto; padding:16px 24px; display:flex; align-items:center; justify-content:space-between; gap:28px; }
+.brand-mark { text-decoration:none; display:flex; flex-direction:column; align-items:center; min-width:120px; color:var(--brand-deep); line-height:1; }
+.brand-initials { font-family:Georgia,"Times New Roman",serif; font-size:2.05rem; letter-spacing:.08em; }
+.brand-line { font-family:Arial,Helvetica,sans-serif; text-transform:uppercase; letter-spacing:.24em; font-size:.52rem; margin-top:6px; color:var(--brand-teal); }
+.site-nav { display:flex; flex-wrap:wrap; gap:24px; align-items:center; font-family:Arial,Helvetica,sans-serif; text-transform:uppercase; letter-spacing:.08em; font-size:.88rem; }
+.site-nav a { text-decoration:none; color:#343434; padding:8px 0; border-bottom:2px solid transparent; }
+.site-nav a:hover, .site-nav a:focus { color:var(--brand-deep); border-bottom-color:var(--brand-gold); }
+
+.hero.special-hero {
+  background:
+    radial-gradient(circle at 88% 12%, rgba(49,159,162,.10), transparent 30%),
+    linear-gradient(115deg,#fffdf9 0%,#f8fbf9 62%,#f1f7f4 100%);
+  color:var(--ink);
+  border-bottom:4px solid var(--brand-gold);
+  padding:68px 20px 62px;
+}
+.special-hero-grid { display:block; }
+.special-hero .eyebrow { color:var(--brand-deep); opacity:1; }
+.special-hero h1 { color:#075b5e; max-width:900px; font-size:clamp(3rem,7vw,6.2rem); line-height:.94; }
+.special-hero p { color:#3e4b4b; max-width:880px; font-family:Arial,Helvetica,sans-serif; font-size:1.25rem; }
+.btn-primary { background:#075f62; color:#fff; border:1px solid #075f62; }
+.btn-primary:hover, .btn-primary:focus { background:var(--brand-deep); }
+.btn-light { background:#fff; color:var(--brand-deep); border:1px solid var(--brand-gold-soft); }
+.section-tag { color:var(--brand-deep); background:#f0f7f5; border:1px solid #d9e8e4; }
+h2, h3 { color:var(--brand-deep); }
+.landing-section { background:transparent; }
+.service-card { border:1px solid var(--soft-border); border-top:4px solid rgba(49,159,162,.78); box-shadow:0 7px 22px rgba(25,72,71,.045); }
+.service-card:nth-child(2), .service-card:nth-child(4) { border-top-color:var(--brand-gold); }
+.service-action { background:var(--brand-deep); color:#fff; }
+.audience-pill { background:#f3f8f6; border:1px solid #dce9e5; color:var(--brand-deep); }
+.lead-box { background:#fff; border:1px solid var(--soft-border); }
+
+.books-section { border-top:1px solid var(--brand-gold-soft); padding-top:44px; }
+.book-grid { display:grid; grid-template-columns:repeat(4,minmax(150px,190px)); justify-content:start; gap:24px; margin-top:26px; }
+.book-card { display:flex; flex-direction:column; gap:12px; text-decoration:none; color:var(--brand-deep); font-family:Arial,Helvetica,sans-serif; font-weight:700; line-height:1.35; }
+.book-card img { width:100%; height:auto; aspect-ratio:auto; object-fit:contain; border-radius:12px; border:1px solid #e5ded0; box-shadow:0 8px 22px rgba(52,60,56,.08); }
+.book-card:hover img, .book-card:focus img { outline:3px solid rgba(196,148,53,.35); outline-offset:3px; }
+
+.ecology-card { display:grid; grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr); align-items:center; gap:28px; background:#fff; border:1px solid var(--soft-border); }
+.ecology-image { width:100%; display:block; border-radius:16px; max-height:520px; object-fit:cover; }
+.ecology-link { display:inline-block; text-decoration:none; margin-top:8px; }
+
+.workshop-collapsible { margin:64px 0 0; background:#fff; border:1px solid var(--soft-border); border-radius:22px; overflow:hidden; }
+.workshop-summary { display:flex; flex-direction:column; gap:6px; cursor:pointer; padding:26px 30px; background:#f3faf8; color:var(--brand-deep); border-left:6px solid var(--brand-gold); }
+.workshop-summary::marker { color:var(--brand-gold); }
+.workshop-summary-title { font-family:Georgia,"Times New Roman",serif; font-size:clamp(1.8rem,4vw,2.8rem); font-weight:700; }
+.workshop-summary-sub { font-family:Arial,Helvetica,sans-serif; color:#506261; font-weight:500; font-size:1rem; }
+.workshop-inner { padding:0 26px 36px; }
+.workshop-progress { position:static; margin:0 -26px 34px; border-top:1px solid var(--soft-border); }
+#differentiation-resource .resource-divider { background:#f5fbf9; color:var(--ink); border:1px solid var(--soft-border); box-shadow:none; }
+#differentiation-resource .resource-divider h2 { color:var(--brand-deep); }
+#differentiation-resource .resource-divider .section-tag { background:#fff; color:var(--brand-deep); }
+
+footer { background:#173f40; color:#fff; padding:44px 20px; }
+.footer-inner { max-width:1180px; margin:auto; text-align:left; display:grid; grid-template-columns:1.1fr 1fr; gap:18px 34px; align-items:start; }
+.footer-brand { display:flex; flex-direction:column; gap:5px; }
+.footer-brand strong { font-family:Georgia,"Times New Roman",serif; font-size:1.45rem; }
+.footer-brand span, .footer-note, .footer-copy, .footer-links { font-family:Arial,Helvetica,sans-serif; }
+.footer-links { display:flex; flex-wrap:wrap; gap:16px 20px; justify-content:flex-end; }
+.footer-links a { color:#fff; text-decoration:none; border-bottom:1px solid transparent; }
+.footer-links a:hover, .footer-links a:focus { border-bottom-color:var(--brand-gold); }
+.footer-note { margin:8px 0 0; max-width:720px; color:#e7f3f1; }
+.footer-copy { margin:8px 0 0; text-align:right; color:#d0e0de; font-size:.9rem; }
+
+@media (max-width:900px) {
+  .site-nav-wrap { flex-direction:column; gap:10px; }
+  .site-nav { justify-content:center; gap:10px 18px; font-size:.78rem; }
+  .book-grid { grid-template-columns:repeat(2,minmax(140px,190px)); }
+  .ecology-card { grid-template-columns:1fr; }
+  .footer-inner { grid-template-columns:1fr; }
+  .footer-links { justify-content:flex-start; }
+  .footer-copy { text-align:left; }
+}
+@media (max-width:560px) {
+  .hero.special-hero { padding:48px 18px 44px; }
+  .special-hero h1 { font-size:clamp(2.7rem,15vw,4.2rem); }
+  .book-grid { grid-template-columns:repeat(2,minmax(130px,1fr)); gap:14px; }
+  .book-card span { font-size:.88rem; }
+  .workshop-summary { padding:22px 20px; }
+  .workshop-inner { padding:0 16px 28px; }
+  .workshop-progress { margin:0 -16px 28px; }
+}
+</style>
 </head>
-
 <body>
-
-  <header class="hero special-hero">
-    <div class="hero-inner special-hero-grid">
-      <div>
-        <div class="eyebrow">Marsha Kerr Talley | Behaviour Specialist</div>
-        <h1>Students with Special Educational Needs can learn. The question is how we help them access learning.</h1>
-        <p>
-          I support parents, students, teachers and schools through consultation, private tutoring, workshops and practical professional learning. The work begins with the learner, what they can do, what is getting in the way, and what support will help them move forward.
-        </p>
-        <div class="hero-buttons">
-          <button class="btn btn-primary" onclick="document.querySelector('#support').scrollIntoView()">
+<header class="site-header">
+<div class="site-nav-wrap">
+<a aria-label="Marsha Kerr Talley home" class="brand-mark" href="https://marshakerrtalley.com/index.html">
+<span class="brand-initials">MKT</span>
+<span class="brand-line">Live Inspired</span>
+</a>
+<nav aria-label="Primary navigation" class="site-nav">
+<a href="https://marshakerrtalley.com/index.html">Home</a>
+<a href="https://marshakerrtalley.com/about.html">About</a>
+<a href="https://marshakerrtalley.com/work-with-me.html">Work With Me</a>
+<a href="https://marshakerrtalley.com/books.html">Books</a>
+<a href="https://marshakerrtalley.com/podcast.html">Podcast</a>
+<a href="https://marshakerrtalley.com/blog.html">Reflections</a>
+<a href="https://marshakerrtalley.com/shop">Shop</a>
+</nav>
+</div>
+</header><header class="hero special-hero">
+<div class="hero-inner special-hero-grid">
+<div>
+<div class="eyebrow">Marsha Kerr Talley | Behaviour Specialist</div>
+<h1>Students with Special Needs Can Learn.</h1>
+<p>I support parents, students, teachers and schools to help students access the best learning for them.</p>
+<div class="hero-buttons">
+<button class="btn btn-primary" onclick="document.querySelector('#support').scrollIntoView()">
             Explore Support
           </button>
-          <button class="btn btn-light" onclick="document.querySelector('#contact').scrollIntoView()">
+<button class="btn btn-light" onclick="document.querySelector('#contact').scrollIntoView()">
             Ask About Support
           </button>
-        </div>
-      </div>
-      <div class="hero-note">
-        <strong>For families who know their child needs something different, even when they do not yet have a name for it.</strong>
-        <span>Learning • behaviour • attention • regulation • inclusion • classroom access</span>
-      </div>
-    </div>
-  </header>
+</div>
+</div>
 
-  <div class="progress-wrap">
-    <div class="progress-inner">
-      <strong>Workshop Activity Progress</strong>
+</div>
+</header>
 
-      <div class="progress-track">
-        <div class="progress-bar" id="progressBar"></div>
-      </div>
-
-      <span id="progressText">0 completed</span>
-    </div>
-  </div>
-
-  <main>
-
-    <!-- SPECIAL EDUCATION LANDING CONTENT -->
-    <section class="landing-section" id="about-special-education">
-      <span class="section-tag">Why I am offering this support</span>
-      <div class="video-shell">
-        <div class="video-wrap">
-          <iframe
-            src="https://www.youtube.com/embed/PoD_GqxVMck"
-            title="Marsha Kerr Talley: Special Education support for parents, teachers and students"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div>
-          <h2>Special Education should be more than a placement.</h2>
-          <p class="lead">
+<main>
+<!-- SPECIAL EDUCATION LANDING CONTENT -->
+<section class="landing-section" id="about-special-education">
+<span class="section-tag">Why I am offering this support</span>
+<div class="video-shell">
+<div class="video-wrap">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" loading="lazy" src="https://www.youtube.com/embed/PoD_GqxVMck" title="Marsha Kerr Talley: Special Education support for parents, teachers and students">
+</iframe>
+</div>
+<div>
+<h2>Special Education should be more than a placement.</h2>
+<p class="lead">
             In this short video, I share who I am, what I have seen across education,
             and why I am now making my Special Education experience available directly
             to families, students and educators.
           </p>
-          <p>
+<p>
             I have spent more than 20 years in education. One thing I know for sure is this: students with Special Educational Needs can and do learn. They may learn at a different pace. They may need information presented differently. They may need different tools, more time, more structure, or a different route into the learning. That does not mean they cannot learn.
           </p>
-          <p class="belief-statement"><strong>With the right tools, resources, teaching and expectations, students with Special Needs can excel. They can work, create, contribute, lead and be productive members of society. We should be preparing them for possibility, not deciding their limits for them.</strong></p>
-          <div class="audience-strip" aria-label="Choose support by audience">
-            <a class="audience-pill" href="#parents-support">Parents</a>
-            <a class="audience-pill" href="#students-support">Students</a>
-            <a class="audience-pill" href="#teachers-support">Teachers</a>
-            <a class="audience-pill" href="#schools-support">Schools &amp; organisations</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="landing-section" id="support">
-      <span class="section-tag">Ways to work with me</span>
-      <h2>Support for the learner, and for the people trying to support them well.</h2>
-      <p class="lead">
+<p class="belief-statement"><strong>With the right tools, resources, teaching and expectations, students with Special Needs can excel. They can work, create, contribute, lead and be productive members of society. We should be preparing them for possibility, not deciding their limits for them.</strong></p>
+<div aria-label="Choose support by audience" class="audience-strip">
+<a class="audience-pill" href="#parents-support">Parents</a>
+<a class="audience-pill" href="#students-support">Students</a>
+<a class="audience-pill" href="#teachers-support">Teachers</a>
+<a class="audience-pill" href="#schools-support">Schools &amp; organisations</a>
+</div>
+</div>
+</div>
+</section>
+<section class="landing-section" id="support">
+<span class="section-tag">Ways to work with me</span>
+<h2>Support for the learner and the people supporting them.</h2>
+<p class="lead">
         You do not have to know exactly what is wrong before asking for help. Tell me what you are seeing. Tell me where your child or student is getting stuck. We can start there.
       </p>
-
-      <div class="landing-grid">
-        <article class="service-card" id="parents-support">
-          <span class="service-kicker">For parents</span>
-          <h3>Parent Consultation</h3>
-          <p>If you are watching your child struggle and you are not sure what the school should be doing, what you should be doing at home, or what the behaviour is telling you, we can work through it together. The goal is clarity, practical next steps and support that fits your child.</p>
-          <button class="service-action" type="button" onclick="chooseSupport('Parent / caregiver','Parent consultation')">Ask about parent support</button>
-        </article>
-
-        <article class="service-card" id="students-support">
-          <span class="service-kicker">For students</span>
-          <h3>Private Learning Support &amp; Tutoring</h3>
-          <p>This is not simply more schoolwork. I look at how the student learns, where the barriers are, what they already understand and what tools may help. Students can make progress when we stop forcing one route to learning and give them a route they can actually use.</p>
-          <button class="service-action" type="button" onclick="chooseSupport('Student','Private learning support / tutoring')">Ask about student support</button>
-        </article>
-
-        <article class="service-card" id="teachers-support">
-          <span class="service-kicker">For teachers &amp; educators</span>
-          <h3>Workshops &amp; Consultation</h3>
-          <p>I work with teachers on the part that matters after we say “include the student.” What does that look like in an actual lesson? We look at differentiation, behaviour, classroom ecology, access, regulation and practical ways to help diverse learners participate and learn.</p>
-          <button class="service-action" type="button" onclick="chooseSupport('Teacher / educator','Teacher workshop / consultation')">Explore educator support</button>
-        </article>
-
-        <article class="service-card" id="schools-support">
-          <span class="service-kicker">For schools &amp; organisations</span>
-          <h3>Training, Workshops &amp; Special Education Consultation</h3>
-          <p>I provide workshops, training and consultation for schools and organisations that want Special Education to be more than placement on a register or a child sitting in the room. We focus on what staff can do differently so students have meaningful access to learning.</p>
-          <button class="service-action" type="button" onclick="chooseSupport('School / organisation','School / organisation training or consultation')">Ask about organisational support</button>
-        </article>
-      </div>
-    </section>
-
-    <section class="landing-section ecology-feature" id="classroom-ecology">
-      <span class="section-tag">Classroom Ecology</span>
-      <h2>The environment is part of the learning.</h2>
-      <p class="lead">
+<div class="landing-grid">
+<article class="service-card" id="parents-support">
+<span class="service-kicker">For parents</span>
+<h3>Parent Consultation</h3>
+<p>If you are watching your child struggle and you are not sure what the school should be doing, what you should be doing at home, or what the behaviour is telling you, we can work through it together. The goal is clarity, practical next steps and support that fits your child.</p>
+<button class="service-action" onclick="chooseSupport('Parent / caregiver','Parent consultation')" type="button">Ask about parent support</button>
+</article>
+<article class="service-card" id="students-support">
+<span class="service-kicker">For students</span>
+<h3>Private Learning Support &amp; Tutoring</h3>
+<p>This is not simply more schoolwork. I look at how the student learns, where the barriers are, what they already understand and what tools may help. Students can make progress when we stop forcing one route to learning and give them a route they can actually use.</p>
+<button class="service-action" onclick="chooseSupport('Student','Private learning support / tutoring')" type="button">Ask about student support</button>
+</article>
+<article class="service-card" id="teachers-support">
+<span class="service-kicker">For teachers &amp; educators</span>
+<h3>Workshops &amp; Consultation</h3>
+<p>I work with teachers on the part that matters after we say “include the student.” What does that look like in an actual lesson? We look at differentiation, behaviour, classroom ecology, access, regulation and practical ways to help diverse learners participate and learn.</p>
+<button class="service-action" onclick="chooseSupport('Teacher / educator','Teacher workshop / consultation')" type="button">Explore educator support</button>
+</article>
+<article class="service-card" id="schools-support">
+<span class="service-kicker">For schools &amp; organisations</span>
+<h3>Training, Workshops &amp; Special Education Consultation</h3>
+<p>I provide workshops, training and consultation for schools and organisations that want Special Education to be more than placement on a register or a child sitting in the room. We focus on what staff can do differently so students have meaningful access to learning.</p>
+<button class="service-action" onclick="chooseSupport('School / organisation','School / organisation training or consultation')" type="button">Ask about organisational support</button>
+</article>
+</div>
+</section><section class="landing-section books-section" id="special-books">
+<span class="section-tag">Books &amp; practical resources</span>
+<h2>Keep the support going beyond the session.</h2>
+<p class="lead">These resources are for parents and educators who want practical guidance they can return to in their own time.</p>
+<div class="book-grid">
+<a class="book-card" href="https://payhip.com/b/6JETz" rel="noopener noreferrer" target="_blank">
+<img alt="What Nobody Wants to Admit About Special Education by Marsha Kerr Talley" src="special-education-truths.png"/>
+<span>What Nobody Wants to Admit About Special Education</span>
+</a>
+<a class="book-card" href="https://payhip.com/b/Jg7HR" rel="noopener noreferrer" target="_blank">
+<img alt="Getting Your Child Identified Without Losing Your Mind by Marsha Kerr Talley" src="getting-child-identified.png"/>
+<span>Getting Your Child Identified Without Losing Your Mind</span>
+</a>
+<a class="book-card" href="https://payhip.com/b/aEyAI" rel="noopener noreferrer" target="_blank">
+<img alt="The School Says Everything Is Fine. My Child Is Not Fine. by Marsha Kerr Talley" src="school-says-fine.png"/>
+<span>The School Says Everything Is Fine. My Child Is Not Fine.</span>
+</a>
+<a class="book-card" href="https://payhip.com/b/4AKGL" rel="noopener noreferrer" target="_blank">
+<img alt="Why Did I Become a Teacher? by Marsha Kerr Talley" src="why-did-i-become-teacher.png"/>
+<span>Why Did I Become a Teacher?</span>
+</a>
+</div>
+</section>
+<section class="landing-section ecology-feature" id="classroom-ecology">
+<span class="section-tag">Classroom Ecology</span>
+<h2>The environment is part of the learning.</h2>
+<p class="lead">
         I talk a lot about what we teach and how we teach it, but I also pay attention to the space itself. A classroom can either help a student settle, engage and participate, or make learning harder before the lesson even begins.
       </p>
-      <div class="ecology-card">
-        <div>
-          <h3>Create a space students want to be in.</h3>
-          <p>
+<div class="ecology-card"><img alt="A flexible classroom ecology with plants, warm lighting, student work, books, a reading nook, round tables, movement and collaborative learning" class="ecology-image" src="classroom-ecology.png"/>
+<div>
+<h3>Create a space students want to be in.</h3>
+<p>
             That can mean thinking about lighting, noise, seating, movement, clutter, colour and even something as simple as adding plants. When students feel comfortable in the space, when the room feels cared for and they feel considered in it, they are more likely to want to be there. Once they want to be there, they are more likely to be willing to learn.
           </p>
-          <p>
+<p>
             This matters for every learner. It can matter even more for students with sensory, attention, regulation or communication needs. Differentiation is not only what is on the worksheet. Sometimes it is what we change in the environment so the student can access the learning in the first place.
           </p>
-          <a class="service-action ecology-link" href="https://marshakerrtalley.substack.com/p/classroom-ecology-the-missing-conversation" target="_blank" rel="noopener noreferrer">Read: Classroom Ecology, The Missing Conversation</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="landing-section lead-box" id="contact">
-      <span class="section-tag">Start here</span>
-      <h2>Tell me what is happening.</h2>
-      <p class="lead">
+<a class="service-action ecology-link" href="https://marshakerrtalley.substack.com/p/classroom-ecology-the-missing-conversation" rel="noopener noreferrer" target="_blank">Read: Classroom Ecology, The Missing Conversation</a>
+</div>
+</div>
+</section>
+<section class="landing-section lead-box" id="contact">
+<span class="section-tag">Start here</span>
+<h2>Tell me what is happening.</h2>
+<p class="lead">
         Tell me what is happening. You do not need to write it in professional language. I will read your concern and help you identify the most useful next step.
       </p>
-
-      <form class="lead-form" action="https://formsubmit.co/ae3de5af71dcc6dde1b81cf12723e28e" method="POST">
-        <input type="hidden" name="_subject" value="New Special Education enquiry from marshakerrtalley.com">
-        <input type="hidden" name="_next" value="https://www.marshakerrtalley.com/thank-you.html">
-        <input type="hidden" name="_captcha" value="false">
-
-        <div>
-          <label for="leadName">Your name</label>
-          <input id="leadName" name="name" type="text" autocomplete="name" required>
-        </div>
-        <div>
-          <label for="leadEmail">Email</label>
-          <input id="leadEmail" name="email" type="email" autocomplete="email" required>
-        </div>
-        <div>
-          <label for="leadRole">I am a...</label>
-          <select id="leadRole" name="role" required>
-            <option value="">Choose one...</option>
-            <option>Parent / caregiver</option>
-            <option>Student</option>
-            <option>Teacher / educator</option>
-            <option>School / organisation</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div>
-          <label for="leadService">I am interested in...</label>
-          <select id="leadService" name="service_interest" required>
-            <option value="">Choose one...</option>
-            <option>Parent consultation</option>
-            <option>Private student tutoring / learning support</option>
-            <option>Teacher workshop / professional learning</option>
-            <option>School or organisation consultation</option>
-            <option>I am not sure yet</option>
-                      <option>School / organisation training or consultation</option>
-          </select>
-        </div>
-        <div class="full">
-          <label for="leadMessage">What are you seeing, and what would you like help with?</label>
-          <textarea id="leadMessage" name="message" placeholder="You can share the concern without including private medical records or highly sensitive information here." required></textarea>
-        </div>
-        <div class="full">
-          <button class="btn btn-primary" type="submit">Send My Enquiry</button>
-          <p class="form-note">
+<form action="https://formsubmit.co/ae3de5af71dcc6dde1b81cf12723e28e" class="lead-form" method="POST">
+<input name="_subject" type="hidden" value="New Special Education enquiry from marshakerrtalley.com"/>
+<input name="_next" type="hidden" value="https://www.marshakerrtalley.com/thank-you.html"/>
+<input name="_captcha" type="hidden" value="false"/>
+<div>
+<label for="leadName">Your name</label>
+<input autocomplete="name" id="leadName" name="name" required="" type="text"/>
+</div>
+<div>
+<label for="leadEmail">Email</label>
+<input autocomplete="email" id="leadEmail" name="email" required="" type="email"/>
+</div>
+<div>
+<label for="leadRole">I am a...</label>
+<select id="leadRole" name="role" required="">
+<option value="">Choose one...</option>
+<option>Parent / caregiver</option>
+<option>Student</option>
+<option>Teacher / educator</option>
+<option>School / organisation</option>
+<option>Other</option>
+</select>
+</div>
+<div>
+<label for="leadService">I am interested in...</label>
+<select id="leadService" name="service_interest" required="">
+<option value="">Choose one...</option>
+<option>Parent consultation</option>
+<option>Private student tutoring / learning support</option>
+<option>Teacher workshop / professional learning</option>
+<option>School or organisation consultation</option>
+<option>I am not sure yet</option>
+<option>School / organisation training or consultation</option>
+</select>
+</div>
+<div class="full">
+<label for="leadMessage">What are you seeing, and what would you like help with?</label>
+<textarea id="leadMessage" name="message" placeholder="You can share the concern without including private medical records or highly sensitive information here." required=""></textarea>
+</div>
+<div class="full">
+<button class="btn btn-primary" type="submit">Send My Enquiry</button>
+<p class="form-note">
             Educational support does not replace diagnosis, medical care, psychological assessment or therapy.
             Please avoid sending confidential records through this first-contact form.
           </p>
-        </div>
-      </form>
-    </section>
-
-    <section class="resource-divider">
-      <span class="section-tag">Free Teacher Resource</span>
-      <h2>Differentiation in Action</h2>
-      <p>
+</div>
+</form>
+</section>
+<details class="workshop-collapsible" id="differentiation-resource"><summary class="workshop-summary"><span class="workshop-summary-title">Differentiation in Action</span><span class="workshop-summary-sub">Open the interactive activities when you are ready to work through them.</span></summary><div class="workshop-inner"><div class="progress-wrap workshop-progress"><div class="progress-inner"><strong>Workshop Activity Progress</strong><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div><span id="progressText">0 completed</span></div></div><section class="resource-divider">
+<span class="section-tag">Free Teacher Resource</span>
+<h2>Differentiation in Action</h2>
+<p>
         Continue below for an interactive professional learning resource exploring
         inclusion, differentiation, autism, dyslexia, ADHD, behaviour and practical classroom adjustments.
       </p>
-      <button class="btn btn-primary" onclick="document.querySelector('#start').scrollIntoView()">
-        Start the Interactive Resource
-      </button>
-    </section>
 
-    <!-- SECTION 1 -->
-    <section class="section" id="start">
-
-      <span class="section-tag">Start Here</span>
-      <h2>Being in the room does not mean the student is included.</h2>
-
-      <p class="lead">
+</section>
+<!-- SECTION 1 -->
+<section class="section" id="start">
+<span class="section-tag">Start Here</span>
+<h2>Being in the room does not mean the student is included.</h2>
+<p class="lead">
         A student can sit in a mainstream classroom all day and still have
         very little access to the learning taking place. Differentiation asks
-        us to examine the barriers between the learner and the lesson,and
+        us to examine the barriers between the learner and the lesson, and
         intentionally remove or reduce them.
       </p>
-
-      <div class="principle">
-        <strong>Differentiation does not mean lowering expectations.</strong>
+<div class="principle">
+<strong>Differentiation does not mean lowering expectations.</strong>
         It means creating different pathways through which learners can
         access, engage with and demonstrate learning.
       </div>
-
-      <div class="prompt-box oral">
-        <strong>Talk first.</strong>
+<div class="prompt-box oral">
+<strong>Talk first.</strong>
         Think about a student you have taught, observed or supported who was
         physically present in the classroom but academically disconnected.
         What was happening?
       </div>
-
-      <label for="openingResponse">
+<label for="openingResponse">
         Write one observation from your discussion:
       </label>
-
-      <textarea
-        id="openingResponse"
-        class="track-response"
-        placeholder="The student was present, but..."
-      ></textarea>
-
-    </section>
-
-    <!-- SECTION 2 -->
-    <section class="section">
-
-      <span class="section-tag">Think Differently</span>
-      <h2>Begin with the barrier, not the label.</h2>
-
-      <p>
+<textarea class="track-response" id="openingResponse" placeholder="The student was present, but..."></textarea>
+</section>
+<!-- SECTION 2 -->
+<section class="section">
+<span class="section-tag">Think Differently</span>
+<h2>Begin with the barrier, not the label.</h2>
+<p>
         A diagnosis can help us understand a learner, but it should never
         become the entire explanation for that learner. Two students with the
         same identified need may require very different support.
       </p>
-
-      <div class="mini-grid">
-
-        <div class="mini-card">
-          <strong>1. Learner</strong>
+<div class="mini-grid">
+<div class="mini-card">
+<strong>1. Learner</strong>
           What strengths, needs, interests and prior knowledge does this
           learner bring?
         </div>
-
-        <div class="mini-card">
-          <strong>2. Task</strong>
+<div class="mini-card">
+<strong>2. Task</strong>
           What exactly are we asking the student to understand or do?
         </div>
-
-        <div class="mini-card">
-          <strong>3. Barrier</strong>
+<div class="mini-card">
+<strong>3. Barrier</strong>
           What may be preventing meaningful access or participation?
         </div>
-
-        <div class="mini-card">
-          <strong>4. Adjustment</strong>
+<div class="mini-card">
+<strong>4. Adjustment</strong>
           What can we change without removing the core learning goal?
         </div>
-
-      </div>
-
-    </section>
-
-    <!-- CASE 1 -->
-    <section class="section">
-
-      <span class="section-tag">Case Study 1</span>
-      <h2>Dyslexia: When reading becomes the barrier</h2>
-
-      <div class="card case-card">
-        <div class="case-label">Meet Andre</div>
-
-        <h3>Andre knows more than his written work suggests.</h3>
-
-        <p>
+</div>
+</section>
+<!-- CASE 1 -->
+<section class="section">
+<span class="section-tag">Case Study 1</span>
+<h2>Dyslexia: When reading becomes the barrier</h2>
+<div class="card case-card">
+<div class="case-label">Meet Andre</div>
+<h3>Andre knows more than his written work suggests.</h3>
+<p>
           Andre is 13. During class discussions he demonstrates strong
           understanding and often makes thoughtful connections. When students
           are asked to read a long passage independently and answer written
           questions, however, he works slowly, skips words and sometimes
           stops altogether.
         </p>
-
-        <p>
+<p>
           A teacher tells him, “You need to try harder. Everyone else has
           finished.”
         </p>
-      </div>
-
-      <div class="question" data-question>
-        <div class="question-number">Decision 1</div>
-
-        <strong>
+</div>
+<div class="question" data-question="">
+<div class="question-number">Decision 1</div>
+<strong>
           Which response provides the strongest starting point for
           differentiation?
         </strong>
-
-        <div class="options">
-
-          <button class="option" data-correct="false">
+<div class="options">
+<button class="option" data-correct="false">
             A. Give Andre a much easier worksheet.
           </button>
-
-          <button class="option" data-correct="false">
+<button class="option" data-correct="false">
             B. Excuse Andre from reading activities.
           </button>
-
-          <button class="option" data-correct="true">
+<button class="option" data-correct="true">
             C. Identify whether decoding and reading load are preventing him
             from demonstrating understanding, then provide another route to
             the content.
           </button>
-
-          <button class="option" data-correct="false">
+<button class="option" data-correct="false">
             D. Move Andre to the back of the classroom with separate work.
           </button>
-
-        </div>
-
-        <div class="feedback good">
+</div>
+<div class="feedback good">
           Yes. The goal is not simply to remove the task. Determine the
           barrier and preserve access to the important learning.
         </div>
-
-        <div class="feedback try">
+<div class="feedback try">
           Consider whether this response changes the barrier or simply removes
           Andre from the learning.
         </div>
-      </div>
-
-      <div class="prompt-box">
-        <strong>Your turn:</strong>
+</div>
+<div class="prompt-box">
+<strong>Your turn:</strong>
         The learning goal is understanding the causes of a historical event.
         Reading fluency is not the skill being assessed. Name two ways Andre
         could access the content.
       </div>
-
-      <textarea
-        class="track-response"
-        placeholder="1.&#10;2."
-      ></textarea>
-
-    </section>
-
-    <!-- CASE 2 -->
-    <section class="section">
-
-      <span class="section-tag">Case Study 2</span>
-      <h2>Autism: Look beneath the behaviour</h2>
-
-      <div class="card case-card">
-        <div class="case-label">Meet Kayla</div>
-
-        <h3>A classroom change creates a sudden response.</h3>
-
-        <p>
+<textarea class="track-response" placeholder="1.
+2."></textarea>
+</section>
+<!-- CASE 2 -->
+<section class="section">
+<span class="section-tag">Case Study 2</span>
+<h2>Autism: Look beneath the behaviour</h2>
+<div class="card case-card">
+<div class="case-label">Meet Kayla</div>
+<h3>A classroom change creates a sudden response.</h3>
+<p>
           Kayla usually participates well when the class follows a predictable
           routine. Today the teacher unexpectedly changes the seating plan,
           introduces a group task and turns on a video while students are
           talking loudly.
         </p>
-
-        <p>
+<p>
           Kayla covers her ears, refuses to join her group and repeatedly
           says, “No.”
         </p>
-      </div>
-
-      <div class="question" data-question>
-        <div class="question-number">Decision 2</div>
-
-        <strong>
+</div>
+<div class="question" data-question="">
+<div class="question-number">Decision 2</div>
+<strong>
           What should the teacher consider before interpreting Kayla's
           response as deliberate defiance?
         </strong>
-
-        <div class="options">
-
-          <button class="option" data-correct="false">
+<div class="options">
+<button class="option" data-correct="false">
             A. Whether Kayla is trying to avoid all academic work.
           </button>
-
-          <button class="option" data-correct="true">
+<button class="option" data-correct="true">
             B. Whether unexpected change, sensory load, communication demands
             or uncertainty may be contributing to the response.
           </button>
-
-          <button class="option" data-correct="false">
+<button class="option" data-correct="false">
             C. Whether a punishment will encourage immediate compliance.
           </button>
-
-          <button class="option" data-correct="false">
+<button class="option" data-correct="false">
             D. Whether she should permanently work alone.
           </button>
-
-        </div>
-
-        <div class="feedback good">
+</div>
+<div class="feedback good">
           Correct. Behaviour provides information. Context matters before we
           decide what a student's behaviour means.
         </div>
-
-        <div class="feedback try">
+<div class="feedback try">
           Look at what changed in the environment immediately before the
           behaviour.
         </div>
-      </div>
-
-      <div class="prompt-box oral">
-        <strong>Discuss aloud:</strong>
+</div>
+<div class="prompt-box oral">
+<strong>Discuss aloud:</strong>
         What could the teacher have done before the activity to increase
         predictability without excluding Kayla from collaborative learning?
       </div>
-
-    </section>
-
-    <!-- CASE 3 -->
-    <section class="section">
-
-      <span class="section-tag">Case Study 3</span>
-      <h2>ADHD & executive function: “He knows it,but doesn't do it.”</h2>
-
-      <div class="card case-card">
-        <div class="case-label">Meet Daniel</div>
-
-        <p>
+</section>
+<!-- CASE 3 -->
+<section class="section">
+<span class="section-tag">Case Study 3</span>
+<h2>ADHD &amp; executive function: “He knows it,but doesn't do it.”</h2>
+<div class="card case-card">
+<div class="case-label">Meet Daniel</div>
+<p>
           Daniel frequently begins assignments but does not finish them.
           His desk contains unfinished papers. During long teacher explanations
           he begins tapping, looking around the room and talking to peers.
           When given a complicated six-step task, he completes the first
           instruction and then asks, “What am I supposed to do?”
         </p>
-      </div>
-
-      <div class="question" data-question>
-        <div class="question-number">Decision 3</div>
-
-        <strong>
+</div>
+<div class="question" data-question="">
+<div class="question-number">Decision 3</div>
+<strong>
           Which adjustment most directly addresses the demands described?
         </strong>
-
-        <div class="options">
-
-          <button class="option" data-correct="false">
+<div class="options">
+<button class="option" data-correct="false">
             A. Give Daniel additional homework so he learns responsibility.
           </button>
-
-          <button class="option" data-correct="true">
+<button class="option" data-correct="true">
             B. Break instructions into visible steps, check understanding,
             provide purposeful movement and use shorter work intervals.
           </button>
-
-          <button class="option" data-correct="false">
+<button class="option" data-correct="false">
             C. Remove all challenging work.
           </button>
-
-          <button class="option" data-correct="false">
+<button class="option" data-correct="false">
             D. Require him to sit completely still throughout instruction.
           </button>
-
-        </div>
-
-        <div class="feedback good">
+</div>
+<div class="feedback good">
           Exactly. The support reduces executive-function demands while
           preserving the academic expectation.
         </div>
-
-        <div class="feedback try">
+<div class="feedback try">
           Ask yourself which response provides structure without reducing the
           learning expectation.
         </div>
-      </div>
-
-    </section>
-
-    <!-- CASE 4 -->
-    <section class="section">
-
-      <span class="section-tag">Case Study 4</span>
-      <h2>Behaviour: What happened before the disruption?</h2>
-
-      <div class="card case-card">
-        <div class="case-label">Meet Malik</div>
-
-        <p>
+</div>
+</section>
+<!-- CASE 4 -->
+<section class="section">
+<span class="section-tag">Case Study 4</span>
+<h2>Behaviour: What happened before the disruption?</h2>
+<div class="card case-card">
+<div class="case-label">Meet Malik</div>
+<p>
           Malik regularly calls out, walks around the classroom and jokes with
           other students during independent written work. Staff describe him
           as disruptive.
         </p>
-
-        <p>
+<p>
           During practical activities, demonstrations and class debates,
           however, Malik is engaged and frequently contributes useful ideas.
         </p>
-      </div>
-
-      <div class="question" data-question>
-        <div class="question-number">Decision 4</div>
-
-        <strong>
+</div>
+<div class="question" data-question="">
+<div class="question-number">Decision 4</div>
+<strong>
           Which question would provide the most useful information?
         </strong>
-
-        <div class="options">
-
-          <button class="option" data-correct="false">
+<div class="options">
+<button class="option" data-correct="false">
             A. How can we make Malik stop talking?
           </button>
-
-          <button class="option" data-correct="false">
+<button class="option" data-correct="false">
             B. What punishment has not been tried yet?
           </button>
-
-          <button class="option" data-correct="true">
+<button class="option" data-correct="true">
             C. What happens before, during and after the behaviour, and what
             demands or needs might the behaviour be communicating?
           </button>
-
-          <button class="option" data-correct="false">
+<button class="option" data-correct="false">
             D. Should Malik always complete separate work?
           </button>
-
-        </div>
-
-        <div class="feedback good">
+</div>
+<div class="feedback good">
           Yes. Looking at antecedents, task demands, context and consequences
           gives us far more useful information than the label “disruptive.”
         </div>
-
-        <div class="feedback try">
+<div class="feedback try">
           Behaviour itself is only part of the information. Look at the whole
           classroom situation.
         </div>
-      </div>
-
-      <div class="prompt-box">
-        <strong>Complete the sentence:</strong>
+</div>
+<div class="prompt-box">
+<strong>Complete the sentence:</strong>
         Instead of asking “How do I stop this behaviour?” I could ask...
       </div>
-
-      <input
-        type="text"
-        class="track-response"
-        placeholder="What might..."
-      />
-
-    </section>
-
-    <!-- STRATEGIES -->
-    <section class="section">
-
-      <span class="section-tag">Strategy Bank</span>
-      <h2>Different pathways. Shared learning.</h2>
-
-      <p>
+<input class="track-response" placeholder="What might..." type="text">
+</input></section>
+<!-- STRATEGIES -->
+<section class="section">
+<span class="section-tag">Strategy Bank</span>
+<h2>Different pathways. Shared learning.</h2>
+<p>
         Open each section during the workshop and ask participants which
         strategies could be used immediately in their own classrooms.
       </p>
-
-      <details>
-        <summary>Dyslexia & literacy-related barriers</summary>
-
-        <div class="details-content">
+<details>
+<summary>Dyslexia &amp; literacy-related barriers</summary>
+<div class="details-content">
           Consider text-to-speech or audio access where appropriate, shorter
           chunks of text, explicit vocabulary instruction, visual support,
           structured literacy approaches, additional processing time,
@@ -1484,389 +1475,289 @@
           demonstrate understanding orally when writing is not the skill
           being assessed.
         </div>
-      </details>
-
-      <details>
-        <summary>Autism & differences in communication, sensory processing and predictability</summary>
-
-        <div class="details-content">
+</details>
+<details>
+<summary>Autism &amp; differences in communication, sensory processing and predictability</summary>
+<div class="details-content">
           Consider visual schedules, advance warning of changes, explicit
           instructions, reduced ambiguity, sensory-aware environments,
           structured choices, processing time, predictable routines and
           multiple ways to participate. Support should be individualized
           rather than based solely on diagnosis.
         </div>
-      </details>
-
-      <details>
-        <summary>ADHD, attention & executive-function needs</summary>
-
-        <div class="details-content">
+</details>
+<details>
+<summary>ADHD, attention &amp; executive-function needs</summary>
+<div class="details-content">
           Consider visible steps, chunked assignments, timers, checklists,
           purposeful movement, frequent feedback, reduced unnecessary
           distractions, shorter instructional segments, organizational
           supports and opportunities for active participation.
         </div>
-      </details>
-
-      <details>
-        <summary>Behaviour, regulation & emotional needs</summary>
-
-        <div class="details-content">
+</details>
+<details>
+<summary>Behaviour, regulation &amp; emotional needs</summary>
+<div class="details-content">
           Consider antecedents, relationship, task difficulty, boredom,
           communication, regulation, environmental stressors, reinforcement,
           choice and opportunities for success. Ask what the behaviour may be
           communicating before relying solely on consequences.
         </div>
-      </details>
-
-    </section>
-
-    <!-- MYTH -->
-    <section class="section">
-
-      <span class="section-tag">Quick Check</span>
-      <h2>Myth or accurate?</h2>
-
-      <div class="question" data-myth>
-        <div class="myth">
+</details>
+</section>
+<!-- MYTH -->
+<section class="section">
+<span class="section-tag">Quick Check</span>
+<h2>Myth or accurate?</h2>
+<div class="question" data-myth="">
+<div class="myth">
           “Differentiation means creating an entirely different lesson for
           every student.”
         </div>
-
-        <div class="myth-buttons">
-          <button class="btn btn-primary myth-answer" data-answer="false">
+<div class="myth-buttons">
+<button class="btn btn-primary myth-answer" data-answer="false">
             Myth
           </button>
-
-          <button class="btn myth-answer" data-answer="true">
+<button class="btn myth-answer" data-answer="true">
             Accurate
           </button>
-        </div>
-
-        <div class="feedback good">
+</div>
+<div class="feedback good">
           Correct. Effective differentiation often involves adjusting access,
           support, grouping, pacing, materials, response options or the
           learning environment,not writing thirty separate lessons.
         </div>
-
-        <div class="feedback try">
+<div class="feedback try">
           Think about whether one lesson can contain several pathways to the
           same important learning.
         </div>
-      </div>
-
-    </section>
-
-    <!-- DIFFERENTIATION BUILDER -->
-    <section class="section">
-
-      <span class="section-tag">Interactive Challenge</span>
-      <h2>Build the adjustment</h2>
-
-      <p>
+</div>
+</section>
+<!-- DIFFERENTIATION BUILDER -->
+<section class="section">
+<span class="section-tag">Interactive Challenge</span>
+<h2>Build the adjustment</h2>
+<p>
         Choose the barrier you are observing and the learning goal you need
         to preserve. The tool will give you a planning question to discuss.
       </p>
-
-      <div class="scenario-builder">
-
-        <div class="builder-row">
-          <label for="barrier">Observed barrier</label>
-
-          <select id="barrier">
-            <option value="">Choose one...</option>
-            <option value="reading">Heavy reading demand</option>
-            <option value="writing">Written-expression difficulty</option>
-            <option value="attention">Sustaining attention / organization</option>
-            <option value="sensory">Sensory or environmental overload</option>
-            <option value="language">Language / processing difficulty</option>
-            <option value="behaviour">Behaviour or disengagement</option>
-          </select>
-        </div>
-
-        <div class="builder-row">
-          <label for="goal">What is the real learning goal?</label>
-
-          <input
-            id="goal"
-            type="text"
-            placeholder="Example: Explain the causes of photosynthesis..."
-          />
-        </div>
-
-        <button class="btn btn-primary" onclick="buildChallenge()">
+<div class="scenario-builder">
+<div class="builder-row">
+<label for="barrier">Observed barrier</label>
+<select id="barrier">
+<option value="">Choose one...</option>
+<option value="reading">Heavy reading demand</option>
+<option value="writing">Written-expression difficulty</option>
+<option value="attention">Sustaining attention / organization</option>
+<option value="sensory">Sensory or environmental overload</option>
+<option value="language">Language / processing difficulty</option>
+<option value="behaviour">Behaviour or disengagement</option>
+</select>
+</div>
+<div class="builder-row">
+<label for="goal">What is the real learning goal?</label>
+<input id="goal" placeholder="Example: Explain the causes of photosynthesis..." type="text">
+</input></div>
+<button class="btn btn-primary" onclick="buildChallenge()">
           Generate Planning Question
         </button>
-
-        <div id="challengeResult"></div>
-
-      </div>
-
-    </section>
-
-    <!-- DESIGN CHALLENGE -->
-    <section class="section">
-
-      <span class="section-tag">Apply It</span>
-      <h2>The 5-minute lesson redesign</h2>
-
-      <p>
+<div id="challengeResult"></div>
+</div>
+</section>
+<!-- DESIGN CHALLENGE -->
+<section class="section">
+<span class="section-tag">Apply It</span>
+<h2>The 5-minute lesson redesign</h2>
+<p>
         Choose a lesson you currently teach. Do not redesign the entire lesson.
         Identify one barrier and make one intentional adjustment.
       </p>
-
-      <div class="grid">
-
-        <div class="card">
-          <h3>1. Learning Goal</h3>
-
-          <textarea
-            class="track-response"
-            placeholder="What must students understand or be able to do?"
-          ></textarea>
-        </div>
-
-        <div class="card">
-          <h3>2. Possible Barrier</h3>
-
-          <textarea
-            class="track-response"
-            placeholder="What could make this lesson unnecessarily difficult to access?"
-          ></textarea>
-        </div>
-
-        <div class="card">
-          <h3>3. Adjustment</h3>
-
-          <textarea
-            class="track-response"
-            placeholder="What can you change about access, instruction, materials, environment or response?"
-          ></textarea>
-        </div>
-
-        <div class="card">
-          <h3>4. Evidence of Learning</h3>
-
-          <textarea
-            class="track-response"
-            placeholder="How will the student still demonstrate the intended learning?"
-          ></textarea>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- FINAL CASE -->
-    <section class="section">
-
-      <span class="section-tag">Final Case</span>
-      <h2>The student at the back of the room</h2>
-
-      <div class="card case-card">
-
-        <p>
+<div class="grid">
+<div class="card">
+<h3>1. Learning Goal</h3>
+<textarea class="track-response" placeholder="What must students understand or be able to do?"></textarea>
+</div>
+<div class="card">
+<h3>2. Possible Barrier</h3>
+<textarea class="track-response" placeholder="What could make this lesson unnecessarily difficult to access?"></textarea>
+</div>
+<div class="card">
+<h3>3. Adjustment</h3>
+<textarea class="track-response" placeholder="What can you change about access, instruction, materials, environment or response?"></textarea>
+</div>
+<div class="card">
+<h3>4. Evidence of Learning</h3>
+<textarea class="track-response" placeholder="How will the student still demonstrate the intended learning?"></textarea>
+</div>
+</div>
+</section>
+<!-- FINAL CASE -->
+<section class="section">
+<span class="section-tag">Final Case</span>
+<h2>The student at the back of the room</h2>
+<div class="card case-card">
+<p>
           You enter a classroom and notice one student sitting at the back.
           While the class works on a science activity, the student colours a
           worksheet unrelated to the lesson.
         </p>
-
-        <p>
+<p>
           A member of staff explains:
         </p>
-
-        <blockquote>
+<blockquote>
           “He has Special Educational Needs. He can't really do what the rest
           of them are doing.”
         </blockquote>
-
-      </div>
-
-      <div class="prompt-box oral">
-        <strong>Discuss:</strong>
+</div>
+<div class="prompt-box oral">
+<strong>Discuss:</strong>
         What questions would you ask before accepting that conclusion?
       </div>
-
-      <textarea
-        class="track-response"
-        placeholder="I would want to know..."
-      ></textarea>
-
-      <div class="prompt-box">
-        <strong>Now redesign the situation.</strong>
+<textarea class="track-response" placeholder="I would want to know..."></textarea>
+<div class="prompt-box">
+<strong>Now redesign the situation.</strong>
         How could this learner participate meaningfully in the science lesson
         while receiving the support he needs?
       </div>
-
-      <textarea
-        class="track-response"
-        placeholder="One possible approach would be..."
-      ></textarea>
-
-    </section>
-
-    <!-- JAMAICAN CLASSROOM APPLICATION -->
-    <section class="section jamaica-transition">
-
-      <span class="section-tag">Next Step: Apply It in Jamaica</span>
-      <h2>What does differentiation look like in Jamaican classrooms?</h2>
-
-      <p class="jamaica-lead">
+<textarea class="track-response" placeholder="One possible approach would be..."></textarea>
+</section>
+<!-- JAMAICAN CLASSROOM APPLICATION -->
+<section class="section jamaica-transition">
+<span class="section-tag">Next Step: Apply It in Jamaica</span>
+<h2>What does differentiation look like in Jamaican classrooms?</h2>
+<p class="jamaica-lead">
         The principles you have explored matter most when they can work in the
         classrooms teachers actually serve. The next interactive page moves from
         the general principles of differentiation to the realities teachers may
         encounter across Jamaican schools.
       </p>
-
-      <div class="jamaica-reality-grid">
-        <div class="jamaica-reality">
-          <strong>Large classes</strong><br>
+<div class="jamaica-reality-grid">
+<div class="jamaica-reality">
+<strong>Large classes</strong><br/>
           How can one teacher support different needs without creating a separate
           lesson for every student?
         </div>
-
-        <div class="jamaica-reality">
-          <strong>Students without formal diagnoses</strong><br>
+<div class="jamaica-reality">
+<strong>Students without formal diagnoses</strong><br/>
           What can a teacher do now when a learner is clearly struggling but
           specialist assessment or support is not yet available?
         </div>
-
-        <div class="jamaica-reality">
-          <strong>Literacy gaps & curriculum demands</strong><br>
+<div class="jamaica-reality">
+<strong>Literacy gaps &amp; curriculum demands</strong><br/>
           How do we keep learners connected to meaningful, age-appropriate
           content when reading or writing is a major barrier?
         </div>
-
-        <div class="jamaica-reality">
-          <strong>Limited resources & behaviour concerns</strong><br>
+<div class="jamaica-reality">
+<strong>Limited resources &amp; behaviour concerns</strong><br/>
           What practical, low-cost adjustments can improve access, participation
           and regulation within the classroom we already have?
         </div>
-      </div>
-
-      <p>
+</div>
+<p>
         Continue with Jamaican primary and secondary classroom scenarios,
         practical low-cost strategies, the “But I have 40 students” challenge,
         and the question at the centre of the next activity:
         <strong>Is the learner included, or merely present?</strong>
-      </p>
-
-      <a
-        class="jamaica-link hide-print"
-        href="differentiation-jamaican-classrooms.html"
-      >
+</p>
+<a class="jamaica-link hide-print" href="differentiation-jamaican-classrooms.html">
         Explore Jamaican Classroom Scenarios →
       </a>
-
-    </section>
-
-    <!-- REFLECTION -->
-    <section class="section completion">
-
-      <span class="section-tag">Reflection</span>
-      <h2>What will you change?</h2>
-
-      <p>
+</section>
+<!-- REFLECTION -->
+<section class="section completion">
+<span class="section-tag">Reflection</span>
+<h2>What will you change?</h2>
+<p>
         Inclusion becomes meaningful through what happens in tomorrow's
         lesson,not simply through where a student's chair is placed.
       </p>
-
-      <label for="commitment">
-        <strong>
+<label for="commitment">
+<strong>
           Write one action you will take in your classroom, supervision,
           teacher training or planning:
         </strong>
-      </label>
-
-      <textarea
-        id="commitment"
-        class="track-response"
-        placeholder="One thing I will do differently is..."
-      ></textarea>
-
-      <br />
-
-      <button
-        class="btn btn-primary hide-print"
-        onclick="window.print()"
-        style="margin-top:18px;"
-      >
+</label>
+<textarea class="track-response" id="commitment" placeholder="One thing I will do differently is..."></textarea>
+<br>
+<button class="btn btn-primary hide-print" onclick="window.print()" style="margin-top:18px;">
         Print / Save My Workshop Responses
       </button>
-
-    </section>
-
-  </main>
-
-
-  <button class="se-fab hide-print" type="button" onclick="openSpecialFAQ()" aria-haspopup="dialog" aria-controls="specialFaqPanel">
-    <span class="se-fab-dot" aria-hidden="true"></span>
+</br></section>
+</div></details></main>
+<button aria-controls="specialFaqPanel" aria-haspopup="dialog" class="se-fab hide-print" onclick="openSpecialFAQ()" type="button">
+<span aria-hidden="true" class="se-fab-dot"></span>
     Special Education questions
   </button>
-
-  <div class="faq-overlay" id="specialFaqOverlay" role="presentation" onclick="faqBackdropClose(event)">
-    <section class="faq-panel" id="specialFaqPanel" role="dialog" aria-modal="true" aria-labelledby="specialFaqTitle">
-      <button class="faq-close" type="button" onclick="closeSpecialFAQ()" aria-label="Close">&times;</button>
-      <div class="eyebrow" style="color:var(--gold); opacity:1;">Special Education Quick Guide</div>
-      <h2 id="specialFaqTitle">What are you trying to understand?</h2>
-      <p class="faq-intro">
+<div class="faq-overlay" id="specialFaqOverlay" onclick="faqBackdropClose(event)" role="presentation">
+<section aria-labelledby="specialFaqTitle" aria-modal="true" class="faq-panel" id="specialFaqPanel" role="dialog">
+<button aria-label="Close" class="faq-close" onclick="closeSpecialFAQ()" type="button">×</button>
+<div class="eyebrow" style="color:var(--gold); opacity:1;">Special Education Quick Guide</div>
+<h2 id="specialFaqTitle">What are you trying to understand?</h2>
+<p class="faq-intro">
         Parents and teachers often know something is not working before they know what to call it. Start with the question that sounds closest to what you are dealing with.
       </p>
-
-      <div class="faq-list">
-        <details>
-          <summary>My child is struggling at school. Does that automatically mean Special Education?</summary>
-          <div class="details-content">
+<div class="faq-list">
+<details>
+<summary>My child is struggling at school. Does that automatically mean Special Education?</summary>
+<div class="details-content">
             No. Struggling does not automatically mean a child belongs in Special Education. I want to know what the student can do, where the difficulty shows up, when it changes, and what has already been tried. We begin with the learner, not a label.
           </div>
-        </details>
-        <details>
-          <summary>Can you diagnose autism, ADHD or dyslexia?</summary>
-          <div class="details-content">
+</details>
+<details>
+<summary>Can you diagnose autism, ADHD or dyslexia?</summary>
+<div class="details-content">
             No. I provide educational and behaviour support, not clinical diagnosis. I can help you make sense of what you are seeing, understand how it may be affecting learning and decide whether a formal assessment by an appropriately qualified professional would be useful.
           </div>
-        </details>
-        <details>
-          <summary>My child already has a diagnosis. What happens next?</summary>
-          <div class="details-content">
+</details>
+<details>
+<summary>My child already has a diagnosis. What happens next?</summary>
+<div class="details-content">
             A diagnosis gives us information. It does not tell us everything about the child and it is not an education plan by itself. We still need to ask: What can this learner do? What is getting in the way? What support, tools, teaching and environment will help this student learn and make progress?
           </div>
-        </details>
-        <details>
-          <summary>My child is being described as disruptive, lazy or difficult. Can you help?</summary>
-          <div class="details-content">
+</details>
+<details>
+<summary>My child is being described as disruptive, lazy or difficult. Can you help?</summary>
+<div class="details-content">
             Yes. Behaviour gives us information. I want to know what happens before the behaviour, what the student is being asked to do, whether the work is too difficult or too easy, whether boredom is part of it, and what happens afterwards. The goal is to regulate rather than escalate and to understand before we simply punish.
           </div>
-        </details>
-        <details>
-          <summary>Do you offer ordinary tutoring?</summary>
-          <div class="details-content">
+</details>
+<details>
+<summary>Do you offer ordinary tutoring?</summary>
+<div class="details-content">
             Yes, I offer private tutoring and learning support. I am not interested in sitting a struggling student down and giving them more of the same thing that is already not working. I adapt the support to the learner's strengths, pace, attention, confidence and the way they access learning best.
           </div>
-        </details>
-        <details>
-          <summary>Can you train my teachers or speak to a school team?</summary>
-          <div class="details-content">
-            Yes. I work with teachers and school teams on differentiation, inclusion, behaviour, classroom ecology, autism, ADHD, dyslexia, regulation and practical strategies. I keep it grounded in the classroom. What can the teacher actually do tomorrow with the students in front of them? You can also read my <a href="https://marshakerrtalley.substack.com/p/classroom-ecology-the-missing-conversation" target="_blank" rel="noopener noreferrer"><strong>Classroom Ecology</strong></a> article for more on how the environment itself affects participation, regulation and learning.
+</details>
+<details>
+<summary>Can you train my teachers or speak to a school team?</summary>
+<div class="details-content">
+            Yes. I work with teachers and school teams on differentiation, inclusion, behaviour, classroom ecology, autism, ADHD, dyslexia, regulation and practical strategies. I keep it grounded in the classroom. What can the teacher actually do tomorrow with the students in front of them? You can also read my <a href="https://marshakerrtalley.substack.com/p/classroom-ecology-the-missing-conversation" rel="noopener noreferrer" target="_blank"><strong>Classroom Ecology</strong></a> article for more on how the environment itself affects participation, regulation and learning.
           </div>
-        </details>
-      </div>
-
-      <div class="faq-cta">
-        <div><strong>Still not sure what you need?</strong><br><span class="small-note">Start with the concern, not the service name.</span></div>
-        <button class="btn btn-primary" type="button" onclick="closeSpecialFAQ(); document.querySelector('#contact').scrollIntoView();">Ask About Your Situation</button>
-      </div>
-    </section>
-  </div>
-
-  <footer>
-    <p><strong>Marsha Kerr Talley | Behaviour &amp; Special Education Support</strong></p>
-    <p>Parents • Students • Teachers • Schools &amp; Organisations</p>
-    <p>Students with Special Educational Needs can learn. Our job is to make learning accessible.</p>
-  </footer>
-
-  <script>
+</details>
+</div>
+<div class="faq-cta">
+<div><strong>Still not sure what you need?</strong><br/><span class="small-note">Start with the concern, not the service name.</span></div>
+<button class="btn btn-primary" onclick="closeSpecialFAQ(); document.querySelector('#contact').scrollIntoView();" type="button">Ask About Your Situation</button>
+</div>
+</section>
+</div>
+<footer>
+<div class="footer-inner">
+<div class="footer-brand">
+<strong>Marsha Kerr Talley</strong>
+<span>Live Inspired | Turning Pain Into Possibility™</span>
+</div>
+<div class="footer-links">
+<a href="https://marshakerrtalley.com/about.html">About</a>
+<a href="https://marshakerrtalley.com/work-with-me.html">Work With Me</a>
+<a href="https://marshakerrtalley.com/books.html">Books</a>
+<a href="https://marshakerrtalley.com/podcast.html">Podcast</a>
+<a href="https://marshakerrtalley.com/blog.html">Reflections</a>
+<a href="https://marshakerrtalley.com/shop">Shop</a>
+</div>
+<p class="footer-note">Students with Special Needs can learn. The work is helping them access learning in ways that make sense for them.</p>
+<p class="footer-copy">© 2026 Marsha Kerr Talley. All rights reserved.</p>
+</div></footer>
+<script>
     const completedItems = new Set();
 
     function updateProgress() {
@@ -2049,6 +1940,5 @@
     });
 
   </script>
-
 </body>
 </html>
