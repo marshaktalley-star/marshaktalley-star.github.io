@@ -990,6 +990,40 @@ footer { background:#173f40; color:#fff; padding:44px 20px; }
   .workshop-inner { padding:0 16px 28px; }
   .workshop-progress { margin:0 -16px 28px; }
 }
+
+.workshop-summary-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  color: #6b5a31;
+}
+.workshop-open-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: var(--brand-deep);
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .88rem;
+  font-weight: 800;
+  letter-spacing: .035em;
+}
+.workshop-click-note {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .82rem;
+  color: #687574;
+}
+.close-text { display:none; }
+.workshop-collapsible[open] .open-text { display:none; }
+.workshop-collapsible[open] .close-text { display:inline; }
+.workshop-collapsible[open] .workshop-summary { background:#eaf6f3; }
+.workshop-summary:hover .workshop-open-button,
+.workshop-summary:focus .workshop-open-button { background:#034e51; }
+
 </style>
 </head>
 <body>
@@ -1185,7 +1219,7 @@ footer { background:#173f40; color:#fff; padding:44px 20px; }
 </div>
 </form>
 </section>
-<details class="workshop-collapsible" id="differentiation-resource"><summary class="workshop-summary"><span class="workshop-summary-title">Differentiation in Action</span><span class="workshop-summary-sub">Open the interactive activities when you are ready to work through them.</span></summary><div class="workshop-inner"><div class="progress-wrap workshop-progress"><div class="progress-inner"><strong>Workshop Activity Progress</strong><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div><span id="progressText">0 completed</span></div></div><section class="resource-divider">
+<details class="workshop-collapsible" id="differentiation-resource"><summary class="workshop-summary"><span class="workshop-summary-label">INTERACTIVE TEACHER RESOURCE</span><span class="workshop-summary-title">Differentiation in Action</span><span class="workshop-summary-sub">Work through practical case studies, classroom decisions and differentiation strategies.</span><span class="workshop-open-button" aria-hidden="true"><span class="open-text">OPEN INTERACTIVE ACTIVITIES ↓</span><span class="close-text">CLOSE ACTIVITIES ↑</span></span><span class="workshop-click-note">Click anywhere in this box to begin.</span></summary><div class="workshop-inner"><div class="progress-wrap workshop-progress"><div class="progress-inner"><strong>Workshop Activity Progress</strong><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div><span id="progressText">0 completed</span></div></div><section class="resource-divider">
 <span class="section-tag">Free Teacher Resource</span>
 <h2>Differentiation in Action</h2>
 <p>
