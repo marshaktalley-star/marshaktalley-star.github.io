@@ -770,7 +770,7 @@
       color: #ffffff;
     }
 
-    .hero::after { content:""; display:block; height:6px; background:var(--bright-teal); }
+    .hero::after { content:none; display:none; }
     .hero p { max-width: 720px; }
 
     .btn,
@@ -962,7 +962,7 @@ h2, h3 { color:var(--brand-deep); }
 #differentiation-resource .resource-divider .section-tag { background:#fff; color:var(--brand-deep); }
 
 footer { background:#173f40; color:#fff; padding:44px 20px; }
-.footer-inner { max-width:1180px; margin:auto; text-align:left; display:grid; grid-template-columns:1.1fr 1fr; gap:18px 34px; align-items:start; }
+.footer-inner { max-width:1180px; margin:auto; text-align:left; display:grid; grid-template-columns:1fr auto; gap:18px 34px; align-items:start; }
 .footer-brand { display:flex; flex-direction:column; gap:5px; }
 .footer-brand strong { font-family:Georgia,"Times New Roman",serif; font-size:1.45rem; }
 .footer-brand span, .footer-note, .footer-copy, .footer-links { font-family:Arial,Helvetica,sans-serif; }
@@ -971,6 +971,45 @@ footer { background:#173f40; color:#fff; padding:44px 20px; }
 .footer-links a:hover, .footer-links a:focus { border-bottom-color:var(--brand-gold); }
 .footer-note { margin:8px 0 0; max-width:720px; color:#e7f3f1; }
 .footer-copy { margin:8px 0 0; text-align:right; color:#d0e0de; font-size:.9rem; }
+
+.service-cta {
+  margin: 72px 0 0;
+  padding: 44px 38px;
+  border-radius: 24px;
+  background: #fffdf8;
+  border: 1px solid var(--brand-gold-soft);
+  border-left: 6px solid var(--brand-gold);
+  text-align: center;
+}
+.service-cta h2 { margin-bottom: 12px; }
+.service-cta p { max-width: 760px; margin: 0 auto 22px; color: #455251; }
+.service-cta-actions { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; }
+.service-cta-email {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 22px;
+  border-radius:999px;
+  background:var(--brand-deep);
+  color:#fff;
+  text-decoration:none;
+  font-family:Arial,Helvetica,sans-serif;
+  font-weight:800;
+}
+.service-cta-email:hover, .service-cta-email:focus { background:#034e51; }
+.service-cta-form {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 22px;
+  border-radius:999px;
+  background:#fff;
+  color:var(--brand-deep);
+  border:1px solid var(--brand-gold);
+  text-decoration:none;
+  font-family:Arial,Helvetica,sans-serif;
+  font-weight:800;
+}
 
 @media (max-width:900px) {
   .site-nav-wrap { flex-direction:column; gap:10px; }
@@ -1774,21 +1813,23 @@ footer { background:#173f40; color:#fff; padding:44px 20px; }
 </div>
 </section>
 </div>
+<section class="service-cta" aria-labelledby="service-cta-title">
+  <span class="section-tag">Ready to talk?</span>
+  <h2 id="service-cta-title">Let us talk about the support your child, student or school needs.</h2>
+  <p>If you are looking for parent consultation, private learning support, teacher training or Special Education consultation, contact me directly. Tell me what is happening and what support you are looking for.</p>
+  <div class="service-cta-actions">
+    <a class="service-cta-email" href="mailto:info@marshakerrtalley.com?subject=Special%20Education%20Support%20Enquiry">Email me at info@marshakerrtalley.com</a>
+    <a class="service-cta-form" href="#contact">Use the enquiry form</a>
+  </div>
+</section>
 <footer>
 <div class="footer-inner">
 <div class="footer-brand">
 <strong>Marsha Kerr Talley</strong>
 <span>Live Inspired | Turning Pain Into Possibility™</span>
 </div>
-<div class="footer-links">
-<a href="https://marshakerrtalley.com/about.html">About</a>
-<a href="https://marshakerrtalley.com/work-with-me.html">Work With Me</a>
-<a href="https://marshakerrtalley.com/books.html">Books</a>
-<a href="https://marshakerrtalley.com/podcast.html">Podcast</a>
-<a href="https://marshakerrtalley.com/blog.html">Reflections</a>
-<a href="https://marshakerrtalley.com/shop">Shop</a>
-</div>
-<p class="footer-note">Students with Special Needs can learn. The work is helping them access learning in ways that make sense for them.</p>
+
+<p class="footer-note">Students with Special Needs can learn. My work is helping you help them learn in the ways that works best for them.</p>
 <p class="footer-copy">© 2026 Marsha Kerr Talley. All rights reserved.</p>
 </div></footer>
 <script>
