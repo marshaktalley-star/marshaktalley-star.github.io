@@ -711,30 +711,30 @@
 
 
     /* ---------------------------------------------------------
-       Sensory-considerate Special Education theme
-       Calm by default: muted colour, reduced visual competition,
-       generous spacing, clear focus states and reduced motion.
+       Sensory-aware Special Education theme
+       Marsha's brand stays vibrant. The sensory support comes
+       from spacing, hierarchy, white space and restrained use of colour.
        --------------------------------------------------------- */
     :root {
-      --teal: #5f8381;
-      --bright-teal: #b7d7d3;
-      --deep-teal: #365b5a;
-      --cream: #f7f6f2;
+      --teal: #319fa2;
+      --bright-teal: #2fe2dd;
+      --deep-teal: #056367;
+      --cream: #fbfaf7;
       --white: #ffffff;
-      --ink: #263334;
-      --muted: #667273;
-      --light-teal: #edf3f1;
-      --border: #d8e1de;
-      --gold: #a98755;
-      --shadow: 0 6px 18px rgba(38,51,52,0.06);
+      --ink: #242424;
+      --muted: #5d6868;
+      --light-teal: #e9fbfa;
+      --border: #cfe7e5;
+      --gold: #c49435;
+      --shadow: 0 8px 24px rgba(5,99,103,0.08);
     }
 
     body {
       background: var(--cream);
       color: var(--ink);
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.72;
-      letter-spacing: 0.005em;
+      line-height: 1.7;
+      letter-spacing: 0;
     }
 
     h1, h2, h3 {
@@ -742,152 +742,133 @@
       letter-spacing: 0;
     }
 
-    p, li, label, input, textarea, select, button {
-      font-size: 1rem;
-    }
+    p, li, label, input, textarea, select, button { font-size: 1rem; }
 
     .hero {
-      background: #466b69;
+      background: var(--deep-teal);
       color: #ffffff;
     }
 
+    .hero::after { content:""; display:block; height:6px; background:var(--bright-teal); }
     .hero p { max-width: 720px; }
 
     .btn,
     .jamaica-link,
     .audience-pill,
-    .se-fab {
-      transition: none;
-    }
+    .se-fab { transition: none; }
 
     .btn:hover,
     .jamaica-link:hover,
     .audience-pill:hover,
-    .audience-pill:focus {
-      transform: none;
-    }
+    .audience-pill:focus { transform: none; }
 
     .btn-primary {
-      background: #dcebe8;
-      color: #244746;
-      border: 1px solid #b8ceca;
+      background: var(--bright-teal);
+      color: #053e40;
+      border: 2px solid var(--bright-teal);
     }
 
     .btn-light {
-      background: rgba(255,255,255,0.10);
-      border-color: rgba(255,255,255,0.42);
+      background: #ffffff;
+      color: var(--deep-teal);
+      border: 2px solid #ffffff;
     }
+
+    .progress-wrap { background:#ffffff; border-bottom:1px solid var(--border); }
+    .progress-bar { background:var(--teal); }
 
     .section-tag,
-    .service-label,
-    .audience-pill {
-      background: #edf3f1;
-      color: #365b5a;
+    .service-kicker {
+      color: var(--deep-teal);
+      background: var(--light-teal);
     }
 
+    .video-shell,
+    .service-card,
+    .lead-box,
+    .card,
+    .question,
+    .scenario-builder,
+    details {
+      background:#ffffff;
+      border-color:var(--border);
+      box-shadow:var(--shadow);
+    }
+
+    .video-shell { box-shadow:0 8px 28px rgba(5,99,103,.07); }
+    .video-wrap { background:var(--deep-teal); }
+
     .audience-pill {
-      border: 1px solid #d8e1de;
-      box-shadow: none;
+      background:#ffffff;
+      color:var(--deep-teal);
+      border:2px solid var(--teal);
+      padding:9px 14px;
     }
 
     .audience-pill:hover,
     .audience-pill:focus {
-      background: #f8faf9;
-      border-color: #789896;
+      background:var(--light-teal);
+      border-color:var(--deep-teal);
     }
 
-    .card,
-    .question,
-    .service-card,
-    .intro-panel,
-    .scenario-builder {
-      box-shadow: var(--shadow);
+    .service-card { border-top:5px solid var(--teal); }
+    .service-card:nth-child(2) { border-top-color:var(--bright-teal); }
+    .service-card:nth-child(3) { border-top-color:var(--deep-teal); }
+    .service-card:nth-child(4) { border-top-color:var(--teal); }
+
+    .service-action {
+      background:var(--deep-teal);
+      color:#ffffff;
     }
 
-    .principle,
-    .jamaica-transition,
+    .lead-box { background:#ffffff; }
+    input, textarea, select { background:#ffffff; border:1.5px solid #a9cecc; }
+    input:focus, textarea:focus, select:focus, button:focus, a:focus {
+      outline:3px solid rgba(47,226,221,.55);
+      outline-offset:3px;
+    }
+
     .resource-divider,
-    .completion {
-      background: #466b69;
-      box-shadow: var(--shadow);
-    }
+    .jamaica-transition,
+    .completion { background:var(--deep-teal); }
 
+    .resource-divider .section-tag,
     .jamaica-transition .section-tag,
-    .resource-divider .section-tag {
-      background: rgba(255,255,255,0.16);
-      color: #ffffff;
+    .completion .section-tag {
+      background:#ffffff;
+      color:var(--deep-teal);
     }
 
-    .jamaica-reality {
-      background: rgba(255,255,255,0.10);
-    }
+    .principle { background:var(--deep-teal); }
+    .principle strong { color:var(--bright-teal); }
 
-    .video-wrap {
-      background: #eef1ef;
-      box-shadow: none;
-    }
-
-    .lead-form-wrap {
-      background: #fbfbf8;
-      box-shadow: var(--shadow);
-    }
+    .mini-card { background:var(--light-teal); }
+    summary { color:var(--deep-teal); }
+    details[open] summary { background:var(--light-teal); }
 
     .se-fab {
-      background: #466b69;
-      box-shadow: 0 6px 18px rgba(38,51,52,.14);
+      background:var(--deep-teal);
+      color:#ffffff;
+      box-shadow:0 10px 26px rgba(5,99,103,.2);
     }
+    .se-fab-dot { background:var(--bright-teal); box-shadow:0 0 0 5px rgba(47,226,221,.18); }
 
-    .se-fab-dot {
-      background: #dcebe8;
-      box-shadow: none;
-    }
+    .faq-overlay { background:rgba(18,37,38,.52); }
+    .faq-panel { background:#ffffff; }
+    .faq-close { background:var(--light-teal); color:var(--deep-teal); }
 
-    .faq-overlay {
-      background: rgba(38,51,52,.38);
-    }
-
-    .faq-modal {
-      box-shadow: 0 12px 30px rgba(38,51,52,.14);
-    }
-
-    .faq-close {
-      background: #edf3f1;
-      color: #365b5a;
-    }
-
-    .progress-track { background: #e7ebe9; }
-    .progress-bar { background: #6f918e; }
-
-    textarea:focus,
-    input:focus,
-    select:focus,
-    button:focus,
-    a:focus-visible {
-      outline: 3px solid #7a9d9a;
-      outline-offset: 3px;
-    }
-
-    /* Avoid rapid or unnecessary movement for users who request it. */
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
+      html { scroll-behavior:auto; }
       *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+        animation-duration:0.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:0.01ms !important;
       }
     }
 
-    /* Honour operating-system requests for stronger contrast. */
     @media (prefers-contrast: more) {
-      :root {
-        --ink: #111819;
-        --muted: #3e4849;
-        --border: #879694;
-        --deep-teal: #244746;
-      }
-      .card, .question, .service-card, .intro-panel, details {
-        border-width: 2px;
-      }
+      :root { --ink:#111111; --border:#6d8583; }
+      .card, .question, .service-card, .intro-panel, details { border-width:2px; }
     }
 
   </style>
@@ -899,10 +880,9 @@
     <div class="hero-inner special-hero-grid">
       <div>
         <div class="eyebrow">Marsha Kerr Talley | Behaviour Specialist</div>
-        <h1>Special Education support that begins with the learner—not the label.</h1>
+        <h1>Students with Special Educational Needs can learn. The question is how we help them access learning.</h1>
         <p>
-          Practical support for parents, students, teachers and schools through
-          consultation, private tutoring, workshops and professional learning.
+          I support parents, students, teachers and schools through consultation, private tutoring, workshops and practical professional learning. The work begins with the learner, what they can do, what is getting in the way, and what support will help them move forward.
         </p>
         <div class="hero-buttons">
           <button class="btn btn-primary" onclick="document.querySelector('#support').scrollIntoView()">
@@ -914,7 +894,7 @@
         </div>
       </div>
       <div class="hero-note">
-        <strong>For families who know something is not working—even when they do not yet know what.</strong>
+        <strong>For families who know their child needs something different, even when they do not yet have a name for it.</strong>
         <span>Learning • behaviour • attention • regulation • inclusion • classroom access</span>
       </div>
     </div>
@@ -955,9 +935,9 @@
             to families, students and educators.
           </p>
           <p>
-            My work focuses on understanding what is getting in the way of learning,
-            participation or regulation—and identifying practical ways forward.
+            I have spent more than 20 years in education. One thing I know for sure is this: students with Special Educational Needs can and do learn. They may learn at a different pace. They may need information presented differently. They may need different tools, more time, more structure, or a different route into the learning. That does not mean they cannot learn.
           </p>
+          <p class="belief-statement"><strong>With the right tools, resources, teaching and expectations, students with Special Needs can excel. They can work, create, contribute, lead and be productive members of society. We should be preparing them for possibility, not deciding their limits for them.</strong></p>
           <div class="audience-strip" aria-label="Choose support by audience">
             <a class="audience-pill" href="#parents-support">Parents</a>
             <a class="audience-pill" href="#students-support">Students</a>
@@ -970,38 +950,37 @@
 
     <section class="landing-section" id="support">
       <span class="section-tag">Ways to work with me</span>
-      <h2>Support for the people around the learner—and the learner too.</h2>
+      <h2>Support for the learner, and for the people trying to support them well.</h2>
       <p class="lead">
-        You do not need to arrive with the perfect label or the perfect question.
-        Start with what you are seeing, what is not working, and what you need help understanding.
+        You do not have to know exactly what is wrong before asking for help. Tell me what you are seeing. Tell me where your child or student is getting stuck. We can start there.
       </p>
 
       <div class="landing-grid">
         <article class="service-card" id="parents-support">
           <span class="service-kicker">For parents</span>
           <h3>Parent Consultation</h3>
-          <p>Practical guidance when your child is struggling with learning, behaviour, attention, regulation, school expectations or an existing diagnosis.</p>
+          <p>If you are watching your child struggle and you are not sure what the school should be doing, what you should be doing at home, or what the behaviour is telling you, we can work through it together. The goal is clarity, practical next steps and support that fits your child.</p>
           <button class="service-action" type="button" onclick="chooseSupport('Parent / caregiver','Parent consultation')">Ask about parent support</button>
         </article>
 
         <article class="service-card" id="students-support">
           <span class="service-kicker">For students</span>
           <h3>Private Learning Support &amp; Tutoring</h3>
-          <p>Individual sessions shaped around how the student learns—not simply more of the same work that is already frustrating them.</p>
+          <p>This is not simply more schoolwork. I look at how the student learns, where the barriers are, what they already understand and what tools may help. Students can make progress when we stop forcing one route to learning and give them a route they can actually use.</p>
           <button class="service-action" type="button" onclick="chooseSupport('Student','Private learning support / tutoring')">Ask about student support</button>
         </article>
 
         <article class="service-card" id="teachers-support">
           <span class="service-kicker">For teachers &amp; educators</span>
           <h3>Workshops &amp; Consultation</h3>
-          <p>Professional learning and practical consultation around differentiation, behaviour, inclusion, classroom ecology and supporting diverse learners.</p>
+          <p>I work with teachers on the part that matters after we say “include the student.” What does that look like in an actual lesson? We look at differentiation, behaviour, classroom ecology, access, regulation and practical ways to help diverse learners participate and learn.</p>
           <button class="service-action" type="button" onclick="chooseSupport('Teacher / educator','Teacher workshop / consultation')">Explore educator support</button>
         </article>
 
         <article class="service-card" id="schools-support">
           <span class="service-kicker">For schools &amp; organisations</span>
           <h3>Training, Workshops &amp; Special Education Consultation</h3>
-          <p>Tailored professional learning and consultation for teams seeking stronger approaches to inclusion, differentiation, behaviour and learner access.</p>
+          <p>I provide workshops, training and consultation for schools and organisations that want Special Education to be more than placement on a register or a child sitting in the room. We focus on what staff can do differently so students have meaningful access to learning.</p>
           <button class="service-action" type="button" onclick="chooseSupport('School / organisation','School / organisation training or consultation')">Ask about organisational support</button>
         </article>
       </div>
@@ -1011,8 +990,7 @@
       <span class="section-tag">Start here</span>
       <h2>Tell me what is happening.</h2>
       <p class="lead">
-        Share a little about the support you are looking for. I will use your information
-        to understand the request and identify the most appropriate next step.
+        Tell me what is happening. You do not need to write it in professional language. I will read your concern and help you identify the most useful next step.
       </p>
 
       <form class="lead-form" action="https://formsubmit.co/ae3de5af71dcc6dde1b81cf12723e28e" method="POST">
@@ -1081,12 +1059,12 @@
     <section class="section" id="start">
 
       <span class="section-tag">Start Here</span>
-      <h2>In the room is not the same as included.</h2>
+      <h2>Being in the room does not mean the student is included.</h2>
 
       <p class="lead">
         A student can sit in a mainstream classroom all day and still have
         very little access to the learning taking place. Differentiation asks
-        us to examine the barriers between the learner and the lesson—and
+        us to examine the barriers between the learner and the lesson,and
         intentionally remove or reduce them.
       </p>
 
@@ -1119,7 +1097,7 @@
     <section class="section">
 
       <span class="section-tag">Think Differently</span>
-      <h2>Begin with the barrier—not the label.</h2>
+      <h2>Begin with the barrier, not the label.</h2>
 
       <p>
         A diagnosis can help us understand a learner, but it should never
@@ -1310,7 +1288,7 @@
     <section class="section">
 
       <span class="section-tag">Case Study 3</span>
-      <h2>ADHD & executive function: “He knows it—but doesn't do it.”</h2>
+      <h2>ADHD & executive function: “He knows it,but doesn't do it.”</h2>
 
       <div class="card case-card">
         <div class="case-label">Meet Daniel</div>
@@ -1523,7 +1501,7 @@
         <div class="feedback good">
           Correct. Effective differentiation often involves adjusting access,
           support, grouping, pacing, materials, response options or the
-          learning environment—not writing thirty separate lessons.
+          learning environment,not writing thirty separate lessons.
         </div>
 
         <div class="feedback try">
@@ -1725,7 +1703,7 @@
         Continue with Jamaican primary and secondary classroom scenarios,
         practical low-cost strategies, the “But I have 40 students” challenge,
         and the question at the centre of the next activity:
-        <strong>Is the learner included—or merely present?</strong>
+        <strong>Is the learner included, or merely present?</strong>
       </p>
 
       <a
@@ -1745,7 +1723,7 @@
 
       <p>
         Inclusion becomes meaningful through what happens in tomorrow's
-        lesson—not simply through where a student's chair is placed.
+        lesson,not simply through where a student's chair is placed.
       </p>
 
       <label for="commitment">
@@ -1787,44 +1765,44 @@
       <div class="eyebrow" style="color:var(--gold); opacity:1;">Special Education Quick Guide</div>
       <h2 id="specialFaqTitle">What are you trying to understand?</h2>
       <p class="faq-intro">
-        These are common starting questions. Open the closest match, then use the enquiry form if you want support with your specific situation.
+        Parents and teachers often know something is not working before they know what to call it. Start with the question that sounds closest to what you are dealing with.
       </p>
 
       <div class="faq-list">
         <details>
           <summary>My child is struggling at school. Does that automatically mean Special Education?</summary>
           <div class="details-content">
-            No. A learner can struggle for many reasons. The useful starting point is to identify the pattern: what the student can do, where difficulty appears, what changes across settings, and what support has already been tried.
+            No. Struggling does not automatically mean a child belongs in Special Education. I want to know what the student can do, where the difficulty shows up, when it changes, and what has already been tried. We begin with the learner, not a label.
           </div>
         </details>
         <details>
           <summary>Can you diagnose autism, ADHD or dyslexia?</summary>
           <div class="details-content">
-            I provide educational and behaviour support, not clinical diagnosis. I can help you organise what you are observing, understand educational implications and identify when a formal assessment by an appropriately qualified professional may be useful.
+            No. I provide educational and behaviour support, not clinical diagnosis. I can help you make sense of what you are seeing, understand how it may be affecting learning and decide whether a formal assessment by an appropriately qualified professional would be useful.
           </div>
         </details>
         <details>
           <summary>My child already has a diagnosis. What happens next?</summary>
           <div class="details-content">
-            A diagnosis is information—not a complete education plan. We can look at the learner's strengths, barriers, classroom demands, home concerns and the practical supports that may improve access, participation and progress.
+            A diagnosis gives us information. It does not tell us everything about the child and it is not an education plan by itself. We still need to ask: What can this learner do? What is getting in the way? What support, tools, teaching and environment will help this student learn and make progress?
           </div>
         </details>
         <details>
           <summary>My child is being described as disruptive, lazy or difficult. Can you help?</summary>
           <div class="details-content">
-            Yes. Behaviour is information. We can examine what tends to happen before, during and after the behaviour, including task difficulty, boredom, communication, regulation, relationships and the learning environment.
+            Yes. Behaviour gives us information. I want to know what happens before the behaviour, what the student is being asked to do, whether the work is too difficult or too easy, whether boredom is part of it, and what happens afterwards. The goal is to regulate rather than escalate and to understand before we simply punish.
           </div>
         </details>
         <details>
           <summary>Do you offer ordinary tutoring?</summary>
           <div class="details-content">
-            I do offer private tutoring and learning support, but the focus is not simply repeating schoolwork. Sessions are shaped around the learner's barriers, strengths, pace, attention, confidence and the way they access learning most effectively.
+            Yes, I offer private tutoring and learning support. I am not interested in sitting a struggling student down and giving them more of the same thing that is already not working. I adapt the support to the learner's strengths, pace, attention, confidence and the way they access learning best.
           </div>
         </details>
         <details>
           <summary>Can you train my teachers or speak to a school team?</summary>
           <div class="details-content">
-            Yes. Workshops and consultation can focus on differentiation, inclusion, behaviour, classroom ecology, autism, ADHD, dyslexia, regulation and practical strategies for diverse learners.
+            Yes. I work with teachers and school teams on differentiation, inclusion, behaviour, classroom ecology, autism, ADHD, dyslexia, regulation and practical strategies. I keep it grounded in the classroom. What can the teacher actually do tomorrow with the students in front of them?
           </div>
         </details>
       </div>
@@ -1837,9 +1815,9 @@
   </div>
 
   <footer>
-    <p><strong>Differentiation in Action</strong></p>
-    <p>Professional Learning Resource</p>
-    <p>Turning access into participation. Turning participation into learning.</p>
+    <p><strong>Marsha Kerr Talley | Behaviour &amp; Special Education Support</strong></p>
+    <p>Parents • Students • Teachers • Schools &amp; Organisations</p>
+    <p>Students with Special Educational Needs can learn. Our job is to make learning accessible.</p>
   </footer>
 
   <script>
