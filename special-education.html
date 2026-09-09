@@ -612,7 +612,7 @@
     .hero-note span { font-family: Arial, Helvetica, sans-serif; opacity:.9; font-size:.92rem; }
 
     .landing-section { margin-bottom: 70px; }
-    .landing-grid { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:18px; }
+    .landing-grid { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:18px; }
     .service-card {
       background:white; border:1px solid var(--border); border-radius:var(--radius);
       padding:26px; box-shadow:0 6px 20px rgba(0,0,0,.04);
@@ -630,15 +630,25 @@
       background:white; border:1px solid var(--border); border-radius:var(--radius); padding:28px;
       box-shadow:var(--shadow);
     }
-    .video-wrap { position:relative; width:100%; padding-top:56.25%; overflow:hidden; border-radius:16px; background:#0b2f30; }
+    .video-wrap { position:relative; width:min(100%, 420px); aspect-ratio:9 / 16; overflow:hidden; border-radius:16px; background:#0b2f30; margin:0 auto; }
     .video-wrap iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
 
     .audience-strip {
       display:flex; flex-wrap:wrap; gap:10px; margin-top:18px;
     }
     .audience-pill {
+      display:inline-flex; align-items:center; text-decoration:none;
       background:var(--light-teal); color:var(--deep-teal); border-radius:999px; padding:8px 12px;
       font-family:Arial,Helvetica,sans-serif; font-size:.88rem; font-weight:700;
+      border:1px solid transparent; transition:.2s ease;
+    }
+    .audience-pill:hover, .audience-pill:focus { background:white; border-color:var(--teal); transform:translateY(-1px); }
+    .service-card { scroll-margin-top:95px; }
+    .service-card:target { outline:3px solid rgba(49,159,162,.25); outline-offset:4px; }
+    .service-action {
+      display:inline-flex; margin-top:16px; border:0; border-radius:999px; padding:10px 14px;
+      background:var(--deep-teal); color:white; text-decoration:none; cursor:pointer;
+      font-family:Arial,Helvetica,sans-serif; font-weight:800; font-size:.86rem;
     }
 
     .lead-box {
@@ -696,6 +706,188 @@
       .special-hero-grid, .video-shell, .landing-grid, .lead-form { grid-template-columns:1fr; }
       .lead-form .full { grid-column:auto; }
       .se-fab { right:16px; bottom:16px; font-size:.92rem; padding:13px 16px; }
+    }
+
+
+
+    /* ---------------------------------------------------------
+       Sensory-considerate Special Education theme
+       Calm by default: muted colour, reduced visual competition,
+       generous spacing, clear focus states and reduced motion.
+       --------------------------------------------------------- */
+    :root {
+      --teal: #5f8381;
+      --bright-teal: #b7d7d3;
+      --deep-teal: #365b5a;
+      --cream: #f7f6f2;
+      --white: #ffffff;
+      --ink: #263334;
+      --muted: #667273;
+      --light-teal: #edf3f1;
+      --border: #d8e1de;
+      --gold: #a98755;
+      --shadow: 0 6px 18px rgba(38,51,52,0.06);
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.72;
+      letter-spacing: 0.005em;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing: 0;
+    }
+
+    p, li, label, input, textarea, select, button {
+      font-size: 1rem;
+    }
+
+    .hero {
+      background: #466b69;
+      color: #ffffff;
+    }
+
+    .hero p { max-width: 720px; }
+
+    .btn,
+    .jamaica-link,
+    .audience-pill,
+    .se-fab {
+      transition: none;
+    }
+
+    .btn:hover,
+    .jamaica-link:hover,
+    .audience-pill:hover,
+    .audience-pill:focus {
+      transform: none;
+    }
+
+    .btn-primary {
+      background: #dcebe8;
+      color: #244746;
+      border: 1px solid #b8ceca;
+    }
+
+    .btn-light {
+      background: rgba(255,255,255,0.10);
+      border-color: rgba(255,255,255,0.42);
+    }
+
+    .section-tag,
+    .service-label,
+    .audience-pill {
+      background: #edf3f1;
+      color: #365b5a;
+    }
+
+    .audience-pill {
+      border: 1px solid #d8e1de;
+      box-shadow: none;
+    }
+
+    .audience-pill:hover,
+    .audience-pill:focus {
+      background: #f8faf9;
+      border-color: #789896;
+    }
+
+    .card,
+    .question,
+    .service-card,
+    .intro-panel,
+    .scenario-builder {
+      box-shadow: var(--shadow);
+    }
+
+    .principle,
+    .jamaica-transition,
+    .resource-divider,
+    .completion {
+      background: #466b69;
+      box-shadow: var(--shadow);
+    }
+
+    .jamaica-transition .section-tag,
+    .resource-divider .section-tag {
+      background: rgba(255,255,255,0.16);
+      color: #ffffff;
+    }
+
+    .jamaica-reality {
+      background: rgba(255,255,255,0.10);
+    }
+
+    .video-wrap {
+      background: #eef1ef;
+      box-shadow: none;
+    }
+
+    .lead-form-wrap {
+      background: #fbfbf8;
+      box-shadow: var(--shadow);
+    }
+
+    .se-fab {
+      background: #466b69;
+      box-shadow: 0 6px 18px rgba(38,51,52,.14);
+    }
+
+    .se-fab-dot {
+      background: #dcebe8;
+      box-shadow: none;
+    }
+
+    .faq-overlay {
+      background: rgba(38,51,52,.38);
+    }
+
+    .faq-modal {
+      box-shadow: 0 12px 30px rgba(38,51,52,.14);
+    }
+
+    .faq-close {
+      background: #edf3f1;
+      color: #365b5a;
+    }
+
+    .progress-track { background: #e7ebe9; }
+    .progress-bar { background: #6f918e; }
+
+    textarea:focus,
+    input:focus,
+    select:focus,
+    button:focus,
+    a:focus-visible {
+      outline: 3px solid #7a9d9a;
+      outline-offset: 3px;
+    }
+
+    /* Avoid rapid or unnecessary movement for users who request it. */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* Honour operating-system requests for stronger contrast. */
+    @media (prefers-contrast: more) {
+      :root {
+        --ink: #111819;
+        --muted: #3e4849;
+        --border: #879694;
+        --deep-teal: #244746;
+      }
+      .card, .question, .service-card, .intro-panel, details {
+        border-width: 2px;
+      }
     }
 
   </style>
@@ -766,11 +958,11 @@
             My work focuses on understanding what is getting in the way of learning,
             participation or regulation—and identifying practical ways forward.
           </p>
-          <div class="audience-strip">
-            <span class="audience-pill">Parents</span>
-            <span class="audience-pill">Students</span>
-            <span class="audience-pill">Teachers</span>
-            <span class="audience-pill">Schools & organisations</span>
+          <div class="audience-strip" aria-label="Choose support by audience">
+            <a class="audience-pill" href="#parents-support">Parents</a>
+            <a class="audience-pill" href="#students-support">Students</a>
+            <a class="audience-pill" href="#teachers-support">Teachers</a>
+            <a class="audience-pill" href="#schools-support">Schools &amp; organisations</a>
           </div>
         </div>
       </div>
@@ -785,31 +977,32 @@
       </p>
 
       <div class="landing-grid">
-        <article class="service-card">
+        <article class="service-card" id="parents-support">
           <span class="service-kicker">For parents</span>
           <h3>Parent Consultation</h3>
-          <p>
-            Practical guidance when your child is struggling with learning, behaviour,
-            attention, regulation, school expectations or an existing diagnosis.
-          </p>
+          <p>Practical guidance when your child is struggling with learning, behaviour, attention, regulation, school expectations or an existing diagnosis.</p>
+          <button class="service-action" type="button" onclick="chooseSupport('Parent / caregiver','Parent consultation')">Ask about parent support</button>
         </article>
 
-        <article class="service-card">
+        <article class="service-card" id="students-support">
           <span class="service-kicker">For students</span>
-          <h3>Private Learning Support & Tutoring</h3>
-          <p>
-            Individual sessions shaped around how the student learns—not simply more of
-            the same work that is already frustrating them.
-          </p>
+          <h3>Private Learning Support &amp; Tutoring</h3>
+          <p>Individual sessions shaped around how the student learns—not simply more of the same work that is already frustrating them.</p>
+          <button class="service-action" type="button" onclick="chooseSupport('Student','Private learning support / tutoring')">Ask about student support</button>
         </article>
 
-        <article class="service-card">
-          <span class="service-kicker">For educators</span>
-          <h3>Workshops & Consultation</h3>
-          <p>
-            Professional learning and practical consultation around differentiation,
-            behaviour, inclusion, classroom ecology and supporting diverse learners.
-          </p>
+        <article class="service-card" id="teachers-support">
+          <span class="service-kicker">For teachers &amp; educators</span>
+          <h3>Workshops &amp; Consultation</h3>
+          <p>Professional learning and practical consultation around differentiation, behaviour, inclusion, classroom ecology and supporting diverse learners.</p>
+          <button class="service-action" type="button" onclick="chooseSupport('Teacher / educator','Teacher workshop / consultation')">Explore educator support</button>
+        </article>
+
+        <article class="service-card" id="schools-support">
+          <span class="service-kicker">For schools &amp; organisations</span>
+          <h3>Training, Workshops &amp; Special Education Consultation</h3>
+          <p>Tailored professional learning and consultation for teams seeking stronger approaches to inclusion, differentiation, behaviour and learner access.</p>
+          <button class="service-action" type="button" onclick="chooseSupport('School / organisation','School / organisation training or consultation')">Ask about organisational support</button>
         </article>
       </div>
     </section>
@@ -855,6 +1048,7 @@
             <option>Teacher workshop / professional learning</option>
             <option>School or organisation consultation</option>
             <option>I am not sure yet</option>
+                      <option>School / organisation training or consultation</option>
           </select>
         </div>
         <div class="full">
@@ -1801,6 +1995,14 @@
 
     updateProgress();
 
+
+    function chooseSupport(role, service) {
+      const roleField = document.getElementById("leadRole");
+      const serviceField = document.getElementById("leadService");
+      if (roleField) roleField.value = role;
+      if (serviceField) serviceField.value = service;
+      document.getElementById("contact").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
 
     function openSpecialFAQ() {
       const overlay = document.getElementById('specialFaqOverlay');
