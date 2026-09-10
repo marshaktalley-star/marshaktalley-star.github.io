@@ -1118,6 +1118,53 @@ footer { background:#173f40; color:#fff; padding:44px 20px; }
 .workshop-summary:hover .workshop-open-button,
 .workshop-summary:focus .workshop-open-button { background:#034e51; }
 
+
+
+/* 2026-09-10 enquiry form visibility upgrades */
+#contact.lead-box {
+  position: relative;
+  margin-top: 84px;
+  padding: 40px;
+  border: 2px solid var(--brand-teal);
+  border-left: 8px solid var(--brand-deep);
+  box-shadow: 0 14px 34px rgba(5,99,103,.10);
+}
+#contact .section-tag {
+  background: var(--brand-deep);
+  color: #fff;
+  border-color: var(--brand-deep);
+}
+#contact h2 {
+  margin-top: 10px;
+  font-size: clamp(2.2rem,5vw,3.5rem);
+}
+#contact .lead {
+  max-width: 840px;
+  margin-bottom: 8px;
+}
+#contact .lead-form {
+  margin-top: 28px;
+}
+#contact .btn[type="submit"] {
+  padding: 15px 26px;
+  font-size: 1.05rem;
+}
+
+/* Hide the floating questions button once the enquiry form is in view */
+.se-fab.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (max-width: 560px) {
+  #contact.lead-box {
+    margin-top: 58px;
+    padding: 28px 20px;
+    border-left-width: 6px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1260,7 +1307,7 @@ footer { background:#173f40; color:#fff; padding:44px 20px; }
 </div>
 </section>
 <section class="landing-section lead-box" id="contact">
-<span class="section-tag">Start here</span>
+<span class="section-tag">Need support?</span>
 <h2>Tell me what is happening.</h2>
 <p class="lead">
         Tell me what is happening. You do not need to write it in professional language. I will read your concern and help you identify the most useful next step.
@@ -2068,6 +2115,22 @@ footer { background:#173f40; color:#fff; padding:44px 20px; }
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') closeSpecialFAQ();
     });
+
+
+
+    // Keep the floating questions button from competing with the enquiry form.
+    const enquirySection = document.getElementById('contact');
+    const specialQuestionsButton = document.querySelector('.se-fab');
+
+    if (enquirySection && specialQuestionsButton && 'IntersectionObserver' in window) {
+      const enquiryObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          specialQuestionsButton.classList.toggle('is-hidden', entry.isIntersecting);
+        });
+      }, { threshold: 0.18 });
+
+      enquiryObserver.observe(enquirySection);
+    }
 
   </script>
 </body>
