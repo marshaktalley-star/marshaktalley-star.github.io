@@ -190,6 +190,58 @@
     }
 
 
+    /* WORK WITH ME SUBMENU */
+
+    .site-nav .nav-dropdown {
+      position: relative;
+    }
+
+    .site-nav .nav-submenu {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 50%;
+      z-index: 1000;
+      min-width: 220px;
+      margin: 0;
+      padding: 9px 0;
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      transform: translateX(-50%);
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: 0 14px 34px rgba(5,99,103,0.13);
+    }
+
+    .site-nav .nav-submenu li {
+      width: 100%;
+    }
+
+    .site-nav .nav-submenu a {
+      display: block;
+      width: 100%;
+      padding: 11px 16px;
+      color: #343434;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      text-transform: none;
+      white-space: nowrap;
+    }
+
+    .site-nav .nav-submenu a:hover,
+    .site-nav .nav-submenu a:focus-visible {
+      background: var(--teal-pale);
+      color: var(--teal-dark);
+      outline: none;
+    }
+
+    .site-nav .nav-dropdown:hover > .nav-submenu,
+    .site-nav .nav-dropdown:focus-within > .nav-submenu {
+      display: flex;
+    }
+
+
     /* MOBILE MENU */
 
     .nav-toggle {
@@ -1133,6 +1185,27 @@
         font-size: 14px;
       }
 
+
+      .site-nav .nav-submenu {
+        position: static;
+        display: flex;
+        min-width: 0;
+        margin: 7px 0 0 14px;
+        padding: 4px 0 4px 13px;
+        transform: none;
+        border: 0;
+        border-left: 2px solid var(--teal-pale);
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+      }
+
+      .site-nav .nav-submenu a {
+        padding: 7px 0;
+        font-size: 13px;
+        white-space: normal;
+      }
+
       .intro {
 
         padding:
@@ -1601,10 +1674,17 @@
             </a>
           </li>
 
-          <li>
+          <li class="nav-dropdown">
             <a href="work-with-me.html">
               Work With Me
             </a>
+            <ul class="nav-submenu" aria-label="Work With Me">
+              <li>
+                <a href="https://marshakerrtalley.com/special-education">
+                  Special Education
+                </a>
+              </li>
+            </ul>
           </li>
 
           <li>
