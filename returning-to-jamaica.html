@@ -1482,6 +1482,361 @@ section[id]{scroll-margin-top:112px}
   display:block;
   background:#000;
 }
+
+/* =========================================================
+   RETURNING TO JAMAICA — SATURDAY AUDIO SERIES
+   Distinct from the practical guide, but still part of the same page.
+   ========================================================= */
+.series-section{
+  padding:94px 0;
+  background:
+    radial-gradient(circle at 88% 10%,rgba(47,226,221,.22),transparent 25%),
+    radial-gradient(circle at 8% 90%,rgba(243,200,91,.10),transparent 24%),
+    linear-gradient(145deg,#043f42,#075d61);
+  color:#efffff;
+  position:relative;
+  overflow:hidden;
+}
+.series-section:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:34px 34px;
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.65),transparent 78%);
+}
+.series-section .wrap{
+  position:relative;
+  z-index:1;
+}
+.series-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
+  padding:8px 13px;
+  border:1px solid rgba(255,255,255,.17);
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  font-size:.78rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+}
+.series-kicker:before{
+  content:"";
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--aqua);
+  box-shadow:0 0 0 5px rgba(47,226,221,.12);
+}
+.series-heading{
+  max-width:860px;
+  margin-bottom:18px;
+  color:#fff;
+}
+.series-intro{
+  max-width:850px;
+  margin-bottom:32px;
+  color:#d9eeee;
+  font-size:clamp(1.08rem,1.8vw,1.28rem);
+  line-height:1.6;
+}
+.series-intro strong{color:#fff}
+
+.series-accordion{
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:32px;
+  background:rgba(255,255,255,.075);
+  box-shadow:0 24px 60px rgba(0,0,0,.18);
+  overflow:hidden;
+  backdrop-filter:blur(9px);
+}
+.series-accordion > summary{
+  padding:0;
+  color:#fff;
+  background:transparent;
+  cursor:pointer;
+}
+.series-accordion > summary:after{
+  display:none;
+}
+.series-summary{
+  width:100%;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:18px;
+  align-items:center;
+  padding:26px 28px;
+}
+.series-summary-icon{
+  width:52px;
+  height:52px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--aqua);
+  color:var(--deepest);
+  font-size:1.25rem;
+  box-shadow:0 10px 24px rgba(47,226,221,.18);
+}
+.series-summary-copy{
+  min-width:0;
+}
+.series-summary-copy small{
+  display:block;
+  margin-bottom:3px;
+  color:#bfe4e2;
+  font-size:.75rem;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.series-summary-copy strong{
+  display:block;
+  color:#fff;
+  font-size:clamp(1.15rem,2vw,1.45rem);
+  line-height:1.25;
+}
+.series-toggle{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:#e9ffff;
+  font-size:.88rem;
+  font-weight:850;
+  white-space:nowrap;
+}
+.series-toggle:after{
+  content:"+";
+  display:grid;
+  place-items:center;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:rgba(255,255,255,.11);
+  border:1px solid rgba(255,255,255,.14);
+  font-size:1.25rem;
+}
+.series-accordion[open] .series-toggle:after{content:"–";}
+.series-accordion[open] .series-toggle .closed-word{display:none;}
+.series-accordion:not([open]) .series-toggle .open-word{display:none;}
+
+.series-body{
+  padding:0 28px 30px;
+}
+.series-divider{
+  height:1px;
+  background:rgba(255,255,255,.13);
+  margin:0 0 30px;
+}
+.series-grid{
+  display:grid;
+  grid-template-columns:.72fr 1.28fr;
+  gap:32px;
+  align-items:stretch;
+}
+.series-note{
+  min-height:100%;
+  padding:30px;
+  border-radius:26px;
+  background:
+    radial-gradient(circle at 82% 15%,rgba(47,226,221,.18),transparent 25%),
+    linear-gradient(155deg,#073b3e,#052f32);
+  border:1px solid rgba(255,255,255,.11);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.series-note-label{
+  color:var(--aqua);
+  font-size:.75rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  margin-bottom:18px;
+}
+.series-note blockquote{
+  margin:0;
+  color:#fff;
+  font-size:clamp(1.45rem,2.8vw,2.25rem);
+  line-height:1.22;
+  letter-spacing:-.025em;
+  font-weight:850;
+}
+.series-note p{
+  margin:24px 0 0;
+  color:#cde8e7;
+  font-size:.95rem;
+  line-height:1.6;
+}
+
+.episode-card{
+  background:#fff;
+  color:var(--ink);
+  border-radius:26px;
+  padding:30px;
+  box-shadow:0 16px 42px rgba(0,0,0,.12);
+}
+.episode-meta{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px 12px;
+  margin-bottom:13px;
+}
+.episode-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:7px 10px;
+  border-radius:999px;
+  background:var(--soft);
+  color:var(--deep);
+  font-size:.74rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+.episode-date{
+  color:var(--muted);
+  font-size:.9rem;
+  font-weight:750;
+}
+.episode-card h3{
+  margin-bottom:10px;
+  font-size:clamp(1.65rem,3vw,2.35rem);
+}
+.episode-deck{
+  color:#466466;
+  font-size:1rem;
+  line-height:1.62;
+}
+.spotify-embed{
+  margin:24px 0 18px;
+  overflow:hidden;
+  border-radius:18px;
+  background:#111;
+}
+.spotify-embed iframe{
+  width:100%;
+  min-height:180px;
+  display:block;
+  border:0;
+}
+.episode-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px;
+}
+.series-section .episode-actions .btn.spotify{
+  background:#191414;
+  color:#fff;
+  border-color:#191414;
+}
+.series-section .episode-actions .btn.spotify:hover{
+  background:#2a2424;
+}
+.series-section .episode-actions .btn.site{
+  background:var(--soft);
+  color:var(--deep);
+  border-color:rgba(5,99,103,.12);
+}
+
+.episode-about{
+  margin-top:24px;
+  border-top:1px solid var(--line);
+}
+.episode-about summary{
+  padding:18px 0;
+  color:var(--deep);
+  font-size:1rem;
+}
+.episode-about .detail-body{
+  padding:0 0 4px;
+  color:#4e696a;
+}
+.episode-about .detail-body p:last-child{margin-bottom:0;}
+
+.series-foot{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:16px;
+  align-items:center;
+  margin-top:26px;
+  padding-top:22px;
+  border-top:1px solid rgba(255,255,255,.12);
+  color:#cce7e5;
+}
+.series-foot strong{color:#fff;}
+.series-foot-note{
+  max-width:760px;
+  margin:0;
+  font-size:.95rem;
+}
+.series-saturday{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(47,226,221,.12);
+  color:#e9ffff;
+  font-size:.78rem;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+.hero-series-link{
+  background:transparent;
+  color:var(--deep);
+  border:1px dashed rgba(5,99,103,.34);
+}
+.hero-series-link:hover{
+  background:rgba(47,226,221,.09);
+  border-style:solid;
+}
+
+.chapter-nav .nav-series{
+  background:rgba(47,226,221,.12);
+  color:var(--deep);
+}
+.chapter-nav .nav-series:before{
+  content:"●";
+  color:var(--brand);
+  margin-right:6px;
+  font-size:.72em;
+}
+
+@media(max-width:900px){
+  .series-grid{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+  .series-section{padding:66px 0}
+  .series-summary{
+    grid-template-columns:auto 1fr;
+    padding:22px 18px;
+  }
+  .series-toggle{
+    grid-column:1 / -1;
+    justify-content:flex-end;
+    padding-top:2px;
+  }
+  .series-body{padding:0 18px 22px}
+  .series-note,.episode-card{padding:22px}
+  .series-note blockquote{font-size:1.55rem}
+  .episode-actions .btn{width:100%}
+}
+
 </style>
 </head>
 
@@ -1501,6 +1856,7 @@ section[id]{scroll-margin-top:112px}
       <div class="actions">
         <a class="btn primary" href="#prepare">Start the guide</a>
         <a class="btn light" href="#checklist">Use the checklist</a>
+        <a class="btn hero-series-link" href="#series">🎙 Listen to the series</a>
       </div>
     </div>
 
@@ -1516,6 +1872,7 @@ section[id]{scroll-margin-top:112px}
 
 <nav class="chapter-nav" aria-label="Guide navigation">
   <div class="wrap">
+    <a href="#series" class="nav-series">Series</a>
     <a href="#prepare">Prepare</a>
     <a href="#shipping">Shipping</a>
     <a href="#vehicle">Vehicle</a>
@@ -1583,6 +1940,112 @@ section[id]{scroll-margin-top:112px}
         </p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="series-section" id="series" aria-labelledby="series-title">
+  <div class="wrap">
+    <span class="series-kicker">Saturday audio series</span>
+    <h2 class="series-heading" id="series-title">Returning to Jamaica — the part I cannot put neatly into a guide.</h2>
+
+    <p class="series-intro">
+      I decided to start recording these because there are things happening in real time that will not necessarily become
+      a whole section of this page. Some are frustrating. Some are funny. Some make me wonder what on earth I was thinking
+      moving back here. 😂 And some remind me exactly why I came home. <strong>This is that part of the story.</strong>
+    </p>
+
+    <details class="series-accordion" open>
+      <summary aria-label="Open or close the Returning to Jamaica audio series">
+        <div class="series-summary">
+          <span class="series-summary-icon" aria-hidden="true">🎙</span>
+          <span class="series-summary-copy">
+            <small>Latest episode</small>
+            <strong>This Week Was a Doozie! | Episode 1</strong>
+          </span>
+          <span class="series-toggle">
+            <span class="closed-word">Listen</span>
+            <span class="open-word">Close</span>
+          </span>
+        </div>
+      </summary>
+
+      <div class="series-body">
+        <div class="series-divider" aria-hidden="true"></div>
+
+        <div class="series-grid">
+          <aside class="series-note">
+            <div>
+              <div class="series-note-label">From Marsha</div>
+              <blockquote>
+                “The ups. The downs. The lessons. The joy. The things nobody tells you. And, yes, sometimes the tea.” ☕🇯🇲
+              </blockquote>
+            </div>
+            <p>
+              These Saturday recordings are intentionally more conversational than my usual work.
+              I am documenting the return while I am actually living it.
+            </p>
+          </aside>
+
+          <article class="episode-card" aria-labelledby="episode-1-title">
+            <div class="episode-meta">
+              <span class="episode-pill">Episode 01</span>
+              <span class="episode-date">12 September 2026 · 49 min</span>
+            </div>
+
+            <h3 id="episode-1-title">This Week Was a Doozie! 😂</h3>
+
+            <p class="episode-deck">
+              Two months into living in Jamaica again, I am still learning what it means to actually live here as an adult.
+              This week brought the car, Jamaican roads and tolls, insurance and licence plates, job decisions, missing belongings,
+              unexpected kindness, a beautiful date day and one very necessary reminder to slow down.
+            </p>
+
+            <div class="spotify-embed">
+              <iframe
+                src="https://anchor.fm/marsha-kerr-talley0/embed/episodes/This-Week-Was-a-Doozie---Returning-to-Jamaica--Ep--1-e3ooj2b"
+                title="This Week Was a Doozie! — Returning to Jamaica Episode 1"
+                loading="lazy"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+              </iframe>
+            </div>
+
+            <div class="episode-actions">
+              <a class="btn spotify"
+                 href="https://creators.spotify.com/pod/profile/marsha-kerr-talley0/episodes/This-Week-Was-a-Doozie---Returning-to-Jamaica--Ep--1-e3ooj2b"
+                 target="_blank"
+                 rel="noopener">
+                Listen on Spotify
+              </a>
+              <a class="btn site" href="#prepare">Explore the practical guide</a>
+            </div>
+
+            <details class="episode-about">
+              <summary>What happened this week?</summary>
+              <div class="detail-body">
+                <p>
+                  I finally got my car, discovered just how serious a St Ann-to-Kingston commute can be,
+                  made some decisions about work and relocation, navigated another round of Jamaican paperwork,
+                  and found myself thinking about why I came home in the first place.
+                </p>
+                <p>
+                  Somewhere in all of that, I realised something else too: trouble is not following me.
+                  People have shown up for me again and again. I am learning the systems, learning the pace
+                  and learning to give myself a little grace while I settle.
+                </p>
+              </div>
+            </details>
+          </article>
+        </div>
+
+        <div class="series-foot">
+          <p class="series-foot-note">
+            <strong>New recordings on Saturdays.</strong>
+            This is not a polished “how-to” show. It is the lived part of returning home — while it is happening.
+          </p>
+          <span class="series-saturday">🇯🇲 Saturdays with Marsha</span>
+        </div>
+      </div>
+    </details>
   </div>
 </section>
 
