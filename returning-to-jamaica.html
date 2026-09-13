@@ -2517,10 +2517,74 @@ h3{
   .journey-subscribe-panel .substack-wrap{padding:6px;border-radius:16px}
   .journey-subscribe-panel .substack-wrap iframe{height:320px}
 }
+
+/* v3: readability, mobile fit, navigation clarity and interactive safety guidance */
+html,body{max-width:100%;overflow-x:hidden}
+.hero-grid > *, .chapter-top > *, .video-layout > *{min-width:0}
+.citizenship-story h3{font-size:clamp(2rem,3.2vw,2.75rem);line-height:1.08;margin:6px 0 20px}
+.safety-step{transition:transform .22s ease,background .22s ease,box-shadow .22s ease;border-color .22s ease}
+.safety-step:hover,.safety-step:focus-within{transform:translateY(-7px);background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.25);box-shadow:0 14px 28px rgba(0,0,0,.13)}
+.uber-story{margin-top:28px;padding:26px 28px;border-radius:20px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16)}
+.uber-story-label{display:inline-block;margin-bottom:10px;color:var(--aqua);font-size:.76rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.uber-story h3{max-width:900px;margin-bottom:18px}
+.uber-story p{max-width:1050px;color:#e8f6f5}
+.uber-story-takeaway{margin:22px 0 0;padding:18px 20px;border-left:3px solid var(--aqua);background:rgba(255,255,255,.07);border-radius:10px}
+.chapter-nav{position:sticky}
+@media(max-width:680px){
+  .wrap{width:calc(100% - 32px);max-width:100%}
+  .hero{padding:42px 0 40px}
+  .hero-grid{grid-template-columns:1fr;gap:30px;width:100%}
+  .hero-copy{width:100%;max-width:100%}
+  .hero-copy h1{font-size:clamp(2.7rem,12vw,3.75rem);line-height:1;overflow-wrap:anywhere}
+  .hero-copy .lead{font-size:1.03rem;line-height:1.65}
+  .hero-byline{gap:8px 14px}
+  .actions{display:grid;grid-template-columns:1fr;gap:10px;width:100%}
+  .actions .btn{width:100%;min-height:50px;font-size:.92rem}
+  .hero-image{min-height:0;width:100%}
+  .hero-image img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:120px 120px 24px 24px}
+  .hero-note{position:relative;left:auto;bottom:auto;width:calc(100% - 24px);margin:-54px auto 0;padding:18px;z-index:2}
+  .chapter-nav:before{content:"Explore the page  •  Swipe for more →";font-size:.66rem;padding:9px 16px 3px}
+  .chapter-nav{position:sticky;top:0}
+  .chapter-nav .wrap{width:100%;padding:8px 18px 12px;gap:8px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+  .chapter-nav a{font-size:.82rem;padding:10px 15px;min-height:42px;display:inline-flex;align-items:center;scroll-snap-align:start}
+  .chapter-nav:after{content:"";position:absolute;right:0;bottom:0;width:34px;height:54px;pointer-events:none;background:linear-gradient(90deg,rgba(255,253,249,0),rgba(255,253,249,.98))}
+  .citizenship-story{padding:24px 20px}
+  .citizenship-story h3{font-size:2.05rem}
+  .safety-box{padding:24px 20px}
+  .safety-step{padding:19px 18px}
+  .uber-story{padding:22px 18px}
+}
+@media(prefers-reduced-motion:reduce){.safety-step{transition:none}.safety-step:hover{transform:none}}
+
+
+
+/* Reader engagement and pacing */
+.reading-progress{position:fixed;top:0;left:0;width:100%;height:3px;z-index:9999;pointer-events:none;background:transparent}
+.reading-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--teal),var(--aqua));transition:width .12s linear}
+.engage-reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+.engage-reveal.is-visible{opacity:1;transform:none}
+.story-bridge{padding:24px 0 4px;text-align:center}
+.story-bridge-inner{max-width:720px;margin:0 auto;padding:18px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.35rem,2.2vw,1.75rem);line-height:1.25;color:var(--deep)}
+.subscribe-nudge{position:fixed;right:24px;bottom:24px;z-index:9998;width:min(390px,calc(100vw - 32px));padding:22px 48px 20px 22px;border:1px solid rgba(5,99,103,.18);border-radius:22px;background:rgba(255,253,249,.97);box-shadow:0 20px 55px rgba(4,54,57,.18);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);opacity:0;transform:translateY(24px);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
+.subscribe-nudge.show{opacity:1;transform:none;pointer-events:auto}
+.subscribe-nudge .mini-label{display:block;margin-bottom:6px;color:var(--teal);font-size:.72rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.subscribe-nudge h3{margin:0 0 7px;font-size:1.65rem;line-height:1.05;color:var(--deep)}
+.subscribe-nudge p{margin:0 0 14px;font-size:.96rem;line-height:1.5;color:var(--muted)}
+.subscribe-nudge a{display:inline-flex;align-items:center;justify-content:center;padding:11px 17px;border-radius:999px;background:var(--teal);color:#fff;text-decoration:none;font-weight:800;font-size:.9rem}
+.subscribe-nudge-close{position:absolute;top:12px;right:12px;width:32px;height:32px;border:0;border-radius:50%;background:#edf8f7;color:var(--deep);font-size:1.2rem;line-height:1;cursor:pointer}
+@media(max-width:680px){
+ .reading-progress{height:3px}
+ .story-bridge{padding:18px 0 0}.story-bridge-inner{width:calc(100% - 32px);padding:16px 8px;font-size:1.35rem}
+ .subscribe-nudge{right:16px;bottom:16px;left:16px;width:auto;border-radius:20px;padding:19px 46px 18px 19px}
+ .subscribe-nudge h3{font-size:1.5rem}
+}
+@media(prefers-reduced-motion:reduce){.engage-reveal{opacity:1;transform:none;transition:none}.subscribe-nudge{transition:none}}
+
 </style>
 </head>
 
 <body>
+<div class="reading-progress" aria-hidden="true"><span id="readingProgressBar"></span></div>
 
 <header class="site-header" aria-label="Website header">
   <div class="site-header-inner">
@@ -2546,12 +2610,10 @@ h3{
       <h1>I came home to Jamaica. Now I am learning how to live here again.</h1>
       <p class="lead">
         I left Jamaica at 14 and came back decades later. I am Jamaican, but living here again as an adult is a whole
-        different experience from coming home for a holiday. I am learning the systems, the prices, the people,
-        the shortcuts that help and, yes, the processes that can work your last nerve. I am sharing what I learn as
-        I live it because somebody coming behind me should not have to figure out every single thing the hard way.
+        different experience from coming home for a holiday. The systems, the prices, the people, the shortcuts that help
+        and, yes, the processes that can work your last nerve. I am learning Jamaica again in real time.
       </p>
       <div class="hero-byline" aria-label="About this page">
-        <strong>By Marsha Kerr Talley</strong>
         <span>Writer · Educator · Returning Resident</span>
         <span>Jamaica, in real time</span>
       </div>
@@ -2608,14 +2670,12 @@ h3{
       <span class="kicker">This is what coming home really looks like</span>
       <h2>I love being home. That does not mean I am going to pretend everything works well.</h2>
       <p class="lead">
-        There is so much I love about being back in Jamaica. This page is not about bashing my country.
-        It is about helping people returning home navigate some of the things I had to learn the hard way. 
-  
+        There is so much I love about being back in Jamaica. There are also things that frustrate me, things that make
+        absolutely no sense to me, and things I am having to relearn after decades away.
       </p>
       <p>
-        I am sharing what I wish somebody had told me before I packed a container,
-        shipped my car and started rebuilding my life here. Where something went wrong, I will tell you that too. Where I can,
-        what I did next.
+        Some days Jamaica works my last nerve. Other days, somebody shows up with exactly the information, connection
+        or kindness I needed. Both are part of coming home.
       </p>
       <div class="pullquote">
         It is not about learning to beat the system. It is about understanding how things actually work. 
@@ -2821,7 +2881,7 @@ h3{
 
     <div class="citizenship-story">
       <span class="kicker">Citizenship paperwork can become part of the move too</span>
-      <h3>My daughter's Jamaican citizenship took about a year.</h3>
+      <h3>My daughter’s Jamaican citizenship took about a year.</h3>
       <p>
         I started my daughter's citizenship process while we were still living in the UK and followed up religiously.
         A couple of months before we moved to Jamaica, I found out that her name had been misspelled in the process.
@@ -3125,6 +3185,8 @@ h3{
   </div>
 </section>
 
+<div class="story-bridge engage-reveal" aria-hidden="true"><div class="story-bridge-inner">Getting the container here was one thing. Then there was the car.</div></div>
+
 <section class="chapter sand reverse" id="vehicle">
   <div class="wrap">
     <div class="chapter-top">
@@ -3373,6 +3435,28 @@ h3{
         Uber's Jamaica safety guidance specifically tells riders to match the plate, vehicle and driver before entering,
         and its Verify Your Ride feature can require a four-digit PIN before the driver starts the trip.
       </p>
+
+      <div class="uber-story">
+        <span class="uber-story-label">Why I check every time</span>
+        <h3>I turned down the same driver twice because the licence plate did not match the app.</h3>
+        <p>
+          The first time she arrived, the car had a red plate with a completely different number from the one shown in the app.
+          I questioned her about it. She told me she had upgraded her licence but had forgotten to update it in the app. Then she said,
+          “It’s me. Don’t I look like the person on the app?”
+        </p>
+        <p>
+          When I was still reluctant, she told me that if I did not want to get in, I did not have to. Sure enough, I did not.
+          I was with my daughter, and I did not think getting into a stranger’s car when the licence plate was completely different
+          from the one attached to the service was a wise lesson to model for her.
+        </p>
+        <p>
+          The second time, I matched with the same driver again. This time I asked explicitly whether the licence plate was the one
+          shown in the app. At first she said yes. She then messaged me the actual plate number through the app, and it still did not
+          match. She said she had updated it but the change was not reflecting. I cancelled the ride and requested another Uber.
+          The next driver arrived with a licence plate that matched the app. I got in.
+        </p>
+        <p class="uber-story-takeaway"><strong>For me, that is the line:</strong> if the identifying information in the app does not match the vehicle in front of me, I do not get in.</p>
+      </div>
     </div>
 
     <div class="everyday-panel">
@@ -3575,6 +3659,8 @@ h3{
     </div>
   </div>
 </section>
+
+<div class="story-bridge engage-reveal" aria-hidden="true"><div class="story-bridge-inner">Once the paperwork and transport are sorted, another question becomes very real: where are you actually going to live?</div></div>
 
 <section class="chapter sand" id="housing">
   <div class="wrap">
@@ -3879,7 +3965,7 @@ h3{
       <span class="kicker">A conversation worth having</span>
       <h2 id="conversation-title">Coming home also means asking what kind of Jamaica we are building.</h2>
       <p class="lead">
-        Returning to Jamaica has made me think much more seriously about what it actually takes to make returning home sustainable — not only emotionally, but financially and practically. A recent Facebook conversation captured many of the questions I keep coming back to.
+        Returning to Jamaica has made me think much more seriously about what it actually takes to make returning home sustainable, not only emotionally, but financially and practically. A recent Facebook conversation captured many of the questions I keep coming back to.
       </p>
     </div>
 
@@ -3918,7 +4004,7 @@ h3{
             <p>First, we need to address cost of living, how much professionals with degrees get paid, and the cost of housing here. Foreign investors should not have the ability to buy up so much of Jamaica and sell back to Jamaicans at outlandish prices!</p>
             <p>Jamaicans are priced out of housing here and the roads to anywhere that have generational land/houses are in abysmal conditions. These potholes should have a felony. It is a crime what they do to people’s cars and confidence here!</p>
             <p>Additionally, with all the technology that is available on the island, why are we still asking for paper invoices with a wet signature and to hand deliver it?! Why are you asking people to stand in lines for decades? Why are some businesses still allowed to be chakka chakka in how they do things?</p>
-            <p>Jamaicans from the diaspora are returning home, but far too many are not staying. What are the incentives to keep returning residents here? If we are not making life attractive for Jamaicans and our children, outside of tourism, who will inherit this island—the investors buying it up?</p>
+            <p>Jamaicans from the diaspora are returning home, but far too many are not staying. What are the incentives to keep returning residents here? If we are not making life attractive for Jamaicans and our children, outside of tourism, who will inherit this island: the investors buying it up?</p>
             <p>We need teachers and doctors, yet has ANYBODY seen how much these professionals get paid or the conditions under which they are asked to work?</p>
             <p>I’m a teacher with degrees and decades of experiences in multiple countries, but I better work an overseas online job if I want to afford living at home. If our skilled workers are teaching online or overseas, how does that help the economy on the island?</p>
             <p><strong>Yeah...Jamaica cannot stay still.</strong></p>
@@ -3928,7 +4014,7 @@ h3{
     </div>
 
     <div class="conversation-note">
-      <strong>Why I am including this here:</strong> this page is not only about forms, shipping and logistics. Returning home also raises bigger questions about affordability, infrastructure, professional opportunity, public systems and whether Jamaica is creating the conditions for its people — including returning residents — to stay and build here.
+      <strong>Why I am including this here:</strong> this page is not only about forms, shipping and logistics. Returning home also raises bigger questions about affordability, infrastructure, professional opportunity, public systems and whether Jamaica is creating the conditions for its people, including returning residents, to stay and build here.
     </div>
   </div>
 </section>
@@ -4054,9 +4140,9 @@ h3{
     <div class="journey-connect-shell">
       <div class="journey-connect-copy" id="help">
         <span class="kicker" style="color:#bdfcf8">Follow the journey · Get help</span>
-        <h2 id="connect-title">Come home with the story — or bring me into yours.</h2>
+        <h2 id="connect-title">Come home with the story, or bring me into yours.</h2>
         <p class="lead">
-          I am documenting this move as I live it: what works, what does not, what I learn, and the conversations we need to have about building a life at home.
+          If you are enjoying the Returning to Jamaica series, subscribe for new stories, audio episodes and updates.
         </p>
         <p>
           If you are planning your own return and trying to make sense of the moving pieces, I can also sit with you, help you organise the questions and think through what needs to happen first.
@@ -4096,6 +4182,14 @@ h3{
     </div>
   </div>
 </section>
+
+<aside class="subscribe-nudge" id="subscribeNudge" aria-label="Subscribe invitation" aria-hidden="true">
+  <button class="subscribe-nudge-close" id="subscribeNudgeClose" type="button" aria-label="Dismiss subscription invitation">×</button>
+  <span class="mini-label">Following my return to Jamaica?</span>
+  <h3>Stay with the journey.</h3>
+  <p>Get the next story, audio episode and update from me.</p>
+  <a href="#subscribe" id="subscribeNudgeLink">Follow the journey</a>
+</aside>
 
 <section class="guide-sources" aria-labelledby="sources-title">
   <div class="wrap">
@@ -4284,6 +4378,61 @@ const siteYear=document.getElementById('siteYear'); if(siteYear) siteYear.textCo
   });
 
   showSlide(0);
+})();
+</script>
+
+
+<script>
+(() => {
+  const progress = document.getElementById('readingProgressBar');
+  const nudge = document.getElementById('subscribeNudge');
+  const close = document.getElementById('subscribeNudgeClose');
+  const link = document.getElementById('subscribeNudgeLink');
+  const dismissKey = 'jamaicaSubscribeNudgeDismissedAt';
+  const fourteenDays = 14 * 24 * 60 * 60 * 1000;
+
+  function updateReadingProgress(){
+    const doc = document.documentElement;
+    const max = Math.max(1, doc.scrollHeight - window.innerHeight);
+    const pct = Math.min(100, Math.max(0, (window.scrollY / max) * 100));
+    if(progress) progress.style.width = pct + '%';
+
+    if(nudge && pct >= 38){
+      const dismissedAt = Number(localStorage.getItem(dismissKey) || 0);
+      if(!dismissedAt || Date.now() - dismissedAt > fourteenDays){
+        nudge.classList.add('show');
+        nudge.setAttribute('aria-hidden','false');
+      }
+    }
+  }
+
+  function dismissNudge(){
+    if(!nudge) return;
+    nudge.classList.remove('show');
+    nudge.setAttribute('aria-hidden','true');
+    localStorage.setItem(dismissKey, String(Date.now()));
+  }
+  close && close.addEventListener('click', dismissNudge);
+  link && link.addEventListener('click', dismissNudge);
+  window.addEventListener('scroll', updateReadingProgress, {passive:true});
+  window.addEventListener('resize', updateReadingProgress);
+  updateReadingProgress();
+
+  const revealTargets = document.querySelectorAll('.chapter-top, .story-card, .home-reflection, .conversation-grid, .story-bridge, .check-section .wrap, .quiz-section .wrap');
+  revealTargets.forEach(el => el.classList.add('engage-reveal'));
+  if('IntersectionObserver' in window){
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.08, rootMargin:'0px 0px -6% 0px'});
+    revealTargets.forEach(el => revealObserver.observe(el));
+  } else {
+    revealTargets.forEach(el => el.classList.add('is-visible'));
+  }
 })();
 </script>
 
