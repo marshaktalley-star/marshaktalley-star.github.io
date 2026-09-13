@@ -444,7 +444,7 @@ details[open] summary:after{content:"–"}
   border:1px solid var(--line);
   box-shadow:0 10px 30px rgba(5,99,103,.06);
 }
-.medication-steps h3{margin-bottom:14px}
+.medication-steps h3{margin:6px 0 20px;font-family:var(--serif);font-size:clamp(2rem,3.2vw,2.75rem);font-weight:600;line-height:1.08;color:var(--deepest)}
 .medication-steps ol{
   margin:0;
   padding-left:1.35rem;
@@ -2164,11 +2164,11 @@ h3{
   content:"Explore the page";
   display:block;
   text-align:center;
-  padding-top:10px;
-  color:#708282;
-  font-size:.64rem;
+  padding-top:12px;
+  color:var(--deep);
+  font-size:.72rem;
   font-weight:800;
-  letter-spacing:.18em;
+  letter-spacing:.19em;
   text-transform:uppercase;
 }
 .chapter-nav .wrap{
@@ -2178,22 +2178,31 @@ h3{
   gap:6px;
 }
 .chapter-nav a{
-  border:1px solid rgba(5,99,103,.09);
+  border:1.5px solid rgba(5,99,103,.20);
   border-radius:999px;
-  background:rgba(255,255,255,.78);
-  padding:8px 12px;
-  font-size:.74rem;
-  font-weight:700;
-  color:#456263;
+  background:#fffdfa;
+  padding:10px 16px;
+  font-size:.82rem;
+  font-weight:750;
+  color:#244f51;
+  box-shadow:0 5px 14px rgba(5,99,103,.055);
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease,color .18s ease;
 }
 .chapter-nav a:not(.nav-help):after{display:none}
 .chapter-nav a:not(.nav-help):hover,
-.chapter-nav a:not(.nav-help):focus-visible,
-.chapter-nav a:not(.nav-help).active{
-  background:var(--soft);
-  border-color:rgba(49,159,162,.24);
+.chapter-nav a:not(.nav-help):focus-visible{
+  background:#eef9f7;
+  border-color:rgba(49,159,162,.42);
   color:var(--deep);
+  transform:translateY(-2px);
+  box-shadow:0 9px 20px rgba(5,99,103,.10);
+}
+.chapter-nav a:not(.nav-help).active{
+  background:var(--deep);
+  border-color:var(--deep);
+  color:#fff;
   transform:none;
+  box-shadow:0 8px 18px rgba(5,99,103,.18);
 }
 .chapter-nav .nav-series{
   background:#edf9f7;
@@ -2579,6 +2588,263 @@ html,body{max-width:100%;overflow-x:hidden}
  .subscribe-nudge h3{font-size:1.5rem}
 }
 @media(prefers-reduced-motion:reduce){.engage-reveal{opacity:1;transform:none;transition:none}.subscribe-nudge{transition:none}}
+
+
+/* =========================================================
+   v5: stronger navigation + elegant Marsha subscription
+   ========================================================= */
+
+/* The health subsection deserves the same editorial hierarchy as other story sections. */
+.medication-steps h3{
+  margin:6px 0 22px;
+  font-family:var(--serif);
+  font-size:clamp(2rem,3.2vw,2.8rem);
+  font-weight:600;
+  line-height:1.08;
+  color:var(--deepest);
+}
+
+/* Make the page index easier to notice without making it heavy. */
+.chapter-nav{
+  background:rgba(255,253,249,.975);
+  box-shadow:0 9px 30px rgba(5,73,76,.075);
+}
+.chapter-nav .wrap{
+  gap:9px;
+  padding-top:9px;
+  padding-bottom:14px;
+}
+.chapter-nav .nav-series{
+  background:#ecf9f7;
+  border-color:rgba(49,159,162,.32);
+}
+.chapter-nav .nav-help{
+  background:var(--deep);
+  color:#fff;
+  border-color:var(--deep);
+}
+
+/* Bottom subscription treatment. The iframe was intentionally removed because
+   cross-origin Substack controls cannot be restyled to match this site. */
+.marsha-subscribe-card{
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  gap:20px;
+  align-items:center;
+  width:100%;
+  min-height:190px;
+  padding:28px 30px;
+  border:1px solid rgba(5,99,103,.16);
+  border-radius:26px;
+  background:
+    radial-gradient(circle at 92% 8%,rgba(243,200,91,.22),transparent 26%),
+    radial-gradient(circle at 5% 94%,rgba(47,226,221,.13),transparent 29%),
+    linear-gradient(135deg,#fffdfa,#f4faf8);
+  box-shadow:0 18px 42px rgba(5,99,103,.10);
+}
+.marsha-subscribe-card:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:6px;
+  background:linear-gradient(180deg,var(--aqua),var(--deep),var(--sun));
+}
+.marsha-subscribe-mark{
+  width:58px;
+  height:58px;
+  display:grid;
+  place-items:center;
+  border-radius:50% 50% 45% 55%;
+  background:var(--deep);
+  color:#fff;
+  font-family:var(--serif);
+  font-size:2rem;
+  font-weight:600;
+  box-shadow:0 10px 22px rgba(5,99,103,.16);
+}
+.marsha-subscribe-copy{min-width:0}
+.marsha-subscribe-eyebrow{
+  display:block;
+  margin-bottom:6px;
+  color:var(--deep);
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.marsha-subscribe-copy strong{
+  display:block;
+  max-width:560px;
+  color:var(--deepest);
+  font-family:var(--serif);
+  font-size:clamp(1.45rem,2.2vw,2rem);
+  font-weight:600;
+  line-height:1.08;
+}
+.marsha-subscribe-copy p{
+  margin:8px 0 0;
+  color:var(--muted);
+  font-size:.92rem;
+  line-height:1.55;
+}
+.marsha-subscribe-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-height:52px;
+  padding:13px 20px;
+  border:1px solid var(--deep);
+  border-radius:999px;
+  background:var(--deep);
+  color:#fff;
+  text-decoration:none;
+  font-size:.88rem;
+  font-weight:800;
+  white-space:nowrap;
+  box-shadow:0 10px 22px rgba(5,99,103,.16);
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+}
+.marsha-subscribe-button:hover,
+.marsha-subscribe-button:focus-visible{
+  transform:translateY(-2px);
+  background:#074f52;
+  box-shadow:0 14px 28px rgba(5,99,103,.22);
+}
+
+/* A more noticeable, still elegant reader nudge. */
+.subscribe-nudge{
+  right:28px;
+  bottom:28px;
+  width:min(430px,calc(100vw - 36px));
+  padding:28px 56px 26px 28px;
+  border:1px solid rgba(5,99,103,.24);
+  border-top:5px solid var(--aqua);
+  border-radius:26px;
+  background:
+    radial-gradient(circle at 92% 10%,rgba(243,200,91,.22),transparent 28%),
+    linear-gradient(135deg,#fffdfa,#f0faf8);
+  box-shadow:0 24px 65px rgba(4,54,57,.27);
+}
+.subscribe-nudge.show{
+  animation:marshaNudgeIn .48s cubic-bezier(.2,.75,.28,1), marshaNudgeGlow 1.3s ease .55s 1;
+}
+.subscribe-nudge .mini-label{
+  margin-bottom:9px;
+  color:var(--deep);
+  font-size:.72rem;
+}
+.subscribe-nudge h3{
+  margin:0 0 8px;
+  font-family:var(--serif);
+  font-size:clamp(1.9rem,3vw,2.35rem);
+  font-weight:600;
+  line-height:1.02;
+  color:var(--deepest);
+}
+.subscribe-nudge p{
+  max-width:320px;
+  margin:0 0 18px;
+  font-size:.98rem;
+  color:#526b6c;
+}
+.subscribe-nudge a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  min-height:48px;
+  padding:12px 19px;
+  border:1px solid var(--deep);
+  border-radius:999px;
+  background:var(--deep);
+  color:#fff;
+  text-decoration:none;
+  font-weight:800;
+  font-size:.9rem;
+  box-shadow:0 9px 20px rgba(5,99,103,.16);
+}
+.subscribe-nudge a:hover,
+.subscribe-nudge a:focus-visible{
+  background:#074f52;
+  transform:translateY(-2px);
+}
+.subscribe-nudge-close{
+  top:14px;
+  right:14px;
+  width:36px;
+  height:36px;
+  background:rgba(255,255,255,.78);
+  border:1px solid rgba(5,99,103,.12);
+}
+
+@keyframes marshaNudgeIn{
+  from{opacity:0;transform:translateY(34px) scale(.97)}
+  to{opacity:1;transform:none}
+}
+@keyframes marshaNudgeGlow{
+  0%,100%{box-shadow:0 24px 65px rgba(4,54,57,.27)}
+  50%{box-shadow:0 24px 72px rgba(5,99,103,.38)}
+}
+
+@media(max-width:960px){
+  .marsha-subscribe-card{
+    grid-template-columns:auto 1fr;
+  }
+  .marsha-subscribe-button{
+    grid-column:1 / -1;
+    justify-self:start;
+  }
+}
+@media(max-width:680px){
+  .medication-steps h3{font-size:2.05rem}
+  .chapter-nav:before{
+    content:"Explore the page  •  Swipe for more →";
+    font-size:.7rem;
+    padding:10px 16px 4px;
+  }
+  .chapter-nav .wrap{
+    gap:9px;
+    padding:9px 18px 14px;
+  }
+  .chapter-nav a{
+    min-height:46px;
+    padding:11px 17px;
+    font-size:.86rem;
+    font-weight:750;
+  }
+  .marsha-subscribe-card{
+    grid-template-columns:1fr;
+    gap:14px;
+    padding:25px 22px 24px 26px;
+    border-radius:22px;
+  }
+  .marsha-subscribe-mark{width:52px;height:52px}
+  .marsha-subscribe-button{
+    grid-column:auto;
+    width:100%;
+    justify-self:stretch;
+  }
+  .subscribe-nudge{
+    right:14px;
+    left:14px;
+    bottom:14px;
+    width:auto;
+    padding:24px 50px 22px 22px;
+    border-radius:23px;
+  }
+  .subscribe-nudge h3{font-size:1.9rem}
+  .subscribe-nudge a{width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  .subscribe-nudge.show{animation:none}
+  .marsha-subscribe-button,
+  .subscribe-nudge a{transition:none}
+}
 
 </style>
 </head>
@@ -4166,17 +4432,21 @@ html,body{max-width:100%;overflow-x:hidden}
           <h3>Want the next Returning to Jamaica update?</h3>
           <p>Subscribe for new writing, audio and updates from me directly.</p>
         </div>
-        <div class="substack-wrap">
-          <iframe
-            src="https://marshakerrtalley.substack.com/embed"
-            width="480"
-            height="320"
-            style="border:1px solid #EEE;background:white"
-            frameborder="0"
-            scrolling="no"
-            title="Subscribe to Marsha Kerr Talley on Substack"
-            loading="lazy">
-          </iframe>
+
+        <div class="marsha-subscribe-card" aria-label="Subscribe to Candid Conversations with Marsha">
+          <div class="marsha-subscribe-mark" aria-hidden="true">M</div>
+          <div class="marsha-subscribe-copy">
+            <span class="marsha-subscribe-eyebrow">Candid Conversations with Marsha</span>
+            <strong>Jamaica, life and the conversations in between.</strong>
+            <p>Join me on Substack for new writing, audio episodes and updates.</p>
+          </div>
+          <a class="marsha-subscribe-button"
+             href="https://marshakerrtalley.substack.com/subscribe"
+             target="_blank"
+             rel="noopener">
+            Subscribe on Substack
+            <span aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
     </div>
@@ -4185,10 +4455,15 @@ html,body{max-width:100%;overflow-x:hidden}
 
 <aside class="subscribe-nudge" id="subscribeNudge" aria-label="Subscribe invitation" aria-hidden="true">
   <button class="subscribe-nudge-close" id="subscribeNudgeClose" type="button" aria-label="Dismiss subscription invitation">×</button>
-  <span class="mini-label">Following my return to Jamaica?</span>
-  <h3>Stay with the journey.</h3>
+  <span class="mini-label">Jamaica, in real time</span>
+  <h3>Following my return home?</h3>
   <p>Get the next story, audio episode and update from me.</p>
-  <a href="#subscribe" id="subscribeNudgeLink">Follow the journey</a>
+  <a href="https://marshakerrtalley.substack.com/subscribe"
+     target="_blank"
+     rel="noopener"
+     id="subscribeNudgeLink">
+    Subscribe on Substack <span aria-hidden="true">→</span>
+  </a>
 </aside>
 
 <section class="guide-sources" aria-labelledby="sources-title">
