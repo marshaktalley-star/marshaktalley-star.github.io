@@ -3173,6 +3173,181 @@ html,body{max-width:100%;overflow-x:hidden}
   }
 }
 
+
+/* =========================================================
+   v7: quote styling + richer Marsha gradients
+   ========================================================= */
+
+/* Story pull quotes should look editorial, not like generic bold cards. */
+.story-badge{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 92% 12%,rgba(243,200,91,.16),transparent 27%),
+    radial-gradient(circle at 10% 90%,rgba(47,226,221,.13),transparent 30%),
+    linear-gradient(145deg,#075f62,#056367 58%,#06494c);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:24px 24px 24px 8px;
+  padding:42px 30px 30px 34px;
+  font-family:var(--serif);
+  font-weight:600;
+  font-size:clamp(1.5rem,2.4vw,2rem);
+  line-height:1.28;
+  letter-spacing:-.012em;
+  box-shadow:0 18px 40px rgba(5,99,103,.14);
+}
+.story-badge:before{
+  content:"“";
+  position:absolute;
+  top:5px;
+  left:18px;
+  color:var(--aqua);
+  font-family:var(--serif);
+  font-size:5.2rem;
+  font-weight:600;
+  line-height:1;
+  opacity:.88;
+}
+.story-badge:after{
+  content:"";
+  position:absolute;
+  right:-34px;
+  bottom:-42px;
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  background:rgba(243,200,91,.08);
+  pointer-events:none;
+}
+
+/* Give editorial pull quotes a consistent visual language. */
+.pullquote,
+.voice-line,
+.network-quote-refined blockquote,
+.series-note blockquote{
+  position:relative;
+}
+.pullquote:before,
+.voice-line:before{
+  content:"“";
+  color:var(--brand);
+  font-family:var(--serif);
+  font-size:3.7rem;
+  line-height:.6;
+  vertical-align:-.35em;
+  margin-right:6px;
+  opacity:.82;
+}
+
+/* Lift the large teal environments so they do not read as flat colour fields. */
+.series-section,
+.network-section,
+.chapter.dark{
+  background:
+    radial-gradient(circle at 88% 10%,rgba(47,226,221,.19),transparent 25%),
+    radial-gradient(circle at 4% 92%,rgba(243,200,91,.10),transparent 25%),
+    linear-gradient(145deg,#073f42 0%,#056367 52%,#064d50 100%);
+}
+.series-section:after,
+.network-section:after,
+.chapter.dark:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(120deg,rgba(255,255,255,.025),transparent 32%),
+    radial-gradient(circle at 72% 72%,rgba(255,255,255,.025),transparent 30%);
+}
+
+/* Add a softer lifted layer to select cards inside dark sections. */
+.chapter.dark .key,
+.network-principle,
+.safety-step{
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.055));
+  backdrop-filter:blur(2px);
+}
+.chapter.dark .key:hover,
+.safety-step:hover,
+.safety-step:focus-within{
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.09));
+}
+
+/* The refined People + Connections quote picks up the cream/gold/teal language
+   used by the subscription card without competing with it. */
+.network-quote-refined{
+  background:
+    radial-gradient(circle at 92% 10%,rgba(243,200,91,.16),transparent 26%),
+    radial-gradient(circle at 6% 90%,rgba(47,226,221,.10),transparent 30%),
+    linear-gradient(135deg,#fffdfa,#f5faf8);
+}
+.network-quote-refined blockquote:before{
+  content:"“";
+  display:block;
+  height:.65em;
+  margin-left:-2px;
+  margin-bottom:8px;
+  color:var(--brand);
+  font-family:var(--serif);
+  font-size:4.5rem;
+  line-height:.65;
+}
+
+/* Give the subscribe card's gradient language a few quiet echoes elsewhere. */
+.home-reflection,
+.citizenship-story{
+  background:
+    radial-gradient(circle at 96% 8%,rgba(243,200,91,.10),transparent 24%),
+    radial-gradient(circle at 4% 96%,rgba(47,226,221,.07),transparent 25%),
+    linear-gradient(135deg,#fffaf3,#fbfdfb);
+}
+.medication-steps{
+  background:
+    radial-gradient(circle at 95% 8%,rgba(47,226,221,.06),transparent 22%),
+    linear-gradient(135deg,#fff,#fbfdfc);
+}
+
+/* Subtle quote punctuation on the dark podcast/reflection panels. */
+.series-note blockquote:before{
+  content:"“";
+  display:block;
+  margin-bottom:8px;
+  color:var(--aqua);
+  font-family:var(--serif);
+  font-size:4.3rem;
+  line-height:.55;
+}
+.voice-note-art .quote:before{
+  content:"“";
+  display:block;
+  margin-bottom:8px;
+  color:var(--aqua);
+  font-family:var(--serif);
+  font-size:4.2rem;
+  line-height:.55;
+}
+
+/* Mobile keeps the personality but avoids oversized punctuation. */
+@media(max-width:680px){
+  .story-badge{
+    padding:38px 22px 24px 26px;
+    font-size:1.55rem;
+  }
+  .story-badge:before{
+    left:13px;
+    top:7px;
+    font-size:4.4rem;
+  }
+  .network-quote-refined blockquote:before,
+  .series-note blockquote:before,
+  .voice-note-art .quote:before{
+    font-size:3.7rem;
+  }
+}
+
 </style>
 </head>
 
