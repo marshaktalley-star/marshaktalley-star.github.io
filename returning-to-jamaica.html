@@ -6,6 +6,10 @@
 <meta name="description" content="Returning to Jamaica through my lived experience: what I learned about shipping, Customs, importing a car, money, housing, internet, accountability, networking, local connections and building a life back home.">
 <title>Returning to Jamaica | Marsha Kerr Talley</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 :root{
   --brand:#319fa2;
@@ -1958,10 +1962,497 @@ section[id]{scroll-margin-top:112px}
   .substack-wrap{padding:10px;border-radius:22px}
 }
 
+
+/* =========================================================
+   MARSHA EDITORIAL SYSTEM — elegant, personal, useful
+   Keeps the practical-guide depth while giving the page a
+   warmer writer / creator / consultant identity.
+   ========================================================= */
+:root{
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Manrope","Avenir Next",Avenir,"Segoe UI",Arial,sans-serif;
+  --paper:#fffdf9;
+  --paper-2:#fbf7f0;
+  --rose:#f0e6df;
+  --ink-soft:#405b5c;
+  --hairline:rgba(5,99,103,.11);
+  --soft-shadow:0 16px 44px rgba(31,69,68,.08);
+}
+
+body{
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.78;
+  background:var(--paper);
+  color:#203f40;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+h1,h2,h3,
+.network-quote,
+.series-note blockquote,
+.voice-note-art .quote{
+  font-family:var(--serif);
+  font-weight:600;
+  letter-spacing:-.018em;
+}
+
+h1{
+  font-size:clamp(3.6rem,6.4vw,5.75rem);
+  line-height:.98;
+  max-width:900px;
+}
+h2{
+  font-size:clamp(2.45rem,4vw,3.45rem);
+  line-height:1.03;
+}
+h3{
+  font-size:clamp(1.5rem,2vw,1.9rem);
+  line-height:1.14;
+}
+.lead{
+  font-size:clamp(1.08rem,1.5vw,1.3rem);
+  line-height:1.68;
+  font-weight:400;
+  color:#466263;
+}
+
+/* Global website header */
+.site-header{
+  position:relative;
+  z-index:100;
+  background:rgba(255,253,249,.97);
+  border-bottom:1px solid var(--hairline);
+}
+.site-header-inner{
+  width:min(var(--max),calc(100% - 64px));
+  margin:auto;
+  min-height:88px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+}
+.site-brand{
+  display:inline-flex;
+  flex-direction:column;
+  text-decoration:none;
+  min-width:max-content;
+}
+.site-brand-name{
+  font-family:var(--serif);
+  font-size:1.8rem;
+  line-height:1;
+  font-weight:700;
+  color:var(--deepest);
+  letter-spacing:-.025em;
+}
+.site-brand-tagline{
+  margin-top:5px;
+  font-size:.66rem;
+  line-height:1.2;
+  font-weight:800;
+  color:var(--brand);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.site-menu{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+  gap:4px 7px;
+}
+.site-menu a{
+  position:relative;
+  padding:10px 10px;
+  color:#365657;
+  text-decoration:none;
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.015em;
+}
+.site-menu a:after{
+  content:"";
+  position:absolute;
+  left:10px;
+  right:10px;
+  bottom:5px;
+  height:1px;
+  background:var(--brand);
+  transform:scaleX(0);
+  transition:transform .2s ease;
+}
+.site-menu a:hover:after,.site-menu a:focus-visible:after{transform:scaleX(1)}
+.site-menu .site-menu-cta{
+  margin-left:4px;
+  padding:10px 15px;
+  color:#fff;
+  background:var(--deep);
+  border-radius:999px;
+}
+.site-menu .site-menu-cta:after{display:none}
+.site-menu .site-menu-cta:hover{background:var(--brand)}
+
+/* Hero: editorial cover story, not corporate landing page */
+.hero{
+  padding:76px 0 64px;
+  background:
+    radial-gradient(circle at 84% 12%,rgba(47,226,221,.14),transparent 26%),
+    radial-gradient(circle at 8% 84%,rgba(240,230,223,.62),transparent 28%),
+    linear-gradient(145deg,#fffdf9,#f4fbf8 64%,#f9f4ed);
+}
+.hero-grid{
+  grid-template-columns:1.08fr .92fr;
+  gap:66px;
+}
+.hero-copy{max-width:760px}
+.hero .kicker{
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.18em;
+}
+.hero-byline{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px 12px;
+  align-items:center;
+  margin:22px 0 0;
+  color:#5f7474;
+  font-size:.82rem;
+  font-weight:600;
+}
+.hero-byline strong{color:var(--deep);font-weight:800}
+.hero-image img{
+  border-radius:190px 190px 30px 30px;
+  box-shadow:0 24px 70px rgba(30,72,70,.14);
+}
+.hero-note{
+  left:-22px;
+  bottom:24px;
+  border:1px solid rgba(5,99,103,.09);
+  border-radius:18px;
+  background:rgba(255,253,249,.96);
+  font-size:.92rem;
+}
+.hero-note strong{
+  font-family:var(--serif);
+  font-size:1.35rem;
+  font-weight:600;
+}
+
+/* Buttons become quieter and more editorial */
+.btn{
+  padding:12px 20px;
+  font-size:.86rem;
+  font-weight:750;
+  letter-spacing:.01em;
+  box-shadow:none;
+}
+.btn.primary{box-shadow:none}
+.btn:hover{transform:translateY(-1px)}
+
+/* Page menu: a polished guide index */
+.chapter-nav{
+  top:0;
+  background:rgba(255,253,249,.94);
+  box-shadow:0 8px 28px rgba(20,57,57,.05);
+  border-bottom:1px solid var(--hairline);
+}
+.chapter-nav:before{
+  content:"Explore the page";
+  display:block;
+  text-align:center;
+  padding-top:10px;
+  color:#708282;
+  font-size:.64rem;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.chapter-nav .wrap{
+  justify-content:flex-start;
+  padding-top:7px;
+  padding-bottom:12px;
+  gap:6px;
+}
+.chapter-nav a{
+  border:1px solid rgba(5,99,103,.09);
+  border-radius:999px;
+  background:rgba(255,255,255,.78);
+  padding:8px 12px;
+  font-size:.74rem;
+  font-weight:700;
+  color:#456263;
+}
+.chapter-nav a:not(.nav-help):after{display:none}
+.chapter-nav a:not(.nav-help):hover,
+.chapter-nav a:not(.nav-help):focus-visible,
+.chapter-nav a:not(.nav-help).active{
+  background:var(--soft);
+  border-color:rgba(49,159,162,.24);
+  color:var(--deep);
+  transform:none;
+}
+.chapter-nav .nav-series{
+  background:#edf9f7;
+  color:var(--deep);
+}
+.chapter-nav .nav-help{
+  margin-left:auto;
+  padding:8px 14px;
+  border-color:var(--deep);
+  box-shadow:none;
+}
+
+/* Main long-form rhythm */
+.video-section,.chapter,.voice-note-section,.network-section,
+.check-section,.quiz,.cta-section,.conversation-section,.subscribe-section{
+  padding-top:82px;
+  padding-bottom:82px;
+}
+.chapter{border-top:1px solid rgba(5,99,103,.045)}
+.chapter.tint{background:#fafcf9}
+.chapter.sand{background:#faf6ef}
+.chapter-top{gap:58px;margin-bottom:38px}
+.chapter-copy p,.detail-body,.story-body,.car-story-copy{max-width:760px}
+.chapter-media img{
+  border-radius:24px;
+  box-shadow:var(--soft-shadow);
+}
+.chapter-label{
+  width:auto;
+  height:auto;
+  padding:7px 10px;
+  border-radius:999px;
+  background:transparent;
+  border:1px solid rgba(5,99,103,.18);
+  color:var(--deep);
+  font-size:.68rem;
+  letter-spacing:.14em;
+}
+.chapter.dark .chapter-label{
+  background:transparent;
+  border-color:rgba(255,255,255,.28);
+  color:#fff;
+}
+.kicker{
+  font-size:.7rem;
+  font-weight:800;
+  letter-spacing:.16em;
+}
+
+/* Practical information stays practical, just calmer */
+.key-grid{gap:14px}
+.key,.everyday-card,.accountability-card,.medication-steps,
+.citizenship-story,.experience-video,.housing-photo-card{
+  border-radius:18px;
+  box-shadow:none;
+  border-color:rgba(5,99,103,.10);
+}
+.key{min-height:0;padding:22px}
+.key:hover,.everyday-card:hover{transform:none;box-shadow:var(--soft-shadow)}
+.key .num,.everyday-card .app-tag{
+  font-size:.66rem;
+  letter-spacing:.14em;
+  font-weight:800;
+}
+.key p,.everyday-card p,.accountability-card p{color:#566d6e}
+
+/* Reflections / personal asides feel like magazine pullouts */
+.home-reflection,.voice-line,.accountability-note,.context-box{
+  border-radius:14px;
+  box-shadow:none;
+}
+.home-reflection{
+  background:#fffaf3;
+  border-color:rgba(168,128,81,.14);
+}
+.voice-line{
+  font-family:var(--serif);
+  font-size:1.35rem;
+  line-height:1.5;
+  background:#fbf8f2;
+  border-left:2px solid var(--brand);
+}
+.pullquote{
+  font-family:var(--serif);
+  font-size:1.5rem;
+  font-weight:600;
+  line-height:1.45;
+  border-left:2px solid var(--aqua);
+}
+
+/* Dark/audio areas retain creator energy */
+.series-section,.network-section,.chapter.dark{
+  background:
+    radial-gradient(circle at 86% 12%,rgba(47,226,221,.13),transparent 24%),
+    linear-gradient(150deg,#073f42,#05585c);
+}
+.series-heading{font-weight:600}
+.series-accordion{border-radius:24px}
+.series-note,.episode-card{border-radius:20px}
+.series-note blockquote{font-weight:500}
+
+/* Facebook conversation / subscriber areas read like editorial features */
+.conversation-section{background:#fffdf9}
+.conversation-grid{gap:34px}
+.facebook-post-card,.my-response-card{
+  border-radius:18px;
+  box-shadow:none;
+}
+.my-response-card{
+  background:#fbf7f0;
+  border:1px solid rgba(5,99,103,.09);
+}
+.my-response-card h3{font-size:2rem}
+.subscribe-section{
+  background:
+    radial-gradient(circle at 10% 20%,rgba(240,230,223,.18),transparent 26%),
+    linear-gradient(150deg,#063f42,#075c60);
+}
+.subscribe-copy h2{max-width:650px}
+.substack-wrap{border-radius:18px}
+
+/* Government/source material gets a credible reference desk treatment */
+.guide-sources{
+  padding:44px 0 48px;
+  background:#f6f8f5;
+  border-top:1px solid var(--hairline);
+  color:#5c7172;
+  font-size:.82rem;
+}
+.guide-sources .sources{
+  gap:8px 10px;
+}
+.guide-sources .sources a{
+  display:inline-flex;
+  padding:7px 10px;
+  border:1px solid rgba(5,99,103,.10);
+  border-radius:999px;
+  background:#fff;
+  text-decoration:none;
+  font-size:.76rem;
+}
+.guide-sources .sources a:hover{border-color:var(--brand);color:var(--deep)}
+.source-heading{
+  font-family:var(--serif);
+  color:var(--deepest);
+  font-size:1.75rem;
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+/* Branded website footer */
+.site-footer{
+  padding:58px 0 30px;
+  background:#052f32;
+  color:#cce1df;
+  border-top:0;
+}
+.site-footer-grid{
+  display:grid;
+  grid-template-columns:1.25fr .75fr .75fr;
+  gap:44px;
+  align-items:start;
+}
+.site-footer .site-brand-name{color:#fff;font-size:2rem}
+.site-footer .site-brand-tagline{color:#8fe7e2}
+.site-footer-copy{
+  max-width:480px;
+  margin-top:18px;
+  color:#bad4d2;
+  font-size:.9rem;
+  line-height:1.7;
+}
+.site-footer h4{
+  margin:0 0 14px;
+  color:#fff;
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.site-footer-links{
+  display:grid;
+  gap:9px;
+}
+.site-footer a{color:#d8eeec;text-decoration:none;font-size:.88rem}
+.site-footer a:hover{color:#fff}
+.site-footer-bottom{
+  margin-top:40px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.10);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:10px 20px;
+  color:#88aaa8;
+  font-size:.75rem;
+}
+
+@media(max-width:980px){
+  .site-header-inner{align-items:flex-start;padding:18px 0;flex-direction:column;gap:10px}
+  .site-menu{justify-content:flex-start}
+  .site-menu .site-menu-cta{margin-left:0}
+  .site-footer-grid{grid-template-columns:1fr 1fr}
+  .site-footer-grid > div:first-child{grid-column:1/-1}
+}
+
+@media(max-width:680px){
+  body{font-size:16px;line-height:1.72}
+  .site-header-inner{width:calc(100% - 36px);min-height:0}
+  .site-brand-name{font-size:1.6rem}
+  .site-menu{gap:2px 4px}
+  .site-menu a{padding:7px 7px;font-size:.72rem}
+  .site-menu .site-menu-cta{padding:8px 12px}
+  .hero{padding:54px 0 46px}
+  h1{font-size:clamp(3rem,13vw,4.25rem)}
+  h2{font-size:clamp(2.15rem,10vw,2.85rem)}
+  .hero-grid{gap:42px}
+  .hero-image img{height:430px;border-radius:150px 150px 24px 24px}
+  .hero-note{margin:-38px 10px 0}
+  .chapter-nav:before{padding-top:8px}
+  .chapter-nav .wrap{
+    width:100%;
+    display:flex;
+    flex-wrap:nowrap;
+    justify-content:flex-start;
+    overflow-x:auto;
+    padding:7px 18px 11px;
+    scrollbar-width:none;
+  }
+  .chapter-nav .wrap::-webkit-scrollbar{display:none}
+  .chapter-nav a{flex:0 0 auto;font-size:.72rem}
+  .chapter-nav .nav-help{margin-left:0}
+  .video-section,.chapter,.voice-note-section,.network-section,
+  .check-section,.quiz,.cta-section,.conversation-section,.subscribe-section{padding:62px 0}
+  .site-footer-grid{grid-template-columns:1fr;gap:28px}
+  .site-footer-grid > div:first-child{grid-column:auto}
+  .site-footer-bottom{display:block}
+}
+
 </style>
 </head>
 
 <body>
+
+<header class="site-header" aria-label="Website header">
+  <div class="site-header-inner">
+    <a class="site-brand" href="https://marshakerrtalley.com/index.html" aria-label="Marsha Kerr Talley home">
+      <span class="site-brand-name">Marsha Kerr Talley</span>
+      <span class="site-brand-tagline">Live Inspired · Turning Pain Into Possibility™</span>
+    </a>
+    <nav class="site-menu" aria-label="Main website navigation">
+      <a href="https://marshakerrtalley.com/index.html">Home</a>
+      <a href="https://marshakerrtalley.com/about.html">About</a>
+      <a href="https://marshakerrtalley.com/work-with-me.html">Work With Me</a>
+      <a href="https://marshakerrtalley.com/blog.html">Reflections</a>
+      <a href="https://marshakerrtalley.com/podcast.html">Podcast</a>
+      <a class="site-menu-cta" href="#subscribe">Subscribe</a>
+    </nav>
+  </div>
+</header>
 
 <header class="hero" id="top">
   <div class="wrap hero-grid">
@@ -1974,6 +2465,11 @@ section[id]{scroll-margin-top:112px}
         the shortcuts that help and, yes, the processes that can work your last nerve. I am sharing what I learn as
         I live it because somebody coming behind me should not have to figure out every single thing the hard way.
       </p>
+      <div class="hero-byline" aria-label="About this page">
+        <strong>By Marsha Kerr Talley</strong>
+        <span>Writer · Educator · Returning Resident</span>
+        <span>Jamaica, in real time</span>
+      </div>
       <div class="actions">
         <a class="btn primary" href="#prepare">Start the guide</a>
         <a class="btn light" href="#checklist">Use the checklist</a>
@@ -3517,8 +4013,9 @@ section[id]{scroll-margin-top:112px}
   </div>
 </section>
 
-<footer>
+<section class="guide-sources" aria-labelledby="sources-title">
   <div class="wrap">
+    <div class="source-heading" id="sources-title">Official sources + practical references</div>
     <strong>Important:</strong> Jamaican government requirements, fees and processes can change. Always reconfirm official requirements before paying, shipping or submitting an application.
     <p class="small" style="margin:8px 0 0">Government and service information on this page was fact-checked against current public sources on 5 September 2026.</p>
     <div class="sources">
@@ -3536,7 +4033,43 @@ section[id]{scroll-margin-top:112px}
       <a href="https://evergo.com/en/support/frequent-questions/" target="_blank" rel="noopener">Evergo</a>
       <a href="https://www.moh.gov.jm/" target="_blank" rel="noopener">Ministry of Health</a>
     </div>
-    <p style="margin-top:22px">©  Marsha Kerr Talley.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer-grid">
+      <div>
+        <a class="site-brand" href="https://marshakerrtalley.com/index.html">
+          <span class="site-brand-name">Marsha Kerr Talley</span>
+          <span class="site-brand-tagline">Live Inspired · Turning Pain Into Possibility™</span>
+        </a>
+        <p class="site-footer-copy">
+          Education, writing, conversation and practical resources shaped by lived experience, international perspective and a belief in creating possibilities.
+        </p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <div class="site-footer-links">
+          <a href="https://marshakerrtalley.com/about.html">About Marsha</a>
+          <a href="https://marshakerrtalley.com/work-with-me.html">Work With Me</a>
+          <a href="https://marshakerrtalley.com/blog.html">Reflections</a>
+          <a href="https://marshakerrtalley.com/podcast.html">Podcast</a>
+        </div>
+      </div>
+      <div>
+        <h4>Stay connected</h4>
+        <div class="site-footer-links">
+          <a href="#subscribe">Subscribe on Substack</a>
+          <a href="mailto:info@marshakerrtalley.com">Email Marsha</a>
+          <a href="#top">Back to top ↑</a>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <span>© <span id="siteYear"></span> Marsha Kerr Talley. All rights reserved.</span>
+      <span>Live Inspired · Turning Pain Into Possibility™</span>
+    </div>
   </div>
 </footer>
 
@@ -3589,7 +4122,8 @@ document.getElementById('scoreQuiz').addEventListener('click',()=>{
   }
 });
 
-document.getElementById('year').textContent=new Date().getFullYear();
+const oldYear=document.getElementById('year'); if(oldYear) oldYear.textContent=new Date().getFullYear();
+const siteYear=document.getElementById('siteYear'); if(siteYear) siteYear.textContent=new Date().getFullYear();
 </script>
 
 <script>
