@@ -1837,6 +1837,127 @@ section[id]{scroll-margin-top:112px}
   .episode-actions .btn{width:100%}
 }
 
+/* =========================================================
+   RETURNING TO JAMAICA — PUBLIC CONVERSATION + SUBSCRIBE
+   ========================================================= */
+.conversation-section{
+  padding:94px 0;
+  background:linear-gradient(135deg,#f7fbfa,#fffaf1);
+  border-top:1px solid var(--line);
+}
+.conversation-intro{max-width:860px;margin-bottom:34px}
+.conversation-grid{
+  display:grid;
+  grid-template-columns:minmax(300px,.82fr) minmax(0,1.18fr);
+  gap:34px;
+  align-items:start;
+}
+.facebook-post-card,
+.my-response-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:28px;
+  box-shadow:0 14px 38px rgba(5,99,103,.08);
+  overflow:hidden;
+}
+.facebook-post-card{padding:24px}
+.facebook-post-frame{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  overflow:hidden;
+}
+.facebook-post-frame iframe{
+  width:500px;
+  max-width:100%;
+  min-height:650px;
+  border:0;
+  background:#fff;
+}
+.facebook-fallback{
+  margin:18px 0 0;
+  text-align:center;
+  color:var(--muted);
+  font-size:.9rem;
+}
+.facebook-fallback a{color:var(--deep);font-weight:850}
+.my-response-card{padding:30px}
+.response-label{
+  display:inline-block;
+  margin-bottom:12px;
+  padding:7px 11px;
+  border-radius:999px;
+  background:var(--soft);
+  color:var(--deep);
+  font-size:.76rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+.my-response-card .response-opening{
+  font-size:1.22rem;
+  line-height:1.55;
+  color:var(--deepest);
+  font-weight:800;
+}
+.my-response-card details{margin-top:18px;border-top:1px solid var(--line)}
+.my-response-card details summary{padding:20px 0}
+.my-response-card .detail-body{padding:0 0 2px;max-width:none}
+.my-response-card .detail-body p{font-size:1rem;color:#405f60}
+.conversation-note{
+  margin-top:26px;
+  padding:22px 24px;
+  border-left:5px solid var(--aqua);
+  border-radius:18px;
+  background:#fff;
+}
+
+.subscribe-section{
+  padding:82px 0;
+  background:linear-gradient(145deg,#063f42,#075d61);
+  color:#efffff;
+}
+.subscribe-shell{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(320px,520px);
+  gap:46px;
+  align-items:center;
+}
+.subscribe-section h2{color:#fff}
+.subscribe-section .lead{color:#d8f3f1}
+.subscribe-copy{max-width:680px}
+.subscribe-copy .kicker{color:#bdfcf8}
+.substack-wrap{
+  background:#fff;
+  border-radius:28px;
+  padding:16px;
+  box-shadow:0 20px 50px rgba(0,0,0,.2);
+  overflow:hidden;
+}
+.substack-wrap iframe{
+  display:block;
+  width:100%;
+  height:320px;
+  border:0 !important;
+  background:#fff;
+}
+.subscribe-note{
+  margin-top:12px;
+  color:#cce7e5;
+  font-size:.9rem;
+}
+@media(max-width:900px){
+  .conversation-grid,.subscribe-shell{grid-template-columns:1fr}
+  .facebook-post-frame iframe{min-height:720px}
+  .substack-wrap{max-width:540px;width:100%;margin-inline:auto}
+}
+@media(max-width:680px){
+  .conversation-section,.subscribe-section{padding:66px 0}
+  .facebook-post-card,.my-response-card{padding:20px;border-radius:22px}
+  .facebook-post-frame iframe{min-height:760px}
+  .substack-wrap{padding:10px;border-radius:22px}
+}
+
 </style>
 </head>
 
@@ -1884,8 +2005,10 @@ section[id]{scroll-margin-top:112px}
     <a href="#accent">Accent + Belonging</a>
     <a href="#living">Live Well</a>
     <a href="#medication">Medication</a>
+    <a href="#conversation">Conversation</a>
     <a href="#checklist">Checklist</a>
     <a href="#can-i-live-here">Can I Live Here?</a>
+    <a href="#subscribe">Subscribe</a>
     <a href="#help" class="nav-help">Get Help</a>
   </div>
 </nav>
@@ -3169,6 +3292,66 @@ section[id]{scroll-margin-top:112px}
   </div>
 </section>
 
+<section class="conversation-section" id="conversation" aria-labelledby="conversation-title">
+  <div class="wrap">
+    <div class="conversation-intro">
+      <span class="kicker">A conversation worth having</span>
+      <h2 id="conversation-title">Coming home also means asking what kind of Jamaica we are building.</h2>
+      <p class="lead">
+        Returning to Jamaica has made me think much more seriously about what it actually takes to make returning home sustainable — not only emotionally, but financially and practically. A recent Facebook conversation captured many of the questions I keep coming back to.
+      </p>
+    </div>
+
+    <div class="conversation-grid">
+      <article class="facebook-post-card" aria-label="Original Facebook post and conversation">
+        <div class="facebook-post-frame">
+          <iframe
+            src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FMPLisaHanna%2Fposts%2Fpfbid0wGHhUz9zYfQSvaohPy4rgCayzKZmtAMfVCTSo8qh6YaUP6wZ8tshLAKG8TdcvAT8l&amp;show_text=true&amp;width=500"
+            width="500"
+            height="250"
+            style="border:none;overflow:hidden"
+            scrolling="no"
+            frameborder="0"
+            allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            title="Facebook conversation about Jamaica and returning home"
+            loading="lazy">
+          </iframe>
+        </div>
+        <p class="facebook-fallback">
+          If the Facebook post does not load here, <a href="https://www.facebook.com/MPLisaHanna/posts/pfbid0wGHhUz9zYfQSvaohPy4rgCayzKZmtAMfVCTSo8qh6YaUP6wZ8tshLAKG8TdcvAT8l" target="_blank" rel="noopener">open the original conversation on Facebook</a>.
+        </p>
+      </article>
+
+      <article class="my-response-card">
+        <span class="response-label">My response</span>
+        <p class="response-opening">I just move back, and can second that Jamaica cannot stand still.</p>
+        <p>
+          I love Jamaica enough to want better for it. Returning home has made the gaps between our ambition as a country and some of our everyday systems impossible for me to ignore.
+        </p>
+
+        <details open>
+          <summary>Read my full response</summary>
+          <div class="detail-body">
+            <p>If the vision is to make this country a developed nation, we cannot stand still.</p>
+            <p>First, we need to address cost of living, how much professionals with degrees get paid, and the cost of housing here. Foreign investors should not have the ability to buy up so much of Jamaica and sell back to Jamaicans at outlandish prices!</p>
+            <p>Jamaicans are priced out of housing here and the roads to anywhere that have generational land/houses are in abysmal conditions. These potholes should have a felony. It is a crime what they do to people’s cars and confidence here!</p>
+            <p>Additionally, with all the technology that is available on the island, why are we still asking for paper invoices with a wet signature and to hand deliver it?! Why are you asking people to stand in lines for decades? Why are some businesses still allowed to be chakka chakka in how they do things?</p>
+            <p>Jamaicans from the diaspora are returning home, but far too many are not staying. What are the incentives to keep returning residents here? If we are not making life attractive for Jamaicans and our children, outside of tourism, who will inherit this island—the investors buying it up?</p>
+            <p>We need teachers and doctors, yet has ANYBODY seen how much these professionals get paid or the conditions under which they are asked to work?</p>
+            <p>I’m a teacher with degrees and decades of experiences in multiple countries, but I better work an overseas online job if I want to afford living at home. If our skilled workers are teaching online or overseas, how does that help the economy on the island?</p>
+            <p><strong>Yeah...Jamaica cannot stay still.</strong></p>
+          </div>
+        </details>
+      </article>
+    </div>
+
+    <div class="conversation-note">
+      <strong>Why I am including this here:</strong> this page is not only about forms, shipping and logistics. Returning home also raises bigger questions about affordability, infrastructure, professional opportunity, public systems and whether Jamaica is creating the conditions for its people — including returning residents — to stay and build here.
+    </div>
+  </div>
+</section>
+
 <section class="check-section" id="checklist">
   <div class="wrap">
     <span class="kicker">Interactive planner</span>
@@ -3281,6 +3464,32 @@ section[id]{scroll-margin-top:112px}
           I can love my country and still believe we can do better. Both things can be true.
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="subscribe-section" id="subscribe" aria-labelledby="subscribe-title">
+  <div class="wrap subscribe-shell">
+    <div class="subscribe-copy">
+      <span class="kicker">Follow the journey</span>
+      <h2 id="subscribe-title">Want the next Returning to Jamaica update?</h2>
+      <p class="lead">
+        I am documenting this move as I live it — what works, what does not, what I learn, and the conversations we need to have about building a life at home. Subscribe to get new writing and updates from me directly.
+      </p>
+      <p class="subscribe-note">No separate website account needed. Subscriptions are handled through my Substack.</p>
+    </div>
+
+    <div class="substack-wrap">
+      <iframe
+        src="https://marshakerrtalley.substack.com/embed"
+        width="480"
+        height="320"
+        style="border:1px solid #EEE;background:white"
+        frameborder="0"
+        scrolling="no"
+        title="Subscribe to Marsha Kerr Talley on Substack"
+        loading="lazy">
+      </iframe>
     </div>
   </div>
 </section>
