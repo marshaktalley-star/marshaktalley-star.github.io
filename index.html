@@ -3740,6 +3740,58 @@ h1,h2,h3,
   }
 }
 
+
+/* =========================================================
+   v10: cleaner hero + reliable subscription invitation
+   ========================================================= */
+
+/* The site header and logo already establish Marsha's identity. */
+.hero-copy .actions{
+  margin-top:30px;
+}
+
+/* The People + Connections quote now stands on its own. */
+.network-quote-refined{
+  display:flex;
+  align-items:center;
+  min-height:300px;
+}
+.network-quote-refined blockquote{
+  margin:0;
+}
+
+/* Make the popup easier to notice when it arrives, without flashing or bouncing. */
+.subscribe-nudge.show{
+  animation:
+    marshaNudgeIn .48s cubic-bezier(.2,.75,.28,1),
+    marshaAttentionPulse 1.7s ease .55s 1;
+}
+
+@keyframes marshaAttentionPulse{
+  0%,100%{
+    box-shadow:0 24px 65px rgba(4,54,57,.27);
+    transform:translateY(0);
+  }
+  50%{
+    box-shadow:
+      0 28px 78px rgba(5,99,103,.36),
+      0 0 0 6px rgba(47,226,221,.08);
+    transform:translateY(-3px);
+  }
+}
+
+@media(max-width:680px){
+  .network-quote-refined{
+    min-height:auto;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .subscribe-nudge.show{
+    animation:none;
+  }
+}
+
 </style>
 </head>
 
@@ -3853,10 +3905,6 @@ h1,h2,h3,
         instead of running back to farin at the first sight of discomfort, I am choosing to learn how to make Jamaica
         my home again.
       </p>
-      <div class="hero-byline" aria-label="About this page">
-        <span>Writer · Educator · Returning Resident</span>
-        <span>Jamaica, in real time</span>
-      </div>
       <div class="actions">
         <a class="btn primary" href="#prepare">Start the guide</a>
         <a class="btn light" href="#checklist">Use the checklist</a>
@@ -4583,9 +4631,6 @@ h1,h2,h3,
 
       <aside class="network-quote network-quote-refined">
         <blockquote>“I have literally made more contacts in Jamaica in weeks than I did in the UK in three years.”</blockquote>
-        <div class="network-lesson network-lesson-note">
-          <span>That part surprised me.</span>
-        </div>
       </aside>
     </div>
 
@@ -5698,18 +5743,41 @@ const oldYear=document.getElementById('year'); if(oldYear) oldYear.textContent=n
   const nudge = document.getElementById('subscribeNudge');
   const close = document.getElementById('subscribeNudgeClose');
   const link = document.getElementById('subscribeNudgeLink');
-  const dismissKey = 'jamaicaSubscribeNudgeDismissedAt';
-  const fourteenDays = 14 * 24 * 60 * 60 * 1000;
+  const sessionKey = 'jamaicaSubscribeNudgeSeenThisSession';
 
-  let timeReady = false;
   let currentPct = 0;
+  let primaryTimeReady = false;
+  let fallbackTimeReady = false;
+
+  function alreadySeenThisSession(){
+    try{
+      return sessionStorage.getItem(sessionKey) === '1';
+    }catch(e){
+      return false;
+    }
+  }
+
+  function markSeenThisSession(){
+    try{
+      sessionStorage.setItem(sessionKey, '1');
+    }catch(e){}
+  }
 
   function maybeShowNudge(){
-    if(!nudge || !timeReady || currentPct < 30) return;
-    const dismissedAt = Number(localStorage.getItem(dismissKey) || 0);
-    if(!dismissedAt || Date.now() - dismissedAt > fourteenDays){
+    if(!nudge || alreadySeenThisSession()) return;
+
+    /* Primary trigger: someone has actually spent time reading and
+       reached a meaningful point in the page. */
+    const primaryReady = primaryTimeReady && currentPct >= 20;
+
+    /* Fallback: a slower reader may spend a long time near the top.
+       Do not make them scroll a third of this long page just to see it. */
+    const fallbackReady = fallbackTimeReady && currentPct >= 7;
+
+    if(primaryReady || fallbackReady){
       nudge.classList.add('show');
       nudge.setAttribute('aria-hidden','false');
+      markSeenThisSession();
     }
   }
 
@@ -5721,16 +5789,23 @@ const oldYear=document.getElementById('year'); if(oldYear) oldYear.textContent=n
     maybeShowNudge();
   }
 
+  /* A useful moment for an engaged reader without interrupting the opening. */
   window.setTimeout(() => {
-    timeReady = true;
+    primaryTimeReady = true;
     maybeShowNudge();
-  }, 40000);
+  }, 25000);
+
+  /* Safety net for readers who move slowly through the early sections. */
+  window.setTimeout(() => {
+    fallbackTimeReady = true;
+    maybeShowNudge();
+  }, 60000);
 
   function dismissNudge(){
     if(!nudge) return;
     nudge.classList.remove('show');
     nudge.setAttribute('aria-hidden','true');
-    localStorage.setItem(dismissKey, String(Date.now()));
+    markSeenThisSession();
   }
   close && close.addEventListener('click', dismissNudge);
   link && link.addEventListener('click', dismissNudge);
