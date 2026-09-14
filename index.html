@@ -1608,6 +1608,12 @@
       display: block;
     }
 
+
+    button[data-open-intent-guide="true"] {
+      font: inherit;
+      cursor: pointer;
+    }
+
     .conversion-actions {
       display: none;
       margin-top: 22px;
@@ -2037,14 +2043,7 @@
 
         <div class="button-row">
 
-          <a
-            class="btn btn-primary"
-            href="https://calendly.com/marsha-k-talley/15min"
-            target="_blank"
-            rel="noopener"
-          >
-            Start a Conversation
-          </a>
+          <button type="button" class="btn btn-primary" data-open-intent-guide="true">Start a Conversation</button>
 
 
           <a
@@ -2494,14 +2493,7 @@
 
         <div class="button-row">
 
-          <a
-            class="btn btn-light"
-            href="https://calendly.com/marsha-k-talley/15min"
-            target="_blank"
-            rel="noopener"
-          >
-            Start a Conversation
-          </a>
+          <button type="button" class="btn btn-light" data-open-intent-guide="true">Start a Conversation</button>
 
         </div>
 
@@ -3029,6 +3021,14 @@
             }
           );
         }
+
+        document.querySelectorAll(
+          '[data-open-intent-guide="true"]'
+        ).forEach(function (button) {
+          button.addEventListener("click", function () {
+            openConcierge();
+          });
+        });
 
         if (conciergeClose) {
           conciergeClose.addEventListener(
