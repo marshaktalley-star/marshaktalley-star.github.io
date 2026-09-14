@@ -1607,14 +1607,7 @@
     .concierge-response.show {
       display: block;
     }
-
-
-    button[data-open-intent-guide="true"] {
-      font: inherit;
-      cursor: pointer;
-    }
-
-    .conversion-actions {
+.conversion-actions {
       display: none;
       margin-top: 22px;
       padding-top: 22px;
@@ -1953,6 +1946,12 @@
               Reflections
             </a>
           </li>
+          <li>
+            <a href="contact.html">
+              Contact
+            </a>
+          </li>
+
 
           <li>
             <a href="https://marshakerrtalley.com/shop">
@@ -2043,7 +2042,7 @@
 
         <div class="button-row">
 
-          <button type="button" class="btn btn-primary" data-open-intent-guide="true">Start a Conversation</button>
+          <a type="button" class="btn btn-primary" href="contact.html">Start a Conversation</a>
 
 
           <a
@@ -2493,7 +2492,7 @@
 
         <div class="button-row">
 
-          <button type="button" class="btn btn-light" data-open-intent-guide="true">Start a Conversation</button>
+          <a type="button" class="btn btn-light" href="contact.html">Start a Conversation</a>
 
         </div>
 
@@ -3021,16 +3020,7 @@
             }
           );
         }
-
-        document.querySelectorAll(
-          '[data-open-intent-guide="true"]'
-        ).forEach(function (button) {
-          button.addEventListener("click", function () {
-            openConcierge();
-          });
-        });
-
-        if (conciergeClose) {
+if (conciergeClose) {
           conciergeClose.addEventListener(
             "click",
             closeConcierge
