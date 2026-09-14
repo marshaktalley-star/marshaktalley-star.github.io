@@ -3402,26 +3402,336 @@ html,body{max-width:100%;overflow-x:hidden}
   }
 }
 
+
+/* =========================================================
+   UNIFIED SITE HEADER / NAVIGATION / FOOTER
+   Matches the rest of marshakerrtalley.com
+   ========================================================= */
+
+.site-header{
+  width:100%;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  position:relative;
+  z-index:1200;
+}
+
+.header-inner{
+  width:min(calc(100% - 40px),1200px);
+  margin:0 auto;
+  padding:20px 0 13px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  position:relative;
+}
+
+.site-logo{
+  display:inline-block;
+  text-decoration:none;
+}
+
+.site-logo img{
+  width:220px;
+  height:auto;
+  margin:0 auto 13px;
+}
+
+.site-nav ul{
+  list-style:none;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:27px;
+  padding:0;
+  margin:0;
+  font-size:14px;
+  font-weight:500;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+
+.site-nav li{
+  margin:0;
+  padding:0;
+}
+
+.site-nav a{
+  color:#343434;
+  text-decoration:none;
+  transition:color .2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active{
+  color:var(--deep);
+  font-weight:600;
+}
+
+.nav-toggle{
+  display:none;
+  position:absolute;
+  top:20px;
+  right:0;
+  width:44px;
+  height:44px;
+  border:0;
+  background:transparent;
+  color:var(--deep);
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* Work With Me submenu */
+.site-nav .nav-dropdown{
+  position:relative;
+}
+
+.site-nav .nav-parent{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+
+.site-nav .nav-parent::after{
+  content:"⌄";
+  position:relative;
+  top:-1px;
+  color:var(--brand);
+  font-size:.85em;
+}
+
+.site-nav .nav-submenu{
+  position:absolute;
+  top:calc(100% + 11px);
+  left:50%;
+  z-index:1300;
+  min-width:235px;
+  margin:0;
+  padding:9px;
+  display:none;
+  flex-direction:column;
+  gap:3px;
+  transform:translateX(-50%);
+  background:rgba(255,255,255,.985);
+  border:1px solid var(--line);
+  border-radius:15px;
+  box-shadow:0 18px 44px rgba(5,99,103,.14);
+  text-align:left;
+  letter-spacing:normal;
+  text-transform:none;
+}
+
+.site-nav .nav-submenu::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:-13px;
+  height:13px;
+}
+
+.site-nav .nav-submenu li{
+  width:100%;
+}
+
+.site-nav .nav-submenu a{
+  display:block;
+  width:100%;
+  padding:10px 13px;
+  border-radius:10px;
+  color:#343434;
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:.01em;
+  line-height:1.35;
+  text-transform:none;
+  white-space:nowrap;
+}
+
+.site-nav .nav-submenu a:hover,
+.site-nav .nav-submenu a:focus-visible,
+.site-nav .nav-submenu a.active{
+  background:var(--soft);
+  color:var(--deep);
+  outline:none;
+}
+
+.site-nav .nav-dropdown:hover > .nav-submenu,
+.site-nav .nav-dropdown:focus-within > .nav-submenu{
+  display:flex;
+}
+
+/* Footer */
+.site-footer{
+  padding:38px 20px 30px;
+  background:#fff;
+  border-top:1px solid var(--line);
+  text-align:center;
+  color:inherit;
+  font-size:inherit;
+}
+
+.footer-inner{
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.social-links{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px 16px;
+  margin-bottom:22px;
+}
+
+.social-links a{
+  color:var(--deep);
+  text-decoration:none;
+  font-size:15px;
+  font-weight:600;
+}
+
+.social-links a:hover{
+  color:var(--brand);
+  text-decoration:underline;
+}
+
+.social-links span{
+  color:#c9a86a;
+}
+
+.copyright{
+  margin:0 0 18px;
+  color:#777f80;
+  font-size:13px;
+}
+
+.legal-links{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px 22px;
+}
+
+.legal-links a{
+  color:var(--brand);
+  text-decoration:none;
+  font-size:13px;
+}
+
+.legal-links a:hover{
+  color:var(--deep);
+  text-decoration:underline;
+}
+
+@media(max-width:700px){
+  .header-inner{
+    width:min(calc(100% - 30px),1200px);
+    padding:18px 0 14px;
+    align-items:flex-start;
+  }
+
+  .site-logo{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .site-logo img{
+    width:190px;
+    margin-bottom:0;
+  }
+
+  .nav-toggle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    top:18px;
+    right:0;
+  }
+
+  .site-nav{
+    display:none;
+    width:100%;
+    padding-top:20px;
+  }
+
+  .site-nav.open{
+    display:block;
+  }
+
+  .site-nav ul{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:14px;
+    padding:8px 0 5px;
+  }
+
+  .site-nav .nav-parent::after{
+    display:none;
+  }
+
+  .site-nav .nav-submenu{
+    position:static;
+    display:flex;
+    min-width:0;
+    width:min(100%,330px);
+    margin:2px 0 0;
+    padding:4px 0 4px 18px;
+    transform:none;
+    border:0;
+    border-left:2px solid var(--soft);
+    border-radius:0;
+    background:transparent;
+    box-shadow:none;
+    text-align:left;
+  }
+
+  .site-nav .nav-submenu a{
+    padding:7px 10px;
+    font-size:12px;
+    white-space:normal;
+  }
+}
+
 </style>
 </head>
 
 <body>
 <div class="reading-progress" aria-hidden="true"><span id="readingProgressBar"></span></div>
 
-<header class="site-header" aria-label="Website header">
-  <div class="site-header-inner">
-    <a class="site-brand" href="https://marshakerrtalley.com/index.html" aria-label="Marsha Kerr Talley home">
-      <span class="site-brand-name">Marsha Kerr Talley</span>
-      <span class="site-brand-tagline">Live Inspired · Turning Pain Into Possibility™</span>
+<header class="site-header">
+  <div class="header-inner">
+
+    <a href="index.html" class="site-logo" aria-label="Marsha Kerr Talley home">
+      <img src="MKT-logo-3.png" alt="Marsha Kerr Talley">
     </a>
-    <nav class="site-menu" aria-label="Main website navigation">
-      <a href="https://marshakerrtalley.com/index.html">Home</a>
-      <a href="https://marshakerrtalley.com/about.html">About</a>
-      <a href="https://marshakerrtalley.com/work-with-me.html">Work With Me</a>
-      <a href="https://marshakerrtalley.com/blog.html">Reflections</a>
-      <a href="https://marshakerrtalley.com/podcast.html">Podcast</a>
-      <a class="site-menu-cta" href="#subscribe">Subscribe</a>
+
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+
+        <li class="nav-dropdown">
+          <a href="work-with-me.html" class="nav-parent active">Work With Me</a>
+          <ul class="nav-submenu" aria-label="Work With Me">
+            <li><a href="work-with-me.html">Overview</a></li>
+            <li><a href="https://marshakerrtalley.com/special-education">Special Education</a></li>
+            <li><a href="airbnb-host-training.html">Airbnb Host Training</a></li>
+            <li><a href="returning-to-jamaica.html" class="active" aria-current="page">Returning to Jamaica</a></li>
+          </ul>
+        </li>
+
+        <li><a href="books.html">Books</a></li>
+        <li><a href="podcast.html">Podcast</a></li>
+        <li><a href="reflections.html">Reflections</a></li>
+        <li><a href="https://marshakerrtalley.com/shop">Shop</a></li>
+      </ul>
     </nav>
+
   </div>
 </header>
 
@@ -5081,39 +5391,26 @@ html,body{max-width:100%;overflow-x:hidden}
 </section>
 
 <footer class="site-footer">
-  <div class="wrap">
-    <div class="site-footer-grid">
-      <div>
-        <a class="site-brand" href="https://marshakerrtalley.com/index.html">
-          <span class="site-brand-name">Marsha Kerr Talley</span>
-          <span class="site-brand-tagline">Live Inspired · Turning Pain Into Possibility™</span>
-        </a>
-        <p class="site-footer-copy">
-          Education, writing, conversation and practical resources shaped by lived experience, international perspective and a belief in creating possibilities.
-        </p>
-      </div>
-      <div>
-        <h4>Explore</h4>
-        <div class="site-footer-links">
-          <a href="https://marshakerrtalley.com/about.html">About Marsha</a>
-          <a href="https://marshakerrtalley.com/work-with-me.html">Work With Me</a>
-          <a href="https://marshakerrtalley.com/blog.html">Reflections</a>
-          <a href="https://marshakerrtalley.com/podcast.html">Podcast</a>
-        </div>
-      </div>
-      <div>
-        <h4>Stay connected</h4>
-        <div class="site-footer-links">
-          <a href="#subscribe">Subscribe on Substack</a>
-          <a href="mailto:info@marshakerrtalley.com">Email Marsha</a>
-          <a href="#top">Back to top ↑</a>
-        </div>
-      </div>
+  <div class="footer-inner">
+
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/marshakerrtalley" target="_blank" rel="noopener">LinkedIn</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://substack.com/@marshakerrtalley" target="_blank" rel="noopener">Substack</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://www.silhouettescafe.com/" target="_blank" rel="noopener">Silhouette's Café</a>
     </div>
-    <div class="site-footer-bottom">
-      <span>© <span id="siteYear"></span> Marsha Kerr Talley. All rights reserved.</span>
-      <span>Live Inspired · Turning Pain Into Possibility™</span>
-    </div>
+
+    <p class="copyright">
+      Copyright © <span id="currentYear"></span> Marsha Kerr Talley. All Rights Reserved.
+    </p>
+
+    <nav class="legal-links" aria-label="Legal">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
+      <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+    </nav>
+
   </div>
 </footer>
 
@@ -5310,6 +5607,37 @@ const siteYear=document.getElementById('siteYear'); if(siteYear) siteYear.textCo
     revealTargets.forEach(el => el.classList.add('is-visible'));
   }
 })();
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const year = document.getElementById("currentYear");
+  if (year) year.textContent = new Date().getFullYear();
+
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".site-nav");
+
+  if (toggle && nav) {
+    toggle.addEventListener("click", function () {
+      const open = nav.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      toggle.textContent = open ? "×" : "☰";
+    });
+
+    nav.querySelectorAll("a").forEach(function(link){
+      link.addEventListener("click", function(){
+        if (window.innerWidth <= 700) {
+          nav.classList.remove("open");
+          toggle.setAttribute("aria-expanded","false");
+          toggle.setAttribute("aria-label","Open menu");
+          toggle.textContent="☰";
+        }
+      });
+    });
+  }
+});
 </script>
 
 </body>
