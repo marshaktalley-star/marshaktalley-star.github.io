@@ -732,6 +732,125 @@
     }
 
 
+
+    /* ========================================
+       WORK WITH ME SUBMENU
+    ======================================== */
+
+    .main-nav .nav-dropdown {
+      position: relative;
+    }
+
+    .main-nav .nav-parent {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .main-nav .nav-parent::after {
+      content: "⌄";
+      position: relative;
+      top: -1px;
+      color: var(--teal);
+      font-size: 0.85em;
+    }
+
+    .main-nav .nav-submenu {
+      position: absolute;
+      top: calc(100% + 11px);
+      left: 50%;
+      z-index: 1200;
+
+      min-width: 235px;
+      margin: 0;
+      padding: 9px;
+
+      display: none;
+      flex-direction: column;
+      gap: 3px;
+
+      transform: translateX(-50%);
+
+      background: rgba(255,255,255,.985);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      box-shadow: 0 18px 44px rgba(5,99,103,.14);
+
+      text-align: left;
+    }
+
+    .main-nav .nav-submenu::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -13px;
+      height: 13px;
+    }
+
+    .main-nav .nav-submenu li {
+      width: 100%;
+    }
+
+    .main-nav .nav-submenu a {
+      display: block;
+      width: 100%;
+      padding: 10px 13px;
+
+      border-radius: 10px;
+
+      color: #343434;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .01em;
+      line-height: 1.35;
+      text-transform: none;
+      white-space: nowrap;
+    }
+
+    .main-nav .nav-submenu a:hover,
+    .main-nav .nav-submenu a:focus-visible {
+      background: var(--teal-pale);
+      color: var(--teal-dark);
+      outline: none;
+    }
+
+    .main-nav .nav-dropdown:hover > .nav-submenu,
+    .main-nav .nav-dropdown:focus-within > .nav-submenu {
+      display: flex;
+    }
+
+    @media (max-width: 600px) {
+      .main-nav .nav-parent::after {
+        display: none;
+      }
+
+      .main-nav .nav-submenu {
+        position: static;
+        display: flex;
+
+        min-width: 0;
+        width: 100%;
+
+        margin: 4px 0 2px 14px;
+        padding: 3px 0 3px 13px;
+
+        transform: none;
+
+        border: 0;
+        border-left: 2px solid #e8f6f6;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .main-nav .nav-submenu a {
+        padding: 7px 0;
+        font-size: 12px;
+        white-space: normal;
+      }
+    }
+
     /* ========================================
        RESPONSIVE
     ======================================== */
@@ -866,10 +985,36 @@
             </a>
           </li>
 
-          <li>
-            <a href="work-with-me.html">
+          <li class="nav-dropdown">
+            <a href="work-with-me.html" class="nav-parent">
               Work With Me
             </a>
+
+            <ul class="nav-submenu" aria-label="Work With Me">
+              <li>
+                <a href="work-with-me.html">
+                  Overview
+                </a>
+              </li>
+
+              <li>
+                <a href="https://marshakerrtalley.com/special-education">
+                  Special Education
+                </a>
+              </li>
+
+              <li>
+                <a href="airbnb-host-training.html">
+                  Airbnb Host Training
+                </a>
+              </li>
+
+              <li>
+                <a href="returning-to-jamaica.html">
+                  Returning to Jamaica
+                </a>
+              </li>
+            </ul>
           </li>
 
           <li>
