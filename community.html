@@ -3,208 +3,628 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marsha Kerr Talley | Turning Pain Into Possibilities</title>
+
+  <title>Live Inspired Community | Marsha Kerr Talley</title>
+  <meta name="description" content="Live Inspired Community is a reflective space from Marsha Kerr Talley for encouragement, thoughtful conversation, shared growth and practical perspectives on life, leadership, healing and possibility." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-storage-compat.js"></script>
+
+  <style>
+    :root {
+      --teal:#056367;
+      --teal-2:#319fa2;
+      --aqua:#2fe2dd;
+      --deep:#073f43;
+      --ink:#173234;
+      --text:#4d5f60;
+      --muted:#728081;
+      --cream:#f7f4ef;
+      --paper:#ffffff;
+      --line:#dfe7e6;
+      --gold:#c9a86a;
+      --gold-2:#e8a000;
+      --soft:#e8f6f6;
+      --shadow:0 24px 60px rgba(5,99,103,.12);
+      --shadow-soft:0 14px 36px rgba(5,99,103,.08);
+      --body:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      --heading:"Playfair Display",Georgia,serif;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--body);
+      color:var(--text);
+      background:#fff;
+      line-height:1.7;
+      -webkit-font-smoothing:antialiased;
+    }
+    img,video{max-width:100%;display:block}
+    a{color:inherit}
+    h1,h2,h3,h4{
+      font-family:var(--heading);
+      color:var(--ink);
+      line-height:1.12;
+      margin-top:0;
+    }
+    p{margin-top:0}
+    .wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}
+
+    /* HEADER */
+    .site-header{
+      background:rgba(255,255,255,.98);
+      border-bottom:1px solid var(--line);
+      position:relative;
+      z-index:1200;
+    }
+    .header-inner{
+      width:min(calc(100% - 40px),1200px);
+      margin:0 auto;
+      padding:20px 0 13px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      position:relative;
+    }
+    .site-logo img{width:220px;height:auto;margin:0 auto 13px}
+    .nav-toggle{
+      display:none;
+      position:absolute;
+      top:20px;
+      right:0;
+      width:44px;height:44px;
+      border:0;background:transparent;
+      color:var(--teal);
+      font-size:28px;
+      cursor:pointer;
+    }
+    .site-nav ul{
+      list-style:none;
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:27px;
+      padding:0;margin:0;
+      font-size:14px;
+      font-weight:500;
+      letter-spacing:.07em;
+      text-transform:uppercase;
+    }
+    .site-nav a{color:#343434;text-decoration:none}
+    .site-nav a:hover,.site-nav a:focus,.site-nav a.active{color:var(--teal);font-weight:600}
+    .nav-dropdown{position:relative}
+    .nav-parent{display:inline-flex;align-items:center;gap:6px}
+    .nav-parent::after{content:"⌄";color:var(--teal-2);font-size:.85em}
+    .nav-submenu{
+      position:absolute;
+      top:calc(100% + 11px);
+      left:50%;
+      z-index:1300;
+      min-width:235px;
+      margin:0 !important;
+      padding:9px !important;
+      display:none !important;
+      flex-direction:column !important;
+      gap:3px !important;
+      transform:translateX(-50%);
+      background:rgba(255,255,255,.99);
+      border:1px solid var(--line);
+      border-radius:15px;
+      box-shadow:0 18px 44px rgba(5,99,103,.14);
+      text-align:left;
+      letter-spacing:normal !important;
+      text-transform:none !important;
+    }
+    .nav-submenu::before{content:"";position:absolute;left:0;right:0;top:-13px;height:13px}
+    .nav-submenu li{width:100%}
+    .nav-submenu a{
+      display:block;width:100%;
+      padding:10px 13px;
+      border-radius:10px;
+      color:#343434;
+      font-size:13px;
+      font-weight:500;
+      letter-spacing:.01em;
+      line-height:1.35;
+      text-transform:none;
+      white-space:nowrap;
+    }
+    .nav-submenu a:hover,.nav-submenu a:focus-visible,.nav-submenu a.active{
+      background:var(--soft);
+      color:var(--teal);
+      outline:none;
+    }
+    .nav-dropdown:hover>.nav-submenu,.nav-dropdown:focus-within>.nav-submenu{display:flex !important}
+
+    /* HERO */
+    .community-hero{
+      position:relative;
+      overflow:hidden;
+      padding:100px 0 86px;
+      background:
+        radial-gradient(circle at 8% 14%,rgba(47,226,221,.12),transparent 30%),
+        radial-gradient(circle at 94% 12%,rgba(201,168,106,.14),transparent 27%),
+        linear-gradient(180deg,#fff 0%,#f7fbfb 100%);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:68px;
+      align-items:center;
+      position:relative;
+      z-index:2;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:var(--teal);
+      font-size:.78rem;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:18px;
+    }
+    .eyebrow::before{content:"";width:32px;height:1px;background:var(--gold)}
+    .community-hero h1{
+      font-size:clamp(3.7rem,7vw,7rem);
+      font-weight:600;
+      letter-spacing:-.05em;
+      margin-bottom:24px;
+    }
+    .community-hero h1 span{color:var(--teal)}
+    .hero-lead{
+      max-width:720px;
+      font-size:clamp(1.1rem,1.7vw,1.32rem);
+      color:#405455;
+      margin-bottom:22px;
+    }
+    .hero-note{
+      margin:24px 0 30px;
+      padding:20px 22px;
+      border-left:3px solid var(--gold);
+      background:rgba(255,255,255,.78);
+      color:#3c5051;
+    }
+    .button-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:50px;
+      padding:13px 24px;
+      border-radius:999px;
+      border:1px solid transparent;
+      text-decoration:none;
+      font-weight:700;
+      font-size:.9rem;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:linear-gradient(135deg,var(--teal),var(--teal-2));color:#fff}
+    .btn-outline{background:#fff;color:var(--teal);border-color:rgba(5,99,103,.28)}
+    .hero-card{
+      padding:30px;
+      border-radius:26px;
+      background:var(--deep);
+      color:#fff;
+      box-shadow:var(--shadow);
+    }
+    .hero-card h2{color:#fff;font-size:2rem;margin-bottom:15px}
+    .hero-card p{color:rgba(255,255,255,.76)}
+    .hero-values{display:grid;gap:12px;margin-top:24px}
+    .hero-value{
+      padding:14px 16px;
+      border-radius:13px;
+      border:1px solid rgba(255,255,255,.13);
+      background:rgba(255,255,255,.055);
+    }
+    .hero-value strong{display:block;color:var(--aqua);font-size:.92rem;margin-bottom:2px}
+
+    /* FEATURED */
+    .featured{padding:96px 0;background:var(--cream)}
+    .section-heading{max-width:800px;margin-bottom:42px}
+    .section-heading h2{font-size:clamp(2.4rem,4vw,4.2rem);font-weight:600;margin-bottom:15px}
+    .section-heading p{font-size:1.05rem;color:var(--muted)}
+    .featured-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
+    .video-card,.conversation-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:20px;
+      box-shadow:var(--shadow-soft);
+    }
+    .video-shell{
+      width:100%;
+      aspect-ratio:16/9;
+      overflow:hidden;
+      border-radius:16px;
+      background:#000;
+    }
+    .video-shell iframe{width:100%;height:100%;border:0}
+    .video-card h3,.conversation-card h3{font-size:1.55rem;margin:18px 0 8px}
+    .video-card p,.conversation-card p{font-size:.94rem;color:var(--muted);margin-bottom:0}
+
+    /* COMMUNITY FEED */
+    #admin-upload{
+      padding:100px 0;
+      background:#fff;
+    }
+    .community-shell{
+      width:min(900px,calc(100% - 40px));
+      margin:0 auto;
+    }
+    .community-intro{
+      text-align:center;
+      max-width:720px;
+      margin:0 auto 40px;
+    }
+    .community-intro h2{
+      font-size:clamp(2.5rem,4vw,4.2rem);
+      margin-bottom:14px;
+    }
+    .community-intro p{color:var(--muted)}
+
+    #admin-upload .card,#admin-upload .post{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:24px;
+      display:grid;
+      gap:16px;
+      box-shadow:var(--shadow-soft);
+      margin-bottom:20px;
+    }
+    #admin-upload .post{border-left:4px solid var(--teal-2)}
+    .admin-link{
+      text-align:right;
+      font-size:12px;
+      color:#8a9696;
+      cursor:pointer;
+      text-decoration:none;
+      margin-bottom:10px;
+    }
+    .admin-link:hover{color:var(--teal)}
+    #adminLoginBox{display:none}
+    #adminIndicator{text-align:center;font-size:13px;font-weight:700;color:var(--teal);display:none;margin-bottom:12px}
+    textarea.post-message{min-height:180px;font-size:16px;line-height:1.6;resize:vertical}
+    input,textarea{
+      width:100%;
+      padding:14px;
+      border-radius:12px;
+      border:1px solid #cfdada;
+      font:inherit;
+    }
+    input:focus,textarea:focus,button:focus,a:focus{outline:3px solid rgba(47,226,221,.38);outline-offset:2px}
+    .publish-wrap{display:flex;justify-content:center}
+    #admin-upload button{
+      background:linear-gradient(135deg,var(--teal),var(--teal-2));
+      color:#fff;
+      border:none;
+      padding:10px 20px;
+      border-radius:999px;
+      font-weight:800;
+      cursor:pointer;
+    }
+    .remove-media-link{font-size:13px;color:var(--teal);text-decoration:underline;cursor:pointer;width:fit-content}
+    .post-topbar{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+    .post-date{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+    .reactions{display:flex;gap:8px;flex-wrap:wrap;padding-top:4px}
+    .reactions button{
+      background:#f6fbfb !important;
+      color:var(--teal) !important;
+      border:1px solid #cfe9e8 !important;
+      padding:6px 12px !important;
+      font-weight:700 !important;
+    }
+    textarea.comment-box{min-height:80px;white-space:pre-wrap}
+    .comment-actions{display:flex;justify-content:flex-end}
+    .comment-submit{margin-top:6px;padding:7px 16px !important;font-size:13px}
+    .comment{border-top:1px solid #e3eeee;padding-top:12px;white-space:pre-wrap;display:grid;gap:6px}
+    .comment-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .comment-badge{
+      font-size:11px;font-weight:800;color:var(--teal);
+      border:1px solid #bfe5e3;background:#f0fafa;
+      padding:2px 9px;border-radius:999px;
+    }
+    .media img,.media video{width:100%;border-radius:16px}
+    .media-vertical{max-width:360px;margin:0 auto;aspect-ratio:9/16}
+    .media-wide{width:100%;aspect-ratio:16/9}
+    .media-vertical iframe,.media-wide iframe{width:100%;height:100%;border:0;border-radius:16px}
+    #preview{max-height:360px;overflow-y:auto}
+    #preview img,#preview video{max-height:340px;object-fit:contain}
+    .error-box{
+      border:1px solid #efc5c5;
+      background:#fff7f7;
+      color:#7a1f1f;
+      padding:14px 16px;
+      border-radius:14px;
+      font-size:14px;
+      line-height:1.5;
+    }
+    .feed-empty{
+      padding:30px;
+      border:1px dashed #c9dedd;
+      border-radius:18px;
+      text-align:center;
+      color:var(--muted);
+      background:#fbfdfd;
+    }
+
+    /* STAY CONNECTED */
+    .stay{padding:100px 0;background:linear-gradient(135deg,#eef8f8,#fff 70%)}
+    .stay-box{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:30px;
+      align-items:center;
+      padding:42px 44px;
+      border:1px solid rgba(201,168,106,.32);
+      border-radius:24px;
+      background:#fff;
+      box-shadow:var(--shadow-soft);
+    }
+    .stay-box h2{font-size:clamp(2rem,3vw,3.2rem);margin-bottom:10px}
+    .stay-box p{margin-bottom:0;color:var(--muted);max-width:760px}
+
+    /* FOOTER */
+    .site-footer{
+      padding:38px 20px 30px;
+      background:#fff;
+      border-top:1px solid var(--line);
+      text-align:center;
+    }
+    .social-links,.legal-links{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:10px 18px;
+    }
+    .social-links{margin-bottom:20px}
+    .social-links a{color:var(--teal);text-decoration:none;font-weight:600}
+    .site-footer .copyright{margin:0 0 18px;color:#777f80;font-size:13px}
+    .legal-links a{color:var(--teal-2);text-decoration:none;font-size:13px}
+
+    @media(max-width:900px){
+      .hero-grid,.featured-grid{grid-template-columns:1fr}
+      .stay-box{grid-template-columns:1fr}
+    }
+    @media(max-width:700px){
+      .header-inner{width:min(calc(100% - 30px),1200px);padding:18px 0 14px;align-items:flex-start}
+      .site-logo{margin-left:auto;margin-right:auto}
+      .site-logo img{width:190px;margin-bottom:0}
+      .nav-toggle{display:inline-flex;align-items:center;justify-content:center;top:18px;right:0}
+      .site-nav{display:none;width:100%;padding-top:20px}
+      .site-nav.open{display:block}
+      .site-nav ul{flex-direction:column;align-items:flex-start;gap:14px;padding:8px 0 5px}
+      .nav-parent::after{display:none}
+      .nav-submenu{
+        position:static;
+        display:flex !important;
+        min-width:0;width:min(100%,330px);
+        margin:2px 0 0 !important;
+        padding:4px 0 4px 18px !important;
+        transform:none;border:0;border-left:2px solid var(--soft);
+        border-radius:0;background:transparent;box-shadow:none;
+      }
+      .nav-submenu a{padding:7px 10px;font-size:12px;white-space:normal}
+      .community-hero{padding:70px 0 60px}
+      .community-hero h1{font-size:clamp(3rem,15vw,5rem)}
+      .featured,#admin-upload,.stay{padding:72px 0}
+    }
+    @media(max-width:520px){
+      .wrap,.community-shell{width:min(100% - 28px,1180px)}
+      .button-row .btn{width:100%}
+      .stay-box{padding:30px 24px}
+    }
+  </style>
 </head>
 
-<body style="margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">
+<body>
 
-<!-- ======================================================
-     SECTION 1: SITE HEADER / NAVIGATION (UNCHANGED)
-====================================================== -->
-<header style="
-  width:100%;
-  background:#ffffff;
-  border-bottom:1px solid #e6f2f2;
-">
-  <div style="
-    max-width:1200px;
-    margin:0 auto;
-    padding:20px 16px 12px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    box-sizing:border-box;
-  ">
-    <!-- LOGO -->
-    <a href="index.html" style="display:inline-block;">
-      <img
-        src="MKT-logo-3.png"
-        alt="Marsha Kerr Talley – Live Inspired"
-        style="
-          max-width:220px;
-          width:100%;
-          height:auto;
-          display:block;
-          margin:0 auto 12px;
-        "
-      />
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo" aria-label="Marsha Kerr Talley home">
+      <img src="MKT-logo-3.png" alt="Marsha Kerr Talley">
     </a>
 
-    <!-- NAV LINKS -->
-    <nav aria-label="Main navigation">
-      <ul style="
-        list-style:none;
-        padding:0;
-        margin:0;
-        display:flex;
-        gap:28px;
-        flex-wrap:wrap;
-        justify-content:center;
-        font-size:14px;
-        letter-spacing:0.08em;
-        text-transform:uppercase;
-      ">
-        <li><a href="index.html" style="color:#056367;text-decoration:none;font-weight:600;">Home</a></li>
-        <li><a href="work-with-me.html" style="color:#2f2f2f;text-decoration:none;">Work With Me</a></li>
-        <li><a href="books.html" style="color:#2f2f2f;text-decoration:none;">Books</a></li>
-        <li><a href="podcast.html" style="color:#2f2f2f;text-decoration:none;">Podcast</a></li>
-        <li><a href="reflections.html" style="color:#2f2f2f;text-decoration:none;">Reflections</a></li>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+
+        <li class="nav-dropdown">
+          <a href="work-with-me.html" class="nav-parent">Work With Me</a>
+          <ul class="nav-submenu" aria-label="Work With Me">
+            <li><a href="work-with-me.html">Overview</a></li>
+            <li><a href="https://marshakerrtalley.com/special-education">Special Education</a></li>
+            <li><a href="digital-creators-lab.html">Digital Creators Lab</a></li>
+            <li><a href="airbnb-host-training.html">Airbnb Host Training</a></li>
+            <li><a href="returning-to-jamaica.html">Returning to Jamaica</a></li>
+          </ul>
+        </li>
+
+        <li><a href="books.html">Books</a></li>
+        <li><a href="podcast.html">Podcast</a></li>
+        <li><a href="reflections.html">Reflections</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://marshakerrtalley.com/shop">Shop</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<!-- ======================================================
-     SECTION 2: LIVE INSPIRED COMMUNITY + FIREBASE SDKs (UNCHANGED)
-====================================================== -->
-<!-- LIVE INSPIRED COMMUNITY | FINAL ARCHIVED BUILD (NO UI EDIT/DELETE; FIREBASE-ONLY DELETES)
-     Archived: 2025-12-19
-     Admin deletes handled in Firebase Console (Firestore) only.
--->
+<main>
 
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-storage-compat.js"></script>
+  <section class="community-hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Live Inspired</div>
+          <h1>A community for <span>reflection, growth and possibility.</span></h1>
 
-<!-- ======================================================
-     SECTION 3: COMMUNITY UI + STYLES + YOUTUBE CARD (UNCHANGED)
-====================================================== -->
-<section id="admin-upload">
-<style>
-#admin-upload, #admin-upload * { box-sizing:border-box; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif }
-#admin-upload { min-height:100vh; padding:56px 24px; background:linear-gradient(180deg,#f6fefe,#ffffff) }
-.wrap { max-width:900px; margin:0 auto; display:grid; gap:32px }
-h1 { text-align:center; color:#056367; font-size:44px; font-weight:900 }
-p.sub { text-align:center; color:#0d4b4e }
+          <p class="hero-lead">
+            This is a quieter corner of my work. A place for thoughtful posts, honest conversation and the kinds of reflections that do not always fit neatly into a social media caption.
+          </p>
 
-.card,.post { background:#fff; border:3px solid #2fe2dd; border-radius:26px; padding:24px; display:grid; gap:16px; box-shadow:0 20px 60px rgba(0,0,0,.08) }
+          <div class="hero-note">
+            You do not have to perform here. Read. Reflect. Respond when something speaks to you. The point is connection with substance, not noise for the sake of activity.
+          </div>
 
-/* ✅ NEW: YouTube section (matches your card style) */
-.youtube-section h2{
-  text-align:center;
-  color:#056367;
-  margin:0;
-  font-size:26px;
-  font-weight:900;
-}
-.youtube-grid{
-  display:grid;
-  gap:18px;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  align-items:stretch;
-}
-.yt-embed{
-  width:100%;
-  aspect-ratio:16/9;
-  border-radius:18px;
-  overflow:hidden;
-  background:#000;
-}
-.yt-embed iframe{
-  width:100%;
-  height:100%;
-  border:0;
-}
+          <div class="button-row">
+            <a class="btn btn-primary" href="#community-feed">Enter the Community</a>
+            <a class="btn btn-outline" href="https://marshakerrtalley.substack.com/subscribe" target="_blank" rel="noopener">Stay Connected by Email</a>
+          </div>
+        </div>
 
-.admin-link { text-align:right; font-size:14px; color:#056367; cursor:pointer; text-decoration:underline }
-#adminLoginBox { display:none }
-#adminIndicator { text-align:center; font-size:14px; font-weight:800; color:#056367; display:none }
+        <aside class="hero-card">
+          <h2>What belongs here</h2>
+          <p>Thoughts and conversations around the things I return to again and again in my work and life.</p>
 
-textarea.post-message { min-height:180px; font-size:17px; line-height:1.6; resize:vertical }
-input,textarea { width:100%; padding:14px; border-radius:14px; border:1px solid #ccc }
-
-.publish-wrap { display:flex; justify-content:center }
-button { background:linear-gradient(135deg,#056367,#319fa2); color:#fff; border:none; padding:10px 22px; border-radius:999px; font-weight:800; cursor:pointer }
-
-.remove-media-link { font-size:13px; color:#056367; text-decoration:underline; cursor:pointer; width:fit-content }
-
-.post-topbar { display:flex; justify-content:space-between; align-items:flex-start; gap:12px }
-.post-date { font-size:13px; color:#0d4b4e }
-.admin-mini a,.comment-mini a { font-size:13px; color:#056367; text-decoration:underline; cursor:pointer; margin-left:10px }
-
-.reactions { display:flex; gap:10px; flex-wrap:wrap }
-.reactions button { background:#f0fefe; color:#056367; border:1px solid #2fe2dd; padding:6px 14px; font-weight:800 }
-
-textarea.comment-box { min-height:80px; white-space:pre-wrap }
-.comment-actions { display:flex; justify-content:flex-end }
-.comment-submit { margin-top:6px; padding:6px 16px; font-size:14px }
-
-.comment { border-top:1px solid #e0f7f7; padding-top:10px; white-space:pre-wrap; display:grid; gap:6px }
-.comment-head { display:flex; justify-content:space-between; align-items:center; gap:10px }
-.comment-badge { font-size:12px; font-weight:800; color:#056367; border:1px solid #2fe2dd; background:#f0fefe; padding:2px 10px; border-radius:999px }
-
-.media img,.media video { width:100%; border-radius:16px }
-.media-vertical { max-width:360px; margin:0 auto; aspect-ratio:9/16 }
-.media-wide { width:100%; aspect-ratio:16/9 }
-.media-vertical iframe,.media-wide iframe { width:100%; height:100%; border-radius:16px }
-
-#preview { max-height:360px; overflow-y:auto }
-#preview img,#preview video { max-height:340px; object-fit:contain }
-
-/* ✅ NEW: visible error box if Firestore fails */
-.error-box{
-  border:2px solid #ffb3b3;
-  background:#fff5f5;
-  color:#7a1f1f;
-  padding:14px 16px;
-  border-radius:16px;
-  font-size:14px;
-  line-height:1.5;
-}
-</style>
-
-<div class="wrap">
-  <h1>Live Inspired Community</h1>
-  <p class="sub">Encouragement, reflection, and shared growth.</p>
-
-  <!-- ✅ YouTube section inserted above admin/feed (UNCHANGED) -->
-  <div class="card youtube-section">
-    <h2>From YouTube · Watch & Reflect</h2>
-    <p class="sub">Moments of insight, encouragement, and conversation.</p>
-
-    <div id="youtubeGrid" class="youtube-grid"></div>
-  </div>
-
-  <div id="adminIndicator">Admin logged in</div>
-  <div class="admin-link" onclick="toggleAdminLogin()">Admin login</div>
-
-  <div class="card" id="adminLoginBox">
-    <input id="adminEmail" type="email" placeholder="Admin email">
-    <input id="adminPassword" type="password" placeholder="Admin password">
-    <button onclick="adminLogin()">Sign in</button>
-    <div id="loginStatus"></div>
-  </div>
-
-  <!-- ADMIN ONLY COMPOSER (hidden from public) -->
-  <div class="card" id="composer" style="display:none">
-    <textarea id="postText" class="post-message" placeholder="Write your message…"></textarea>
-    <input id="mediaUrl" placeholder="Optional media URL (image, video, or YouTube)">
-    <input id="fileInput" type="file" accept="image/*,video/*">
-    <span class="remove-media-link" onclick="clearMedia()">Remove media</span>
-    <div id="preview"></div>
-    <div class="publish-wrap">
-      <button onclick="publishPost()">Publish Post</button>
+          <div class="hero-values">
+            <div class="hero-value"><strong>Reflection</strong>Making room to think beneath the surface.</div>
+            <div class="hero-value"><strong>Human experience</strong>Talking about what shapes how we live, lead, heal and relate.</div>
+            <div class="hero-value"><strong>Possibility</strong>Looking for what can shift without pretending everything is simple.</div>
+            <div class="hero-value"><strong>Respectful conversation</strong>Different perspectives can coexist without becoming a performance or a fight.</div>
+          </div>
+        </aside>
+      </div>
     </div>
+  </section>
+
+  <section class="featured">
+    <div class="wrap">
+      <div class="section-heading">
+        <div class="eyebrow">Watch & reflect</div>
+        <h2>Conversations worth sitting with.</h2>
+        <p>
+          Some reflections begin in writing. Others begin by hearing someone say something that makes you stop, question or see a familiar issue differently.
+        </p>
+      </div>
+
+      <div class="featured-grid">
+        <article class="video-card">
+          <div class="video-shell">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/videoseries?list=PLfLwFGreLvJGFe9llGE1qj-0zx8sOWZui"
+              title="Live Inspired video playlist"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <h3>From YouTube</h3>
+          <p>Reflections, conversations and moments from my wider work.</p>
+        </article>
+
+        <article class="conversation-card">
+          <div class="video-shell">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/RyxtZnWCUSM"
+              title="Middle Ground – Questioning, Identity & Human Experience"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <h3>Questioning, Identity & Human Experience</h3>
+          <p>
+            I took part in Jubilee’s <em>Middle Ground</em> to explore questions around identity, attraction and self-understanding. Not every human experience needs to be rushed into a conclusion. Sometimes clarity emerges through honest dialogue.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="admin-upload">
+    <div class="community-shell">
+
+      <div class="community-intro" id="community-feed">
+        <div class="eyebrow">Community posts</div>
+        <h2>Read. Reflect. Join the conversation.</h2>
+        <p>
+          You can react to posts and leave a comment when you have something to add. There is no requirement to be constantly active. Meaningful engagement matters more than volume.
+        </p>
+      </div>
+
+      <div id="adminIndicator">Admin logged in</div>
+      <div class="admin-link" onclick="toggleAdminLogin()">Admin</div>
+
+      <div class="card" id="adminLoginBox">
+        <input id="adminEmail" type="email" placeholder="Admin email" autocomplete="username">
+        <input id="adminPassword" type="password" placeholder="Admin password" autocomplete="current-password">
+        <button onclick="adminLogin()">Sign in</button>
+        <div id="loginStatus"></div>
+      </div>
+
+      <div class="card" id="composer" style="display:none">
+        <textarea id="postText" class="post-message" placeholder="Write your message…"></textarea>
+        <input id="mediaUrl" placeholder="Optional media URL (image, video, or YouTube)">
+        <input id="fileInput" type="file" accept="image/*,video/*">
+        <span class="remove-media-link" onclick="clearMedia()">Remove media</span>
+        <div id="preview"></div>
+        <div class="publish-wrap">
+          <button onclick="publishPost()">Publish Post</button>
+        </div>
+      </div>
+
+      <div id="feed">
+        <div class="feed-empty">Loading community posts…</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stay">
+    <div class="wrap">
+      <div class="stay-box">
+        <div>
+          <div class="eyebrow">Stay connected</div>
+          <h2>Prefer reflections delivered directly to you?</h2>
+          <p>
+            Subscribe on Substack for new writing and updates, or start a conversation if something here connects with work you want to do together.
+          </p>
+        </div>
+
+        <div class="button-row">
+          <a class="btn btn-primary" href="https://marshakerrtalley.substack.com/subscribe" target="_blank" rel="noopener">Subscribe on Substack</a>
+          <a class="btn btn-outline" href="contact.html?intent=CONNECT">Start a Conversation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/marshakerrtalley" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://substack.com/@marshakerrtalley" target="_blank" rel="noopener">Substack</a>
+      <a href="https://www.silhouettes.com/" target="_blank" rel="noopener">Silhouette's Café</a>
+    </div>
+
+    <p class="copyright">© <span id="currentYear"></span> Marsha Kerr Talley. All Rights Reserved.</p>
+
+    <nav class="legal-links" aria-label="Legal links">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
+      <a href="/terms-and-conditions">Terms and Conditions</a>
+    </nav>
   </div>
+</footer>
 
-  <div id="feed"></div>
-</div>
-</section>
-
-<!-- ======================================================
-     SECTION 4: FIREBASE COMMUNITY LOGIC (UNCHANGED)
-====================================================== -->
 <script>
 firebase.initializeApp({
   apiKey:"AIzaSyBZCg70hhCkx01ccZWePeIKAZEPC3mejkc",
@@ -426,245 +846,28 @@ feed.addEventListener("click",async e=>{
 });
 </script>
 
- <!-- ======================================================
-     SECTION: MIDDLE GROUND VIDEO
-====================================================== -->
-  <section style="
-  max-width: 1000px;
-  margin: 4rem auto 3rem;
-  padding: 2.5rem 1.5rem;
-  border-top: 1px solid rgba(5, 99, 103, 0.2);
-  font-family: inherit;
-">
-
-<div style="
-  max-width: 780px;
-  margin: 0 auto;
-">
-
-  <h2 style="
-    color: #056367;
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin: 0 auto 1rem;
-  ">
-    In Conversation: Questioning, Identity &amp; Human Experience
-  </h2>
-
-  <p style="
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #1a1f22;
-    max-width: 780px;
-    margin-bottom: 1rem;
-  ">
-    I took part in Jubilee’s <em>Middle Ground</em> to explore questions around identity, attraction,
-    and self-understanding — not to reach a conclusion, but to sit with nuance.
-  </p>
-
-  <p style="
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #1a1f22;
-    max-width: 780px;
-    margin: 0 auto 1rem;
-  ">
-    This conversation reflects my belief that not every human experience needs a label,
-    and that clarity often emerges through honest dialogue rather than certainty.
-  </p>
-
-  <p style="
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #1a1f22;
-    max-width: 780px;
-    margin-bottom: 2rem;
-  ">
-    If you’re someone who values reflection, curiosity, and respectful conversation across difference,
-    you may find this meaningful.
-  </p>
-
-  <div style="
-    max-width: 780px;
-    margin: 0 auto;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  ">
-    <iframe
-      width="100%"
-      height="440"
-      src="https://www.youtube.com/embed/RyxtZnWCUSM"
-      title="Middle Ground – Questioning, Identity & Human Experience"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-</section>
-
-<!-- ======================================================
-     SECTION 5: SITE FOOTER (UNCHANGED)
-====================================================== -->
-<footer class="site-footer">
-  <div class="footer-inner">
-
-    <p class="copyright">
-      Copyright © <span id="currentYear"></span> Marsha Kerr Talley — All Rights Reserved.
-    </p>
-
-    <nav class="footer-links">
-      <a href="/privacy-policy">Privacy Policy</a>
-      <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
-      <a href="/terms-and-conditions">Terms and Conditions</a>
-    </nav>
-
-  </div>
-</footer>
-
-<!-- ======================================================
-     SECTION 6: ✅ YOUTUBE PLAYLIST AUTO-PULL (FIXED ONLY)
-     - You MUST paste your full API key (no asterisks)
-     - Added origin param
-     - Shows the real Google error message on screen for debugging
-====================================================== -->
 <script>
-/* =========================
-   YOUTUBE PLAYLIST AUTO-PULL
-   ========================= */
-
-// ✅ FIX 1: You MUST use the full key (no ********). A masked key will ALWAYS fail.
-const YT_API_KEY = "AIzaSyC3xNazHu8AxyHooaTqOWkAudnVaNLJ5yU";
-const PLAYLIST_ID = "PLfLwFGreLvJGFe9llGE1qj-0zx8sOWZui";
-const MAX_RESULTS = 6;
-
-async function loadYouTubePlaylist() {
-  const grid = document.getElementById("youtubeGrid");
-  if (!grid) return;
-
-  // Optional: show a simple loading message (uses your existing styling)
-  grid.innerHTML = `<div class="error-box"><strong>Loading videos…</strong></div>`;
-
-  try {
-    const origin = encodeURIComponent(window.location.origin);
-
-    const url =
-      `https://www.googleapis.com/youtube/v3/playlistItems` +
-      `?part=snippet` +
-      `&playlistId=${encodeURIComponent(PLAYLIST_ID)}` +
-      `&maxResults=${encodeURIComponent(MAX_RESULTS)}` +
-      `&key=${encodeURIComponent(YT_API_KEY)}` +
-      `&origin=${origin}`;
-
-    const response = await fetch(url);
-    const data = await response.json();
-
-    // ✅ FIX 2: Show real error details if Google returns an error
-    if (!response.ok || !data.items) {
-      const msg =
-        (data && data.error && data.error.message) ? data.error.message :
-        "Unknown YouTube API error. Check console for details.";
-
-      grid.innerHTML = `
-        <div class="error-box">
-          <strong>Unable to load YouTube videos.</strong><br>
-          ${msg}<br><br>
-          <strong>Most common fixes:</strong><br>
-          • Google Cloud → API key → Website restrictions must include:<br>
-          <code>https://marshakerrtalley-star.github.io/*</code><br>
-          <code>https://marshakerrtalley.com/*</code><br>
-          • Ensure YouTube Data API v3 is enabled<br>
-          • Ensure this playlist is Public or Unlisted
-        </div>
-      `;
-      console.error("YouTube API error payload:", data);
-      return;
-    }
-
-    grid.innerHTML = "";
-
-    data.items.forEach(item => {
-      const videoId = item.snippet?.resourceId?.videoId;
-      if (!videoId) return;
-
-      grid.innerHTML += `
-        <div class="yt-embed">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/${videoId}"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-      `;
+  // Mobile navigation
+  const navToggle = document.querySelector(".nav-toggle");
+  const siteNav = document.querySelector(".site-nav");
+  if (navToggle && siteNav) {
+    navToggle.addEventListener("click", () => {
+      const open = siteNav.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      navToggle.textContent = open ? "✕" : "☰";
     });
-
-  } catch (err) {
-    grid.innerHTML = `
-      <div class="error-box">
-        <strong>Unable to load YouTube videos.</strong><br>
-        Network/browser blocked the request (ad-blocker, privacy setting, or offline).<br><br>
-        Check console for details.
-      </div>
-    `;
-    console.error("YouTube fetch failed:", err);
   }
-}
 
-loadYouTubePlaylist();
-</script>
+  // Make an empty community state more graceful when no posts exist.
+  // This runs after Firebase has had a moment to populate the feed.
+  setTimeout(() => {
+    const feedBox = document.getElementById("feed");
+    if (feedBox && !feedBox.children.length) {
+      feedBox.innerHTML = '<div class="feed-empty">No community posts have been published yet. Check back soon.</div>';
+    }
+  }, 2200);
 
-
-  
-<!-- ======================================================
-     SECTION 7: FOOTER STYLES (UNCHANGED)
-====================================================== -->
-<style>
-.site-footer {
-  background-color: #ffffff;
-  border-top: 1px solid #eee;
-  padding: 2.5rem 1.5rem 2rem;
-  text-align: center;
-  font-family: inherit;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.site-footer p {
-  margin: 0 0 1.4rem;
-  font-size: 0.95rem;
-  color: #666;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.footer-links a {
-  font-size: 1rem;
-  color: #319fa2;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #056367;
-  text-decoration: underline;
-}
-</style>
-
-<!-- ======================================================
-     SECTION 8: AUTO-UPDATE COPYRIGHT YEAR (UNCHANGED)
-====================================================== -->
-<script>
-  document.getElementById("currentYear").textContent =
-    new Date().getFullYear();
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
 </script>
 
 </body>
