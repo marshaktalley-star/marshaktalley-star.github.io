@@ -1608,6 +1608,94 @@
       display: block;
     }
 
+    .conversion-actions {
+      display: none;
+      margin-top: 22px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .conversion-actions.show {
+      display: block;
+    }
+
+    .conversion-actions h3 {
+      margin-bottom: 7px;
+      color: var(--teal-dark);
+      font-size: 1.55rem;
+    }
+
+    .conversion-note {
+      margin-bottom: 17px;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .conversion-action-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .conversion-action {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      border: 1px solid rgba(5,99,103,.22);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--teal-dark);
+      text-decoration: none;
+      font-weight: 800;
+      text-align: center;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .conversion-action:hover,
+    .conversion-action:focus-visible {
+      transform: translateY(-1px);
+      background: var(--teal-pale);
+      border-color: var(--teal);
+      outline: none;
+    }
+
+    .conversion-action.primary {
+      background: var(--teal-dark);
+      color: #fff;
+      border-color: var(--teal-dark);
+    }
+
+    .conversion-action.primary:hover,
+    .conversion-action.primary:focus-visible {
+      background: var(--teal-deep);
+    }
+
+    .conversion-action.full {
+      grid-column: 1 / -1;
+    }
+
+    .conversion-intent {
+      margin: 14px 0 0;
+      color: #788687;
+      font-size: .78rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    @media (max-width: 520px) {
+      .conversion-action-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .conversion-action.full {
+        grid-column: auto;
+      }
+    }
+
+
+
     .lead-form {
       display: none;
       margin-top: 24px;
@@ -1823,6 +1911,12 @@
               </li>
 
               <li>
+                <a href="digital-creators-lab.html">
+                  Digital Creators Lab
+                </a>
+              </li>
+
+              <li>
                 <a href="airbnb-host-training.html">
                   Airbnb Host Training
                 </a>
@@ -2009,27 +2103,27 @@
         </p>
 
         <div class="lead-path-grid">
-          <button class="lead-path-choice" type="button" data-interest="Organisation / Team Training">
+          <button class="lead-path-choice" type="button" data-interest="TRAINING">
             I need training for my organisation or team
           </button>
 
-          <button class="lead-path-choice" type="button" data-interest="Behaviour / Special Education Support">
+          <button class="lead-path-choice" type="button" data-interest="EDUCATION">
             I need behaviour or Special Education support
           </button>
 
-          <button class="lead-path-choice" type="button" data-interest="Digital Creators Lab">
+          <button class="lead-path-choice" type="button" data-interest="DIGITAL">
             I am interested in the Digital Creators Lab
           </button>
 
-          <button class="lead-path-choice" type="button" data-interest="Speaking / Facilitation">
+          <button class="lead-path-choice" type="button" data-interest="SPEAKING">
             I want to invite Marsha to speak or facilitate
           </button>
 
-          <button class="lead-path-choice" type="button" data-interest="Books / Resources">
+          <button class="lead-path-choice" type="button" data-interest="BOOKS">
             I am looking for books or practical resources
           </button>
 
-          <button class="lead-path-choice" type="button" data-interest="Not Sure">
+          <button class="lead-path-choice" type="button" data-interest="CONNECT">
             I am not sure what I need yet
           </button>
         </div>
@@ -2456,37 +2550,66 @@
       <h2 id="conciergeTitle">What can I help you find?</h2>
 
       <p class="concierge-copy">
-        Choose the closest fit. I will suggest the next step, and you can leave
-        your details if you would like Marsha to follow up.
+        Choose what brought you here. I will point you in the right direction and,
+        if you want to talk, carry that reason into your message so I know what you need.
       </p>
 
       <div class="concierge-options">
-        <button class="concierge-option" type="button" data-interest="Organisation / Team Training">
+        <button class="concierge-option" type="button" data-interest="TRAINING">
           Training for an organisation or team
         </button>
 
-        <button class="concierge-option" type="button" data-interest="Behaviour / Special Education Support">
+        <button class="concierge-option" type="button" data-interest="EDUCATION">
           Behaviour or Special Education support
         </button>
 
-        <button class="concierge-option" type="button" data-interest="Digital Creators Lab">
+        <button class="concierge-option" type="button" data-interest="DIGITAL">
           Digital Creators Lab
         </button>
 
-        <button class="concierge-option" type="button" data-interest="Speaking / Facilitation">
+        <button class="concierge-option" type="button" data-interest="SPEAKING">
           Speaking or facilitation
         </button>
 
-        <button class="concierge-option" type="button" data-interest="Books / Resources">
+        <button class="concierge-option" type="button" data-interest="BOOKS">
           Books and practical resources
         </button>
 
-        <button class="concierge-option" type="button" data-interest="Not Sure">
+        <button class="concierge-option" type="button" data-interest="CONNECT">
           I am not sure yet
         </button>
       </div>
 
       <div class="concierge-response" id="conciergeResponse" aria-live="polite"></div>
+
+      <div class="conversion-actions" id="conversionActions">
+        <h3>How would you like to continue?</h3>
+        <p class="conversion-note">
+          Stay connected through Substack, or contact me directly when you are ready to talk.
+        </p>
+
+        <div class="conversion-action-grid">
+          <a class="conversion-action primary" id="whatsappIntentLink" href="#" rel="noopener">
+            WhatsApp Marsha
+          </a>
+
+          <a class="conversion-action" id="emailIntentLink" href="#">
+            Email Marsha
+          </a>
+
+          <a
+            class="conversion-action full"
+            id="substackIntentLink"
+            href="https://marshakerrtalley.substack.com/subscribe"
+            target="_blank"
+            rel="noopener"
+          >
+            Subscribe on Substack
+          </a>
+        </div>
+
+        <p class="conversion-intent" id="conversionIntent"></p>
+      </div>
 
       <form
         class="lead-form"
@@ -2705,7 +2828,19 @@
         }
 
 
-        /* SMART LEAD CONCIERGE */
+        /* SIMPLE INTENT CONVERSION SYSTEM
+           -----------------------------------------------------
+           The website sorts intent. Substack keeps the relationship.
+           WhatsApp / email carry the intent into the conversation.
+
+           IMPORTANT:
+           Add Marsha's WhatsApp number and preferred email below once,
+           then every intent-aware contact link on this page will work.
+           WhatsApp number format: country code + number, digits only.
+        */
+
+        const MARSHA_WHATSAPP_NUMBER = "447939325005";
+        const MARSHA_EMAIL = "info@marshakerrtalley.com";
 
         const conciergeLauncher =
           document.getElementById("conciergeLauncher");
@@ -2718,6 +2853,18 @@
 
         const conciergeResponse =
           document.getElementById("conciergeResponse");
+
+        const conversionActions =
+          document.getElementById("conversionActions");
+
+        const conversionIntent =
+          document.getElementById("conversionIntent");
+
+        const whatsappIntentLink =
+          document.getElementById("whatsappIntentLink");
+
+        const emailIntentLink =
+          document.getElementById("emailIntentLink");
 
         const leadForm =
           document.getElementById("leadForm");
@@ -2733,24 +2880,42 @@
             ".lead-path-choice, .concierge-option"
           );
 
-        const guideCopy = {
-          "Organisation / Team Training":
-            "If morale, behaviour, burnout, retention or team culture is becoming difficult, Marsha can help you look beneath the visible problem and turn that insight into practical action.",
+        const intentMap = {
+          TRAINING: {
+            label: "Organisation / Team Training",
+            copy: "If you need training for an organisation or team, start here. I can help you think through the issue, the people involved and what kind of learning experience would be useful.",
+            message: "Hi Marsha, TRAINING. I found your website and I am interested in training for my organisation or team."
+          },
 
-          "Behaviour / Special Education Support":
-            "Marsha's work in behaviour and Special Education focuses on what may be shaping behaviour, what the environment is communicating, and what practical support can change the experience for learners and staff.",
+          EDUCATION: {
+            label: "Behaviour / Special Education Support",
+            copy: "If behaviour or Special Education brought you here, I can help you look beyond what is happening on the surface and think through practical support for the learner, family, educator or organisation.",
+            message: "Hi Marsha, EDUCATION. I found your website and I would like to talk about behaviour or Special Education support."
+          },
 
-          "Digital Creators Lab":
-            "The Digital Creators Lab is practical, hands-on training in AI and digital tools for employment, entrepreneurship and real-world productivity. It can be adapted for young people, adults or organisations.",
+          DIGITAL: {
+            label: "Digital Creators Lab",
+            copy: "The Digital Creators Lab is practical, hands-on learning in AI and digital tools for employment, entrepreneurship and real-world productivity.",
+            message: "Hi Marsha, DIGITAL. I found your website and I am interested in the Digital Creators Lab."
+          },
 
-          "Speaking / Facilitation":
-            "Marsha facilitates conversations and learning around behaviour, leadership, wellbeing, culture, education and the conditions that affect how people learn, work and perform.",
+          SPEAKING: {
+            label: "Speaking / Facilitation",
+            copy: "If you are looking for a speaker or facilitator, tell me about the audience, the conversation you want to create and what you want people to take with them.",
+            message: "Hi Marsha, SPEAKING. I found your website and I would like to discuss speaking or facilitation."
+          },
 
-          "Books / Resources":
-            "Marsha's books and resources bring together lived experience, education, behaviour, healing and practical reflection. You can explore the Books page, or leave your email if you want help finding the right resource.",
+          BOOKS: {
+            label: "Books / Resources",
+            copy: "If you are looking for something practical to read, use or share, explore my books and resources. You can also stay connected through Substack.",
+            message: "Hi Marsha, BOOKS. I found your website and I would like help finding the right book or resource."
+          },
 
-          "Not Sure":
-            "That is completely fine. Tell Marsha what is happening or what you are trying to achieve. You do not need to know the name of the service before starting the conversation."
+          CONNECT: {
+            label: "General / Not Sure Yet",
+            copy: "You do not need to know the name of the service. Tell me what is happening, what you are trying to change or what brought you here.",
+            message: "Hi Marsha, CONNECT. I found your website and I am not completely sure what I need yet, but I would like to talk."
+          }
         };
 
         function openConcierge(interest) {
@@ -2780,17 +2945,19 @@
         }
 
         function selectInterest(interest) {
-          if (!interest) return;
+          const intent = intentMap[interest] || intentMap.CONNECT;
+
+          if (conciergeResponse) {
+            conciergeResponse.textContent = intent.copy;
+            conciergeResponse.classList.add("show");
+          }
+
+          if (conversionActions) {
+            conversionActions.classList.add("show");
+          }
 
           if (leadInterest) {
             leadInterest.value = interest;
-          }
-
-          if (conciergeResponse) {
-            conciergeResponse.textContent =
-              guideCopy[interest] || guideCopy["Not Sure"];
-
-            conciergeResponse.classList.add("show");
           }
 
           if (leadForm) {
@@ -2799,9 +2966,58 @@
 
           if (leadMessage && !leadMessage.value) {
             leadMessage.placeholder =
-              interest === "Not Sure"
+              interest === "CONNECT"
                 ? "Tell me what is happening or what you are trying to achieve."
                 : "Tell me a little about what you need.";
+          }
+
+          if (conversionIntent) {
+            conversionIntent.textContent =
+              "Your interest: " + interest + " · " + intent.label;
+          }
+
+          const encodedMessage = encodeURIComponent(intent.message);
+          const subject = encodeURIComponent(
+            interest + " | Website Enquiry"
+          );
+          const body = encodeURIComponent(intent.message + "\n\n");
+
+          if (whatsappIntentLink) {
+            if (MARSHA_WHATSAPP_NUMBER) {
+              whatsappIntentLink.href =
+                "https://wa.me/" +
+                MARSHA_WHATSAPP_NUMBER +
+                "?text=" +
+                encodedMessage;
+              whatsappIntentLink.target = "_blank";
+              whatsappIntentLink.setAttribute("aria-disabled", "false");
+              whatsappIntentLink.title = "";
+            } else {
+              whatsappIntentLink.href = "#";
+              whatsappIntentLink.removeAttribute("target");
+              whatsappIntentLink.setAttribute("aria-disabled", "true");
+              whatsappIntentLink.title =
+                "Add Marsha's WhatsApp number in the contact settings in this HTML file.";
+            }
+          }
+
+          if (emailIntentLink) {
+            if (MARSHA_EMAIL) {
+              emailIntentLink.href =
+                "mailto:" +
+                MARSHA_EMAIL +
+                "?subject=" +
+                subject +
+                "&body=" +
+                body;
+              emailIntentLink.setAttribute("aria-disabled", "false");
+              emailIntentLink.title = "";
+            } else {
+              emailIntentLink.href = "#";
+              emailIntentLink.setAttribute("aria-disabled", "true");
+              emailIntentLink.title =
+                "Add Marsha's email address in the contact settings in this HTML file.";
+            }
           }
         }
 
@@ -2851,7 +3067,7 @@
               "click",
               function () {
                 const interest =
-                  button.getAttribute("data-interest");
+                  button.getAttribute("data-interest") || "CONNECT";
 
                 if (
                   button.classList.contains(
@@ -2866,6 +3082,16 @@
             );
           }
         );
+
+        [whatsappIntentLink, emailIntentLink].forEach(function (link) {
+          if (!link) return;
+
+          link.addEventListener("click", function (event) {
+            if (link.getAttribute("aria-disabled") === "true") {
+              event.preventDefault();
+            }
+          });
+        });
 
         /* Gentle popup:
            - once every 7 days
