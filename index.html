@@ -1344,24 +1344,71 @@
 
 
     /* =====================================================
-       SMART LEAD CONCIERGE
+       LIVE INSPIRED VIDEO + SMART VISITOR PATH
        ===================================================== */
 
+    .homepage-video-section {
+      padding: 76px 20px 56px;
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .homepage-video-inner {
+      width: min(100%, 900px);
+      margin: 0 auto;
+    }
+
+    .homepage-video-heading {
+      margin-bottom: 28px;
+    }
+
+    .homepage-video-heading .section-kicker {
+      margin-bottom: 10px;
+    }
+
+    .homepage-video-heading h2 {
+      margin: 0;
+      color: var(--teal-dark);
+      font-size: clamp(2.15rem, 4.5vw, 3.65rem);
+      font-weight: 600;
+      letter-spacing: -0.035em;
+    }
+
+    .homepage-video-frame {
+      position: relative;
+      overflow: hidden;
+      width: min(100%, 820px);
+      aspect-ratio: 16 / 9;
+      margin: 0 auto;
+      border: 1px solid rgba(5,99,103,.14);
+      border-radius: 24px;
+      background: var(--teal-pale);
+      box-shadow: 0 18px 48px rgba(5,99,103,.11);
+    }
+
+    .homepage-video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     .lead-path-section {
-      padding: 72px 20px 80px;
-      background: linear-gradient(180deg, #f8fcfc 0%, #ffffff 100%);
+      padding: 62px 20px 72px;
+      background: linear-gradient(180deg, #fbfdfc 0%, #f7fbfa 100%);
       text-align: center;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
 
     .lead-path-inner {
-      max-width: 960px;
+      max-width: 1080px;
       margin: 0 auto;
     }
 
     .lead-path-section h2 {
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       color: var(--teal-dark);
       font-size: clamp(2.35rem, 5vw, 4rem);
       font-weight: 600;
@@ -1369,40 +1416,62 @@
     }
 
     .lead-path-intro {
-      max-width: 680px;
-      margin: 0 auto 30px;
+      max-width: 690px;
+      margin: 0 auto 28px;
       color: var(--muted);
-      font-size: 1.03rem;
+      font-size: 1.02rem;
     }
 
     .lead-path-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 28px;
+      gap: 12px;
+      margin-top: 26px;
     }
 
     .lead-path-choice {
-      min-height: 116px;
-      padding: 22px 18px;
-      border: 1px solid rgba(5,99,103,0.18);
-      border-radius: 18px;
-      background: #ffffff;
+      position: relative;
+      min-height: 88px;
+      padding: 18px 42px 18px 20px;
+      border: 1px solid rgba(5,99,103,.16);
+      border-radius: 15px;
+      background: rgba(255,255,255,.9);
       color: var(--teal-deep);
       font: inherit;
+      font-size: .98rem;
       font-weight: 700;
       line-height: 1.35;
+      text-align: left;
       cursor: pointer;
-      box-shadow: 0 10px 28px rgba(5,99,103,0.07);
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+      box-shadow: 0 8px 22px rgba(5,99,103,.045);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .lead-path-choice::after {
+      content: "→";
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold);
+      font-size: 1.05rem;
+      font-weight: 700;
+      transition: transform .2s ease, color .2s ease;
     }
 
     .lead-path-choice:hover,
     .lead-path-choice:focus-visible {
-      transform: translateY(-3px);
-      border-color: var(--teal);
-      box-shadow: 0 16px 34px rgba(5,99,103,0.13);
+      transform: translateY(-2px);
+      border-color: rgba(49,159,162,.7);
+      background: #ffffff;
+      box-shadow: 0 12px 28px rgba(5,99,103,.09);
       outline: none;
+    }
+
+    .lead-path-choice:hover::after,
+    .lead-path-choice:focus-visible::after {
+      transform: translate(3px, -50%);
+      color: var(--teal-dark);
     }
 
     .concierge-launcher {
@@ -1640,12 +1709,26 @@
     }
 
     @media (max-width: 760px) {
+      .homepage-video-section {
+        padding: 58px 20px 42px;
+      }
+
+      .homepage-video-frame {
+        border-radius: 18px;
+      }
+
+      .lead-path-section {
+        padding: 52px 20px 60px;
+      }
+
       .lead-path-grid {
         grid-template-columns: 1fr;
+        gap: 10px;
       }
 
       .lead-path-choice {
-        min-height: auto;
+        min-height: 72px;
+        padding: 16px 42px 16px 18px;
       }
 
       .concierge-launcher {
@@ -1886,6 +1969,33 @@
 
 
     <!-- =====================================================
+         LIVE INSPIRED VIDEO
+    ===================================================== -->
+
+    <section class="homepage-video-section" aria-labelledby="homepage-video-title">
+      <div class="homepage-video-inner">
+
+        <div class="homepage-video-heading">
+          <p class="section-kicker">Live Inspired</p>
+          <h2 id="homepage-video-title">A moment to reflect.</h2>
+        </div>
+
+        <div class="homepage-video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/IOaZFi53LEo?si=V9gRH_4XKAjYz4P2"
+            title="Live Inspired with Marsha Kerr Talley"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
          SMART VISITOR PATH
     ===================================================== -->
 
@@ -1894,8 +2004,8 @@
         <p class="section-kicker">Start here</p>
         <h2>What brought you here today?</h2>
         <p class="lead-path-intro">
-          You do not need to know which service fits. Choose what you are trying
-          to solve and I will point you in the right direction.
+          You don't need to know exactly what you need. Start with what brought
+          you here, and I'll help you find your way.
         </p>
 
         <div class="lead-path-grid">
@@ -2102,9 +2212,8 @@
 
 
           <p>
-            The work should leave people with more than
-            a good impression. It should give them something
-            useful to carry forward.
+            My work should inspire people to intentionally create
+            the change they want in their lives.
           </p>
 
         </div>
@@ -2127,7 +2236,7 @@
               </strong>
 
               <span>
-                Space to see beyond the most visible part of the problem.
+                Grace to see beyond the obvious part of the problem.
               </span>
 
             </div>
@@ -2148,8 +2257,8 @@
               </strong>
 
               <span>
-                Greater clarity about what requires attention
-                and what needs to change.
+                Clarity about what requires your immediate attention
+                and what needs time to change.
               </span>
 
             </div>
@@ -2170,8 +2279,8 @@
               </strong>
 
               <span>
-                Looking beyond what people do
-                to consider what may be shaping it.
+                Looking beyond the surface of what people do
+                to understand what may be shaping it.
               </span>
 
             </div>
@@ -2192,8 +2301,7 @@
               </strong>
 
               <span>
-                Insight translated into actions
-                that make sense in the real world.
+                Turning ideas into actions that matter to you.
               </span>
 
             </div>
@@ -2214,8 +2322,8 @@
               </strong>
 
               <span>
-                Different questions often reveal
-                possibilities that were easy to miss.
+                Exploring different perspectives by asking questions that
+                reveal more possibilities than limitations in your situation.
               </span>
 
             </div>
@@ -2254,9 +2362,8 @@
       <div class="pressure-inner">
 
         <p>
-          I understand pressure.
-          I know what it asks of you
-          and what it quietly takes.
+          I understand pressure. I know what it demands of you and what it quietly
+          takes from you. Let me help you turn that pain into possibility.
         </p>
 
       </div>
