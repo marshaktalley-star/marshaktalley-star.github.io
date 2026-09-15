@@ -3871,6 +3871,33 @@ html,body{max-width:100%;overflow-x:hidden}
 .renter-story summary{padding:18px 2px}
 .renter-story .detail-body p{margin:0 0 14px}
 @media(max-width:820px){.renter-rights{padding:22px}.renter-rights-grid{grid-template-columns:1fr;gap:22px}}
+
+
+/* =========================================================
+   v14: hierarchy audit refinement, preserving original visual language
+   ========================================================= */
+/* Strong suggestions keep the existing soft-card feel, but read as actions. */
+.action-note{position:relative;padding:22px 24px 22px 28px!important;border:1px solid rgba(49,159,162,.24)!important;border-left:6px solid var(--brand)!important;border-radius:0 20px 20px 0!important;background:linear-gradient(135deg,#f0fbfa,#ffffff)!important;box-shadow:0 10px 28px rgba(5,99,103,.06)}
+.action-note strong:first-child{display:block;margin-bottom:7px;color:var(--deepest);font-family:var(--serif);font-size:1.22rem;line-height:1.25}
+.action-label{display:block;margin-bottom:7px;color:var(--deep);font-size:.72rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+/* Practical habit card: clearer takeaway, same hover/card personality. */
+.everyday-card.habit-card{grid-column:span 2;display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:0;padding:0;overflow:hidden;background:linear-gradient(135deg,#ffffff 0%,#f4fbfa 100%);border-color:rgba(49,159,162,.24)}
+.everyday-card.habit-card:hover{transform:translateY(-5px);box-shadow:0 22px 48px rgba(5,99,103,.12)}
+.habit-main{padding:30px 32px;background:linear-gradient(145deg,#063f42,#075d61);color:#fff}
+.habit-main .app-tag{background:rgba(47,226,221,.13);color:#bdfcf8;border:1px solid rgba(189,252,248,.18)}
+.habit-main h3{margin:16px 0 8px;color:#fff;font-size:clamp(1.8rem,2.8vw,2.45rem);line-height:1.08}
+.habit-main .habit-sub{margin:0;color:#d8f3f1;font-weight:700;font-size:1.02rem}
+.habit-why{padding:30px 32px;align-self:center}
+.habit-why .mini-heading{display:block;margin-bottom:9px;color:var(--teal);font-size:.76rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
+.habit-why p{margin:0 0 14px}.habit-why p:last-child{margin-bottom:0}
+/* Official source warning should not disappear into the footer/source list. */
+.sources-caution{margin:16px 0 0;padding:17px 20px;border-left:5px solid #b07522;border-radius:0 16px 16px 0;background:#fff8ec;color:#3f4f50}
+.sources-caution .warning-label{margin-bottom:5px}
+/* Keep genuine quotes visually distinct from warnings and action cards. */
+.voice-note-art .quote,.network-quote-refined blockquote,.series-note blockquote{font-weight:600}
+@media(max-width:820px){.everyday-card.habit-card{grid-column:auto;grid-template-columns:1fr}.habit-main,.habit-why{padding:24px 22px}}
+@media(max-width:650px){.action-note{padding:19px 18px 19px 22px!important}.habit-main h3{font-size:1.75rem}}
+
 </style>
 </head>
 
@@ -4300,7 +4327,7 @@ html,body{max-width:100%;overflow-x:hidden}
     <div class="verify-intro">
       <div>
         <span class="kicker">Before you send it, sign it or follow somebody anywhere</span>
-        <h2 id="verify-title">Verify first. Trust is not a process.</h2>
+        <h2 id="verify-title">Blind trust is not verification. Check what matters.</h2>
       </div>
       <p class="lead">People who genuinely want to help you exist here in abundance. I have met many of them. That still does not mean I am sending my passport, TRN, permit, title or any other personal document willy-nilly because somebody says, "send it to me." Nor am I driving into an unfamiliar area simply because somebody sent me a pretty property listing.</p>
     </div>
@@ -4789,7 +4816,7 @@ html,body{max-width:100%;overflow-x:hidden}
     <div class="section-intro">
       <span class="chapter-label">05</span>
       <span class="kicker">Getting around + useful local apps</span>
-      <h2>You can manage without a car, but plan the ride back before you go.</h2>
+      <h2>Always secure your ride back home before you leave.</h2>
       <p class="lead">
         This was one of those things I learned very quickly. You can get taxis and, in some areas, use ride-hailing apps.
         I have even been able to get an Uber up into more remote places. The problem is not always getting there. Sometimes
@@ -4951,17 +4978,17 @@ html,body{max-width:100%;overflow-x:hidden}
         </p>
       </article>
 
-      <article class="everyday-card">
-        <span class="app-tag">A simple habit</span>
-        <h3>Save good numbers</h3>
-        <p>
-          When you find a reliable taxi driver, tradesperson, broker, delivery person or service contact, save the number.
-          Jamaica becomes much easier when you begin building your own trusted little network of people you can actually call.
-        </p>
-        <p>
-          That is one of the biggest differences I have experienced since coming home: people have given me contacts instead
-          of gate-keeping them.
-        </p>
+      <article class="everyday-card habit-card">
+        <div class="habit-main">
+          <span class="app-tag">A simple habit</span>
+          <h3>Save good numbers.</h3>
+          <p class="habit-sub">Build your own trusted contact list.</p>
+        </div>
+        <div class="habit-why">
+          <span class="mini-heading">Why this matters</span>
+          <p>When you find a reliable taxi driver, tradesperson, broker, delivery person or service contact, <strong>save the number</strong>. Jamaica becomes much easier when you build a network of people you know you can call.</p>
+          <p>One of the biggest differences I have experienced since coming home is that people have given me useful contacts instead of gatekeeping them.</p>
+        </div>
       </article>
     </div>
 
@@ -5095,7 +5122,7 @@ html,body{max-width:100%;overflow-x:hidden}
           Know your real budget before somebody starts showing you houses. Know the kind of community you actually want too.
           A pretty house is not enough if the location, cost or lifestyle does not fit your life.
         </p>
-        <div class="tip">
+        <div class="tip action-note"><span class="action-label">Before you start viewing</span>
           A good local agent should help you work within your budget and priorities. Give them your comfortable range
           and your absolute ceiling before they start sending properties.
         </div>
@@ -5164,7 +5191,7 @@ html,body{max-width:100%;overflow-x:hidden}
           <p>Although people who have looked after a property for years may be accustomed to coming and going on their own schedules, it is important to establish boundaries.</p>
           <p>Despite what many might believe, Jamaica has landlord-and-tenant protections. The Rent Restriction Act provides for a tenant who is meeting their obligations to peaceably and quietly occupy and enjoy the premises, while tenants must allow landlords or their agents reasonable access for inspection and necessary repairs.</p>
           <div class="renter-callout">Access for maintenance does not mean unrestricted access to your home.</div>
-          <p><strong>Before you sign a lease, clarify:</strong> Who has keys? Who is authorised to enter? How much notice will you receive? Who maintains the garden and property? When can they come? What happens if access needs to be changed?</p>
+          <div class="action-note"><span class="action-label">Before you sign a lease</span><strong>Clarify access and maintenance.</strong><p>Who has keys? Who is authorised to enter? How much notice will you receive? Who maintains the garden and property? When can they come? What happens if access needs to be changed?</p></div>
           <div class="resource-links">
             <a href="https://rentassessmentboardjm.com/" target="_blank" rel="noopener">Rent Assessment Board →</a>
             <a href="https://laws.moj.gov.jm/library/statute/the-rent-restriction-act" target="_blank" rel="noopener">Read the Rent Restriction Act →</a>
@@ -5396,7 +5423,8 @@ html,body{max-width:100%;overflow-x:hidden}
       </div>
     </div>
 
-    <div class="note" role="note">
+    <div class="note action-note" role="note">
+      <span class="action-label">Before choosing a bank</span>
       <strong>You may be able to start online. Do not assume you can finish online.</strong>
       Some banks let you begin the account-opening process online, but you may still need to visit a branch to verify documents, sign paperwork or complete the application.
       <strong>Before choosing a bank, ask:</strong> Can I complete the entire process online, or will I eventually need to visit a branch?
@@ -5856,7 +5884,7 @@ html,body{max-width:100%;overflow-x:hidden}
 <section class="guide-sources" aria-labelledby="sources-title">
   <div class="wrap">
     <div class="source-heading" id="sources-title">Official sources + practical references</div>
-    <strong>Important:</strong> Jamaican government requirements, fees and processes can change. Always reconfirm official requirements before paying, shipping or submitting an application.
+    <div class="sources-caution" role="note"><span class="warning-label">Important</span><strong>Jamaican government requirements, fees and processes can change.</strong> Always reconfirm official requirements before paying, shipping or submitting an application.</div>
     <p class="small" style="margin:8px 0 0">Government and service information on this page was rechecked against current public sources on 13 September 2026.</p>
     <div class="sources">
       <a href="https://jca.gov.jm/returning-residents/" target="_blank" rel="noopener">Jamaica Customs: Returning Residents</a>
