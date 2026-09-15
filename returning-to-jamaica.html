@@ -3735,6 +3735,119 @@ html,body{max-width:100%;overflow-x:hidden}
 .jamaica-contact-note{margin:16px 0 0!important;font-size:.8rem;line-height:1.45;color:#788687!important;text-align:center}
 @media(max-width:650px){.jamaica-intent-grid,.jamaica-contact-actions{grid-template-columns:1fr}.jamaica-contact-launcher{right:14px;bottom:14px}.subscribe-nudge{bottom:82px}.jamaica-contact-panel{padding:30px 20px 24px;border-radius:20px}}
 
+
+/* =========================================================
+   v9: visual hierarchy for quotes, warnings and action points
+   ========================================================= */
+.bold-quote{
+  position:relative;
+  margin:34px 0 26px;
+  padding:30px 32px 30px 42px;
+  border-left:7px solid var(--brand);
+  border-radius:0 22px 22px 0;
+  background:linear-gradient(135deg,#f2fbfa,#fffaf1);
+  color:var(--deepest);
+  font-family:var(--serif);
+  font-size:clamp(1.8rem,3.2vw,2.75rem);
+  font-weight:700;
+  line-height:1.18;
+  letter-spacing:-.025em;
+}
+.bold-quote:before{
+  content:"“";
+  position:absolute;
+  left:12px;
+  top:19px;
+  color:var(--brand);
+  font-family:var(--serif);
+  font-size:3.7rem;
+  line-height:1;
+  opacity:.9;
+}
+.resource-links-prominent{margin-top:20px!important}
+.resource-links-prominent .verify-realtor-cta{
+  display:inline-flex!important;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:3px;
+  min-width:min(100%,390px);
+  padding:17px 22px!important;
+  border:2px solid var(--deep)!important;
+  border-radius:16px!important;
+  background:var(--deep)!important;
+  color:#fff!important;
+  box-shadow:0 12px 28px rgba(5,99,103,.16);
+  text-decoration:none!important;
+}
+.verify-realtor-cta:hover,.verify-realtor-cta:focus-visible{
+  transform:translateY(-2px);
+  background:var(--deepest)!important;
+  outline:3px solid rgba(49,159,162,.2);
+}
+.verify-realtor-cta .cta-eyebrow{
+  color:#bdebea;
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.verify-realtor-cta strong{font-size:1.02rem}
+.tip.warn{
+  position:relative;
+  padding:24px 24px 24px 28px!important;
+  border:1px solid rgba(176,117,34,.25)!important;
+  border-left:6px solid #b07522!important;
+  border-radius:0 18px 18px 0!important;
+  background:#fff8ec!important;
+  color:#3f4f50!important;
+}
+.warning-label{
+  display:block;
+  margin-bottom:7px;
+  color:#8a5716;
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.tip.warn strong{
+  display:block;
+  margin-bottom:6px;
+  color:var(--deepest);
+  font-size:1.08rem;
+}
+.verify-warning{
+  border-left:6px solid #b07522!important;
+  border-radius:0 18px 18px 0!important;
+  background:#fff8ec!important;
+}
+.warning-heading,.callout-heading{
+  margin:0 0 9px!important;
+  color:var(--deepest)!important;
+  font-family:var(--serif)!important;
+  font-size:clamp(1.45rem,2.3vw,1.9rem)!important;
+  font-weight:700!important;
+  line-height:1.15!important;
+}
+.process-panel > h3,.shipping-reality > h3,.community-reality h3,.property-reality > h3{
+  font-size:clamp(1.75rem,2.8vw,2.35rem);
+  line-height:1.12;
+  color:var(--deepest);
+  margin-bottom:14px;
+}
+/* Prevent meaningful subheads from disappearing into paragraph rhythm. */
+.detail-body > h3,.chapter-copy > h3{
+  margin-top:30px;
+  margin-bottom:12px;
+  color:var(--deepest);
+  font-weight:700;
+}
+@media(max-width:680px){
+  .bold-quote{padding:26px 22px 26px 34px;font-size:1.7rem}
+  .bold-quote:before{left:8px;top:17px;font-size:3rem}
+  .resource-links-prominent .verify-realtor-cta{width:100%}
+}
+
 </style>
 </head>
 
@@ -4038,7 +4151,7 @@ html,body{max-width:100%;overflow-x:hidden}
         <a href="https://jca.gov.jm/returning-residents/" target="_blank" rel="noopener">Jamaica Customs: Returning Residents</a>
         <a href="https://www.tradeboard.gov.jm/ttbl/MV_RR.php" target="_blank" rel="noopener">Trade Board: Returning Resident vehicle process</a>
       </div>
-      <div class="tip warn"><strong>Please check again when it is your turn.</strong> I am documenting the process I am navigating in 2026. Government requirements can change. Use this page to know what to ask, then confirm the current requirement with the authority that actually owns the process.</div>
+      <div class="tip warn"><span class="warning-label">Important</span><strong>Please check again when it is your turn.</strong> I am documenting the process I am navigating in 2026. Government requirements can change. Use this page to know what to ask, then confirm the current requirement with the authority that actually owns the process.</div>
     </div>
 
     <div class="details-wrap">
@@ -4180,7 +4293,7 @@ html,body{max-width:100%;overflow-x:hidden}
       <article class="verify-card"><span>Property viewing</span><h3>Verify the journey too.</h3><p>Ask whether the agent has seen the property, whether access and keys are confirmed, what the road is like and whether they can send current video of the house and approach. In the age of AI, a listing photograph is not enough for me anymore.</p></article>
     </div>
     <div class="verify-warning">
-      <strong>Why I am so particular about documents now</strong>
+      <h3 class="warning-heading">Why I am so particular about documents now</h3>
       <p>Digital tools and AI make it easier to copy, alter and imitate things that once took far more skill. I am not saying everybody asking for a document is trying to scam you. I am saying your identity documents are valuable. Verify the person, verify the business, verify the reason, and use the official channel where one exists.</p>
     </div>
   </div>
@@ -4325,7 +4438,7 @@ html,body{max-width:100%;overflow-x:hidden}
           <p>My personal belongings travelled in my car. After the car was inspected in Jamaica, the belongings were taken out and were not put back for my broker to clear everything together. I eventually got the car, with deep scratches and the antenna broken off, but not the belongings.</p>
           <p>When my broker stopped responding, I called the company in Jamaica that had received the shipment from the UK. I was told that he had the Bill of Lading and that they could not simply reissue that legal document to me, even though the shipment was in my name. I was told I would need a police report first. Initially I was told I had to drive from St Ann to Newport to make that report in person. After I questioned that and spoke with someone higher up in the police, I was told I could make the report in St Ann, pay the required fee and wait for the formal report to be produced.</p>
           <p>Here is the part that matters for you: the person acting as my broker came highly recommended by somebody in my community. She swore by him. He knew people and could get things done. Only afterwards did I learn that he was not a properly licensed Customs Broker. When everything is going smoothly, that distinction may not feel important. When something goes wrong and you need accountability, it becomes very important.</p>
-          <div class="tip warn"><strong>A link is not a licence.</strong> Use the Jamaica Customs approved broker list before you appoint anybody. I learned that lesson the expensive way.</div>
+          <div class="tip warn"><span class="warning-label">Warning</span><strong>A link is not a licence.</strong> Use the Jamaica Customs approved broker list before you appoint anybody. I learned that lesson the expensive way.</div>
         </div>
 
         <div class="shipping-reality">
@@ -4335,7 +4448,7 @@ html,body{max-width:100%;overflow-x:hidden}
         </div>
 
         <div class="accountability-note">
-          <strong>The bigger issue for me is accountability.</strong> Jamaica runs heavily on “links.” Somebody knows somebody,
+          <h3 class="callout-heading">The bigger issue for me is accountability.</h3> Jamaica runs heavily on “links.” Somebody knows somebody,
           somebody can give you a number, somebody can make a call. I have benefited from that generosity since coming home, and I am grateful for it.
           But links alone cannot be the entire system. When friends know friends, it can also become difficult to challenge poor service.
           A returning resident who knows nobody should still be able to understand the process, see what they are paying for, know who is responsible
@@ -5026,8 +5139,8 @@ html,body{max-width:100%;overflow-x:hidden}
         <p>Later, the realtor left me a message saying she had finally reached the other agent and was going back to see the house herself. She also told me the listing images appeared to be AI-generated because the actual house looked nothing like the photographs online, and that she intended to report the selling agent. I have not independently established who created those images, so I am telling you what my realtor told me afterwards.</p>
         <div class="voice-line"><strong>My issue is bigger than a wasted viewing.</strong> Do not ask a client to trek through unfamiliar terrain when you have not verified the road, confirmed access to the house or established that the property being advertised actually resembles the listing.</div>
         <p>That journey could have been dangerous. A realtor does not necessarily need to have personally visited every property before showing it, but somebody needs to verify what the client is being sent into. Get current video from the seller or listing agent. Confirm the keys. Ask for a video of the approach road and immediate community. If nobody can show you those things, I would not make a difficult journey based on listing photographs alone.</p>
-        <p><strong>A pretty house is not enough. You have to live on the road that takes you home.</strong></p>
-        <div class="resource-links"><a href="https://reb.gov.jm/search-public-register/" target="_blank" rel="noopener">Verify a realtor</a></div>
+        <blockquote class="bold-quote">A pretty house is not enough. You have to live on the road that takes you home.</blockquote>
+        <div class="resource-links resource-links-prominent"><a class="verify-realtor-cta" href="https://reb.gov.jm/search-public-register/" target="_blank" rel="noopener"><span class="cta-eyebrow">Before you share documents or money</span><strong>Verify the realtor on the public register →</strong></a></div>
       </div>
       <div class="road-video-grid" aria-label="My drive to and from the Bamboo property viewing">
         <article><span>Part 1 · Going up</span><div class="road-video"><iframe src="https://www.youtube.com/embed/D49nPZJW6oY" title="Part 1: Driving to a property viewing in Bamboo, St Ann" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><p>This was on the way to the house. The road got worse after this.</p></article>
