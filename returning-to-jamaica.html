@@ -3701,8 +3701,39 @@ html,body{max-width:100%;overflow-x:hidden}
 .process-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:22px}.process-steps article{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:18px;border-radius:18px;background:var(--cream);border:1px solid var(--line)}.process-steps article>span{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;background:var(--deep);color:#fff;font-weight:900}.process-steps strong{display:block;color:var(--deep);margin-bottom:5px}.process-steps p{margin:0;font-size:.95rem;line-height:1.55;color:#4b6768}
 .verify-section{padding:94px 0;background:linear-gradient(145deg,#063f42,#075d61);color:#efffff}.verify-section h2,.verify-section h3{color:#fff}.verify-section .lead{color:#d8f3f1}.verify-intro{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}.verify-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:32px}.verify-card{padding:25px;border-radius:22px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16)}.verify-card>span{display:inline-block;margin-bottom:10px;color:var(--aqua);font-size:.76rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em}.verify-card p{color:#d9eeee}.verify-card a{color:#fff;font-weight:900}.verify-warning{margin-top:22px;padding:24px;border-radius:20px;background:#fff;color:var(--ink)}.verify-warning strong{display:block;color:var(--deep);font-size:1.15rem;margin-bottom:6px}.verify-warning p{margin:0}
 .shipping-reality{margin:28px 0;padding:24px;border-radius:22px;background:#fffaf1;border:1px solid rgba(186,145,69,.18)}.shipping-reality h3{margin-top:0}
-.property-reality{margin-top:38px;padding:30px;border-radius:30px;background:linear-gradient(135deg,#f7fbfa,#fffaf1);border:1px solid var(--line);box-shadow:0 12px 34px rgba(5,99,103,.07)}.property-reality-copy{max-width:980px}.road-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:28px}.road-video-grid article{padding:18px;border-radius:22px;background:#fff;border:1px solid var(--line)}.road-video-grid article>span{display:block;margin-bottom:10px;color:var(--deep);font-weight:900}.road-video{aspect-ratio:9/16;max-width:340px;margin:auto;border-radius:18px;overflow:hidden;background:#000}.road-video iframe{width:100%;height:100%;border:0;display:block}.road-video-grid p{margin:12px 0 0;font-size:.93rem;line-height:1.5;color:#52696a}
-@media(max-width:820px){.process-steps,.verify-intro,.verify-grid,.road-video-grid{grid-template-columns:1fr}.process-panel,.property-reality{padding:22px}}
+.property-reality{margin-top:38px;padding:30px;border-radius:30px;background:linear-gradient(135deg,#f7fbfa,#fffaf1);border:1px solid var(--line);box-shadow:0 12px 34px rgba(5,99,103,.07)}
+.community-reality{margin-top:26px;padding:28px;border-radius:28px;background:#fff;border:1px solid var(--line);box-shadow:0 10px 30px rgba(5,99,103,.06)}.community-reality-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}.community-reality .road-video{max-width:390px}.community-reality .mini-check{margin-top:16px;padding:18px;border-radius:18px;background:var(--cream);border-left:5px solid var(--teal)}.property-reality-copy{max-width:980px}.road-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:28px}.road-video-grid article{padding:18px;border-radius:22px;background:#fff;border:1px solid var(--line)}.road-video-grid article>span{display:block;margin-bottom:10px;color:var(--deep);font-weight:900}.road-video{aspect-ratio:9/16;max-width:340px;margin:auto;border-radius:18px;overflow:hidden;background:#000}.road-video iframe{width:100%;height:100%;border:0;display:block}.road-video-grid p{margin:12px 0 0;font-size:.93rem;line-height:1.5;color:#52696a}
+@media(max-width:820px){.process-steps,.verify-intro,.verify-grid,.road-video-grid,.community-reality-grid{grid-template-columns:1fr}.process-panel,.property-reality,.community-reality{padding:22px}}
+
+
+/* Navigation priorities + Returning to Jamaica contact path */
+.chapter-nav .nav-priority{font-weight:900;border-color:rgba(255,255,255,.42)}
+.chapter-nav .nav-subscribe{background:#fff;color:var(--deep);font-weight:900;border-color:#fff}
+.chapter-nav .nav-subscribe:hover,.chapter-nav .nav-subscribe:focus-visible{background:var(--cream);color:var(--deep)}
+.subscribe-nudge{bottom:92px}
+.subscribe-nudge-actions{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+.subscribe-nudge-actions>a,.subscribe-contact-link{min-height:44px;display:inline-flex;align-items:center;justify-content:center;padding:11px 17px;border-radius:999px;font:inherit;font-size:.9rem;font-weight:800;cursor:pointer}
+.subscribe-contact-link{border:1px solid rgba(5,99,103,.24);background:#fff;color:var(--teal);}
+.jamaica-contact-launcher{position:fixed;right:22px;bottom:22px;z-index:9997;display:inline-flex;align-items:center;gap:9px;min-height:54px;padding:13px 18px;border:0;border-radius:999px;background:var(--teal);color:#fff;font:inherit;font-weight:900;cursor:pointer;box-shadow:0 14px 38px rgba(5,99,103,.28)}
+.jamaica-contact-launcher:hover,.jamaica-contact-launcher:focus-visible{background:var(--deep);outline:3px solid rgba(47,226,221,.22)}
+.jamaica-contact-dot{width:10px;height:10px;border-radius:50%;background:var(--teal-light);box-shadow:0 0 0 5px rgba(47,226,221,.14)}
+.jamaica-contact-overlay{position:fixed;inset:0;z-index:10020;display:none;place-items:center;padding:20px;background:rgba(2,32,33,.62);backdrop-filter:blur(5px)}
+.jamaica-contact-overlay.open{display:grid}
+.jamaica-contact-panel{position:relative;width:min(100%,680px);max-height:88vh;overflow:auto;padding:clamp(28px,5vw,44px);border-radius:26px;background:#fff;box-shadow:0 28px 80px rgba(0,0,0,.25)}
+.jamaica-contact-panel h2{margin:8px 40px 12px 0;color:var(--deep);font-size:clamp(2rem,5vw,3.1rem)}
+.jamaica-contact-panel>p{color:var(--muted)}
+.jamaica-contact-close{position:absolute;top:14px;right:14px;width:42px;height:42px;border:0;border-radius:50%;background:#edf8f7;color:var(--deep);font-size:26px;cursor:pointer}
+.jamaica-intent-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:22px 0}
+.jamaica-intent-grid button{padding:15px 16px;border:1px solid var(--line);border-radius:14px;background:#fff;color:var(--deep);font:inherit;font-weight:800;text-align:left;cursor:pointer}
+.jamaica-intent-grid button:hover,.jamaica-intent-grid button.selected{background:var(--teal-pale);border-color:var(--teal)}
+.jamaica-contact-result{padding:20px;border-left:4px solid var(--gold);border-radius:0 14px 14px 0;background:#fbf8f2}
+.jamaica-contact-result strong{color:var(--deep);font-size:1.15rem}
+.jamaica-contact-result p{margin:6px 0 15px}
+.jamaica-contact-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.jamaica-contact-actions a{display:flex;align-items:center;justify-content:center;min-height:48px;padding:10px 13px;border:1px solid rgba(5,99,103,.22);border-radius:999px;color:var(--teal);text-decoration:none;font-weight:900;text-align:center}
+.jamaica-contact-actions a.primary{background:var(--teal);color:#fff;border-color:var(--teal)}
+.jamaica-contact-note{margin:16px 0 0!important;font-size:.8rem;line-height:1.45;color:#788687!important;text-align:center}
+@media(max-width:650px){.jamaica-intent-grid,.jamaica-contact-actions{grid-template-columns:1fr}.jamaica-contact-launcher{right:14px;bottom:14px}.subscribe-nudge{bottom:82px}.jamaica-contact-panel{padding:30px 20px 24px;border-radius:20px}}
 
 </style>
 </head>
@@ -3753,11 +3784,15 @@ html,body{max-width:100%;overflow-x:hidden}
       <h1>I came home to Jamaica. Now I am learning how to live here again.</h1>
       <p class="lead">
         I left Jamaica at 14 and recently returned after decades living overseas. I did not come back to a family house,
-        inherited land or relatives waiting to absorb the cost of starting over. I came back as a single mother and the sole
-        provider for my household, rebuilding in my homeland with my will, my skills and my resilience. Living here now as an
-        adult is a whole different experience that requires a different level of patience, which I do not always have. This is
-        not a holiday, and this page is not Jamaica bashing. I love being home enough to tell the truth about what I am learning,
-        what has worked, what has gone completely left, and what I wish somebody had told me before I came.
+        inherited land or relatives waiting to help me carry the cost of starting over. I came back as a single mother and the sole
+        provider for my household. I am rebuilding in my homeland with my will, my skills and my resilience.
+      </p>
+      <p class="lead">
+        This is not a holiday. Living here as an adult is a whole different experience. It requires a level of patience I do not always have.
+      </p>
+      <p class="lead">
+        For full clarity, this page is not about bashing Jamaica. I love being home again. I am sharing what I am learning so that others
+        who want to return can make informed decisions, avoid unnecessary and painful pitfalls, and hopefully have an easier transition home.
       </p>
       <div class="hero-byline" aria-label="About this page">
         <span>Writer · Educator · Returning Resident</span>
@@ -3780,26 +3815,26 @@ html,body{max-width:100%;overflow-x:hidden}
   </div>
 </header>
 
-<nav class="chapter-nav" aria-label="Guide navigation">
+<nav class="chapter-nav" aria-label="Returning to Jamaica guide navigation">
   <div class="wrap">
-    <a href="#series" class="nav-series">Series</a>
     <a href="#prepare">Prepare</a>
-    <a href="#verify">Verify First</a>
+    <a href="#returning-resident" class="nav-priority">Returning Resident</a>
     <a href="#shipping">Shipping</a>
-    <a href="#vehicle">Vehicle</a>
-    <a href="#arrival">Arrive</a>
-    <a href="#networking">People + Connections</a>
+    <a href="#car-import-export">Importing a Car</a>
+    <a href="#arrival">Arriving</a>
     <a href="#getting-around">Getting Around</a>
-    <a href="#power">Power + Internet</a>
     <a href="#housing">Housing</a>
-    <a href="#accent">Accent + Belonging</a>
-    <a href="#living">Live Well</a>
+    <a href="#costs">Money + Costs</a>
+    <a href="#living">Living Here</a>
+    <a href="#networking">People + Connections</a>
+    <a href="#verify">Safety + Verification</a>
     <a href="#medication">Medication</a>
-    <a href="#conversation">Conversation</a>
+    <a href="#accent">Accent + Belonging</a>
+    <a href="#conversation">My Stories</a>
     <a href="#checklist">Checklist</a>
     <a href="#can-i-live-here">Can I Live Here?</a>
-    <a href="#subscribe">Subscribe</a>
     <a href="#help" class="nav-help">Get Help</a>
+    <a href="#subscribe" class="nav-subscribe">Subscribe</a>
   </div>
 </nav>
 
@@ -3987,7 +4022,7 @@ html,body{max-width:100%;overflow-x:hidden}
       </article>
     </div>
 
-    <div class="process-panel" aria-labelledby="rr-process-title">
+    <div class="process-panel" id="returning-resident" aria-labelledby="rr-process-title">
       <span class="kicker">Returning Resident concessions, step by step</span>
       <h3 id="rr-process-title">This is the part people keep asking me about.</h3>
       <p>I was asked again yesterday how to get the Returning Resident letter and concessions, so I want this plainly on the page. The concession is handled by the Jamaica Customs Agency, not by your shipper, your broker or somebody's friend who "knows the process."</p>
@@ -4390,17 +4425,16 @@ html,body{max-width:100%;overflow-x:hidden}
 
 <div class="story-bridge engage-reveal" aria-hidden="true"><div class="story-bridge-inner">Getting the container here was one thing. Then there was the car.</div></div>
 
-<section class="chapter sand reverse" id="vehicle">
+<section class="chapter sand reverse" id="car-import-export">
+  <span id="vehicle" aria-hidden="true"></span>
   <div class="wrap">
     <div class="chapter-top">
       <div class="chapter-copy">
         <span class="chapter-label">03</span>
-        <span class="kicker">Importing your car</span>
-        <h2>Do not put your car on the water and then start figuring out the paperwork.</h2>
+        <span class="kicker">Exporting your car from abroad + importing it into Jamaica</span>
+        <h2>There are two sides to this journey: getting the car out, and getting it into Jamaica.</h2>
         <p class="lead">
-          Car-import mistakes can get expensive very quickly. Know the ownership requirement, get the permit sorted before shipping,
-          and do not assume Returning Resident status means the vehicle is duty-free. Under the current Returning Resident rules,
-          an eligible returnee may import a motor vehicle up to 10 years old, with full duty and taxes payable.
+          I shipped my car from the UK, so I had to deal with the export side there and the import side here. Do not let those become one blurry process in your head. Before the car leaves the country you are moving from, confirm its export requirements, ownership documents and Jamaica pre-shipment inspection requirements. On the Jamaica side, get the Returning Resident approval and Trade Board import permit sorted before the vehicle arrives. Returning Resident status does not make the vehicle duty-free.
         </p>
         <div class="tip warn">
           <strong>Important:</strong> under the current Returning Resident motor-vehicle rules, the vehicle must have been in your possession for at least six months. Returning Resident status does not make the vehicle duty-free.
@@ -4427,6 +4461,25 @@ html,body{max-width:100%;overflow-x:hidden}
         <h3>Prepare your TCC + broker</h3>
         <p>A TCC (Tax Compliance Certificate) is required for motor-vehicle clearance. The vehicle must also be cleared through a licensed Customs Broker.</p>
       </article>
+    </div>
+
+    <div class="process-panel" aria-labelledby="car-process-title">
+      <span class="kicker">The car process I wish somebody had laid out plainly</span>
+      <h3 id="car-process-title">Export side first. Jamaica import side next.</h3>
+      <div class="process-steps">
+        <article><span>1</span><div><strong>Check the export rules where the car is now.</strong><p>The country you are shipping from has its own vehicle-export and registration requirements. Deal with those there. Keep the title or registration/export certificate and proof that the vehicle belongs to you.</p></div></article>
+        <article><span>2</span><div><strong>Check whether Jamaica requires pre-shipment inspection.</strong><p>For used vehicles coming from designated countries, including the UK, USA, Canada, Japan, China, Singapore, Thailand and the UAE, the Trade Board currently requires pre-shipment inspection before import. Do not wait until the car is already on the water.</p></div></article>
+        <article><span>3</span><div><strong>If you are using Returning Resident status, get that approval.</strong><p>The Trade Board's Returning Resident vehicle application currently asks for the Jamaica Customs Returning Resident pre/approval letter. This is one reason the Returning Resident process needs to start early.</p></div></article>
+        <article><span>4</span><div><strong>Apply for the Jamaica vehicle import permit.</strong><p>The Trade Board application is made through JSWIFT. For a Returning Resident application, the current list includes the Returning Resident pre/approval letter, bill of sale or invoice, title/registration/export certificate, ID, TRN and the pre-shipment inspection certificate.</p></div></article>
+        <article><span>5</span><div><strong>Do not ship first and hope the paperwork catches up.</strong><p>Jamaica Customs says the import licence should be obtained before shipping arrangements are made. Returning Residents can currently import an eligible vehicle up to 10 years old if it has been owned for at least six months, but full duties and taxes remain payable.</p></div></article>
+        <article><span>6</span><div><strong>Prepare for clearance in Jamaica.</strong><p>Keep the import licence, title/export certificate, Bill of Lading, invoice and TCC together. Jamaica Customs says motor vehicles must be cleared through a licensed Customs Broker. Verify the broker yourself before handing over money or documents.</p></div></article>
+      </div>
+      <div class="resource-links">
+        <a href="https://www.tradeboard.gov.jm/ttbl/MV_RR.php" target="_blank" rel="noopener">Trade Board: Returning Resident vehicle permit</a>
+        <a href="https://www.tradeboard.gov.jm/ttbl/PreShipmentI.php" target="_blank" rel="noopener">Trade Board: Pre-shipment inspection</a>
+        <a href="https://jca.gov.jm/business/motor-vehicle-processing/documents-required-to-import-a-motor-vehicle-or-motor-cycle/" target="_blank" rel="noopener">Jamaica Customs: vehicle import documents</a>
+      </div>
+      <div class="tip"><strong>If you later export a vehicle from Jamaica:</strong> Jamaica Customs currently says you need an export licence from the Trade Board before export. That is a separate process from bringing your car home to Jamaica.</div>
     </div>
 
     <div class="details-wrap">
@@ -4982,6 +5035,26 @@ html,body{max-width:100%;overflow-x:hidden}
       </div>
     </div>
 
+    <div class="community-reality" aria-labelledby="outside-development-title">
+      <div class="community-reality-grid">
+        <div>
+          <span class="kicker">Look beyond the development</span>
+          <h3 id="outside-development-title">Do not only look inside the gates.</h3>
+          <p>That same day, after passing another new development, something else hit me. There is a LOT of development happening in Jamaica and some of these house prices are through the roof. The development itself may be new and polished, but what is happening immediately outside of it?</p>
+          <p>If you are spending that kind of money, especially if you are buying from overseas, do not only ask to see the house. Do not only ask to see the development. <strong>Ask to see the surrounding area too.</strong></p>
+          <p>If you cannot view it yourself, ask the realtor for current video of the approach road, the neighbouring communities and what you will actually pass when you leave the development. I do not mean another promotional video with the pool, gate and model house. I mean the road you will drive, the communities around you, the shops, the terrain and the infrastructure outside the development.</p>
+          <div class="mini-check"><strong>Ask for three views:</strong> the house itself, the development or immediate community, and the roads and surrounding areas outside it.</div>
+          <p>A new development can have beautiful roads, drainage, landscaping and infrastructure inside its boundaries. That does not automatically tell you what exists outside of it. <strong>You are not only buying a house. You are buying into what you will have to navigate every day to live there.</strong></p>
+          <p>This is not me trying to discourage anybody from buying in Jamaica. I came home because I want to live here. I want us to come home, make informed decisions, settle well and actually be happy here. That means seeing the real picture before we put down our money.</p>
+        </div>
+        <article>
+          <span class="kicker">What I noticed that day</span>
+          <div class="road-video"><iframe src="https://www.youtube.com/embed/EkfcRqLmsAA" title="Looking beyond a new housing development in Jamaica to the surrounding roads and communities" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+          <p style="margin:12px auto 0;max-width:390px;color:#52696a">This was after I passed a new development and started thinking about the difference between what may be improved inside a development and what exists immediately outside of it.</p>
+        </article>
+      </div>
+    </div>
+
     <div class="story" style="margin-top:36px">
       <div class="story-badge">
         “Gated” does not automatically mean safe. “Ungated” does not automatically mean unsafe.
@@ -5032,7 +5105,7 @@ html,body{max-width:100%;overflow-x:hidden}
       <details>
         <summary>What should I verify before driving to a property viewing?</summary>
         <div class="detail-body">
-          Confirm the appointment, access and keys. Ask whether your agent or the listing agent has recently seen the property. If the area is unfamiliar or rural, ask about the road surface, steep hills, flooding, narrow roads and whether an ordinary car can reasonably reach it. Ask for current video of the house, the approach road and the immediate community. AI and heavy image editing mean I no longer treat listing photographs alone as proof of what I am travelling to see.
+          Confirm the appointment, access and keys. Ask whether your agent or the listing agent has recently seen the property. If the area is unfamiliar or rural, ask about the road surface, steep hills, flooding, narrow roads and whether an ordinary car can reasonably reach it. Ask for current video of the house, the development or immediate community, <strong>and the surrounding roads and areas outside it</strong>. If you are buying from overseas, ask the realtor to show you what you would actually drive through to get home, not only the polished entrance. AI and heavy image editing mean I no longer treat listing photographs alone as proof of what I am travelling to see.
         </div>
       </details>
 
@@ -5065,6 +5138,36 @@ html,body{max-width:100%;overflow-x:hidden}
           newer amenities and a more uniform community are what make you comfortable, that may be exactly what you want.
         </div>
       </details>
+    </div>
+  </div>
+</section>
+
+<section class="chapter tint" id="costs">
+  <div class="wrap">
+    <div class="chapter-top">
+      <div>
+        <span class="kicker">Money + costs</span>
+        <h2>Coming home costs more than the plane ticket.</h2>
+        <p class="lead">
+          If you are rebuilding from scratch, the money question matters. I did not return to a paid-off family house, inherited land or relatives
+          absorbing my everyday costs. My advice is to think in categories, not one magical number, because your landing fund has to carry the life
+          you are actually returning to.
+        </p>
+      </div>
+      <div class="chapter-number">08</div>
+    </div>
+
+    <div class="grid-3">
+      <article class="card"><span class="icon">🏠</span><h3>Housing</h3><p>Rent or mortgage, deposits, legal costs, community fees, utilities, furniture, appliances and the things a new home quietly needs.</p></article>
+      <article class="card"><span class="icon">🚗</span><h3>Transport + vehicle</h3><p>Rental cars or taxis while you settle, shipping, inspection, permits, Customs, broker fees, insurance, registration, fitness and unexpected repairs.</p></article>
+      <article class="card"><span class="icon">📦</span><h3>Shipping + clearing</h3><p>Freight is only one part of the cost. Ask about destination charges, clearance, storage, handling, delivery, insurance and what happens when something goes wrong.</p></article>
+      <article class="card"><span class="icon">💡</span><h3>Setting up daily life</h3><p>Electricity, water, internet, mobile service, groceries, household supplies and deposits can arrive together when you are already spending heavily.</p></article>
+      <article class="card"><span class="icon">🧾</span><h3>Government + professional fees</h3><p>Budget for applications, licences, certificates, legal work and legitimate professional services. Confirm current fees with the authority before paying anyone.</p></article>
+      <article class="card"><span class="icon">🛟</span><h3>Your emergency buffer</h3><p>Keep money that is not already assigned. Delays, temporary transport, extra accommodation, storage, repairs and administrative surprises can change the plan quickly.</p></article>
+    </div>
+
+    <div class="note">
+      <strong>My rule now:</strong> if the plan only works when everything goes exactly right, the budget is too tight. Leave room for delays and the things nobody mentioned before you came.
     </div>
   </div>
 </section>
@@ -5311,6 +5414,7 @@ html,body{max-width:100%;overflow-x:hidden}
       <label class="check"><input type="checkbox" data-key="housingbudget">Set my housing budget + absolute ceiling</label>
       <label class="check"><input type="checkbox" data-key="preapproval">Get / refresh mortgage pre-approval if buying</label>
       <label class="check"><input type="checkbox" data-key="community">Compare gated and established communities in person</label>
+      <label class="check"><input type="checkbox" data-key="surroundingsvideo">If I cannot visit, get current video of the house, development, approach roads + surrounding areas</label>
       <label class="check"><input type="checkbox" data-key="realtorverify">Verify realtor on the Real Estate Board public register</label>
       <label class="check"><input type="checkbox" data-key="viewingverify">Before a viewing, confirm access + current video + road conditions</label>
       <label class="check"><input type="checkbox" data-key="internet">Confirm internet + backup connection</label>
@@ -5464,13 +5568,47 @@ html,body{max-width:100%;overflow-x:hidden}
   </div>
   <h3>Still reading? Stay with the journey.</h3>
   <p>Get the next story, audio episode and update from me.</p>
-  <a href="https://marshakerrtalley.substack.com/subscribe"
-     target="_blank"
-     rel="noopener"
-     id="subscribeNudgeLink">
-    Subscribe on Substack <span aria-hidden="true">→</span>
-  </a>
+  <div class="subscribe-nudge-actions">
+    <a href="https://marshakerrtalley.substack.com/subscribe"
+       target="_blank"
+       rel="noopener"
+       id="subscribeNudgeLink">
+      Subscribe <span aria-hidden="true">→</span>
+    </a>
+    <button type="button" class="subscribe-contact-link" id="subscribeContactLink">Ask Marsha</button>
+  </div>
 </aside>
+
+<button class="jamaica-contact-launcher" id="jamaicaContactLauncher" type="button" aria-haspopup="dialog" aria-controls="jamaicaContactOverlay">
+  <span class="jamaica-contact-dot" aria-hidden="true"></span> Ask Marsha
+</button>
+
+<div class="jamaica-contact-overlay" id="jamaicaContactOverlay" role="dialog" aria-modal="true" aria-labelledby="jamaicaContactTitle" aria-hidden="true">
+  <div class="jamaica-contact-panel">
+    <button class="jamaica-contact-close" id="jamaicaContactClose" type="button" aria-label="Close contact options">×</button>
+    <span class="kicker">Returning to Jamaica</span>
+    <h2 id="jamaicaContactTitle">What do you need help with?</h2>
+    <p>Choose the closest option. If you message me, that identifier will already be in your WhatsApp or email so I know what brought you here.</p>
+    <div class="jamaica-intent-grid">
+      <button type="button" data-jamaica-intent="RETURNING RESIDENT">Returning Resident process</button>
+      <button type="button" data-jamaica-intent="SHIPPING">Shipping or Customs</button>
+      <button type="button" data-jamaica-intent="CAR IMPORT">Importing a car</button>
+      <button type="button" data-jamaica-intent="HOUSING">Housing or property</button>
+      <button type="button" data-jamaica-intent="MOVING HOME">Planning my move home</button>
+      <button type="button" data-jamaica-intent="WORK WITH MARSHA">Work with Marsha</button>
+    </div>
+    <div class="jamaica-contact-result" id="jamaicaContactResult" aria-live="polite">
+      <strong id="jamaicaIntentLabel">Choose what you need.</strong>
+      <p id="jamaicaIntentCopy">You can then contact me by WhatsApp or email, or subscribe if you simply want to follow the journey.</p>
+      <div class="jamaica-contact-actions">
+        <a id="jamaicaWhatsApp" class="primary" href="#">WhatsApp Marsha</a>
+        <a id="jamaicaEmail" href="#">Email Marsha</a>
+        <a href="https://marshakerrtalley.substack.com/subscribe" target="_blank" rel="noopener">Subscribe</a>
+      </div>
+    </div>
+    <p class="jamaica-contact-note">Please do not send passports, TRNs, permits or other sensitive documents through this contact tool.</p>
+  </div>
+</div>
 
 <section class="guide-sources" aria-labelledby="sources-title">
   <div class="wrap">
@@ -5743,6 +5881,46 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+</script>
+
+
+<script>
+(() => {
+  const launcher=document.getElementById('jamaicaContactLauncher');
+  const overlay=document.getElementById('jamaicaContactOverlay');
+  const close=document.getElementById('jamaicaContactClose');
+  const fromSubscribe=document.getElementById('subscribeContactLink');
+  const wa=document.getElementById('jamaicaWhatsApp');
+  const email=document.getElementById('jamaicaEmail');
+  const label=document.getElementById('jamaicaIntentLabel');
+  const copy=document.getElementById('jamaicaIntentCopy');
+  const buttons=[...document.querySelectorAll('[data-jamaica-intent]')];
+  const MARSHA_WHATSAPP='447939325005';
+  const MARSHA_EMAIL='info@marshakerrtalley.com';
+  const intentCopy={
+    'RETURNING RESIDENT':'Questions about Returning Resident eligibility, concessions or the approval process.',
+    'SHIPPING':'Questions about shipping belongings, Customs, clearing goods or Customs Brokers.',
+    'CAR IMPORT':'Questions about bringing a vehicle to Jamaica, inspection, permits or clearance.',
+    'HOUSING':'Questions about renting, buying, communities, property viewings or settling somewhere in Jamaica.',
+    'MOVING HOME':'Questions about planning a return to Jamaica and getting established after arrival.',
+    'WORK WITH MARSHA':'An enquiry about training, consulting, speaking, facilitation or working with Marsha.'
+  };
+  function open(){if(!overlay)return;overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';setTimeout(()=>close&&close.focus(),20)}
+  function shut(){if(!overlay)return;overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+  function select(intent){
+    buttons.forEach(b=>b.classList.toggle('selected',b.dataset.jamaicaIntent===intent));
+    const description=intentCopy[intent]||intentCopy['MOVING HOME'];
+    if(label)label.textContent=intent; if(copy)copy.textContent=description;
+    const msg=`Hi Marsha, [${intent}]. I found your Returning to Jamaica guide and would like to ask about ${description.charAt(0).toLowerCase()+description.slice(1)}`;
+    if(wa)wa.href='https://wa.me/'+MARSHA_WHATSAPP+'?text='+encodeURIComponent(msg);
+    if(email)email.href='mailto:'+MARSHA_EMAIL+'?subject='+encodeURIComponent(intent+' | Returning to Jamaica')+'&body='+encodeURIComponent(msg+'\n\n');
+  }
+  launcher&&launcher.addEventListener('click',open); fromSubscribe&&fromSubscribe.addEventListener('click',()=>{const n=document.getElementById('subscribeNudge');if(n){n.classList.remove('show');n.setAttribute('aria-hidden','true')}open()});
+  close&&close.addEventListener('click',shut); overlay&&overlay.addEventListener('click',e=>{if(e.target===overlay)shut()});
+  buttons.forEach(b=>b.addEventListener('click',()=>select(b.dataset.jamaicaIntent)));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay&&overlay.classList.contains('open'))shut()});
+  select('MOVING HOME');
+})();
 </script>
 
 </body>
