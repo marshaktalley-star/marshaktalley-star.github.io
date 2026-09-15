@@ -3848,6 +3848,14 @@ html,body{max-width:100%;overflow-x:hidden}
   .resource-links-prominent .verify-realtor-cta{width:100%}
 }
 
+
+
+/* v10: independent service listings, banking and mobile conversion polish */
+.independence-note{margin:16px 0 18px;padding:16px 18px;border-left:5px solid var(--gold);border-radius:0 16px 16px 0;background:#fffaf1;color:#405f60;font-size:.92rem;line-height:1.55}.independence-note strong{display:block;margin-bottom:4px;color:var(--deep)}
+.delivery-directory{grid-column:span 2}.delivery-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}.delivery-option{padding:18px;border:1px solid var(--line);border-radius:18px;background:#fff}.delivery-option>strong{display:block;margin-bottom:7px;color:var(--deep);font-size:1.05rem}.delivery-option p{margin:0 0 10px}.delivery-option a{color:var(--teal);font-weight:900;text-decoration:none}.delivery-option a:hover,.delivery-option a:focus-visible{text-decoration:underline}.availability-reminder{margin:16px 0 0!important}.banking-section{background:#fff}.banking-disclosure{max-width:900px;margin:0 0 28px}.banking-checklist{margin:18px 0 0;padding-left:1.35rem}.banking-checklist li{margin:0 0 10px;padding-left:5px}.banking-process{margin-top:30px}.chapter-nav .wrap{display:flex;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:none}.chapter-nav .wrap::-webkit-scrollbar{display:none}.chapter-nav a{flex:0 0 auto;white-space:nowrap}.jamaica-contact-launcher{background:#056367!important;color:#fff!important;opacity:1!important;visibility:visible!important}.jamaica-contact-launcher .jamaica-contact-dot{flex:0 0 auto}
+@media(max-width:820px){.delivery-directory{grid-column:auto}.delivery-options{grid-template-columns:1fr}}
+@media(max-width:650px){html,body{max-width:100%;overflow-x:hidden}.wrap{width:calc(100% - 32px)!important}.hero{padding-left:0;padding-right:0}.hero-copy .lead{font-size:1rem;line-height:1.68}.chapter-nav{overflow:hidden}.chapter-nav .wrap{width:100%!important;padding:0 16px;gap:9px}.chapter-nav a{max-width:none}.jamaica-contact-launcher{right:14px!important;bottom:14px!important;min-height:52px;padding:12px 16px!important;font-size:.92rem!important;box-shadow:0 12px 30px rgba(5,99,103,.34)!important}.subscribe-nudge{left:14px!important;right:14px!important;bottom:78px!important;width:auto!important;max-height:calc(100vh - 110px);overflow:auto}.process-panel,.property-reality,.community-reality{padding:20px!important}.banking-section .card{padding:20px}}
+
 </style>
 </head>
 
@@ -3938,6 +3946,7 @@ html,body{max-width:100%;overflow-x:hidden}
     <a href="#getting-around">Getting Around</a>
     <a href="#housing">Housing</a>
     <a href="#costs">Money + Costs</a>
+    <a href="#banking">Banking</a>
     <a href="#living">Living Here</a>
     <a href="#networking">People + Connections</a>
     <a href="#verify">Safety + Verification</a>
@@ -4881,17 +4890,25 @@ html,body{max-width:100%;overflow-x:hidden}
         </p>
       </article>
 
-      <article class="everyday-card">
+      <article class="everyday-card delivery-directory">
         <span class="app-tag">Food + groceries</span>
         <h3>Delivery exists outside Kingston</h3>
-        <p>
-          Do not assume every errand requires a drive. <strong>7Krave</strong> offers restaurant delivery and also has
-          <strong>7Kravemart</strong> for groceries. Its current delivery policy lists Kingston &amp; St Andrew, Portmore,
-          Ocho Rios and Montego Bay, with charges varying by area.
-        </p>
-        <p>
-          Coverage changes, so enter your actual address in the app rather than assuming a service reaches your community.
-        </p>
+        <div class="independence-note" role="note" aria-label="Independent listing disclosure">
+          <strong>For information, not a personal recommendation.</strong> I share services I find that may be useful when settling into Jamaica. Unless I specifically say that I have used a company, its inclusion here does not mean I have personally tried, vetted or recommended it. These companies have not paid to be listed on this page. Always check the provider directly for current coverage, prices and terms.
+        </div>
+        <div class="delivery-options">
+          <div class="delivery-option">
+            <strong>7Krave + 7Kravemart</strong>
+            <p>7Krave offers restaurant delivery, and 7Kravemart offers groceries through the same app. Its current delivery policy lists food delivery in Kingston &amp; St Andrew, Portmore, Ocho Rios and Montego Bay.</p>
+            <a href="https://www.7krave.com/" target="_blank" rel="noopener">Check 7Krave directly →</a>
+          </div>
+          <div class="delivery-option">
+            <strong>QuickCart</strong>
+            <p>QuickCart lists food, groceries and other store deliveries. Its current help information lists Kingston &amp; St Andrew, Portmore and Montego Bay. It does not currently list Ocho Rios in its published service areas.</p>
+            <a href="https://www.quickcartonline.com/" target="_blank" rel="noopener">Check QuickCart directly →</a>
+          </div>
+        </div>
+        <p class="availability-reminder"><strong>Check your actual address.</strong> Coverage can change, and even a service operating in your parish or city may not reach every community.</p>
       </article>
 
       <article class="everyday-card">
@@ -5285,6 +5302,71 @@ html,body{max-width:100%;overflow-x:hidden}
   </div>
 </section>
 
+<section class="chapter banking-section" id="banking" aria-labelledby="banking-title">
+  <div class="wrap">
+    <div class="chapter-top">
+      <div>
+        <span class="kicker">Banking + money</span>
+        <h2 id="banking-title">Opening a Jamaican bank account is worth preparing for before you need it.</h2>
+        <p class="lead">
+          A Jamaican account can make everyday life easier once you are home, but do not assume you can walk into every bank with one piece of ID and leave with an account. Requirements differ by bank and by whether the bank treats you as a local or overseas customer. Check the bank's current requirements before you go.
+        </p>
+      </div>
+    </div>
+
+    <div class="independence-note banking-disclosure" role="note">
+      <strong>I am not recommending one bank over another.</strong> The banks below are included as examples so you can compare current account-opening requirements for yourself. Inclusion is not an endorsement or paid placement.
+    </div>
+
+    <div class="grid-3 banking-grid">
+      <article class="card">
+        <span class="icon">🪪</span>
+        <h3>Prepare your identification</h3>
+        <p>Banks commonly ask for valid government-issued photo identification and tax information. For local residents this commonly includes a TRN. Overseas customers may also need their overseas tax identification information.</p>
+      </article>
+      <article class="card">
+        <span class="icon">🏠</span>
+        <h3>Prepare proof of address</h3>
+        <p>Depending on the bank, acceptable evidence can include a utility bill, lease or rent receipt, property tax receipt, bank statement or another approved document showing your address.</p>
+      </article>
+      <article class="card">
+        <span class="icon">💼</span>
+        <h3>Be ready to explain your money</h3>
+        <p>Proof of employment, income and source of funds may be required. Some banks also ask for references, and additional documents can be requested depending on your circumstances.</p>
+      </article>
+    </div>
+
+    <div class="process-panel banking-process">
+      <span class="kicker">Before you go to the bank</span>
+      <h3 class="section-subheading">A simple bank-account preparation list</h3>
+      <ol class="banking-checklist">
+        <li>Decide whether you need a Jamaican-dollar account, foreign-currency account, or both.</li>
+        <li>Check the bank's requirements for your actual residency and employment status.</li>
+        <li>Gather your photo ID, TRN or relevant tax ID, proof of address, proof of income/employment and source-of-funds documents.</li>
+        <li>Check whether references, notarised documents, a minimum opening deposit or a branch visit are required.</li>
+        <li>If online account opening is offered, check what still has to be completed or collected in person.</li>
+      </ol>
+      <div class="resource-links" style="margin-top:20px">
+        <a href="https://www.jncb.com/personal/banking/bank-accounts" target="_blank" rel="noopener">NCB account options</a>
+        <a href="https://www.jnbank.com/personal-banking/savings/regular-savings/regular-savings-account-local/" target="_blank" rel="noopener">JN Bank requirements</a>
+        <a href="https://jm.scotiabank.com/personal/chequing-and-savings/opening-a-new-account-requirements.html" target="_blank" rel="noopener">Scotiabank requirements</a>
+      </div>
+    </div>
+
+    <div class="note" role="note">
+      <strong>You may be able to start online. Do not assume you can finish online.</strong>
+      Some banks let you begin the account-opening process online, but you may still need to visit a branch to verify documents, sign paperwork or complete the application.
+      <strong>Before choosing a bank, ask:</strong> Can I complete the entire process online, or will I eventually need to visit a branch?
+    </div>
+
+    <div class="warning-box important-warning" role="note">
+      <span class="warning-label">IMPORTANT</span>
+      <h3>Do not rely on somebody else's old banking checklist.</h3>
+      <p>Account types, acceptable documents and onboarding processes can change. Use this section to know what questions to ask, then confirm the current requirements directly with the bank you choose.</p>
+    </div>
+  </div>
+</section>
+
 <section class="voice-note-section" id="accent">
   <div class="wrap">
     <div class="voice-note-shell">
@@ -5364,6 +5446,10 @@ html,body{max-width:100%;overflow-x:hidden}
           </p>
         </div>
       </div>
+    </div>
+
+    <div class="note" role="note" style="margin-bottom:28px">
+      <strong>Not everything is digital.</strong> A lot of business in Jamaica still happens face-to-face and on paper. Imagine driving 45 minutes to collect a physical cheque, or having to print, sign and hand-deliver an invoice instead of emailing it. That is sometimes the reality here.
     </div>
 
     <div class="key-grid">
@@ -5512,7 +5598,7 @@ html,body{max-width:100%;overflow-x:hidden}
       <label class="check"><input type="checkbox" data-key="trn">Obtain / confirm my TRN</label>
       <label class="check"><input type="checkbox" data-key="docs">Create my move-document folder</label>
       <label class="check"><input type="checkbox" data-key="docshare">Decide how I will verify people before sharing ID / TRN / permits</label>
-      <label class="check"><input type="checkbox" data-key="bank">Prepare Jamaican banking / JMD funds</label>
+      <label class="check"><input type="checkbox" data-key="bank">Choose a bank + prepare/open my Jamaican account</label>
       <label class="check"><input type="checkbox" data-key="inventory">Complete household inventory + photos</label>
       <label class="check"><input type="checkbox" data-key="shipper">Verify shipper + Jamaican ground agent</label>
       <label class="check"><input type="checkbox" data-key="broker">Verify licensed Customs Broker</label>
@@ -5679,8 +5765,8 @@ html,body{max-width:100%;overflow-x:hidden}
       <span class="subscribe-nudge-note">A little note from Marsha</span>
     </div>
   </div>
-  <h3>Still reading? Stay with the journey.</h3>
-  <p>Get the next story, audio episode and update from me.</p>
+  <h3>Finding this useful? Stay with the journey.</h3>
+  <p>Get the next story, practical update and new Returning to Jamaica resource from me.</p>
   <div class="subscribe-nudge-actions">
     <a href="https://marshakerrtalley.substack.com/subscribe"
        target="_blank"
@@ -5707,6 +5793,7 @@ html,body{max-width:100%;overflow-x:hidden}
       <button type="button" data-jamaica-intent="SHIPPING">Shipping or Customs</button>
       <button type="button" data-jamaica-intent="CAR IMPORT">Importing a car</button>
       <button type="button" data-jamaica-intent="HOUSING">Housing or property</button>
+      <button type="button" data-jamaica-intent="BANKING">Banking or money setup</button>
       <button type="button" data-jamaica-intent="MOVING HOME">Planning my move home</button>
       <button type="button" data-jamaica-intent="WORK WITH MARSHA">Work with Marsha</button>
     </div>
@@ -5738,6 +5825,11 @@ html,body{max-width:100%;overflow-x:hidden}
       <a href="https://www.pica.gov.jm/contact-us/" target="_blank" rel="noopener">PICA: Contact</a>
       <a href="https://www.cac.gov.jm/portal/index.php/component/visforms/?id=1&view=visforms" target="_blank" rel="noopener">Consumer Affairs: File a complaint</a>
       <a href="https://www.mlss.gov.jm/departments/national-insurance-scheme/" target="_blank" rel="noopener">MLSS: NIS</a>
+      <a href="https://www.jncb.com/personal/banking/bank-accounts" target="_blank" rel="noopener">NCB: Bank accounts</a>
+      <a href="https://www.jnbank.com/personal-banking/savings/regular-savings/regular-savings-account-local/" target="_blank" rel="noopener">JN Bank: Account requirements</a>
+      <a href="https://jm.scotiabank.com/personal/chequing-and-savings/opening-a-new-account-requirements.html" target="_blank" rel="noopener">Scotiabank: Account requirements</a>
+      <a href="https://legal.7krave.com/delivery-policy.html" target="_blank" rel="noopener">7Krave: Delivery policy</a>
+      <a href="https://helpcenter.quickcartonline.com/hc/quickcart-help-center/en/categories/quickcart-basics-getting-started" target="_blank" rel="noopener">QuickCart: Service areas</a>
       <a href="https://mtm.gov.jm/ita/obtaining-a-drivers-licence/" target="_blank" rel="noopener">ITA: Driver's Licence</a>
       <a href="https://www.jpsco.com/chargengo/" target="_blank" rel="noopener">JPS Charge 'N Go</a>
       <a href="https://evergo.com/en/support/frequent-questions/" target="_blank" rel="noopener">Evergo</a>
@@ -5909,12 +6001,21 @@ const siteYear=document.getElementById('siteYear'); if(siteYear) siteYear.textCo
   const link = document.getElementById('subscribeNudgeLink');
   const dismissKey = 'jamaicaSubscribeNudgeDismissedAt';
   const fourteenDays = 14 * 24 * 60 * 60 * 1000;
+  const sessionStartKey = 'jamaicaSubscribeSessionStartedAt';
+  const sessionDepthKey = 'jamaicaSubscribeMaxDepth';
+  const delayMs = 20000;
+  const depthNeeded = 8;
 
   let timeReady = false;
-  let currentPct = 0;
+  let currentPct = Number(sessionStorage.getItem(sessionDepthKey) || 0);
+  let sessionStartedAt = Number(sessionStorage.getItem(sessionStartKey) || 0);
+  if(!sessionStartedAt){
+    sessionStartedAt = Date.now();
+    sessionStorage.setItem(sessionStartKey, String(sessionStartedAt));
+  }
 
   function maybeShowNudge(){
-    if(!nudge || !timeReady || currentPct < 30) return;
+    if(!nudge || !timeReady || currentPct < depthNeeded) return;
     const dismissedAt = Number(localStorage.getItem(dismissKey) || 0);
     if(!dismissedAt || Date.now() - dismissedAt > fourteenDays){
       nudge.classList.add('show');
@@ -5925,15 +6026,19 @@ const siteYear=document.getElementById('siteYear'); if(siteYear) siteYear.textCo
   function updateReadingProgress(){
     const doc = document.documentElement;
     const max = Math.max(1, doc.scrollHeight - window.innerHeight);
-    currentPct = Math.min(100, Math.max(0, (window.scrollY / max) * 100));
-    if(progress) progress.style.width = currentPct + '%';
+    const pagePct = Math.min(100, Math.max(0, (window.scrollY / max) * 100));
+    currentPct = Math.max(currentPct, pagePct);
+    sessionStorage.setItem(sessionDepthKey, String(currentPct));
+    if(progress) progress.style.width = pagePct + '%';
     maybeShowNudge();
   }
 
+  const elapsed = Date.now() - sessionStartedAt;
+  const remaining = Math.max(0, delayMs - elapsed);
   window.setTimeout(() => {
     timeReady = true;
     maybeShowNudge();
-  }, 40000);
+  }, remaining);
 
   function dismissNudge(){
     if(!nudge) return;
