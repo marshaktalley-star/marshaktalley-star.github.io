@@ -1,1698 +1,2399 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Six Weeks to Date Differently | Marsha Kerr Talley</title>
-
-  <meta name="description" content="Six Weeks to Date Differently is an intentional dating experience created by Marsha Kerr Talley. Meet people, challenge old relationship patterns, practise healthier connection, and learn to date differently.">
-
-  <style>
-    :root {
-      --teal-dark: #123f42;
-      --teal: #1d6668;
-      --teal-light: #dceeed;
-      --teal-soft: #eef7f6;
-      --gold: #b99352;
-      --gold-light: #e8d8b9;
-      --cream: #fbf8f1;
-      --white: #ffffff;
-      --ink: #263536;
-      --muted: #667575;
-      --border: #d8e4e2;
-      --shadow: 0 16px 45px rgba(22, 63, 66, 0.10);
-      --radius: 22px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--ink);
-      background: var(--cream);
-      line-height: 1.65;
-    }
-
-    h1, h2, h3, .serif {
-      font-family: Georgia, "Times New Roman", serif;
-    }
-
-    h1, h2, h3, p {
-      margin-top: 0;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .container {
-      width: min(1120px, calc(100% - 36px));
-      margin: 0 auto;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 88vh;
-      display: flex;
-      align-items: center;
-      color: white;
-      background:
-        radial-gradient(circle at 85% 20%, rgba(185,147,82,.22), transparent 28%),
-        radial-gradient(circle at 10% 80%, rgba(73,148,147,.22), transparent 30%),
-        linear-gradient(135deg, #0f3639 0%, #174d50 52%, #123f42 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 420px;
-      height: 420px;
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: 50%;
-      right: -160px;
-      bottom: -180px;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 830px;
-      padding: 90px 0;
-    }
-
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      font-size: .78rem;
-      font-weight: 700;
-      color: var(--gold-light);
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      font-size: clamp(3rem, 7vw, 6.5rem);
-      line-height: .98;
-      margin-bottom: 24px;
-      font-weight: 500;
-    }
-
-    .hero h1 span {
-      color: var(--gold-light);
-    }
-
-    .hero-lead {
-      max-width: 720px;
-      font-size: clamp(1.08rem, 2vw, 1.35rem);
-      color: rgba(255,255,255,.9);
-      margin-bottom: 30px;
-    }
-
-    .hero-tagline {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.35rem;
-      color: white;
-      border-left: 3px solid var(--gold);
-      padding-left: 18px;
-      margin: 32px 0;
-    }
-
-    .button-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 23px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: .25s ease;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: #172f31;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      background: #c7a467;
-    }
-
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,.5);
-      color: white;
-    }
-
-    .btn-outline:hover {
-      background: rgba(255,255,255,.1);
-    }
-
-    /* GENERAL */
-
-    section {
-      padding: 88px 0;
-    }
-
-    .section-label {
-      color: var(--teal);
-      text-transform: uppercase;
-      letter-spacing: .14em;
-      font-weight: 700;
-      font-size: .78rem;
-      margin-bottom: 10px;
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 5vw, 3.6rem);
-      line-height: 1.08;
-      color: var(--teal-dark);
-      margin-bottom: 20px;
-    }
-
-    .section-intro {
-      max-width: 790px;
-      font-size: 1.08rem;
-      color: #536364;
-    }
-
-    .center {
-      text-align: center;
-    }
-
-    .center .section-intro {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* INTRO */
-
-    .intro {
-      background: white;
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .quote-card {
-      background: linear-gradient(145deg, var(--teal-dark), #205f61);
-      color: white;
-      padding: 42px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .quote-card blockquote {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.75rem;
-      line-height: 1.35;
-    }
-
-    .quote-card small {
-      display: block;
-      color: var(--gold-light);
-      margin-top: 22px;
-    }
-
-    /* PRINCIPLES */
-
-    .principles {
-      background: var(--teal-soft);
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 45px;
-    }
-
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      box-shadow: 0 8px 25px rgba(22,63,66,.05);
-    }
-
-    .card-number {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--teal-light);
-      color: var(--teal-dark);
-      font-weight: bold;
-      margin-bottom: 18px;
-    }
-
-    .card h3 {
-      color: var(--teal-dark);
-      font-size: 1.35rem;
-    }
-
-    /* SIX WEEKS */
-
-    .weeks {
-      background: white;
-    }
-
-    .timeline {
-      margin-top: 50px;
-      display: grid;
-      gap: 24px;
-    }
-
-    .week {
-      display: grid;
-      grid-template-columns: 110px 1fr;
-      gap: 30px;
-      padding: 34px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: linear-gradient(135deg, white, #fbfdfd);
-      transition: .25s ease;
-    }
-
-    .week:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow);
-      border-color: #b9d2d0;
-    }
-
-    .week-number {
-      width: 88px;
-      height: 88px;
-      border-radius: 50%;
-      background: var(--teal-dark);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .week-number span {
-      font-size: .72rem;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-
-    .week-number strong {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 2rem;
-      line-height: 1;
-    }
-
-    .week h3 {
-      color: var(--teal-dark);
-      font-size: 1.7rem;
-      margin-bottom: 8px;
-    }
-
-    .affirmation {
-      display: inline-block;
-      margin: 8px 0 18px;
-      padding: 8px 14px;
-      border-left: 3px solid var(--gold);
-      background: #fbf5e9;
-      font-family: Georgia, "Times New Roman", serif;
-      font-style: italic;
-      color: #594a32;
-    }
-
-    .session-parts {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 20px;
-    }
-
-    .session-part {
-      background: var(--teal-soft);
-      padding: 16px;
-      border-radius: 14px;
-      font-size: .93rem;
-    }
-
-    .session-part strong {
-      display: block;
-      color: var(--teal-dark);
-      margin-bottom: 5px;
-    }
-
-    /* FORMAT */
-
-    .format {
-      background:
-        linear-gradient(rgba(18,63,66,.96), rgba(18,63,66,.96));
-      color: white;
-    }
-
-    .format .section-title {
-      color: white;
-    }
-
-    .format .section-label {
-      color: var(--gold-light);
-    }
-
-    .format .section-intro {
-      color: rgba(255,255,255,.8);
-    }
-
-    .format-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      margin-top: 40px;
-    }
-
-    .format-item {
-      padding: 25px;
-      border: 1px solid rgba(255,255,255,.16);
-      border-radius: 18px;
-      background: rgba(255,255,255,.06);
-    }
-
-    .format-item strong {
-      display: block;
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--gold-light);
-      font-size: 1.2rem;
-      margin-bottom: 7px;
-    }
-
-    /* DIFFERENCE */
-
-    .different {
-      background: var(--cream);
-    }
-
-    .difference-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .difference {
-      padding: 28px;
-      background: white;
-      border-radius: 18px;
-      border-left: 4px solid var(--teal);
-    }
-
-    .difference h3 {
-      color: var(--teal-dark);
-      margin-bottom: 8px;
-    }
-
-    /* WHO */
-
-    .who {
-      background: white;
-    }
-
-    .who-box {
-      max-width: 900px;
-      margin: 40px auto 0;
-      padding: 40px;
-      border-radius: var(--radius);
-      background: var(--teal-soft);
-    }
-
-    .checklist {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px 30px;
-    }
-
-    .checklist li {
-      position: relative;
-      padding-left: 30px;
-    }
-
-    .checklist li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--teal);
-      font-weight: bold;
-    }
-
-    /* MATCHING */
-
-    .matching {
-      background: var(--teal-soft);
-    }
-
-    .matching-box {
-      margin-top: 35px;
-      background: white;
-      border-radius: var(--radius);
-      padding: 38px;
-      box-shadow: var(--shadow);
-    }
-
-    .matching-box h3 {
-      color: var(--teal-dark);
-    }
-
-    /* PILOT */
-
-    .pilot {
-      background: white;
-    }
-
-    .pilot-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      margin-top: 35px;
-    }
-
-    .pilot-stat {
-      padding: 25px;
-      text-align: center;
-      background: var(--cream);
-      border-radius: 18px;
-      border: 1px solid #eee5d6;
-    }
-
-    .pilot-stat strong {
-      display: block;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.55rem;
-      color: var(--teal-dark);
-    }
-
-    .pilot-note {
-      max-width: 780px;
-      margin: 30px auto 0;
-      padding: 20px;
-      background: #fff8e9;
-      border-left: 4px solid var(--gold);
-    }
-
-    /* FAQ */
-
-    .faq {
-      background: var(--cream);
-    }
-
-    details {
-      max-width: 850px;
-      margin: 12px auto;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px 22px;
-    }
-
-    summary {
-      cursor: pointer;
-      font-weight: 700;
-      color: var(--teal-dark);
-    }
-
-    details p {
-      margin: 14px 0 0;
-      color: #586667;
-    }
-
-    /* INTEREST */
-
-    .interest {
-      background: linear-gradient(135deg, #153f42, #1e6264);
-      color: white;
-    }
-
-    .interest .section-title {
-      color: white;
-    }
-
-    .interest .section-intro {
-      color: rgba(255,255,255,.82);
-    }
-
-    form {
-      max-width: 780px;
-      margin-top: 35px;
-      display: grid;
-      gap: 16px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    label {
-      display: block;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid rgba(255,255,255,.25);
-      border-radius: 10px;
-      font: inherit;
-      background: white;
-      color: #263536;
-    }
-
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    button {
-      width: fit-content;
-      border: 0;
-      cursor: pointer;
-      padding: 14px 24px;
-      border-radius: 999px;
-      background: var(--gold);
-      color: #183436;
-      font-weight: 700;
-      font-size: 1rem;
-    }
-
-    .small-note {
-      font-size: .86rem;
-      color: rgba(255,255,255,.7);
-    }
-
-    /* DISCLAIMER */
-
-    .disclaimer {
-      background: #f4f1e9;
-      padding: 35px 0;
-      font-size: .86rem;
-      color: #657171;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #0e3032;
-      color: rgba(255,255,255,.8);
-      text-align: center;
-      padding: 38px 20px;
-    }
-
-    footer strong {
-      display: block;
-      font-family: Georgia, "Times New Roman", serif;
-      color: white;
-      font-size: 1.25rem;
-    }
-
-    footer span {
-      color: var(--gold-light);
-    }
-
-    /* PRIVATE ORGANISER NOTES
-       Change display:none to display:block if you want
-       to view these notes directly on the page.
-    */
-
-    .organiser-notes {
-      display: none;
-      background: #fff4cc;
-      padding: 50px 0;
-      color: #443b25;
-    }
-
-    .organiser-notes .container {
-      border: 2px dashed #c49a39;
-      padding: 30px;
-      border-radius: 16px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 850px) {
-      .intro-grid,
-      .card-grid,
-      .difference-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .format-grid,
-      .pilot-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .week {
-        grid-template-columns: 1fr;
-      }
-
-      .week-number {
-        width: 72px;
-        height: 72px;
-      }
-
-      .session-parts {
-        grid-template-columns: 1fr;
-      }
-
-      .checklist {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-      section {
-        padding: 65px 0;
-      }
-
-      .hero {
-        min-height: auto;
-      }
-
-      .hero-content {
-        padding: 75px 0;
-      }
-
-      .format-grid,
-      .pilot-grid,
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .week {
-        padding: 24px;
-      }
-
-      .quote-card {
-        padding: 30px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Six Weeks to Date Differently is an intentional dating experience by Marsha Kerr Talley, combining meaningful connection, Love Affirmations and guided reflection over six weeks.">
+
+<title>Six Weeks to Date Differently | Marsha Kerr Talley</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --teal:#056367;
+  --deep:#083f42;
+  --aqua:#319fa2;
+  --cream:#f8f3eb;
+  --paper:#fffdf9;
+  --gold:#c9a86a;
+  --ink:#173234;
+  --text:#485c5d;
+  --line:#dfe7e6;
+  --serif:"Playfair Display",Georgia,serif;
+  --sans:"Inter",sans-serif;
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--text);
+  font-family:var(--sans);
+  line-height:1.75;
+}
+
+a{color:inherit}
+
+.wrap{
+  width:min(1120px,calc(100% - 38px));
+  margin:auto;
+}
+
+
+/* =========================
+   SITE HEADER
+========================= */
+
+.site-header{
+  background:rgba(255,253,249,.97);
+  border-bottom:1px solid var(--line);
+  position:relative;
+  z-index:50;
+}
+
+.header-inner{
+  width:min(1200px,calc(100% - 38px));
+  margin:auto;
+  padding:18px 0 13px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  position:relative;
+}
+
+.logo img{
+  width:220px;
+  display:block;
+}
+
+.nav-toggle{
+  display:none;
+  position:absolute;
+  right:0;
+  top:20px;
+  border:0;
+  background:none;
+  font-size:28px;
+  color:var(--teal);
+}
+
+.main-nav ul{
+  list-style:none;
+  margin:12px 0 0;
+  padding:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:27px;
+  font-size:13px;
+  letter-spacing:.075em;
+  text-transform:uppercase;
+}
+
+.main-nav a{
+  text-decoration:none;
+  font-weight:500;
+}
+
+.main-nav a:hover,
+.main-nav a.active{
+  color:var(--teal);
+  font-weight:700;
+}
+
+.nav-dropdown{
+  position:relative;
+}
+
+.nav-parent:after{
+  content:"⌄";
+  margin-left:6px;
+  color:var(--aqua);
+}
+
+.nav-submenu{
+  position:absolute!important;
+  top:calc(100% + 10px);
+  left:50%;
+  transform:translateX(-50%);
+  display:none!important;
+  flex-direction:column!important;
+  gap:3px!important;
+  min-width:240px;
+  padding:9px!important;
+  margin:0!important;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:15px;
+  box-shadow:0 18px 44px rgba(5,99,103,.14);
+  text-align:left;
+}
+
+.nav-submenu:before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:-12px;
+  height:12px;
+}
+
+.nav-submenu a{
+  display:block;
+  padding:9px 12px;
+  border-radius:9px;
+  white-space:nowrap;
+  text-transform:none;
+  letter-spacing:0;
+  font-size:13px;
+}
+
+.nav-submenu a:hover{
+  background:#e8f6f6;
+}
+
+.nav-dropdown:hover>.nav-submenu,
+.nav-dropdown:focus-within>.nav-submenu{
+  display:flex!important;
+}
+
+
+/* =========================
+   SHARED
+========================= */
+
+.eyebrow{
+  color:var(--teal);
+  font-size:.76rem;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.section-title{
+  font-family:var(--serif);
+  color:var(--deep);
+  font-size:clamp(2.3rem,5vw,4rem);
+  line-height:1.08;
+  margin:10px 0 22px;
+  font-weight:500;
+}
+
+.section-intro{
+  max-width:760px;
+  font-size:1.06rem;
+}
+
+.center{
+  text-align:center;
+}
+
+.center .section-intro{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:49px;
+  padding:12px 22px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:.9rem;
+  transition:.22s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  background:var(--teal);
+  color:#fff;
+}
+
+.btn-secondary{
+  border:1px solid rgba(5,99,103,.3);
+  color:var(--teal);
+  background:#fff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  padding:84px 0 76px;
+  background:
+    radial-gradient(circle at 8% 20%,rgba(49,159,162,.13),transparent 30%),
+    radial-gradient(circle at 92% 80%,rgba(201,168,106,.13),transparent 27%),
+    linear-gradient(180deg,#fffdf9,#f8f3eb);
+}
+
+.hero-inner{
+  max-width:920px;
+  margin:auto;
+  text-align:center;
+}
+
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(3.5rem,8vw,7rem);
+  line-height:.96;
+  letter-spacing:-.045em;
+  color:var(--deep);
+  margin:14px 0 26px;
+  font-weight:500;
+}
+
+.hero h1 em{
+  color:var(--teal);
+  font-weight:500;
+}
+
+.hero .opening{
+  max-width:790px;
+  margin:0 auto;
+  font-family:var(--serif);
+  font-size:clamp(1.25rem,2.5vw,1.65rem);
+  line-height:1.55;
+  color:var(--ink);
+}
+
+.hero-tag{
+  display:inline-block;
+  margin:30px auto 0;
+  padding:12px 20px;
+  background:#fff;
+  border:1px solid rgba(5,99,103,.12);
+  border-radius:999px;
+  color:var(--teal);
+  font-weight:600;
+  box-shadow:0 10px 28px rgba(8,63,66,.06);
+}
+
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.concept{
+  padding:90px 0;
+}
+
+.concept-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:64px;
+  align-items:center;
+}
+
+.concept-copy p{
+  font-size:1.06rem;
+}
+
+.pullquote{
+  padding:38px;
+  border-radius:24px;
+  background:var(--deep);
+  color:#fff;
+  box-shadow:0 24px 60px rgba(8,63,66,.13);
+}
+
+.pullquote p{
+  margin:0;
+  font-family:var(--serif);
+  font-size:clamp(1.65rem,3vw,2.35rem);
+  line-height:1.4;
+}
+
+.pullquote span{
+  display:block;
+  margin-top:22px;
+  color:#bce1e2;
+  font-size:.85rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.how{
+  padding:90px 0;
+  background:var(--cream);
+}
+
+.how-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:40px;
+}
+
+.how-card{
+  padding:28px;
+  background:#fff;
+  border:1px solid rgba(5,99,103,.10);
+  border-radius:18px;
+  transition:.22s ease;
+}
+
+.how-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 40px rgba(8,63,66,.08);
+}
+
+.how-card .number{
+  color:var(--gold);
+  font-family:var(--serif);
+  font-size:2rem;
+}
+
+.how-card h3{
+  margin:4px 0 8px;
+  color:var(--teal);
+  font-family:var(--serif);
+  font-size:1.35rem;
+}
+
+
+/* =========================
+   SIX WEEKS
+========================= */
+
+.weeks{
+  padding:95px 0;
+}
+
+.week-list{
+  margin-top:48px;
+  display:grid;
+  gap:18px;
+}
+
+.week{
+  display:grid;
+  grid-template-columns:100px 1fr;
+  gap:28px;
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:#fff;
+  transition:.25s ease;
+}
+
+.week:hover{
+  transform:translateY(-3px);
+  border-color:rgba(5,99,103,.25);
+  box-shadow:0 18px 44px rgba(5,99,103,.09);
+}
+
+.week-number{
+  width:78px;
+  height:78px;
+  border-radius:50%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(145deg,var(--deep),var(--teal));
+  color:#fff;
+}
+
+.week-number small{
+  font-size:.63rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.week-number strong{
+  font-family:var(--serif);
+  font-size:1.9rem;
+  line-height:1;
+}
+
+.week h3{
+  margin:0 0 8px;
+  font-family:var(--serif);
+  color:var(--deep);
+  font-size:1.7rem;
+  font-weight:500;
+}
+
+.affirmation{
+  margin:13px 0 19px;
+  padding:11px 16px;
+  border-left:4px solid var(--gold);
+  background:var(--cream);
+  color:var(--teal);
+  font-family:var(--serif);
+  font-size:1.08rem;
+  font-style:italic;
+}
+
+.session-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:18px;
+}
+
+.session-item{
+  padding:17px;
+  border-radius:14px;
+  background:#eef7f6;
+  font-size:.9rem;
+}
+
+.session-item strong{
+  display:block;
+  color:var(--teal);
+  margin-bottom:5px;
+}
+
+
+/* =========================
+   EVENING FORMAT
+========================= */
+
+.evening{
+  padding:90px 0;
+  background:var(--deep);
+  color:#fff;
+}
+
+.evening .eyebrow{
+  color:#9ed6d8;
+}
+
+.evening .section-title{
+  color:#fff;
+}
+
+.evening .section-intro{
+  color:rgba(255,255,255,.74);
+}
+
+.evening-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:38px;
+}
+
+.evening-item{
+  padding:24px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:18px;
+  background:rgba(255,255,255,.055);
+}
+
+.evening-item strong{
+  display:block;
+  margin-bottom:7px;
+  font-family:var(--serif);
+  color:#f1dcae;
+  font-size:1.2rem;
+}
+
+
+/* =========================
+   LOVE AFFIRMATIONS
+========================= */
+
+.love{
+  padding:90px 0;
+  background:
+    radial-gradient(circle at 90% 20%,rgba(49,159,162,.10),transparent 28%),
+    var(--paper);
+}
+
+.love-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:60px;
+  align-items:start;
+}
+
+.love-quote{
+  position:sticky;
+  top:30px;
+  padding:36px;
+  background:var(--cream);
+  border-left:4px solid var(--gold);
+  border-radius:0 22px 22px 0;
+}
+
+.love-quote p{
+  margin:0;
+  font-family:var(--serif);
+  color:var(--deep);
+  font-size:clamp(1.7rem,3vw,2.45rem);
+  line-height:1.4;
+}
+
+.love-copy p{
+  font-size:1.06rem;
+}
+
+.mini-affirmations{
+  display:grid;
+  gap:10px;
+  margin-top:25px;
+}
+
+.mini-affirmation{
+  padding:15px 18px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  color:var(--teal);
+  font-family:var(--serif);
+}
+
+
+/* =========================
+   DIFFERENCE
+========================= */
+
+.different{
+  padding:90px 0;
+  background:var(--cream);
+}
+
+.difference-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+  margin-top:40px;
+}
+
+.difference{
+  padding:27px;
+  background:#fff;
+  border:1px solid rgba(5,99,103,.10);
+  border-radius:18px;
+}
+
+.difference strong{
+  display:block;
+  color:var(--teal);
+  font-family:var(--serif);
+  font-size:1.25rem;
+  margin-bottom:6px;
+}
+
+
+/* =========================
+   WHO IT IS FOR
+========================= */
+
+.who{
+  padding:90px 0;
+}
+
+.who-box{
+  max-width:900px;
+  margin:38px auto 0;
+  padding:36px;
+  border-radius:22px;
+  background:#eef7f6;
+}
+
+.checklist{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:13px 28px;
+}
+
+.checklist li{
+  position:relative;
+  padding-left:27px;
+}
+
+.checklist li:before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  color:var(--teal);
+  font-weight:700;
+}
+
+
+/* =========================
+   PRIVACY / MATCHING
+========================= */
+
+.matching{
+  padding:90px 0;
+  background:var(--cream);
+}
+
+.match-box{
+  max-width:850px;
+  margin:38px auto 0;
+  padding:36px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:22px;
+  box-shadow:0 18px 44px rgba(5,99,103,.06);
+}
+
+.match-box h3{
+  margin-top:0;
+  color:var(--deep);
+  font-family:var(--serif);
+  font-size:1.6rem;
+}
+
+
+/* =========================
+   PILOT
+========================= */
+
+.pilot{
+  padding:90px 0;
+}
+
+.pilot-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:38px;
+}
+
+.stat{
+  padding:25px 16px;
+  background:var(--cream);
+  border-radius:18px;
+  text-align:center;
+  border:1px solid rgba(201,168,106,.22);
+}
+
+.stat strong{
+  display:block;
+  color:var(--deep);
+  font-family:var(--serif);
+  font-size:1.5rem;
+}
+
+.price-note{
+  max-width:790px;
+  margin:30px auto 0;
+  padding:20px 22px;
+  border-left:4px solid var(--gold);
+  background:#fff8e9;
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
+.faq{
+  padding:90px 0;
+  background:var(--cream);
+}
+
+details{
+  max-width:850px;
+  margin:12px auto;
+  padding:18px 21px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+}
+
+summary{
+  cursor:pointer;
+  color:var(--deep);
+  font-weight:700;
+}
+
+details p{
+  margin:13px 0 0;
+}
+
+
+/* =========================
+   INTEREST
+========================= */
+
+.interest{
+  padding:90px 0;
+  background:
+    radial-gradient(circle at 10% 10%,rgba(49,159,162,.18),transparent 28%),
+    var(--deep);
+  color:#fff;
+}
+
+.interest .eyebrow{
+  color:#9ed6d8;
+}
+
+.interest .section-title{
+  color:#fff;
+}
+
+.interest .section-intro{
+  color:rgba(255,255,255,.75);
+}
+
+form{
+  max-width:760px;
+  margin-top:34px;
+  display:grid;
+  gap:15px;
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+label{
+  display:block;
+  margin-bottom:6px;
+  font-weight:600;
+}
+
+input,
+select,
+textarea{
+  width:100%;
+  padding:13px 14px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:10px;
+  background:#fff;
+  color:var(--ink);
+  font:inherit;
+}
+
+textarea{
+  min-height:110px;
+  resize:vertical;
+}
+
+.submit-btn{
+  width:max-content;
+  border:0;
+  padding:13px 22px;
+  border-radius:999px;
+  background:var(--gold);
+  color:var(--deep);
+  font:inherit;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.form-note{
+  color:rgba(255,255,255,.62);
+  font-size:.83rem;
+}
+
+
+/* =========================
+   DISCLAIMER
+========================= */
+
+.disclaimer{
+  padding:34px 0;
+  background:#f3efe6;
+  color:#667575;
+  font-size:.86rem;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer{
+  border-top:1px solid var(--line);
+  background:#fff;
+  padding:38px 20px;
+  text-align:center;
+}
+
+.social{
+  display:flex;
+  gap:16px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+
+.social a,
+.legal a{
+  color:var(--teal);
+  text-decoration:none;
+  font-weight:600;
+}
+
+.legal{
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  flex-wrap:wrap;
+  font-size:.88rem;
+}
+
+.copyright{
+  color:#6e7b7b;
+  font-size:.9rem;
+}
+
+
+/* =========================
+   PRIVATE NOTES
+========================= */
+
+.organiser-notes{
+  display:none;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px){
+
+  .nav-toggle{
+    display:block;
+  }
+
+  .main-nav{
+    display:none;
+    width:100%;
+  }
+
+  .main-nav.open{
+    display:block;
+  }
+
+  .main-nav>ul{
+    flex-direction:column;
+    gap:14px;
+  }
+
+  .nav-parent:after{
+    display:none;
+  }
+
+  .nav-submenu{
+    position:static!important;
+    display:flex!important;
+    transform:none;
+    box-shadow:none;
+    border:0;
+    border-left:2px solid #e8f6f6;
+    border-radius:0;
+    background:transparent;
+    margin:4px auto 0!important;
+    width:min(100%,330px);
+    padding:3px 0 3px 18px!important;
+  }
+
+  .nav-submenu a{
+    white-space:normal;
+  }
+
+  .hero{
+    padding:65px 0;
+  }
+
+  .hero h1{
+    font-size:clamp(3.1rem,15vw,5rem);
+  }
+
+  .concept-grid,
+  .love-grid{
+    grid-template-columns:1fr;
+  }
+
+  .how-grid{
+    grid-template-columns:1fr;
+  }
+
+  .week{
+    grid-template-columns:1fr;
+  }
+
+  .session-grid{
+    grid-template-columns:1fr;
+  }
+
+  .evening-grid,
+  .pilot-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .difference-grid,
+  .checklist{
+    grid-template-columns:1fr;
+  }
+
+  .love-quote{
+    position:static;
+  }
+
+}
+
+@media(max-width:560px){
+
+  .evening-grid,
+  .pilot-grid,
+  .form-row{
+    grid-template-columns:1fr;
+  }
+
+  .concept,
+  .how,
+  .weeks,
+  .evening,
+  .love,
+  .different,
+  .who,
+  .matching,
+  .pilot,
+  .faq,
+  .interest{
+    padding:66px 0;
+  }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
-  <!-- HERO -->
-
-  <header class="hero">
-    <div class="container">
-      <div class="hero-content">
-
-        <div class="eyebrow">
-          Turning Pain Into Possibility™ presents
-        </div>
-
-        <h1>
-          Six Weeks to<br>
-          <span>Date Differently.</span>
-        </h1>
-
-        <p class="hero-lead">
-          An intentional six-week dating experience designed to help
-          singles meet people, challenge old relationship patterns,
-          practise healthier connection and discover what happens
-          when we stop dating only from chemistry, fear or habit.
-        </p>
-
-        <div class="hero-tagline">
-          Meet people. Challenge old patterns. Practise healthier connection.
-        </div>
-
-        <div class="button-row">
-          <a href="#six-weeks" class="btn btn-primary">
-            Explore the Six Weeks
-          </a>
-
-          <a href="#interest" class="btn btn-outline">
-            Register Your Interest
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </header>
-
-
-  <!-- CONCEPT -->
-
-  <section class="intro">
-    <div class="container intro-grid">
-
-      <div>
-        <div class="section-label">The Concept</div>
-
-        <h2 class="section-title">
-          What if we gave connection more than a few minutes?
-        </h2>
-
-        <p>
-          Traditional speed dating asks us to make quick decisions:
-          attraction or no attraction, yes or no, interested or not.
-        </p>
-
-        <p>
-          But meaningful connection does not always reveal itself in
-          five minutes.
-        </p>
-
-        <p>
-          <strong>Six Weeks to Date Differently</strong> brings a group
-          of singles together over six facilitated sessions. Participants
-          meet, talk, reflect, rotate, reconnect and gradually explore
-          compatibility while also examining the beliefs and patterns
-          they may be bringing into relationships.
-        </p>
-
-        <p>
-          This isn't about forcing a match. It is about creating enough
-          time and structure for people to notice more than first
-          impressions.
-        </p>
-      </div>
-
-      <div class="quote-card">
-        <blockquote>
-          “You don't have to know on the first night whether someone
-          could be your future. Sometimes you simply need enough space
-          to discover who they are.”
-        </blockquote>
-
-        <small>
-          Six Weeks to Date Differently
-        </small>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- PRINCIPLES -->
-
-  <section class="principles">
-    <div class="container">
-
-      <div class="center">
-        <div class="section-label">The Experience</div>
-
-        <h2 class="section-title">
-          Dating meets personal development.
-        </h2>
-
-        <p class="section-intro">
-          Each week combines guided reflection, Love Affirmations,
-          intentional conversations and dating rotations so participants
-          can practise healthier ways of connecting while actually
-          meeting potential partners.
-        </p>
-      </div>
-
-      <div class="card-grid">
-
-        <div class="card">
-          <div class="card-number">1</div>
-          <h3>Meet</h3>
-          <p>
-            Meet a curated group of singles in a relaxed,
-            structured environment without the pressure of
-            deciding everything immediately.
-          </p>
-        </div>
 
-        <div class="card">
-          <div class="card-number">2</div>
-          <h3>Notice</h3>
-          <p>
-            Pay attention to attraction, assumptions, fear,
-            comparison, communication and the patterns that
-            appear while dating.
-          </p>
-        </div>
+<!-- =========================
+     HEADER
+========================= -->
 
-        <div class="card">
-          <div class="card-number">3</div>
-          <h3>Practise</h3>
-          <p>
-            Practise communicating clearly, receiving interest,
-            setting boundaries and staying curious rather than
-            automatically repeating familiar patterns.
-          </p>
-        </div>
+<header class="site-header">
 
-      </div>
+<div class="header-inner">
 
-    </div>
-  </section>
-
+<a class="logo" href="index.html">
+<img src="MKT-logo-3.png" alt="Marsha Kerr Talley - Live Inspired">
+</a>
 
-  <!-- SIX WEEKS -->
-
-  <section class="weeks" id="six-weeks">
-    <div class="container">
-
-      <div class="section-label">The Six-Week Journey</div>
-
-      <h2 class="section-title">
-        Six weeks. Six conversations with yourself—and others.
-      </h2>
-
-      <p class="section-intro">
-        Each session has its own relationship theme and Love Affirmation.
-        The dating conversations become progressively deeper as
-        participants get to know one another.
-      </p>
+<button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+☰
+</button>
 
+<nav class="main-nav" aria-label="Main navigation">
 
-      <div class="timeline">
+<ul>
 
-        <!-- WEEK 1 -->
+<li><a href="index.html">Home</a></li>
 
-        <article class="week">
+<li><a href="about.html">About</a></li>
 
-          <div class="week-number">
-            <span>Week</span>
-            <strong>1</strong>
-          </div>
+<li class="nav-dropdown">
 
-          <div>
-            <h3>What Am I Bringing Into Love?</h3>
+<a class="nav-parent active" href="work-with-me.html">
+Work With Me
+</a>
 
-            <div class="affirmation">
-              “I can meet someone new without asking them to repair something old.”
-            </div>
+<ul class="nav-submenu" aria-label="Work With Me">
 
-            <p>
-              Week One is about introductions, curiosity and first
-              impressions. Participants begin exploring what they want
-              from a relationship and what previous experiences may
-              have taught them to expect from love.
-            </p>
+<li><a href="work-with-me.html">Overview</a></li>
 
-            <div class="session-parts">
+<li>
+<a href="https://marshakerrtalley.com/special-education">
+Special Education
+</a>
+</li>
 
-              <div class="session-part">
-                <strong>Reflection</strong>
-                What have my previous relationships taught me to expect?
-              </div>
+<li>
+<a href="the-six-weeks-program">
+Six-Week Programme
+</a>
+</li>
 
-              <div class="session-part">
-                <strong>Dating Experience</strong>
-                Short, relaxed rotations designed primarily for introductions,
-                humour and natural conversation.
-              </div>
+<li>
+<a class="active" href="six-weeks-to-date-differently.html">
+Six Weeks to Date Differently
+</a>
+</li>
 
-              <div class="session-part">
-                <strong>Takeaway</strong>
-                Notice who surprised you. No pressure to eliminate
-                anyone based solely on first impressions.
-              </div>
-
-            </div>
-          </div>
+<li>
+<a href="digital-creators-lab.html">
+Digital Creators Lab
+</a>
+</li>
 
-        </article>
+<li>
+<a href="airbnb-host-training.html">
+Airbnb Host Training
+</a>
+</li>
 
+<li>
+<a href="inspired-by-marsha.html">
+Inspired by Marsha
+</a>
+</li>
 
-        <!-- WEEK 2 -->
+<li>
+<a href="returning-to-jamaica.html">
+Returning to Jamaica
+</a>
+</li>
 
-        <article class="week">
+</ul>
 
-          <div class="week-number">
-            <span>Week</span>
-            <strong>2</strong>
-          </div>
+</li>
 
-          <div>
-            <h3>I Do Not Have to Compete for Love</h3>
+<li><a href="books.html">Books</a></li>
+<li><a href="podcast.html">Podcast</a></li>
+<li><a href="reflections.html">Reflections</a></li>
+<li><a href="contact.html">Contact</a></li>
 
-            <div class="affirmation">
-              “I do not have to compete for love.”
-            </div>
+<li>
+<a href="https://marshakerrtalley.com/shop">
+Shop
+</a>
+</li>
 
-            <p>
-              Participants explore comparison, jealousy, pursuit,
-              rejection and what it means to feel intentionally chosen.
-              The dating environment itself provides opportunities to
-              notice these feelings without immediately reacting to them.
-            </p>
+</ul>
 
-            <div class="session-parts">
+</nav>
 
-              <div class="session-part">
-                <strong>Reflection</strong>
-                What happens inside me when someone I like is also
-                connecting with other people?
-              </div>
+</div>
 
-              <div class="session-part">
-                <strong>Dating Experience</strong>
-                New rotations with prompts around attraction,
-                intentionality and what being chosen means.
-              </div>
+</header>
 
-              <div class="session-part">
-                <strong>Takeaway</strong>
-                Interest does not require competition, performance
-                or abandoning yourself.
-              </div>
 
-            </div>
-          </div>
+<main>
 
-        </article>
 
+<!-- =========================
+     HERO
+========================= -->
 
-        <!-- WEEK 3 -->
+<section class="hero">
 
-        <article class="week">
+<div class="wrap hero-inner">
 
-          <div class="week-number">
-            <span>Week</span>
-            <strong>3</strong>
-          </div>
+<div class="eyebrow">
+Turning Pain Into Possibility™
+</div>
 
-          <div>
-            <h3>What Does Safe Love Feel Like?</h3>
+<h1>
+Six Weeks to<br>
+<em>Date Differently.</em>
+</h1>
 
-            <div class="affirmation">
-              “I deserve love that feels real, honest, safe, mutual and clear.”
-            </div>
+<p class="opening">
+Meet people. Challenge old patterns. Practise healthier connection.
+</p>
 
-            <p>
-              This session explores emotional safety, consistency,
-              boundaries, respect and clarity. Participants consider
-              the difference between intense chemistry and genuine
-              relational safety.
-            </p>
+<p class="section-intro" style="margin:22px auto 0;">
+An intentional six-week dating experience where singles have
+time to meet, reconnect, reflect and discover what happens when
+we stop making decisions about love from chemistry, fear,
+habit or a five-minute first impression.
+</p>
 
-            <div class="session-parts">
+<div class="hero-tag">
+Not six weeks to find love. Six weeks to date differently.
+</div>
 
-              <div class="session-part">
-                <strong>Reflection</strong>
-                What behaviours actually make me feel safe,
-                respected and considered?
-              </div>
+<div class="hero-buttons">
 
-              <div class="session-part">
-                <strong>Dating Experience</strong>
-                Longer conversations around trust, communication,
-                affection and relationship expectations.
-              </div>
+<a class="btn btn-primary" href="#six-weeks">
+See the Six Weeks
+</a>
 
-              <div class="session-part">
-                <strong>Takeaway</strong>
-                Begin noticing not only who excites you,
-                but how you feel around them.
-              </div>
+<a class="btn btn-secondary" href="#interest">
+Register Interest
+</a>
 
-            </div>
-          </div>
+</div>
 
-        </article>
+</div>
 
+</section>
 
-        <!-- WEEK 4 -->
 
-        <article class="week">
+<!-- =========================
+     CONCEPT
+========================= -->
 
-          <div class="week-number">
-            <span>Week</span>
-            <strong>4</strong>
-          </div>
+<section class="concept">
 
-          <div>
-            <h3>Receiving Love Without Expecting Pain</h3>
+<div class="wrap concept-grid">
 
-            <div class="affirmation">
-              “I can receive something good without searching for the moment it will disappear.”
-            </div>
+<div class="concept-copy">
 
-            <p>
-              Participants explore what can happen when genuine
-              attention, affection or consistency feels unfamiliar.
-              The focus is on recognising protective patterns without
-              shaming ourselves for having developed them.
-            </p>
+<div class="eyebrow">
+The Idea
+</div>
 
-            <div class="session-parts">
+<h2 class="section-title">
+What if connection had more than a few minutes?
+</h2>
 
-              <div class="session-part">
-                <strong>Reflection</strong>
-                Do I become suspicious, distant or uninterested
-                when someone treats me well?
-              </div>
+<p>
+Traditional speed dating asks us to decide quickly:
+attraction or no attraction, yes or no, interested or not.
+</p>
 
-              <div class="session-part">
-                <strong>Dating Experience</strong>
-                Intentional conversations about vulnerability,
-                trust and how each person responds to closeness.
-              </div>
+<p>
+But meaningful connection does not always reveal itself
+in five minutes.
+</p>
 
-              <div class="session-part">
-                <strong>Takeaway</strong>
-                Protection and avoidance are not always the same thing.
-              </div>
+<p>
+<strong>Six Weeks to Date Differently</strong> brings a group
+of singles together over six facilitated sessions.
+Participants meet, talk, rotate, reconnect and gradually
+explore compatibility while also noticing the beliefs and
+patterns they may be bringing into relationships.
+</p>
 
-            </div>
-          </div>
+<p>
+The goal is not to force a match. It is to create enough
+time and structure for people to notice more than first
+impressions.
+</p>
 
-        </article>
+</div>
 
 
-        <!-- WEEK 5 -->
+<div class="pullquote">
 
-        <article class="week">
+<p>
+“You don't have to know on the first night whether someone
+could be your future. Sometimes you simply need enough
+space to discover who they are.”
+</p>
 
-          <div class="week-number">
-            <span>Week</span>
-            <strong>5</strong>
-          </div>
+<span>Six Weeks to Date Differently</span>
 
-          <div>
-            <h3>I Can Say What I Need</h3>
+</div>
 
-            <div class="affirmation">
-              “My needs do not make me difficult to love.”
-            </div>
+</div>
 
-            <p>
-              By Week Five, conversations move beyond attraction into
-              compatibility. Participants explore whether their actual
-              lives, expectations and values could work together.
-            </p>
+</section>
 
-            <div class="session-parts">
 
-              <div class="session-part">
-                <strong>Reflection</strong>
-                What do I genuinely need from a partner—and what
-                have I been afraid to say?
-              </div>
+<!-- =========================
+     HOW IT WORKS
+========================= -->
 
-              <div class="session-part">
-                <strong>Dating Experience</strong>
-                Longer conversations covering values, children,
-                lifestyle, money, communication, affection,
-                future plans and relationship goals.
-              </div>
+<section class="how">
 
-              <div class="session-part">
-                <strong>Takeaway</strong>
-                Chemistry matters. Compatibility matters too.
-              </div>
+<div class="wrap">
 
-            </div>
-          </div>
+<div class="center">
 
-        </article>
+<div class="eyebrow">
+The Experience
+</div>
 
+<h2 class="section-title">
+Dating meets personal development.
+</h2>
 
-        <!-- WEEK 6 -->
+<p class="section-intro">
+Each week combines a Love Affirmation, a short guided
+reflection and intentional dating conversations.
+</p>
 
-        <article class="week">
+</div>
 
-          <div class="week-number">
-            <span>Week</span>
-            <strong>6</strong>
-          </div>
 
-          <div>
-            <h3>Choosing Without Abandoning Myself</h3>
+<div class="how-grid">
 
-            <div class="affirmation">
-              “I can choose love without losing myself.”
-            </div>
 
-            <p>
-              The final session brings together everything participants
-              have noticed during the programme. There is space for
-              longer conversations, reflection, mutual matches and
-              celebration.
-            </p>
+<div class="how-card">
 
-            <div class="session-parts">
+<div class="number">01</div>
 
-              <div class="session-part">
-                <strong>Reflection</strong>
-                What have I learned about how I choose,
-                receive and respond to connection?
-              </div>
+<h3>Meet</h3>
 
-              <div class="session-part">
-                <strong>Dating Experience</strong>
-                Intentional longer dates with people participants
-                would genuinely like to continue getting to know.
-              </div>
+<p>
+Meet a small group of singles in a relaxed environment
+without the pressure to decide immediately who is
+“your person.”
+</p>
 
-              <div class="session-part">
-                <strong>Takeaway</strong>
-                Leave with greater clarity about how you want
-                to date—whether or not you leave with a match.
-              </div>
+</div>
 
-            </div>
-          </div>
 
-        </article>
+<div class="how-card">
 
-      </div>
-    </div>
-  </section>
+<div class="number">02</div>
 
+<h3>Notice</h3>
 
-  <!-- FORMAT -->
+<p>
+Notice attraction, assumptions, comparison, fear,
+communication and the patterns that appear while
+getting to know people.
+</p>
 
-  <section class="format">
-    <div class="container">
+</div>
 
-      <div class="section-label">How Each Evening Works</div>
 
-      <h2 class="section-title">
-        Structured enough to feel intentional.<br>
-        Relaxed enough to feel like dating.
-      </h2>
+<div class="how-card">
 
-      <p class="section-intro">
-        This is not six weeks of sitting in a circle talking about
-        relationships. The personal-development component supports
-        the dating experience rather than replacing it.
-      </p>
+<div class="number">03</div>
 
-      <div class="format-grid">
+<h3>Practise</h3>
 
-        <div class="format-item">
-          <strong>01. Arrive</strong>
-          Informal social time, refreshments and an opportunity
-          to settle into the room.
-        </div>
+<p>
+Practise communicating clearly, receiving interest,
+setting boundaries and staying curious instead of
+automatically repeating familiar patterns.
+</p>
 
-        <div class="format-item">
-          <strong>02. Reflect</strong>
-          A short facilitated conversation introduces the week's
-          relationship theme and affirmation.
-        </div>
+</div>
 
-        <div class="format-item">
-          <strong>03. Date</strong>
-          Guided dating rotations use carefully selected prompts
-          while leaving room for natural conversation and chemistry.
-        </div>
 
-        <div class="format-item">
-          <strong>04. Notice</strong>
-          Private reflection helps participants notice attraction,
-          reactions, assumptions and potential connections.
-        </div>
+</div>
 
-      </div>
+</div>
 
-    </div>
-  </section>
+</section>
 
 
-  <!-- WHAT MAKES IT DIFFERENT -->
+<!-- =========================
+     SIX WEEKS
+========================= -->
 
-  <section class="different">
-    <div class="container">
+<section class="weeks" id="six-weeks">
 
-      <div class="center">
-        <div class="section-label">Why This Is Different</div>
+<div class="wrap">
 
-        <h2 class="section-title">
-          More than speed dating.
-        </h2>
-      </div>
+<div class="eyebrow">
+The Six-Week Journey
+</div>
 
-      <div class="difference-grid">
+<h2 class="section-title">
+Six weeks. Six opportunities to date differently.
+</h2>
 
-        <div class="difference">
-          <h3>No five-minute verdicts.</h3>
-          <p>
-            Participants have multiple opportunities to interact
-            before deciding whether they would like to explore
-            a connection further.
-          </p>
-        </div>
+<p class="section-intro">
+The conversations become progressively deeper as participants
+get to know one another. Each week's Love Affirmation gives
+the group something specific to explore and practise.
+</p>
 
-        <div class="difference">
-          <h3>No weekly popularity contest.</h3>
-          <p>
-            Preferences remain private. Participants are not publicly
-            told who selected or rejected them. Mutual interest is
-            handled thoughtfully.
-          </p>
-        </div>
 
-        <div class="difference">
-          <h3>Real relationship conversations.</h3>
-          <p>
-            Questions gradually move beyond careers and hobbies
-            toward values, communication, boundaries, family,
-            lifestyle and future expectations.
-          </p>
-        </div>
+<div class="week-list">
 
-        <div class="difference">
-          <h3>Success isn't defined by leaving coupled.</h3>
-          <p>
-            Participants can leave with stronger self-awareness,
-            healthier dating practices and meaningful connections
-            even when a romantic match does not develop.
-          </p>
-        </div>
 
-      </div>
+<!-- WEEK 1 -->
 
-    </div>
-  </section>
+<article class="week">
 
+<div class="week-number">
+<small>Week</small>
+<strong>1</strong>
+</div>
 
-  <!-- WHO IT IS FOR -->
+<div>
 
-  <section class="who">
-    <div class="container">
+<h3>What Am I Bringing Into Love?</h3>
 
-      <div class="center">
-        <div class="section-label">Who It's For</div>
+<div class="affirmation">
+“I can meet someone new without asking them to repair something old.”
+</div>
 
-        <h2 class="section-title">
-          Singles who want to date with greater intention.
-        </h2>
+<p>
+The first evening is about curiosity rather than conclusions.
+Participants meet the group, explore what they are looking for
+and begin noticing what previous experiences may have taught
+them to expect from love.
+</p>
 
-        <p class="section-intro">
-          Participants don't need to have everything figured out.
-          They simply need to be genuinely available to meet people
-          and willing to approach dating with curiosity and respect.
-        </p>
-      </div>
+<div class="session-grid">
 
-      <div class="who-box">
-        <ul class="checklist">
-          <li>Single and genuinely available to date</li>
-          <li>Interested in a meaningful relationship</li>
-          <li>Open to meeting people beyond immediate first impressions</li>
-          <li>Willing to communicate respectfully</li>
-          <li>Interested in understanding personal relationship patterns</li>
-          <li>Able to commit to the six-week experience</li>
-          <li>Respectful of other participants' privacy and boundaries</li>
-          <li>Comfortable accepting that attraction and matches cannot be guaranteed</li>
-        </ul>
-      </div>
+<div class="session-item">
+<strong>Reflect</strong>
+What have previous relationships taught me to expect?
+</div>
 
-    </div>
-  </section>
+<div class="session-item">
+<strong>Date</strong>
+Short, relaxed rotations focused on introductions,
+humour and natural conversation.
+</div>
 
+<div class="session-item">
+<strong>Notice</strong>
+Who surprised you? What did you assume before you
+actually spoke to someone?
+</div>
 
-  <!-- MATCHING -->
+</div>
 
-  <section class="matching">
-    <div class="container">
+</div>
 
-      <div class="section-label">Matching & Privacy</div>
+</article>
 
-      <h2 class="section-title">
-        Connection without unnecessary pressure.
-      </h2>
 
-      <div class="matching-box">
+<!-- WEEK 2 -->
 
-        <h3>Interest stays private.</h3>
+<article class="week">
 
-        <p>
-          Participants can privately indicate who they would like
-          additional time with as the programme progresses.
-          Individual selections are not publicly revealed.
-        </p>
+<div class="week-number">
+<small>Week</small>
+<strong>2</strong>
+</div>
 
-        <p>
-          Where mutual interest exists, participants may be given
-          opportunities for longer conversations during later sessions.
-          Contact information should only be exchanged with consent.
-        </p>
+<div>
 
-        <p>
-          Participants are expected to respect confidentiality,
-          personal boundaries and each person's right to change
-          their mind at any point.
-        </p>
+<h3>I Do Not Have to Compete for Love</h3>
 
-        <p>
-          The programme creates opportunities for connection.
-          It does not guarantee romantic compatibility, a match,
-          a relationship or any particular outcome.
-        </p>
+<div class="affirmation">
+“I do not have to compete for love.”
+</div>
 
-      </div>
+<p>
+This week explores comparison, jealousy, pursuit and what
+happens internally when someone we like is also getting
+to know other people.
+</p>
 
-    </div>
-  </section>
-
-
-  <!-- PILOT -->
-
-  <section class="pilot">
-    <div class="container">
-
-      <div class="center">
-        <div class="section-label">Pilot Concept</div>
-
-        <h2 class="section-title">
-          Small enough to feel personal.
-        </h2>
-
-        <p class="section-intro">
-          The first cohort can intentionally remain small so the
-          experience can be refined based on participant feedback.
-        </p>
-      </div>
-
-      <div class="pilot-grid">
-
-        <div class="pilot-stat">
-          <strong>20–24</strong>
-          Participants
-        </div>
-
-        <div class="pilot-stat">
-          <strong>6</strong>
-          Weekly Sessions
-        </div>
-
-        <div class="pilot-stat">
-          <strong>2–2½ hrs</strong>
-          Per Session
-        </div>
-
-        <div class="pilot-stat">
-          <strong>One Cohort</strong>
-          Shared Journey
-        </div>
-
-      </div>
-
-      <div class="pilot-note">
-        <strong>Potential pilot pricing:</strong>
-        approximately J$25,000–J$40,000 for the complete six-week
-        experience, subject to venue, refreshments, materials,
-        staffing and programme costs. Final pricing should be
-        confirmed before public launch.
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- FAQ -->
-
-  <section class="faq">
-    <div class="container">
-
-      <div class="center">
-        <div class="section-label">Questions</div>
-
-        <h2 class="section-title">
-          Before you join.
-        </h2>
-      </div>
-
-      <details>
-        <summary>Is this therapy?</summary>
-        <p>
-          No. Six Weeks to Date Differently is a facilitated
-          personal-development and social dating experience.
-          It is not psychotherapy, counselling or mental-health treatment.
-        </p>
-      </details>
-
-      <details>
-        <summary>Am I guaranteed to meet a partner?</summary>
-        <p>
-          No. The programme creates structured opportunities to
-          meet and get to know other singles, but attraction,
-          compatibility and relationships cannot be guaranteed.
-        </p>
-      </details>
-
-      <details>
-        <summary>What happens if I like someone early in the programme?</summary>
-        <p>
-          That's perfectly fine. Participants are encouraged to remain
-          curious while the programme progresses. Mutual interest may
-          lead to additional conversation time without turning the
-          programme into a public competition.
-        </p>
-      </details>
-
-      <details>
-        <summary>What if nobody chooses me?</summary>
-        <p>
-          Romantic matching is only one part of the experience.
-          The programme is also designed to help participants better
-          understand how they date, communicate, choose and respond
-          to connection. Individual preferences will not be publicly
-          announced.
-        </p>
-      </details>
-
-      <details>
-        <summary>Can I miss a week?</summary>
-        <p>
-          Because the same cohort progresses together, consistent
-          attendance is important. Participants should plan to attend
-          all six sessions wherever possible.
-        </p>
-      </details>
-
-      <details>
-        <summary>Who can participate?</summary>
-        <p>
-          Eligibility, age range, dating preferences and cohort
-          structure will be confirmed for each programme before
-          registration opens.
-        </p>
-      </details>
-
-    </div>
-  </section>
-
-
-  <!-- INTEREST FORM -->
-
-  <section class="interest" id="interest">
-    <div class="container">
-
-      <div class="section-label">Interested?</div>
-
-      <h2 class="section-title">
-        Be among the first to hear about the pilot.
-      </h2>
-
-      <p class="section-intro">
-        Six Weeks to Date Differently is currently being developed.
-        Register your interest to receive information when dates,
-        location, eligibility and pricing are confirmed.
-      </p>
-
-      <!--
-        IMPORTANT:
-        This form needs to be connected to your actual
-        form processor / HubSpot / website form system before launch.
-      -->
-
-      <form>
-
-        <div class="form-row">
-
-          <div>
-            <label for="name">Name</label>
-            <input id="name" type="text" name="name" required>
-          </div>
-
-          <div>
-            <label for="email">Email</label>
-            <input id="email" type="email" name="email" required>
-          </div>
-
-        </div>
-
-        <div class="form-row">
-
-          <div>
-            <label for="age">Age Range</label>
-            <select id="age" name="age">
-              <option value="">Select</option>
-              <option>25–34</option>
-              <option>35–44</option>
-              <option>45–54</option>
-              <option>55–64</option>
-              <option>65+</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="location">Location</label>
-            <input id="location" type="text" name="location">
-          </div>
-
-        </div>
-
-        <div>
-          <label for="interest-reason">
-            What interests you about this experience?
-          </label>
-
-          <textarea
-            id="interest-reason"
-            name="interest-reason"
-            placeholder="Tell me briefly..."
-          ></textarea>
-        </div>
-
-        <button type="submit">
-          Register My Interest
-        </button>
-
-        <div class="small-note">
-          Registering interest does not guarantee admission to a cohort.
-        </div>
-
-      </form>
-
-    </div>
-  </section>
-
-
-  <!-- DISCLAIMER -->
-
-  <section class="disclaimer">
-    <div class="container">
-      <strong>Important:</strong>
-      Six Weeks to Date Differently is an educational,
-      personal-development and social experience. It does not provide
-      psychotherapy, psychological treatment, professional matchmaking
-      guarantees or assurances regarding participant compatibility.
-      Participants remain responsible for their own dating decisions,
-      personal boundaries and safety.
-    </div>
-  </section>
-
-
-  <!-- PRIVATE ORGANISER NOTES -->
-
-  <section class="organiser-notes">
-    <div class="container">
-
-      <h2>PRIVATE ORGANISER NOTES — NOT FOR PUBLIC DISPLAY</h2>
-
-      <p>
-        These notes are intentionally hidden through CSS.
-        Change .organiser-notes from display:none to display:block
-        if you want to view them on the page.
-      </p>
-
-      <h3>Before Launch</h3>
-
-      <ul>
-        <li>Decide first pilot age range.</li>
-        <li>Decide whether cohorts are heterosexual, LGBTQ+ inclusive, or organised by dating preference.</li>
-        <li>Determine minimum and maximum participant numbers.</li>
-        <li>Develop system for balancing compatible dating pools.</li>
-        <li>Create application / screening form.</li>
-        <li>Confirm six-week attendance commitment.</li>
-        <li>Determine deposit and cancellation policy.</li>
-        <li>Develop participant code of conduct.</li>
-        <li>Create confidentiality and photography policy.</li>
-        <li>Create harassment / inappropriate behaviour removal policy.</li>
-        <li>Create emergency and venue safety procedure.</li>
-        <li>Determine how private preferences will be collected.</li>
-        <li>Determine when mutual matches will be disclosed.</li>
-        <li>Determine rules around exchanging numbers during early weeks.</li>
-        <li>Plan what happens if two participants begin dating before Week Six.</li>
-        <li>Plan what happens if participants withdraw.</li>
-        <li>Recruit one assistant / co-facilitator for logistics.</li>
-        <li>Do not use anyone you are personally dating as a participant.</li>
-      </ul>
-
-      <h3>Materials to Develop</h3>
-
-      <ul>
-        <li>Love Affirmation cards</li>
-        <li>Participant workbook / journal</li>
-        <li>Weekly reflection sheets</li>
-        <li>Conversation prompt cards</li>
-        <li>Private interest / matching cards</li>
-        <li>Name badges</li>
-        <li>Facilitator guide</li>
-        <li>Opening and closing scripts</li>
-        <li>Post-programme feedback survey</li>
-      </ul>
-
-      <h3>Potential Revenue Model</h3>
-
-      <p>
-        Example only: 24 participants × J$30,000 = J$720,000 gross.
-        Deduct six weeks of venue hire, refreshments, staffing,
-        printing/materials, payment processing, marketing,
-        insurance and other operating expenses before calculating
-        actual programme profit.
-      </p>
-
-      <h3>Potential Future Extensions</h3>
-
-      <ul>
-        <li>Love Affirmations card deck</li>
-        <li>Dating Differently workbook</li>
-        <li>Singles retreats</li>
-        <li>Post-divorce / dating-again cohort</li>
-        <li>40+ intentional dating cohort</li>
-        <li>Online version</li>
-        <li>Corporate / wellbeing relationship workshops</li>
-        <li>Podcast conversations based on programme themes</li>
-      </ul>
-
-    </div>
-  </section>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-    <strong>Marsha Kerr Talley</strong>
-    <span>Live Inspired | Turning Pain Into Possibility™</span>
-    <br><br>
-    Six Weeks to Date Differently
-  </footer>
+<div class="session-grid">
+
+<div class="session-item">
+<strong>Reflect</strong>
+What happens inside me when someone I like has other options?
+</div>
+
+<div class="session-item">
+<strong>Date</strong>
+Rotations explore attraction, intentionality and what
+being chosen means to each person.
+</div>
+
+<div class="session-item">
+<strong>Notice</strong>
+Interest does not require competition, performance
+or abandoning yourself.
+</div>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- WEEK 3 -->
+
+<article class="week">
+
+<div class="week-number">
+<small>Week</small>
+<strong>3</strong>
+</div>
+
+<div>
+
+<h3>What Does Safe Love Feel Like?</h3>
+
+<div class="affirmation">
+“I deserve love that feels real, honest, safe, mutual and clear.”
+</div>
+
+<p>
+Participants explore emotional safety, consistency,
+respect, boundaries and clarity—and the difference
+between feeling intensely attracted to someone and
+feeling genuinely safe with them.
+</p>
+
+<div class="session-grid">
+
+<div class="session-item">
+<strong>Reflect</strong>
+What behaviours actually make me feel safe and considered?
+</div>
+
+<div class="session-item">
+<strong>Date</strong>
+Longer conversations around trust, communication,
+affection and expectations.
+</div>
+
+<div class="session-item">
+<strong>Notice</strong>
+Pay attention not only to who excites you,
+but how you feel around them.
+</div>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- WEEK 4 -->
+
+<article class="week">
+
+<div class="week-number">
+<small>Week</small>
+<strong>4</strong>
+</div>
+
+<div>
+
+<h3>Receiving Love Without Expecting Pain</h3>
+
+<div class="affirmation">
+“I can receive something good without searching for the moment it will disappear.”
+</div>
+
+<p>
+Sometimes healthy attention feels unfamiliar.
+This session explores what can happen when affection,
+consistency or genuine interest activates old expectations
+of disappointment.
+</p>
+
+<div class="session-grid">
+
+<div class="session-item">
+<strong>Reflect</strong>
+Do I become suspicious, distant or uninterested
+when someone treats me well?
+</div>
+
+<div class="session-item">
+<strong>Date</strong>
+Conversations explore vulnerability, trust and how
+each person responds to closeness.
+</div>
+
+<div class="session-item">
+<strong>Notice</strong>
+Protecting yourself and avoiding connection
+are not always the same thing.
+</div>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- WEEK 5 -->
+
+<article class="week">
+
+<div class="week-number">
+<small>Week</small>
+<strong>5</strong>
+</div>
+
+<div>
+
+<h3>I Can Say What I Need</h3>
+
+<div class="affirmation">
+“My needs do not make me difficult to love.”
+</div>
+
+<p>
+By Week Five, conversations move beyond attraction and
+toward compatibility. Participants explore whether their
+values, expectations and actual lives could work together.
+</p>
+
+<div class="session-grid">
+
+<div class="session-item">
+<strong>Reflect</strong>
+What do I genuinely need from a partner—and what
+have I been afraid to say?
+</div>
+
+<div class="session-item">
+<strong>Date</strong>
+Conversations may include children, lifestyle,
+money, communication, affection and future goals.
+</div>
+
+<div class="session-item">
+<strong>Notice</strong>
+Chemistry matters. Compatibility matters too.
+</div>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- WEEK 6 -->
+
+<article class="week">
+
+<div class="week-number">
+<small>Week</small>
+<strong>6</strong>
+</div>
+
+<div>
+
+<h3>Choosing Without Abandoning Myself</h3>
+
+<div class="affirmation">
+“I can choose love without losing myself.”
+</div>
+
+<p>
+The final evening brings the experience together.
+Participants reflect on what they have learned about
+themselves, spend more intentional time with people
+they would like to know further and celebrate the
+completion of the six weeks.
+</p>
+
+<div class="session-grid">
+
+<div class="session-item">
+<strong>Reflect</strong>
+What have I learned about how I choose,
+receive and respond to connection?
+</div>
+
+<div class="session-item">
+<strong>Date</strong>
+Longer intentional conversations with potential
+mutual connections.
+</div>
+
+<div class="session-item">
+<strong>Leave With</strong>
+Greater clarity about how you want to date,
+whether or not you leave with a match.
+</div>
+
+</div>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     EACH EVENING
+========================= -->
+
+<section class="evening">
+
+<div class="wrap">
+
+<div class="eyebrow">
+Each Session
+</div>
+
+<h2 class="section-title">
+Structured enough to feel intentional.<br>
+Relaxed enough to still feel like dating.
+</h2>
+
+<p class="section-intro">
+This isn't six weeks of sitting in a circle analysing
+relationships. Reflection supports the dating experience.
+It does not replace it.
+</p>
+
+
+<div class="evening-grid">
+
+<div class="evening-item">
+<strong>Arrive</strong>
+Social time, refreshments and space to settle in.
+</div>
+
+<div class="evening-item">
+<strong>Reflect</strong>
+A short facilitated introduction to the week's
+Love Affirmation and theme.
+</div>
+
+<div class="evening-item">
+<strong>Date</strong>
+Rotations with thoughtful prompts and plenty of
+space for natural conversation.
+</div>
+
+<div class="evening-item">
+<strong>Notice</strong>
+Private reflection on attraction, reactions,
+assumptions and possible connections.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     LOVE AFFIRMATIONS
+========================= -->
+
+<section class="love">
+
+<div class="wrap love-grid">
+
+<div class="love-quote">
+
+<p>
+Sometimes the threat exists only in our minds—the story
+we remember from when love came at a cost.
+</p>
+
+</div>
+
+
+<div class="love-copy">
+
+<div class="eyebrow">
+Love Affirmations
+</div>
+
+<h2 class="section-title">
+Learning to receive something different.
+</h2>
+
+<p>
+Love Affirmations are woven throughout the six-week
+experience as prompts for reflection—not promises,
+magic words or a way of convincing someone to choose us.
+</p>
+
+<p>
+They are reminders that we can question old beliefs,
+notice automatic responses and practise healthier ways
+of approaching connection.
+</p>
+
+
+<div class="mini-affirmations">
+
+<div class="mini-affirmation">
+I do not have to compete for love.
+</div>
+
+<div class="mini-affirmation">
+I deserve love that feels real, honest, safe, mutual and clear.
+</div>
+
+<div class="mini-affirmation">
+I can protect my heart without closing it.
+</div>
+
+<div class="mini-affirmation">
+I do not have to leave first to protect myself from being left.
+</div>
+
+<div class="mini-affirmation">
+I can enjoy what is good today without demanding that today guarantee forever.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DIFFERENCE
+========================= -->
+
+<section class="different">
+
+<div class="wrap">
+
+<div class="center">
+
+<div class="eyebrow">
+Why This Is Different
+</div>
+
+<h2 class="section-title">
+More than speed dating.
+</h2>
+
+</div>
+
+
+<div class="difference-grid">
+
+<div class="difference">
+
+<strong>No five-minute verdicts.</strong>
+
+Participants have multiple opportunities to interact
+before deciding whether they would like to explore
+a connection further.
+
+</div>
+
+
+<div class="difference">
+
+<strong>No weekly popularity contest.</strong>
+
+Preferences remain private. Participants are not publicly
+told who selected or rejected them.
+
+</div>
+
+
+<div class="difference">
+
+<strong>Real conversations.</strong>
+
+Questions gradually move beyond careers and hobbies toward
+values, communication, boundaries, family, lifestyle
+and expectations.
+
+</div>
+
+
+<div class="difference">
+
+<strong>A match isn't the only measure of success.</strong>
+
+Participants can leave with greater self-awareness,
+healthier dating practices and meaningful connections
+even if romance does not develop.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     WHO IT IS FOR
+========================= -->
+
+<section class="who">
+
+<div class="wrap">
+
+<div class="center">
+
+<div class="eyebrow">
+Who It's For
+</div>
+
+<h2 class="section-title">
+Singles who want to date with greater intention.
+</h2>
+
+<p class="section-intro">
+You don't need to have love figured out.
+You simply need to be genuinely available to meet
+people and willing to approach the experience
+with curiosity and respect.
+</p>
+
+</div>
+
+
+<div class="who-box">
+
+<ul class="checklist">
+
+<li>Single and genuinely available to date</li>
+
+<li>Interested in meaningful connection</li>
+
+<li>Open to looking beyond immediate first impressions</li>
+
+<li>Willing to communicate respectfully</li>
+
+<li>Curious about personal relationship patterns</li>
+
+<li>Able to commit to the six-week experience</li>
+
+<li>Respectful of privacy and boundaries</li>
+
+<li>Understands that attraction and matches cannot be guaranteed</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     MATCHING
+========================= -->
+
+<section class="matching">
+
+<div class="wrap">
+
+<div class="center">
+
+<div class="eyebrow">
+Connection & Privacy
+</div>
+
+<h2 class="section-title">
+No public choosing. No public rejection.
+</h2>
+
+</div>
+
+
+<div class="match-box">
+
+<h3>Interest stays private.</h3>
+
+<p>
+As the programme progresses, participants may privately
+indicate who they would like additional time with.
+Individual selections are not publicly revealed.
+</p>
+
+<p>
+Where mutual interest exists, participants may be given
+opportunities for longer conversations during later sessions.
+Contact information is only exchanged with consent.
+</p>
+
+<p>
+Participants are expected to respect confidentiality,
+personal boundaries and each person's right to change
+their mind.
+</p>
+
+<p>
+The programme creates opportunities for connection.
+It does not guarantee romantic compatibility,
+a match or a relationship.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PILOT
+========================= -->
+
+<section class="pilot">
+
+<div class="wrap">
+
+<div class="center">
+
+<div class="eyebrow">
+The First Cohort
+</div>
+
+<h2 class="section-title">
+Small enough to feel personal.
+</h2>
+
+<p class="section-intro">
+The first experience will intentionally remain small
+so the programme can be refined with participant feedback.
+</p>
+
+</div>
+
+
+<div class="pilot-grid">
+
+<div class="stat">
+<strong>20–24</strong>
+Participants
+</div>
+
+<div class="stat">
+<strong>6</strong>
+Weekly Sessions
+</div>
+
+<div class="stat">
+<strong>2–2½ hrs</strong>
+Each Session
+</div>
+
+<div class="stat">
+<strong>1 Cohort</strong>
+Shared Journey
+</div>
+
+</div>
+
+
+<div class="price-note">
+
+<strong>Programme pricing is still being developed.</strong>
+
+The pilot is currently envisioned as a paid six-week
+experience rather than six separate drop-in dating events.
+Final pricing will reflect venue, refreshments, programme
+materials and the complete facilitated experience.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FAQ
+========================= -->
+
+<section class="faq">
+
+<div class="wrap">
+
+<div class="center">
+
+<div class="eyebrow">
+A Few Questions
+</div>
+
+<h2 class="section-title">
+Before you join.
+</h2>
+
+</div>
+
+
+<details>
+
+<summary>Is this therapy?</summary>
+
+<p>
+No. Six Weeks to Date Differently is a facilitated
+personal-development and social dating experience.
+It is not psychotherapy, counselling or mental-health treatment.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>Am I guaranteed to meet a partner?</summary>
+
+<p>
+No. The programme creates structured opportunities
+to meet and get to know other singles, but attraction,
+compatibility and relationships cannot be guaranteed.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>What if I like someone early?</summary>
+
+<p>
+That's okay. Participants are encouraged to remain curious
+while the programme progresses. Mutual interest may lead
+to additional conversation time without turning the
+experience into a public competition.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>What if I don't make a romantic match?</summary>
+
+<p>
+A romantic match is not the only outcome.
+The programme is also an opportunity to understand
+more about how you date, communicate, choose and respond
+to connection.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>Can I miss a week?</summary>
+
+<p>
+Because the same cohort progresses together,
+consistent attendance is important. Participants should
+plan to attend all six sessions wherever possible.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>Who can participate?</summary>
+
+<p>
+Eligibility, age range, dating preferences and cohort
+structure will be confirmed before registration opens.
+</p>
+
+</details>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     INTEREST
+========================= -->
+
+<section class="interest" id="interest">
+
+<div class="wrap">
+
+<div class="eyebrow">
+Interested?
+</div>
+
+<h2 class="section-title">
+Be among the first to know.
+</h2>
+
+<p class="section-intro">
+Six Weeks to Date Differently is currently being developed.
+Register your interest to hear when the first cohort,
+location, dates and eligibility are announced.
+</p>
+
+
+<!--
+Connect this form to HubSpot or your preferred
+form processor before making registration live.
+-->
+
+<form>
+
+<div class="form-row">
+
+<div>
+<label for="name">Name</label>
+<input id="name" type="text" name="name" required>
+</div>
+
+<div>
+<label for="email">Email</label>
+<input id="email" type="email" name="email" required>
+</div>
+
+</div>
+
+
+<div class="form-row">
+
+<div>
+
+<label for="age">Age Range</label>
+
+<select id="age" name="age">
+
+<option value="">Select</option>
+<option>25–34</option>
+<option>35–44</option>
+<option>45–54</option>
+<option>55–64</option>
+<option>65+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label for="location">Location</label>
+
+<input
+id="location"
+type="text"
+name="location"
+placeholder="Town / Parish">
+
+</div>
+
+</div>
+
+
+<div>
+
+<label for="reason">
+What interests you about this experience?
+</label>
+
+<textarea
+id="reason"
+name="reason"
+placeholder="Tell me briefly..."></textarea>
+
+</div>
+
+
+<button class="submit-btn" type="submit">
+Register My Interest
+</button>
+
+<div class="form-note">
+Registering interest does not guarantee admission to a cohort.
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DISCLAIMER
+========================= -->
+
+<section class="disclaimer">
+
+<div class="wrap">
+
+<strong>Important:</strong>
+
+Six Weeks to Date Differently is an educational,
+personal-development and social experience. It does not
+provide psychotherapy, psychological treatment or
+professional matchmaking guarantees. Participants remain
+responsible for their own dating decisions, personal
+boundaries and safety.
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PRIVATE ORGANISER NOTES
+     HIDDEN FROM WEBSITE
+========================= -->
+
+<section class="organiser-notes">
+
+<!--
+
+PRIVATE DEVELOPMENT NOTES — MARSHA
+
+Before pilot:
+
+• Decide first cohort age range.
+• Decide dating preference / cohort structure.
+• Determine minimum and maximum participant numbers.
+• Develop a system for balancing compatible dating pools.
+• Create application / screening process.
+• Require six-week attendance commitment.
+• Determine deposit and cancellation policy.
+• Develop participant code of conduct.
+• Create confidentiality policy.
+• Create photography/social-media policy.
+• Create inappropriate-behaviour/removal policy.
+• Determine how private preferences are collected.
+• Determine when mutual interest is disclosed.
+• Determine contact-information rules.
+• Decide what happens if two participants start dating early.
+• Decide what happens if someone withdraws.
+• Recruit assistant/co-facilitator for logistics.
+• Do not use anyone Marsha is personally dating
+  as a participant. 😂
+
+MATERIALS:
+
+• Love Affirmation cards
+• Participant workbook/journal
+• Weekly reflection sheets
+• Conversation prompt cards
+• Private interest cards
+• Name badges
+• Facilitator guide
+• Opening/closing scripts
+• Participant feedback survey
+
+POTENTIAL FUTURE PRODUCTS:
+
+• Love Affirmations card deck
+• Date Differently workbook
+• Singles retreats
+• 40+ cohort
+• Dating-again-after-divorce cohort
+• Online experience
+• Podcast conversations based on programme themes
+
+-->
+
+</section>
+
+
+</main>
+
+
+<!-- =========================
+     EXISTING SITE FOOTER
+========================= -->
+
+<footer class="site-footer">
+
+<div class="social">
+
+<a
+href="https://www.linkedin.com/in/marshakerrtalley"
+target="_blank"
+rel="noopener">
+LinkedIn
+</a>
+
+<a
+href="https://substack.com/@marshakerrtalley"
+target="_blank"
+rel="noopener">
+Substack
+</a>
+
+<a
+href="https://www.silhouettes.com/"
+target="_blank"
+rel="noopener">
+Silhouette's Café
+</a>
+
+</div>
+
+
+<p class="copyright">
+
+Copyright ©
+<span id="year"></span>
+Marsha Kerr Talley. All Rights Reserved.
+
+</p>
+
+
+<div class="legal">
+
+<a href="/privacy-policy">
+Privacy Policy
+</a>
+
+<a href="/shipping-return-policy">
+Shipping &amp; Return Policy
+</a>
+
+<a href="/terms-and-conditions">
+Terms and Conditions
+</a>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* Copyright year */
+
+document.getElementById('year').textContent =
+new Date().getFullYear();
+
+
+/* Mobile navigation */
+
+const toggle =
+document.querySelector('.nav-toggle');
+
+const nav =
+document.querySelector('.main-nav');
+
+toggle.addEventListener('click',()=>{
+
+nav.classList.toggle('open');
+
+toggle.setAttribute(
+'aria-expanded',
+nav.classList.contains('open')
+);
+
+});
+
+</script>
+
 
 </body>
 </html>
