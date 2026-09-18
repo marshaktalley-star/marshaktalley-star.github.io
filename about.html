@@ -1,42 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Work with Marsha Kerr Talley for executive-level consultancy, organisational training, interactive workshops, speaking, facilitation, AI and digital innovation, leadership development, wellbeing and people-centred performance." />
+  <title>Work With Marsha | Consultancy, Training & Workshops</title>
 
-  <title>About Marsha Kerr Talley | Educator, Author & Consultant</title>
-
-  <meta
-    name="description"
-    content="Learn more about Marsha Kerr Talley, an educator, author, consultant and teacher educator with more than two decades of international experience."
-  >
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
-
-    /* ========================================
-       ROOT
-    ======================================== */
-
     :root {
-      --teal-dark: #056367;
-      --teal: #319fa2;
-      --teal-light: #2fe2dd;
-      --teal-pale: #f4fbfb;
-
-      --text: #263d3e;
-      --text-soft: #566869;
-
-      --white: #ffffff;
-      --border: #dceaea;
-
-      --max-width: 1120px;
+      --brand-primary: #056367;
+      --brand-secondary: #319fa2;
+      --brand-deep: #083f42;
+      --brand-soft: #e8f6f6;
+      --gold: #c9a86a;
+      --gold-soft: #eadbc1;
+      --ink: #173234;
+      --text: #4e5f60;
+      --muted: #728081;
+      --cream: #f7f4ef;
+      --paper: #ffffff;
+      --line: #dfe7e6;
+      --shadow: 0 24px 60px rgba(12, 64, 66, 0.12);
+      --shadow-soft: 0 14px 36px rgba(12, 64, 66, 0.08);
+      --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-heading: "Playfair Display", Georgia, serif;
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
     }
-
-
-    /* ========================================
-       RESET
-    ======================================== */
 
     * {
       box-sizing: border-box;
@@ -48,580 +44,104 @@
 
     body {
       margin: 0;
-      background: var(--white);
+      font-family: var(--font-body);
       color: var(--text);
-
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
-
+      background: #ffffff;
       line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
     }
 
-    img {
-      display: block;
+    img,
+    video {
       max-width: 100%;
+      display: block;
     }
 
     a {
       color: inherit;
     }
 
-    .container {
-      width: min(100% - 40px, var(--max-width));
-      margin: 0 auto;
-    }
-
-
-    /* ========================================
-       HEADER
-    ======================================== */
-
-    .site-header {
-      width: 100%;
-      background: #ffffff;
-      border-bottom: 1px solid #e6f2f2;
-    }
-
-    .header-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px 16px 12px;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .logo {
-      display: inline-block;
-    }
-
-    .logo img {
-      width: 220px;
-      height: auto;
-      margin: 0 auto 12px;
-    }
-
-
-    /* NAVIGATION */
-
-    .main-nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-
-      gap: 28px;
-
-      font-size: 14px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .main-nav a {
-      color: #2f2f2f;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .main-nav a:hover {
-      color: var(--teal-dark);
-    }
-
-
-    /* ========================================
-       PAGE TITLE
-    ======================================== */
-
-    .page-intro {
-      padding: 48px 20px 34px;
-      text-align: center;
-    }
-
-    .page-intro h1 {
-      margin: 0;
-
-      color: var(--teal-dark);
-
-      font-size: clamp(34px, 5vw, 54px);
-      line-height: 1.1;
-
-      letter-spacing: -0.03em;
-      font-weight: 700;
-    }
-
-    .tagline {
-      margin: 14px 0 0;
-
-      color: var(--teal);
-      font-size: clamp(16px, 2vw, 18px);
-      font-weight: 600;
-    }
-
-
-    /* ========================================
-       HERO IMAGE
-    ======================================== */
-
-    .hero-image {
-      margin-top: 8px;
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: auto;
-      border-radius: 4px;
-    }
-
-
-    /* PROFESSIONAL IDENTIFIERS BELOW PHOTO */
-
-    .profile-identifiers {
-      margin: 24px auto 58px;
-
-      text-align: center;
-
-      color: var(--teal);
-      font-size: 13px;
-      font-weight: 700;
-
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-
-    /* ========================================
-       GENERAL SECTION ELEMENTS
-    ======================================== */
-
-    .section-title {
-      margin: 0 0 30px;
-
-      color: var(--teal-dark);
-
-      font-size: clamp(36px, 5vw, 58px);
-      line-height: 1.08;
-
-      letter-spacing: -0.04em;
-      font-weight: 700;
-    }
-
-    .section-label {
-      margin: 0 0 10px;
-
-      color: var(--teal);
-
-      font-size: 13px;
-      font-weight: 700;
-
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-
-    /* ========================================
-       ABOUT
-    ======================================== */
-
-    .about-section {
-      padding: 0 0 90px;
-    }
-
-    .about-copy {
-      max-width: 920px;
-    }
-
-    .about-copy p {
-      margin: 0 0 24px;
-
-      color: var(--text);
-
-      font-size: 18px;
-      line-height: 1.8;
-    }
-
-    .about-copy p:first-of-type {
-      color: #294243;
-      font-size: clamp(19px, 2.1vw, 22px);
-      line-height: 1.7;
-    }
-
-
-    /* ========================================
-       GLIMPSE OF THE JOURNEY
-    ======================================== */
-
-    .journey-wrap {
-      max-width: 920px;
-      margin-top: 54px;
-    }
-
-    details.journey {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    details.journey summary {
-      position: relative;
-
-      padding: 25px 52px 25px 0;
-
-      cursor: pointer;
-      list-style: none;
-
-      color: var(--teal-dark);
-
-      font-size: 20px;
-      font-weight: 700;
-    }
-
-    details.journey summary::-webkit-details-marker {
-      display: none;
-    }
-
-    details.journey summary::after {
-      content: "+";
-
-      position: absolute;
-      right: 0;
-      top: 50%;
-
-      width: 34px;
-      height: 34px;
-
-      transform: translateY(-50%);
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border: 1px solid var(--teal);
-      border-radius: 50%;
-
-      color: var(--teal-dark);
-
-      font-size: 23px;
-      font-weight: 400;
-
-      transition: transform 0.2s ease;
-    }
-
-    details.journey[open] summary::after {
-      content: "−";
-    }
-
-    .journey-content {
-      padding: 5px 0 42px;
-    }
-
-    .journey-item {
-      display: grid;
-      grid-template-columns: 190px 1fr;
-      gap: 42px;
-
-      padding: 31px 0;
-
-      border-bottom: 1px solid #e7eeee;
-    }
-
-    .journey-item:last-of-type {
-      border-bottom: 0;
-    }
-
-    .journey-item h3 {
-      margin: 0;
-
-      color: var(--teal-dark);
-
-      font-size: 18px;
-      line-height: 1.4;
-      font-weight: 700;
-    }
-
-    .journey-item p {
-      margin: 0;
-
-      color: var(--text-soft);
-
-      font-size: 17px;
-      line-height: 1.75;
-    }
-
-    .journey-close {
-      margin: 32px 0 0;
-      padding: 28px 0 0;
-
-      border-top: 3px solid var(--teal-light);
-
-      color: var(--teal-dark);
-
-      font-size: 18px;
-      font-weight: 650;
-      line-height: 1.7;
-    }
-
-
-    /* ========================================
-       EXPERIENCE
-    ======================================== */
-
-    .experience-section {
-      padding: 90px 0 96px;
-      background: var(--teal-pale);
-    }
-
-    .experience-header {
-      max-width: 900px;
-      margin-bottom: 60px;
-    }
-
-    .experience-header .section-title {
-      max-width: 900px;
-    }
-
-    .experience-intro {
-      margin: 0;
-
-      color: var(--text-soft);
-
-      font-size: clamp(18px, 2vw, 20px);
-      line-height: 1.8;
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-
-      column-gap: 64px;
-      row-gap: 0;
-    }
-
-    .experience-item {
-      padding: 34px 0 40px;
-      border-top: 1px solid #cfe2e2;
-    }
-
-    .experience-number {
-      margin: 0 0 12px;
-
-      color: var(--teal);
-
-      font-size: 12px;
-      font-weight: 700;
-
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-
-    .experience-item h3 {
-      margin: 0 0 17px;
-
-      color: var(--teal-dark);
-
-      font-size: 23px;
-      line-height: 1.3;
-    }
-
-    .experience-item p {
-      margin: 0 0 17px;
-
-      color: var(--text-soft);
-
-      font-size: 16.5px;
-      line-height: 1.75;
-    }
-
-    .experience-item ul {
-      margin: 20px 0 0;
-      padding: 0;
-
-      list-style: none;
-    }
-
-    .experience-item li {
-      position: relative;
-
-      margin: 9px 0;
-      padding-left: 18px;
-
-      color: var(--text-soft);
-
-      font-size: 16px;
-      line-height: 1.65;
-    }
-
-    .experience-item li::before {
-      content: "";
-
-      position: absolute;
-
-      left: 0;
-      top: 0.72em;
-
-      width: 6px;
-      height: 6px;
-
-      background: var(--teal);
-      border-radius: 50%;
-    }
-
-
-    /* ========================================
-       EDUCATION & CREDENTIALS
-    ======================================== */
-
-    .credentials-section {
-      padding: 94px 0;
-      background: #ffffff;
-    }
-
-    .credentials-layout {
-      display: grid;
-
-      grid-template-columns: 0.85fr 1.4fr;
-
-      gap: 85px;
-
-      align-items: start;
-    }
-
-    .credentials-heading h2 {
-      margin: 0;
-
-      color: var(--teal-dark);
-
-      font-size: clamp(34px, 5vw, 48px);
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: var(--font-heading);
+      color: var(--ink);
       line-height: 1.12;
+      margin-top: 0;
+    }
 
+    p {
+      margin-top: 0;
+    }
+
+    .page-wrap {
+      width: min(1200px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--brand-primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      line-height: 1.45;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-heading {
+      max-width: 780px;
+      margin-bottom: 46px;
+    }
+
+    .section-heading.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      margin-bottom: 16px;
+      font-weight: 600;
       letter-spacing: -0.025em;
     }
 
-    .credentials-list {
-      border-top: 1px solid var(--border);
+    .section-heading p {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 700px;
     }
 
-    .credential {
-      padding: 24px 0;
-
-      border-bottom: 1px solid var(--border);
-    }
-
-    .credential-category {
-      margin: 0 0 6px;
-
-      color: var(--teal);
-
-      font-size: 11px;
-      font-weight: 700;
-
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-    }
-
-    .credential h3 {
-      margin: 0;
-
-      color: var(--teal-dark);
-
-      font-size: 18px;
-      line-height: 1.5;
-    }
-
-    .credential p {
-      margin: 7px 0 0;
-
-      color: var(--text-soft);
-
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-
-    /* ========================================
-       CONNECT
-    ======================================== */
-
-    .connect-section {
-      padding: 100px 0;
-
-      background: var(--teal-dark);
-      color: #ffffff;
-
-      text-align: center;
-    }
-
-    .connect-inner {
-      max-width: 790px;
-      margin: 0 auto;
-    }
-
-    .connect-section .section-label {
-      color: #9adddf;
-    }
-
-    .connect-section h2 {
-      margin: 0 0 22px;
-
-      color: #ffffff;
-
-      font-size: clamp(36px, 5vw, 56px);
-      line-height: 1.08;
-
-      letter-spacing: -0.03em;
-    }
-
-    .connect-section p {
-      max-width: 690px;
-
-      margin: 0 auto 34px;
-
-      color: #d9eeee;
-
-      font-size: 18px;
-      line-height: 1.75;
-    }
-
-
-    /* BUTTONS */
-
-    .cta-buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-
-      gap: 14px;
-
-      margin-bottom: 38px;
+    .section-heading.center p {
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-
-      min-width: 168px;
-
-      padding: 14px 28px;
-
+      min-height: 50px;
+      padding: 13px 24px;
       border-radius: 999px;
-
-      text-decoration: none;
-
-      font-size: 15px;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
       font-weight: 700;
-
-      transition:
-        transform 0.15s ease,
-        background 0.15s ease;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
     }
 
     .btn:hover {
@@ -629,157 +149,150 @@
     }
 
     .btn-primary {
-      background: #ffffff;
-      color: var(--teal-dark);
+      background: var(--brand-primary);
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(5, 99, 103, 0.18);
     }
 
     .btn-primary:hover {
-      background: #eafafa;
+      background: var(--brand-deep);
+      box-shadow: 0 16px 34px rgba(5, 99, 103, 0.24);
     }
 
-    .btn-secondary {
+    .btn-outline {
       background: transparent;
-
-      border: 1px solid rgba(255,255,255,0.6);
-
-      color: #ffffff;
+      border-color: rgba(5, 99, 103, 0.28);
+      color: var(--brand-primary);
     }
 
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.1);
+    .btn-outline:hover {
+      border-color: var(--brand-primary);
+      background: var(--brand-soft);
     }
 
+    .btn-gold {
+      background: var(--gold);
+      color: #173234;
+      box-shadow: 0 12px 26px rgba(201, 168, 106, 0.2);
+    }
 
-    /* SOCIAL LINKS */
+    .btn-gold:hover {
+      background: #b99450;
+      color: #fff;
+    }
 
-    .social-links {
+    .button-row {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
-
-      gap: 10px 24px;
-
-      margin-top: 5px;
+      gap: 12px;
+      align-items: center;
     }
 
-    .social-links a {
-      color: #ffffff;
-
-      text-decoration: none;
-
-      font-size: 15px;
-
-      border-bottom: 1px solid transparent;
+    /* ================= HEADER / NAV ================= */
+    .site-header {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.97);
+      border-bottom: 1px solid rgba(223, 231, 230, 0.85);
+      position: relative;
+      z-index: 20;
     }
 
-    .social-links a:hover {
-      border-bottom-color: #ffffff;
-    }
-
-    .social-links a:not(:last-child)::after {
-      content: "·";
-
-      margin-left: 24px;
-
-      color: #78c7c9;
-    }
-
-
-    /* ========================================
-       FOOTER
-    ======================================== */
-
-    .site-footer {
-      padding: 42px 20px 32px;
-
-      background: #ffffff;
-
-      text-align: center;
-    }
-
-    .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .copyright {
-      margin: 0 0 20px;
-
-      color: #707b7b;
-
-      font-size: 14px;
-    }
-
-    .footer-links {
+    .site-header .page-wrap {
+      padding-top: 20px;
+      padding-bottom: 14px;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-
-      gap: 16px 28px;
-    }
-
-    .footer-links a {
-      color: var(--teal);
-
-      text-decoration: none;
-
-      font-size: 14px;
-    }
-
-    .footer-links a:hover {
-      color: var(--teal-dark);
-      text-decoration: underline;
-    }
-
-
-
-    /* ========================================
-       WORK WITH ME SUBMENU
-    ======================================== */
-
-    .main-nav .nav-dropdown {
+      flex-direction: column;
+      align-items: center;
       position: relative;
     }
 
-    .main-nav .nav-parent {
+    .site-header img {
+      width: 220px;
+      height: auto;
+      margin-bottom: 12px;
+    }
+
+    .site-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .site-nav a {
+      text-decoration: none;
+      color: #2f2f2f;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .site-nav a:hover,
+    .site-nav a.active {
+      color: var(--brand-primary);
+      font-weight: 600;
+    }
+
+    .nav-toggle {
+      display: none;
+      position: absolute;
+      right: 16px;
+      top: 20px;
+      width: 44px;
+      height: 44px;
+      border: none;
+      background: transparent;
+      font-size: 28px;
+      color: var(--brand-primary);
+      cursor: pointer;
+    }
+
+
+    /* ================= WORK WITH ME SUBMENU ================= */
+    .site-nav .nav-dropdown {
+      position: relative;
+    }
+
+    .site-nav .nav-parent {
       display: inline-flex;
       align-items: center;
       gap: 6px;
     }
 
-    .main-nav .nav-parent::after {
+    .site-nav .nav-parent::after {
       content: "⌄";
       position: relative;
       top: -1px;
-      color: var(--teal);
+      color: var(--brand-secondary);
       font-size: 0.85em;
     }
 
-    .main-nav .nav-submenu {
+    .site-nav .nav-submenu {
       position: absolute;
       top: calc(100% + 11px);
       left: 50%;
       z-index: 1200;
-
       min-width: 235px;
       margin: 0;
       padding: 9px;
-
       display: none;
       flex-direction: column;
       gap: 3px;
-
       transform: translateX(-50%);
-
       background: rgba(255,255,255,.985);
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       border-radius: 15px;
       box-shadow: 0 18px 44px rgba(5,99,103,.14);
-
       text-align: left;
+      letter-spacing: normal;
+      text-transform: none;
     }
 
-    .main-nav .nav-submenu::before {
+    .site-nav .nav-submenu::before {
       content: "";
       position: absolute;
       left: 0;
@@ -788,17 +301,15 @@
       height: 13px;
     }
 
-    .main-nav .nav-submenu li {
+    .site-nav .nav-submenu li {
       width: 100%;
     }
 
-    .main-nav .nav-submenu a {
+    .site-nav .nav-submenu a {
       display: block;
       width: 100%;
       padding: 10px 13px;
-
       border-radius: 10px;
-
       color: #343434;
       font-size: 13px;
       font-weight: 500;
@@ -808,985 +319,2093 @@
       white-space: nowrap;
     }
 
-    .main-nav .nav-submenu a:hover,
-    .main-nav .nav-submenu a:focus-visible {
-      background: var(--teal-pale);
-      color: var(--teal-dark);
+    .site-nav .nav-submenu a:hover,
+    .site-nav .nav-submenu a:focus-visible,
+    .site-nav .nav-submenu a.active {
+      background: var(--brand-soft);
+      color: var(--brand-primary);
       outline: none;
     }
 
-    .main-nav .nav-dropdown:hover > .nav-submenu,
-    .main-nav .nav-dropdown:focus-within > .nav-submenu {
+    .site-nav .nav-dropdown:hover > .nav-submenu,
+    .site-nav .nav-dropdown:focus-within > .nav-submenu {
       display: flex;
     }
 
-    @media (max-width: 600px) {
-      .main-nav .nav-parent::after {
+    @media (max-width: 768px) {
+      .site-nav .nav-parent::after {
         display: none;
       }
 
-      .main-nav .nav-submenu {
+      .site-nav .nav-submenu {
         position: static;
         display: flex;
-
         min-width: 0;
-        width: 100%;
-
-        margin: 4px 0 2px 14px;
-        padding: 3px 0 3px 13px;
-
+        width: min(100%, 330px);
+        margin: 2px auto 0;
+        padding: 4px 0 4px 18px;
         transform: none;
-
         border: 0;
-        border-left: 2px solid #e8f6f6;
+        border-left: 2px solid var(--brand-soft);
         border-radius: 0;
         background: transparent;
         box-shadow: none;
+        text-align: left;
       }
 
-      .main-nav .nav-submenu a {
-        padding: 7px 0;
+      .site-nav .nav-submenu a {
+        padding: 7px 10px;
         font-size: 12px;
         white-space: normal;
       }
     }
 
-    /* ========================================
-       RESPONSIVE
-    ======================================== */
+    /* ================= HERO ================= */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 86px 0 72px;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(49,159,162,0.09), transparent 30%),
+        radial-gradient(circle at 94% 14%, rgba(201,168,106,0.12), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #fbfdfc 100%);
+    }
 
-    @media (max-width: 800px) {
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -180px;
+      top: 110px;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(201, 168, 106, 0.2);
+      border-radius: 50%;
+      pointer-events: none;
+    }
 
-      .experience-grid {
-        grid-template-columns: 1fr;
-      }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
 
-      .credentials-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
+    .hero-video-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 12px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(5, 99, 103, 0.08);
+    }
 
-      .journey-item {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
+    .hero-video-shell {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border-radius: 20px;
+      background: var(--brand-deep);
+    }
 
-      .page-intro {
-        padding-top: 40px;
-      }
+    .hero-video-shell video,
+    .hero-video-shell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      background: var(--brand-deep);
+    }
 
-      .profile-identifiers {
-        margin-bottom: 48px;
-      }
+    .toolkit-offer {
+      margin-top: 14px;
+      padding: 18px 18px 8px;
+      border-top: 1px solid var(--line);
+    }
 
-      .experience-section,
-      .credentials-section {
-        padding-top: 70px;
-        padding-bottom: 70px;
-      }
+    .toolkit-offer strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 5px;
+    }
 
-      .connect-section {
-        padding-top: 80px;
-        padding-bottom: 80px;
-      }
+    .toolkit-offer p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
 
+    .hero-copy h1 {
+      margin-bottom: 22px;
+      font-size: clamp(3rem, 6vw, 5.9rem);
+      font-weight: 600;
+      letter-spacing: -0.045em;
+    }
+
+    .hero-copy h1 span {
+      color: var(--brand-primary);
+    }
+
+    .hero-lead {
+      font-size: clamp(1.1rem, 1.6vw, 1.32rem);
+      color: #405455;
+      max-width: 820px;
+      margin-bottom: 22px;
+    }
+
+    .hero-positioning {
+      margin: 22px 0 28px;
+      padding: 20px 22px;
+      border-left: 3px solid var(--gold);
+      background: rgba(247, 244, 239, 0.72);
+      color: #334849;
+      font-size: 0.98rem;
+    }
+
+    .hero-tags {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 26px 0 30px;
+      max-width: 760px;
+    }
+
+    .hero-tag {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(5, 99, 103, 0.15);
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--brand-deep);
+      font-size: 0.78rem;
+      font-weight: 600;
+      line-height: 1.25;
+      text-align: center;
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .hero-tag:hover {
+      transform: translateY(-1px);
+      background: var(--brand-soft);
+      border-color: rgba(5, 99, 103, 0.32);
     }
 
 
-    @media (max-width: 600px) {
+    .airbnb-why-box {
+      margin-top: 16px;
+      padding: 18px 20px;
+      background: var(--cream);
+      border: 1px solid rgba(201, 168, 106, 0.42);
+      border-radius: 16px;
+    }
 
-      .container {
-        width: min(100% - 30px, var(--max-width));
+    .airbnb-why-box strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--ink);
+      font-family: var(--font-heading);
+      font-size: 1.18rem;
+    }
+
+    .airbnb-why-box p {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .airbnb-why-box a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--brand-primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .airbnb-why-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* ================= CREDIBILITY STRIP ================= */
+    .credibility-strip {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .credibility-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .credibility-item {
+      padding: 24px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .credibility-item:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 24%;
+      bottom: 24%;
+      width: 1px;
+      background: var(--line);
+    }
+
+    .credibility-item strong {
+      display: block;
+      color: var(--ink);
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    .credibility-item span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+
+    /* ================= TRUSTED / COLLABORATION ================= */
+    .trusted-section {
+      padding: 62px 0;
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .trusted-heading {
+      max-width: 760px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .trusted-heading .trusted-kicker {
+      margin: 0 0 10px;
+      color: var(--brand-secondary);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .trusted-heading h2 {
+      margin: 0;
+      color: var(--brand-deep);
+      font-size: clamp(2rem, 3.7vw, 3.35rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .trusted-organisations {
+      max-width: 940px;
+      margin: 0 auto;
+      display: grid;
+      gap: 22px;
+    }
+
+    .trusted-organisation {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 26px;
+      align-items: center;
+      padding: 22px 26px;
+      background:
+        linear-gradient(135deg, rgba(232,246,246,0.46), rgba(255,255,255,0.95));
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .trusted-logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 92px;
+      padding: 14px;
+      background: #ffffff;
+      border: 1px solid rgba(5,99,103,0.08);
+      border-radius: 14px;
+    }
+
+    .trusted-logo {
+      width: 100%;
+      max-width: 155px;
+      max-height: 70px;
+      object-fit: contain;
+    }
+
+    .trusted-organisation-info h3 {
+      margin: 0 0 8px;
+      color: var(--ink);
+      font-size: clamp(1.35rem, 2.1vw, 1.72rem);
+      font-weight: 600;
+    }
+
+    .trusted-engagement {
+      margin: 0 0 5px;
+      color: var(--brand-primary);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .trusted-location {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    /* ================= SERVICES ================= */
+    .services {
+      padding: 105px 0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      min-height: 430px;
+      padding: 34px 30px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: rgba(5, 99, 103, 0.18);
+    }
+
+    .service-number {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 1px solid var(--gold-soft);
+      color: #8b6a2d;
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      margin-bottom: 28px;
+    }
+
+    .service-card h3 {
+      font-size: 1.75rem;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .service-card ul {
+      margin: 0 0 28px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .service-card li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 8px;
+      font-size: 1rem;
+      line-height: 1.55;
+      color: #425657;
+    }
+
+    .service-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.68em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .service-card .btn {
+      margin-top: auto;
+      align-self: flex-start;
+    }
+
+    .service-specialist-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin: 2px 0 20px;
+      color: var(--brand-primary);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .service-specialist-link:hover {
+      text-decoration: underline;
+    }
+
+    /* ================= FEATURED SDC ENGAGEMENT ================= */
+    .featured-engagement {
+      padding: 104px 0;
+      background: var(--cream);
+    }
+
+    .engagement-grid {
+      display: grid;
+      grid-template-columns: 0.78fr 1.22fr;
+      gap: 62px;
+      align-items: center;
+    }
+
+    .engagement-media {
+      position: relative;
+    }
+
+    .engagement-media img {
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .engagement-badge {
+      position: absolute;
+      right: -18px;
+      bottom: 28px;
+      width: 150px;
+      padding: 17px;
+      background: var(--brand-primary);
+      color: #fff;
+      border-radius: 18px;
+      box-shadow: 0 18px 42px rgba(5, 99, 103, 0.24);
+    }
+
+    .engagement-badge strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      margin-bottom: 2px;
+    }
+
+    .engagement-badge span {
+      font-size: 0.75rem;
+      opacity: 0.88;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .engagement-copy h2 {
+      font-size: clamp(2.4rem, 4vw, 4.2rem);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .engagement-copy .lead {
+      font-size: 1.1rem;
+      color: #3f5455;
+      margin-bottom: 25px;
+    }
+
+    .outcome-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin: 30px 0 32px;
+    }
+
+    .outcome-card {
+      padding: 18px 18px;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid rgba(5, 99, 103, 0.08);
+    }
+
+    .outcome-card strong {
+      display: block;
+      color: var(--brand-primary);
+      margin-bottom: 4px;
+      font-size: 0.92rem;
+    }
+
+    .outcome-card span {
+      display: block;
+      color: #56696a;
+      font-size: 0.94rem;
+    }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .mini-quote {
+      margin: 0;
+      padding: 17px 18px;
+      background: rgba(255, 255, 255, 0.7);
+      border-left: 2px solid var(--gold);
+      color: #435556;
+      font-size: 0.9rem;
+      font-style: italic;
+      border-radius: 0 10px 10px 0;
+    }
+
+    /* ================= PRIVATE CONSULTANCY ================= */
+    .private-consulting {
+      padding: 110px 0;
+      background: #fff;
+    }
+
+    .private-grid {
+      display: grid;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: 68px;
+      align-items: center;
+    }
+
+    .private-image-wrap {
+      position: relative;
+    }
+
+    .private-image-wrap img {
+      width: 100%;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .private-caption {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 22px;
+      padding: 18px 20px;
+      border-radius: 16px;
+      background: rgba(8, 63, 66, 0.93);
+      color: #fff;
+      backdrop-filter: blur(8px);
+    }
+
+    .private-caption strong {
+      font-family: var(--font-heading);
+      font-size: 1.28rem;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .private-copy h2 {
+      font-size: clamp(2.4rem, 4vw, 4.25rem);
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .private-list {
+      display: grid;
+      gap: 12px;
+      margin: 28px 0 32px;
+    }
+
+    .private-list div {
+      padding: 15px 17px;
+      border-radius: 12px;
+      background: #fbfcfc;
+      border: 1px solid var(--line);
+    }
+
+    .private-list strong {
+      color: var(--ink);
+      display: block;
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+      line-height: 1.35;
+    }
+
+    .private-list span {
+      color: var(--muted);
+      font-size: 1.03rem;
+      line-height: 1.62;
+    }
+
+    #parent-support {
+      background: var(--brand-soft);
+      border-color: rgba(5, 99, 103, 0.2);
+    }
+/* ================= TESTIMONIALS ================= */
+    .proof {
+      padding: 110px 0;
+      background: linear-gradient(180deg, #f7fbfb 0%, #ffffff 100%);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .review-text-card {
+      padding: 34px;
+      border-radius: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .review-stars {
+      letter-spacing: 0.2em;
+      color: #b8842c;
+      font-size: 1rem;
+      margin-top: 22px;
+    }
+
+    .review-text-card blockquote {
+      margin: 0 0 18px;
+      padding: 0;
+      color: var(--ink);
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      line-height: 1.45;
+      flex-grow: 1;
+    }
+
+    .review-text-card cite {
+      color: var(--muted);
+      font-style: normal;
+      font-size: 0.9rem;
+    }
+
+    /* ================= PEOPLE / BURNOUT INTEGRATION ================= */
+    .people-performance {
+      padding: 100px 0;
+      background: var(--brand-deep);
+      color: rgba(255,255,255,0.86);
+    }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .people-performance .eyebrow {
+      color: #9ed6d8;
+    }
+
+    .people-performance h2 {
+      color: #fff;
+      font-size: clamp(2.4rem, 4vw, 4.2rem);
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .people-performance p {
+      color: rgba(255,255,255,0.78);
+    }
+
+    .people-points {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .people-point {
+      padding: 22px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.13);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .people-point strong {
+      display: block;
+      color: #fff;
+      font-family: var(--font-heading);
+      font-size: 1.16rem;
+      margin-bottom: 6px;
+    }
+
+    .people-point span {
+      color: rgba(255,255,255,0.68);
+      font-size: 0.96rem;
+      line-height: 1.55;
+    }
+
+    /* ================= SPEAKING ================= */
+    .speaking-section {
+      padding: 110px 0;
+      background: #fff;
+    }
+
+    .speaking-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .speaking-copy h2 {
+      font-size: clamp(2.4rem, 4vw, 4.2rem);
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .speaking-copy .statement {
+      color: var(--brand-primary);
+      font-size: 1.08rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .speaking-media {
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #fff;
+    }
+
+    .speaking-media img {
+      width: 100%;
+    }
+
+    .speaking-media div {
+      padding: 18px 20px;
+    }
+
+    .speaking-media strong {
+      color: var(--brand-primary);
+    }
+
+
+    /* ================= BRAND & CREATIVE COLLABORATIONS ================= */
+    .brand-collab-section {
+      padding: 64px 0;
+      background: var(--brand-deep);
+      color: rgba(255,255,255,0.82);
+      border: none;
+    }
+    .brand-collab-box {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+      gap: 48px;
+      align-items: center;
+      padding: 0;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    .brand-collab-copy .eyebrow {
+      color: #9ed6d8;
+    }
+    .brand-collab-copy .eyebrow::before {
+      background: var(--gold);
+    }
+    .brand-collab-copy h2 {
+      color: #fff;
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .brand-collab-copy p {
+      max-width: 700px;
+      margin-bottom: 0;
+      color: rgba(255,255,255,0.72);
+      font-size: 1rem;
+    }
+    .brand-collab-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+    .brand-collab-links .btn {
+      width: auto;
+      min-height: 46px;
+      padding: 11px 20px;
+      font-size: 0.86rem;
+      text-align: center;
+    }
+    .brand-collab-links .btn-primary {
+      background: var(--gold);
+      color: var(--brand-deep);
+      box-shadow: none;
+    }
+    .brand-collab-links .btn-primary:hover {
+      background: #b99450;
+      color: #fff;
+    }
+    .brand-collab-links .btn-outline {
+      color: #fff;
+      border-color: rgba(255,255,255,0.42);
+    }
+    .brand-collab-links .btn-outline:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: #fff;
+    }
+
+    /* ================= FRAMEWORK ================= */
+    .framework-section {
+      padding: 82px 0;
+      background: #fff;
+    }
+
+    .framework-box {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 42px;
+      align-items: center;
+      padding: 12px 0 12px 32px;
+      border: none;
+      border-left: 4px solid var(--gold);
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .framework-box h2 {
+      font-size: clamp(2.15rem, 3.4vw, 3.35rem);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .framework-box p {
+      max-width: 780px;
+      margin-bottom: 0;
+      color: var(--text);
+      font-size: 1.03rem;
+      line-height: 1.75;
+    }
+
+    /* ================= FINAL CTA ================= */
+    .cta-section {
+      padding: 110px 0;
+      background:
+        linear-gradient(rgba(5, 99, 103, 0.93), rgba(5, 99, 103, 0.93)),
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), transparent 28%);
+      color: #fff;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      color: #fff;
+      font-size: clamp(2.5rem, 5vw, 4.8rem);
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .cta-section p {
+      max-width: 760px;
+      margin: 0 auto 30px;
+      color: rgba(255,255,255,0.82);
+      font-size: 1.08rem;
+    }
+
+    .cta-section .button-row {
+      justify-content: center;
+    }
+
+    .cta-section .btn-outline {
+      color: #fff;
+      border-color: rgba(255,255,255,0.38);
+    }
+
+    .cta-section .btn-outline:hover {
+      background: rgba(255,255,255,0.09);
+      border-color: #fff;
+    }
+
+    /* ================= FOOTER ================= */
+    .site-footer {
+      width: 100%;
+      background-color: #ffffff;
+      border-top: 1px solid #eeeeee;
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin: 1rem 0 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .site-footer p {
+      margin: 0 0 1.4rem;
+      font-size: 0.95rem;
+      color: #666666;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 1rem;
+      color: var(--brand-secondary);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--brand-primary);
+      text-decoration: underline;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 1020px) {
+      .hero-grid,
+      .engagement-grid,
+      .private-grid,
+      .people-grid,
+      .speaking-grid,
+      .brand-collab-box {
+        grid-template-columns: 1fr;
       }
 
-      .logo img {
-        width: 190px;
+      .brand-collab-links {
+        justify-content: flex-start;
       }
 
-      .main-nav ul {
-        gap: 14px 20px;
+      .hero-grid {
+        gap: 44px;
       }
 
-      .main-nav a {
-        font-size: 11px;
+      .hero-copy {
+        order: -1;
       }
 
-      .page-intro {
-        padding: 36px 15px 26px;
+      .services-grid {
+        grid-template-columns: 1fr;
       }
 
-      .profile-identifiers {
-        margin-top: 20px;
-
-        font-size: 11px;
-        letter-spacing: 0.12em;
+      .proof-grid {
+        grid-template-columns: 1fr;
       }
 
-      .about-copy p {
-        font-size: 17px;
+      .service-card {
+        min-height: 0;
       }
 
-      .cta-buttons {
-        flex-direction: column;
+      .credibility-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .btn {
+      .credibility-item:nth-child(2)::after {
+        display: none;
+      }
+
+      .engagement-media {
+        max-width: 620px;
+      }
+
+      .private-image-wrap {
+        max-width: 700px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-tags {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+      }
+
+      .hero-tag {
+        min-height: 42px;
+        padding: 9px 10px;
+        font-size: 0.74rem;
+      }
+
+      .page-wrap {
+        width: min(100% - 28px, 1200px);
+      }
+
+      .site-header .page-wrap {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .trusted-section {
+        padding: 58px 0;
+      }
+
+      .trusted-organisation {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 26px 22px;
+        text-align: center;
+      }
+
+      .trusted-logo-wrap {
+        width: min(260px, 100%);
+        margin: 0 auto;
+        min-height: 105px;
+      }
+
+      .trusted-organisation-info {
+        text-align: center;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .site-nav {
+        display: none;
         width: 100%;
       }
 
-      .social-links {
+      .site-nav.open {
+        display: block;
+      }
+
+      .site-nav ul {
         flex-direction: column;
+        gap: 16px;
+        padding: 10px 0 6px;
+        text-align: center;
+      }
+
+      .hero {
+        padding: 62px 0 54px;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.65rem, 12vw, 4.5rem);
+      }
+
+      .services,
+      .featured-engagement,
+      .private-consulting,
+      .proof,
+      .people-performance,
+      .speaking-section,
+      .brand-collab-section,
+      .cta-section {
+        padding-top: 76px;
+        padding-bottom: 76px;
+      }
+
+      .credibility-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .credibility-item {
+        padding: 20px 12px;
+      }
+
+      .credibility-item::after {
+        display: none;
+      }
+
+      .outcome-grid,
+      .quote-grid,
+      .proof-grid,
+      .people-points {
+        grid-template-columns: 1fr;
+      }
+
+      .engagement-badge {
+        position: static;
+        width: 100%;
+        margin-top: 12px;
+      }
+
+      .framework-box {
+        grid-template-columns: 1fr;
+        padding: 8px 0 8px 24px;
+      }
+
+      .framework-box .btn {
+        justify-self: start;
+      }
+
+      .private-caption {
+        position: static;
+        margin-top: 12px;
+        border-radius: 16px;
+      }
+
+      .review-text-card blockquote {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .brand-collab-box { padding: 0; }
+      .brand-collab-links { display: grid; grid-template-columns: 1fr; }
+      .brand-collab-links .btn { width: 100%; }
+
+      .hero-tags {
+        grid-template-columns: 1fr 1fr;
         gap: 8px;
+        margin: 22px 0 26px;
       }
 
-      .social-links a:not(:last-child)::after {
-        content: "";
-        margin: 0;
+      .hero-tag {
+        min-height: 40px;
+        padding: 8px 8px;
+        font-size: 0.76rem;
       }
 
+      .credibility-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .button-row {
+        align-items: stretch;
+      }
+
+      .button-row .btn {
+        width: 100%;
+      }
+
+      .hero-video-card {
+        padding: 8px;
+      }
+
+      .hero-video-shell {
+        max-width: 420px;
+        aspect-ratio: 9 / 16;
+      }
+
+      .toolkit-offer {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      .service-card,
+      .review-text-card {
+        padding: 26px 22px;
+      }
+    }
+  
+    /* ===== FINAL CLARITY PASS ===== */
+    .four-way-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .four-way-grid .service-card { min-height: 100%; }
+    .four-way-grid .service-card p, .four-way-grid .service-card li { font-size: 1rem; line-height: 1.65; }
+    .education-card { border-color: rgba(49,159,162,.35); background: linear-gradient(180deg,#fff 0%,#f7fbfb 100%); }
+    .selected-work-clean { padding-top: 82px; padding-bottom: 82px; }
+    .selected-work-intro { max-width: 760px; margin: 12px auto 0; color: var(--muted); }
+    .compact-trust { margin-top: 34px; }
+    .compact-trust .trusted-organisation { padding-top: 18px; padding-bottom: 18px; }
+    .selected-case { margin-top: 38px; display:grid; grid-template-columns:.72fr 1.28fr; gap:32px; align-items:center; padding:28px; border:1px solid var(--line); border-radius:24px; background:#fff; box-shadow:var(--shadow-soft); }
+    .selected-case-media img { width:100%; border-radius:18px; display:block; }
+    .selected-case-copy h3 { font-family:var(--font-heading); font-size:clamp(1.8rem,3vw,2.6rem); margin:6px 0 12px; color:var(--ink); }
+    .selected-case-copy p { color:var(--muted); }
+    .selected-case-copy blockquote { margin:0; padding:14px 16px; border-left:3px solid var(--brand-primary); background:#fbfcfc; border-radius:0 12px 12px 0; font-family:var(--font-heading); font-size:1.03rem; line-height:1.5; color:var(--ink); }
+    .selected-case-feedback { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:20px; }
+    @media (max-width: 700px) { .selected-case-feedback { grid-template-columns:1fr; } }
+    .parent-support-section { background:linear-gradient(180deg,#fff 0%,#f7fbfb 100%); }
+    .parent-list span { font-size:1.02rem; line-height:1.55; }
+    .parent-list strong { font-size:1.08rem; }
+    @media (max-width: 900px) { .four-way-grid, .selected-case { grid-template-columns:1fr; } }
+
+  
+    /* ================= HERO NAVIGATION — GOLD WAYFINDING ================= */
+    .hero-tags .hero-tag {
+      background: #f6ecd8;
+      border-color: #c9a86a;
+      color: #083f42;
+      font-weight: 700;
+      box-shadow: 0 5px 14px rgba(201, 168, 106, 0.10);
+    }
+
+    .hero-tags .hero-tag:hover,
+    .hero-tags .hero-tag:focus-visible {
+      background: #d8b875;
+      border-color: #b58d43;
+      color: #083f42;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(181, 141, 67, 0.18);
+    }
+
+  
+    /* Parent Support anchor landing */
+    #parent-support {
+      scroll-margin-top: 90px;
+    }
+
+
+    /* ================= FIND WHAT YOU NEED ================= */
+    .concierge-launcher {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 9998;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 13px 18px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--brand-primary);
+      color: #fff;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 14px 38px rgba(5,99,103,0.28);
+    }
+
+    .concierge-launcher:hover { background: var(--brand-deep); }
+
+    .concierge-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #2fe2dd;
+      box-shadow: 0 0 0 5px rgba(47,226,221,0.14);
+    }
+
+    .concierge-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      place-items: center;
+      padding: 20px;
+      background: rgba(2,32,33,.58);
+      backdrop-filter: blur(4px);
+    }
+
+    .concierge-overlay.open { display: grid; }
+
+    .concierge-panel {
+      position: relative;
+      width: min(100%, 660px);
+      max-height: min(88vh, 820px);
+      overflow-y: auto;
+      padding: clamp(28px, 5vw, 44px);
+      border-radius: 26px;
+      background: #fff;
+      box-shadow: 0 28px 80px rgba(0,0,0,.24);
+      text-align: left;
+    }
+
+    .concierge-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--brand-soft);
+      color: var(--brand-primary);
+      font-size: 26px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .concierge-kicker {
+      margin: 0 0 10px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .concierge-panel h2 {
+      margin: 0 38px 12px 0;
+      color: var(--brand-deep);
+      font-size: clamp(2rem, 5vw, 3.1rem);
+    }
+
+    .concierge-copy { margin-bottom: 24px; color: var(--muted); }
+    .concierge-options { display: grid; gap: 10px; margin-bottom: 8px; }
+
+    .concierge-option {
+      width: 100%;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      color: var(--brand-deep);
+      font: inherit;
+      font-weight: 700;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .concierge-option:hover,
+    .concierge-option:focus-visible {
+      background: var(--brand-soft);
+      border-color: rgba(5,99,103,.35);
+      outline: none;
+    }
+
+    .concierge-response {
+      display: none;
+      margin: 22px 0;
+      padding: 18px 20px;
+      border-left: 4px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      background: #fbf8f2;
+      color: #435657;
+    }
+    .concierge-response.show { display: block; }
+
+    .concierge-read-more {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--brand-primary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .concierge-read-more:hover { text-decoration: underline; }
+
+    .lead-form {
+      display: none;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+    .lead-form.show { display: block; }
+    .lead-form h3 { margin-bottom: 6px; color: var(--brand-primary); font-size: 1.55rem; }
+    .lead-form-note { margin-bottom: 18px; color: var(--muted); font-size: .94rem; }
+    .lead-field { margin-bottom: 13px; }
+    .lead-field label { display:block; margin-bottom:6px; color:var(--ink); font-size:.9rem; font-weight:700; }
+    .lead-field input,
+    .lead-field textarea { width:100%; padding:13px 14px; border:1px solid #ccdedd; border-radius:11px; background:#fff; color:var(--ink); font:inherit; }
+    .lead-field input:focus,
+    .lead-field textarea:focus { border-color:var(--brand-secondary); outline:3px solid rgba(49,159,162,.12); }
+    .lead-field textarea { min-height:104px; resize:vertical; }
+    .lead-submit { width:100%; min-height:52px; margin-top:4px; border:0; border-radius:999px; background:var(--brand-primary); color:#fff; font:inherit; font-weight:800; cursor:pointer; }
+    .lead-submit:hover { background:var(--brand-deep); }
+    .lead-privacy { margin:12px 0 0; color:#788687; font-size:.78rem; line-height:1.5; text-align:center; }
+
+    .lead-success {
+      display:none;
+      position:fixed;
+      right:22px;
+      bottom:90px;
+      z-index:10000;
+      max-width:360px;
+      padding:17px 20px;
+      border-radius:14px;
+      background:var(--brand-deep);
+      color:#fff;
+      box-shadow:0 18px 50px rgba(0,0,0,.2);
+    }
+    .lead-success.show { display:block; }
+
+    @media (max-width:760px) {
+      .concierge-launcher { right:14px; bottom:14px; max-width:calc(100vw - 28px); }
+      .concierge-panel { padding:32px 22px 26px; border-radius:20px; }
     }
 
   </style>
-
 </head>
-
-
 <body>
 
-
-  <!-- ========================================
-       HEADER
-  ======================================== -->
-
+  <!-- ================= SITE HEADER ================= -->
   <header class="site-header">
-
-    <div class="header-inner">
-
-      <a href="index.html" class="logo">
-
-        <img
-          src="MKT-logo-3.png"
-          alt="Marsha Kerr Talley - Live Inspired"
-        >
-
+    <div class="page-wrap">
+      <a href="index.html" aria-label="Marsha Kerr Talley home">
+        <img src="MKT-logo-3.png" alt="Marsha Kerr Talley – Live Inspired" />
       </a>
 
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
 
-      <nav
-        class="main-nav"
-        aria-label="Main navigation"
-      >
-
+      <nav class="site-nav" aria-label="Main navigation">
         <ul>
-
-          <li>
-            <a href="index.html">
-              Home
-            </a>
-          </li>
-
+          <li><a href="index.html">Home</a></li>
           <li class="nav-dropdown">
-            <a href="work-with-me.html" class="nav-parent">
-              Work With Me
-            </a>
-
+            <a href="work-with-me.html" class="nav-parent active">Work With Me</a>
             <ul class="nav-submenu" aria-label="Work With Me">
-              <li>
-                <a href="work-with-me.html">
-                  Overview
-                </a>
-              </li>
-
-              <li>
-                <a href="https://marshakerrtalley.com/special-education">
-                  Special Education
-                </a>
-              </li>
-
-              <li>
-                <a href="digital-creators-lab.html">
-                  Digital Creators Lab
-                </a>
-              </li>
-
-              <li>
-                <a href="airbnb-host-training.html">
-                  Airbnb Host Training
-                </a>
-              </li>
-
-              <li>
-                <a href="returning-to-jamaica.html">
-                  Returning to Jamaica
-                </a>
-              </li>
+              <li><a href="work-with-me.html">Overview</a></li>
+              <li><a href="https://marshakerrtalley.com/special-education">Special Education</a></li>
+              <li><a href="the-six-weeks-program">Six-Week Programme</a></li>
+              <li><a href="digital-creators-lab.html">Digital Creators Lab</a></li>
+              <li><a href="airbnb-host-training.html">Airbnb Host Training</a></li>
+              <li><a href="inspired-by-marsha.html">Inspired by Marsha</a></li>
+              <li><a href="returning-to-jamaica.html">Returning to Jamaica</a></li>
             </ul>
           </li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="podcast.html">Podcast</a></li>
+          <li><a href="reflections.html">Reflections</a></li>
+          <li><a href="contact.html">Contact</a></li>
 
-          <li>
-            <a href="books.html">
-              Books
-            </a>
-          </li>
-
-          <li>
-            <a href="podcast.html">
-              Podcast
-            </a>
-          </li>
-
-          <li>
-            <a href="reflections.html">
-              Reflections
-            </a>
-          </li>
-          <li>
-            <a href="contact.html">
-              Contact
-            </a>
-          </li>
-
-
-          <li>
-            <a href="https://marshakerrtalley.com/shop">
-              Shop
-            </a>
-          </li>
-
+          <li><a href="https://marshakerrtalley.com/shop">Shop</a></li>
         </ul>
-
       </nav>
-
     </div>
-
   </header>
-
-
 
   <main>
 
-
-    <!-- ========================================
-         PAGE INTRO
-    ======================================== -->
-
-    <section class="page-intro">
-
-      <h1>
-        About Marsha
-      </h1>
-
-      <p class="tagline">
-        Live Inspired | Turning Pain Into Possibility™
-      </p>
-
-    </section>
-
-
-
-    <!-- ========================================
-         HERO IMAGE
-    ======================================== -->
-
-    <div class="hero-image container">
-
-      <img
-        src="MKT-About-Banner.png"
-        alt="Marsha Kerr Talley"
-      >
-
-    </div>
-
-
-    <!-- PROFESSIONAL IDENTIFIERS -->
-
-    <div class="profile-identifiers">
-      EDUCATOR · AUTHOR · CONSULTANT
-    </div>
-
-
-
-    <!-- ========================================
-         ABOUT
-    ======================================== -->
-
-    <section
-      class="about-section container"
-      id="about"
-    >
-
-      <div class="about-copy">
-
-        <h2 class="section-title">
-          A life sculpted by education, possibility and creating another way.
-        </h2>
-
-
-        <p>
-          Born in Jamaica's capital, Kingston, I had my fair share of
-          experiences that would later prepare me to lead in places that
-          sometimes sought to limit me.
-        </p>
-
-
-        <p>
-          My journey has rarely followed a straight line. From education
-          to writing books, entrepreneurship to consultancy, I have found
-          ways to forge through hardship and, at times, create something
-          out of seemingly nothing.
-        </p>
-
-
-        <p>
-          Education has been the longest thread running through my
-          professional life. For more than two decades, I have worked
-          across the United States and United Kingdom as an educator,
-          teacher educator and leader, working with children, young people
-          and adults with diverse learning needs. Those experiences taught
-          me as much about people, systems and leadership as they did
-          about pedagogy.
-        </p>
-
-
-        <p>
-          Beyond the classroom, I became an author, entrepreneur, podcast
-          host, facilitator and consultant. Each chapter expanded how I
-          understood the relationship between people, their environments
-          and their ability to thrive.
-        </p>
-
-
-        <p>
-          Today, those experiences come together in my work with educators,
-          leaders and organisations. I bring the perspective of someone
-          who has worked inside complex systems, led through challenge,
-          built ideas from the ground up and continually found ways to
-          turn difficult experiences into possibilities.
-        </p>
-
-      </div>
-
-
-
-      <!-- ====================================
-           GLIMPSE OF THE JOURNEY
-      ==================================== -->
-
-      <div class="journey-wrap">
-
-        <details class="journey">
-
-          <summary>
-            Glimpse of the Journey
-          </summary>
-
-
-          <div class="journey-content">
-
-
-            <article class="journey-item">
-
-              <h3>
-                Early Years and Education
-              </h3>
-
-              <p>
-                Education became one of my greatest teachers. Teaching
-                students with diverse academic, behaviour and other needs
-                gave me a close-up view of what helps people flourish beyond
-                societal expectations and limitations. I also learned
-                firsthand what happens when systems make it unnecessarily
-                difficult for them to thrive.
-              </p>
-
-            </article>
-
-
-
-            <article class="journey-item">
-
-              <h3>
-                Finding Another Way
-              </h3>
-
-              <p>
-                Some of my most important professional thinking emerged
-                from difficult periods in my own life and career. They
-                forced me to question conventional ideas about resilience,
-                leadership and wellbeing and to think more deeply about
-                the environments we create for people.
-              </p>
-
-            </article>
-
-
-
-            <article class="journey-item">
-
-              <h3>
-                Building Silhouette's Café
-              </h3>
-
-              <p>
-                Entrepreneurship gave me another classroom. I founded
-                Silhouette's Café as a wellness brand centred on relaxation,
-                natural living and intentional care. Building something of
-                my own strengthened my understanding of vision, creativity,
-                risk and what it means to turn an idea into something
-                tangible.
-              </p>
-
-            </article>
-
-
-
-            <article class="journey-item">
-
-              <h3>
-                Becoming an Author
-              </h3>
-
-              <p>
-                Writing gave me a different way to teach.
-                <em>The Decision Is Just the Beginning</em> and
-                <em>Healing from Emotional Traumas</em> grew from
-                experiences and lessons I believed deserved to be shared
-                beyond a classroom or workshop.
-              </p>
-
-            </article>
-
-
-
-            <article class="journey-item">
-
-              <h3>
-                Expanding the Classroom
-              </h3>
-
-              <p>
-                Over time, my classroom became larger. Teacher development,
-                leadership, professional learning, speaking, podcasting and
-                consultancy allowed me to work with people and organisations
-                in new ways while remaining grounded in the principles that
-                have shaped my career.
-              </p>
-
-            </article>
-
-
-
-            <article class="journey-item">
-
-              <h3>
-                Returning to Jamaica
-              </h3>
-
-              <p>
-                Returning to the country where my story began represents
-                another chapter. I bring home more than two decades of
-                international education experience alongside everything I
-                have learned through leadership, entrepreneurship, writing
-                and life.
-              </p>
-
-            </article>
-
-
-            <p class="journey-close">
-              The thread connecting it all is simple: I believe people can
-              create possibilities even when circumstances suggest otherwise.
-            </p>
-
-
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="page-wrap">
+        <div class="hero-grid">
+
+          <div class="hero-video-card">
+            <div class="hero-video-shell">
+              <img src="marsha-strike-a-pose.jpg" alt="Marsha Kerr Talley">
+            </div>
           </div>
 
-        </details>
+          <div class="hero-copy">
+            <div class="eyebrow">Education &amp; Leadership Consultant • Trainer • Facilitator • Speaker</div>
+            <h1>I turn learning into <span>action.</span></h1>
 
-      </div>
+            <p class="hero-lead">
+              I help organisations, educators and families move from uncertainty to practical action through training, consultancy, special education support and speaking.
+            </p>
 
-    </section>
+            <div class="hero-positioning">
+              More than 20 years across education, leadership and adult learning shape how I work: understand the people, understand the environment, then build something useful.
+            </div>
 
+            <div class="hero-tags" aria-label="Page navigation">
+              <a class="hero-tag" href="#services">Services</a>
+              <a class="hero-tag" href="#parent-support">Parent Support</a>
+              <a class="hero-tag" href="#selected-work">Selected Work</a>
+              <a class="hero-tag" href="#feedback">Client Feedback</a>
+            </div>
 
-
-    <!-- ========================================
-         EXPERIENCE
-    ======================================== -->
-
-    <section
-      class="experience-section"
-      id="experience"
-    >
-
-      <div class="container">
-
-
-        <div class="experience-header">
-
-          <p class="section-label">
-            Experience
-          </p>
-
-
-          <h2 class="section-title">
-            More than two decades across education, leadership and professional learning.
-          </h2>
-
-
-          <p class="experience-intro">
-            My career extends across the United States, United Kingdom,
-            and Jamaica, from academia and professional learning to life
-            skills and personal development with one common thread:
-            improving how people learn, lead and function within the
-            environments around them.
-          </p>
+            <div class="button-row">
+              <a class="btn btn-primary" href="contact.html" target="_blank" rel="noopener">
+                Let’s Work Together
+              </a>
+              <a class="btn btn-outline" href="about.html">About &amp; Experience</a>
+            </div>
+          </div>
 
         </div>
+      </div>
+    </section>
 
+    <!-- ================= CREDIBILITY ================= -->
+    <section class="credibility-strip" aria-label="Professional positioning">
+      <div class="page-wrap">
+        <div class="credibility-grid">
+          <div class="credibility-item">
+            <strong>20+ Years</strong>
+            <span>International professional experience</span>
+          </div>
+          <div class="credibility-item">
+            <strong>USA • UK • Jamaica</strong>
+            <span>Cross-cultural perspective and delivery</span>
+          </div>
+          <div class="credibility-item">
+            <strong>Consultant • Facilitator</strong>
+            <span>Custom learning and strategic support</span>
+          </div>
+          <div class="credibility-item">
+            <strong>Author • Speaker</strong>
+            <span>Ideas translated into memorable experiences</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ================= FOUR CLEAR WAYS TO WORK TOGETHER ================= -->
+    <section class="services" id="services">
+      <div class="page-wrap">
+        <div class="section-heading center">
+          <div class="eyebrow">Ways to work with me</div>
+          <h2>Four clear ways I can help.</h2>
+          <p>You do not need to fit yourself into a programme. Start with what you need, and we will shape the right support around it.</p>
+        </div>
 
-        <div class="experience-grid">
-
-
-          <!-- EDUCATION -->
-
-          <article class="experience-item">
-
-            <p class="experience-number">
-              01
-            </p>
-
-            <h3>
-              Education & Leadership
-            </h3>
-
-            <p>
-              My career in education includes work across secondary,
-              further and adult education, Special Education, English
-              Language Arts and literacy, behaviour, curriculum development
-              and inclusive practice.
-            </p>
-
-            <p>
-              My experience includes classroom teaching, instructional
-              leadership, teacher development, mentoring and coaching,
-              programme development and supporting educators working
-              within complex learning environments.
-            </p>
-
-          </article>
-
-
-
-          <!-- PROFESSIONAL LEARNING -->
-
-          <article class="experience-item">
-
-            <p class="experience-number">
-              02
-            </p>
-
-            <h3>
-              Professional Learning & Facilitation
-            </h3>
-
-            <p>
-              I design and facilitate professional learning for educators,
-              leaders and organisations, turning complex ideas into
-              practical strategies people can apply in their own settings.
-            </p>
-
+        <div class="services-grid four-way-grid">
+          <article class="service-card">
+            <div class="service-number">01</div>
+            <h3>Training &amp; Development</h3>
+            <p>Practical, participatory learning for organisations, schools, agencies, universities, NGOs and community programmes.</p>
             <ul>
-
-              <li>
-                Educational and instructional leadership
-              </li>
-
-              <li>
-                Teacher development and professional learning
-              </li>
-
-              <li>
-                Special Education and inclusive practice
-              </li>
-
-              <li>
-                Behaviour and classroom ecology
-              </li>
-
-              <li>
-                Preventive wellbeing and burnout prevention
-              </li>
-
-              <li>
-                Trauma-informed and therapeutic approaches
-              </li>
-
-              <li>
-                Leadership development and organisational culture
-              </li>
-
-              <li>
-                Curriculum and programme development
-              </li>
-
-              <li>
-                Adult learning
-              </li>
-
-              <li>
-                AI, digital tools and entrepreneurship education
-              </li>
-
+              <li>Leadership, culture, behaviour and wellbeing</li>
+              <li>AI, digital skills and innovation</li>
+              <li>Entrepreneurship and professional development</li>
             </ul>
-
+            <a class="service-specialist-link" href="airbnb-host-training.html">Specialist training: Airbnb Host Training →</a>
+            <a class="btn btn-primary" href="contact.html" target="_blank" rel="noopener">Discuss Training</a>
           </article>
 
-
-
-          <!-- CONSULTANCY -->
-
-          <article class="experience-item">
-
-            <p class="experience-number">
-              03
-            </p>
-
-            <h3>
-              Consultancy
-            </h3>
-
-            <p>
-              Through my consultancy work, I support organisations in
-              examining the environments, practices and systems that
-              influence how people learn, lead and work.
-            </p>
-
-            <p>
-              My approach brings together educational leadership,
-              organisational culture, preventive wellbeing and practical
-              implementation rather than treating them as separate
-              concerns.
-            </p>
-
+          <article class="service-card education-card">
+            <div class="service-number">02</div>
+            <h3>Education &amp; Special Education</h3>
+            <p>Experienced support for the people navigating learning, behaviour, inclusion and special education.</p>
+            <ul>
+              <li>Educator and school support</li>
+              <li>Behaviour, engagement and learning environments</li>
+              <li>Private guidance for parents and caregivers</li>
+            </ul>
+            <a class="btn btn-primary" href="#parent-support">Explore Parent Support</a>
           </article>
 
-
-
-          <!-- ENTREPRENEURSHIP -->
-
-          <article class="experience-item">
-
-            <p class="experience-number">
-              04
-            </p>
-
-            <h3>
-              Entrepreneurship, Writing & Media
-            </h3>
-
-            <p>
-              My career extends beyond education into entrepreneurship,
-              writing, podcasting, radio and public speaking.
-            </p>
-
-            <p>
-              I am the founder of Silhouette's Café™, creator of
-              Turning Pain Into Possibility™, author of
-              <em>The Decision Is Just the Beginning</em> and
-              <em>Healing from Emotional Traumas</em>, and host of
-              <em>Candid Conversations with Marsha</em>.
-            </p>
-
-            <p>
-              These platforms have allowed me to communicate ideas,
-              facilitate conversations and reach audiences beyond
-              traditional education settings.
-            </p>
-
+          <article class="service-card">
+            <div class="service-number">03</div>
+            <h3>Consultancy &amp; Strategy</h3>
+            <p>Focused expertise when you need clarity, a second set of eyes or a practical route from an idea or challenge to action.</p>
+            <ul>
+              <li>Strategic problem-solving</li>
+              <li>Programme, offer and digital direction</li>
+              <li>One-to-one or small-team advisory support</li>
+            </ul>
+            <a class="btn btn-primary" href="contact.html" target="_blank" rel="noopener">Request Consultancy</a>
           </article>
 
-
+          <article class="service-card">
+            <div class="service-number">04</div>
+            <h3>Speaking &amp; Facilitation</h3>
+            <p>Thoughtful, engaging experiences for conferences, panels, professional learning, retreats and special events.</p>
+            <ul>
+              <li>Keynotes and featured talks</li>
+              <li>Panels and facilitated conversations</li>
+              <li>Interactive audience experiences</li>
+            </ul>
+            <a class="btn btn-primary" href="#speaking">Explore Speaking</a>
+          </article>
         </div>
+      </div>
+    </section>
 
+    <!-- ================= SELECTED WORK / TRUST ================= -->
+    <section class="trusted-section selected-work-clean" id="selected-work" aria-label="Selected work and experience">
+      <div class="page-wrap">
+        <div class="trusted-heading">
+          <p class="trusted-kicker">Selected Work &amp; Experience</p>
+          <h2>Experience across classrooms, organisations and communities.</h2>
+          <p class="selected-work-intro">My work has crossed the USA, UK and Jamaica—from education and adult learning to organisational training and community programmes.</p>
+        </div>
+        <div class="trusted-organisations compact-trust">
+          <article class="trusted-organisation"><div class="trusted-logo-wrap"><img src="sdc-logo.png" alt="Social Development Commission logo" class="trusted-logo"></div><div class="trusted-organisation-info"><h3>Social Development Commission</h3><p class="trusted-engagement">Youth Digital Creators Workshop</p><p class="trusted-location">St. Ann, Jamaica</p></div></article>
+          <article class="trusted-organisation"><div class="trusted-logo-wrap"><img src="ntu-logo.png" alt="Nottingham Trent University logo" class="trusted-logo"></div><div class="trusted-organisation-info"><h3>Nottingham Trent University</h3><p class="trusted-engagement">Speaking Engagement</p><p class="trusted-location">United Kingdom</p></div></article>
+          <article class="trusted-organisation"><div class="trusted-logo-wrap"><img src="chesterfield-college-logo.png" alt="Chesterfield College logo" class="trusted-logo"></div><div class="trusted-organisation-info"><h3>Chesterfield College</h3><p class="trusted-engagement">Adult Learning &amp; Course Delivery</p><p class="trusted-location">United Kingdom</p></div></article>
+          <article class="trusted-organisation"><div class="trusted-logo-wrap"><img src="macarthur-high-school-logo.png" alt="MacArthur High School logo" class="trusted-logo"></div><div class="trusted-organisation-info"><h3>MacArthur High School</h3><p class="trusted-engagement">Education, Leadership &amp; Facilitation</p><p class="trusted-location">Texas, USA</p></div></article>
+        </div>
+        <div class="selected-case">
+          <div class="selected-case-media"><img src="SDC-two-day-workshop.JPG" alt="Social Development Commission Youth Digital Creators Summer Workshop"></div>
+          <div class="selected-case-copy">
+            <div class="eyebrow">Featured Work</div>
+            <h3>Youth Digital Creators Summer Workshop</h3>
+            <p>A two-day hands-on programme for the Social Development Commission in St. Ann, where participants used AI, Canva, website creation and digital entrepreneurship tools to create, solve problems and explore practical opportunities.</p>
+            <div class="selected-case-feedback" aria-label="Learner feedback from the Youth Digital Creators Summer Workshop">
+              <blockquote>“Awesome. Teacher was engaging and fun.”</blockquote>
+              <blockquote>“I am really grateful for this experience learning about the different ways on using Canva, creating websites and to properly use AI.”</blockquote>
+              <blockquote>“It was enjoyable.”</blockquote>
+              <blockquote>“Very informative session. Learned a lot.”</blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PARENT SUPPORT ================= -->
+    <section class="private-consulting parent-support-section" id="parent-support">
+      <div class="page-wrap">
+        <div class="private-grid">
+          <div class="private-image-wrap">
+            <img src="16-EGL_5085.jpg" alt="Marsha Kerr Talley providing individual support">
+            <div class="private-caption"><strong>You know your child.</strong>I help you make sense of the system around them.</div>
+          </div>
+          <div class="private-copy">
+            <div class="eyebrow">For parents &amp; caregivers</div>
+            <h2>Special education can feel overwhelming. You do not have to figure out every next step alone.</h2>
+            <p>If you are trying to understand what your child needs, what the school is offering, what questions to ask or how to advocate more confidently, I offer private, practical guidance.</p>
+            <div class="private-list parent-list">
+              <div><strong>Understand What Is Happening</strong><span>Make sense of learning, behaviour, accommodations, services and the support being discussed.</span></div>
+              <div><strong>Prepare for School Conversations</strong><span>Clarify your concerns, organise your questions and go into meetings better prepared.</span></div>
+              <div><strong>Decide What Comes Next</strong><span>Work through your options and identify practical next steps for your child and family.</span></div>
+            </div>
+            <a class="btn btn-primary" href="contact.html" target="_blank" rel="noopener">Request a Parent Consultation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS ================= -->
+<section class="proof" id="feedback">
+  <div class="page-wrap">
+
+    <div class="section-heading center">
+      <div class="eyebrow">Client &amp; participant feedback</div>
+
+      <h2>Engaging is good. Useful is better.</h2>
+
+      <p>
+        I want people to leave a session with more than a positive impression.
+        They should leave knowing more, seeing new possibilities and feeling
+        able to do something with what they learned.
+      </p>
+    </div>
+
+
+    <div class="proof-grid">
+
+      <!-- Deirdre LaBassiere -->
+      <div class="review-text-card">
+        <blockquote>
+          “Marsha doesn’t just talk about emotional wellness, she embodies it.
+          She challenges you with love, listens with presence, and holds you
+          accountable with grace.”
+        </blockquote>
+
+        <cite>
+          Deirdre LaBassiere — Governance Strategist &amp; Keynote Speaker
+        </cite>
       </div>
 
+
+      <!-- Doris Walsh -->
+      <div class="review-text-card">
+        <blockquote>
+          “Working with Marsha was truly empowering and fun. I gained deeper
+          self-awareness, practical strategies and confidence.”
+        </blockquote>
+
+        <cite>
+          Doris Walsh — Leadership Coach
+        </cite>
+      </div>
+
+
+      <!-- Melissa Achogbuo -->
+      <div class="review-text-card">
+        <blockquote>
+          “Marsha Talley is an outstanding speaker. Her presentation was both
+          insightful and engaging.”
+        </blockquote>
+
+        <cite>
+          Melissa Achogbuo — Broadcast Journalist &amp; Presenter
+        </cite>
+      </div>
+
+
+      <!-- Clive Foster MBE -->
+      <div class="review-text-card">
+        <blockquote>
+          “Marsha delivered a compelling keynote presentation and inspired
+          the audience through insightful discussions.”
+        </blockquote>
+
+        <cite>
+          Clive Foster MBE — TEDx Speaker &amp; Commissioner
+        </cite>
+      </div>
+
+
+      <!-- Existing Airbnb feedback -->
+      <div class="review-text-card">
+        <blockquote>
+          “The Airbnb hosting meeting with Marsha was very informative and
+          useful about the dos and don’ts of hosting on Airbnb — only thing
+          it was too short.”
+        </blockquote>
+
+        <cite>
+          Anthony and Sandra — Airbnb Hosting Training
+        </cite>
+
+        <div class="review-stars" aria-label="Five-star review">
+          ★★★★★
+        </div>
+      </div>
+
+
+      <div class="review-text-card">
+        <blockquote>
+          “The training was really well done. Marsha was engaging, and I
+          learned a lot about how to improve my Airbnb.”
+        </blockquote>
+
+        <cite>
+          Participant feedback — Airbnb Hosting Training
+        </cite>
+
+        <div class="review-stars" aria-label="Five-star review">
+          ★★★★★
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</section>
+
+    <!-- ================= WELLBEING / PERFORMANCE ================= -->
+    <section class="people-performance" id="people-performance">
+      <div class="page-wrap">
+        <div class="people-grid">
+          <div>
+            <div class="eyebrow">People-centred performance</div>
+            <h2>High performance should not require people to break themselves.</h2>
+            <p>
+              Burnout prevention remains part of my work, with the bigger picture in mind: what helps people learn, contribute, perform and stay engaged over time?
+            </p>
+            <p>
+              I help organisations think about the workplace conditions that affect performance, including leadership style, culture, communication, workload and whether people feel supported.
+            </p>
+            <a class="btn btn-gold" href="contact.html" target="_blank" rel="noopener">Discuss Leadership &amp; Culture Support</a>
+          </div>
+
+          <div class="people-points">
+            <div class="people-point">
+              <strong>Leadership</strong>
+              <span>Helping leaders create clarity, trust and healthier conditions for performance.</span>
+            </div>
+            <div class="people-point">
+              <strong>Culture</strong>
+              <span>Looking beyond symptoms to the environment shaping behaviour and engagement.</span>
+            </div>
+            <div class="people-point">
+              <strong>Wellbeing</strong>
+              <span>Preventive support that strengthens people without lowering expectations.</span>
+            </div>
+            <div class="people-point">
+              <strong>Retention</strong>
+              <span>Creating conditions that make it more possible for good people to stay and thrive.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SPEAKING ================= -->
+    <section class="speaking-section" id="speaking">
+      <div class="page-wrap">
+        <div class="speaking-grid">
+          <div class="speaking-copy">
+            <div class="eyebrow">Speaking & facilitation</div>
+            <h2>Presence matters.</h2>
+            <p class="statement">I do not just speak at audiences. I create an experience in the room.</p>
+            <p>
+              Whether I am facilitating a workshop, leading a professional conversation or speaking from a stage, my work is relatable and shaped by real-world experience.
+            </p>
+            <p>
+              I want people to be fully engaged in the process instead of simply receiving information passively.
+            </p>
+            <div class="button-row">
+              <a class="btn btn-primary" href="speaking.html">View Speaking Details</a>
+              <a class="btn btn-outline" href="contact.html" target="_blank" rel="noopener">Discuss Your Event</a>
+            </div>
+          </div>
+
+          <div class="speaking-media">
+            <img src="9-EGL_3969.jpg" alt="Marsha Kerr Talley speaking at an event">
+            <div>
+              <strong>Warmth. Vibrancy. Substance.</strong>
+              <span> I bring all three into the room.</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
 
-
-    <!-- ========================================
-         EDUCATION & CREDENTIALS
-    ======================================== -->
-
-    <section class="credentials-section">
-
-      <div class="container credentials-layout">
-
-
-        <div class="credentials-heading">
-
-          <p class="section-label">
-            Professional Foundations
-          </p>
-
-          <h2>
-            Education & Credentials
-          </h2>
-
-        </div>
-
-
-
-        <div class="credentials-list">
-
-
-          <div class="credential">
-
-            <p class="credential-category">
-              Graduate Education
-            </p>
-
-            <h3>
-              Master of Science in Special Education
-            </h3>
-
-          </div>
-
-
-
-          <div class="credential">
-
-            <p class="credential-category">
-              Undergraduate Education
-            </p>
-
-            <h3>
-              Bachelor's Degree in Dance Performance
-            </h3>
-
-          </div>
-
-
-
-          <div class="credential">
-
-            <p class="credential-category">
-              Professional Credentials
-            </p>
-
-            <h3>
-              Texas Teaching & Instructional Leadership Credentials
-            </h3>
-
+    <!-- ================= BRAND & CREATIVE COLLABORATIONS ================= -->
+    <section class="brand-collab-section" aria-label="Brand and creative collaborations">
+      <div class="page-wrap">
+        <div class="brand-collab-box">
+          <div class="brand-collab-copy">
+            <div class="eyebrow">Brand &amp; Creative Collaborations</div>
+            <h2>Work with me beyond the training room.</h2>
             <p>
-              Professional preparation spanning instructional leadership,
-              curriculum, inclusive practice and educational leadership.
+              I also collaborate with brands across fashion, lifestyle, home, travel and everyday living through
+              product features, content and authentic brand partnerships.
             </p>
-
           </div>
 
-
-
-          <div class="credential">
-
-            <p class="credential-category">
-              Additional Professional Learning
-            </p>
-
-            <h3>
-              Counselling Skills & Preventive Health
-            </h3>
-
-            <p>
-              Additional study includes person-centred counselling skills
-              and nutrition and health.
-            </p>
-
+          <div class="brand-collab-links">
+            <a class="btn btn-primary" href="mailto:info@marshakerrtalley.com?subject=Brand%20Collaboration%20Enquiry">Brand Enquiries</a>
+            <a class="btn btn-outline" href="media-kit.html">View Media Kit</a>
           </div>
-
-
-
-          <div class="credential">
-
-            <p class="credential-category">
-              International Experience
-            </p>
-
-            <h3>
-              United States · United Kingdom · Jamaica
-            </h3>
-
-          </div>
-
-
         </div>
-
       </div>
-
     </section>
 
 
+    <!-- ================= FRAMEWORK ================= -->
+    <section class="framework-section">
+      <div class="page-wrap">
+        <div class="framework-box">
+          <div>
+            <div class="eyebrow">Signature framework</div>
+            <h2>Turning Pain Into Possibilities™</h2>
+            <p>
+              My signature framework connects personal experience, preventive wellbeing, leadership and the environments people work within. It reflects a simple principle: people are not problems to manage. They are people whose growth, dignity, wellbeing and contribution deserve serious attention.
+            </p>
+          </div>
+          <a class="btn btn-primary" href="https://www.marshakerrtalley.com/turning-pain-into-possibilities" target="_blank" rel="noopener">Explore the Framework</a>
+        </div>
+      </div>
+    </section>
 
-    <!-- ========================================
-         CONNECT
-    ======================================== -->
-
-    <section
-      class="connect-section"
-      id="connect"
-    >
-
-      <div class="container connect-inner">
-
-
-        <p class="section-label">
-          Connect
-        </p>
-
-
-        <h2>
-          Interested in working together?
-        </h2>
-
-
+    <!-- ================= CTA ================= -->
+    <section class="cta-section">
+      <div class="page-wrap">
+        <div class="eyebrow" style="color:#d7eeee;">Start with what you need</div>
+        <h2>Ready to work through what comes next?</h2>
         <p>
-          I work with educators, leaders and organisations through
-          consultancy, professional learning, facilitation, speaking
-          and collaborative projects.
+          Whether you are planning training, facing a leadership or people challenge, building an idea, or seeking special education support for your child, we can start with a focused conversation about what you need.
         </p>
-
-
-
-        <div class="cta-buttons">
-
-
-          <a
-            href="contact.html"
-            class="btn btn-primary"
-          >
-            Start a Conversation
-          </a>
-
-
-          <a
-            href="https://www.linkedin.com/in/marshakerrtalley"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-secondary"
-          >
-            LinkedIn
-          </a>
-
-
+        <div class="button-row">
+          <a class="btn btn-gold" href="contact.html" target="_blank" rel="noopener">Discuss Training or Consultancy</a>
+          <a class="btn btn-outline" href="#parent-support">Parent Special Education Support</a>
         </div>
-
-
-
-        <div
-          class="social-links"
-          aria-label="Connect with Marsha Kerr Talley online"
-        >
-
-          <a
-            href="https://www.linkedin.com/in/marshakerrtalley"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
-
-
-          <a
-            href="https://substack.com/@marshakerrtalley"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Substack
-          </a>
-
-
-          <a href="podcast.html">
-            Candid Conversations
-          </a>
-
-
-        </div>
-
-
       </div>
-
     </section>
-
 
   </main>
 
 
+  <!-- ================= FIND WHAT YOU NEED ================= -->
+  <button class="concierge-launcher" id="conciergeLauncher" type="button" aria-haspopup="dialog" aria-controls="conciergeOverlay">
+    <span class="concierge-dot" aria-hidden="true"></span>
+    Find what you need
+  </button>
 
-  <!-- ========================================
-       FOOTER
-  ======================================== -->
+  <div class="concierge-overlay" id="conciergeOverlay" role="dialog" aria-modal="true" aria-labelledby="conciergeTitle">
+    <div class="concierge-panel">
+      <button class="concierge-close" id="conciergeClose" type="button" aria-label="Close">×</button>
+      <p class="concierge-kicker">Marsha's Smart Site Guide</p>
+      <h2 id="conciergeTitle">What can I help you find?</h2>
+      <p class="concierge-copy">Choose the closest fit. I will suggest the next step, and you can leave your details if you would like Marsha to follow up.</p>
 
+      <div class="concierge-options">
+        <button class="concierge-option" type="button" data-interest="Organisation / Team Training">Training for an organisation or team</button>
+        <button class="concierge-option" type="button" data-interest="Behaviour / Special Education Support">Behaviour or Special Education support</button>
+        <button class="concierge-option" type="button" data-interest="Digital Creators Lab">Digital Creators Lab</button>
+        <button class="concierge-option" type="button" data-interest="Speaking / Facilitation">Speaking or facilitation</button>
+        <button class="concierge-option" type="button" data-interest="Books / Resources">Books and practical resources</button>
+        <button class="concierge-option" type="button" data-interest="Not Sure">I am not sure yet</button>
+      </div>
+
+      <div class="concierge-response" id="conciergeResponse" aria-live="polite"></div>
+
+      <form class="lead-form" id="leadForm" action="https://formsubmit.co/ae3de5af71dcc6dde1b81cf12723e28e" method="POST">
+        <h3>Would you like Marsha to contact you?</h3>
+        <p class="lead-form-note">Leave only what is useful. This goes directly to Marsha's inbox.</p>
+        <input type="hidden" name="_subject" value="New website lead">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://marshakerrtalley.com/thank-you.html">
+        <input type="hidden" name="_url" value="https://marshakerrtalley.com/work-with-me.html">
+        <input type="hidden" name="interest" id="leadInterest" value="">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+
+        <div class="lead-field"><label for="leadName">Name</label><input id="leadName" name="name" type="text" autocomplete="name" required></div>
+        <div class="lead-field"><label for="leadEmail">Email</label><input id="leadEmail" name="email" type="email" autocomplete="email" required></div>
+        <div class="lead-field"><label for="leadOrganisation">Organisation <span style="font-weight:400">(optional)</span></label><input id="leadOrganisation" name="organisation" type="text" autocomplete="organization"></div>
+        <div class="lead-field"><label for="leadMessage">What would you like help with?</label><textarea id="leadMessage" name="message" placeholder="A sentence or two is enough."></textarea></div>
+        <button class="lead-submit" type="submit">Send my enquiry</button>
+        <p class="lead-privacy">Your details are used only to respond to your enquiry. See the Privacy Policy for more information.</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="lead-success" id="leadSuccess" role="status">Thank you. Your enquiry has been sent.</div>
+
+
+  <!-- ================= FOOTER ================= -->
   <footer class="site-footer">
-
-
     <div class="footer-inner">
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/marshakerrtalley" target="_blank" rel="noopener" aria-label="Visit Marsha Kerr Talley on LinkedIn" style="color:#0A66C2;">LinkedIn</a>
+        <span aria-hidden="true" style="color:#ccc;">|</span>
+        <a href="https://substack.com/@marshakerrtalley" target="_blank" rel="noopener" aria-label="Visit Marsha Kerr Talley on Substack" style="color:#c96b2c;">Substack</a>
+        <span aria-hidden="true" style="color:#ccc;">|</span>
+        <a href="https://marshakerrtalley.com/silhouettes-cafe.html" target="_blank" rel="noopener" aria-label="Explore Silhouette's Café" style="color:#4b2e1f;">Silhouette's Café</a>
+      </div>
 
-
-      <p
-        class="copyright"
-        id="copyright"
-      >
-        Copyright © Marsha Kerr Talley — All Rights Reserved.
+      <p class="copyright">
+        Copyright © <span id="currentYear"></span> Marsha Kerr Talley — All Rights Reserved.
       </p>
 
-
-
-      <nav
-        class="footer-links"
-        aria-label="Footer navigation"
-      >
-
-        <a href="/privacy-policy">
-          Privacy Policy
-        </a>
-
-        <a href="/shipping-return-policy">
-          Shipping &amp; Return Policy
-        </a>
-
-        <a href="/terms-and-conditions">
-          Terms and Conditions
-        </a>
-
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/shipping-return-policy">Shipping &amp; Return Policy</a>
+        <a href="/terms-and-conditions">Terms and Conditions</a>
       </nav>
-
-
     </div>
-
-
   </footer>
 
-
-
-  <!-- CURRENT YEAR -->
-
   <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const yearSpan = document.getElementById("currentYear");
+      if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-    const copyright =
-      document.getElementById("copyright");
+      const toggle = document.querySelector(".nav-toggle");
+      const nav = document.querySelector(".site-nav");
 
-    const year =
-      new Date().getFullYear();
+      if (toggle && nav) {
+        toggle.addEventListener("click", function () {
+          const isOpen = nav.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", String(isOpen));
+        });
+      }
 
-    copyright.textContent =
-      "Copyright © " +
-      year +
-      " Marsha Kerr Talley — All Rights Reserved.";
-
+      const currentPage = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+      document.querySelectorAll(".site-nav a").forEach(function (link) {
+        const href = (link.getAttribute("href") || "").toLowerCase();
+        if (href === currentPage) link.classList.add("active");
+      });
+    });
   </script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const conciergeLauncher = document.getElementById("conciergeLauncher");
+      const conciergeOverlay = document.getElementById("conciergeOverlay");
+      const conciergeClose = document.getElementById("conciergeClose");
+      const conciergeResponse = document.getElementById("conciergeResponse");
+      const leadForm = document.getElementById("leadForm");
+      const leadInterest = document.getElementById("leadInterest");
+      const leadMessage = document.getElementById("leadMessage");
+      const pathChoices = document.querySelectorAll(".lead-path-choice, .concierge-option");
+
+      const guideCopy = {
+        "Organisation / Team Training": "If morale, behaviour, burnout, retention or team culture is becoming difficult, Marsha can help you look beneath the visible problem and turn that insight into practical action.",
+        "Behaviour / Special Education Support": "Marsha's work in behaviour and Special Education focuses on what may be shaping behaviour, what the environment is communicating, and what practical support can change the experience for learners and staff.",
+        "Digital Creators Lab": "The Digital Creators Lab is practical, hands-on training in AI and digital tools for employment, entrepreneurship and real-world productivity. It can be adapted for young people, adults or organisations.",
+        "Speaking / Facilitation": "Marsha facilitates conversations and learning around behaviour, leadership, wellbeing, culture, education and the conditions that affect how people learn, work and perform.",
+        "Books / Resources": "Marsha's books and resources bring together lived experience, education, behaviour, healing and practical reflection. You can explore the Books page, or leave your email if you want help finding the right resource.",
+        "Not Sure": "That is completely fine. Tell Marsha what is happening or what you are trying to achieve. You do not need to know the name of the service before starting the conversation."
+      };
+
+      const guideLinks = {
+        "Organisation / Team Training": "#services",
+        "Behaviour / Special Education Support": "#parent-support",
+        "Digital Creators Lab": "#selected-work",
+        "Speaking / Facilitation": "#speaking",
+        "Books / Resources": "books.html"
+      };
+
+      function openConcierge(interest) {
+        if (!conciergeOverlay) return;
+        conciergeOverlay.classList.add("open");
+        document.body.style.overflow = "hidden";
+        if (interest) selectInterest(interest);
+      }
+
+      function closeConcierge() {
+        if (!conciergeOverlay) return;
+        conciergeOverlay.classList.remove("open");
+        document.body.style.overflow = "";
+        if (conciergeLauncher) conciergeLauncher.focus();
+      }
+
+      function selectInterest(interest) {
+        if (!interest) return;
+        if (leadInterest) leadInterest.value = interest;
+        if (conciergeResponse) {
+          conciergeResponse.textContent = guideCopy[interest] || guideCopy["Not Sure"];
+          const readMoreHref = guideLinks[interest];
+          if (readMoreHref) {
+            const readMoreLink = document.createElement("a");
+            readMoreLink.className = "concierge-read-more";
+            readMoreLink.href = readMoreHref;
+            readMoreLink.textContent = "Read more →";
+            conciergeResponse.appendChild(document.createElement("br"));
+            conciergeResponse.appendChild(readMoreLink);
+          }
+          conciergeResponse.classList.add("show");
+        }
+        if (leadForm) leadForm.classList.add("show");
+        if (leadMessage && !leadMessage.value) {
+          leadMessage.placeholder = interest === "Not Sure" ? "Tell me what is happening or what you are trying to achieve." : "Tell me a little about what you need.";
+        }
+      }
+
+      if (conciergeLauncher) conciergeLauncher.addEventListener("click", function () { openConcierge(); });
+      if (conciergeClose) conciergeClose.addEventListener("click", closeConcierge);
+      if (conciergeOverlay) conciergeOverlay.addEventListener("click", function (event) { if (event.target === conciergeOverlay) closeConcierge(); });
+      document.addEventListener("keydown", function (event) { if (event.key === "Escape" && conciergeOverlay && conciergeOverlay.classList.contains("open")) closeConcierge(); });
+
+      pathChoices.forEach(function (button) {
+        button.addEventListener("click", function () {
+          const interest = button.getAttribute("data-interest");
+          if (button.classList.contains("lead-path-choice")) openConcierge(interest); else selectInterest(interest);
+        });
+      });
+
+      const popupKey = "mktLeadGuideLastShown";
+      const sevenDays = 7 * 24 * 60 * 60 * 1000;
+      let popupEligible = true;
+      try {
+        const lastShown = Number(localStorage.getItem(popupKey) || 0);
+        popupEligible = Date.now() - lastShown > sevenDays;
+      } catch (error) { popupEligible = true; }
+
+      let autoOpened = false;
+      function autoOpenConcierge() {
+        if (autoOpened || !popupEligible || !conciergeOverlay || conciergeOverlay.classList.contains("open")) return;
+        autoOpened = true;
+        try { localStorage.setItem(popupKey, String(Date.now())); } catch (error) {}
+        openConcierge();
+      }
+
+      if (popupEligible) {
+        setTimeout(autoOpenConcierge, 45000);
+        window.addEventListener("scroll", function onScroll() {
+          const doc = document.documentElement;
+          const maxScroll = doc.scrollHeight - window.innerHeight;
+          if (maxScroll > 0 && window.scrollY / maxScroll >= 0.55) {
+            autoOpenConcierge();
+            window.removeEventListener("scroll", onScroll);
+          }
+        }, { passive: true });
+      }
+
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("lead") === "sent") {
+        const success = document.getElementById("leadSuccess");
+        if (success) {
+          success.classList.add("show");
+          setTimeout(function () { success.classList.remove("show"); }, 6500);
+        }
+        if (window.history.replaceState) {
+          window.history.replaceState({}, document.title, window.location.pathname + window.location.hash);
+        }
+      }
+    });
+  </script>
 
 </body>
-
 </html>
