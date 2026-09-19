@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Date Differently™ is an interactive dating card experience by Marsha Kerr Talley, created as part of Six Weeks to Date Differently.">
+<meta name="description" content="Six Weeks to Date Differently is an intentional dating experience by Marsha Kerr Talley, combining meaningful connection, Love Affirmations and guided reflection over six weeks.">
 
-<title>Date Differently™ Card Game | Marsha Kerr Talley</title>
+<title>Six Weeks to Date Differently | Marsha Kerr Talley</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,13 +28,9 @@
   --sans:"Inter",sans-serif;
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
   margin:0;
@@ -44,13 +40,7 @@ body{
   line-height:1.75;
 }
 
-a{
-  color:inherit;
-}
-
-button{
-  font:inherit;
-}
+a{color:inherit}
 
 .wrap{
   width:min(1120px,calc(100% - 38px));
@@ -58,9 +48,9 @@ button{
 }
 
 
-/* =========================================================
+/* =========================
    SITE HEADER
-========================================================= */
+========================= */
 
 .site-header{
   background:rgba(255,253,249,.97);
@@ -93,7 +83,6 @@ button{
   background:none;
   font-size:28px;
   color:var(--teal);
-  cursor:pointer;
 }
 
 .main-nav ul{
@@ -177,9 +166,9 @@ button{
 }
 
 
-/* =========================================================
+/* =========================
    SHARED
-========================================================= */
+========================= */
 
 .eyebrow{
   color:var(--teal);
@@ -187,6 +176,29 @@ button{
   font-weight:700;
   letter-spacing:.16em;
   text-transform:uppercase;
+}
+
+.section-title{
+  font-family:var(--serif);
+  color:var(--deep);
+  font-size:clamp(2.3rem,5vw,4rem);
+  line-height:1.08;
+  margin:10px 0 22px;
+  font-weight:500;
+}
+
+.section-intro{
+  max-width:760px;
+  font-size:1.06rem;
+}
+
+.center{
+  text-align:center;
+}
+
+.center .section-intro{
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .btn{
@@ -200,8 +212,6 @@ button{
   font-weight:700;
   font-size:.9rem;
   transition:.22s ease;
-  border:0;
-  cursor:pointer;
 }
 
 .btn:hover{
@@ -220,424 +230,598 @@ button{
 }
 
 
-/* =========================================================
-   INTRO / HERO
-========================================================= */
+/* =========================
+   HERO
+========================= */
 
-.game-hero{
-  padding:68px 0 45px;
-  text-align:center;
+.hero{
+  padding:84px 0 76px;
   background:
     radial-gradient(circle at 8% 20%,rgba(49,159,162,.13),transparent 30%),
     radial-gradient(circle at 92% 80%,rgba(201,168,106,.13),transparent 27%),
     linear-gradient(180deg,#fffdf9,#f8f3eb);
 }
 
-.game-hero h1{
-  font-family:var(--serif);
-  font-size:clamp(3rem,7vw,5.7rem);
-  line-height:.98;
-  letter-spacing:-.04em;
-  color:var(--deep);
-  margin:12px 0 18px;
-  font-weight:500;
-}
-
-.game-hero h1 em{
-  color:var(--teal);
-  font-style:italic;
-  font-weight:500;
-}
-
-.game-hero .tagline{
-  font-family:var(--serif);
-  font-size:clamp(1.15rem,2vw,1.45rem);
-  color:var(--ink);
-  margin:0;
-}
-
-.programme-link{
-  margin-top:22px;
-}
-
-.programme-link a{
-  color:var(--teal);
-  text-decoration:none;
-  font-size:.88rem;
-  font-weight:700;
-  border-bottom:1px solid rgba(5,99,103,.25);
-}
-
-.programme-link a:hover{
-  border-color:var(--teal);
-}
-
-
-/* =========================================================
-   INSTRUCTIONS
-========================================================= */
-
-.instructions{
-  padding:38px 0 22px;
-}
-
-.instruction-box{
-  max-width:780px;
+.hero-inner{
+  max-width:920px;
   margin:auto;
   text-align:center;
 }
 
-.instruction-box h2{
-  margin:7px 0 10px;
-  color:var(--deep);
+.hero h1{
   font-family:var(--serif);
-  font-size:clamp(1.8rem,4vw,2.6rem);
-  font-weight:500;
-}
-
-.instruction-box p{
-  margin:0 auto;
-  max-width:680px;
-}
-
-.pass-rule{
-  display:inline-block;
-  margin-top:17px;
-  padding:9px 16px;
-  background:var(--cream);
-  border-left:3px solid var(--gold);
-  color:var(--deep);
-  font-size:.87rem;
-}
-
-
-/* =========================================================
-   GAME AREA
-========================================================= */
-
-.game-section{
-  padding:30px 0 95px;
-}
-
-.game-shell{
-  width:min(100%,520px);
-  margin:auto;
-  text-align:center;
-}
-
-.card-stack{
-  position:relative;
-  width:min(100%,330px);
-  margin:0 auto 28px;
-  padding-bottom:14px;
-}
-
-.card-stack:before,
-.card-stack:after{
-  content:"";
-  position:absolute;
-  left:50%;
-  width:94%;
-  aspect-ratio:2.5/3.5;
-  transform:translateX(-50%);
-  border-radius:25px;
-  background:#fff;
-  border:1px solid var(--line);
-  z-index:0;
-}
-
-.card-stack:before{
-  top:9px;
-}
-
-.card-stack:after{
-  top:17px;
-  width:90%;
-}
-
-
-/* =========================================================
-   CARD
-========================================================= */
-
-.date-card{
-  position:relative;
-  z-index:2;
-  width:100%;
-  aspect-ratio:2.5/3.5;
-  perspective:1400px;
-  cursor:pointer;
-  outline:none;
-}
-
-.card-inner{
-  width:100%;
-  height:100%;
-  position:relative;
-  transform-style:preserve-3d;
-  transition:transform .65s cubic-bezier(.2,.7,.2,1);
-}
-
-.date-card.flipped .card-inner{
-  transform:rotateY(180deg);
-}
-
-.card-face{
-  position:absolute;
-  inset:0;
-  border-radius:25px;
-  overflow:hidden;
-  backface-visibility:hidden;
-  -webkit-backface-visibility:hidden;
-  border:1px solid rgba(5,99,103,.16);
-  box-shadow:0 25px 60px rgba(8,63,66,.12);
-}
-
-
-/* CARD FRONT */
-
-.card-front{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  padding:36px;
-  color:#fff;
-  background:
-    radial-gradient(circle at 25% 15%,rgba(255,255,255,.12),transparent 28%),
-    radial-gradient(circle at 80% 85%,rgba(201,168,106,.18),transparent 32%),
-    linear-gradient(145deg,var(--deep),var(--teal));
-}
-
-.front-small{
-  font-size:.68rem;
-  letter-spacing:.19em;
-  text-transform:uppercase;
-  color:#bce1e2;
-  font-weight:700;
-}
-
-.front-rule{
-  width:48px;
-  height:2px;
-  background:var(--gold);
-  margin:22px auto;
-}
-
-.card-front h2{
-  margin:0;
-  color:#fff;
-  font-family:var(--serif);
-  font-size:clamp(2.4rem,7vw,3.8rem);
+  font-size:clamp(3.5rem,8vw,7rem);
   line-height:.96;
-  font-weight:500;
-  letter-spacing:-.035em;
-}
-
-.card-front h2 em{
-  display:block;
-  color:#f1dcae;
-  font-weight:500;
-}
-
-.card-front .front-tag{
-  margin:24px 0 0;
-  color:rgba(255,255,255,.78);
-  font-size:.86rem;
-  letter-spacing:.04em;
-}
-
-.tap-instruction{
-  position:absolute;
-  bottom:30px;
-  font-size:.72rem;
-  font-weight:700;
-  letter-spacing:.15em;
-  text-transform:uppercase;
-  color:#d8eeee;
-}
-
-
-/* CARD BACK */
-
-.card-back{
-  transform:rotateY(180deg);
-  background:#fff;
-  padding:31px 31px 26px;
-  display:flex;
-  flex-direction:column;
-  text-align:left;
-}
-
-.card-top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-}
-
-.card-category{
-  color:var(--teal);
-  font-size:.68rem;
-  font-weight:800;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-}
-
-.card-number{
-  color:#7a8787;
-  font-size:.78rem;
-}
-
-.card-title{
-  margin:20px 0 0;
+  letter-spacing:-.045em;
   color:var(--deep);
-  font-family:var(--serif);
-  font-size:clamp(1.65rem,5vw,2.15rem);
-  line-height:1.08;
+  margin:14px 0 26px;
   font-weight:500;
 }
 
-.card-accent{
-  width:47px;
-  height:3px;
-  margin:19px 0 24px;
-  background:var(--gold);
+.hero h1 em{
+  color:var(--teal);
+  font-weight:500;
 }
 
-.card-action{
+.hero .opening{
+  max-width:790px;
+  margin:0 auto;
+  font-family:var(--serif);
+  font-size:clamp(1.25rem,2.5vw,1.65rem);
+  line-height:1.55;
   color:var(--ink);
-  font-size:1rem;
-  line-height:1.65;
 }
 
-.card-action strong{
+.hero-tag{
+  display:inline-block;
+  margin:30px auto 0;
+  padding:12px 20px;
+  background:#fff;
+  border:1px solid rgba(5,99,103,.12);
+  border-radius:999px;
   color:var(--teal);
-}
-
-.card-pass{
-  margin-top:auto;
-  padding-top:18px;
-  border-top:1px solid var(--line);
-  color:#738080;
-  font-size:.76rem;
-  text-align:center;
-  line-height:1.45;
-}
-
-
-/* =========================================================
-   CONTROLS
-========================================================= */
-
-.game-controls{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.game-controls button{
-  min-height:48px;
-}
-
-.draw-button{
-  min-width:190px;
-}
-
-.pass-button{
-  min-width:90px;
-}
-
-.shuffle-button{
-  background:transparent;
-  color:#708080;
-  border:0;
-  padding:10px 14px;
-  cursor:pointer;
   font-weight:600;
-  font-size:.82rem;
+  box-shadow:0 10px 28px rgba(8,63,66,.06);
 }
 
-.shuffle-button:hover{
-  color:var(--teal);
-}
-
-.deck-status{
-  max-width:390px;
-  margin:17px auto 0;
+.hero-buttons{
   display:flex;
-  justify-content:space-between;
-  gap:20px;
-  color:#829090;
-  font-size:.75rem;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:28px;
 }
 
-.deck-complete{
-  display:none;
-  max-width:390px;
-  margin:28px auto 0;
-  padding:25px;
-  border:1px solid var(--line);
-  border-radius:18px;
+
+/* =========================
+   INTRO
+========================= */
+
+.concept{
+  padding:90px 0;
+}
+
+.concept-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:64px;
+  align-items:center;
+}
+
+.concept-copy p{
+  font-size:1.06rem;
+}
+
+.pullquote{
+  padding:38px;
+  border-radius:24px;
+  background:var(--deep);
+  color:#fff;
+  box-shadow:0 24px 60px rgba(8,63,66,.13);
+}
+
+.pullquote p{
+  margin:0;
+  font-family:var(--serif);
+  font-size:clamp(1.65rem,3vw,2.35rem);
+  line-height:1.4;
+}
+
+.pullquote span{
+  display:block;
+  margin-top:22px;
+  color:#bce1e2;
+  font-size:.85rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.how{
+  padding:90px 0;
   background:var(--cream);
 }
 
-.deck-complete.show{
-  display:block;
+.how-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:40px;
 }
 
-.deck-complete h3{
-  margin:0 0 7px;
-  color:var(--deep);
+.how-card{
+  padding:28px;
+  background:#fff;
+  border:1px solid rgba(5,99,103,.10);
+  border-radius:18px;
+  transition:.22s ease;
+}
+
+.how-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 40px rgba(8,63,66,.08);
+}
+
+.how-card .number{
+  color:var(--gold);
   font-family:var(--serif);
-  font-size:1.5rem;
+  font-size:2rem;
+}
+
+.how-card h3{
+  margin:4px 0 8px;
+  color:var(--teal);
+  font-family:var(--serif);
+  font-size:1.35rem;
+}
+
+
+/* =========================
+   SIX WEEKS
+========================= */
+
+.weeks{
+  padding:95px 0;
+}
+
+.week-list{
+  margin-top:48px;
+  display:grid;
+  gap:18px;
+}
+
+.week{
+  display:grid;
+  grid-template-columns:100px 1fr;
+  gap:28px;
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:#fff;
+  transition:.25s ease;
+}
+
+.week:hover{
+  transform:translateY(-3px);
+  border-color:rgba(5,99,103,.25);
+  box-shadow:0 18px 44px rgba(5,99,103,.09);
+}
+
+.week-number{
+  width:78px;
+  height:78px;
+  border-radius:50%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(145deg,var(--deep),var(--teal));
+  color:#fff;
+}
+
+.week-number small{
+  font-size:.63rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.week-number strong{
+  font-family:var(--serif);
+  font-size:1.9rem;
+  line-height:1;
+}
+
+.week h3{
+  margin:0 0 8px;
+  font-family:var(--serif);
+  color:var(--deep);
+  font-size:1.7rem;
   font-weight:500;
 }
 
-.deck-complete p{
-  margin:0;
+.affirmation{
+  margin:13px 0 19px;
+  padding:11px 16px;
+  border-left:4px solid var(--gold);
+  background:var(--cream);
+  color:var(--teal);
+  font-family:var(--serif);
+  font-size:1.08rem;
+  font-style:italic;
+}
+
+.session-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:18px;
+}
+
+.session-item{
+  padding:17px;
+  border-radius:14px;
+  background:#eef7f6;
   font-size:.9rem;
 }
 
+.session-item strong{
+  display:block;
+  color:var(--teal);
+  margin-bottom:5px;
+}
 
-/* =========================================================
-   ABOUT THE DECK
-========================================================= */
 
-.about-deck{
-  padding:80px 0;
+/* =========================
+   EVENING FORMAT
+========================= */
+
+.evening{
+  padding:90px 0;
+  background:var(--deep);
+  color:#fff;
+}
+
+.evening .eyebrow{
+  color:#9ed6d8;
+}
+
+.evening .section-title{
+  color:#fff;
+}
+
+.evening .section-intro{
+  color:rgba(255,255,255,.74);
+}
+
+.evening-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:38px;
+}
+
+.evening-item{
+  padding:24px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:18px;
+  background:rgba(255,255,255,.055);
+}
+
+.evening-item strong{
+  display:block;
+  margin-bottom:7px;
+  font-family:var(--serif);
+  color:#f1dcae;
+  font-size:1.2rem;
+}
+
+
+/* =========================
+   LOVE AFFIRMATIONS
+========================= */
+
+.love{
+  padding:90px 0;
+  background:
+    radial-gradient(circle at 90% 20%,rgba(49,159,162,.10),transparent 28%),
+    var(--paper);
+}
+
+.love-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:60px;
+  align-items:start;
+}
+
+.love-quote{
+  position:sticky;
+  top:30px;
+  padding:36px;
+  background:var(--cream);
+  border-left:4px solid var(--gold);
+  border-radius:0 22px 22px 0;
+}
+
+.love-quote p{
+  margin:0;
+  font-family:var(--serif);
+  color:var(--deep);
+  font-size:clamp(1.7rem,3vw,2.45rem);
+  line-height:1.4;
+}
+
+.love-copy p{
+  font-size:1.06rem;
+}
+
+.mini-affirmations{
+  display:grid;
+  gap:10px;
+  margin-top:25px;
+}
+
+.mini-affirmation{
+  padding:15px 18px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  color:var(--teal);
+  font-family:var(--serif);
+}
+
+
+/* =========================
+   DIFFERENCE
+========================= */
+
+.different{
+  padding:90px 0;
   background:var(--cream);
 }
 
-.about-box{
-  max-width:800px;
-  margin:auto;
-  text-align:center;
+.difference-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+  margin-top:40px;
 }
 
-.about-box h2{
-  margin:8px 0 17px;
+.difference{
+  padding:27px;
+  background:#fff;
+  border:1px solid rgba(5,99,103,.10);
+  border-radius:18px;
+}
+
+.difference strong{
+  display:block;
+  color:var(--teal);
   font-family:var(--serif);
+  font-size:1.25rem;
+  margin-bottom:6px;
+}
+
+
+/* =========================
+   WHO IT IS FOR
+========================= */
+
+.who{
+  padding:90px 0;
+}
+
+.who-box{
+  max-width:900px;
+  margin:38px auto 0;
+  padding:36px;
+  border-radius:22px;
+  background:#eef7f6;
+}
+
+.checklist{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:13px 28px;
+}
+
+.checklist li{
+  position:relative;
+  padding-left:27px;
+}
+
+.checklist li:before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  color:var(--teal);
+  font-weight:700;
+}
+
+
+/* =========================
+   PRIVACY / MATCHING
+========================= */
+
+.matching{
+  padding:90px 0;
+  background:var(--cream);
+}
+
+.match-box{
+  max-width:850px;
+  margin:38px auto 0;
+  padding:36px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:22px;
+  box-shadow:0 18px 44px rgba(5,99,103,.06);
+}
+
+.match-box h3{
+  margin-top:0;
   color:var(--deep);
-  font-size:clamp(2rem,5vw,3.2rem);
-  font-weight:500;
-}
-
-.about-box p{
-  max-width:690px;
-  margin:0 auto 15px;
-}
-
-.about-box .btn{
-  margin-top:14px;
+  font-family:var(--serif);
+  font-size:1.6rem;
 }
 
 
-/* =========================================================
+/* =========================
+   PILOT
+========================= */
+
+.pilot{
+  padding:90px 0;
+}
+
+.pilot-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:38px;
+}
+
+.stat{
+  padding:25px 16px;
+  background:var(--cream);
+  border-radius:18px;
+  text-align:center;
+  border:1px solid rgba(201,168,106,.22);
+}
+
+.stat strong{
+  display:block;
+  color:var(--deep);
+  font-family:var(--serif);
+  font-size:1.5rem;
+}
+
+.price-note{
+  max-width:790px;
+  margin:30px auto 0;
+  padding:20px 22px;
+  border-left:4px solid var(--gold);
+  background:#fff8e9;
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
+.faq{
+  padding:90px 0;
+  background:var(--cream);
+}
+
+details{
+  max-width:850px;
+  margin:12px auto;
+  padding:18px 21px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+}
+
+summary{
+  cursor:pointer;
+  color:var(--deep);
+  font-weight:700;
+}
+
+details p{
+  margin:13px 0 0;
+}
+
+
+/* =========================
+   INTEREST
+========================= */
+
+.interest{
+  padding:90px 0;
+  background:
+    radial-gradient(circle at 10% 10%,rgba(49,159,162,.18),transparent 28%),
+    var(--deep);
+  color:#fff;
+}
+
+.interest .eyebrow{
+  color:#9ed6d8;
+}
+
+.interest .section-title{
+  color:#fff;
+}
+
+.interest .section-intro{
+  color:rgba(255,255,255,.75);
+}
+
+form{
+  max-width:760px;
+  margin-top:34px;
+  display:grid;
+  gap:15px;
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+label{
+  display:block;
+  margin-bottom:6px;
+  font-weight:600;
+}
+
+input,
+select,
+textarea{
+  width:100%;
+  padding:13px 14px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:10px;
+  background:#fff;
+  color:var(--ink);
+  font:inherit;
+}
+
+textarea{
+  min-height:110px;
+  resize:vertical;
+}
+
+.submit-btn{
+  width:max-content;
+  border:0;
+  padding:13px 22px;
+  border-radius:999px;
+  background:var(--gold);
+  color:var(--deep);
+  font:inherit;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.form-note{
+  color:rgba(255,255,255,.62);
+  font-size:.83rem;
+}
+
+
+/* =========================
    DISCLAIMER
-========================================================= */
+========================= */
 
 .disclaimer{
   padding:34px 0;
@@ -647,9 +831,9 @@ button{
 }
 
 
-/* =========================================================
+/* =========================
    FOOTER
-========================================================= */
+========================= */
 
 .site-footer{
   border-top:1px solid var(--line);
@@ -687,153 +871,18 @@ button{
 }
 
 
-/* =========================================================
-   DESKTOP / TABLET GAME OPTIMISATION
-   MOBILE RULES BELOW REMAIN UNCHANGED
-========================================================= */
+/* =========================
+   PRIVATE NOTES
+========================= */
 
-@media(min-width:801px){
-
-  .game-hero{
-    padding:42px 0 25px;
-  }
-
-  .game-hero h1{
-    font-size:clamp(2.8rem,5vw,4.5rem);
-    margin:9px 0 12px;
-  }
-
-  .game-hero .tagline{
-    font-size:1.18rem;
-  }
-
-  .programme-link{
-    margin-top:14px;
-  }
-
-  .instructions{
-    padding:25px 0 12px;
-  }
-
-  .instruction-box h2{
-    font-size:2rem;
-    margin:5px 0 7px;
-  }
-
-  .instruction-box p{
-    font-size:.94rem;
-  }
-
-  .pass-rule{
-    margin-top:12px;
-    padding:7px 14px;
-  }
-
-  .game-section{
-    padding:18px 0 70px;
-  }
-
-  .game-shell{
-    width:min(100%,480px);
-  }
-
-  .card-stack{
-    width:310px;
-    margin:0 auto 25px;
-  }
-
-  .card-front{
-    padding:30px 22px;
-  }
-
-  .front-small{
-    font-size:.62rem;
-    letter-spacing:.17em;
-  }
-
-  .front-rule{
-    width:42px;
-    margin:17px auto;
-  }
-
-  .card-front h2{
-    width:100%;
-    font-size:2.8rem;
-    line-height:1;
-    letter-spacing:-.035em;
-  }
-
-  .card-front h2 em{
-    font-size:2.15rem;
-    line-height:1.08;
-    white-space:nowrap;
-  }
-
-  .card-front .front-tag{
-    margin-top:18px;
-    font-size:.8rem;
-  }
-
-  .tap-instruction{
-    bottom:24px;
-    font-size:.66rem;
-  }
-
-  .card-back{
-    padding:25px 26px 21px;
-  }
-
-  .card-title{
-    margin-top:15px;
-    font-size:1.75rem;
-  }
-
-  .card-accent{
-    margin:15px 0 18px;
-  }
-
-  .card-action{
-    font-size:.9rem;
-    line-height:1.52;
-  }
-
-  .card-pass{
-    padding-top:13px;
-    font-size:.68rem;
-  }
-
-  .game-controls{
-    gap:9px;
-  }
-
-  .game-controls .btn{
-    min-height:44px;
-    padding:10px 19px;
-  }
-
-  .draw-button{
-    min-width:170px;
-  }
-
-  .pass-button{
-    min-width:82px;
-  }
-
-  .shuffle-button{
-    padding:8px 10px;
-  }
-
-  .deck-status{
-    max-width:310px;
-    margin-top:12px;
-  }
-
+.organiser-notes{
+  display:none;
 }
 
 
-/* =========================================================
+/* =========================
    MOBILE
-========================================================= */
+========================= */
 
 @media(max-width:800px){
 
@@ -877,64 +926,67 @@ button{
     white-space:normal;
   }
 
-}
-
-
-@media(max-width:520px){
-
-  .game-hero{
-    padding:52px 0 35px;
+  .hero{
+    padding:65px 0;
   }
 
-  .instructions{
-    padding-top:30px;
+  .hero h1{
+    font-size:clamp(3.1rem,15vw,5rem);
   }
 
-  .game-section{
-    padding-top:20px;
-    padding-bottom:70px;
+  .concept-grid,
+  .love-grid{
+    grid-template-columns:1fr;
   }
 
-  .card-stack{
-    width:min(91vw,355px);
+  .how-grid{
+    grid-template-columns:1fr;
   }
 
-  .card-back{
-    padding:25px 25px 22px;
+  .week{
+    grid-template-columns:1fr;
   }
 
-  .card-action{
-    font-size:.95rem;
+  .session-grid{
+    grid-template-columns:1fr;
   }
 
-  .game-controls{
-    width:min(91vw,355px);
-    margin:auto;
+  .evening-grid,
+  .pilot-grid{
+    grid-template-columns:repeat(2,1fr);
   }
 
-  .draw-button{
-    flex:1 1 100%;
+  .difference-grid,
+  .checklist{
+    grid-template-columns:1fr;
   }
 
-  .pass-button{
-    flex:1;
-  }
-
-  .deck-status{
-    width:min(91vw,355px);
+  .love-quote{
+    position:static;
   }
 
 }
 
+@media(max-width:560px){
 
-@media(prefers-reduced-motion:reduce){
-
-  .card-inner{
-    transition:none;
+  .evening-grid,
+  .pilot-grid,
+  .form-row{
+    grid-template-columns:1fr;
   }
 
-  .btn{
-    transition:none;
+  .concept,
+  .how,
+  .weeks,
+  .evening,
+  .love,
+  .different,
+  .who,
+  .matching,
+  .pilot,
+  .faq,
+  .interest{
+    padding:66px 0;
   }
 
 }
@@ -946,9 +998,9 @@ button{
 <body>
 
 
-<!-- ======================================================
+<!-- =========================
      HEADER
-====================================================== -->
+========================= -->
 
 <header class="site-header">
 
@@ -958,26 +1010,17 @@ button{
 <img src="MKT-logo-3.png" alt="Marsha Kerr Talley - Live Inspired">
 </a>
 
-<button
-  class="nav-toggle"
-  aria-label="Open menu"
-  aria-expanded="false">
+<button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
 ☰
 </button>
-
 
 <nav class="main-nav" aria-label="Main navigation">
 
 <ul>
 
-<li>
-<a href="index.html">Home</a>
-</li>
+<li><a href="index.html">Home</a></li>
 
-<li>
-<a href="about.html">About</a>
-</li>
-
+<li><a href="about.html">About</a></li>
 
 <li class="nav-dropdown">
 
@@ -987,11 +1030,7 @@ Work With Me
 
 <ul class="nav-submenu" aria-label="Work With Me">
 
-<li>
-<a href="work-with-me.html">
-Overview
-</a>
-</li>
+<li><a href="work-with-me.html">Overview</a></li>
 
 <li>
 <a href="https://marshakerrtalley.com/special-education">
@@ -1006,14 +1045,8 @@ Six-Week Programme
 </li>
 
 <li>
-<a href="https://www.marshakerrtalley.com/date-different">
+<a class="active" href="six-weeks-to-date-differently.html">
 Six Weeks to Date Differently
-</a>
-</li>
-
-<li>
-<a class="active" href="date-differently-cards.html">
-Date Differently™ Cards
 </a>
 </li>
 
@@ -1045,22 +1078,10 @@ Returning to Jamaica
 
 </li>
 
-
-<li>
-<a href="books.html">Books</a>
-</li>
-
-<li>
-<a href="podcast.html">Podcast</a>
-</li>
-
-<li>
-<a href="reflections.html">Reflections</a>
-</li>
-
-<li>
-<a href="contact.html">Contact</a>
-</li>
+<li><a href="books.html">Books</a></li>
+<li><a href="podcast.html">Podcast</a></li>
+<li><a href="reflections.html">Reflections</a></li>
+<li><a href="contact.html">Contact</a></li>
 
 <li>
 <a href="https://marshakerrtalley.com/shop">
@@ -1077,34 +1098,49 @@ Shop
 </header>
 
 
-
 <main>
 
 
-<!-- ======================================================
+<!-- =========================
      HERO
-====================================================== -->
+========================= -->
 
-<section class="game-hero">
+<section class="hero">
 
-<div class="wrap">
+<div class="wrap hero-inner">
 
 <div class="eyebrow">
 Turning Pain Into Possibility™
 </div>
 
 <h1>
-Date <em>Differently.</em>
+Six Weeks to<br>
+<em>Date Differently.</em>
 </h1>
 
-<p class="tagline">
-Meet. Connect. Discover.
+<p class="opening">
+Meet people. Challenge old patterns. Practise healthier connection.
 </p>
 
-<div class="programme-link">
+<p class="section-intro" style="margin:22px auto 0;">
+An intentional six-week dating experience where singles have
+time to meet, reconnect, reflect and discover what happens when
+we stop making decisions about love from chemistry, fear,
+habit or a five-minute first impression.
+</p>
 
-<a href="https://www.marshakerrtalley.com/date-different">
-← Part of Six Weeks to Date Differently
+<div class="hero-tag">
+Not six weeks to find love. Six weeks to date differently.
+</div>
+
+<div class="hero-buttons">
+
+<a class="btn btn-primary" href="#six-weeks">
+See the Six Weeks
+</a>
+
+<a class="btn btn-secondary" href="#interest">
+Register Interest
 </a>
 
 </div>
@@ -1114,36 +1150,60 @@ Meet. Connect. Discover.
 </section>
 
 
+<!-- =========================
+     CONCEPT
+========================= -->
 
-<!-- ======================================================
-     INSTRUCTIONS
-====================================================== -->
+<section class="concept">
 
-<section class="instructions">
+<div class="wrap concept-grid">
 
-<div class="wrap">
-
-<div class="instruction-box">
+<div class="concept-copy">
 
 <div class="eyebrow">
-The Interactive Dating Deck
+The Idea
 </div>
 
-<h2>
-Pick a card. Do what it says.
+<h2 class="section-title">
+What if connection had more than a few minutes?
 </h2>
 
 <p>
-This isn't a list of interview questions.
-Each card gives you something to do together—
-something playful, revealing, unexpected or intentional.
+Traditional speed dating asks us to decide quickly:
+attraction or no attraction, yes or no, interested or not.
 </p>
 
-<div class="pass-rule">
-<strong>One important rule:</strong>
-Either person can pass on any card at any time.
-No explanation required.
+<p>
+But meaningful connection does not always reveal itself
+in five minutes.
+</p>
+
+<p>
+<strong>Six Weeks to Date Differently</strong> brings a group
+of singles together over six facilitated sessions.
+Participants meet, talk, rotate, reconnect and gradually
+explore compatibility while also noticing the beliefs and
+patterns they may be bringing into relationships.
+</p>
+
+<p>
+The goal is not to force a match. It is to create enough
+time and structure for people to notice more than first
+impressions.
+</p>
+
 </div>
+
+
+<div class="pullquote">
+
+<p>
+“You don't have to know on the first night whether someone
+could be your future. Sometimes you simply need enough
+space to discover who they are.”
+</p>
+
+<span>Six Weeks to Date Differently</span>
 
 </div>
 
@@ -1152,200 +1212,412 @@ No explanation required.
 </section>
 
 
+<!-- =========================
+     HOW IT WORKS
+========================= -->
 
-<!-- ======================================================
-     CARD GAME
-====================================================== -->
-
-<section class="game-section">
+<section class="how">
 
 <div class="wrap">
 
-<div class="game-shell">
+<div class="center">
 
-
-<div class="card-stack">
-
-
-<div
-  class="date-card"
-  id="dateCard"
-  tabindex="0"
-  role="button"
-  aria-label="Face-down Date Differently card. Tap or press Enter to reveal.">
-
-
-<div class="card-inner">
-
-
-<!-- CARD FRONT -->
-
-<div class="card-face card-front">
-
-<div class="front-small">
-Six Weeks to Date Differently
+<div class="eyebrow">
+The Experience
 </div>
 
-<div class="front-rule"></div>
-
-<h2>
-DATE
-<em>DIFFERENTLY™</em>
+<h2 class="section-title">
+Dating meets personal development.
 </h2>
 
-<p class="front-tag">
-Meet. Connect. Discover.
+<p class="section-intro">
+Each week combines a Love Affirmation, a short guided
+reflection and intentional dating conversations.
 </p>
 
-<div class="tap-instruction">
-Tap to reveal
+</div>
+
+
+<div class="how-grid">
+
+
+<div class="how-card">
+
+<div class="number">01</div>
+
+<h3>Meet</h3>
+
+<p>
+Meet a small group of singles in a relaxed environment
+without the pressure to decide immediately who is
+“your person.”
+</p>
+
+</div>
+
+
+<div class="how-card">
+
+<div class="number">02</div>
+
+<h3>Notice</h3>
+
+<p>
+Notice attraction, assumptions, comparison, fear,
+communication and the patterns that appear while
+getting to know people.
+</p>
+
+</div>
+
+
+<div class="how-card">
+
+<div class="number">03</div>
+
+<h3>Practise</h3>
+
+<p>
+Practise communicating clearly, receiving interest,
+setting boundaries and staying curious instead of
+automatically repeating familiar patterns.
+</p>
+
+</div>
+
+
 </div>
 
 </div>
 
+</section>
 
 
-<!-- CARD BACK -->
+<!-- =========================
+     SIX WEEKS
+========================= -->
 
-<div class="card-face card-back">
+<section class="weeks" id="six-weeks">
+
+<div class="wrap">
+
+<div class="eyebrow">
+The Six-Week Journey
+</div>
+
+<h2 class="section-title">
+Six weeks. Six opportunities to date differently.
+</h2>
+
+<p class="section-intro">
+The conversations become progressively deeper as participants
+get to know one another. Each week's Love Affirmation gives
+the group something specific to explore and practise.
+</p>
+
+
+<div class="week-list">
+
+
+<!-- WEEK 1 -->
+
+<article class="week">
+
+<div class="week-number">
+<small>Week</small>
+<strong>1</strong>
+</div>
 
 <div>
 
-<div class="card-top">
+<h3>What Am I Bringing Into Love?</h3>
 
-<span
-  class="card-category"
-  id="cardCategory">
-CONNECT
-</span>
-
-<span
-  class="card-number"
-  id="cardNumber">
-01 / 25
-</span>
-
+<div class="affirmation">
+“I can meet someone new without asking them to repair something old.”
 </div>
-
-
-<h2
-  class="card-title"
-  id="cardTitle">
-NO IMPRESSING ME
-</h2>
-
-
-<div class="card-accent"></div>
-
-
-<div
-  class="card-action"
-  id="cardAction">
-
-For the next two minutes, neither of you may mention
-your job, qualifications, accomplishments, possessions
-or status.
-
-<br><br>
-
-Find something else to connect over.
-
-</div>
-
-</div>
-
-
-<div class="card-pass">
-Either person may <strong>PASS</strong> at any time.
-No explanation required.
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-</div>
-
-
-
-<!-- CONTROLS -->
-
-<div class="game-controls">
-
-<button
-  class="btn btn-primary draw-button"
-  id="drawButton"
-  type="button">
-
-Draw Another Card
-
-</button>
-
-
-<button
-  class="btn btn-secondary pass-button"
-  id="passButton"
-  type="button">
-
-Pass
-
-</button>
-
-
-<button
-  class="shuffle-button"
-  id="shuffleButton"
-  type="button">
-
-↻ Shuffle Deck
-
-</button>
-
-</div>
-
-
-
-<div class="deck-status">
-
-<span id="remainingCards">
-25 cards remaining
-</span>
-
-<span>
-Tap card to flip
-</span>
-
-</div>
-
-
-
-<div
-  class="deck-complete"
-  id="deckComplete">
-
-<h3>
-You've reached the end of the deck.
-</h3>
 
 <p>
-Want to keep going? Shuffle the cards and play again.
+The first evening is about curiosity rather than conclusions.
+Participants meet the group, explore what they are looking for
+and begin noticing what previous experiences may have taught
+them to expect from love.
 </p>
 
-<button
-  class="btn btn-primary"
-  id="playAgainButton"
-  type="button"
-  style="margin-top:16px;">
+<div class="session-grid">
 
-Shuffle &amp; Play Again
+<div class="session-item">
+<strong>Reflect</strong>
+What have previous relationships taught me to expect?
+</div>
 
-</button>
+<div class="session-item">
+<strong>Date</strong>
+Short, relaxed rotations focused on introductions,
+humour and natural conversation.
+</div>
+
+<div class="session-item">
+<strong>Notice</strong>
+Who surprised you? What did you assume before you
+actually spoke to someone?
+</div>
 
 </div>
+
+</div>
+
+</article>
+
+
+<!-- WEEK 2 -->
+
+<article class="week">
+
+<div class="week-number">
+<small>Week</small>
+<strong>2</strong>
+</div>
+
+<div>
+
+<h3>I Do Not Have to Compete for Love</h3>
+
+<div class="affirmation">
+“I do not have to compete for love.”
+</div>
+
+<p>
+This week explores comparison, jealousy, pursuit and what
+happens internally when someone we like is also getting
+to know other people.
+</p>
+
+<div class="session-grid">
+
+<div class="session-item">
+<strong>Reflect</strong>
+What happens inside me when someone I like has other options?
+</div>
+
+<div class="session-item">
+<strong>Date</strong>
+Rotations explore attraction, intentionality and what
+being chosen means to each person.
+</div>
+
+<div class="session-item">
+<strong>Notice</strong>
+Interest does not require competition, performance
+or abandoning yourself.
+</div>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- WEEK 3 -->
+
+<article class="week">
+
+<div class="week-number">
+<small>Week</small>
+<strong>3</strong>
+</div>
+
+<div>
+
+<h3>What Does Safe Love Feel Like?</h3>
+
+<div class="affirmation">
+“I deserve love that feels real, honest, safe, mutual and clear.”
+</div>
+
+<p>
+Participants explore emotional safety, consistency,
+respect, boundaries and clarity—and the difference
+between feeling intensely attracted to someone and
+feeling genuinely safe with them.
+</p>
+
+<div class="session-grid">
+
+<div class="session-item">
+<strong>Reflect</strong>
+What behaviours actually make me feel safe and considered?
+</div>
+
+<div class="session-item">
+<strong>Date</strong>
+Longer conversations around trust, communication,
+affection and expectations.
+</div>
+
+<div class="session-item">
+<strong>Notice</strong>
+Pay attention not only to who excites you,
+but how you feel around them.
+</div>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- WEEK 4 -->
+
+<article class="week">
+
+<div class="week-number">
+<small>Week</small>
+<strong>4</strong>
+</div>
+
+<div>
+
+<h3>Receiving Love Without Expecting Pain</h3>
+
+<div class="affirmation">
+“I can receive something good without searching for the moment it will disappear.”
+</div>
+
+<p>
+Sometimes healthy attention feels unfamiliar.
+This session explores what can happen when affection,
+consistency or genuine interest activates old expectations
+of disappointment.
+</p>
+
+<div class="session-grid">
+
+<div class="session-item">
+<strong>Reflect</strong>
+Do I become suspicious, distant or uninterested
+when someone treats me well?
+</div>
+
+<div class="session-item">
+<strong>Date</strong>
+Conversations explore vulnerability, trust and how
+each person responds to closeness.
+</div>
+
+<div class="session-item">
+<strong>Notice</strong>
+Protecting yourself and avoiding connection
+are not always the same thing.
+</div>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- WEEK 5 -->
+
+<article class="week">
+
+<div class="week-number">
+<small>Week</small>
+<strong>5</strong>
+</div>
+
+<div>
+
+<h3>I Can Say What I Need</h3>
+
+<div class="affirmation">
+“My needs do not make me difficult to love.”
+</div>
+
+<p>
+By Week Five, conversations move beyond attraction and
+toward compatibility. Participants explore whether their
+values, expectations and actual lives could work together.
+</p>
+
+<div class="session-grid">
+
+<div class="session-item">
+<strong>Reflect</strong>
+What do I genuinely need from a partner—and what
+have I been afraid to say?
+</div>
+
+<div class="session-item">
+<strong>Date</strong>
+Conversations may include children, lifestyle,
+money, communication, affection and future goals.
+</div>
+
+<div class="session-item">
+<strong>Notice</strong>
+Chemistry matters. Compatibility matters too.
+</div>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- WEEK 6 -->
+
+<article class="week">
+
+<div class="week-number">
+<small>Week</small>
+<strong>6</strong>
+</div>
+
+<div>
+
+<h3>Choosing Without Abandoning Myself</h3>
+
+<div class="affirmation">
+“I can choose love without losing myself.”
+</div>
+
+<p>
+The final evening brings the experience together.
+Participants reflect on what they have learned about
+themselves, spend more intentional time with people
+they would like to know further and celebrate the
+completion of the six weeks.
+</p>
+
+<div class="session-grid">
+
+<div class="session-item">
+<strong>Reflect</strong>
+What have I learned about how I choose,
+receive and respond to connection?
+</div>
+
+<div class="session-item">
+<strong>Date</strong>
+Longer intentional conversations with potential
+mutual connections.
+</div>
+
+<div class="session-item">
+<strong>Leave With</strong>
+Greater clarity about how you want to date,
+whether or not you leave with a match.
+</div>
+
+</div>
+
+</div>
+
+</article>
 
 
 </div>
@@ -1355,46 +1627,54 @@ Shuffle &amp; Play Again
 </section>
 
 
+<!-- =========================
+     EACH EVENING
+========================= -->
 
-<!-- ======================================================
-     ABOUT
-====================================================== -->
-
-<section class="about-deck">
+<section class="evening">
 
 <div class="wrap">
 
-<div class="about-box">
-
 <div class="eyebrow">
-More Than a Card Game
+Each Session
 </div>
 
-<h2>
-Experience the connection.
+<h2 class="section-title">
+Structured enough to feel intentional.<br>
+Relaxed enough to still feel like dating.
 </h2>
 
-<p>
-Date Differently™ was created as part of
-<strong>Six Weeks to Date Differently</strong>,
-an intentional dating experience designed to give people
-more than a few minutes to discover who someone is.
+<p class="section-intro">
+This isn't six weeks of sitting in a circle analysing
+relationships. Reflection supports the dating experience.
+It does not replace it.
 </p>
 
-<p>
-The cards invite you to play, notice, communicate,
-make decisions, reveal something about yourself and
-experience how the person opposite you actually interacts
-with you.
-</p>
 
-<a
-  class="btn btn-primary"
-  href="https://www.marshakerrtalley.com/date-different">
+<div class="evening-grid">
 
-Explore the Six-Week Experience
+<div class="evening-item">
+<strong>Arrive</strong>
+Social time, refreshments and space to settle in.
+</div>
 
-</a>
+<div class="evening-item">
+<strong>Reflect</strong>
+A short facilitated introduction to the week's
+Love Affirmation and theme.
+</div>
+
+<div class="evening-item">
+<strong>Date</strong>
+Rotations with thoughtful prompts and plenty of
+space for natural conversation.
+</div>
+
+<div class="evening-item">
+<strong>Notice</strong>
+Private reflection on attraction, reactions,
+assumptions and possible connections.
+</div>
 
 </div>
 
@@ -1403,10 +1683,546 @@ Explore the Six-Week Experience
 </section>
 
 
+<!-- =========================
+     LOVE AFFIRMATIONS
+========================= -->
 
-<!-- ======================================================
+<section class="love">
+
+<div class="wrap love-grid">
+
+<div class="love-quote">
+
+<p>
+Sometimes the threat exists only in our minds—the story
+we remember from when love came at a cost.
+</p>
+
+</div>
+
+
+<div class="love-copy">
+
+<div class="eyebrow">
+Love Affirmations
+</div>
+
+<h2 class="section-title">
+Learning to receive something different.
+</h2>
+
+<p>
+Love Affirmations are woven throughout the six-week
+experience as prompts for reflection—not promises,
+magic words or a way of convincing someone to choose us.
+</p>
+
+<p>
+They are reminders that we can question old beliefs,
+notice automatic responses and practise healthier ways
+of approaching connection.
+</p>
+
+
+<div class="mini-affirmations">
+
+<div class="mini-affirmation">
+I do not have to compete for love.
+</div>
+
+<div class="mini-affirmation">
+I deserve love that feels real, honest, safe, mutual and clear.
+</div>
+
+<div class="mini-affirmation">
+I can protect my heart without closing it.
+</div>
+
+<div class="mini-affirmation">
+I do not have to leave first to protect myself from being left.
+</div>
+
+<div class="mini-affirmation">
+I can enjoy what is good today without demanding that today guarantee forever.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DIFFERENCE
+========================= -->
+
+<section class="different">
+
+<div class="wrap">
+
+<div class="center">
+
+<div class="eyebrow">
+Why This Is Different
+</div>
+
+<h2 class="section-title">
+More than speed dating.
+</h2>
+
+</div>
+
+
+<div class="difference-grid">
+
+<div class="difference">
+
+<strong>No five-minute verdicts.</strong>
+
+Participants have multiple opportunities to interact
+before deciding whether they would like to explore
+a connection further.
+
+</div>
+
+
+<div class="difference">
+
+<strong>No weekly popularity contest.</strong>
+
+Preferences remain private. Participants are not publicly
+told who selected or rejected them.
+
+</div>
+
+
+<div class="difference">
+
+<strong>Real conversations.</strong>
+
+Questions gradually move beyond careers and hobbies toward
+values, communication, boundaries, family, lifestyle
+and expectations.
+
+</div>
+
+
+<div class="difference">
+
+<strong>A match isn't the only measure of success.</strong>
+
+Participants can leave with greater self-awareness,
+healthier dating practices and meaningful connections
+even if romance does not develop.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     WHO IT IS FOR
+========================= -->
+
+<section class="who">
+
+<div class="wrap">
+
+<div class="center">
+
+<div class="eyebrow">
+Who It's For
+</div>
+
+<h2 class="section-title">
+Singles who want to date with greater intention.
+</h2>
+
+<p class="section-intro">
+You don't need to have love figured out.
+You simply need to be genuinely available to meet
+people and willing to approach the experience
+with curiosity and respect.
+</p>
+
+</div>
+
+
+<div class="who-box">
+
+<ul class="checklist">
+
+<li>Single and genuinely available to date</li>
+
+<li>Interested in meaningful connection</li>
+
+<li>Open to looking beyond immediate first impressions</li>
+
+<li>Willing to communicate respectfully</li>
+
+<li>Curious about personal relationship patterns</li>
+
+<li>Able to commit to the six-week experience</li>
+
+<li>Respectful of privacy and boundaries</li>
+
+<li>Understands that attraction and matches cannot be guaranteed</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     MATCHING
+========================= -->
+
+<section class="matching">
+
+<div class="wrap">
+
+<div class="center">
+
+<div class="eyebrow">
+Connection & Privacy
+</div>
+
+<h2 class="section-title">
+No public choosing. No public rejection.
+</h2>
+
+</div>
+
+
+<div class="match-box">
+
+<h3>Interest stays private.</h3>
+
+<p>
+As the programme progresses, participants may privately
+indicate who they would like additional time with.
+Individual selections are not publicly revealed.
+</p>
+
+<p>
+Where mutual interest exists, participants may be given
+opportunities for longer conversations during later sessions.
+Contact information is only exchanged with consent.
+</p>
+
+<p>
+Participants are expected to respect confidentiality,
+personal boundaries and each person's right to change
+their mind.
+</p>
+
+<p>
+The programme creates opportunities for connection.
+It does not guarantee romantic compatibility,
+a match or a relationship.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PILOT
+========================= -->
+
+<section class="pilot">
+
+<div class="wrap">
+
+<div class="center">
+
+<div class="eyebrow">
+The First Cohort
+</div>
+
+<h2 class="section-title">
+Small enough to feel personal.
+</h2>
+
+<p class="section-intro">
+The first experience will intentionally remain small
+so the programme can be refined with participant feedback.
+</p>
+
+</div>
+
+
+<div class="pilot-grid">
+
+<div class="stat">
+<strong>20–24</strong>
+Participants
+</div>
+
+<div class="stat">
+<strong>6</strong>
+Weekly Sessions
+</div>
+
+<div class="stat">
+<strong>2–2½ hrs</strong>
+Each Session
+</div>
+
+<div class="stat">
+<strong>1 Cohort</strong>
+Shared Journey
+</div>
+
+</div>
+
+
+<div class="price-note">
+
+<strong>Programme pricing is still being developed.</strong>
+
+The pilot is currently envisioned as a paid six-week
+experience rather than six separate drop-in dating events.
+Final pricing will reflect venue, refreshments, programme
+materials and the complete facilitated experience.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FAQ
+========================= -->
+
+<section class="faq">
+
+<div class="wrap">
+
+<div class="center">
+
+<div class="eyebrow">
+A Few Questions
+</div>
+
+<h2 class="section-title">
+Before you join.
+</h2>
+
+</div>
+
+
+<details>
+
+<summary>Is this therapy?</summary>
+
+<p>
+No. Six Weeks to Date Differently is a facilitated
+personal-development and social dating experience.
+It is not psychotherapy, counselling or mental-health treatment.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>Am I guaranteed to meet a partner?</summary>
+
+<p>
+No. The programme creates structured opportunities
+to meet and get to know other singles, but attraction,
+compatibility and relationships cannot be guaranteed.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>What if I like someone early?</summary>
+
+<p>
+That's okay. Participants are encouraged to remain curious
+while the programme progresses. Mutual interest may lead
+to additional conversation time without turning the
+experience into a public competition.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>What if I don't make a romantic match?</summary>
+
+<p>
+A romantic match is not the only outcome.
+The programme is also an opportunity to understand
+more about how you date, communicate, choose and respond
+to connection.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>Can I miss a week?</summary>
+
+<p>
+Because the same cohort progresses together,
+consistent attendance is important. Participants should
+plan to attend all six sessions wherever possible.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>Who can participate?</summary>
+
+<p>
+Eligibility, age range, dating preferences and cohort
+structure will be confirmed before registration opens.
+</p>
+
+</details>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     INTEREST
+========================= -->
+
+<section class="interest" id="interest">
+
+<div class="wrap">
+
+<div class="eyebrow">
+Interested?
+</div>
+
+<h2 class="section-title">
+Be among the first to know.
+</h2>
+
+<p class="section-intro">
+Six Weeks to Date Differently is currently being developed.
+Register your interest to hear when the first cohort,
+location, dates and eligibility are announced.
+</p>
+
+
+<!--
+Connect this form to HubSpot or your preferred
+form processor before making registration live.
+-->
+
+<form>
+
+<div class="form-row">
+
+<div>
+<label for="name">Name</label>
+<input id="name" type="text" name="name" required>
+</div>
+
+<div>
+<label for="email">Email</label>
+<input id="email" type="email" name="email" required>
+</div>
+
+</div>
+
+
+<div class="form-row">
+
+<div>
+
+<label for="age">Age Range</label>
+
+<select id="age" name="age">
+
+<option value="">Select</option>
+<option>25–34</option>
+<option>35–44</option>
+<option>45–54</option>
+<option>55–64</option>
+<option>65+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label for="location">Location</label>
+
+<input
+id="location"
+type="text"
+name="location"
+placeholder="Town / Parish">
+
+</div>
+
+</div>
+
+
+<div>
+
+<label for="reason">
+What interests you about this experience?
+</label>
+
+<textarea
+id="reason"
+name="reason"
+placeholder="Tell me briefly..."></textarea>
+
+</div>
+
+
+<button class="submit-btn" type="submit">
+Register My Interest
+</button>
+
+<div class="form-note">
+Registering interest does not guarantee admission to a cohort.
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- =========================
      DISCLAIMER
-====================================================== -->
+========================= -->
 
 <section class="disclaimer">
 
@@ -1414,16 +2230,74 @@ Explore the Six-Week Experience
 
 <strong>Important:</strong>
 
-Date Differently™ is an educational,
-personal-development and social dating activity.
-
-It does not provide psychotherapy, psychological treatment
-or professional matchmaking guarantees.
-
-Participants remain responsible for their own dating
-decisions, personal boundaries and safety.
+Six Weeks to Date Differently is an educational,
+personal-development and social experience. It does not
+provide psychotherapy, psychological treatment or
+professional matchmaking guarantees. Participants remain
+responsible for their own dating decisions, personal
+boundaries and safety.
 
 </div>
+
+</section>
+
+
+<!-- =========================
+     PRIVATE ORGANISER NOTES
+     HIDDEN FROM WEBSITE
+========================= -->
+
+<section class="organiser-notes">
+
+<!--
+
+PRIVATE DEVELOPMENT NOTES — MARSHA
+
+Before pilot:
+
+• Decide first cohort age range.
+• Decide dating preference / cohort structure.
+• Determine minimum and maximum participant numbers.
+• Develop a system for balancing compatible dating pools.
+• Create application / screening process.
+• Require six-week attendance commitment.
+• Determine deposit and cancellation policy.
+• Develop participant code of conduct.
+• Create confidentiality policy.
+• Create photography/social-media policy.
+• Create inappropriate-behaviour/removal policy.
+• Determine how private preferences are collected.
+• Determine when mutual interest is disclosed.
+• Determine contact-information rules.
+• Decide what happens if two participants start dating early.
+• Decide what happens if someone withdraws.
+• Recruit assistant/co-facilitator for logistics.
+• Do not use anyone Marsha is personally dating
+  as a participant. 😂
+
+MATERIALS:
+
+• Love Affirmation cards
+• Participant workbook/journal
+• Weekly reflection sheets
+• Conversation prompt cards
+• Private interest cards
+• Name badges
+• Facilitator guide
+• Opening/closing scripts
+• Participant feedback survey
+
+POTENTIAL FUTURE PRODUCTS:
+
+• Love Affirmations card deck
+• Date Differently workbook
+• Singles retreats
+• 40+ cohort
+• Dating-again-after-divorce cohort
+• Online experience
+• Podcast conversations based on programme themes
+
+-->
 
 </section>
 
@@ -1431,42 +2305,33 @@ decisions, personal boundaries and safety.
 </main>
 
 
-
-<!-- ======================================================
-     FOOTER
-====================================================== -->
+<!-- =========================
+     EXISTING SITE FOOTER
+========================= -->
 
 <footer class="site-footer">
 
 <div class="social">
 
 <a
-  href="https://www.linkedin.com/in/marshakerrtalley"
-  target="_blank"
-  rel="noopener">
-
+href="https://www.linkedin.com/in/marshakerrtalley"
+target="_blank"
+rel="noopener">
 LinkedIn
-
 </a>
 
-
 <a
-  href="https://substack.com/@marshakerrtalley"
-  target="_blank"
-  rel="noopener">
-
+href="https://substack.com/@marshakerrtalley"
+target="_blank"
+rel="noopener">
 Substack
-
 </a>
 
-
 <a
-  href="https://www.silhouettes.com/"
-  target="_blank"
-  rel="noopener">
-
+href="https://www.silhouettes.com/"
+target="_blank"
+rel="noopener">
 Silhouette's Café
-
 </a>
 
 </div>
@@ -1500,794 +2365,32 @@ Terms and Conditions
 </footer>
 
 
-
 <script>
 
-/* =========================================================
-   COPYRIGHT YEAR
-========================================================= */
+/* Copyright year */
 
-document.getElementById("year").textContent =
+document.getElementById('year').textContent =
 new Date().getFullYear();
 
 
-
-/* =========================================================
-   MOBILE NAVIGATION
-========================================================= */
+/* Mobile navigation */
 
 const toggle =
-document.querySelector(".nav-toggle");
+document.querySelector('.nav-toggle');
 
 const nav =
-document.querySelector(".main-nav");
+document.querySelector('.main-nav');
 
-toggle.addEventListener("click",()=>{
+toggle.addEventListener('click',()=>{
 
-  nav.classList.toggle("open");
+nav.classList.toggle('open');
 
-  toggle.setAttribute(
-    "aria-expanded",
-    nav.classList.contains("open")
-  );
+toggle.setAttribute(
+'aria-expanded',
+nav.classList.contains('open')
+);
 
 });
-
-
-
-/* =========================================================
-   DATE DIFFERENTLY CARD DECK
-========================================================= */
-
-const cards = [
-
-{
-category:"CONNECT",
-title:"NO IMPRESSING ME",
-action:`
-For the next two minutes, neither of you may mention
-your job, qualifications, accomplishments, possessions
-or status.
-
-<br><br>
-
-Find something else to connect over.
-`
-},
-
-{
-category:"REVEAL",
-title:"LET ME IN",
-action:`
-Tell your date one thing people often misunderstand
-about you.
-
-<br><br>
-
-Your date may ask <strong>one follow-up question only.</strong>
-
-<br><br>
-
-Then switch.
-`
-},
-
-{
-category:"PLAY",
-title:"MAKE ME LAUGH",
-action:`
-You have <strong>60 seconds.</strong>
-
-<br><br>
-
-Your only assignment is to make the person opposite
-you laugh.
-
-<br><br>
-
-Go.
-`
-},
-
-{
-category:"NOTICE",
-title:"DON'T ASSUME",
-action:`
-Each of you name one assumption you made about the
-other person when you first saw them.
-
-<br><br>
-
-Now find out whether you were right.
-`
-},
-
-{
-category:"CONNECT",
-title:"PLAN OUR DATE",
-action:`
-You have a fictional budget of <strong>J$15,000</strong>
-and one free evening.
-
-<br><br>
-
-Together, plan a date you would both genuinely enjoy.
-
-<br><br>
-
-You must agree on the final plan.
-`
-},
-
-{
-category:"NOTICE",
-title:"SIT IN SILENCE",
-action:`
-Put the cards down.
-
-<br><br>
-
-Sit together without speaking for
-<strong>30 seconds.</strong>
-
-<br><br>
-
-When time is up, each complete the sentence:
-
-<br><br>
-
-<strong>“That felt…”</strong>
-`
-},
-
-{
-category:"REVEAL",
-title:"SHOW ME SOMETHING",
-action:`
-Take out your phone.
-
-<br><br>
-
-Find one photograph that tells your date something
-about your life.
-
-<br><br>
-
-Show it and tell the story behind it.
-
-<br><br>
-
-Then switch.
-`
-},
-
-{
-category:"CONNECT",
-title:"SAY IT CLEARLY",
-action:`
-Complete this sentence:
-
-<br><br>
-
-<strong>“When I care about someone, I need…”</strong>
-
-<br><br>
-
-Do not minimise or explain away your answer.
-
-<br><br>
-
-Then switch.
-`
-},
-
-{
-category:"PLAY",
-title:"CHOOSE FOR US",
-action:`
-Choose one together:
-
-<br><br>
-
-<strong>
-Beach · Mountains · City · Countryside
-</strong>
-
-<br><br>
-
-One person plans your imaginary day there.
-
-The other gets one change.
-
-<br><br>
-
-Then switch roles.
-`
-},
-
-{
-category:"CONNECT",
-title:"MOVE",
-action:`
-Stand up.
-
-<br><br>
-
-Take a two-minute walk together.
-
-<br><br>
-
-For those two minutes, neither of you may talk
-about work.
-`
-},
-
-{
-category:"NOTICE",
-title:"FIRST IMPRESSION — UPDATED",
-action:`
-Without discussing physical appearance,
-tell each other one way your impression of the
-other person has changed since you began talking.
-`
-},
-
-{
-category:"PLAY",
-title:"THREE IN COMMON",
-action:`
-You have <strong>90 seconds.</strong>
-
-<br><br>
-
-Find three things you genuinely have in common.
-
-<br><br>
-
-Work and where you live do not count.
-`
-},
-
-{
-category:"REVEAL",
-title:"THE ORDINARY SATURDAY",
-action:`
-Describe your ideal ordinary Saturday with a partner.
-
-<br><br>
-
-Not a holiday.
-
-Not a fantasy trip.
-
-Just real life.
-
-<br><br>
-
-Then compare.
-`
-},
-
-{
-category:"CONNECT",
-title:"ASK ME",
-action:`
-Think of something you genuinely want to know about
-the person opposite you.
-
-<br><br>
-
-Ask it.
-
-<br><br>
-
-They may answer or say <strong>Pass</strong>.
-
-No explanation required.
-`
-},
-
-{
-category:"NOTICE",
-title:"WHAT DID YOU NOTICE?",
-action:`
-Look away from each other for a moment.
-
-<br><br>
-
-Each name three things you noticed about the other
-person during this date that have nothing to do
-with physical appearance.
-`
-},
-
-{
-category:"PLAY",
-title:"THE J$10,000 DECISION",
-action:`
-You have <strong>J$10,000</strong> and one completely
-free Saturday.
-
-<br><br>
-
-Agree on exactly how you are spending both.
-
-<br><br>
-
-You have 90 seconds.
-`
-},
-
-{
-category:"REVEAL",
-title:"ONE THING I VALUE",
-action:`
-Name one quality you deeply value in a relationship.
-
-<br><br>
-
-Now give an example of what that quality looks like
-in actual behaviour.
-`
-},
-
-{
-category:"CONNECT",
-title:"TAKE THE LEAD",
-action:`
-One person chooses what the two of you talk about
-for the next two minutes.
-
-<br><br>
-
-The other follows unless something crosses a boundary.
-
-<br><br>
-
-Then switch.
-`
-},
-
-{
-category:"NOTICE",
-title:"ENERGY CHECK",
-action:`
-Without deciding whether you “like” each other,
-each complete this sentence:
-
-<br><br>
-
-<strong>“Being around you feels…”</strong>
-
-<br><br>
-
-Be kind.
-
-Be truthful.
-`
-},
-
-{
-category:"PLAY",
-title:"WOULD WE SURVIVE IT?",
-action:`
-You are travelling together and your flight is
-cancelled overnight.
-
-<br><br>
-
-You have one hotel room left, no luggage and
-terrible Wi-Fi.
-
-<br><br>
-
-Decide together what happens next.
-`
-},
-
-{
-category:"REVEAL",
-title:"I'M LEARNING",
-action:`
-Complete this sentence:
-
-<br><br>
-
-<strong>
-“Something I am learning to do differently
-in relationships is…”
-</strong>
-
-<br><br>
-
-Share only what feels appropriate.
-`
-},
-
-{
-category:"CONNECT",
-title:"MAKE A REQUEST",
-action:`
-Ask your date for one small thing that would make
-the next five minutes more enjoyable for you.
-
-<br><br>
-
-It might be a different topic, a glass of water,
-more humour, more questions—or something else.
-`
-},
-
-{
-category:"NOTICE",
-title:"WHAT FELT EASY?",
-action:`
-Each person names one part of this interaction
-that felt easy or natural.
-
-<br><br>
-
-No compliments are required.
-
-Just notice.
-`
-},
-
-{
-category:"REVEAL",
-title:"THE REAL-LIFE QUESTION",
-action:`
-Tell each other one thing that matters to the future
-you are building.
-
-<br><br>
-
-Then ask:
-
-<br><br>
-
-<strong>
-“What does that look like in your life?”
-</strong>
-`
-},
-
-{
-category:"CHOOSE",
-title:"ONE MORE DATE?",
-action:`
-Imagine this is the end of the evening.
-
-<br><br>
-
-Without answering yes or no aloud, each person says:
-
-<br><br>
-
-<strong>
-“Something I would want to know about you
-on another date is…”
-</strong>
-`
-}
-
-];
-
-
-
-/* =========================================================
-   ELEMENTS
-========================================================= */
-
-const dateCard =
-document.getElementById("dateCard");
-
-const cardCategory =
-document.getElementById("cardCategory");
-
-const cardNumber =
-document.getElementById("cardNumber");
-
-const cardTitle =
-document.getElementById("cardTitle");
-
-const cardAction =
-document.getElementById("cardAction");
-
-const remainingCards =
-document.getElementById("remainingCards");
-
-const deckComplete =
-document.getElementById("deckComplete");
-
-const drawButton =
-document.getElementById("drawButton");
-
-const passButton =
-document.getElementById("passButton");
-
-const shuffleButton =
-document.getElementById("shuffleButton");
-
-const playAgainButton =
-document.getElementById("playAgainButton");
-
-
-
-/* =========================================================
-   GAME STATE
-========================================================= */
-
-let shuffledDeck = [];
-let currentPosition = 0;
-let cardIsFlipped = false;
-
-
-
-/* =========================================================
-   SHUFFLE
-========================================================= */
-
-function shuffleCards(){
-
-  shuffledDeck =
-    cards.map((card,index)=>index);
-
-  for(
-    let i = shuffledDeck.length - 1;
-    i > 0;
-    i--
-  ){
-
-    const j =
-      Math.floor(Math.random() * (i + 1));
-
-    [
-      shuffledDeck[i],
-      shuffledDeck[j]
-    ] =
-    [
-      shuffledDeck[j],
-      shuffledDeck[i]
-    ];
-
-  }
-
-  currentPosition = 0;
-
-  cardIsFlipped = false;
-
-  dateCard.classList.remove("flipped");
-
-  deckComplete.classList.remove("show");
-
-  drawButton.disabled = false;
-  passButton.disabled = false;
-
-  displayCurrentCard();
-
-}
-
-
-
-/* =========================================================
-   DISPLAY CURRENT CARD
-========================================================= */
-
-function displayCurrentCard(){
-
-  const cardIndex =
-    shuffledDeck[currentPosition];
-
-  const currentCard =
-    cards[cardIndex];
-
-  cardCategory.textContent =
-    currentCard.category;
-
-  cardTitle.textContent =
-    currentCard.title;
-
-  cardAction.innerHTML =
-    currentCard.action;
-
-  cardNumber.textContent =
-    String(currentPosition + 1).padStart(2,"0")
-    +
-    " / "
-    +
-    cards.length;
-
-  const remaining =
-    cards.length - currentPosition;
-
-  remainingCards.textContent =
-    remaining +
-    (remaining === 1
-      ? " card remaining"
-      : " cards remaining");
-
-}
-
-
-
-/* =========================================================
-   FLIP CARD
-========================================================= */
-
-function flipCard(){
-
-  cardIsFlipped =
-    !cardIsFlipped;
-
-  dateCard.classList.toggle(
-    "flipped",
-    cardIsFlipped
-  );
-
-  dateCard.setAttribute(
-    "aria-label",
-    cardIsFlipped
-      ? "Revealed Date Differently card. Tap to turn it face down."
-      : "Face-down Date Differently card. Tap to reveal."
-  );
-
-}
-
-
-
-/* =========================================================
-   DRAW NEXT CARD
-========================================================= */
-
-function drawNextCard(){
-
-  if(!cardIsFlipped){
-
-    flipCard();
-    return;
-
-  }
-
-  if(
-    currentPosition >=
-    shuffledDeck.length - 1
-  ){
-
-    dateCard.classList.remove("flipped");
-
-    cardIsFlipped = false;
-
-    remainingCards.textContent =
-      "0 cards remaining";
-
-    deckComplete.classList.add("show");
-
-    drawButton.disabled = true;
-    passButton.disabled = true;
-
-    return;
-
-  }
-
-  dateCard.classList.remove("flipped");
-
-  cardIsFlipped = false;
-
-  setTimeout(()=>{
-
-    currentPosition++;
-
-    displayCurrentCard();
-
-  },320);
-
-}
-
-
-
-/* =========================================================
-   PASS CARD
-========================================================= */
-
-function passCard(){
-
-  if(
-    currentPosition >=
-    shuffledDeck.length - 1
-  ){
-
-    dateCard.classList.remove("flipped");
-
-    cardIsFlipped = false;
-
-    remainingCards.textContent =
-      "0 cards remaining";
-
-    deckComplete.classList.add("show");
-
-    drawButton.disabled = true;
-    passButton.disabled = true;
-
-    return;
-
-  }
-
-  dateCard.classList.remove("flipped");
-
-  cardIsFlipped = false;
-
-  setTimeout(()=>{
-
-    currentPosition++;
-
-    displayCurrentCard();
-
-  },320);
-
-}
-
-
-
-/* =========================================================
-   CLICK / KEYBOARD EVENTS
-========================================================= */
-
-dateCard.addEventListener(
-  "click",
-  flipCard
-);
-
-
-dateCard.addEventListener(
-  "keydown",
-  event=>{
-
-    if(
-      event.key === "Enter" ||
-      event.key === " "
-    ){
-
-      event.preventDefault();
-
-      flipCard();
-
-    }
-
-  }
-);
-
-
-drawButton.addEventListener(
-  "click",
-  drawNextCard
-);
-
-
-passButton.addEventListener(
-  "click",
-  passCard
-);
-
-
-shuffleButton.addEventListener(
-  "click",
-  shuffleCards
-);
-
-
-playAgainButton.addEventListener(
-  "click",
-  shuffleCards
-);
-
-
-
-/* =========================================================
-   START GAME
-========================================================= */
-
-shuffleCards();
 
 </script>
 
