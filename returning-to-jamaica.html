@@ -1728,13 +1728,23 @@ section[id]{scroll-margin-top:112px}
   background:#111;
 }
 .spotify-embed iframe{
-  width:100%;
-  min-height:180px;
   display:block;
+  width:100%;
+  height:152px !important;
+  min-height:152px !important;
+  max-height:152px !important;
   border:0;
   position:static !important;
   inset:auto !important;
   transform:none !important;
+}
+/* Keep Spotify/Anchor audio embeds compact and prevent responsive media rules
+   elsewhere on the page from stretching or reflowing the player artwork. */
+.spotify-embed{
+  height:152px;
+  min-height:152px;
+  max-height:152px;
+  contain:layout paint;
 }
 .episode-actions{
   display:flex;
@@ -4119,6 +4129,9 @@ html,body{max-width:100%;overflow-x:hidden}
             <div class="spotify-embed">
               <iframe
                 src="https://open.spotify.com/embed/episode/7Gxw4YqeVzf4qffEJNuwAu?utm_source=generator"
+                width="100%"
+                height="152"
+                style="height:152px;max-height:152px;"
                 aria-label="Spotify player for Returning to Jamaica Episode 2: Settling In, Starting Again and Choosing Joy"
                 loading="lazy"
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
@@ -4169,6 +4182,9 @@ html,body{max-width:100%;overflow-x:hidden}
               <div class="spotify-embed">
                 <iframe
                   src="https://anchor.fm/marsha-kerr-talley0/embed/episodes/This-Week-Was-a-Doozie---Returning-to-Jamaica--Ep--1-e3ooj2b"
+                  width="100%"
+                  height="152"
+                  style="height:152px;max-height:152px;"
                   aria-label="Spotify player for This Week Was a Doozie, Returning to Jamaica Episode 1"
                   loading="lazy"
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
