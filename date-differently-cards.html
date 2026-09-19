@@ -327,6 +327,2265 @@ button{
 
 .card-stack{
   position:relative;
+  width:min(100%,330px);
+  margin:0 auto 28px;
+  padding-bottom:14px;
+}
+
+.card-stack:before,
+.card-stack:after{
+  content:"";
+  position:absolute;
+  left:50%;
+  width:94%;
+  aspect-ratio:2.5/3.5;
+  transform:translateX(-50%);
+  border-radius:25px;
+  background:#fff;
+  border:1px solid var(--line);
+  z-index:0;
+}
+
+.card-stack:before{
+  top:9px;
+}
+
+.card-stack:after{
+  top:17px;
+  width:90%;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.date-card{
+  position:relative;
+  z-index:2;
+  width:100%;
+  aspect-ratio:2.5/3.5;
+  perspective:1400px;
+  cursor:pointer;
+  outline:none;
+}
+
+.card-inner{
+  width:100%;
+  height:100%;
+  position:relative;
+  transform-style:preserve-3d;
+  transition:transform .65s cubic-bezier(.2,.7,.2,1);
+}
+
+.date-card.flipped .card-inner{
+  transform:rotateY(180deg);
+}
+
+.card-face{
+  position:absolute;
+  inset:0;
+  border-radius:25px;
+  overflow:hidden;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  border:1px solid rgba(5,99,103,.16);
+  box-shadow:0 25px 60px rgba(8,63,66,.12);
+}
+
+
+/* CARD FRONT */
+
+.card-front{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:36px;
+  color:#fff;
+  background:
+    radial-gradient(circle at 25% 15%,rgba(255,255,255,.12),transparent 28%),
+    radial-gradient(circle at 80% 85%,rgba(201,168,106,.18),transparent 32%),
+    linear-gradient(145deg,var(--deep),var(--teal));
+}
+
+.front-small{
+  font-size:.68rem;
+  letter-spacing:.19em;
+  text-transform:uppercase;
+  color:#bce1e2;
+  font-weight:700;
+}
+
+.front-rule{
+  width:48px;
+  height:2px;
+  background:var(--gold);
+  margin:22px auto;
+}
+
+.card-front h2{
+  margin:0;
+  color:#fff;
+  font-family:var(--serif);
+  font-size:clamp(2.4rem,7vw,3.8rem);
+  line-height:.96;
+  font-weight:500;
+  letter-spacing:-.035em;
+}
+
+.card-front h2 em{
+  display:block;
+  color:#f1dcae;
+  font-weight:500;
+}
+
+.card-front .front-tag{
+  margin:24px 0 0;
+  color:rgba(255,255,255,.78);
+  font-size:.86rem;
+  letter-spacing:.04em;
+}
+
+.tap-instruction{
+  position:absolute;
+  bottom:30px;
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:#d8eeee;
+}
+
+
+/* CARD BACK */
+
+.card-back{
+  transform:rotateY(180deg);
+  background:#fff;
+  padding:31px 31px 26px;
+  display:flex;
+  flex-direction:column;
+  text-align:left;
+}
+
+.card-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.card-category{
+  color:var(--teal);
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.card-number{
+  color:#7a8787;
+  font-size:.78rem;
+}
+
+.card-title{
+  margin:20px 0 0;
+  color:var(--deep);
+  font-family:var(--serif);
+  font-size:clamp(1.65rem,5vw,2.15rem);
+  line-height:1.08;
+  font-weight:500;
+}
+
+.card-accent{
+  width:47px;
+  height:3px;
+  margin:19px 0 24px;
+  background:var(--gold);
+}
+
+.card-action{
+  color:var(--ink);
+  font-size:1rem;
+  line-height:1.65;
+}
+
+.card-action strong{
+  color:var(--teal);
+}
+
+.card-pass{
+  margin-top:auto;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+  color:#738080;
+  font-size:.76rem;
+  text-align:center;
+  line-height:1.45;
+}
+
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.game-controls{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.game-controls button{
+  min-height:48px;
+}
+
+.draw-button{
+  min-width:190px;
+}
+
+.pass-button{
+  min-width:90px;
+}
+
+.shuffle-button{
+  background:transparent;
+  color:#708080;
+  border:0;
+  padding:10px 14px;
+  cursor:pointer;
+  font-weight:600;
+  font-size:.82rem;
+}
+
+.shuffle-button:hover{
+  color:var(--teal);
+}
+
+.deck-status{
+  max-width:390px;
+  margin:17px auto 0;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  color:#829090;
+  font-size:.75rem;
+}
+
+.deck-complete{
+  display:none;
+  max-width:390px;
+  margin:28px auto 0;
+  padding:25px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:var(--cream);
+}
+
+.deck-complete.show{
+  display:block;
+}
+
+.deck-complete h3{
+  margin:0 0 7px;
+  color:var(--deep);
+  font-family:var(--serif);
+  font-size:1.5rem;
+  font-weight:500;
+}
+
+.deck-complete p{
+  margin:0;
+  font-size:.9rem;
+}
+
+
+/* =========================================================
+   ABOUT THE DECK
+========================================================= */
+
+.about-deck{
+  padding:80px 0;
+  background:var(--cream);
+}
+
+.about-box{
+  max-width:800px;
+  margin:auto;
+  text-align:center;
+}
+
+.about-box h2{
+  margin:8px 0 17px;
+  font-family:var(--serif);
+  color:var(--deep);
+  font-size:clamp(2rem,5vw,3.2rem);
+  font-weight:500;
+}
+
+.about-box p{
+  max-width:690px;
+  margin:0 auto 15px;
+}
+
+.about-box .btn{
+  margin-top:14px;
+}
+
+
+/* =========================================================
+   DISCLAIMER
+========================================================= */
+
+.disclaimer{
+  padding:34px 0;
+  background:#f3efe6;
+  color:#667575;
+  font-size:.86rem;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer{
+  border-top:1px solid var(--line);
+  background:#fff;
+  padding:38px 20px;
+  text-align:center;
+}
+
+.social{
+  display:flex;
+  gap:16px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+
+.social a,
+.legal a{
+  color:var(--teal);
+  text-decoration:none;
+  font-weight:600;
+}
+
+.legal{
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  flex-wrap:wrap;
+  font-size:.88rem;
+}
+
+.copyright{
+  color:#6e7b7b;
+  font-size:.9rem;
+}
+
+
+/* =========================================================
+   DESKTOP / TABLET GAME OPTIMISATION
+   MOBILE RULES BELOW REMAIN UNCHANGED
+========================================================= */
+
+@media(min-width:801px){
+
+  .game-hero{
+    padding:42px 0 25px;
+  }
+
+  .game-hero h1{
+    font-size:clamp(2.8rem,5vw,4.5rem);
+    margin:9px 0 12px;
+  }
+
+  .game-hero .tagline{
+    font-size:1.18rem;
+  }
+
+  .programme-link{
+    margin-top:14px;
+  }
+
+  .instructions{
+    padding:25px 0 12px;
+  }
+
+  .instruction-box h2{
+    font-size:2rem;
+    margin:5px 0 7px;
+  }
+
+  .instruction-box p{
+    font-size:.94rem;
+  }
+
+  .pass-rule{
+    margin-top:12px;
+    padding:7px 14px;
+  }
+
+  .game-section{
+    padding:18px 0 70px;
+  }
+
+  .game-shell{
+    width:min(100%,480px);
+  }
+
+  .card-stack{
+    width:310px;
+    margin:0 auto 25px;
+  }
+
+  .card-front{
+    padding:30px 22px;
+  }
+
+  .front-small{
+    font-size:.62rem;
+    letter-spacing:.17em;
+  }
+
+  .front-rule{
+    width:42px;
+    margin:17px auto;
+  }
+
+  .card-front h2{
+    width:100%;
+    font-size:2.8rem;
+    line-height:1;
+    letter-spacing:-.035em;
+  }
+
+  .card-front h2 em{
+    font-size:2.15rem;
+    line-height:1.08;
+    white-space:nowrap;
+  }
+
+  .card-front .front-tag{
+    margin-top:18px;
+    font-size:.8rem;
+  }
+
+  .tap-instruction{
+    bottom:24px;
+    font-size:.66rem;
+  }
+
+  .card-back{
+    padding:25px 26px 21px;
+  }
+
+  .card-title{
+    margin-top:15px;
+    font-size:1.75rem;
+  }
+
+  .card-accent{
+    margin:15px 0 18px;
+  }
+
+  .card-action{
+    font-size:.9rem;
+    line-height:1.52;
+  }
+
+  .card-pass{
+    padding-top:13px;
+    font-size:.68rem;
+  }
+
+  .game-controls{
+    gap:9px;
+  }
+
+  .game-controls .btn{
+    min-height:44px;
+    padding:10px 19px;
+  }
+
+  .draw-button{
+    min-width:170px;
+  }
+
+  .pass-button{
+    min-width:82px;
+  }
+
+  .shuffle-button{
+    padding:8px 10px;
+  }
+
+  .deck-status{
+    max-width:310px;
+    margin-top:12px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:800px){
+
+  .nav-toggle{
+    display:block;
+  }
+
+  .main-nav{
+    display:none;
+    width:100%;
+  }
+
+  .main-nav.open{
+    display:block;
+  }
+
+  .main-nav>ul{
+    flex-direction:column;
+    gap:14px;
+  }
+
+  .nav-parent:after{
+    display:none;
+  }
+
+  .nav-submenu{
+    position:static!important;
+    display:flex!important;
+    transform:none;
+    box-shadow:none;
+    border:0;
+    border-left:2px solid #e8f6f6;
+    border-radius:0;
+    background:transparent;
+    margin:4px auto 0!important;
+    width:min(100%,330px);
+    padding:3px 0 3px 18px!important;
+  }
+
+  .nav-submenu a{
+    white-space:normal;
+  }
+
+}
+
+
+@media(max-width:520px){
+
+  .game-hero{
+    padding:52px 0 35px;
+  }
+
+  .instructions{
+    padding-top:30px;
+  }
+
+  .game-section{
+    padding-top:20px;
+    padding-bottom:70px;
+  }
+
+  .card-stack{
+    width:min(91vw,355px);
+  }
+
+  .card-back{
+    padding:25px 25px 22px;
+  }
+
+  .card-action{
+    font-size:.95rem;
+  }
+
+  .game-controls{
+    width:min(91vw,355px);
+    margin:auto;
+  }
+
+  .draw-button{
+    flex:1 1 100%;
+  }
+
+  .pass-button{
+    flex:1;
+  }
+
+  .deck-status{
+    width:min(91vw,355px);
+  }
+
+}
+
+
+@media(prefers-reduced-motion:reduce){
+
+  .card-inner{
+    transition:none;
+  }
+
+  .btn{
+    transition:none;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ======================================================
+     HEADER
+====================================================== -->
+
+<header class="site-header">
+
+<div class="header-inner">
+
+<a class="logo" href="index.html">
+<img src="MKT-logo-3.png" alt="Marsha Kerr Talley - Live Inspired">
+</a>
+
+<button
+  class="nav-toggle"
+  aria-label="Open menu"
+  aria-expanded="false">
+☰
+</button>
+
+
+<nav class="main-nav" aria-label="Main navigation">
+
+<ul>
+
+<li>
+<a href="index.html">Home</a>
+</li>
+
+<li>
+<a href="about.html">About</a>
+</li>
+
+
+<li class="nav-dropdown">
+
+<a class="nav-parent active" href="work-with-me.html">
+Work With Me
+</a>
+
+<ul class="nav-submenu" aria-label="Work With Me">
+
+<li>
+<a href="work-with-me.html">
+Overview
+</a>
+</li>
+
+<li>
+<a href="https://marshakerrtalley.com/special-education">
+Special Education
+</a>
+</li>
+
+<li>
+<a href="the-six-weeks-program">
+Six-Week Programme
+</a>
+</li>
+
+<li>
+<a href="https://www.marshakerrtalley.com/date-different">
+Six Weeks to Date Differently
+</a>
+</li>
+
+<li>
+<a class="active" href="date-differently-cards.html">
+Date Differently™ Cards
+</a>
+</li>
+
+<li>
+<a href="digital-creators-lab.html">
+Digital Creators Lab
+</a>
+</li>
+
+<li>
+<a href="airbnb-host-training.html">
+Airbnb Host Training
+</a>
+</li>
+
+<li>
+<a href="inspired-by-marsha.html">
+Inspired by Marsha
+</a>
+</li>
+
+<li>
+<a href="returning-to-jamaica.html">
+Returning to Jamaica
+</a>
+</li>
+
+</ul>
+
+</li>
+
+
+<li>
+<a href="books.html">Books</a>
+</li>
+
+<li>
+<a href="podcast.html">Podcast</a>
+</li>
+
+<li>
+<a href="reflections.html">Reflections</a>
+</li>
+
+<li>
+<a href="contact.html">Contact</a>
+</li>
+
+<li>
+<a href="https://marshakerrtalley.com/shop">
+Shop
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- ======================================================
+     HERO
+====================================================== -->
+
+<section class="game-hero">
+
+<div class="wrap">
+
+<div class="eyebrow">
+Turning Pain Into Possibility™
+</div>
+
+<h1>
+Date <em>Differently.</em>
+</h1>
+
+<p class="tagline">
+Meet. Connect. Discover.
+</p>
+
+<div class="programme-link">
+
+<a href="https://www.marshakerrtalley.com/date-different">
+← Part of Six Weeks to Date Differently
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     INSTRUCTIONS
+====================================================== -->
+
+<section class="instructions">
+
+<div class="wrap">
+
+<div class="instruction-box">
+
+<div class="eyebrow">
+The Interactive Dating Deck
+</div>
+
+<h2>
+Pick a card. Do what it says.
+</h2>
+
+<p>
+This isn't a list of interview questions.
+Each card gives you something to do together—
+something playful, revealing, unexpected or intentional.
+</p>
+
+<div class="pass-rule">
+<strong>One important rule:</strong>
+Either person can pass on any card at any time.
+No explanation required.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     CARD GAME
+====================================================== -->
+
+<section class="game-section">
+
+<div class="wrap">
+
+<div class="game-shell">
+
+
+<div class="card-stack">
+
+
+<div
+  class="date-card"
+  id="dateCard"
+  tabindex="0"
+  role="button"
+  aria-label="Face-down Date Differently card. Tap or press Enter to reveal.">
+
+
+<div class="card-inner">
+
+
+<!-- CARD FRONT -->
+
+<div class="card-face card-front">
+
+<div class="front-small">
+Six Weeks to Date Differently
+</div>
+
+<div class="front-rule"></div>
+
+<h2>
+DATE
+<em>DIFFERENTLY™</em>
+</h2>
+
+<p class="front-tag">
+Meet. Connect. Discover.
+</p>
+
+<div class="tap-instruction">
+Tap to reveal
+</div>
+
+</div>
+
+
+
+<!-- CARD BACK -->
+
+<div class="card-face card-back">
+
+<div>
+
+<div class="card-top">
+
+<span
+  class="card-category"
+  id="cardCategory">
+CONNECT
+</span>
+
+<span
+  class="card-number"
+  id="cardNumber">
+01 / 25
+</span>
+
+</div>
+
+
+<h2
+  class="card-title"
+  id="cardTitle">
+NO IMPRESSING ME
+</h2>
+
+
+<div class="card-accent"></div>
+
+
+<div
+  class="card-action"
+  id="cardAction">
+
+For the next two minutes, neither of you may mention
+your job, qualifications, accomplishments, possessions
+or status.
+
+<br><br>
+
+Find something else to connect over.
+
+</div>
+
+</div>
+
+
+<div class="card-pass">
+Either person may <strong>PASS</strong> at any time.
+No explanation required.
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<!-- CONTROLS -->
+
+<div class="game-controls">
+
+<button
+  class="btn btn-primary draw-button"
+  id="drawButton"
+  type="button">
+
+Draw Another Card
+
+</button>
+
+
+<button
+  class="btn btn-secondary pass-button"
+  id="passButton"
+  type="button">
+
+Pass
+
+</button>
+
+
+<button
+  class="shuffle-button"
+  id="shuffleButton"
+  type="button">
+
+↻ Shuffle Deck
+
+</button>
+
+</div>
+
+
+
+<div class="deck-status">
+
+<span id="remainingCards">
+25 cards remaining
+</span>
+
+<span>
+Tap card to flip
+</span>
+
+</div>
+
+
+
+<div
+  class="deck-complete"
+  id="deckComplete">
+
+<h3>
+You've reached the end of the deck.
+</h3>
+
+<p>
+Want to keep going? Shuffle the cards and play again.
+</p>
+
+<button
+  class="btn btn-primary"
+  id="playAgainButton"
+  type="button"
+  style="margin-top:16px;">
+
+Shuffle &amp; Play Again
+
+</button>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     ABOUT
+====================================================== -->
+
+<section class="about-deck">
+
+<div class="wrap">
+
+<div class="about-box">
+
+<div class="eyebrow">
+More Than a Card Game
+</div>
+
+<h2>
+Experience the connection.
+</h2>
+
+<p>
+Date Differently™ was created as part of
+<strong>Six Weeks to Date Differently</strong>,
+an intentional dating experience designed to give people
+more than a few minutes to discover who someone is.
+</p>
+
+<p>
+The cards invite you to play, notice, communicate,
+make decisions, reveal something about yourself and
+experience how the person opposite you actually interacts
+with you.
+</p>
+
+<a
+  class="btn btn-primary"
+  href="https://www.marshakerrtalley.com/date-different">
+
+Explore the Six-Week Experience
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     DISCLAIMER
+====================================================== -->
+
+<section class="disclaimer">
+
+<div class="wrap">
+
+<strong>Important:</strong>
+
+Date Differently™ is an educational,
+personal-development and social dating activity.
+
+It does not provide psychotherapy, psychological treatment
+or professional matchmaking guarantees.
+
+Participants remain responsible for their own dating
+decisions, personal boundaries and safety.
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+<footer class="site-footer">
+
+<div class="social">
+
+<a
+  href="https://www.linkedin.com/in/marshakerrtalley"
+  target="_blank"
+  rel="noopener">
+
+LinkedIn
+
+</a>
+
+
+<a
+  href="https://substack.com/@marshakerrtalley"
+  target="_blank"
+  rel="noopener">
+
+Substack
+
+</a>
+
+
+<a
+  href="https://www.silhouettes.com/"
+  target="_blank"
+  rel="noopener">
+
+Silhouette's Café
+
+</a>
+
+</div>
+
+
+<p class="copyright">
+
+Copyright ©
+<span id="year"></span>
+Marsha Kerr Talley. All Rights Reserved.
+
+</p>
+
+
+<div class="legal">
+
+<a href="/privacy-policy">
+Privacy Policy
+</a>
+
+<a href="/shipping-return-policy">
+Shipping &amp; Return Policy
+</a>
+
+<a href="/terms-and-conditions">
+Terms and Conditions
+</a>
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+/* =========================================================
+   COPYRIGHT YEAR
+========================================================= */
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+const toggle =
+document.querySelector(".nav-toggle");
+
+const nav =
+document.querySelector(".main-nav");
+
+toggle.addEventListener("click",()=>{
+
+  nav.classList.toggle("open");
+
+  toggle.setAttribute(
+    "aria-expanded",
+    nav.classList.contains("open")
+  );
+
+});
+
+
+
+/* =========================================================
+   DATE DIFFERENTLY CARD DECK
+========================================================= */
+
+const cards = [
+
+{
+category:"CONNECT",
+title:"NO IMPRESSING ME",
+action:`
+For the next two minutes, neither of you may mention
+your job, qualifications, accomplishments, possessions
+or status.
+
+<br><br>
+
+Find something else to connect over.
+`
+},
+
+{
+category:"REVEAL",
+title:"LET ME IN",
+action:`
+Tell your date one thing people often misunderstand
+about you.
+
+<br><br>
+
+Your date may ask <strong>one follow-up question only.</strong>
+
+<br><br>
+
+Then switch.
+`
+},
+
+{
+category:"PLAY",
+title:"MAKE ME LAUGH",
+action:`
+You have <strong>60 seconds.</strong>
+
+<br><br>
+
+Your only assignment is to make the person opposite
+you laugh.
+
+<br><br>
+
+Go.
+`
+},
+
+{
+category:"NOTICE",
+title:"DON'T ASSUME",
+action:`
+Each of you name one assumption you made about the
+other person when you first saw them.
+
+<br><br>
+
+Now find out whether you were right.
+`
+},
+
+{
+category:"CONNECT",
+title:"PLAN OUR DATE",
+action:`
+You have a fictional budget of <strong>J$15,000</strong>
+and one free evening.
+
+<br><br>
+
+Together, plan a date you would both genuinely enjoy.
+
+<br><br>
+
+You must agree on the final plan.
+`
+},
+
+{
+category:"NOTICE",
+title:"SIT IN SILENCE",
+action:`
+Put the cards down.
+
+<br><br>
+
+Sit together without speaking for
+<strong>30 seconds.</strong>
+
+<br><br>
+
+When time is up, each complete the sentence:
+
+<br><br>
+
+<strong>“That felt…”</strong>
+`
+},
+
+{
+category:"REVEAL",
+title:"SHOW ME SOMETHING",
+action:`
+Take out your phone.
+
+<br><br>
+
+Find one photograph that tells your date something
+about your life.
+
+<br><br>
+
+Show it and tell the story behind it.
+
+<br><br>
+
+Then switch.
+`
+},
+
+{
+category:"CONNECT",
+title:"SAY IT CLEARLY",
+action:`
+Complete this sentence:
+
+<br><br>
+
+<strong>“When I care about someone, I need…”</strong>
+
+<br><br>
+
+Do not minimise or explain away your answer.
+
+<br><br>
+
+Then switch.
+`
+},
+
+{
+category:"PLAY",
+title:"CHOOSE FOR US",
+action:`
+Choose one together:
+
+<br><br>
+
+<strong>
+Beach · Mountains · City · Countryside
+</strong>
+
+<br><br>
+
+One person plans your imaginary day there.
+
+The other gets one change.
+
+<br><br>
+
+Then switch roles.
+`
+},
+
+{
+category:"CONNECT",
+title:"MOVE",
+action:`
+Stand up.
+
+<br><br>
+
+Take a two-minute walk together.
+
+<br><br>
+
+For those two minutes, neither of you may talk
+about work.
+`
+},
+
+{
+category:"NOTICE",
+title:"FIRST IMPRESSION — UPDATED",
+action:`
+Without discussing physical appearance,
+tell each other one way your impression of the
+other person has changed since you began talking.
+`
+},
+
+{
+category:"PLAY",
+title:"THREE IN COMMON",
+action:`
+You have <strong>90 seconds.</strong>
+
+<br><br>
+
+Find three things you genuinely have in common.
+
+<br><br>
+
+Work and where you live do not count.
+`
+},
+
+{
+category:"REVEAL",
+title:"THE ORDINARY SATURDAY",
+action:`
+Describe your ideal ordinary Saturday with a partner.
+
+<br><br>
+
+Not a holiday.
+
+Not a fantasy trip.
+
+Just real life.
+
+<br><br>
+
+Then compare.
+`
+},
+
+{
+category:"CONNECT",
+title:"ASK ME",
+action:`
+Think of something you genuinely want to know about
+the person opposite you.
+
+<br><br>
+
+Ask it.
+
+<br><br>
+
+They may answer or say <strong>Pass</strong>.
+
+No explanation required.
+`
+},
+
+{
+category:"NOTICE",
+title:"WHAT DID YOU NOTICE?",
+action:`
+Look away from each other for a moment.
+
+<br><br>
+
+Each name three things you noticed about the other
+person during this date that have nothing to do
+with physical appearance.
+`
+},
+
+{
+category:"PLAY",
+title:"THE J$10,000 DECISION",
+action:`
+You have <strong>J$10,000</strong> and one completely
+free Saturday.
+
+<br><br>
+
+Agree on exactly how you are spending both.
+
+<br><br>
+
+You have 90 seconds.
+`
+},
+
+{
+category:"REVEAL",
+title:"ONE THING I VALUE",
+action:`
+Name one quality you deeply value in a relationship.
+
+<br><br>
+
+Now give an example of what that quality looks like
+in actual behaviour.
+`
+},
+
+{
+category:"CONNECT",
+title:"TAKE THE LEAD",
+action:`
+One person chooses what the two of you talk about
+for the next two minutes.
+
+<br><br>
+
+The other follows unless something crosses a boundary.
+
+<br><br>
+
+Then switch.
+`
+},
+
+{
+category:"NOTICE",
+title:"ENERGY CHECK",
+action:`
+Without deciding whether you “like” each other,
+each complete this sentence:
+
+<br><br>
+
+<strong>“Being around you feels…”</strong>
+
+<br><br>
+
+Be kind.
+
+Be truthful.
+`
+},
+
+{
+category:"PLAY",
+title:"WOULD WE SURVIVE IT?",
+action:`
+You are travelling together and your flight is
+cancelled overnight.
+
+<br><br>
+
+You have one hotel room left, no luggage and
+terrible Wi-Fi.
+
+<br><br>
+
+Decide together what happens next.
+`
+},
+
+{
+category:"REVEAL",
+title:"I'M LEARNING",
+action:`
+Complete this sentence:
+
+<br><br>
+
+<strong>
+“Something I am learning to do differently
+in relationships is…”
+</strong>
+
+<br><br>
+
+Share only what feels appropriate.
+`
+},
+
+{
+category:"CONNECT",
+title:"MAKE A REQUEST",
+action:`
+Ask your date for one small thing that would make
+the next five minutes more enjoyable for you.
+
+<br><br>
+
+It might be a different topic, a glass of water,
+more humour, more questions—or something else.
+`
+},
+
+{
+category:"NOTICE",
+title:"WHAT FELT EASY?",
+action:`
+Each person names one part of this interaction
+that felt easy or natural.
+
+<br><br>
+
+No compliments are required.
+
+Just notice.
+`
+},
+
+{
+category:"REVEAL",
+title:"THE REAL-LIFE QUESTION",
+action:`
+Tell each other one thing that matters to the future
+you are building.
+
+<br><br>
+
+Then ask:
+
+<br><br>
+
+<strong>
+“What does that look like in your life?”
+</strong>
+`
+},
+
+{
+category:"CHOOSE",
+title:"ONE MORE DATE?",
+action:`
+Imagine this is the end of the evening.
+
+<br><br>
+
+Without answering yes or no aloud, each person says:
+
+<br><br>
+
+<strong>
+“Something I would want to know about you
+on another date is…”
+</strong>
+`
+}
+
+];
+
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const dateCard =
+document.getElementById("dateCard");
+
+const cardCategory =
+document.getElementById("cardCategory");
+
+const cardNumber =
+document.getElementById("cardNumber");
+
+const cardTitle =
+document.getElementById("cardTitle");
+
+const cardAction =
+document.getElementById("cardAction");
+
+const remainingCards =
+document.getElementById("remainingCards");
+
+const deckComplete =
+document.getElementById("deckComplete");
+
+const drawButton =
+document.getElementById("drawButton");
+
+const passButton =
+document.getElementById("passButton");
+
+const shuffleButton =
+document.getElementById("shuffleButton");
+
+const playAgainButton =
+document.getElementById("playAgainButton");
+
+
+
+/* =========================================================
+   GAME STATE
+========================================================= */
+
+let shuffledDeck = [];
+let currentPosition = 0;
+let cardIsFlipped = false;
+
+
+
+/* =========================================================
+   SHUFFLE
+========================================================= */
+
+function shuffleCards(){
+
+  shuffledDeck =
+    cards.map((card,index)=>index);
+
+  for(
+    let i = shuffledDeck.length - 1;
+    i > 0;
+    i--
+  ){
+
+    const j =
+      Math.floor(Math.random() * (i + 1));
+
+    [
+      shuffledDeck[i],
+      shuffledDeck[j]
+    ] =
+    [
+      shuffledDeck[j],
+      shuffledDeck[i]
+    ];
+
+  }
+
+  currentPosition = 0;
+
+  cardIsFlipped = false;
+
+  dateCard.classList.remove("flipped");
+
+  deckComplete.classList.remove("show");
+
+  drawButton.disabled = false;
+  passButton.disabled = false;
+
+  displayCurrentCard();
+
+}
+
+
+
+/* =========================================================
+   DISPLAY CURRENT CARD
+========================================================= */
+
+function displayCurrentCard(){
+
+  const cardIndex =
+    shuffledDeck[currentPosition];
+
+  const currentCard =
+    cards[cardIndex];
+
+  cardCategory.textContent =
+    currentCard.category;
+
+  cardTitle.textContent =
+    currentCard.title;
+
+  cardAction.innerHTML =
+    currentCard.action;
+
+  cardNumber.textContent =
+    String(currentPosition + 1).padStart(2,"0")
+    +
+    " / "
+    +
+    cards.length;
+
+  const remaining =
+    cards.length - currentPosition;
+
+  remainingCards.textContent =
+    remaining +
+    (remaining === 1
+      ? " card remaining"
+      : " cards remaining");
+
+}
+
+
+
+/* =========================================================
+   FLIP CARD
+========================================================= */
+
+function flipCard(){
+
+  cardIsFlipped =
+    !cardIsFlipped;
+
+  dateCard.classList.toggle(
+    "flipped",
+    cardIsFlipped
+  );
+
+  dateCard.setAttribute(
+    "aria-label",
+    cardIsFlipped
+      ? "Revealed Date Differently card. Tap to turn it face down."
+      : "Face-down Date Differently card. Tap to reveal."
+  );
+
+}
+
+
+
+/* =========================================================
+   DRAW NEXT CARD
+========================================================= */
+
+function drawNextCard(){
+
+  if(!cardIsFlipped){
+
+    flipCard();
+    return;
+
+  }
+
+  if(
+    currentPosition >=
+    shuffledDeck.length - 1
+  ){
+
+    dateCard.classList.remove("flipped");
+
+    cardIsFlipped = false;
+
+    remainingCards.textContent =
+      "0 cards remaining";
+
+    deckComplete.classList.add("show");
+
+    drawButton.disabled = true;
+    passButton.disabled = true;
+
+    return;
+
+  }
+
+  dateCard.classList.remove("flipped");
+
+  cardIsFlipped = false;
+
+  setTimeout(()=>{
+
+    currentPosition++;
+
+    displayCurrentCard();
+
+  },320);
+
+}
+
+
+
+/* =========================================================
+   PASS CARD
+========================================================= */
+
+function passCard(){
+
+  if(
+    currentPosition >=
+    shuffledDeck.length - 1
+  ){
+
+    dateCard.classList.remove("flipped");
+
+    cardIsFlipped = false;
+
+    remainingCards.textContent =
+      "0 cards remaining";
+
+    deckComplete.classList.add("show");
+
+    drawButton.disabled = true;
+    passButton.disabled = true;
+
+    return;
+
+  }
+
+  dateCard.classList.remove("flipped");
+
+  cardIsFlipped = false;
+
+  setTimeout(()=>{
+
+    currentPosition++;
+
+    displayCurrentCard();
+
+  },320);
+
+}
+
+
+
+/* =========================================================
+   CLICK / KEYBOARD EVENTS
+========================================================= */
+
+dateCard.addEventListener(
+  "click",
+  flipCard
+);
+
+
+dateCard.addEventListener(
+  "keydown",
+  event=>{
+
+    if(
+      event.key === "Enter" ||
+      event.key === " "
+    ){
+
+      event.preventDefault();
+
+      flipCard();
+
+    }
+
+  }
+);
+
+
+drawButton.addEventListener(
+  "click",
+  drawNextCard
+);
+
+
+passButton.addEventListener(
+  "click",
+  passCard
+);
+
+
+shuffleButton.addEventListener(
+  "click",
+  shuffleCards
+);
+
+
+playAgainButton.addEventListener(
+  "click",
+  shuffleCards
+);
+
+
+
+/* =========================================================
+   START GAME
+========================================================= */
+
+shuffleCards();
+
+</script>
+
+
+</body>
+</html>}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--text);
+  font-family:var(--sans);
+  line-height:1.75;
+}
+
+a{
+  color:inherit;
+}
+
+button{
+  font:inherit;
+}
+
+.wrap{
+  width:min(1120px,calc(100% - 38px));
+  margin:auto;
+}
+
+
+/* =========================================================
+   SITE HEADER
+========================================================= */
+
+.site-header{
+  background:rgba(255,253,249,.97);
+  border-bottom:1px solid var(--line);
+  position:relative;
+  z-index:50;
+}
+
+.header-inner{
+  width:min(1200px,calc(100% - 38px));
+  margin:auto;
+  padding:18px 0 13px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  position:relative;
+}
+
+.logo img{
+  width:220px;
+  display:block;
+}
+
+.nav-toggle{
+  display:none;
+  position:absolute;
+  right:0;
+  top:20px;
+  border:0;
+  background:none;
+  font-size:28px;
+  color:var(--teal);
+  cursor:pointer;
+}
+
+.main-nav ul{
+  list-style:none;
+  margin:12px 0 0;
+  padding:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:27px;
+  font-size:13px;
+  letter-spacing:.075em;
+  text-transform:uppercase;
+}
+
+.main-nav a{
+  text-decoration:none;
+  font-weight:500;
+}
+
+.main-nav a:hover,
+.main-nav a.active{
+  color:var(--teal);
+  font-weight:700;
+}
+
+.nav-dropdown{
+  position:relative;
+}
+
+.nav-parent:after{
+  content:"⌄";
+  margin-left:6px;
+  color:var(--aqua);
+}
+
+.nav-submenu{
+  position:absolute!important;
+  top:calc(100% + 10px);
+  left:50%;
+  transform:translateX(-50%);
+  display:none!important;
+  flex-direction:column!important;
+  gap:3px!important;
+  min-width:240px;
+  padding:9px!important;
+  margin:0!important;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:15px;
+  box-shadow:0 18px 44px rgba(5,99,103,.14);
+  text-align:left;
+}
+
+.nav-submenu:before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:-12px;
+  height:12px;
+}
+
+.nav-submenu a{
+  display:block;
+  padding:9px 12px;
+  border-radius:9px;
+  white-space:nowrap;
+  text-transform:none;
+  letter-spacing:0;
+  font-size:13px;
+}
+
+.nav-submenu a:hover{
+  background:#e8f6f6;
+}
+
+.nav-dropdown:hover>.nav-submenu,
+.nav-dropdown:focus-within>.nav-submenu{
+  display:flex!important;
+}
+
+
+/* =========================================================
+   SHARED
+========================================================= */
+
+.eyebrow{
+  color:var(--teal);
+  font-size:.76rem;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:49px;
+  padding:12px 22px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:.9rem;
+  transition:.22s ease;
+  border:0;
+  cursor:pointer;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  background:var(--teal);
+  color:#fff;
+}
+
+.btn-secondary{
+  border:1px solid rgba(5,99,103,.3);
+  color:var(--teal);
+  background:#fff;
+}
+
+
+/* =========================================================
+   INTRO / HERO
+========================================================= */
+
+.game-hero{
+  padding:68px 0 45px;
+  text-align:center;
+  background:
+    radial-gradient(circle at 8% 20%,rgba(49,159,162,.13),transparent 30%),
+    radial-gradient(circle at 92% 80%,rgba(201,168,106,.13),transparent 27%),
+    linear-gradient(180deg,#fffdf9,#f8f3eb);
+}
+
+.game-hero h1{
+  font-family:var(--serif);
+  font-size:clamp(3rem,7vw,5.7rem);
+  line-height:.98;
+  letter-spacing:-.04em;
+  color:var(--deep);
+  margin:12px 0 18px;
+  font-weight:500;
+}
+
+.game-hero h1 em{
+  color:var(--teal);
+  font-style:italic;
+  font-weight:500;
+}
+
+.game-hero .tagline{
+  font-family:var(--serif);
+  font-size:clamp(1.15rem,2vw,1.45rem);
+  color:var(--ink);
+  margin:0;
+}
+
+.programme-link{
+  margin-top:22px;
+}
+
+.programme-link a{
+  color:var(--teal);
+  text-decoration:none;
+  font-size:.88rem;
+  font-weight:700;
+  border-bottom:1px solid rgba(5,99,103,.25);
+}
+
+.programme-link a:hover{
+  border-color:var(--teal);
+}
+
+
+/* =========================================================
+   INSTRUCTIONS
+========================================================= */
+
+.instructions{
+  padding:38px 0 22px;
+}
+
+.instruction-box{
+  max-width:780px;
+  margin:auto;
+  text-align:center;
+}
+
+.instruction-box h2{
+  margin:7px 0 10px;
+  color:var(--deep);
+  font-family:var(--serif);
+  font-size:clamp(1.8rem,4vw,2.6rem);
+  font-weight:500;
+}
+
+.instruction-box p{
+  margin:0 auto;
+  max-width:680px;
+}
+
+.pass-rule{
+  display:inline-block;
+  margin-top:17px;
+  padding:9px 16px;
+  background:var(--cream);
+  border-left:3px solid var(--gold);
+  color:var(--deep);
+  font-size:.87rem;
+}
+
+
+/* =========================================================
+   GAME AREA
+========================================================= */
+
+.game-section{
+  padding:30px 0 95px;
+}
+
+.game-shell{
+  width:min(100%,520px);
+  margin:auto;
+  text-align:center;
+}
+
+.card-stack{
+  position:relative;
   width:min(100%,390px);
   margin:0 auto 34px;
   padding-bottom:14px;
