@@ -1,1191 +1,130 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Special Education &amp; Behaviour Support | Marsha Kerr Talley</title>
-<meta content="Special Education and behaviour support for parents, students, teachers and schools in Jamaica and online, including consultation, private tutoring, workshops and practical resources." name="description"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Special Education & Behaviour Support | Marsha Kerr Talley</title>
+<meta name="description" content="Practical Special Education, behaviour and inclusive learning support for learners, parents, teachers, schools and organisations in Jamaica and online. Workshops, professional development, consultation, tutoring and in-class support.">
+
 <style>
-    :root {
-      --teal: #319fa2;
-      --bright-teal: #2fe2dd;
-      --deep-teal: #056367;
-      --cream: #f8f7f2;
-      --white: #ffffff;
-      --ink: #242424;
-      --muted: #636363;
-      --light-teal: #e8f8f7;
-      --border: #d9e7e6;
-      --green: #237a52;
-      --green-light: #e9f7ef;
-      --red: #a63d40;
-      --red-light: #fff0f0;
-      --gold: #c49435;
-      --shadow: 0 10px 30px rgba(0,0,0,0.08);
-      --radius: 20px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background: var(--cream);
-      color: var(--ink);
-      line-height: 1.6;
-    }
-
-    button,
-    textarea,
-    input {
-      font: inherit;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .hero {
-      background:
-        radial-gradient(circle at top right, rgba(47,226,221,0.23), transparent 30%),
-        linear-gradient(135deg, var(--deep-teal), #0b7778);
-      color: white;
-      padding: 72px 20px 58px;
-    }
-
-    .hero-inner {
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .eyebrow {
-      font-family: Arial, Helvetica, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-weight: 700;
-      font-size: 0.78rem;
-      opacity: 0.88;
-    }
-
-    h1 {
-      margin: 10px 0 14px;
-      font-size: clamp(2.4rem, 6vw, 5rem);
-      line-height: 0.98;
-      max-width: 850px;
-    }
-
-    .hero p {
-      max-width: 760px;
-      font-size: 1.15rem;
-      margin-bottom: 28px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn {
-      border: none;
-      border-radius: 999px;
-      padding: 13px 20px;
-      cursor: pointer;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 700;
-      transition: 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-    }
-
-    .btn-primary {
-      background: var(--bright-teal);
-      color: #053e40;
-    }
-
-    .btn-light {
-      background: rgba(255,255,255,0.12);
-      color: white;
-      border: 1px solid rgba(255,255,255,0.3);
-    }
-
-    .progress-wrap {
-      background: white;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .progress-inner {
-      max-width: 1100px;
-      margin: auto;
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.9rem;
-    }
-
-    .progress-track {
-      flex: 1;
-      height: 9px;
-      background: #e8ecec;
-      border-radius: 20px;
-      overflow: hidden;
-    }
-
-    .progress-bar {
-      width: 0%;
-      height: 100%;
-      background: var(--teal);
-      transition: width 0.3s ease;
-    }
-
-    main {
-      max-width: 1100px;
-      margin: auto;
-      padding: 42px 20px 80px;
-    }
-
-    .section {
-      margin-bottom: 58px;
-      scroll-margin-top: 90px;
-    }
-
-    .section-tag {
-      display: inline-block;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-weight: 800;
-      color: var(--deep-teal);
-      background: var(--light-teal);
-      border-radius: 999px;
-      padding: 6px 11px;
-      margin-bottom: 8px;
-    }
-
-    h2 {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      line-height: 1.1;
-      margin: 4px 0 12px;
-      color: var(--deep-teal);
-    }
-
-    h3 {
-      font-size: 1.35rem;
-      margin-top: 0;
-    }
-
-    .lead {
-      font-size: 1.1rem;
-      max-width: 820px;
-    }
-
-    .principle {
-      background: var(--deep-teal);
-      color: white;
-      padding: 30px;
-      border-radius: var(--radius);
-      margin: 25px 0;
-      font-size: 1.25rem;
-      box-shadow: var(--shadow);
-    }
-
-    .principle strong {
-      color: var(--bright-teal);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
-    }
-
-    .case-card {
-      border-left: 6px solid var(--teal);
-    }
-
-    .case-label {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.78rem;
-      font-weight: 800;
-      color: var(--deep-teal);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .question {
-      margin: 24px 0;
-      padding: 22px;
-      background: white;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-    }
-
-    .question-number {
-      color: var(--deep-teal);
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-
-    .options {
-      display: grid;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .option {
-      background: #fafafa;
-      border: 2px solid #e5e5e5;
-      border-radius: 13px;
-      padding: 13px 15px;
-      text-align: left;
-      cursor: pointer;
-      color: var(--ink);
-    }
-
-    .option:hover {
-      border-color: var(--teal);
-      background: var(--light-teal);
-    }
-
-    .option.correct {
-      border-color: var(--green);
-      background: var(--green-light);
-    }
-
-    .option.incorrect {
-      border-color: var(--red);
-      background: var(--red-light);
-    }
-
-    .feedback {
-      display: none;
-      margin-top: 13px;
-      padding: 13px 15px;
-      border-radius: 12px;
-      font-size: 0.98rem;
-    }
-
-    .feedback.show {
-      display: block;
-    }
-
-    .feedback.good {
-      background: var(--green-light);
-      color: #155838;
-    }
-
-    .feedback.try {
-      background: #fff5e7;
-      color: #72501e;
-    }
-
-    textarea,
-    input[type="text"] {
-      width: 100%;
-      border: 1px solid #cfdada;
-      border-radius: 13px;
-      padding: 13px;
-      margin-top: 8px;
-      background: white;
-      color: var(--ink);
-    }
-
-    textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
-
-    textarea:focus,
-    input:focus,
-    button:focus {
-      outline: 3px solid rgba(49,159,162,0.25);
-      outline-offset: 2px;
-    }
-
-    .prompt-box {
-      background: #fffdf5;
-      border-left: 5px solid var(--gold);
-      padding: 20px;
-      border-radius: 14px;
-      margin: 18px 0;
-    }
-
-    .oral {
-      background: #f1f6ff;
-      border-left-color: #5075a8;
-    }
-
-    details {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      margin-bottom: 12px;
-      overflow: hidden;
-    }
-
-    summary {
-      cursor: pointer;
-      list-style: none;
-      padding: 18px 20px;
-      font-weight: bold;
-      color: var(--deep-teal);
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    details[open] summary {
-      background: var(--light-teal);
-    }
-
-    .details-content {
-      padding: 0 20px 20px;
-    }
-
-    .mini-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .mini-card {
-      background: var(--light-teal);
-      border-radius: 14px;
-      padding: 15px;
-      min-height: 135px;
-    }
-
-    .mini-card strong {
-      display: block;
-      color: var(--deep-teal);
-      margin-bottom: 4px;
-    }
-
-    .scenario-builder {
-      background: white;
-      border-radius: var(--radius);
-      padding: 25px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-    }
-
-    .builder-row {
-      margin-bottom: 18px;
-    }
-
-    .builder-row label {
-      display: block;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 700;
-      margin-bottom: 5px;
-    }
-
-    select {
-      width: 100%;
-      border: 1px solid #cfdada;
-      border-radius: 13px;
-      padding: 13px;
-      background: white;
-      font: inherit;
-    }
-
-    #challengeResult {
-      display: none;
-      margin-top: 20px;
-      background: var(--light-teal);
-      padding: 20px;
-      border-radius: 15px;
-    }
-
-    .myth {
-      font-size: 1.08rem;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    .myth-buttons {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .small-note {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .jamaica-transition {
-      background:
-        radial-gradient(circle at top right, rgba(47,226,221,0.20), transparent 32%),
-        linear-gradient(135deg, #053f42, var(--deep-teal));
-      color: white;
-      border-radius: var(--radius);
-      padding: 34px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .jamaica-transition h2 {
-      color: white;
-      margin-bottom: 14px;
-    }
-
-    .jamaica-transition .section-tag {
-      background: rgba(255,255,255,0.14);
-      color: var(--bright-teal);
-    }
-
-    .jamaica-transition .jamaica-lead {
-      font-size: 1.12rem;
-      max-width: 860px;
-    }
-
-    .jamaica-reality-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin: 22px 0 25px;
-    }
-
-    .jamaica-reality {
-      background: rgba(255,255,255,0.09);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 14px;
-      padding: 15px 17px;
-    }
-
-    .jamaica-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      background: var(--bright-teal);
-      color: #053e40;
-      border-radius: 999px;
-      padding: 14px 21px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 800;
-      transition: 0.2s ease;
-    }
-
-    .jamaica-link:hover {
-      transform: translateY(-1px);
-    }
-
-    @media (max-width: 760px) {
-      .jamaica-reality-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .completion {
-      background: linear-gradient(135deg, var(--deep-teal), #168c8b);
-      color: white;
-      border-radius: var(--radius);
-      padding: 32px;
-      text-align: center;
-    }
-
-    .completion h2 {
-      color: white;
-    }
-
-    .completion textarea {
-      text-align: left;
-    }
-
-    footer {
-      background: #153c3d;
-      color: white;
-      padding: 32px 20px;
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    footer p {
-      margin: 4px;
-    }
-
-    .hide-print {
-      display: inline-flex;
-    }
-
-    @media (max-width: 760px) {
-      .grid,
-      .mini-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 50px;
-      }
-
-      .progress-inner {
-        font-size: 0.8rem;
-      }
-    }
-
-    @media print {
-      .hero {
-        background: white !important;
-        color: black !important;
-        padding: 25px 0;
-      }
-
-      .progress-wrap,
-      .hide-print,
-      .option,
-      footer {
-        display: none !important;
-      }
-
-      body {
-        background: white;
-      }
-
-      .card,
-      .question,
-      .scenario-builder {
-        box-shadow: none;
-        break-inside: avoid;
-      }
-
-      details {
-        break-inside: avoid;
-      }
-
-      details .details-content {
-        display: block;
-      }
-    }
-
-
-    /* ===== Dedicated Special Education landing page ===== */
-    .special-hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.55fr) minmax(260px, .7fr);
-      gap: 36px;
-      align-items: end;
-    }
-
-    .hero-note {
-      background: rgba(255,255,255,.11);
-      border: 1px solid rgba(255,255,255,.22);
-      border-radius: var(--radius);
-      padding: 24px;
-      backdrop-filter: blur(6px);
-    }
-
-    .hero-note strong { display:block; font-size:1.08rem; margin-bottom:10px; }
-    .hero-note span { font-family: Arial, Helvetica, sans-serif; opacity:.9; font-size:.92rem; }
-
-    .landing-section { margin-bottom: 70px; }
-    .landing-grid { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:18px; }
-    .service-card {
-      background:white; border:1px solid var(--border); border-radius:var(--radius);
-      padding:26px; box-shadow:0 6px 20px rgba(0,0,0,.04);
-    }
-    .service-card h3 { color:var(--deep-teal); margin-bottom:8px; }
-    .service-card p { margin-bottom:0; }
-    .service-kicker {
-      display:inline-block; font-family:Arial,Helvetica,sans-serif; font-size:.72rem;
-      text-transform:uppercase; letter-spacing:.09em; font-weight:800; color:var(--deep-teal);
-      background:var(--light-teal); border-radius:999px; padding:5px 9px; margin-bottom:12px;
-    }
-
-    .video-shell {
-      display:grid; grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr); gap:28px; align-items:center;
-      background:white; border:1px solid var(--border); border-radius:var(--radius); padding:28px;
-      box-shadow:var(--shadow);
-    }
-    .video-wrap { position:relative; width:min(100%, 420px); aspect-ratio:9 / 16; overflow:hidden; border-radius:16px; background:#0b2f30; margin:0 auto; }
-    .video-wrap iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
-
-    .audience-strip {
-      display:flex; flex-wrap:wrap; gap:10px; margin-top:18px;
-    }
-    .audience-pill {
-      display:inline-flex; align-items:center; text-decoration:none;
-      background:var(--light-teal); color:var(--deep-teal); border-radius:999px; padding:8px 12px;
-      font-family:Arial,Helvetica,sans-serif; font-size:.88rem; font-weight:700;
-      border:1px solid transparent; transition:.2s ease;
-    }
-    .audience-pill:hover, .audience-pill:focus { background:white; border-color:var(--teal); transform:translateY(-1px); }
-    .service-card { scroll-margin-top:95px; }
-    .service-card:target { outline:3px solid rgba(49,159,162,.25); outline-offset:4px; }
-    .service-action {
-      display:inline-flex; margin-top:16px; border:0; border-radius:999px; padding:10px 14px;
-      background:var(--deep-teal); color:white; text-decoration:none; cursor:pointer;
-      font-family:Arial,Helvetica,sans-serif; font-weight:800; font-size:.86rem;
-    }
-
-    .lead-box {
-      background:linear-gradient(135deg,#ffffff,#f2fbfa); border:1px solid var(--border);
-      border-radius:var(--radius); padding:32px; box-shadow:var(--shadow);
-    }
-    .lead-form { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:22px; }
-    .lead-form .full { grid-column:1/-1; }
-    .lead-form label { display:block; font-family:Arial,Helvetica,sans-serif; font-weight:700; font-size:.9rem; margin-bottom:6px; }
-    .lead-form input, .lead-form select, .lead-form textarea {
-      width:100%; border:1px solid #cfdada; border-radius:13px; padding:13px; background:white; color:var(--ink);
-    }
-    .lead-form textarea { min-height:120px; }
-    .form-note { font-size:.84rem; color:var(--muted); margin-top:12px; }
-
-    .resource-divider {
-      margin:80px 0 48px; padding:34px; border-radius:var(--radius);
-      background:linear-gradient(135deg,#053f42,var(--deep-teal)); color:white;
-    }
-    .resource-divider h2 { color:white; }
-    .resource-divider .section-tag { background:rgba(255,255,255,.13); color:var(--bright-teal); }
-
-    .se-fab {
-      position:fixed; right:28px; bottom:28px; z-index:900; border:0; border-radius:999px;
-      padding:15px 20px; background:#06777a; color:white; box-shadow:0 14px 34px rgba(0,0,0,.2);
-      font-family:Arial,Helvetica,sans-serif; font-weight:800; font-size:1rem; cursor:pointer;
-      display:flex; align-items:center; gap:9px;
-    }
-    .se-fab-dot { width:12px; height:12px; border-radius:50%; background:var(--bright-teal); box-shadow:0 0 0 5px rgba(47,226,221,.16); }
-
-    .faq-overlay {
-      display:none; position:fixed; inset:0; z-index:1000; background:rgba(16,40,41,.58);
-      padding:28px; align-items:center; justify-content:center;
-    }
-    .faq-overlay.open { display:flex; }
-    .faq-panel {
-      width:min(820px,96vw); max-height:86vh; overflow:auto; background:white; border-radius:28px;
-      padding:34px; box-shadow:0 22px 70px rgba(0,0,0,.26); position:relative;
-    }
-    .faq-close {
-      position:absolute; right:22px; top:20px; width:44px; height:44px; border:0; border-radius:50%;
-      background:var(--light-teal); color:var(--deep-teal); font-size:1.7rem; cursor:pointer;
-    }
-    .faq-panel h2 { max-width:620px; margin-right:52px; }
-    .faq-intro { color:var(--muted); max-width:680px; }
-    .faq-list { margin-top:20px; }
-    .faq-list details { box-shadow:none; }
-    .faq-list summary { padding-right:48px; }
-    .faq-cta {
-      margin-top:22px; padding:20px; border-radius:16px; background:var(--light-teal);
-      display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;
-    }
-
-
-    .ecology-feature {
-      margin-top: 34px;
-    }
-    .ecology-card {
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-left: 6px solid var(--teal);
-      border-radius: 18px;
-      padding: 26px;
-      box-shadow: var(--shadow);
-      max-width: 920px;
-    }
-    .ecology-card h3 {
-      color: var(--deep-teal);
-      margin-bottom: 8px;
-    }
-    .ecology-link {
-      display: inline-flex;
-      width: auto;
-      text-decoration: none;
-      margin-top: 8px;
-      background: var(--bright-teal);
-      color: #053e40;
-    }
-
-    @media (max-width: 820px) {
-      .special-hero-grid, .video-shell, .landing-grid, .lead-form { grid-template-columns:1fr; }
-      .lead-form .full { grid-column:auto; }
-      .se-fab { right:16px; bottom:16px; font-size:.92rem; padding:13px 16px; }
-    }
-
-
-
-    /* ---------------------------------------------------------
-       Sensory-aware Special Education theme
-       Marsha's brand stays vibrant. The sensory support comes
-       from spacing, hierarchy, white space and restrained use of colour.
-       --------------------------------------------------------- */
-    :root {
-      --teal: #319fa2;
-      --bright-teal: #2fe2dd;
-      --deep-teal: #056367;
-      --cream: #fbfaf7;
-      --white: #ffffff;
-      --ink: #242424;
-      --muted: #5d6868;
-      --light-teal: #e9fbfa;
-      --border: #cfe7e5;
-      --gold: #c49435;
-      --shadow: 0 8px 24px rgba(5,99,103,0.08);
-    }
-
-    body {
-      background: var(--cream);
-      color: var(--ink);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
-      letter-spacing: 0;
-    }
-
-    h1, h2, h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      letter-spacing: 0;
-    }
-
-    p, li, label, input, textarea, select, button { font-size: 1rem; }
-
-    .hero {
-      background: var(--deep-teal);
-      color: #ffffff;
-    }
-
-    .hero::after { content:none; display:none; }
-    .hero p { max-width: 720px; }
-
-    .btn,
-    .jamaica-link,
-    .audience-pill,
-    .se-fab { transition: none; }
-
-    .btn:hover,
-    .jamaica-link:hover,
-    .audience-pill:hover,
-    .audience-pill:focus { transform: none; }
-
-    .btn-primary {
-      background: var(--bright-teal);
-      color: #053e40;
-      border: 2px solid var(--bright-teal);
-    }
-
-    .btn-light {
-      background: #ffffff;
-      color: var(--deep-teal);
-      border: 2px solid #ffffff;
-    }
-
-    .progress-wrap { background:#ffffff; border-bottom:1px solid var(--border); }
-    .progress-bar { background:var(--teal); }
-
-    .section-tag,
-    .service-kicker {
-      color: var(--deep-teal);
-      background: var(--light-teal);
-    }
-
-    .video-shell,
-    .service-card,
-    .lead-box,
-    .card,
-    .question,
-    .scenario-builder,
-    details {
-      background:#ffffff;
-      border-color:var(--border);
-      box-shadow:var(--shadow);
-    }
-
-    .video-shell { box-shadow:0 8px 28px rgba(5,99,103,.07); }
-    .video-wrap { background:var(--deep-teal); }
-
-    .audience-pill {
-      background:#ffffff;
-      color:var(--deep-teal);
-      border:2px solid var(--teal);
-      padding:9px 14px;
-    }
-
-    .audience-pill:hover,
-    .audience-pill:focus {
-      background:var(--light-teal);
-      border-color:var(--deep-teal);
-    }
-
-    .service-card { border-top:5px solid var(--teal); }
-    .service-card:nth-child(2) { border-top-color:var(--bright-teal); }
-    .service-card:nth-child(3) { border-top-color:var(--deep-teal); }
-    .service-card:nth-child(4) { border-top-color:var(--teal); }
-
-    .service-action {
-      background:var(--deep-teal);
-      color:#ffffff;
-    }
-
-    .lead-box { background:#ffffff; }
-    input, textarea, select { background:#ffffff; border:1.5px solid #a9cecc; }
-    input:focus, textarea:focus, select:focus, button:focus, a:focus {
-      outline:3px solid rgba(47,226,221,.55);
-      outline-offset:3px;
-    }
-
-    .resource-divider,
-    .jamaica-transition,
-    .completion { background:var(--deep-teal); }
-
-    .resource-divider .section-tag,
-    .jamaica-transition .section-tag,
-    .completion .section-tag {
-      background:#ffffff;
-      color:var(--deep-teal);
-    }
-
-    .principle { background:var(--deep-teal); }
-    .principle strong { color:var(--bright-teal); }
-
-    .mini-card { background:var(--light-teal); }
-    summary { color:var(--deep-teal); }
-    details[open] summary { background:var(--light-teal); }
-
-    .se-fab {
-      background:var(--deep-teal);
-      color:#ffffff;
-      box-shadow:0 10px 26px rgba(5,99,103,.2);
-    }
-    .se-fab-dot { background:var(--bright-teal); box-shadow:0 0 0 5px rgba(47,226,221,.18); }
-
-    .faq-overlay { background:rgba(18,37,38,.52); }
-    .faq-panel { background:#ffffff; }
-    .faq-close { background:var(--light-teal); color:var(--deep-teal); }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior:auto; }
-      *, *::before, *::after {
-        animation-duration:0.01ms !important;
-        animation-iteration-count:1 !important;
-        transition-duration:0.01ms !important;
-      }
-    }
-
-    @media (prefers-contrast: more) {
-      :root { --ink:#111111; --border:#6d8583; }
-      .card, .question, .service-card, .intro-panel, details { border-width:2px; }
-    }
-
-  
-
-/* 2026-09-09 refined Special Education page */
-:root {
-  --page-warm:#fbf8f2;
-  --page-soft:#f3f7f5;
-  --brand-teal:#319fa2;
-  --brand-bright:#2fe2dd;
-  --brand-deep:#056367;
-  --brand-gold:#c49435;
-  --brand-gold-soft:#ead8af;
-  --soft-border:#d6e4e1;
-  --navy:#183947;
+:root{
+  --teal:#319fa2;
+  --bright:#2fe2dd;
+  --deep:#056367;
+  --ink:#252525;
+  --muted:#646464;
+  --cream:#faf9f5;
+  --warm:#fffdf8;
+  --white:#ffffff;
+  --soft:#edf7f6;
+  --soft2:#f4f8f7;
+  --gold:#b98a32;
+  --goldsoft:#fbf5e8;
+  --border:#dce6e4;
+  --green:#237a52;
+  --greenlight:#edf7f1;
+  --red:#a63d40;
+  --redlight:#fff2f2;
+  --shadow:0 8px 26px rgba(25,55,55,.07);
+  --radius:18px;
 }
-body { background:var(--page-warm); }
-.site-header { background:#fff; border-bottom:1px solid #e8ecea; position:relative; z-index:120; }
-.site-nav-wrap { max-width:1240px; margin:auto; padding:16px 24px; display:flex; align-items:center; justify-content:space-between; gap:28px; }
-.brand-mark { text-decoration:none; display:flex; flex-direction:column; align-items:center; min-width:120px; color:var(--brand-deep); line-height:1; }
-.brand-initials { font-family:Georgia,"Times New Roman",serif; font-size:2.05rem; letter-spacing:.08em; }
-.brand-line { font-family:Arial,Helvetica,sans-serif; text-transform:uppercase; letter-spacing:.24em; font-size:.52rem; margin-top:6px; color:var(--brand-teal); }
-.site-nav { display:flex; flex-wrap:wrap; gap:24px; align-items:center; font-family:Arial,Helvetica,sans-serif; text-transform:uppercase; letter-spacing:.08em; font-size:.88rem; }
-.site-nav a { text-decoration:none; color:#343434; padding:8px 0; border-bottom:2px solid transparent; }
-.site-nav a:hover, .site-nav a:focus { color:var(--brand-deep); border-bottom-color:var(--brand-gold); }
 
-.hero.special-hero {
-  background:
-    radial-gradient(circle at 88% 12%, rgba(49,159,162,.10), transparent 30%),
-    linear-gradient(115deg,#fffdf9 0%,#f8fbf9 62%,#f1f7f4 100%);
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:var(--cream);
   color:var(--ink);
-  border-bottom:4px solid var(--brand-gold);
-  padding:68px 20px 62px;
-}
-.special-hero-grid { display:block; }
-.special-hero .eyebrow { color:var(--brand-deep); opacity:1; }
-.special-hero h1 { color:#075b5e; max-width:900px; font-size:clamp(3rem,7vw,6.2rem); line-height:.94; }
-.special-hero p { color:#3e4b4b; max-width:880px; font-family:Arial,Helvetica,sans-serif; font-size:1.25rem; }
-.btn-primary { background:#075f62; color:#fff; border:1px solid #075f62; }
-.btn-primary:hover, .btn-primary:focus { background:var(--brand-deep); }
-.btn-light { background:#fff; color:var(--brand-deep); border:1px solid var(--brand-gold-soft); }
-.section-tag { color:var(--brand-deep); background:#f0f7f5; border:1px solid #d9e8e4; }
-h2, h3 { color:var(--brand-deep); }
-.landing-section { background:transparent; }
-.service-card { border:1px solid var(--soft-border); border-top:4px solid rgba(49,159,162,.78); box-shadow:0 7px 22px rgba(25,72,71,.045); }
-.service-card:nth-child(2), .service-card:nth-child(4) { border-top-color:var(--brand-gold); }
-.service-action { background:var(--brand-deep); color:#fff; }
-.audience-pill { background:#f3f8f6; border:1px solid #dce9e5; color:var(--brand-deep); }
-.lead-box { background:#fff; border:1px solid var(--soft-border); }
-
-.books-section { border-top:1px solid var(--brand-gold-soft); padding-top:44px; }
-.book-grid { display:grid; grid-template-columns:repeat(4,minmax(150px,190px)); justify-content:start; gap:24px; margin-top:26px; }
-.book-card { display:flex; flex-direction:column; gap:12px; text-decoration:none; color:var(--brand-deep); font-family:Arial,Helvetica,sans-serif; font-weight:700; line-height:1.35; }
-.book-card img { width:100%; height:auto; aspect-ratio:auto; object-fit:contain; border-radius:12px; border:1px solid #e5ded0; box-shadow:0 8px 22px rgba(52,60,56,.08); }
-.book-card:hover img, .book-card:focus img { outline:3px solid rgba(196,148,53,.35); outline-offset:3px; }
-
-.ecology-card { display:grid; grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr); align-items:center; gap:28px; background:#fff; border:1px solid var(--soft-border); }
-.ecology-image { width:100%; display:block; border-radius:16px; max-height:520px; object-fit:cover; }
-.ecology-link { display:inline-block; text-decoration:none; margin-top:8px; }
-
-.workshop-collapsible { margin:64px 0 0; background:#fff; border:1px solid var(--soft-border); border-radius:22px; overflow:hidden; }
-.workshop-summary { display:flex; flex-direction:column; gap:6px; cursor:pointer; padding:26px 30px; background:#f3faf8; color:var(--brand-deep); border-left:6px solid var(--brand-gold); }
-.workshop-summary::marker { color:var(--brand-gold); }
-.workshop-summary-title { font-family:Georgia,"Times New Roman",serif; font-size:clamp(1.8rem,4vw,2.8rem); font-weight:700; }
-.workshop-summary-sub { font-family:Arial,Helvetica,sans-serif; color:#506261; font-weight:500; font-size:1rem; }
-.workshop-inner { padding:0 26px 36px; }
-.workshop-progress { position:static; margin:0 -26px 34px; border-top:1px solid var(--soft-border); }
-#differentiation-resource .resource-divider { background:#f5fbf9; color:var(--ink); border:1px solid var(--soft-border); box-shadow:none; }
-#differentiation-resource .resource-divider h2 { color:var(--brand-deep); }
-#differentiation-resource .resource-divider .section-tag { background:#fff; color:var(--brand-deep); }
-
-footer { background:#173f40; color:#fff; padding:44px 20px; }
-.footer-inner {
-  max-width:1180px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:minmax(260px,.85fr) minmax(360px,1.15fr);
-  column-gap:64px;
-  row-gap:28px;
-  align-items:start;
-  text-align:left;
-}
-.footer-brand {
-  display:flex;
-  flex-direction:column;
-  gap:7px;
-  align-self:start;
-}
-.footer-brand strong {
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:1.45rem;
-  line-height:1.2;
-}
-.footer-brand span,
-.footer-note,
-.footer-copy,
-.footer-links {
   font-family:Arial,Helvetica,sans-serif;
+  font-size:17px;
+  line-height:1.65;
 }
-.footer-links {
-  display:flex;
-  flex-wrap:wrap;
-  gap:16px 20px;
-  justify-content:flex-end;
+
+img{max-width:100%;height:auto}
+button,input,select,textarea{font:inherit}
+a{color:inherit}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible{
+  outline:3px solid var(--teal);
+  outline-offset:3px;
 }
-.footer-links a {
-  color:#fff;
-  text-decoration:none;
-  border-bottom:1px solid transparent;
+
+h1,h2,h3{
+  font-family:Georgia,"Times New Roman",serif;
+  color:var(--deep);
 }
-.footer-links a:hover,
-.footer-links a:focus {
-  border-bottom-color:var(--brand-gold);
+
+h1{
+  margin:10px 0 16px;
+  max-width:820px;
+  font-size:clamp(2.5rem,6vw,4.8rem);
+  line-height:1.02;
 }
-.footer-note {
-  margin:0;
-  max-width:680px;
-  color:#e7f3f1;
-  align-self:start;
+
+h2{
+  margin:5px 0 14px;
+  font-size:clamp(1.8rem,4vw,2.75rem);
+  line-height:1.15;
 }
-.footer-copy {
-  grid-column:1 / -1;
-  margin:0;
-  padding-top:22px;
-  border-top:1px solid rgba(255,255,255,.16);
-  text-align:center;
-  color:#d0e0de;
+
+h3{
+  margin:0 0 8px;
+  font-size:1.35rem;
+  line-height:1.25;
+}
+
+p{margin-top:0}
+
+.lead{
+  max-width:830px;
+  color:#414141;
+  font-size:1.08rem;
+}
+
+.small-note{
+  color:var(--muted);
   font-size:.9rem;
 }
 
-.service-cta {
-  margin: 72px 0 0;
-  padding: 44px 38px;
-  border-radius: 24px;
-  background: #fffdf8;
-  border: 1px solid var(--brand-gold-soft);
-  border-left: 6px solid var(--brand-gold);
-  text-align: center;
-}
-.service-cta h2 { margin-bottom: 12px; }
-.service-cta p { max-width: 760px; margin: 0 auto 22px; color: #455251; }
-.service-cta-actions { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; }
-.service-cta-email {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:13px 22px;
+.section-tag{
+  display:inline-block;
+  margin-bottom:9px;
+  padding:6px 11px;
+  border:1px solid #cde2df;
   border-radius:999px;
-  background:var(--brand-deep);
-  color:#fff;
-  text-decoration:none;
-  font-family:Arial,Helvetica,sans-serif;
+  background:var(--soft);
+  color:var(--deep);
+  font-size:.74rem;
   font-weight:800;
-}
-.service-cta-email:hover, .service-cta-email:focus { background:#034e51; }
-.service-cta-form {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:13px 22px;
-  border-radius:999px;
-  background:#fff;
-  color:var(--brand-deep);
-  border:1px solid var(--brand-gold);
-  text-decoration:none;
-  font-family:Arial,Helvetica,sans-serif;
-  font-weight:800;
+  letter-spacing:.09em;
+  text-transform:uppercase;
 }
 
-@media (max-width:900px) {
-  .site-nav-wrap { flex-direction:column; gap:10px; }
-  .site-nav { justify-content:center; gap:10px 18px; font-size:.78rem; }
-  .book-grid { grid-template-columns:repeat(2,minmax(140px,190px)); }
-  .ecology-card { grid-template-columns:1fr; }
-  .footer-inner {
-    grid-template-columns:1fr;
-    row-gap:20px;
-  }
-  .footer-links { justify-content:flex-start; }
-  .footer-copy {
-    grid-column:auto;
-    text-align:left;
-    padding-top:20px;
-  }
-}
-@media (max-width:560px) {
-  .hero.special-hero { padding:48px 18px 44px; }
-  .special-hero h1 { font-size:clamp(2.7rem,15vw,4.2rem); }
-  .book-grid { grid-template-columns:repeat(2,minmax(130px,1fr)); gap:14px; }
-  .book-card span { font-size:.88rem; }
-  .workshop-summary { padding:22px 20px; }
-  .workshop-inner { padding:0 16px 28px; }
-  .workshop-progress { margin:0 -16px 28px; }
-}
-
-.workshop-summary-label {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: .75rem;
-  font-weight: 800;
-  letter-spacing: .12em;
-  color: #6b5a31;
-}
-.workshop-open-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 12px;
-  padding: 12px 20px;
-  border-radius: 999px;
-  background: var(--brand-deep);
-  color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: .88rem;
-  font-weight: 800;
-  letter-spacing: .035em;
-}
-.workshop-click-note {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: .82rem;
-  color: #687574;
-}
-.close-text { display:none; }
-.workshop-collapsible[open] .open-text { display:none; }
-.workshop-collapsible[open] .close-text { display:inline; }
-.workshop-collapsible[open] .workshop-summary { background:#eaf6f3; }
-.workshop-summary:hover .workshop-open-button,
-.workshop-summary:focus .workshop-open-button { background:#034e51; }
-
-
-
-/* 2026-09-10 enquiry form visibility upgrades */
-#contact.lead-box {
-  position: relative;
-  margin-top: 84px;
-  padding: 40px;
-  border: 2px solid var(--brand-teal);
-  border-left: 8px solid var(--brand-deep);
-  box-shadow: 0 14px 34px rgba(5,99,103,.10);
-}
-#contact .section-tag {
-  background: var(--brand-deep);
-  color: #fff;
-  border-color: var(--brand-deep);
-}
-#contact h2 {
-  margin-top: 10px;
-  font-size: clamp(2.2rem,5vw,3.5rem);
-}
-#contact .lead {
-  max-width: 840px;
-  margin-bottom: 8px;
-}
-#contact .lead-form {
-  margin-top: 28px;
-}
-#contact .btn[type="submit"] {
-  padding: 15px 26px;
-  font-size: 1.05rem;
-}
-
-/* Hide the floating questions button once the enquiry form is in view */
-.se-fab.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-@media (max-width: 560px) {
-  #contact.lead-box {
-    margin-top: 58px;
-    padding: 28px 20px;
-    border-left-width: 6px;
-  }
-}
-
-
-/* =========================================================
-   UNIFIED SITE HEADER / NAVIGATION / FOOTER
-   ========================================================= */
+/* HEADER */
 
 .site-header{
+  position:relative;
+  z-index:1200;
   width:100%;
   background:#fff;
   border-bottom:1px solid var(--border);
-  position:relative;
-  z-index:1200;
 }
 
 .header-inner{
+  position:relative;
   width:min(calc(100% - 40px),1200px);
-  margin:0 auto;
+  margin:auto;
   padding:20px 0 13px;
   display:flex;
   flex-direction:column;
   align-items:center;
-  position:relative;
 }
 
 .site-logo{
@@ -1194,45 +133,68 @@ footer { background:#173f40; color:#fff; padding:44px 20px; }
 }
 
 .site-logo img{
+  display:block;
   width:220px;
-  height:auto;
   margin:0 auto 13px;
 }
 
 .site-nav ul{
-  list-style:none;
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
   gap:27px;
-  padding:0;
   margin:0;
-  font-family:Arial,Helvetica,sans-serif;
+  padding:0;
+  list-style:none;
   font-size:14px;
   font-weight:500;
   letter-spacing:.07em;
   text-transform:uppercase;
 }
 
-.site-nav li{
-  margin:0;
-  padding:0;
-}
-
 .site-nav a{
   color:#343434;
   text-decoration:none;
-  padding:0;
-  border:0;
-  transition:color .2s ease;
 }
 
 .site-nav a:hover,
 .site-nav a:focus,
 .site-nav a.active{
-  color:var(--deep-teal);
+  color:var(--deep);
   font-weight:600;
-  border:0;
+}
+
+.nav-dropdown{position:relative}
+
+.nav-submenu{
+  display:none!important;
+  position:absolute;
+  top:100%;
+  left:50%;
+  z-index:1400;
+  min-width:240px;
+  margin:10px 0 0!important;
+  padding:10px 0!important;
+  transform:translateX(-50%);
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+  box-shadow:0 12px 30px rgba(0,0,0,.1);
+}
+
+.nav-submenu li{width:100%}
+
+.nav-submenu a{
+  display:block;
+  padding:9px 18px;
+  font-size:13px;
+  letter-spacing:.02em;
+  text-transform:none;
+}
+
+.nav-dropdown:hover .nav-submenu,
+.nav-dropdown:focus-within .nav-submenu{
+  display:block!important;
 }
 
 .nav-toggle{
@@ -1244,247 +206,1029 @@ footer { background:#173f40; color:#fff; padding:44px 20px; }
   height:44px;
   border:0;
   background:transparent;
-  color:var(--deep-teal);
+  color:var(--deep);
   font-size:28px;
   cursor:pointer;
 }
 
-/* Work With Me submenu */
-.site-nav .nav-dropdown{
-  position:relative;
-}
+/* BUTTONS */
 
-.site-nav .nav-parent{
+.btn{
   display:inline-flex;
   align-items:center;
-  gap:6px;
+  justify-content:center;
+  min-height:48px;
+  padding:12px 20px;
+  border:0;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:800;
+  text-decoration:none;
 }
 
-.site-nav .nav-parent::after{
-  content:"⌄";
+.btn-primary{
+  background:var(--deep);
+  color:#fff;
+}
+
+.btn-primary:hover{background:#034e51}
+
+.btn-light{
+  background:#fff;
+  color:var(--deep);
+  border:1px solid #b9d5d2;
+}
+
+.btn-light:hover{background:var(--soft)}
+
+/* HERO */
+
+.special-hero{
   position:relative;
-  top:-1px;
-  color:var(--teal);
-  font-size:.85em;
+  overflow:hidden;
+  padding:68px 20px 62px;
+  background:
+    radial-gradient(circle at 90% 15%,rgba(49,159,162,.09),transparent 28%),
+    linear-gradient(110deg,#fff 0%,#fff 57%,#f0f8f7 100%);
+  border-bottom:1px solid var(--border);
 }
 
-.site-nav .nav-submenu{
+.hero-inner{
+  position:relative;
+  z-index:2;
+  max-width:1100px;
+  margin:auto;
+}
+
+.eyebrow{
+  color:var(--deep);
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+
+.special-hero p{
+  max-width:740px;
+  margin-bottom:27px;
+  color:#414141;
+  font-size:1.16rem;
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+/* MAIN */
+
+main{
+  max-width:1100px;
+  margin:auto;
+  padding:50px 20px 80px;
+}
+
+.landing-section{
+  margin-bottom:68px;
+  scroll-margin-top:90px;
+}
+
+/* VIDEO */
+
+.video-shell{
+  display:grid;
+  grid-template-columns:minmax(260px,.75fr) minmax(0,1.25fr);
+  gap:34px;
+  align-items:center;
+  padding:28px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+
+.video-wrap{
+  position:relative;
+  width:min(100%,360px);
+  aspect-ratio:9/16;
+  overflow:hidden;
+  margin:auto;
+  border-radius:15px;
+  background:#e9efee;
+}
+
+.video-wrap iframe{
   position:absolute;
-  top:calc(100% + 11px);
-  left:50%;
-  z-index:1300;
-  min-width:235px;
-  margin:0;
-  padding:9px;
-  display:none;
-  flex-direction:column;
-  gap:3px;
-  transform:translateX(-50%);
-  background:rgba(255,255,255,.985);
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+.belief-statement{
+  margin:22px 0;
+  padding:20px 22px;
+  background:var(--goldsoft);
+  border-left:4px solid var(--gold);
+  border-radius:10px;
+}
+
+.audience-strip{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:22px;
+}
+
+.audience-pill{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  padding:9px 15px;
+  background:#fff;
+  border:1px solid #c8dcda;
+  border-radius:999px;
+  color:var(--deep);
+  font-weight:700;
+  text-decoration:none;
+}
+
+.audience-pill:hover{background:var(--soft)}
+
+/* SERVICES */
+
+.landing-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  margin-top:28px;
+}
+
+.service-card{
+  padding:26px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:0 5px 18px rgba(0,0,0,.035);
+  scroll-margin-top:90px;
+}
+
+.service-card:nth-child(even){background:var(--warm)}
+
+.service-kicker{
+  display:block;
+  margin-bottom:8px;
+  color:var(--deep);
+  font-size:.76rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.service-action{
+  display:inline-block;
+  margin-top:8px;
+  color:var(--deep);
+  font-weight:800;
+  text-decoration-thickness:2px;
+  text-underline-offset:4px;
+}
+
+/* PRACTICE VIDEO */
+
+.principle{
+  margin:22px 0;
+  padding:20px 22px;
+  background:var(--soft);
+  border:1px solid #c7ddda;
+  border-left:5px solid var(--deep);
+  border-radius:13px;
+  color:#263738;
+}
+
+.principle strong{color:var(--deep)}
+
+/* BOOKS */
+
+.book-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:18px;
+  margin-top:25px;
+}
+
+.book-card{
+  overflow:hidden;
+  background:#fff;
   border:1px solid var(--border);
   border-radius:15px;
-  box-shadow:0 18px 44px rgba(5,99,103,.14);
-  text-align:left;
-  letter-spacing:normal;
-  text-transform:none;
+  box-shadow:0 5px 18px rgba(0,0,0,.035);
+  text-decoration:none;
 }
 
-.site-nav .nav-submenu::before{
-  content:"";
-  position:absolute;
-  left:0;
-  right:0;
-  top:-13px;
-  height:13px;
-}
-
-.site-nav .nav-submenu li{
-  width:100%;
-}
-
-.site-nav .nav-submenu a{
+.book-card img{
   display:block;
   width:100%;
-  padding:10px 13px;
+  aspect-ratio:4/3;
+  object-fit:cover;
+}
+
+.book-card span{
+  display:block;
+  padding:15px;
+  color:#253d3e;
+  font-weight:700;
+}
+
+/* ECOLOGY */
+
+.ecology-card{
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+  gap:30px;
+  align-items:center;
+  margin-top:24px;
+  padding:25px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+}
+
+.ecology-image{
+  width:100%;
+  border-radius:14px;
+}
+
+/* ENQUIRY */
+
+#contact{
+  margin-top:78px;
+  padding:38px;
+  background:#fff;
+  border:1px solid #cfdddb;
+  border-top:5px solid var(--deep);
+  border-radius:var(--radius);
+  box-shadow:0 10px 28px rgba(5,99,103,.07);
+}
+
+#contact h2{max-width:800px}
+
+.enquiry-intro{
+  margin-bottom:8px;
+}
+
+.form-intro-note{
+  max-width:850px;
+  margin:14px 0 28px;
+  padding:14px 17px;
+  background:var(--goldsoft);
+  border-left:4px solid var(--gold);
+  border-radius:9px;
+  color:#484238;
+}
+
+.lead-form{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px 22px;
+}
+
+.lead-form .full,
+.form-section,
+.form-submit-row{
+  grid-column:1/-1;
+}
+
+.lead-form label{
+  display:block;
+  margin-bottom:6px;
+  color:#263b3c;
+  font-weight:800;
+}
+
+.optional{
+  color:var(--muted);
+  font-size:.84rem;
+  font-weight:400;
+}
+
+.lead-form input[type="text"],
+.lead-form input[type="email"],
+.lead-form input[type="tel"],
+.lead-form select,
+.lead-form textarea{
+  width:100%;
+  min-height:49px;
+  padding:12px 13px;
+  background:#fff;
+  border:1px solid #b9c9c7;
   border-radius:10px;
-  color:#343434;
-  font-size:13px;
-  font-weight:500;
-  letter-spacing:.01em;
-  line-height:1.35;
-  text-transform:none;
+  color:var(--ink);
+}
+
+.lead-form textarea{
+  min-height:105px;
+  resize:vertical;
+}
+
+.compact-textarea{min-height:90px!important}
+
+.form-section{
+  margin-top:5px;
+  padding-top:18px;
+  border-top:1px solid var(--border);
+}
+
+.form-section h3{
+  margin-bottom:3px;
+  color:var(--deep);
+}
+
+.form-help{
+  margin:0;
+  color:var(--muted);
+  font-size:.91rem;
+}
+
+.choice-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+}
+
+.choice{
+  position:relative;
+}
+
+.choice input{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+
+.choice label{
+  display:flex;
+  align-items:center;
+  min-height:62px;
+  height:100%;
+  margin:0;
+  padding:12px 14px 12px 42px;
+  background:#fff;
+  border:1px solid #c8d5d3;
+  border-radius:11px;
+  cursor:pointer;
+  font-size:.94rem;
+  font-weight:700;
+}
+
+.choice label:before{
+  content:"";
+  position:absolute;
+  left:15px;
+  width:16px;
+  height:16px;
+  background:#fff;
+  border:2px solid #829b99;
+  border-radius:50%;
+}
+
+.choice input:checked + label{
+  background:var(--soft);
+  border-color:var(--deep);
+  box-shadow:inset 0 0 0 1px var(--deep);
+}
+
+.choice input:checked + label:before{
+  background:var(--deep);
+  border-color:var(--deep);
+  box-shadow:inset 0 0 0 4px #fff;
+}
+
+.choice input:focus-visible + label{
+  outline:3px solid var(--teal);
+  outline-offset:2px;
+}
+
+.form-submit-row{
+  padding-top:8px;
+}
+
+.form-note{
+  max-width:800px;
+  margin:13px 0 0;
+  color:var(--muted);
+  font-size:.87rem;
+}
+
+/* WORK WITH ME */
+
+.work-with-me-bridge{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:25px;
+  align-items:center;
+  margin:48px 0 70px;
+  padding:28px 30px;
+  background:var(--warm);
+  border:1px solid #ded9ca;
+  border-radius:var(--radius);
+}
+
+.work-with-me-bridge h2{
+  margin-bottom:7px;
+  font-size:clamp(1.6rem,3vw,2.2rem);
+}
+
+.work-with-me-bridge p{
+  max-width:750px;
+  margin:0;
+}
+
+.work-with-me-bridge a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  padding:11px 18px;
+  background:var(--deep);
+  border-radius:999px;
+  color:#fff;
+  font-weight:800;
+  text-decoration:none;
   white-space:nowrap;
 }
 
-.site-nav .nav-submenu a:hover,
-.site-nav .nav-submenu a:focus-visible,
-.site-nav .nav-submenu a.active{
-  background:var(--light-teal);
-  color:var(--deep-teal);
-  outline:none;
-}
+/* INTERACTIVE RESOURCE */
 
-.site-nav .nav-dropdown:hover > .nav-submenu,
-.site-nav .nav-dropdown:focus-within > .nav-submenu{
-  display:flex;
-}
-
-/* Footer */
-.site-footer{
-  padding:38px 20px 30px;
+.workshop-collapsible{
+  overflow:hidden;
+  margin:65px 0;
   background:#fff;
-  border-top:1px solid var(--border);
-  text-align:center;
-  color:inherit;
-  font-family:Arial,Helvetica,sans-serif;
+  border:1px solid #cbdedb;
+  border-radius:var(--radius);
 }
 
-.site-footer .footer-inner{
-  max-width:1100px;
-  margin:0 auto;
+.workshop-summary{
   display:block;
-  text-align:center;
+  padding:25px;
+  background:#f7faf9;
+  cursor:pointer;
 }
 
-.social-links{
+.workshop-summary-label{
+  display:block;
+  margin-bottom:6px;
+  color:var(--deep);
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.09em;
+}
+
+.workshop-summary-title{
+  display:block;
+  color:var(--deep);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1.8rem;
+}
+
+.workshop-summary-sub{
+  display:block;
+  margin-top:5px;
+  color:#4f5655;
+  font-weight:400;
+}
+
+.workshop-open-button{
+  display:inline-block;
+  margin-top:15px;
+  padding:8px 13px;
+  background:var(--deep);
+  border-radius:999px;
+  color:#fff;
+  font-size:.8rem;
+}
+
+.workshop-click-note{
+  display:block;
+  margin-top:7px;
+  color:var(--muted);
+  font-size:.82rem;
+  font-weight:400;
+}
+
+.close-text{display:none}
+.workshop-collapsible[open] .open-text{display:none}
+.workshop-collapsible[open] .close-text{display:inline}
+
+.workshop-inner{
+  padding:0 26px 35px;
+}
+
+.resource-divider{
+  margin:0 -26px 38px;
+  padding:32px 26px;
+  background:var(--soft2);
+  border-bottom:1px solid var(--border);
+}
+
+.resource-divider h2{margin-bottom:8px}
+
+.activity-section{
+  margin:48px 0;
+}
+
+.activity-section + .activity-section{
+  padding-top:45px;
+  border-top:1px solid var(--border);
+}
+
+.mini-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+  margin-top:18px;
+}
+
+.mini-card{
+  min-height:135px;
+  padding:15px;
+  background:#f7fbfa;
+  border:1px solid #dbe8e6;
+  border-radius:13px;
+}
+
+.mini-card strong{
+  display:block;
+  margin-bottom:4px;
+  color:var(--deep);
+}
+
+.prompt-box{
+  margin:18px 0;
+  padding:19px 20px;
+  background:#fffdf7;
+  border-left:4px solid var(--gold);
+  border-radius:12px;
+}
+
+.activity-textarea{
+  width:100%;
+  min-height:100px;
+  padding:13px;
+  background:#fff;
+  border:1px solid #bdccca;
+  border-radius:10px;
+  resize:vertical;
+}
+
+.question{
+  margin:24px 0;
+  padding:22px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+}
+
+.question-number{
+  margin-bottom:7px;
+  color:var(--deep);
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+
+.options{
+  display:grid;
+  gap:10px;
+  margin-top:16px;
+}
+
+.option{
+  padding:13px 15px;
+  background:#fbfbfa;
+  border:2px solid #e1e6e5;
+  border-radius:12px;
+  color:var(--ink);
+  text-align:left;
+  cursor:pointer;
+}
+
+.option:hover{
+  background:var(--soft);
+  border-color:#8bbab7;
+}
+
+.option.correct{
+  background:var(--greenlight);
+  border-color:var(--green);
+}
+
+.option.incorrect{
+  background:var(--redlight);
+  border-color:var(--red);
+}
+
+.feedback{
+  display:none;
+  margin-top:13px;
+  padding:13px 15px;
+  border-radius:11px;
+}
+
+.feedback.show{display:block}
+
+.feedback.good{
+  background:var(--greenlight);
+  color:#155838;
+}
+
+.feedback.try{
+  background:#fff5e7;
+  color:#72501e;
+}
+
+.case-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+
+.case-card{
+  padding:22px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-left:5px solid var(--teal);
+  border-radius:14px;
+}
+
+.case-label{
+  display:block;
+  margin-bottom:6px;
+  color:var(--deep);
+  font-size:.76rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.strategy-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:15px;
+}
+
+.strategy-card{
+  padding:19px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+}
+
+.strategy-card strong{
+  display:block;
+  margin-bottom:5px;
+  color:var(--deep);
+}
+
+.completion{
+  padding:28px;
+  background:var(--soft);
+  border:1px solid #cce0dd;
+  border-radius:var(--radius);
+}
+
+.completion textarea{
+  width:100%;
+  min-height:105px;
+  padding:13px;
+  border:1px solid #b9c9c7;
+  border-radius:10px;
+  resize:vertical;
+}
+
+/* FAQ */
+
+.se-fab{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  z-index:1000;
   display:flex;
-  justify-content:center;
   align-items:center;
-  flex-wrap:wrap;
-  gap:10px 16px;
-  margin-bottom:22px;
-}
-
-.social-links a{
-  color:var(--deep-teal);
-  text-decoration:none;
-  font-size:15px;
-  font-weight:600;
-}
-
-.social-links a:hover,
-.social-links a:focus{
-  color:var(--teal);
-  text-decoration:underline;
-}
-
-.social-links span{
-  color:var(--gold);
-}
-
-.site-footer .copyright{
-  margin:0 0 18px;
-  padding:0;
+  gap:9px;
+  padding:13px 18px;
+  background:var(--deep);
   border:0;
-  color:#777f80;
-  font-size:13px;
+  border-radius:999px;
+  color:#fff;
+  box-shadow:0 10px 28px rgba(0,0,0,.18);
+  font-weight:800;
+  cursor:pointer;
+}
+
+.se-fab-dot{
+  width:10px;
+  height:10px;
+  background:var(--bright);
+  border-radius:50%;
+}
+
+.se-fab.is-hidden{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.faq-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  padding:25px;
+  overflow-y:auto;
+  background:rgba(21,31,31,.58);
+}
+
+.faq-overlay.open{display:block}
+
+.faq-panel{
+  position:relative;
+  width:min(780px,100%);
+  margin:35px auto;
+  padding:30px;
+  background:#fff;
+  border-radius:var(--radius);
+  box-shadow:0 20px 60px rgba(0,0,0,.2);
+}
+
+.faq-close{
+  position:absolute;
+  top:16px;
+  right:16px;
+  width:42px;
+  height:42px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:50%;
+  color:var(--deep);
+  font-size:24px;
+  cursor:pointer;
+}
+
+.faq-panel h2{
+  max-width:650px;
+  padding-right:45px;
+}
+
+.faq-list details{
+  margin-bottom:10px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+
+.faq-list summary{
+  padding:16px 18px;
+  color:var(--deep);
+  font-weight:800;
+  cursor:pointer;
+}
+
+.details-content{
+  padding:0 18px 18px;
+}
+
+.faq-cta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-top:22px;
+  padding:19px;
+  background:var(--soft);
+  border-radius:14px;
+}
+
+/* CTA */
+
+.service-cta{
+  max-width:1100px;
+  margin:0 auto 60px;
+  padding:34px;
+  background:#f5f9f8;
+  border:1px solid #cfe0de;
+  border-radius:var(--radius);
+}
+
+.service-cta p{max-width:800px}
+
+.service-cta-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:20px;
+}
+
+.service-cta-actions a{
+  display:inline-flex;
+  align-items:center;
+  min-height:46px;
+  padding:11px 17px;
+  border-radius:999px;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.service-cta-email{
+  background:var(--deep);
+  color:#fff;
+}
+
+.service-cta-form{
+  background:#fff;
+  border:1px solid #bdd5d2;
+  color:var(--deep);
+}
+
+/* FOOTER */
+
+.site-footer{
+  padding:38px 20px;
+  background:#f1f4f3;
+  border-top:1px solid var(--border);
+  color:#424747;
+}
+
+.footer-inner{
+  max-width:1100px;
+  margin:auto;
   text-align:center;
 }
 
+.social-links,
 .legal-links{
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
-  gap:10px 22px;
+  gap:10px;
 }
 
+.social-links a,
 .legal-links a{
-  color:var(--teal);
-  text-decoration:none;
-  font-size:13px;
+  color:var(--deep);
 }
 
-.legal-links a:hover,
-.legal-links a:focus{
-  color:var(--deep-teal);
-  text-decoration:underline;
-}
+.copyright{margin:16px 0}
 
-/* Keep the site header/footer out of printed workshop handouts. */
-@media print{
-  .site-header,
-  .site-footer{
-    display:none !important;
+/* RESPONSIVE */
+
+@media(max-width:900px){
+  .video-shell,
+  .ecology-card{
+    grid-template-columns:1fr;
+  }
+
+  .landing-grid,
+  .book-grid,
+  .case-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .choice-grid,
+  .strategy-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .mini-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .work-with-me-bridge{
+    grid-template-columns:1fr;
   }
 }
 
 @media(max-width:700px){
+  body{font-size:16px}
+
   .header-inner{
     width:min(calc(100% - 30px),1200px);
-    padding:18px 0 14px;
     align-items:flex-start;
-  }
-
-  .site-logo{
-    margin-left:auto;
-    margin-right:auto;
   }
 
   .site-logo img{
     width:190px;
-    margin-bottom:0;
+    margin-left:0;
   }
 
-  .nav-toggle{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    top:18px;
-    right:0;
-  }
+  .nav-toggle{display:block}
 
   .site-nav{
     display:none;
     width:100%;
-    padding-top:20px;
+    padding-top:10px;
   }
 
-  .site-nav.open{
+  .site-nav.open{display:block}
+
+  .site-nav>ul{
     display:block;
+    width:100%;
+    padding:10px 0;
   }
 
-  .site-nav ul{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:14px;
-    padding:8px 0 5px;
+  .site-nav>ul>li{
+    padding:8px 0;
   }
 
-  .site-nav .nav-parent::after{
-    display:none;
-  }
-
-  .site-nav .nav-submenu{
+  .nav-submenu{
+    display:block!important;
     position:static;
-    display:flex;
     min-width:0;
-    width:min(100%,330px);
-    margin:2px 0 0;
-    padding:4px 0 4px 18px;
+    margin:8px 0 0 15px!important;
+    padding:0!important;
     transform:none;
     border:0;
-    border-left:2px solid var(--light-teal);
-    border-radius:0;
-    background:transparent;
     box-shadow:none;
-    text-align:left;
   }
 
-  .site-nav .nav-submenu a{
-    padding:7px 10px;
-    font-size:12px;
-    white-space:normal;
+  .nav-submenu a{padding:7px 0}
+
+  .special-hero{padding:48px 20px}
+
+  main{padding-top:35px}
+
+  .landing-grid,
+  .book-grid,
+  .case-grid,
+  .choice-grid,
+  .strategy-grid,
+  .lead-form{
+    grid-template-columns:1fr;
+  }
+
+  .lead-form .full,
+  .form-section,
+  .form-submit-row{
+    grid-column:auto;
+  }
+
+  #contact{
+    padding:27px 20px;
+  }
+
+  .workshop-inner{
+    padding:0 18px 28px;
+  }
+
+  .resource-divider{
+    margin:0 -18px 32px;
+    padding:27px 18px;
+  }
+
+  .faq-cta{
+    align-items:stretch;
+    flex-direction:column;
   }
 }
 
+@media(max-width:480px){
+  .mini-grid{grid-template-columns:1fr}
+
+  .video-shell,
+  .ecology-card,
+  .service-cta{
+    padding:21px 17px;
+  }
+
+  .se-fab{
+    right:14px;
+    bottom:14px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,
+  *::before,
+  *::after{
+    scroll-behavior:auto!important;
+    animation:none!important;
+    transition:none!important;
+  }
+}
 </style>
 </head>
+
 <body>
+
 <header class="site-header">
   <div class="header-inner">
 
-    <a href="index.html" class="site-logo" aria-label="Marsha Kerr Talley home">
-      <img src="MKT-logo-3.png" alt="Marsha Kerr Talley">
+    <a class="site-logo" href="index.html" aria-label="Marsha Kerr Talley home">
+      <img src="logo.png" alt="Marsha Kerr Talley">
     </a>
 
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
@@ -1496,6 +1240,7 @@ footer { background:#173f40; color:#fff; padding:44px 20px; }
 
         <li class="nav-dropdown">
           <a href="work-with-me.html" class="nav-parent active">Work With Me</a>
+
           <ul class="nav-submenu" aria-label="Work With Me">
             <li><a href="work-with-me.html">Overview</a></li>
             <li><a href="https://marshakerrtalley.com/special-education" class="active" aria-current="page">Special Education</a></li>
@@ -1514,89 +1259,173 @@ footer { background:#173f40; color:#fff; padding:44px 20px; }
     </nav>
 
   </div>
-</header><header class="hero special-hero">
-<div class="hero-inner special-hero-grid">
-<div>
-<div class="eyebrow">Marsha Kerr Talley | Behaviour Specialist</div>
-<h1>Students with Special Needs Can Learn.</h1>
-<p>I support parents, students, teachers and schools to help students access the best learning for them.</p>
-<div class="hero-buttons">
-<button class="btn btn-primary" onclick="document.querySelector('#support').scrollIntoView()">
-            Explore Support
-          </button>
-<a class="btn btn-light" href="contact.html?intent=EDUCATION">Ask About Support</a>
-</div>
-</div>
+</header>
 
-</div>
+<header class="special-hero">
+  <div class="hero-inner">
+
+    <div class="eyebrow">Marsha Kerr Talley | Behaviour Specialist</div>
+
+    <h1>Students with Special Needs Can Learn.</h1>
+
+    <p>
+      Practical Special Education, behaviour and inclusive-learning support for
+      learners, families, educators, schools and organisations.
+    </p>
+
+    <div class="hero-buttons">
+      <a class="btn btn-primary" href="#support">Explore Support</a>
+      <a class="btn btn-light" href="#contact">Tell Me What You Need</a>
+    </div>
+
+  </div>
 </header>
 
 <main>
-<!-- SPECIAL EDUCATION LANDING CONTENT -->
+
 <section class="landing-section" id="about-special-education">
-<span class="section-tag">Why I am offering this support</span>
-<div class="video-shell">
-<div class="video-wrap">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" loading="lazy" src="https://www.youtube.com/embed/PoD_GqxVMck" title="Marsha Kerr Talley: Special Education support for parents, teachers and students">
-</iframe>
-</div>
-<div>
-<h2>Special Education should be more than a placement.</h2>
-<p class="lead">
-            In this short video, I share who I am, what I have seen across education,
-            and why I am now making my Special Education experience available directly
-            to families, students and educators.
-          </p>
-<p>
-            I have spent more than 20 years in education. One thing I know for sure is this: students with Special Educational Needs can and do learn. They may learn at a different pace. They may need information presented differently. They may need different tools, more time, more structure, or a different route into the learning. That does not mean they cannot learn.
-          </p>
-<p class="belief-statement"><strong>With the right tools, resources, teaching and expectations, students with Special Needs can excel. They can work, create, contribute, lead and be productive members of society. We should be preparing them for possibility, not deciding their limits for them.</strong></p>
-<div aria-label="Choose support by audience" class="audience-strip">
-<a class="audience-pill" href="#parents-support">Parents</a>
-<a class="audience-pill" href="#students-support">Students</a>
-<a class="audience-pill" href="#teachers-support">Teachers</a>
-<a class="audience-pill" href="#schools-support">Schools &amp; organisations</a>
-</div>
-</div>
-</div>
-</section>
-<section class="landing-section" id="support">
-<span class="section-tag">Ways to work with me</span>
-<h2>Support for the learner and the people supporting them.</h2>
-<p class="lead">
-        You do not have to know exactly what is wrong before asking for help. Tell me what you are seeing. Tell me where your child or student is getting stuck. We can start there.
+
+  <span class="section-tag">Why I am offering this support</span>
+
+  <div class="video-shell">
+
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/PoD_GqxVMck"
+        title="Marsha Kerr Talley: Special Education support for parents, teachers and students"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div>
+
+      <h2>Special Education should be more than a placement.</h2>
+
+      <p class="lead">
+        In this short video, I share who I am, what I have seen across education,
+        and why I am making my Special Education experience available directly
+        to learners, families and educators.
       </p>
-<div class="landing-grid">
-<article class="service-card" id="parents-support">
-<span class="service-kicker">For parents</span>
-<h3>Parent Consultation</h3>
-<p>If you are watching your child struggle and you are not sure what the school should be doing, what you should be doing at home, or what the behaviour is telling you, we can work through it together. The goal is clarity, practical next steps and support that fits your child.</p>
-<a class="service-action" href="contact.html?intent=EDUCATION">Ask about parent support</a>
-</article>
-<article class="service-card" id="students-support">
-<span class="service-kicker">For students</span>
-<h3>Private Learning Support &amp; Tutoring</h3>
-<p>This is not simply more schoolwork. I look at how the student learns, where the barriers are, what they already understand and what tools may help. Students can make progress when we stop forcing one route to learning and give them a route they can actually use.</p>
-<a class="service-action" href="contact.html?intent=EDUCATION">Ask about student support</a>
-</article>
-<article class="service-card" id="teachers-support">
-<span class="service-kicker">For teachers &amp; educators</span>
-<h3>Workshops &amp; Consultation</h3>
-<p>I work with teachers on the part that matters after we say “include the student.” What does that look like in an actual lesson? We look at differentiation, behaviour, classroom ecology, access, regulation and practical ways to help diverse learners participate and learn.</p>
-<a class="service-action" href="contact.html?intent=EDUCATION">Explore educator support</a>
-</article>
-<article class="service-card" id="schools-support">
-<span class="service-kicker">For schools &amp; organisations</span>
-<h3>Training, Workshops &amp; Special Education Consultation</h3>
-<p>I provide workshops, training and consultation for schools and organisations that want Special Education to be more than placement on a register or a child sitting in the room. We focus on what staff can do differently so students have meaningful access to learning.</p>
-<a class="service-action" href="contact.html?intent=EDUCATION">Ask about organisational support</a>
-</article>
-</div>
+
+      <p>
+        I have spent more than 20 years in education. One thing I know for sure
+        is this: students with Special Educational Needs can and do learn.
+        They may learn at a different pace. They may need information presented
+        differently. They may need different tools, more time, more structure,
+        or a different route into the learning. That does not mean they cannot learn.
+      </p>
+
+      <p class="belief-statement">
+        <strong>
+          With the right tools, resources, teaching and expectations, students
+          with Special Needs can excel. They can work, create, contribute, lead
+          and be productive members of society. We should be preparing them for
+          possibility, not deciding their limits for them.
+        </strong>
+      </p>
+
+      <div class="audience-strip" aria-label="Choose support by audience">
+        <a class="audience-pill" href="#parents-support">Parents</a>
+        <a class="audience-pill" href="#students-support">Learners</a>
+        <a class="audience-pill" href="#teachers-support">Teachers</a>
+        <a class="audience-pill" href="#schools-support">Schools &amp; Organisations</a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="landing-section" id="support">
+
+  <span class="section-tag">Ways to work with me</span>
+
+  <h2>Support for the learner and the people supporting them.</h2>
+
+  <p class="lead">
+    You do not need to know the professional term for what is happening before
+    asking for help. Start with what you are noticing, where the difficulty is,
+    or what you would like to improve.
+  </p>
+
+  <div class="landing-grid">
+
+    <article class="service-card" id="parents-support">
+
+      <span class="service-kicker">For parents &amp; caregivers</span>
+
+      <h3>Parent Consultation</h3>
+
+      <p>
+        If you are watching your child struggle and you are not sure what the
+        school should be doing, what you can do at home, or what the behaviour
+        may be communicating, we can work through it together.
+      </p>
+
+      <a class="service-action" href="#contact">Ask about parent support</a>
+
+    </article>
+
+    <article class="service-card" id="students-support">
+
+      <span class="service-kicker">For learners</span>
+
+      <h3>Private Learning Support &amp; Tutoring</h3>
+
+      <p>
+        This is not simply more schoolwork. I look at how the learner learns,
+        where the barriers are, what they already understand and what tools may
+        help them access and demonstrate learning.
+      </p>
+
+      <a class="service-action" href="#contact">Ask about learner support</a>
+
+    </article>
+
+    <article class="service-card" id="teachers-support">
+
+      <span class="service-kicker">For teachers &amp; educators</span>
+
+      <h3>Workshops &amp; Consultation</h3>
+
+      <p>
+        We move beyond simply saying “include the student” and look at what
+        inclusion means in an actual lesson: differentiation, behaviour,
+        classroom ecology, access, regulation and practical strategies teachers
+        can use.
+      </p>
+
+      <a class="service-action" href="#contact">Explore educator support</a>
+
+    </article>
+
+    <article class="service-card" id="schools-support">
+
+      <span class="service-kicker">For schools &amp; organisations</span>
+
+      <h3>Training, Professional Development &amp; Consultation</h3>
+
+      <p>
+        I provide workshops, professional development, presentations, in-class
+        support and consultation for schools and organisations seeking practical
+        ways to strengthen inclusion, behaviour support and access to learning.
+      </p>
+
+      <a class="service-action" href="#contact">Tell me what your team needs</a>
+
+    </article>
+
+  </div>
 </section>
 
 <section class="landing-section" id="behaviour-access-video">
+
   <span class="section-tag">Special Education &amp; Behaviour in Practice</span>
+
   <div class="video-shell">
+
     <div class="video-wrap">
       <iframe
         src="https://www.youtube.com/embed/wMlYEPxVx-Y"
@@ -1606,683 +1435,1023 @@ footer { background:#173f40; color:#fff; padding:44px 20px; }
         allowfullscreen>
       </iframe>
     </div>
+
     <div>
+
       <h2>Look beyond the behaviour.</h2>
+
       <p class="lead">
-        A student who refuses to work, leaves their seat or appears disengaged may need more than firmer behaviour management. Sometimes, we need to ask what may be preventing the student from accessing learning.
+        A learner who refuses to work, leaves their seat or appears disengaged
+        may need more than firmer behaviour management. Sometimes we need to ask
+        what may be preventing that learner from accessing the learning.
       </p>
+
       <p>
-        Understanding behaviour is only the beginning. Differentiating instruction, breaking tasks into manageable steps and providing appropriate supports can help learners move from frustration and avoidance toward greater independence and engagement.
+        Understanding behaviour is only the beginning. Differentiating
+        instruction, breaking tasks into manageable steps and providing
+        appropriate supports can help learners move from frustration and
+        avoidance toward greater independence and engagement.
       </p>
+
       <div class="principle">
-        <strong>The academic expectation does not have to disappear.</strong> How the student accesses learning may need to change.
+        <strong>The academic expectation does not have to disappear.</strong>
+        How the learner accesses learning may need to change.
       </div>
-      <a class="service-action" href="#schools-support">Explore training for schools &amp; organisations</a>
+
+      <a class="service-action" href="#schools-support">
+        Explore training for schools &amp; organisations
+      </a>
+
     </div>
+
   </div>
 </section>
 
 <section class="landing-section books-section" id="special-books">
-<span class="section-tag">Books &amp; practical resources</span>
-<h2>Keep the support going beyond the session.</h2>
-<p class="lead">These resources are for parents and educators who want practical guidance they can return to in their own time.</p>
-<div class="book-grid">
-<a class="book-card" href="https://payhip.com/b/6JETz" rel="noopener noreferrer" target="_blank">
-<img alt="What Nobody Wants to Admit About Special Education by Marsha Kerr Talley" src="special-education-truths.png"/>
-<span>What Nobody Wants to Admit About Special Education</span>
-</a>
-<a class="book-card" href="https://payhip.com/b/Jg7HR" rel="noopener noreferrer" target="_blank">
-<img alt="Getting Your Child Identified Without Losing Your Mind by Marsha Kerr Talley" src="getting-child-identified.png"/>
-<span>Getting Your Child Identified Without Losing Your Mind</span>
-</a>
-<a class="book-card" href="https://payhip.com/b/aEyAI" rel="noopener noreferrer" target="_blank">
-<img alt="The School Says Everything Is Fine. My Child Is Not Fine. by Marsha Kerr Talley" src="school-says-fine.png"/>
-<span>The School Says Everything Is Fine. My Child Is Not Fine.</span>
-</a>
-<a class="book-card" href="https://payhip.com/b/4AKGL" rel="noopener noreferrer" target="_blank">
-<img alt="Why Did I Become a Teacher? by Marsha Kerr Talley" src="why-did-i-become-teacher.png"/>
-<span>Why Did I Become a Teacher?</span>
-</a>
-</div>
+
+  <span class="section-tag">Books &amp; practical resources</span>
+
+  <h2>Keep the support going beyond the session.</h2>
+
+  <p class="lead">
+    These resources are for parents and educators who want practical guidance
+    they can return to in their own time.
+  </p>
+
+  <div class="book-grid">
+
+    <a class="book-card" href="https://payhip.com/b/6JETz" target="_blank" rel="noopener noreferrer">
+      <img src="special-education-truths.png" alt="What Nobody Wants to Admit About Special Education by Marsha Kerr Talley">
+      <span>What Nobody Wants to Admit About Special Education</span>
+    </a>
+
+    <a class="book-card" href="https://payhip.com/b/Jg7HR" target="_blank" rel="noopener noreferrer">
+      <img src="getting-child-identified.png" alt="Getting Your Child Identified Without Losing Your Mind by Marsha Kerr Talley">
+      <span>Getting Your Child Identified Without Losing Your Mind</span>
+    </a>
+
+    <a class="book-card" href="https://payhip.com/b/aEyAI" target="_blank" rel="noopener noreferrer">
+      <img src="school-says-fine.png" alt="The School Says Everything Is Fine. My Child Is Not Fine. by Marsha Kerr Talley">
+      <span>The School Says Everything Is Fine. My Child Is Not Fine.</span>
+    </a>
+
+    <a class="book-card" href="https://payhip.com/b/4AKGL" target="_blank" rel="noopener noreferrer">
+      <img src="why-did-i-become-teacher.png" alt="Why Did I Become a Teacher? by Marsha Kerr Talley">
+      <span>Why Did I Become a Teacher?</span>
+    </a>
+
+  </div>
 </section>
+
 <section class="landing-section ecology-feature" id="classroom-ecology">
-<span class="section-tag">Classroom Ecology</span>
-<h2>The environment is part of the learning.</h2>
-<p class="lead">
-        I talk a lot about what we teach and how we teach it, but I also pay attention to the space itself. A classroom can either help a student settle, engage and participate, or make learning harder before the lesson even begins.
-      </p>
-<div class="ecology-card"><img alt="A flexible classroom ecology with plants, warm lighting, student work, books, a reading nook, round tables, movement and collaborative learning" class="ecology-image" src="classroom-ecology.png"/>
-<div>
-<h3>Create a space students want to be in.</h3>
-<p>
-            That can mean thinking about lighting, noise, seating, movement, clutter, colour and even something as simple as adding plants. When students feel comfortable in the space, when the room feels cared for and they feel considered in it, they are more likely to want to be there. Once they want to be there, they are more likely to be willing to learn.
-          </p>
-<p>
-            This matters for every learner. It can matter even more for students with sensory, attention, regulation or communication needs. Differentiation is not only what is on the worksheet. Sometimes it is what we change in the environment so the student can access the learning in the first place.
-          </p>
-<a class="service-action ecology-link" href="https://marshakerrtalley.substack.com/p/classroom-ecology-the-missing-conversation" rel="noopener noreferrer" target="_blank">Read: Classroom Ecology, The Missing Conversation</a>
-</div>
-</div>
-</section>
-<section class="landing-section lead-box" id="contact">
-<span class="section-tag">Need support?</span>
-<h2>Tell me what is happening.</h2>
-<p class="lead">
-        Tell me what is happening. You do not need to write it in professional language. I will read your concern and help you identify the most useful next step.
-      </p>
-<form action="https://formsubmit.co/ae3de5af71dcc6dde1b81cf12723e28e" class="lead-form" method="POST">
-<input name="_subject" type="hidden" value="New Special Education enquiry from marshakerrtalley.com"/>
-<input name="_next" type="hidden" value="https://www.marshakerrtalley.com/thank-you.html"/>
-<input name="_captcha" type="hidden" value="false"/>
-<div>
-<label for="leadName">Your name</label>
-<input autocomplete="name" id="leadName" name="name" required="" type="text"/>
-</div>
-<div>
-<label for="leadEmail">Email</label>
-<input autocomplete="email" id="leadEmail" name="email" required="" type="email"/>
-</div>
-<div>
-<label for="leadRole">I am a...</label>
-<select id="leadRole" name="role" required="">
-<option value="">Choose one...</option>
-<option>Parent / caregiver</option>
-<option>Student</option>
-<option>Teacher / educator</option>
-<option>School / organisation</option>
-<option>Other</option>
-</select>
-</div>
-<div>
-<label for="leadService">I am interested in...</label>
-<select id="leadService" name="service_interest" required="">
-<option value="">Choose one...</option>
-<option>Parent consultation</option>
-<option>Private student tutoring / learning support</option>
-<option>Teacher workshop / professional learning</option>
-<option>School or organisation consultation</option>
-<option>I am not sure yet</option>
-<option>School / organisation training or consultation</option>
-</select>
-</div>
-<div class="full">
-<label for="leadMessage">What are you seeing, and what would you like help with?</label>
-<textarea id="leadMessage" name="message" placeholder="You can share the concern without including private medical records or highly sensitive information here." required=""></textarea>
-</div>
-<div class="full">
-<button class="btn btn-primary" type="submit">Send My Enquiry</button>
-<p class="form-note">
-            Educational support does not replace diagnosis, medical care, psychological assessment or therapy.
-            Please avoid sending confidential records through this first-contact form.
-          </p>
-</div>
-</form>
-</section>
-<details class="workshop-collapsible" id="differentiation-resource"><summary class="workshop-summary"><span class="workshop-summary-label">INTERACTIVE TEACHER RESOURCE</span><span class="workshop-summary-title">Differentiation in Action</span><span class="workshop-summary-sub">Work through practical case studies, classroom decisions and differentiation strategies.</span><span class="workshop-open-button" aria-hidden="true"><span class="open-text">OPEN INTERACTIVE ACTIVITIES ↓</span><span class="close-text">CLOSE ACTIVITIES ↑</span></span><span class="workshop-click-note">Click anywhere in this box to begin.</span></summary><div class="workshop-inner"><div class="progress-wrap workshop-progress"><div class="progress-inner"><strong>Workshop Activity Progress</strong><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div><span id="progressText">0 completed</span></div></div><section class="resource-divider">
-<span class="section-tag">Free Teacher Resource</span>
-<h2>Differentiation in Action</h2>
-<p>
-        Continue below for an interactive professional learning resource exploring
-        inclusion, differentiation, autism, dyslexia, ADHD, behaviour and practical classroom adjustments.
+
+  <span class="section-tag">Classroom Ecology</span>
+
+  <h2>The environment is part of the learning.</h2>
+
+  <p class="lead">
+    What we teach matters. How we teach matters. The environment in which
+    students are expected to learn matters too.
+  </p>
+
+  <div class="ecology-card">
+
+    <img
+      class="ecology-image"
+      src="classroom-ecology.png"
+      alt="A flexible classroom ecology with plants, warm lighting, student work, books, a reading nook, round tables, movement and collaborative learning">
+
+    <div>
+
+      <h3>Create a space students want to be in.</h3>
+
+      <p>
+        That can mean thinking about lighting, noise, seating, movement, clutter,
+        colour and even something as simple as adding plants. A classroom can
+        either help a learner settle, engage and participate, or make learning
+        harder before the lesson even begins.
       </p>
 
+      <p>
+        This matters for every learner. It can matter even more for students
+        with sensory, attention, regulation or communication needs.
+        Differentiation is not only what is on the worksheet. Sometimes it is
+        what we change in the environment so the student can access the learning.
+      </p>
+
+      <a
+        class="service-action"
+        href="https://marshakerrtalley.substack.com/p/classroom-ecology-the-missing-conversation"
+        target="_blank"
+        rel="noopener noreferrer">
+        Read: Classroom Ecology, The Missing Conversation
+      </a>
+
+    </div>
+
+  </div>
 </section>
-<!-- SECTION 1 -->
-<section class="section" id="start">
-<span class="section-tag">Start Here</span>
-<h2>Being in the room does not mean the student is included.</h2>
-<p class="lead">
+
+<section class="landing-section" id="contact" aria-labelledby="enquiry-title">
+
+  <span class="section-tag">Enquire about support</span>
+
+  <h2 id="enquiry-title">Tell me what you need.</h2>
+
+  <p class="lead enquiry-intro">
+    A few short details will help me understand your setting, audience and
+    priorities before we speak. You do not need to have the solution worked out already.
+  </p>
+
+  <div class="form-intro-note">
+    <strong>For schools and organisations:</strong> this information helps me
+    understand the scope of your request so I can recommend the right format and,
+    where appropriate, prepare an accurate quote.
+  </div>
+
+  <form
+    action="https://formsubmit.co/ae3de5af71dcc6dde1b81cf12723e28e"
+    class="lead-form"
+    method="POST">
+
+    <input
+      name="_subject"
+      type="hidden"
+      value="New Education / Special Education service enquiry from marshakerrtalley.com">
+
+    <input
+      name="_next"
+      type="hidden"
+      value="https://www.marshakerrtalley.com/thank-you.html">
+
+    <input name="_captcha" type="hidden" value="false">
+
+    <div>
+      <label for="leadName">Your name</label>
+      <input
+        autocomplete="name"
+        id="leadName"
+        name="name"
+        required
+        type="text">
+    </div>
+
+    <div>
+      <label for="leadEmail">Email</label>
+      <input
+        autocomplete="email"
+        id="leadEmail"
+        name="email"
+        required
+        type="email">
+    </div>
+
+    <div>
+      <label for="organisation">
+        School / organisation
+        <span class="optional">(if applicable)</span>
+      </label>
+
+      <input
+        autocomplete="organization"
+        id="organisation"
+        name="organisation"
+        type="text">
+    </div>
+
+    <div>
+      <label for="leadRole">Your role</label>
+
+      <select id="leadRole" name="role" required>
+        <option value="">Choose one...</option>
+        <option>Principal / school leader</option>
+        <option>Teacher / educator</option>
+        <option>Organisation / programme leader</option>
+        <option>Parent / caregiver</option>
+        <option>Student / learner</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="form-section">
+
+      <h3>What kind of support are you looking for?</h3>
+
+      <p class="form-help">
+        Choose the closest match. We can refine it together.
+      </p>
+
+    </div>
+
+    <div class="full choice-grid" role="radiogroup" aria-label="Type of support">
+
+      <div class="choice">
+        <input
+          id="support-workshop"
+          name="support_type"
+          value="Workshop / professional development"
+          type="radio"
+          required>
+
+        <label for="support-workshop">
+          Workshop / professional development
+        </label>
+      </div>
+
+      <div class="choice">
+        <input
+          id="support-presentation"
+          name="support_type"
+          value="Presentation / keynote"
+          type="radio">
+
+        <label for="support-presentation">
+          Presentation / keynote
+        </label>
+      </div>
+
+      <div class="choice">
+        <input
+          id="support-class"
+          name="support_type"
+          value="In-class support / observation"
+          type="radio">
+
+        <label for="support-class">
+          In-class support / observation
+        </label>
+      </div>
+
+      <div class="choice">
+        <input
+          id="support-consult"
+          name="support_type"
+          value="Consultation / programme support"
+          type="radio">
+
+        <label for="support-consult">
+          Consultation / programme support
+        </label>
+      </div>
+
+      <div class="choice">
+        <input
+          id="support-student"
+          name="support_type"
+          value="Student learning support / tutoring"
+          type="radio">
+
+        <label for="support-student">
+          Student learning support / tutoring
+        </label>
+      </div>
+
+      <div class="choice">
+        <input
+          id="support-unsure"
+          name="support_type"
+          value="Not sure yet"
+          type="radio">
+
+        <label for="support-unsure">
+          Not sure yet
+        </label>
+      </div>
+
+    </div>
+
+    <div>
+
+      <label for="audience">Who needs the support?</label>
+
+      <select id="audience" name="audience" required>
+        <option value="">Choose one...</option>
+        <option>Teachers / school staff</option>
+        <option>School leaders</option>
+        <option>Students / learners</option>
+        <option>Parents / caregivers</option>
+        <option>Mixed group</option>
+        <option>Organisation / community participants</option>
+        <option>Other</option>
+      </select>
+
+    </div>
+
+    <div>
+
+      <label for="groupSize">Approximate number of participants</label>
+
+      <select id="groupSize" name="group_size">
+        <option value="">Choose one...</option>
+        <option>1</option>
+        <option>2–10</option>
+        <option>11–25</option>
+        <option>26–50</option>
+        <option>51–100</option>
+        <option>100+</option>
+        <option>Not sure yet</option>
+      </select>
+
+    </div>
+
+    <div class="form-section">
+
+      <h3>What would make this support useful?</h3>
+
+      <p class="form-help">
+        This helps me plan around your actual need rather than offer a generic session.
+      </p>
+
+    </div>
+
+    <div class="full">
+
+      <label for="priority">Main concern or priority</label>
+
+      <textarea
+        class="compact-textarea"
+        id="priority"
+        name="main_priority"
+        required
+        placeholder="For example: supporting neurodivergent learners, behaviour and regulation, differentiation, staff confidence, classroom practice..."></textarea>
+
+    </div>
+
+    <div class="full">
+
+      <label for="outcome">
+        What would you like people to leave knowing, doing or understanding?
+        <span class="optional">(optional)</span>
+      </label>
+
+      <textarea
+        class="compact-textarea"
+        id="outcome"
+        name="desired_outcome"
+        placeholder="A short response is fine."></textarea>
+
+    </div>
+
+    <div>
+
+      <label for="delivery">Preferred delivery</label>
+
+      <select id="delivery" name="delivery_preference">
+        <option value="">Choose one...</option>
+        <option>In person</option>
+        <option>Virtual</option>
+        <option>Hybrid</option>
+        <option>Open to recommendation</option>
+      </select>
+
+    </div>
+
+    <div>
+
+      <label for="duration">Approximate session length</label>
+
+      <select id="duration" name="duration">
+        <option value="">Choose one...</option>
+        <option>Up to 1 hour</option>
+        <option>1–2 hours</option>
+        <option>Half day</option>
+        <option>Full day</option>
+        <option>Multiple sessions</option>
+        <option>Not sure yet</option>
+      </select>
+
+    </div>
+
+    <div>
+
+      <label for="date">
+        Preferred date / timeframe
+        <span class="optional">(if known)</span>
+      </label>
+
+      <input
+        id="date"
+        name="preferred_date_or_timeframe"
+        placeholder="e.g. 21 October or November 2026"
+        type="text">
+
+    </div>
+
+    <div>
+
+      <label for="location">
+        Location
+        <span class="optional">(if in person)</span>
+      </label>
+
+      <input
+        id="location"
+        name="location"
+        placeholder="Town / parish / country"
+        type="text">
+
+    </div>
+
+    <div class="full">
+
+      <label for="context">
+        Anything else I should know?
+        <span class="optional">(optional)</span>
+      </label>
+
+      <textarea
+        class="compact-textarea"
+        id="context"
+        name="additional_context"
+        placeholder="For example: age or grade range, accessibility needs, an existing programme, or a specific challenge you want addressed. Please do not include confidential medical records here."></textarea>
+
+    </div>
+
+    <div class="form-submit-row">
+
+      <button class="btn btn-primary" type="submit">
+        Send Enquiry
+      </button>
+
+      <p class="form-note">
+        I will use these details to understand your request and determine the
+        most appropriate next step. A quote can follow once the scope is clear.
+        Educational support does not replace diagnosis, medical care,
+        psychological assessment or therapy.
+      </p>
+
+    </div>
+
+  </form>
+</section>
+
+<section class="work-with-me-bridge" aria-labelledby="more-work-title">
+
+  <div>
+
+    <span class="section-tag">More ways to work with me</span>
+
+    <h2 id="more-work-title">
+      Looking for something beyond Special Education?
+    </h2>
+
+    <p>
+      Explore my wider work in professional learning, behaviour, wellbeing,
+      leadership, speaking, facilitation and organisational support.
+    </p>
+
+  </div>
+
+  <a href="work-with-me.html">
+    Explore Work With Me →
+  </a>
+
+</section>
+
+<details class="workshop-collapsible" id="differentiation-resource">
+
+  <summary class="workshop-summary">
+
+    <span class="workshop-summary-label">
+      INTERACTIVE TEACHER RESOURCE
+    </span>
+
+    <span class="workshop-summary-title">
+      Differentiation in Action
+    </span>
+
+    <span class="workshop-summary-sub">
+      Work through practical case studies, classroom decisions and
+      differentiation strategies.
+    </span>
+
+    <span class="workshop-open-button" aria-hidden="true">
+      <span class="open-text">OPEN INTERACTIVE ACTIVITIES ↓</span>
+      <span class="close-text">CLOSE ACTIVITIES ↑</span>
+    </span>
+
+    <span class="workshop-click-note">
+      Click anywhere in this box to begin.
+    </span>
+
+  </summary>
+
+  <div class="workshop-inner">
+
+    <section class="resource-divider">
+
+      <span class="section-tag">Free Teacher Resource</span>
+
+      <h2>Differentiation in Action</h2>
+
+      <p>
+        Explore inclusion, differentiation, autism, dyslexia, ADHD,
+        behaviour and practical classroom adjustments through short
+        activities and case studies.
+      </p>
+
+    </section>
+
+    <section class="activity-section">
+
+      <span class="section-tag">Start Here</span>
+
+      <h2>Being in the room does not mean the student is included.</h2>
+
+      <p class="lead">
         A student can sit in a mainstream classroom all day and still have
         very little access to the learning taking place. Differentiation asks
-        us to examine the barriers between the learner and the lesson, and
+        us to examine the barriers between the learner and the lesson and
         intentionally remove or reduce them.
       </p>
-<div class="principle">
-<strong>Differentiation does not mean lowering expectations.</strong>
+
+      <div class="principle">
+        <strong>Differentiation does not mean lowering expectations.</strong>
         It means creating different pathways through which learners can
         access, engage with and demonstrate learning.
       </div>
-<div class="prompt-box oral">
-<strong>Talk first.</strong>
-        Think about a student you have taught, observed or supported who was
+
+      <div class="prompt-box">
+        <strong>Think about a learner.</strong>
+        Consider a student you have taught, observed or supported who was
         physically present in the classroom but academically disconnected.
-        What was happening?
+        What appeared to be getting in the way?
       </div>
-<label for="openingResponse">
-        Write one observation from your discussion:
+
+      <label for="openingResponse">
+        Write one observation:
       </label>
-<textarea class="track-response" id="openingResponse" placeholder="The student was present, but..."></textarea>
-</section>
-<!-- SECTION 2 -->
-<section class="section">
-<span class="section-tag">Think Differently</span>
-<h2>Begin with the barrier, not the label.</h2>
-<p>
-        A diagnosis can help us understand a learner, but it should never
-        become the entire explanation for that learner. Two students with the
-        same identified need may require very different support.
+
+      <textarea
+        class="activity-textarea"
+        id="openingResponse"
+        placeholder="The student was present, but..."></textarea>
+
+    </section>
+
+    <section class="activity-section">
+
+      <span class="section-tag">Think Differently</span>
+
+      <h2>Begin with the challenges, not the label.</h2>
+
+      <p>
+        A diagnosis can help us understand a learner, but it is not the be all end all. Two students with
+        the same identified need may require very different support.
       </p>
-<div class="mini-grid">
-<div class="mini-card">
-<strong>1. Learner</strong>
+
+      <div class="mini-grid">
+
+        <div class="mini-card">
+          <strong>1. Learner</strong>
           What strengths, needs, interests and prior knowledge does this
           learner bring?
         </div>
-<div class="mini-card">
-<strong>2. Task</strong>
-          What exactly are we asking the student to understand or do?
+
+        <div class="mini-card">
+          <strong>2. Task</strong>
+          What exactly are we asking the learner to understand or do?
         </div>
-<div class="mini-card">
-<strong>3. Barrier</strong>
-          What may be preventing meaningful access or participation?
+
+        <div class="mini-card">
+          <strong>3. Barrier</strong>
+          What may be making the task unnecessarily difficult to access?
         </div>
-<div class="mini-card">
-<strong>4. Adjustment</strong>
-          What can we change without removing the core learning goal?
+
+        <div class="mini-card">
+          <strong>4. Adjustment</strong>
+          What can we change without removing the purpose of the learning?
         </div>
-</div>
-</section>
-<!-- CASE 1 -->
-<section class="section">
-<span class="section-tag">Case Study 1</span>
-<h2>Dyslexia: When reading becomes the barrier</h2>
-<div class="card case-card">
-<div class="case-label">Meet Andre</div>
-<h3>Andre knows more than his written work suggests.</h3>
-<p>
-          Andre is 13. During class discussions he demonstrates strong
-          understanding and often makes thoughtful connections. When students
-          are asked to read a long passage independently and answer written
-          questions, however, he works slowly, skips words and sometimes
-          stops altogether.
-        </p>
-<p>
-          A teacher tells him, “You need to try harder. Everyone else has
-          finished.”
-        </p>
-</div>
-<div class="question" data-question="">
-<div class="question-number">Decision 1</div>
-<strong>
-          Which response provides the strongest starting point for
-          differentiation?
-        </strong>
-<div class="options">
-<button class="option" data-correct="false">
-            A. Give Andre a much easier worksheet.
-          </button>
-<button class="option" data-correct="false">
-            B. Excuse Andre from reading activities.
-          </button>
-<button class="option" data-correct="true">
-            C. Identify whether decoding and reading load are preventing him
-            from demonstrating understanding, then provide another route to
-            the content.
-          </button>
-<button class="option" data-correct="false">
-            D. Move Andre to the back of the classroom with separate work.
-          </button>
-</div>
-<div class="feedback good">
-          Yes. The goal is not simply to remove the task. Determine the
-          barrier and preserve access to the important learning.
-        </div>
-<div class="feedback try">
-          Consider whether this response changes the barrier or simply removes
-          Andre from the learning.
-        </div>
-</div>
-<div class="prompt-box">
-<strong>Your turn:</strong>
-        The learning goal is understanding the causes of a historical event.
-        Reading fluency is not the skill being assessed. Name two ways Andre
-        could access the content.
+
       </div>
-<textarea class="track-response" placeholder="1.
-2."></textarea>
-</section>
-<!-- CASE 2 -->
-<section class="section">
-<span class="section-tag">Case Study 2</span>
-<h2>Autism: Look beneath the behaviour</h2>
-<div class="card case-card">
-<div class="case-label">Meet Kayla</div>
-<h3>A classroom change creates a sudden response.</h3>
-<p>
-          Kayla usually participates well when the class follows a predictable
-          routine. Today the teacher unexpectedly changes the seating plan,
-          introduces a group task and turns on a video while students are
-          talking loudly.
+
+    </section>
+
+    <section class="activity-section">
+
+      <span class="section-tag">Quick Check</span>
+
+      <h2>What would you do first?</h2>
+
+      <div class="question" data-question>
+
+        <div class="question-number">Scenario 1</div>
+
+        <p>
+          A student repeatedly puts their head on the desk when a long written
+          task begins. The student participates verbally and appears to
+          understand the discussion.
         </p>
-<p>
-          Kayla covers her ears, refuses to join her group and repeatedly
-          says, “No.”
-        </p>
-</div>
-<div class="question" data-question="">
-<div class="question-number">Decision 2</div>
-<strong>
-          What should the teacher consider before interpreting Kayla's
-          response as deliberate defiance?
-        </strong>
-<div class="options">
-<button class="option" data-correct="false">
-            A. Whether Kayla is trying to avoid all academic work.
+
+        <div class="options">
+
+          <button class="option" type="button" data-correct="false">
+            Increase the consequence because the student is refusing to work.
           </button>
-<button class="option" data-correct="true">
-            B. Whether unexpected change, sensory load, communication demands
-            or uncertainty may be contributing to the response.
+
+          <button class="option" type="button" data-correct="true">
+            Examine whether the written task is creating an access barrier and
+            consider another way for the student to begin or demonstrate understanding.
           </button>
-<button class="option" data-correct="false">
-            C. Whether a punishment will encourage immediate compliance.
+
+          <button class="option" type="button" data-correct="false">
+            Remove all academic expectations for the student.
           </button>
-<button class="option" data-correct="false">
-            D. Whether she should permanently work alone.
-          </button>
-</div>
-<div class="feedback good">
-          Correct. Behaviour provides information. Context matters before we
-          decide what a student's behaviour means.
+
         </div>
-<div class="feedback try">
-          Look at what changed in the environment immediately before the
-          behaviour.
+
+        <div class="feedback good">
+          Yes. Start by investigating the barrier. The learner may understand
+          the content while struggling with the way the task requires them to
+          access or demonstrate that understanding.
         </div>
-</div>
-<div class="prompt-box oral">
-<strong>Discuss aloud:</strong>
-        What could the teacher have done before the activity to increase
-        predictability without excluding Kayla from collaborative learning?
+
+        <div class="feedback try">
+          Consider what the behaviour may be communicating before assuming
+          that the problem is motivation or deliberate refusal.
+        </div>
+
       </div>
-</section>
-<!-- CASE 3 -->
-<section class="section">
-<span class="section-tag">Case Study 3</span>
-<h2>ADHD &amp; executive function: “He knows it,but doesn't do it.”</h2>
-<div class="card case-card">
-<div class="case-label">Meet Daniel</div>
-<p>
-          Daniel frequently begins assignments but does not finish them.
-          His desk contains unfinished papers. During long teacher explanations
-          he begins tapping, looking around the room and talking to peers.
-          When given a complicated six-step task, he completes the first
-          instruction and then asks, “What am I supposed to do?”
+
+      <div class="question" data-question>
+
+        <div class="question-number">Scenario 2</div>
+
+        <p>
+          A learner with attention and regulation difficulties becomes
+          increasingly restless during a long teacher-led explanation.
         </p>
-</div>
-<div class="question" data-question="">
-<div class="question-number">Decision 3</div>
-<strong>
-          Which adjustment most directly addresses the demands described?
-        </strong>
-<div class="options">
-<button class="option" data-correct="false">
-            A. Give Daniel additional homework so he learns responsibility.
+
+        <div class="options">
+
+          <button class="option" type="button" data-correct="true">
+            Break the instruction into shorter chunks and build in an
+            appropriate opportunity for movement or active response.
           </button>
-<button class="option" data-correct="true">
-            B. Break instructions into visible steps, check understanding,
-            provide purposeful movement and use shorter work intervals.
+
+          <button class="option" type="button" data-correct="false">
+            Require the learner to remain completely still until the explanation ends.
           </button>
-<button class="option" data-correct="false">
-            C. Remove all challenging work.
+
+          <button class="option" type="button" data-correct="false">
+            Send the learner out every time movement begins.
           </button>
-<button class="option" data-correct="false">
-            D. Require him to sit completely still throughout instruction.
-          </button>
-</div>
-<div class="feedback good">
-          Exactly. The support reduces executive-function demands while
-          preserving the academic expectation.
+
         </div>
-<div class="feedback try">
-          Ask yourself which response provides structure without reducing the
-          learning expectation.
+
+        <div class="feedback good">
+          Exactly. Adjusting the structure of instruction can support attention
+          and regulation without removing the learning expectation.
         </div>
-</div>
-</section>
-<!-- CASE 4 -->
-<section class="section">
-<span class="section-tag">Case Study 4</span>
-<h2>Behaviour: What happened before the disruption?</h2>
-<div class="card case-card">
-<div class="case-label">Meet Malik</div>
-<p>
-          Malik regularly calls out, walks around the classroom and jokes with
-          other students during independent written work. Staff describe him
-          as disruptive.
-        </p>
-<p>
-          During practical activities, demonstrations and class debates,
-          however, Malik is engaged and frequently contributes useful ideas.
-        </p>
-</div>
-<div class="question" data-question="">
-<div class="question-number">Decision 4</div>
-<strong>
-          Which question would provide the most useful information?
-        </strong>
-<div class="options">
-<button class="option" data-correct="false">
-            A. How can we make Malik stop talking?
-          </button>
-<button class="option" data-correct="false">
-            B. What punishment has not been tried yet?
-          </button>
-<button class="option" data-correct="true">
-            C. What happens before, during and after the behaviour, and what
-            demands or needs might the behaviour be communicating?
-          </button>
-<button class="option" data-correct="false">
-            D. Should Malik always complete separate work?
-          </button>
-</div>
-<div class="feedback good">
-          Yes. Looking at antecedents, task demands, context and consequences
-          gives us far more useful information than the label “disruptive.”
+
+        <div class="feedback try">
+          Think about whether the structure of the lesson is helping or
+          increasing the learner's difficulty with regulation.
         </div>
-<div class="feedback try">
-          Behaviour itself is only part of the information. Look at the whole
-          classroom situation.
-        </div>
-</div>
-<div class="prompt-box">
-<strong>Complete the sentence:</strong>
-        Instead of asking “How do I stop this behaviour?” I could ask...
+
       </div>
-<input class="track-response" placeholder="What might..." type="text">
-</input></section>
-<!-- STRATEGIES -->
-<section class="section">
-<span class="section-tag">Strategy Bank</span>
-<h2>Different pathways. Shared learning.</h2>
-<p>
-        Open each section during the workshop and ask participants which
-        strategies could be used immediately in their own classrooms.
-      </p>
-<details>
-<summary>Dyslexia &amp; literacy-related barriers</summary>
-<div class="details-content">
-          Consider text-to-speech or audio access where appropriate, shorter
-          chunks of text, explicit vocabulary instruction, visual support,
-          structured literacy approaches, additional processing time,
-          alternatives to unnecessary copying, and opportunities to
-          demonstrate understanding orally when writing is not the skill
-          being assessed.
+
+    </section>
+
+    <section class="activity-section">
+
+      <span class="section-tag">Classroom Practice</span>
+
+      <h2>Small adjustments can change access.</h2>
+
+      <div class="strategy-grid">
+
+        <div class="strategy-card">
+          <strong>Chunk instructions</strong>
+          Give one manageable step at a time rather than several directions
+          at once.
         </div>
-</details>
-<details>
-<summary>Autism &amp; differences in communication, sensory processing and predictability</summary>
-<div class="details-content">
-          Consider visual schedules, advance warning of changes, explicit
-          instructions, reduced ambiguity, sensory-aware environments,
-          structured choices, processing time, predictable routines and
-          multiple ways to participate. Support should be individualized
-          rather than based solely on diagnosis.
+
+        <div class="strategy-card">
+          <strong>Use visual support</strong>
+          Pair spoken information with visual cues, examples, models or a
+          simple sequence.
         </div>
-</details>
-<details>
-<summary>ADHD, attention &amp; executive-function needs</summary>
-<div class="details-content">
-          Consider visible steps, chunked assignments, timers, checklists,
-          purposeful movement, frequent feedback, reduced unnecessary
-          distractions, shorter instructional segments, organizational
-          supports and opportunities for active participation.
+
+        <div class="strategy-card">
+          <strong>Check understanding</strong>
+          Ask the learner to show or explain what they understand rather than
+          relying only on “Do you understand?”
         </div>
-</details>
-<details>
-<summary>Behaviour, regulation &amp; emotional needs</summary>
-<div class="details-content">
-          Consider antecedents, relationship, task difficulty, boredom,
-          communication, regulation, environmental stressors, reinforcement,
-          choice and opportunities for success. Ask what the behaviour may be
-          communicating before relying solely on consequences.
+
+        <div class="strategy-card">
+          <strong>Build in movement</strong>
+          Consider whether purposeful movement can support attention and
+          regulation rather than treating all movement as disruption.
         </div>
-</details>
-</section>
-<!-- MYTH -->
-<section class="section">
-<span class="section-tag">Quick Check</span>
-<h2>Myth or accurate?</h2>
-<div class="question" data-myth="">
-<div class="myth">
-          “Differentiation means creating an entirely different lesson for
-          every student.”
+
+        <div class="strategy-card">
+          <strong>Reduce unnecessary load</strong>
+          Ask which parts of the task measure the intended learning and which
+          parts may simply be creating additional barriers.
         </div>
-<div class="myth-buttons">
-<button class="btn btn-primary myth-answer" data-answer="false">
-            Myth
-          </button>
-<button class="btn myth-answer" data-answer="true">
-            Accurate
-          </button>
-</div>
-<div class="feedback good">
-          Correct. Effective differentiation often involves adjusting access,
-          support, grouping, pacing, materials, response options or the
-          learning environment,not writing thirty separate lessons.
+
+        <div class="strategy-card">
+          <strong>Offer ways to respond</strong>
+          Where appropriate, allow learners to demonstrate understanding
+          through speaking, writing, visuals, technology or practical work.
         </div>
-<div class="feedback try">
-          Think about whether one lesson can contain several pathways to the
-          same important learning.
-        </div>
-</div>
-</section>
-<!-- DIFFERENTIATION BUILDER -->
-<section class="section">
-<span class="section-tag">Interactive Challenge</span>
-<h2>Build the adjustment</h2>
-<p>
-        Choose the barrier you are observing and the learning goal you need
-        to preserve. The tool will give you a planning question to discuss.
-      </p>
-<div class="scenario-builder">
-<div class="builder-row">
-<label for="barrier">Observed barrier</label>
-<select id="barrier">
-<option value="">Choose one...</option>
-<option value="reading">Heavy reading demand</option>
-<option value="writing">Written-expression difficulty</option>
-<option value="attention">Sustaining attention / organization</option>
-<option value="sensory">Sensory or environmental overload</option>
-<option value="language">Language / processing difficulty</option>
-<option value="behaviour">Behaviour or disengagement</option>
-</select>
-</div>
-<div class="builder-row">
-<label for="goal">What is the real learning goal?</label>
-<input id="goal" placeholder="Example: Explain the causes of photosynthesis..." type="text">
-</input></div>
-<button class="btn btn-primary" onclick="buildChallenge()">
-          Generate Planning Question
-        </button>
-<div id="challengeResult"></div>
-</div>
-</section>
-<!-- DESIGN CHALLENGE -->
-<section class="section">
-<span class="section-tag">Apply It</span>
-<h2>The 5-minute lesson redesign</h2>
-<p>
-        Choose a lesson you currently teach. Do not redesign the entire lesson.
-        Identify one barrier and make one intentional adjustment.
-      </p>
-<div class="grid">
-<div class="card">
-<h3>1. Learning Goal</h3>
-<textarea class="track-response" placeholder="What must students understand or be able to do?"></textarea>
-</div>
-<div class="card">
-<h3>2. Possible Barrier</h3>
-<textarea class="track-response" placeholder="What could make this lesson unnecessarily difficult to access?"></textarea>
-</div>
-<div class="card">
-<h3>3. Adjustment</h3>
-<textarea class="track-response" placeholder="What can you change about access, instruction, materials, environment or response?"></textarea>
-</div>
-<div class="card">
-<h3>4. Evidence of Learning</h3>
-<textarea class="track-response" placeholder="How will the student still demonstrate the intended learning?"></textarea>
-</div>
-</div>
-</section>
-<!-- FINAL CASE -->
-<section class="section">
-<span class="section-tag">Final Case</span>
-<h2>The student at the back of the room</h2>
-<div class="card case-card">
-<p>
-          You enter a classroom and notice one student sitting at the back.
-          While the class works on a science activity, the student colours a
-          worksheet unrelated to the lesson.
-        </p>
-<p>
-          A member of staff explains:
-        </p>
-<blockquote>
-          “He has Special Educational Needs. He can't really do what the rest
-          of them are doing.”
-        </blockquote>
-</div>
-<div class="prompt-box oral">
-<strong>Discuss:</strong>
-        What questions would you ask before accepting that conclusion?
+
       </div>
-<textarea class="track-response" placeholder="I would want to know..."></textarea>
-<div class="prompt-box">
-<strong>Now redesign the situation.</strong>
-        How could this learner participate meaningfully in the science lesson
-        while receiving the support he needs?
+
+    </section>
+
+    <section class="activity-section">
+
+      <span class="section-tag">Behaviour as Communication</span>
+
+      <h2>Ask what may be underneath what you can see.</h2>
+
+      <div class="case-grid">
+
+        <article class="case-card">
+
+          <span class="case-label">What we see</span>
+
+          <h3>“The student won't start.”</h3>
+
+          <p>
+            Before deciding the student is simply refusing, consider whether
+            they understand the task, know how to begin, can manage the amount
+            of information presented, or fear getting it wrong.
+          </p>
+
+        </article>
+
+        <article class="case-card">
+
+          <span class="case-label">What we see</span>
+
+          <h3>“The student keeps leaving the seat.”</h3>
+
+          <p>
+            Consider attention, regulation, sensory needs, task difficulty,
+            the length of instruction, movement needs and what happens
+            immediately before the student gets up.
+          </p>
+
+        </article>
+
+        <article class="case-card">
+
+          <span class="case-label">What we see</span>
+
+          <h3>“The student shuts down.”</h3>
+
+          <p>
+            Withdrawal may communicate overwhelm, anxiety, confusion,
+            exhaustion or difficulty processing what is happening.
+          </p>
+
+        </article>
+
+        <article class="case-card">
+
+          <span class="case-label">What we see</span>
+
+          <h3>“The student is disruptive.”</h3>
+
+          <p>
+            Behaviour still needs boundaries, but effective support also asks
+            what is contributing to the behaviour and what can be changed
+            before escalation occurs.
+          </p>
+
+        </article>
+
       </div>
-<textarea class="track-response" placeholder="One possible approach would be..."></textarea>
-</section>
-<!-- JAMAICAN CLASSROOM APPLICATION -->
-<section class="section jamaica-transition">
-<span class="section-tag">Next Step: Apply It in Jamaica</span>
-<h2>What does differentiation look like in Jamaican classrooms?</h2>
-<p class="jamaica-lead">
-        The principles you have explored matter most when they can work in the
-        classrooms teachers actually serve. The next interactive page moves from
-        the general principles of differentiation to the realities teachers may
-        encounter across Jamaican schools.
+
+      <div class="principle">
+        <strong>Regulate rather than escalate.</strong>
+        The goal is not to excuse harmful behaviour. It is to respond in a way
+        that protects dignity, maintains appropriate boundaries and increases
+        the learner's ability to return to learning.
+      </div>
+
+    </section>
+
+    <section class="activity-section">
+
+      <span class="section-tag">Apply It</span>
+
+      <h2>One change for your classroom.</h2>
+
+      <p>
+        Think about one learner, lesson or classroom routine. What is one
+        practical adjustment you could make to improve access without
+        lowering the learning expectation?
       </p>
-<div class="jamaica-reality-grid">
-<div class="jamaica-reality">
-<strong>Large classes</strong><br/>
-          How can one teacher support different needs without creating a separate
-          lesson for every student?
-        </div>
-<div class="jamaica-reality">
-<strong>Students without formal diagnoses</strong><br/>
-          What can a teacher do now when a learner is clearly struggling but
-          specialist assessment or support is not yet available?
-        </div>
-<div class="jamaica-reality">
-<strong>Literacy gaps &amp; curriculum demands</strong><br/>
-          How do we keep learners connected to meaningful, age-appropriate
-          content when reading or writing is a major barrier?
-        </div>
-<div class="jamaica-reality">
-<strong>Limited resources &amp; behaviour concerns</strong><br/>
-          What practical, low-cost adjustments can improve access, participation
-          and regulation within the classroom we already have?
-        </div>
-</div>
-<p>
-        Continue with Jamaican primary and secondary classroom scenarios,
-        practical low-cost strategies, the “But I have 40 students” challenge,
-        and the question at the centre of the next activity:
-        <strong>Is the learner included, or merely present?</strong>
-</p>
-<a class="jamaica-link hide-print" href="differentiation-jamaican-classrooms.html">
-        Explore Jamaican Classroom Scenarios →
-      </a>
-</section>
-<!-- REFLECTION -->
-<section class="section completion">
-<span class="section-tag">Reflection</span>
-<h2>What will you change?</h2>
-<p>
-        Inclusion becomes meaningful through what happens in tomorrow's
-        lesson,not simply through where a student's chair is placed.
-      </p>
-<label for="commitment">
-<strong>
-          Write one action you will take in your classroom, supervision,
-          teacher training or planning:
-        </strong>
-</label>
-<textarea class="track-response" id="commitment" placeholder="One thing I will do differently is..."></textarea>
-<br>
-<button class="btn btn-primary hide-print" onclick="window.print()" style="margin-top:18px;">
-        Print / Save My Workshop Responses
-      </button>
-</br></section>
-</div></details></main>
-<button aria-controls="specialFaqPanel" aria-haspopup="dialog" class="se-fab hide-print" onclick="openSpecialFAQ()" type="button">
-<span aria-hidden="true" class="se-fab-dot"></span>
-    Special Education questions
-  </button>
-<div class="faq-overlay" id="specialFaqOverlay" onclick="faqBackdropClose(event)" role="presentation">
-<section aria-labelledby="specialFaqTitle" aria-modal="true" class="faq-panel" id="specialFaqPanel" role="dialog">
-<button aria-label="Close" class="faq-close" onclick="closeSpecialFAQ()" type="button">×</button>
-<div class="eyebrow" style="color:var(--gold); opacity:1;">Special Education Quick Guide</div>
-<h2 id="specialFaqTitle">What are you trying to understand?</h2>
-<p class="faq-intro">
-        Parents and teachers often know something is not working before they know what to call it. Start with the question that sounds closest to what you are dealing with.
-      </p>
-<div class="faq-list">
-<details>
-<summary>My child is struggling at school. Does that automatically mean Special Education?</summary>
-<div class="details-content">
-            No. Struggling does not automatically mean a child belongs in Special Education. I want to know what the student can do, where the difficulty shows up, when it changes, and what has already been tried. We begin with the learner, not a label.
-          </div>
-</details>
-<details>
-<summary>Can you diagnose autism, ADHD or dyslexia?</summary>
-<div class="details-content">
-            No. I provide educational and behaviour support, not clinical diagnosis. I can help you make sense of what you are seeing, understand how it may be affecting learning and decide whether a formal assessment by an appropriately qualified professional would be useful.
-          </div>
-</details>
-<details>
-<summary>My child already has a diagnosis. What happens next?</summary>
-<div class="details-content">
-            A diagnosis gives us information. It does not tell us everything about the child and it is not an education plan by itself. We still need to ask: What can this learner do? What is getting in the way? What support, tools, teaching and environment will help this student learn and make progress?
-          </div>
-</details>
-<details>
-<summary>My child is being described as disruptive, lazy or difficult. Can you help?</summary>
-<div class="details-content">
-            Yes. Behaviour gives us information. I want to know what happens before the behaviour, what the student is being asked to do, whether the work is too difficult or too easy, whether boredom is part of it, and what happens afterwards. The goal is to regulate rather than escalate and to understand before we simply punish.
-          </div>
-</details>
-<details>
-<summary>Do you offer ordinary tutoring?</summary>
-<div class="details-content">
-            Yes, I offer private tutoring and learning support. I am not interested in sitting a struggling student down and giving them more of the same thing that is already not working. I adapt the support to the learner's strengths, pace, attention, confidence and the way they access learning best.
-          </div>
-</details>
-<details>
-<summary>Can you train my teachers or speak to a school team?</summary>
-<div class="details-content">
-            Yes. I work with teachers and school teams on differentiation, inclusion, behaviour, classroom ecology, autism, ADHD, dyslexia, regulation and practical strategies. I keep it grounded in the classroom. What can the teacher actually do tomorrow with the students in front of them? You can also read my <a href="https://marshakerrtalley.substack.com/p/classroom-ecology-the-missing-conversation" rel="noopener noreferrer" target="_blank"><strong>Classroom Ecology</strong></a> article for more on how the environment itself affects participation, regulation and learning.
-          </div>
-</details>
-</div>
-<div class="faq-cta">
-<div><strong>Still not sure what you need?</strong><br/><span class="small-note">Start with the concern, not the service name.</span></div>
-<button class="btn btn-primary" onclick="closeSpecialFAQ(); document.querySelector('#contact').scrollIntoView();" type="button">Ask About Your Situation</button>
-</div>
-</section>
-</div>
-<section class="service-cta" aria-labelledby="service-cta-title">
-  <span class="section-tag">Ready to talk?</span>
-  <h2 id="service-cta-title">Let us talk about the support your child, student or school needs.</h2>
-  <p>If you are looking for parent consultation, private learning support, teacher training or Special Education consultation, contact me directly. Tell me what is happening and what support you are looking for.</p>
-  <div class="service-cta-actions">
-    <a class="service-cta-email" href="mailto:info@marshakerrtalley.com?subject=Special%20Education%20Support%20Enquiry">Email me at info@marshakerrtalley.com</a>
-    <a class="service-cta-form" href="#contact">Use the enquiry form</a>
+
+      <div class="completion">
+
+        <label for="actionResponse">
+          <strong>My next practical adjustment:</strong>
+        </label>
+
+        <textarea
+          id="actionResponse"
+          placeholder="One change I can try is..."></textarea>
+
+      </div>
+
+    </section>
+
   </div>
+</details>
+
+</main>
+
+<section class="service-cta" aria-labelledby="service-cta-title">
+
+  <span class="section-tag">Ready to talk?</span>
+
+  <h2 id="service-cta-title">
+    Let us talk about the support your learner, staff or organisation needs.
+  </h2>
+
+  <p>
+    Whether you are looking for parent consultation, private learning support,
+    teacher training, professional development, in-class support or Special
+    Education consultation, start by telling me what is happening and what
+    you would like to improve.
+  </p>
+
+  <div class="service-cta-actions">
+
+    <a
+      class="service-cta-email"
+      href="mailto:info@marshakerrtalley.com?subject=Special%20Education%20Support%20Enquiry">
+      Email me
+    </a>
+
+    <a class="service-cta-form" href="#contact">
+      Use the enquiry form
+    </a>
+
+  </div>
+
 </section>
+
+<button
+  class="se-fab"
+  id="specialFaqButton"
+  type="button"
+  aria-haspopup="dialog"
+  aria-controls="specialFaqOverlay">
+
+  <span class="se-fab-dot" aria-hidden="true"></span>
+  Questions?
+
+</button>
+
+<div
+  class="faq-overlay"
+  id="specialFaqOverlay"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="faqTitle">
+
+  <div class="faq-panel">
+
+    <button
+      class="faq-close"
+      id="specialFaqClose"
+      type="button"
+      aria-label="Close questions">
+      ×
+    </button>
+
+    <span class="section-tag">Frequently asked questions</span>
+
+    <h2 id="faqTitle">
+      Not sure what kind of support you need?
+    </h2>
+
+    <p class="lead">
+      You do not need to diagnose the problem before contacting me.
+      Start with what you are seeing.
+    </p>
+
+    <div class="faq-list">
+
+      <details>
+        <summary>Do you diagnose ADHD, autism, dyslexia or other conditions?</summary>
+
+        <div class="details-content">
+          <p>
+            No. I provide educational support, consultation, training and
+            practical strategies. Formal diagnosis or psychological assessment
+            should be completed by an appropriately qualified professional.
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can I contact you even if my child does not have a diagnosis?</summary>
+
+        <div class="details-content">
+          <p>
+            Yes. You can begin with the learning, behaviour, communication,
+            attention or school concern you are observing. A diagnosis is not
+            required simply to discuss educational strategies and possible next steps.
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Do you work directly with schools?</summary>
+
+        <div class="details-content">
+          <p>
+            Yes. Support can include workshops, professional development,
+            presentations, consultation, in-class support and practical work
+            around differentiation, behaviour, inclusion and classroom ecology.
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can you tailor a workshop to our school or organisation?</summary>
+
+        <div class="details-content">
+          <p>
+            Yes. I prefer to understand the audience, current challenges,
+            desired outcomes and available time before finalising a session.
+            That is why the enquiry form asks a few qualifying questions rather
+            than offering one generic workshop.
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can sessions be delivered virtually?</summary>
+
+        <div class="details-content">
+          <p>
+            Yes. Depending on the type of support, sessions can be delivered
+            in person, virtually or through a hybrid model.
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Is your work only for teachers?</summary>
+
+        <div class="details-content">
+          <p>
+            No. I work with learners, parents, teachers, school leaders and
+            organisations. The support is adapted to the people involved and
+            what they need to understand or do differently.
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What do you mean by classroom ecology?</summary>
+
+        <div class="details-content">
+          <p>
+            Classroom ecology looks at how the environment itself affects
+            behaviour, participation and learning. That can include lighting,
+            noise, seating, movement, relationships, routines, sensory demands,
+            instructional structure and the overall experience of being in the room.
+          </p>
+
+          <p>
+            I keep it grounded in the classroom: what can the teacher actually
+            do with the students in front of them?
+          </p>
+        </div>
+      </details>
+
+    </div>
+
+    <div class="faq-cta">
+
+      <div>
+        <strong>Still not sure what you need?</strong><br>
+        <span class="small-note">Start with the concern, not the service name.</span>
+      </div>
+
+      <button
+        class="btn btn-primary"
+        id="faqEnquiryButton"
+        type="button">
+        Tell Me What You Need
+      </button>
+
+    </div>
+
+  </div>
+</div>
+
 <footer class="site-footer">
+
   <div class="footer-inner">
 
     <div class="social-links">
@@ -2304,234 +2473,228 @@ footer { background:#173f40; color:#fff; padding:44px 20px; }
     </nav>
 
   </div>
+
 </footer>
+
 <script>
-    const completedItems = new Set();
+/* CURRENT YEAR */
 
-    function updateProgress() {
-      const total =
-        document.querySelectorAll("[data-question]").length +
-        document.querySelectorAll("[data-myth]").length +
-        document.querySelectorAll(".track-response").length;
+const currentYear = document.getElementById("currentYear");
 
-      const percent = Math.min(
-        100,
-        Math.round((completedItems.size / total) * 100)
-      );
+if (currentYear) {
+  currentYear.textContent = new Date().getFullYear();
+}
 
-      document.getElementById("progressBar").style.width = percent + "%";
-      document.getElementById("progressText").textContent =
-        completedItems.size + " completed";
-    }
+/* MOBILE NAVIGATION */
 
-    document.querySelectorAll("[data-question]").forEach((question, qIndex) => {
+const navToggle = document.querySelector(".nav-toggle");
+const siteNav = document.querySelector(".site-nav");
 
-      const options = question.querySelectorAll(".option");
-      const goodFeedback = question.querySelector(".feedback.good");
-      const tryFeedback = question.querySelector(".feedback.try");
+if (navToggle && siteNav) {
+  navToggle.addEventListener("click", function () {
+    const isOpen = siteNav.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+    navToggle.textContent = isOpen ? "×" : "☰";
+  });
+}
 
-      options.forEach((option) => {
+/* INTERACTIVE QUESTIONS */
 
-        option.addEventListener("click", () => {
+document.querySelectorAll("[data-question]").forEach(function (question) {
 
-          options.forEach((item) => {
-            item.classList.remove("correct", "incorrect");
-          });
+  const options = question.querySelectorAll(".option");
+  const goodFeedback = question.querySelector(".feedback.good");
+  const tryFeedback = question.querySelector(".feedback.try");
 
-          goodFeedback.classList.remove("show");
-          tryFeedback.classList.remove("show");
+  options.forEach(function (option) {
 
-          if (option.dataset.correct === "true") {
-            option.classList.add("correct");
-            goodFeedback.classList.add("show");
-          } else {
-            option.classList.add("incorrect");
-            tryFeedback.classList.add("show");
-          }
+    option.addEventListener("click", function () {
 
-          completedItems.add("question-" + qIndex);
-          updateProgress();
-        });
-
+      options.forEach(function (item) {
+        item.classList.remove("correct", "incorrect");
+        item.disabled = false;
       });
 
-    });
-
-    document.querySelectorAll("[data-myth]").forEach((myth, index) => {
-
-      const buttons = myth.querySelectorAll(".myth-answer");
-      const good = myth.querySelector(".feedback.good");
-      const retry = myth.querySelector(".feedback.try");
-
-      buttons.forEach((button) => {
-
-        button.addEventListener("click", () => {
-
-          good.classList.remove("show");
-          retry.classList.remove("show");
-
-          if (button.dataset.answer === "false") {
-            good.classList.add("show");
-          } else {
-            retry.classList.add("show");
-          }
-
-          completedItems.add("myth-" + index);
-          updateProgress();
-        });
-
-      });
-
-    });
-
-    document.querySelectorAll(".track-response").forEach((field, index) => {
-
-      field.addEventListener("input", () => {
-
-        if (field.value.trim().length > 2) {
-          completedItems.add("response-" + index);
-        } else {
-          completedItems.delete("response-" + index);
-        }
-
-        updateProgress();
-
-      });
-
-    });
-
-    function buildChallenge() {
-
-      const barrier = document.getElementById("barrier").value;
-      const goal = document.getElementById("goal").value.trim();
-      const result = document.getElementById("challengeResult");
-
-      if (!barrier || !goal) {
-        result.style.display = "block";
-        result.innerHTML =
-          "<strong>Complete both fields first.</strong>";
-        return;
+      if (goodFeedback) {
+        goodFeedback.classList.remove("show");
       }
 
-      const prompts = {
+      if (tryFeedback) {
+        tryFeedback.classList.remove("show");
+      }
 
-        reading:
-          "If reading fluency is not the skill being assessed, how else could the learner access the information while still working toward this learning goal?",
+      const isCorrect = option.dataset.correct === "true";
 
-        writing:
-          "If written production is creating the barrier, what alternative response format could allow the learner to demonstrate this learning without removing the academic demand?",
+      if (isCorrect) {
+        option.classList.add("correct");
 
-        attention:
-          "How could you restructure the timing, instructions, movement or organization of this task while preserving the learning goal?",
-
-        sensory:
-          "What environmental demand could be reduced or made more predictable without isolating the learner from the learning experience?",
-
-        language:
-          "What visual, verbal, modelling or processing support could make the instruction more accessible without simplifying the core concept unnecessarily?",
-
-        behaviour:
-          "What is happening before the disengagement or behaviour? Consider task difficulty, boredom, communication, regulation, relationship and environment before choosing an intervention."
-
-      };
-
-      result.style.display = "block";
-
-      result.innerHTML = `
-        <strong>Learning goal:</strong> ${escapeHTML(goal)}
-        <br><br>
-        <strong>Your differentiation question:</strong>
-        <br>
-        ${prompts[barrier]}
-        <br><br>
-        <strong>Now ask:</strong>
-        What can I change while keeping <em>${escapeHTML(goal)}</em> intact?
-      `;
-
-    }
-
-    function escapeHTML(value) {
-      const div = document.createElement("div");
-      div.textContent = value;
-      return div.innerHTML;
-    }
-
-    updateProgress();
-
-
-    function chooseSupport(role, service) {
-      const roleField = document.getElementById("leadRole");
-      const serviceField = document.getElementById("leadService");
-      if (roleField) roleField.value = role;
-      if (serviceField) serviceField.value = service;
-      document.getElementById("contact").scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-
-    function openSpecialFAQ() {
-      const overlay = document.getElementById('specialFaqOverlay');
-      overlay.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      setTimeout(() => document.querySelector('.faq-close')?.focus(), 0);
-    }
-
-    function closeSpecialFAQ() {
-      document.getElementById('specialFaqOverlay').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    function faqBackdropClose(event) {
-      if (event.target.id === 'specialFaqOverlay') closeSpecialFAQ();
-    }
-
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeSpecialFAQ();
-    });
-
-
-
-    // Keep the floating questions button from competing with the enquiry form.
-    const enquirySection = document.getElementById('contact');
-    const specialQuestionsButton = document.querySelector('.se-fab');
-
-    if (enquirySection && specialQuestionsButton && 'IntersectionObserver' in window) {
-      const enquiryObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          specialQuestionsButton.classList.toggle('is-hidden', entry.isIntersecting);
-        });
-      }, { threshold: 0.18 });
-
-      enquiryObserver.observe(enquirySection);
-    }
-
-  </script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const year = document.getElementById("currentYear");
-  if (year) year.textContent = new Date().getFullYear();
-
-  const toggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector(".site-nav");
-
-  if (toggle && nav) {
-    toggle.addEventListener("click", function () {
-      const open = nav.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-      toggle.textContent = open ? "×" : "☰";
-    });
-
-    nav.querySelectorAll("a").forEach(function(link){
-      link.addEventListener("click", function(){
-        if (window.innerWidth <= 700) {
-          nav.classList.remove("open");
-          toggle.setAttribute("aria-expanded","false");
-          toggle.setAttribute("aria-label","Open menu");
-          toggle.textContent="☰";
+        if (goodFeedback) {
+          goodFeedback.classList.add("show");
         }
-      });
+      } else {
+        option.classList.add("incorrect");
+
+        if (tryFeedback) {
+          tryFeedback.classList.add("show");
+        }
+      }
+
     });
+
+  });
+
+});
+
+/* FAQ */
+
+const faqButton = document.getElementById("specialFaqButton");
+const faqOverlay = document.getElementById("specialFaqOverlay");
+const faqClose = document.getElementById("specialFaqClose");
+const faqEnquiryButton = document.getElementById("faqEnquiryButton");
+
+let lastFocusedElement = null;
+
+function openSpecialFAQ() {
+
+  if (!faqOverlay) return;
+
+  lastFocusedElement = document.activeElement;
+
+  faqOverlay.classList.add("open");
+
+  document.body.style.overflow = "hidden";
+
+  if (faqClose) {
+    faqClose.focus();
   }
+}
+
+function closeSpecialFAQ() {
+
+  if (!faqOverlay) return;
+
+  faqOverlay.classList.remove("open");
+
+  document.body.style.overflow = "";
+
+  if (lastFocusedElement) {
+    lastFocusedElement.focus();
+  }
+}
+
+if (faqButton) {
+  faqButton.addEventListener("click", openSpecialFAQ);
+}
+
+if (faqClose) {
+  faqClose.addEventListener("click", closeSpecialFAQ);
+}
+
+if (faqOverlay) {
+
+  faqOverlay.addEventListener("click", function (event) {
+
+    if (event.target === faqOverlay) {
+      closeSpecialFAQ();
+    }
+
+  });
+
+}
+
+document.addEventListener("keydown", function (event) {
+
+  if (event.key === "Escape" && faqOverlay && faqOverlay.classList.contains("open")) {
+    closeSpecialFAQ();
+  }
+
+});
+
+if (faqEnquiryButton) {
+
+  faqEnquiryButton.addEventListener("click", function () {
+
+    closeSpecialFAQ();
+
+    const contactSection = document.getElementById("contact");
+
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+
+  });
+
+}
+
+/* HIDE FLOATING FAQ BUTTON WHEN ENQUIRY FORM IS VISIBLE */
+
+const contactSection = document.getElementById("contact");
+
+if (
+  contactSection &&
+  faqButton &&
+  "IntersectionObserver" in window
+) {
+
+  const contactObserver = new IntersectionObserver(
+    function (entries) {
+
+      entries.forEach(function (entry) {
+
+        if (entry.isIntersecting) {
+          faqButton.classList.add("is-hidden");
+        } else {
+          faqButton.classList.remove("is-hidden");
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.15
+    }
+  );
+
+  contactObserver.observe(contactSection);
+}
+
+/* PRESELECT ORGANISATIONAL SUPPORT FROM SERVICE LINK */
+
+document.querySelectorAll('a[href="#contact"]').forEach(function (link) {
+
+  link.addEventListener("click", function () {
+
+    const parentCard = link.closest(".service-card");
+
+    if (!parentCard) return;
+
+    const supportWorkshop = document.getElementById("support-workshop");
+    const supportStudent = document.getElementById("support-student");
+
+    if (
+      parentCard.id === "schools-support" ||
+      parentCard.id === "teachers-support"
+    ) {
+
+      if (supportWorkshop) {
+        supportWorkshop.checked = true;
+      }
+
+    }
+
+    if (parentCard.id === "students-support") {
+
+      if (supportStudent) {
+        supportStudent.checked = true;
+      }
+
+    }
+
+  });
+
 });
 </script>
 
