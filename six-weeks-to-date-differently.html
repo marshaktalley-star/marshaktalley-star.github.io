@@ -3,12 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Six Weeks to Date Differently is an intentional dating experience by Marsha Kerr Talley, combining meaningful connection, Love Affirmations and guided reflection over six weeks.">
+<meta name="description" content="Explore Six Weeks to Date Differently with Marsha Kerr Talley: intentional dating, attachment styles, an audio introduction, infographics, self-soothing exercises and Love Affirmations.">
+<meta name="author" content="Marsha Kerr Talley">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Six Weeks to Date Differently | Marsha Kerr Talley">
+<meta property="og:description" content="Meet people. Challenge old patterns. Practise healthier connection. Explore attachment styles, self-soothing and an intentional six-week dating experience.">
+<meta property="og:site_name" content="Marsha Kerr Talley">
 <title>Six Weeks to Date Differently | Marsha Kerr Talley</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+<!--
+MEDIA:
+Keep these files in the same directory as this HTML.
+Spaces in the filenames are encoded as %20 in the URLs.
+
+attachment-style-the intro-copy.m4a
+The 4 Attachment Styles Infographic.png
+Secure Attachment Style Infographic.png
+Anxious Attachment Style Guide.png
+Avoidant Attachment Style Infographic-2.png
+Anxious-Avoidant Attachment Guide-2.png
+
+The self-soothing filenames below were retained from the supplied HTML.
+
+SEARCH:
+Section IDs provide direct links within this page.
+They do not create separate independently indexed pages.
+After publishing, submit the actual page URL in Google Search Console.
+-->
 
 <style>
 :root{
@@ -23,6 +49,8 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--text);font-family:var(--sans);line-height:1.75}
 a{color:inherit}
 img{max-width:100%}
+[id]{scroll-margin-top:24px}
+:focus-visible{outline:3px solid var(--aqua);outline-offset:4px}
 .wrap{width:min(1120px,calc(100% - 38px));margin:auto}
 .eyebrow{color:var(--teal);font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
 .section-title{font-family:var(--serif);color:var(--deep);font-size:clamp(2.3rem,5vw,4rem);line-height:1.08;margin:10px 0 22px;font-weight:500}
@@ -33,6 +61,8 @@ img{max-width:100%}
 .btn:hover{transform:translateY(-2px)}
 .btn-primary{background:var(--teal);color:#fff}
 .btn-secondary{border:1px solid rgba(5,99,103,.3);color:var(--teal);background:#fff}
+.skip-link{position:absolute;left:12px;top:-100px;z-index:1000;background:var(--deep);color:#fff;padding:10px 18px;border-radius:8px}
+.skip-link:focus{top:12px}
 
 /* HEADER */
 .site-header{background:rgba(255,253,249,.97);border-bottom:1px solid var(--line);position:relative;z-index:50}
@@ -58,6 +88,19 @@ img{max-width:100%}
 .hero .opening{max-width:790px;margin:0 auto;font-family:var(--serif);font-size:clamp(1.25rem,2.5vw,1.65rem);line-height:1.55;color:var(--ink)}
 .hero-tag{display:inline-block;margin:30px auto 0;padding:12px 20px;background:#fff;border:1px solid rgba(5,99,103,.12);border-radius:999px;color:var(--teal);font-weight:600;box-shadow:0 10px 28px rgba(8,63,66,.06)}
 .hero-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+
+/* PAGE INDEX AND DIRECT LINKS */
+.page-index{padding:32px 0;background:#fff;border-bottom:1px solid var(--line)}
+.page-index details{max-width:none;margin:0;padding:20px 24px;background:var(--paper)}
+.page-index summary{font-family:var(--serif);font-size:1.45rem}
+.index-links{list-style:none;padding:0;margin:20px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 24px}
+.index-links a{display:block;color:var(--teal);text-decoration:none;font-size:.91rem}
+.index-links a:hover{text-decoration:underline}
+.section-link{display:inline-block;margin:0 0 14px;color:inherit;font-family:var(--sans);font-size:.78rem;font-weight:600;text-underline-offset:3px}
+figure.attachment-art{margin:0}
+figcaption{margin-top:12px;font-size:.87rem;line-height:1.5;color:var(--text)}
+.media-link{display:inline-block;margin-top:10px;color:var(--teal);font-size:.88rem;font-weight:600}
+.attachment-card figcaption{text-align:center}
 
 /* INTRO */
 .concept{padding:90px 0}
@@ -85,6 +128,7 @@ img{max-width:100%}
 .attachment-feature img{max-height:600px;object-fit:contain;background:#fff}
 .attachment-feature h3,.attachment-subtitle{font-family:var(--serif);color:var(--deep);font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.25}
 .attachment-audio{background:#e8f4f2;border:1px solid #cce5e1;border-radius:18px;padding:23px;margin:25px 0}
+.attachment-audio h4{margin:0 0 8px;color:var(--deep);font-size:1.05rem}
 .attachment-audio audio{width:100%;margin:10px 0 4px}
 .attachment-audio small{display:block;font-size:.85rem;color:#526766}
 .attachment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:30px 0 48px}
@@ -204,7 +248,7 @@ label{display:block;margin-bottom:6px;font-weight:600}
 input,select,textarea{width:100%;padding:13px 14px;border:1px solid rgba(255,255,255,.22);border-radius:10px;background:#fff;color:var(--ink);font:inherit}
 textarea{min-height:110px;resize:vertical}
 .submit-btn{width:max-content;border:0;padding:13px 22px;border-radius:999px;background:var(--gold);color:var(--deep);font:inherit;font-weight:700;cursor:pointer}
-.form-note{color:rgba(255,255,255,.62);font-size:.83rem}
+.form-note{color:rgba(255,255,255,.75);font-size:.83rem}
 
 /* FOOTER */
 .disclaimer{padding:34px 0;background:#f3efe6;color:#667575;font-size:.86rem}
@@ -213,7 +257,6 @@ textarea{min-height:110px;resize:vertical}
 .social a,.legal a{color:var(--teal);text-decoration:none;font-weight:600}
 .legal{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-size:.88rem}
 .copyright{color:#6e7b7b;font-size:.9rem}
-.organiser-notes{display:none}
 
 /* MOBILE */
 @media(max-width:800px){
@@ -229,7 +272,7 @@ textarea{min-height:110px;resize:vertical}
 .concept-grid,.love-grid,.attachment-feature,.soothing-layout,.attachment-grid{grid-template-columns:1fr}
 .how-grid,.session-grid{grid-template-columns:1fr}
 .week{grid-template-columns:1fr}
-.evening-grid,.pilot-grid{grid-template-columns:repeat(2,1fr)}
+.evening-grid,.pilot-grid,.index-links{grid-template-columns:repeat(2,minmax(0,1fr))}
 .difference-grid,.checklist{grid-template-columns:1fr}
 .love-quote{position:static}
 .attachment-learning,.soothing-section{padding:66px 0}
@@ -237,7 +280,7 @@ textarea{min-height:110px;resize:vertical}
 .soothing-layout img{max-width:370px}
 }
 @media(max-width:560px){
-.evening-grid,.pilot-grid,.form-row,.soothing-list{grid-template-columns:1fr}
+.evening-grid,.pilot-grid,.form-row,.soothing-list,.index-links{grid-template-columns:1fr}
 .concept,.how,.weeks,.evening,.love,.different,.who,.matching,.pilot,.faq,.interest{padding:66px 0}
 .attachment-card{padding:18px}
 .attachment-note{padding:20px}
@@ -245,21 +288,26 @@ textarea{min-height:110px;resize:vertical}
 .aq{margin:25px auto 35px}
 .aq-choice{font-size:.95rem}
 }
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*::before,*::after{transition:none!important}
+.btn:hover,.how-card:hover,.week:hover{transform:none}
+}
 </style>
 </head>
 
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-<!-- HEADER -->
 <header class="site-header">
 <div class="header-inner">
 <a class="logo" href="index.html">
 <img src="MKT-logo-3.png" alt="Marsha Kerr Talley - Live Inspired">
 </a>
 
-<button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+<button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-navigation">☰</button>
 
-<nav class="main-nav" aria-label="Main navigation">
+<nav class="main-nav" id="main-navigation" aria-label="Main navigation">
 <ul>
 <li><a href="index.html">Home</a></li>
 <li><a href="about.html">About</a></li>
@@ -269,7 +317,7 @@ textarea{min-height:110px;resize:vertical}
 <li><a href="work-with-me.html">Overview</a></li>
 <li><a href="https://marshakerrtalley.com/special-education">Special Education</a></li>
 <li><a href="the-six-weeks-program">Six-Week Programme</a></li>
-<li><a class="active" href="six-weeks-to-date-differently.html">Six Weeks to Date Differently</a></li>
+<li><a class="active" href="six-weeks-to-date-differently.html" aria-current="page">Six Weeks to Date Differently</a></li>
 <li><a href="digital-creators-lab.html">Digital Creators Lab</a></li>
 <li><a href="airbnb-host-training.html">Airbnb Host Training</a></li>
 <li><a href="inspired-by-marsha.html">Inspired by Marsha</a></li>
@@ -286,13 +334,13 @@ textarea{min-height:110px;resize:vertical}
 </div>
 </header>
 
-<main>
+<main id="main-content">
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="overview" aria-labelledby="page-heading">
 <div class="wrap hero-inner">
 <div class="eyebrow">Turning Pain Into Possibility™</div>
-<h1>Six Weeks to<br><em>Date Differently.</em></h1>
+<h1 id="page-heading">Six Weeks to<br><em>Date Differently.</em></h1>
 <p class="opening">Meet people. Challenge old patterns. Practise healthier connection.</p>
 <p class="section-intro" style="margin:22px auto 0;">
 An intentional six-week dating experience where singles have time to meet, reconnect, reflect and discover what happens when we stop making decisions about love from chemistry, fear, habit or a five-minute first impression.
@@ -301,16 +349,60 @@ An intentional six-week dating experience where singles have time to meet, recon
 <div class="hero-buttons">
 <a class="btn btn-primary" href="#six-weeks">See the Six Weeks</a>
 <a class="btn btn-secondary" href="#interest">Register Interest</a>
+<a class="btn btn-secondary" href="#attachment-styles">Explore Attachment Styles</a>
 </div>
 </div>
 </section>
 
+<!-- STATIC, CRAWLABLE PAGE INDEX -->
+<nav class="page-index" id="page-index" aria-label="Page sections">
+<div class="wrap">
+<details open>
+<summary>Explore this page</summary>
+<ul class="index-links">
+<li><a href="#overview">Six Weeks to Date Differently</a></li>
+<li><a href="#the-idea">The Idea</a></li>
+<li><a href="#how-it-works">How It Works</a></li>
+<li><a href="#attachment-styles">Understanding Your Attachment Style</a></li>
+<li><a href="#attachment-audio">Attachment Styles Audio Introduction</a></li>
+<li><a href="#attachment-infographic">The 4 Attachment Styles Infographic</a></li>
+<li><a href="#attachment-quiz">How Do You Show Up in Love?</a></li>
+<li><a href="#four-attachment-styles">Four Common Attachment Styles</a></li>
+<li><a href="#secure-attachment">Secure Attachment</a></li>
+<li><a href="#anxious-attachment">Anxious Attachment</a></li>
+<li><a href="#avoidant-attachment">Avoidant Attachment</a></li>
+<li><a href="#fearful-avoidant-attachment">Fearful-Avoidant Attachment</a></li>
+<li><a href="#attachment-style-not-destiny">Your Attachment Style Is Not Your Destiny</a></li>
+<li><a href="#attachment-and-dating">Attachment and Dating Differently</a></li>
+<li><a href="#self-soothing">Self-Soothing Exercises</a></li>
+<li><a href="#six-weeks">The Six-Week Journey</a></li>
+<li><a href="#week-1">Week 1: What Am I Bringing Into Love?</a></li>
+<li><a href="#week-2">Week 2: I Do Not Have to Compete for Love</a></li>
+<li><a href="#week-3">Week 3: What Does Safe Love Feel Like?</a></li>
+<li><a href="#week-4">Week 4: Receiving Love Without Expecting Pain</a></li>
+<li><a href="#week-5">Week 5: I Can Say What I Need</a></li>
+<li><a href="#week-6">Week 6: Choosing Without Abandoning Myself</a></li>
+<li><a href="#each-session">What Happens Each Session</a></li>
+<li><a href="#love-affirmations">Love Affirmations</a></li>
+<li><a href="#why-this-is-different">Why This Is Different</a></li>
+<li><a href="#who-its-for">Who It's For</a></li>
+<li><a href="#connection-and-privacy">Connection and Privacy</a></li>
+<li><a href="#first-cohort">The First Cohort and Pricing</a></li>
+<li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+<li><a href="#interest">Register Interest</a></li>
+<li><a href="#disclaimer">Important Information</a></li>
+</ul>
+</details>
+</div>
+</nav>
+
 <!-- CONCEPT -->
-<section class="concept">
+<section class="concept" id="the-idea" aria-labelledby="idea-heading">
 <div class="wrap concept-grid">
 <div class="concept-copy">
 <div class="eyebrow">The Idea</div>
-<h2 class="section-title">What if connection had more than a few minutes?</h2>
+<h2 class="section-title" id="idea-heading">What if connection had more than a few minutes?</h2>
+<a class="section-link" href="#the-idea">Direct link to this section</a>
 <p>Traditional speed dating asks us to decide quickly: attraction or no attraction, yes or no, interested or not.</p>
 <p>But meaningful connection does not always reveal itself in five minutes.</p>
 <p><strong>Six Weeks to Date Differently</strong> brings a group of singles together over six facilitated sessions. Participants meet, talk, rotate, reconnect and gradually explore compatibility while also noticing the beliefs and patterns they may be bringing into relationships.</p>
@@ -324,11 +416,12 @@ An intentional six-week dating experience where singles have time to meet, recon
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="how">
+<section class="how" id="how-it-works" aria-labelledby="how-heading">
 <div class="wrap">
 <div class="center">
 <div class="eyebrow">The Experience</div>
-<h2 class="section-title">Dating meets personal development.</h2>
+<h2 class="section-title" id="how-heading">Dating meets personal development.</h2>
+<a class="section-link" href="#how-it-works">Direct link to this section</a>
 <p class="section-intro">Each week combines a Love Affirmation, a short guided reflection and intentional dating conversations.</p>
 </div>
 <div class="how-grid">
@@ -357,6 +450,7 @@ An intentional six-week dating experience where singles have time to meet, recon
 <div class="center">
 <div class="eyebrow">Relationships &amp; Self-Awareness</div>
 <h2 class="section-title" id="attachment-heading">Understanding Your Attachment Style</h2>
+<a class="section-link" href="#attachment-styles">Direct link to this section</a>
 <p class="section-intro"><strong>How do you respond when love feels uncertain?</strong></p>
 </div>
 
@@ -373,40 +467,53 @@ An intentional six-week dating experience where singles have time to meet, recon
 <p>Our attachment patterns can influence how we experience intimacy, communicate our needs, respond to conflict and interpret another person's behaviour.</p>
 <p>Understanding these patterns isn't about putting yourself or someone else into a box. It's about recognising behaviours that may be helping or hurting your relationships.</p>
 
-<div class="attachment-audio">
-<strong>Listen to my voice note</strong>
-<audio controls preload="none" aria-label="Marsha Kerr Talley's voice note about attachment styles">
-<source src="attachment-style-the intro-copy.m4a" type="audio/mp4">
+<div class="attachment-audio" id="attachment-audio" aria-labelledby="audio-heading">
+<h4 id="audio-heading">Attachment Styles: An Introduction</h4>
+<a class="section-link" href="#attachment-audio">Direct link to this audio section</a>
+<audio controls preload="none" aria-labelledby="audio-heading" aria-describedby="audio-description">
+<source src="attachment-style-the%20intro-copy.m4a" type="audio/mp4">
 Your browser does not support audio playback.
+<a href="attachment-style-the%20intro-copy.m4a">Open the attachment styles audio</a>.
 </audio>
-<small>Listen to my reflections on childhood experiences, attachment and building healthier relationships.</small>
+<small id="audio-description">Listen to my reflections on childhood experiences, attachment and building healthier relationships.</small>
+<a class="media-link" href="attachment-style-the%20intro-copy.m4a" target="_blank" rel="noopener">Open the audio file</a>
 </div>
 </div>
 
-<div class="attachment-art">
-<img src="attachment-overview.png" loading="lazy" alt="Infographic introducing the four attachment styles">
-</div>
+<figure class="attachment-art" id="attachment-infographic">
+<a href="The%204%20Attachment%20Styles%20Infographic.png" target="_blank" rel="noopener">
+<img src="The%204%20Attachment%20Styles%20Infographic.png" loading="lazy" decoding="async" width="941" height="1672" alt="The 4 Attachment Styles Infographic: secure, anxious, avoidant and anxious-avoidant attachment patterns">
+</a>
+<figcaption>
+<strong>The 4 Attachment Styles Infographic</strong><br>
+<a class="section-link" href="#attachment-infographic">Direct link to this infographic section</a><br>
+<a class="media-link" href="The%204%20Attachment%20Styles%20Infographic.png" target="_blank" rel="noopener">View the full-size infographic</a>
+</figcaption>
+</figure>
 </div>
 
-<!-- INTERACTIVE QUIZ -->
+<!-- INTERACTIVE REFLECTION -->
 <div class="aq" id="attachment-quiz" aria-labelledby="aq-title">
 <div class="eyebrow">A Two-Minute Reflection</div>
 <h3 id="aq-title">How Do You Show Up in Love?</h3>
+<a class="section-link" href="#attachment-quiz">Direct link to this reflection</a>
 <p>Choose the response that sounds most like you. There are no right or wrong answers.</p>
 <div id="aq-live" aria-live="polite"></div>
 <noscript><p class="aq-noscript">Enable JavaScript to try this interactive reflection.</p></noscript>
 <p class="aq-small">A self-reflection activity, not a diagnosis or a scientifically validated attachment assessment. Your patterns can vary across relationships.</p>
 </div>
 
-<div class="center">
+<div class="center" id="four-attachment-styles">
 <h3 class="attachment-subtitle">Four Common Attachment Styles</h3>
+<a class="section-link" href="#four-attachment-styles">Direct link to the four styles</a>
 <p class="section-intro">These are common patterns, not fixed identities or diagnoses. You may recognise elements of more than one.</p>
 </div>
 
 <div class="attachment-grid">
 
-<article class="attachment-card">
-<h3>Secure Attachment</h3>
+<article class="attachment-card" id="secure-attachment" aria-labelledby="secure-heading">
+<h3 id="secure-heading">Secure Attachment</h3>
+<a class="section-link" href="#secure-attachment">Direct link to secure attachment</a>
 <p>You are generally comfortable with intimacy and independence. You can communicate your needs, respect boundaries and navigate uncertainty without automatically assuming the relationship is threatened.</p>
 <details>
 <summary>Ways to strengthen secure connection</summary>
@@ -416,13 +523,20 @@ Your browser does not support audio playback.
 <summary>When your partner is securely attached</summary>
 <p>Be direct about your needs, appreciate consistency and allow room for both closeness and independence.</p>
 </details>
-<div class="attachment-art">
-<img src="secure-attachment.png" loading="lazy" alt="Illustrated secure attachment guide">
-</div>
+<figure class="attachment-art">
+<a href="Secure%20Attachment%20Style%20Infographic.png" target="_blank" rel="noopener">
+<img src="Secure%20Attachment%20Style%20Infographic.png" loading="lazy" decoding="async" width="941" height="1672" alt="Secure Attachment Style Infographic: common characteristics, ways to stay secure and working with a secure partner">
+</a>
+<figcaption>
+Secure Attachment Style Infographic<br>
+<a class="media-link" href="Secure%20Attachment%20Style%20Infographic.png" target="_blank" rel="noopener">View full size</a>
+</figcaption>
+</figure>
 </article>
 
-<article class="attachment-card">
-<h3>Anxious Attachment</h3>
+<article class="attachment-card" id="anxious-attachment" aria-labelledby="anxious-heading">
+<h3 id="anxious-heading">Anxious Attachment</h3>
+<a class="section-link" href="#anxious-attachment">Direct link to anxious attachment</a>
 <p>You may desire closeness and reassurance but become unsettled when communication changes or affection feels inconsistent. Learning to regulate your emotions and communicate your needs can help.</p>
 <details>
 <summary>Ways to become more secure</summary>
@@ -432,13 +546,20 @@ Your browser does not support audio playback.
 <summary>When your partner has anxious patterns</summary>
 <p>Be consistent where you can, communicate changes in availability, listen without dismissing their feelings and maintain honest boundaries.</p>
 </details>
-<div class="attachment-art">
-<img src="anxious-attachment.png" loading="lazy" alt="Illustrated anxious attachment guide">
-</div>
+<figure class="attachment-art">
+<a href="Anxious%20Attachment%20Style%20Guide.png" target="_blank" rel="noopener">
+<img src="Anxious%20Attachment%20Style%20Guide.png" loading="lazy" decoding="async" width="941" height="1672" alt="Anxious Attachment Style Guide: common characteristics, ways to become more secure and supporting an anxious partner">
+</a>
+<figcaption>
+Anxious Attachment Style Guide<br>
+<a class="media-link" href="Anxious%20Attachment%20Style%20Guide.png" target="_blank" rel="noopener">View full size</a>
+</figcaption>
+</figure>
 </article>
 
-<article class="attachment-card">
-<h3>Avoidant Attachment</h3>
+<article class="attachment-card" id="avoidant-attachment" aria-labelledby="avoidant-heading">
+<h3 id="avoidant-heading">Avoidant Attachment</h3>
+<a class="section-link" href="#avoidant-attachment">Direct link to avoidant attachment</a>
 <p>You may value independence and find emotional vulnerability uncomfortable. Learning to communicate your need for space while remaining emotionally available can support healthier relationships.</p>
 <details>
 <summary>Ways to become more secure</summary>
@@ -448,13 +569,20 @@ Your browser does not support audio playback.
 <summary>When your partner has avoidant patterns</summary>
 <p>Respect reasonable space without abandoning your own needs. Ask for clarity and agree on ways to stay connected without pressure.</p>
 </details>
-<div class="attachment-art">
-<img src="avoidant-attachment.png" loading="lazy" alt="Illustrated avoidant attachment guide">
-</div>
+<figure class="attachment-art">
+<a href="Avoidant%20Attachment%20Style%20Infographic-2.png" target="_blank" rel="noopener">
+<img src="Avoidant%20Attachment%20Style%20Infographic-2.png" loading="lazy" decoding="async" width="941" height="1671" alt="Avoidant Attachment Style Infographic: common characteristics, ways to become more secure and working with an avoidant partner">
+</a>
+<figcaption>
+Avoidant Attachment Style Infographic<br>
+<a class="media-link" href="Avoidant%20Attachment%20Style%20Infographic-2.png" target="_blank" rel="noopener">View full size</a>
+</figcaption>
+</figure>
 </article>
 
-<article class="attachment-card">
-<h3>Fearful-Avoidant Attachment</h3>
+<article class="attachment-card" id="fearful-avoidant-attachment" aria-labelledby="fearful-heading">
+<h3 id="fearful-heading">Fearful-Avoidant Attachment</h3>
+<a class="section-link" href="#fearful-avoidant-attachment">Direct link to fearful-avoidant attachment</a>
 <p>You may desire connection while simultaneously fearing it. You might move towards someone and then withdraw when the relationship becomes emotionally close. Developing emotional awareness, trust and consistency can help.</p>
 <details>
 <summary>Ways to become more secure</summary>
@@ -464,28 +592,35 @@ Your browser does not support audio playback.
 <summary>When your partner has fearful-avoidant patterns</summary>
 <p>Offer steady, respectful communication, avoid chasing or punishing withdrawal, and discuss boundaries and repair when both of you are calm.</p>
 </details>
-<div class="attachment-art">
-<img src="fearful-avoidant-attachment.png" loading="lazy" alt="Illustrated fearful-avoidant attachment guide">
-</div>
+<figure class="attachment-art">
+<a href="Anxious-Avoidant%20Attachment%20Guide-2.png" target="_blank" rel="noopener">
+<img src="Anxious-Avoidant%20Attachment%20Guide-2.png" loading="lazy" decoding="async" width="941" height="1672" alt="Anxious-Avoidant Attachment Guide: common characteristics, ways to become more secure and supporting a partner">
+</a>
+<figcaption>
+Anxious-Avoidant Attachment Guide<br>
+<a class="media-link" href="Anxious-Avoidant%20Attachment%20Guide-2.png" target="_blank" rel="noopener">View full size</a>
+</figcaption>
+</figure>
 </article>
 
 </div>
 
-<div class="attachment-affirmation">
+<div class="attachment-affirmation" id="attachment-style-not-destiny">
 <h3>Your Attachment Style Is Not Your Destiny</h3>
+<a class="section-link" href="#attachment-style-not-destiny">Direct link to this section</a>
 <p>Everyone deserves to be loved, respected and treated well, regardless of their attachment style.</p>
 <p>Your attachment patterns are not permanent labels. With awareness, practice and supportive relationships, you can develop more secure ways of connecting.</p>
 <p><strong>The goal isn't to find someone who never triggers your insecurities. It's to recognise your patterns, communicate your needs and learn how to respond rather than simply react.</strong></p>
 </div>
 
-<div class="attachment-bridge">
+<div class="attachment-bridge" id="attachment-and-dating">
 <h3 class="attachment-subtitle">What Does This Have to Do With Dating Differently?</h3>
+<a class="section-link" href="#attachment-and-dating">Direct link to this section</a>
 <p><strong>Everything.</strong></p>
 <p>Six Weeks to Date Differently creates opportunities to meet people while reflecting on how you approach attraction, uncertainty, communication, emotional safety and compatibility.</p>
 <p>You don't have to arrive with everything figured out. You simply have to be willing to notice your patterns and practise something different.</p>
 <a class="btn btn-primary" href="#six-weeks">Explore the Six-Week Experience</a>
 </div>
-
 </div>
 </section>
 
@@ -495,6 +630,7 @@ Your browser does not support audio playback.
 <div class="center">
 <div class="eyebrow">Practical Tools</div>
 <h2 class="section-title" id="soothing-heading">Self-Soothing Exercises</h2>
+<a class="section-link" href="#self-soothing">Direct link to self-soothing exercises</a>
 <p class="section-intro">For moments when uncertainty in a relationship brings up anxiety. Self-soothing can help you respond with more clarity instead of reacting from fear.</p>
 </div>
 
@@ -518,7 +654,7 @@ Your browser does not support audio playback.
 </div>
 </div>
 <div>
-<img src="self-soothing-exercises.png" loading="lazy" alt="Illustrated self-soothing exercises">
+<img src="self-soothing-exercises.png" loading="lazy" decoding="async" alt="Illustrated self-soothing exercises">
 <a class="btn btn-secondary" style="margin-top:18px" href="self-soothing-steps.png" target="_blank" rel="noopener">View the Detailed Exercise Guide</a>
 </div>
 </div>
@@ -526,19 +662,20 @@ Your browser does not support audio playback.
 </section>
 
 <!-- SIX-WEEK JOURNEY -->
-<section class="weeks" id="six-weeks">
+<section class="weeks" id="six-weeks" aria-labelledby="weeks-heading">
 <div class="wrap">
 <div class="eyebrow">The Six-Week Journey</div>
-<h2 class="section-title">Six weeks. Six opportunities to date differently.</h2>
+<h2 class="section-title" id="weeks-heading">Six weeks. Six opportunities to date differently.</h2>
+<a class="section-link" href="#six-weeks">Direct link to the six-week journey</a>
 <p class="section-intro">The conversations become progressively deeper as participants get to know one another. Each week's Love Affirmation gives the group something specific to explore and practise.</p>
 
 <div class="week-list">
 
-<!-- WEEK 1 -->
-<article class="week">
+<article class="week" id="week-1" aria-labelledby="week-1-heading">
 <div class="week-number"><small>Week</small><strong>1</strong></div>
 <div>
-<h3>What Am I Bringing Into Love?</h3>
+<h3 id="week-1-heading">What Am I Bringing Into Love?</h3>
+<a class="section-link" href="#week-1">Direct link to Week 1</a>
 <div class="affirmation">“I can meet someone new without asking them to repair something old.”</div>
 <p>The first evening is about curiosity rather than conclusions. Participants meet the group, explore what they are looking for and begin noticing what previous experiences may have taught them to expect from love.</p>
 <div class="session-grid">
@@ -549,11 +686,11 @@ Your browser does not support audio playback.
 </div>
 </article>
 
-<!-- WEEK 2 -->
-<article class="week">
+<article class="week" id="week-2" aria-labelledby="week-2-heading">
 <div class="week-number"><small>Week</small><strong>2</strong></div>
 <div>
-<h3>I Do Not Have to Compete for Love</h3>
+<h3 id="week-2-heading">I Do Not Have to Compete for Love</h3>
+<a class="section-link" href="#week-2">Direct link to Week 2</a>
 <div class="affirmation">“I do not have to compete for love.”</div>
 <p>This week explores comparison, jealousy, pursuit and what happens internally when someone we like is also getting to know other people.</p>
 <div class="session-grid">
@@ -564,11 +701,11 @@ Your browser does not support audio playback.
 </div>
 </article>
 
-<!-- WEEK 3 -->
-<article class="week">
+<article class="week" id="week-3" aria-labelledby="week-3-heading">
 <div class="week-number"><small>Week</small><strong>3</strong></div>
 <div>
-<h3>What Does Safe Love Feel Like?</h3>
+<h3 id="week-3-heading">What Does Safe Love Feel Like?</h3>
+<a class="section-link" href="#week-3">Direct link to Week 3</a>
 <div class="affirmation">“I deserve love that feels real, honest, safe, mutual and clear.”</div>
 <p>Participants explore emotional safety, consistency, respect, boundaries and clarity—and the difference between feeling intensely attracted to someone and feeling genuinely safe with them.</p>
 <div class="session-grid">
@@ -579,11 +716,11 @@ Your browser does not support audio playback.
 </div>
 </article>
 
-<!-- WEEK 4 -->
-<article class="week">
+<article class="week" id="week-4" aria-labelledby="week-4-heading">
 <div class="week-number"><small>Week</small><strong>4</strong></div>
 <div>
-<h3>Receiving Love Without Expecting Pain</h3>
+<h3 id="week-4-heading">Receiving Love Without Expecting Pain</h3>
+<a class="section-link" href="#week-4">Direct link to Week 4</a>
 <div class="affirmation">“I can receive something good without searching for the moment it will disappear.”</div>
 <p>Sometimes healthy attention feels unfamiliar. This session explores what can happen when affection, consistency or genuine interest activates old expectations of disappointment.</p>
 <div class="session-grid">
@@ -594,11 +731,11 @@ Your browser does not support audio playback.
 </div>
 </article>
 
-<!-- WEEK 5 -->
-<article class="week">
+<article class="week" id="week-5" aria-labelledby="week-5-heading">
 <div class="week-number"><small>Week</small><strong>5</strong></div>
 <div>
-<h3>I Can Say What I Need</h3>
+<h3 id="week-5-heading">I Can Say What I Need</h3>
+<a class="section-link" href="#week-5">Direct link to Week 5</a>
 <div class="affirmation">“My needs do not make me difficult to love.”</div>
 <p>By Week Five, conversations move beyond attraction and toward compatibility. Participants explore whether their values, expectations and actual lives could work together.</p>
 <div class="session-grid">
@@ -609,11 +746,11 @@ Your browser does not support audio playback.
 </div>
 </article>
 
-<!-- WEEK 6 -->
-<article class="week">
+<article class="week" id="week-6" aria-labelledby="week-6-heading">
 <div class="week-number"><small>Week</small><strong>6</strong></div>
 <div>
-<h3>Choosing Without Abandoning Myself</h3>
+<h3 id="week-6-heading">Choosing Without Abandoning Myself</h3>
+<a class="section-link" href="#week-6">Direct link to Week 6</a>
 <div class="affirmation">“I can choose love without losing myself.”</div>
 <p>The final evening brings the experience together. Participants reflect on what they have learned about themselves, spend more intentional time with people they would like to know further and celebrate the completion of the six weeks.</p>
 <div class="session-grid">
@@ -629,10 +766,11 @@ Your browser does not support audio playback.
 </section>
 
 <!-- EACH EVENING -->
-<section class="evening">
+<section class="evening" id="each-session" aria-labelledby="session-heading">
 <div class="wrap">
 <div class="eyebrow">Each Session</div>
-<h2 class="section-title">Structured enough to feel intentional.<br>Relaxed enough to still feel like dating.</h2>
+<h2 class="section-title" id="session-heading">Structured enough to feel intentional.<br>Relaxed enough to still feel like dating.</h2>
+<a class="section-link" href="#each-session">Direct link to this section</a>
 <p class="section-intro">This isn't six weeks of sitting in a circle analysing relationships. Reflection supports the dating experience. It does not replace it.</p>
 <div class="evening-grid">
 <div class="evening-item"><strong>Arrive</strong>Social time, refreshments and space to settle in.</div>
@@ -644,14 +782,15 @@ Your browser does not support audio playback.
 </section>
 
 <!-- LOVE AFFIRMATIONS -->
-<section class="love">
+<section class="love" id="love-affirmations" aria-labelledby="love-heading">
 <div class="wrap love-grid">
 <div class="love-quote">
 <p>Sometimes the threat exists only in our minds—the story we remember from when love came at a cost.</p>
 </div>
 <div class="love-copy">
 <div class="eyebrow">Love Affirmations</div>
-<h2 class="section-title">Learning to receive something different.</h2>
+<h2 class="section-title" id="love-heading">Learning to receive something different.</h2>
+<a class="section-link" href="#love-affirmations">Direct link to Love Affirmations</a>
 <p>Love Affirmations are woven throughout the six-week experience as prompts for reflection—not promises, magic words or a way of convincing someone to choose us.</p>
 <p>They are reminders that we can question old beliefs, notice automatic responses and practise healthier ways of approaching connection.</p>
 <div class="mini-affirmations">
@@ -666,11 +805,12 @@ Your browser does not support audio playback.
 </section>
 
 <!-- WHY THIS IS DIFFERENT -->
-<section class="different">
+<section class="different" id="why-this-is-different" aria-labelledby="different-heading">
 <div class="wrap">
 <div class="center">
 <div class="eyebrow">Why This Is Different</div>
-<h2 class="section-title">More than speed dating.</h2>
+<h2 class="section-title" id="different-heading">More than speed dating.</h2>
+<a class="section-link" href="#why-this-is-different">Direct link to this section</a>
 </div>
 <div class="difference-grid">
 <div class="difference">
@@ -694,11 +834,12 @@ Participants can leave with greater self-awareness, healthier dating practices a
 </section>
 
 <!-- WHO IT IS FOR -->
-<section class="who">
+<section class="who" id="who-its-for" aria-labelledby="who-heading">
 <div class="wrap">
 <div class="center">
 <div class="eyebrow">Who It's For</div>
-<h2 class="section-title">Singles who want to date with greater intention.</h2>
+<h2 class="section-title" id="who-heading">Singles who want to date with greater intention.</h2>
+<a class="section-link" href="#who-its-for">Direct link to this section</a>
 <p class="section-intro">You don't need to have love figured out. You simply need to be genuinely available to meet people and willing to approach the experience with curiosity and respect.</p>
 </div>
 <div class="who-box">
@@ -717,11 +858,12 @@ Participants can leave with greater self-awareness, healthier dating practices a
 </section>
 
 <!-- MATCHING -->
-<section class="matching">
+<section class="matching" id="connection-and-privacy" aria-labelledby="privacy-heading">
 <div class="wrap">
 <div class="center">
 <div class="eyebrow">Connection &amp; Privacy</div>
-<h2 class="section-title">No public choosing. No public rejection.</h2>
+<h2 class="section-title" id="privacy-heading">No public choosing. No public rejection.</h2>
+<a class="section-link" href="#connection-and-privacy">Direct link to connection and privacy</a>
 </div>
 <div class="match-box">
 <h3>Interest stays private.</h3>
@@ -734,11 +876,12 @@ Participants can leave with greater self-awareness, healthier dating practices a
 </section>
 
 <!-- FIRST COHORT -->
-<section class="pilot">
+<section class="pilot" id="first-cohort" aria-labelledby="cohort-heading">
 <div class="wrap">
 <div class="center">
 <div class="eyebrow">The First Cohort</div>
-<h2 class="section-title">Small enough to feel personal.</h2>
+<h2 class="section-title" id="cohort-heading">Small enough to feel personal.</h2>
+<a class="section-link" href="#first-cohort">Direct link to the first cohort and pricing</a>
 <p class="section-intro">The first experience will intentionally remain small so the programme can be refined with participant feedback.</p>
 </div>
 <div class="pilot-grid">
@@ -755,39 +898,40 @@ The pilot is currently envisioned as a paid six-week experience rather than six 
 </section>
 
 <!-- FAQ -->
-<section class="faq">
+<section class="faq" id="frequently-asked-questions" aria-labelledby="faq-heading">
 <div class="wrap">
 <div class="center">
 <div class="eyebrow">A Few Questions</div>
-<h2 class="section-title">Before you join.</h2>
+<h2 class="section-title" id="faq-heading">Before you join.</h2>
+<a class="section-link" href="#frequently-asked-questions">Direct link to frequently asked questions</a>
 </div>
 
-<details>
+<details id="faq-is-this-therapy">
 <summary>Is this therapy?</summary>
 <p>No. Six Weeks to Date Differently is a facilitated personal-development and social dating experience. It is not psychotherapy, counselling or mental-health treatment.</p>
 </details>
 
-<details>
+<details id="faq-guaranteed-partner">
 <summary>Am I guaranteed to meet a partner?</summary>
 <p>No. The programme creates structured opportunities to meet and get to know other singles, but attraction, compatibility and relationships cannot be guaranteed.</p>
 </details>
 
-<details>
+<details id="faq-like-someone-early">
 <summary>What if I like someone early?</summary>
 <p>That's okay. Participants are encouraged to remain curious while the programme progresses. Mutual interest may lead to additional conversation time without turning the experience into a public competition.</p>
 </details>
 
-<details>
+<details id="faq-no-romantic-match">
 <summary>What if I don't make a romantic match?</summary>
 <p>A romantic match is not the only outcome. The programme is also an opportunity to understand more about how you date, communicate, choose and respond to connection.</p>
 </details>
 
-<details>
+<details id="faq-missing-a-week">
 <summary>Can I miss a week?</summary>
 <p>Because the same cohort progresses together, consistent attendance is important. Participants should plan to attend all six sessions wherever possible.</p>
 </details>
 
-<details>
+<details id="faq-who-can-participate">
 <summary>Who can participate?</summary>
 <p>Eligibility, age range, dating preferences and cohort structure will be confirmed before registration opens.</p>
 </details>
@@ -795,83 +939,50 @@ The pilot is currently envisioned as a paid six-week experience rather than six 
 </section>
 
 <!-- REGISTER INTEREST -->
-<section class="interest" id="interest">
+<section class="interest" id="interest" aria-labelledby="interest-heading">
 <div class="wrap">
 <div class="eyebrow">Interested?</div>
-<h2 class="section-title">Be among the first to know.</h2>
+<h2 class="section-title" id="interest-heading">Be among the first to know.</h2>
+<a class="section-link" href="#interest">Direct link to registration</a>
 <p class="section-intro">Six Weeks to Date Differently is currently being developed. Register your interest to hear when the first cohort, location, dates and eligibility are announced.</p>
 
 <!--
-FORM SUBMISSION:
-FormSubmit sends submissions to info@marshakerrtalley.com.
-The email address must be activated using FormSubmit's
-one-time confirmation email after the first submission.
+FORMSUBMIT CONFIGURATION:
+Submissions POST to info@marshakerrtalley.com.
+Every registration field has a name attribute.
+The visitor's email field enables replies to the visitor.
+CAPTCHA and the honeypot remain enabled.
+FormSubmit handles its own confirmation/thank-you page.
+
+Before relying on delivery:
+1. Publish the page.
+2. Submit a test registration from the published page.
+3. Complete the CAPTCHA.
+4. Check info@marshakerrtalley.com, including spam/junk.
+5. Activate the form if FormSubmit requests confirmation.
+6. Submit again and verify receipt of the registration email.
+
+HTML configuration alone cannot verify inbox delivery.
 -->
 
-<form
-action="https://formsubmit.co/info@marshakerrtalley.com"
-method="POST"
->
+<form id="registration-form" action="https://formsubmit.co/info@marshakerrtalley.com" method="POST" accept-charset="UTF-8">
+<input type="hidden" name="_subject" value="Six Weeks to Date Differently - New Registration Interest">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="true">
+<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-<!-- FORM SUBMIT SETTINGS -->
-<input
-type="hidden"
-name="_subject"
-value="Six Weeks to Date Differently - New Registration Interest"
->
-
-<input
-type="hidden"
-name="_template"
-value="table"
->
-
-<input
-type="hidden"
-name="_captcha"
-value="true"
->
-
-<!-- Honeypot spam protection -->
-<input
-type="text"
-name="_honey"
-style="display:none"
-tabindex="-1"
-autocomplete="off"
-aria-hidden="true"
->
-
-<!-- NAME AND EMAIL -->
 <div class="form-row">
-
 <div>
 <label for="name">Name</label>
-<input
-id="name"
-type="text"
-name="name"
-autocomplete="name"
-required
->
+<input id="name" type="text" name="name" autocomplete="name" required>
 </div>
-
 <div>
 <label for="email">Email</label>
-<input
-id="email"
-type="email"
-name="email"
-autocomplete="email"
-required
->
+<input id="email" type="email" name="email" autocomplete="email" required>
+</div>
 </div>
 
-</div>
-
-<!-- AGE RANGE AND LOCATION -->
 <div class="form-row">
-
 <div>
 <label for="age">Age Range</label>
 <select id="age" name="age">
@@ -883,104 +994,38 @@ required
 <option>65+</option>
 </select>
 </div>
-
 <div>
 <label for="location">Location</label>
-<input
-id="location"
-type="text"
-name="location"
-placeholder="Town / Parish"
->
+<input id="location" type="text" name="location" placeholder="Town / Parish">
+</div>
 </div>
 
-</div>
-
-<!-- REASON FOR INTEREST -->
 <div>
-<label for="reason">
-What interests you about this experience?
-</label>
-
-<textarea
-id="reason"
-name="reason"
-placeholder="Tell me briefly..."
-></textarea>
+<label for="reason">What interests you about this experience?</label>
+<textarea id="reason" name="reason" placeholder="Tell me briefly..."></textarea>
 </div>
 
-<!-- SUBMIT -->
-<button class="submit-btn" type="submit">
-Register My Interest
-</button>
+<button class="submit-btn" type="submit">Register My Interest</button>
 
 <div class="form-note">
 Registering interest does not guarantee admission to a cohort.
 </div>
-
 </form>
 
 </div>
 </section>
 
 <!-- DISCLAIMER -->
-<section class="disclaimer">
+<section class="disclaimer" id="disclaimer" aria-label="Important information">
 <div class="wrap">
+<a class="section-link" href="#disclaimer">Direct link to important information</a><br>
 <strong>Important:</strong>
 Six Weeks to Date Differently is an educational, personal-development and social experience. It does not provide psychotherapy, psychological treatment or professional matchmaking guarantees. Participants remain responsible for their own dating decisions, personal boundaries and safety.
 </div>
 </section>
 
-<!-- PRIVATE ORGANISER NOTES -->
-<section class="organiser-notes" hidden>
-<!--
-PRIVATE DEVELOPMENT NOTES — MARSHA
-
-Before pilot:
-• Decide first cohort age range.
-• Decide dating preference / cohort structure.
-• Determine minimum and maximum participant numbers.
-• Develop a system for balancing compatible dating pools.
-• Create application / screening process.
-• Require six-week attendance commitment.
-• Determine deposit and cancellation policy.
-• Develop participant code of conduct.
-• Create confidentiality policy.
-• Create photography/social-media policy.
-• Create inappropriate-behaviour/removal policy.
-• Determine how private preferences are collected.
-• Determine when mutual interest is disclosed.
-• Determine contact-information rules.
-• Decide what happens if two participants start dating early.
-• Decide what happens if someone withdraws.
-• Recruit assistant/co-facilitator for logistics.
-• Do not use anyone Marsha is personally dating as a participant. 😂
-
-MATERIALS:
-• Love Affirmation cards
-• Participant workbook/journal
-• Weekly reflection sheets
-• Conversation prompt cards
-• Private interest cards
-• Name badges
-• Facilitator guide
-• Opening/closing scripts
-• Participant feedback survey
-
-POTENTIAL FUTURE PRODUCTS:
-• Love Affirmations card deck
-• Date Differently workbook
-• Singles retreats
-• 40+ cohort
-• Dating-again-after-divorce cohort
-• Online experience
-• Podcast conversations based on programme themes
--->
-</section>
-
 </main>
 
-<!-- FOOTER -->
 <footer class="site-footer">
 <div class="social">
 <a href="https://www.linkedin.com/in/marshakerrtalley" target="_blank" rel="noopener">LinkedIn</a>
@@ -988,8 +1033,10 @@ POTENTIAL FUTURE PRODUCTS:
 <a href="https://www.silhouettes.com/" target="_blank" rel="noopener">Silhouette's Café</a>
 </div>
 
+<p><a href="#page-index">Back to page index</a></p>
+
 <p class="copyright">
-Copyright © <span id="year"></span> Marsha Kerr Talley. All Rights Reserved.
+Copyright © <span id="year">2026</span> Marsha Kerr Talley. All Rights Reserved.
 </p>
 
 <div class="legal">
@@ -1001,241 +1048,301 @@ Copyright © <span id="year"></span> Marsha Kerr Talley. All Rights Reserved.
 
 <script>
 /* COPYRIGHT YEAR */
-document.getElementById('year').textContent =
-new Date().getFullYear();
+document.getElementById('year').textContent = new Date().getFullYear();
 
 /* MOBILE NAVIGATION */
-const toggle=document.querySelector('.nav-toggle');
-const nav=document.querySelector('.main-nav');
+const toggle = document.querySelector('.nav-toggle');
+const nav = document.querySelector('.main-nav');
 
-toggle.addEventListener('click',()=>{
-nav.classList.toggle('open');
-toggle.setAttribute('aria-expanded',nav.classList.contains('open'));
+toggle.addEventListener('click', () => {
+  const isOpen = nav.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', String(isOpen));
+  toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
 });
+
+/*
+DIRECT LINKS:
+Native anchor links update the address bar and remain shareable.
+Direct links to individual FAQ items also open those items.
+*/
+function openLinkedDetails() {
+  let id;
+  try {
+    id = decodeURIComponent(window.location.hash.slice(1));
+  } catch {
+    return;
+  }
+
+  if (!id) return;
+
+  const target = document.getElementById(id);
+  if (!target) return;
+
+  if (target.matches('details')) target.open = true;
+
+  let parent = target.parentElement;
+  while (parent) {
+    if (parent.matches('details')) parent.open = true;
+    parent = parent.parentElement;
+  }
+}
+
+window.addEventListener('hashchange', openLinkedDetails);
+openLinkedDetails();
+
+/*
+REGISTRATION:
+No JavaScript intercepts registration.
+The browser submits directly to FormSubmit using POST.
+*/
 
 /* INTERACTIVE ATTACHMENT REFLECTION */
-(function(){
+(function() {
+  const root = document.getElementById('aq-live');
+  if (!root) return;
 
-const root=document.getElementById('aq-live');
-if(!root)return;
+  const questions = [
+    [
+      'When someone I like takes longer than usual to reply, I usually…',
+      [
+        'Give them time without assuming the worst.',
+        'Start wondering whether their feelings have changed.',
+        'Feel relieved to have some space.',
+        'Feel worried, then want to pull away too.'
+      ]
+    ],
+    [
+      'When a relationship starts getting emotionally close, I…',
+      [
+        'Enjoy the closeness while keeping my own interests.',
+        'Want frequent reassurance that we are okay.',
+        'Feel uncomfortable and need more distance.',
+        'Want closeness but worry about getting hurt.'
+      ]
+    ],
+    [
+      'During a disagreement, I am more likely to…',
+      [
+        'Talk it through, even if we need a break first.',
+        'Want to resolve it immediately so I can feel okay.',
+        'Shut down or avoid the conversation.',
+        'Alternate between seeking reassurance and withdrawing.'
+      ]
+    ],
+    [
+      'When I need support, I tend to…',
+      [
+        'Ask for it and accept that others have limits.',
+        'Worry that asking might push someone away.',
+        'Handle it myself rather than depend on someone.',
+        'Want support but struggle to trust it when offered.'
+      ]
+    ],
+    [
+      'If a partner asks for some alone time, I…',
+      [
+        'Respect it and stay connected in other ways.',
+        'Feel unsettled and need to know we are still okay.',
+        'Welcome the distance and may not check back in.',
+        'Agree, but worry they may be leaving me.'
+      ]
+    ],
+    [
+      'When someone treats me with steady affection, I…',
+      [
+        'Generally feel comfortable receiving it.',
+        'Enjoy it but worry it might suddenly disappear.',
+        'Sometimes feel crowded by the attention.',
+        'Want to trust it but find myself questioning it.'
+      ]
+    ],
+    [
+      'When I feel uncertain about a relationship, I…',
+      [
+        'Look at the pattern and communicate directly.',
+        'Look for signs that I am being rejected.',
+        'Detach or tell myself I do not need anyone.',
+        'Move between reaching out and shutting down.'
+      ]
+    ],
+    [
+      'The relationship skill I most want to practise is…',
+      [
+        'Continuing honest communication and healthy boundaries.',
+        'Calming myself before seeking reassurance.',
+        'Staying emotionally present while asking for space.',
+        'Building trust without pushing people away.'
+      ]
+    ]
+  ];
 
-const questions=[
-[
-'When someone I like takes longer than usual to reply, I usually…',
-[
-'Give them time without assuming the worst.',
-'Start wondering whether their feelings have changed.',
-'Feel relieved to have some space.',
-'Feel worried, then want to pull away too.'
-]
-],
-[
-'When a relationship starts getting emotionally close, I…',
-[
-'Enjoy the closeness while keeping my own interests.',
-'Want frequent reassurance that we are okay.',
-'Feel uncomfortable and need more distance.',
-'Want closeness but worry about getting hurt.'
-]
-],
-[
-'During a disagreement, I am more likely to…',
-[
-'Talk it through, even if we need a break first.',
-'Want to resolve it immediately so I can feel okay.',
-'Shut down or avoid the conversation.',
-'Alternate between seeking reassurance and withdrawing.'
-]
-],
-[
-'When I need support, I tend to…',
-[
-'Ask for it and accept that others have limits.',
-'Worry that asking might push someone away.',
-'Handle it myself rather than depend on someone.',
-'Want support but struggle to trust it when offered.'
-]
-],
-[
-'If a partner asks for some alone time, I…',
-[
-'Respect it and stay connected in other ways.',
-'Feel unsettled and need to know we are still okay.',
-'Welcome the distance and may not check back in.',
-'Agree, but worry they may be leaving me.'
-]
-],
-[
-'When someone treats me with steady affection, I…',
-[
-'Generally feel comfortable receiving it.',
-'Enjoy it but worry it might suddenly disappear.',
-'Sometimes feel crowded by the attention.',
-'Want to trust it but find myself questioning it.'
-]
-],
-[
-'When I feel uncertain about a relationship, I…',
-[
-'Look at the pattern and communicate directly.',
-'Look for signs that I am being rejected.',
-'Detach or tell myself I do not need anyone.',
-'Move between reaching out and shutting down.'
-]
-],
-[
-'The relationship skill I most want to practise is…',
-[
-'Continuing honest communication and healthy boundaries.',
-'Calming myself before seeking reassurance.',
-'Staying emotionally present while asking for space.',
-'Building trust without pushing people away.'
-]
-]
-];
+  const labels = [
+    'Secure',
+    'Anxious',
+    'Avoidant',
+    'Fearful-Avoidant'
+  ];
 
-const labels=[
-'Secure',
-'Anxious',
-'Avoidant',
-'Fearful-Avoidant'
-];
+  const summaries = [
+    'You may feel fairly comfortable with closeness and independence. Keep practising clear communication and healthy boundaries.',
+    'Uncertainty may bring a strong need for reassurance. Try grounding yourself, then communicate what you need.',
+    'You may protect your independence by creating distance. Try naming your need for space and agreeing when to reconnect.',
+    'You may want connection while also fearing it. Practise slowing down, naming your feelings and building trust gradually.'
+  ];
 
-const summaries=[
-'You may feel fairly comfortable with closeness and independence. Keep practising clear communication and healthy boundaries.',
-'Uncertainty may bring a strong need for reassurance. Try grounding yourself, then communicate what you need.',
-'You may protect your independence by creating distance. Try naming your need for space and agreeing when to reconnect.',
-'You may want connection while also fearing it. Practise slowing down, naming your feelings and building trust gradually.'
-];
+  const answers = Array(questions.length).fill(null);
+  let index = 0;
 
-const answers=Array(questions.length).fill(null);
-let index=0;
+  function node(tag, cls, txt) {
+    const el = document.createElement(tag);
+    if (cls) el.className = cls;
+    if (txt !== undefined) el.textContent = txt;
+    return el;
+  }
 
-function node(tag,cls,txt){
-const el=document.createElement(tag);
-if(cls)el.className=cls;
-if(txt!==undefined)el.textContent=txt;
-return el;
-}
+  function button(text, cls, action) {
+    const b = node('button', cls, text);
+    b.type = 'button';
+    b.addEventListener('click', action);
+    return b;
+  }
 
-function button(text,cls,action){
-const b=node('button',cls,text);
-b.type='button';
-b.addEventListener('click',action);
-return b;
-}
+  function focusHeading(heading) {
+    heading.tabIndex = -1;
+    heading.focus({preventScroll: true});
+  }
 
-function show(){
-root.replaceChildren();
+  function show(moveFocus = false) {
+    root.replaceChildren();
 
-const step=node(
-'div','aq-step',
-'Question '+(index+1)+' of '+questions.length
-);
-root.append(step);
+    const step = node(
+      'div',
+      'aq-step',
+      'Question ' + (index + 1) + ' of ' + questions.length
+    );
+    root.append(step);
 
-const progress=node('div','aq-progress');
-progress.setAttribute('role','progressbar');
-progress.setAttribute('aria-label','Quiz progress');
-progress.setAttribute('aria-valuemin','0');
-progress.setAttribute('aria-valuemax',String(questions.length));
-progress.setAttribute('aria-valuenow',String(index));
+    const progress = node('div', 'aq-progress');
+    progress.setAttribute('role', 'progressbar');
+    progress.setAttribute('aria-label', 'Reflection progress');
+    progress.setAttribute('aria-valuemin', '0');
+    progress.setAttribute('aria-valuemax', String(questions.length));
+    progress.setAttribute('aria-valuenow', String(index));
 
-const bar=node('span');
-bar.style.width=(index/questions.length*100)+'%';
-progress.append(bar);
-root.append(progress);
+    const bar = node('span');
+    bar.style.width = (index / questions.length * 100) + '%';
+    progress.append(bar);
+    root.append(progress);
 
-root.append(node('h4','',questions[index][0]));
+    const heading = node('h4', '', questions[index][0]);
+    root.append(heading);
 
-const choices=node('div','aq-choices');
+    const choices = node('div', 'aq-choices');
 
-questions[index][1].forEach((answer,i)=>{
-const b=button(answer,'aq-choice',()=>{
-answers[index]=i;
-show();
-});
-b.setAttribute('aria-pressed',String(answers[index]===i));
-choices.append(b);
-});
+    questions[index][1].forEach((answer, i) => {
+      const b = button(answer, 'aq-choice', () => {
+        answers[index] = i;
+        choices.querySelectorAll('button').forEach((choice, j) => {
+          choice.setAttribute('aria-pressed', String(j === i));
+        });
+        next.disabled = false;
+      });
+      b.setAttribute('aria-pressed', String(answers[index] === i));
+      choices.append(b);
+    });
 
-root.append(choices);
+    root.append(choices);
 
-const actions=node('div','aq-actions');
+    const actions = node('div', 'aq-actions');
 
-const back=button('Back','aq-btn aq-back',()=>{
-index--;
-show();
-});
-back.disabled=index===0;
-actions.append(back);
+    const back = button('Back', 'aq-btn aq-back', () => {
+      if (index > 0) {
+        index--;
+        show(true);
+      }
+    });
+    back.disabled = index === 0;
+    actions.append(back);
 
-const next=button(
-index===questions.length-1?'See My Reflection':'Next',
-'aq-btn',
-()=>{
-if(index===questions.length-1){
-result();
-}else{
-index++;
-show();
-}
-}
-);
-next.disabled=answers[index]===null;
-actions.append(next);
-root.append(actions);
-}
+    const next = button(
+      index === questions.length - 1 ? 'See My Reflection' : 'Next',
+      'aq-btn',
+      () => {
+        if (answers[index] === null) return;
 
-function result(){
-root.replaceChildren();
+        if (index === questions.length - 1) {
+          result();
+        } else {
+          index++;
+          show(true);
+        }
+      }
+    );
+    next.disabled = answers[index] === null;
+    actions.append(next);
+    root.append(actions);
 
-const totals=[0,0,0,0];
-answers.forEach(a=>totals[a]++);
+    if (moveFocus) focusHeading(heading);
+  }
 
-const high=Math.max(...totals);
-const winners=totals.map((n,i)=>n===high?i:-1).filter(i=>i>=0);
+  function result() {
+    root.replaceChildren();
 
-const panel=node('div','aq-result');
-panel.append(node('div','aq-step','Your Reflection'));
+    const totals = [0, 0, 0, 0];
+    answers.forEach(a => {
+      if (a !== null) totals[a]++;
+    });
 
-if(winners.length===1){
-const i=winners[0];
-panel.append(node('h4','',labels[i]+' tendencies'));
-panel.append(node('p','',summaries[i]));
-}else{
-panel.append(node('h4','','A mix of patterns'));
-panel.append(node('p','','Your answers reflect more than one pattern. That is common. Notice which responses show up in different relationships or situations.'));
-}
+    const high = Math.max(...totals);
+    const winners = totals
+      .map((n, i) => n === high ? i : -1)
+      .filter(i => i >= 0);
 
-panel.append(node(
-'p','',
-'This is a conversation starter, not a label. Your history matters, but so do your present choices and the way others treat you.'
-));
+    const panel = node('div', 'aq-result');
+    panel.append(node('div', 'aq-step', 'Your Reflection'));
 
-const link=node('a','','Explore the four styles below ↓');
-link.href='#attachment-styles';
-link.addEventListener('click',e=>{
-e.preventDefault();
-document.querySelector('.attachment-grid')?.scrollIntoView({behavior:'smooth'});
-});
-panel.append(link);
-root.append(panel);
+    let heading;
 
-const actions=node('div','aq-actions');
-actions.style.marginTop='20px';
+    if (winners.length === 1) {
+      const i = winners[0];
+      heading = node('h4', '', labels[i] + ' tendencies');
+      panel.append(heading);
+      panel.append(node('p', '', summaries[i]));
+    } else {
+      heading = node('h4', '', 'A mix of patterns');
+      panel.append(heading);
+      panel.append(node(
+        'p',
+        '',
+        'Your answers reflect more than one pattern. That is common. Notice which responses show up in different relationships or situations.'
+      ));
+    }
 
-actions.append(button('Try Again','aq-btn',()=>{
-answers.fill(null);
-index=0;
-show();
-}));
+    panel.append(node(
+      'p',
+      '',
+      'This is a conversation starter, not a label. Your history matters, but so do your present choices and the way others treat you.'
+    ));
 
-root.append(actions);
-}
+    const link = node('a', '', 'Explore the four styles below ↓');
+    link.href = '#four-attachment-styles';
+    panel.append(link);
+    root.append(panel);
 
-show();
+    const actions = node('div', 'aq-actions');
+    actions.style.marginTop = '20px';
 
+    actions.append(button('Try Again', 'aq-btn', () => {
+      answers.fill(null);
+      index = 0;
+      show(true);
+    }));
+
+    root.append(actions);
+    focusHeading(heading);
+  }
+
+  show();
 })();
 </script>
 
