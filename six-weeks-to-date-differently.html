@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Explore Six Weeks to Date Differently with Marsha Kerr Talley: intentional dating, attachment styles, an audio introduction, infographics, self-soothing exercises and Love Affirmations.">
+<meta name="description" content="Explore Six Weeks to Date Differently with Marsha Kerr Talley: intentional dating, an attachment style quiz, audio introduction, infographics, self-soothing exercises and Love Affirmations.">
 <meta name="author" content="Marsha Kerr Talley">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Six Weeks to Date Differently | Marsha Kerr Talley">
-<meta property="og:description" content="A little chemistry. Real conversation. Room for something to grow. Explore attachment styles, self-soothing and an intentional six-week dating experience.">
+<meta property="og:description" content="A little chemistry. Real conversation. Room for something to grow. Explore an intentional six-week dating experience and take the attachment style quiz.">
 <meta property="og:site_name" content="Marsha Kerr Talley">
 <title>Six Weeks to Date Differently | Marsha Kerr Talley</title>
 
@@ -34,215 +34,719 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--text);font-family:var(--sans);line-height:1.75}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--text);
+  font-family:var(--sans);
+  line-height:1.75;
+}
 a{color:inherit}
 img{max-width:100%;height:auto}
 [id]{scroll-margin-top:24px}
 :focus-visible{outline:3px solid var(--aqua);outline-offset:4px}
 .wrap{width:min(1120px,calc(100% - 38px));margin:auto}
-.eyebrow{color:var(--teal);font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
-.section-title{font-family:var(--serif);color:var(--deep);font-size:clamp(2.3rem,5vw,4rem);line-height:1.08;margin:10px 0 22px;font-weight:500}
+.eyebrow{
+  color:var(--teal);
+  font-size:.76rem;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.section-title{
+  font-family:var(--serif);
+  color:var(--deep);
+  font-size:clamp(2.3rem,5vw,4rem);
+  line-height:1.08;
+  margin:10px 0 22px;
+  font-weight:500;
+}
 .section-intro{max-width:760px;font-size:1.06rem}
 .center{text-align:center}
 .center .section-intro{margin-left:auto;margin-right:auto}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:49px;padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.9rem;transition:.22s ease}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:49px;
+  padding:12px 22px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:.9rem;
+  transition:.22s ease;
+}
 .btn:hover{transform:translateY(-2px)}
 .btn-primary{background:var(--teal);color:#fff}
-.btn-secondary{border:1px solid rgba(5,99,103,.3);color:var(--teal);background:#fff}
-.skip-link{position:absolute;left:12px;top:-100px;z-index:1000;background:var(--deep);color:#fff;padding:10px 18px;border-radius:8px}
+.btn-secondary{
+  border:1px solid rgba(5,99,103,.3);
+  color:var(--teal);
+  background:#fff;
+}
+.btn-quiz{background:var(--rose);color:#fff}
+.skip-link{
+  position:absolute;
+  left:12px;
+  top:-100px;
+  z-index:1000;
+  background:var(--deep);
+  color:#fff;
+  padding:10px 18px;
+  border-radius:8px;
+}
 .skip-link:focus{top:12px}
 
 /* Header */
-.site-header{background:rgba(255,253,249,.97);border-bottom:1px solid var(--line);position:relative;z-index:50}
-.header-inner{width:min(1200px,calc(100% - 38px));margin:auto;padding:18px 0 13px;display:flex;flex-direction:column;align-items:center;position:relative}
+.site-header{
+  background:rgba(255,253,249,.97);
+  border-bottom:1px solid var(--line);
+  position:relative;
+  z-index:50;
+}
+.header-inner{
+  width:min(1200px,calc(100% - 38px));
+  margin:auto;
+  padding:18px 0 13px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  position:relative;
+}
 .logo img{width:220px;height:auto;display:block}
-.nav-toggle{display:none;position:absolute;right:0;top:20px;border:0;background:none;font-size:28px;color:var(--teal);cursor:pointer}
-.main-nav ul{list-style:none;margin:12px 0 0;padding:0;display:flex;align-items:center;justify-content:center;gap:27px;font-size:13px;letter-spacing:.075em;text-transform:uppercase}
+.nav-toggle{
+  display:none;
+  position:absolute;
+  right:0;
+  top:20px;
+  border:0;
+  background:none;
+  font-size:28px;
+  color:var(--teal);
+  cursor:pointer;
+}
+.main-nav ul{
+  list-style:none;
+  margin:12px 0 0;
+  padding:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:27px;
+  font-size:13px;
+  letter-spacing:.075em;
+  text-transform:uppercase;
+}
 .main-nav a{text-decoration:none;font-weight:500}
 .main-nav a:hover,.main-nav a.active{color:var(--teal);font-weight:700}
 .nav-dropdown{position:relative}
 .nav-parent:after{content:"⌄";margin-left:6px;color:var(--aqua)}
-.nav-submenu{position:absolute!important;top:calc(100% + 10px);left:50%;transform:translateX(-50%);display:none!important;flex-direction:column!important;gap:3px!important;min-width:240px;padding:9px!important;margin:0!important;background:#fff;border:1px solid var(--line);border-radius:15px;box-shadow:0 18px 44px rgba(5,99,103,.14);text-align:left}
-.nav-submenu:before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
-.nav-submenu a{display:block;padding:9px 12px;border-radius:9px;white-space:nowrap;text-transform:none;letter-spacing:0;font-size:13px}
+.nav-submenu{
+  position:absolute!important;
+  top:calc(100% + 10px);
+  left:50%;
+  transform:translateX(-50%);
+  display:none!important;
+  flex-direction:column!important;
+  gap:3px!important;
+  min-width:240px;
+  padding:9px!important;
+  margin:0!important;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:15px;
+  box-shadow:0 18px 44px rgba(5,99,103,.14);
+  text-align:left;
+}
+.nav-submenu:before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:-12px;
+  height:12px;
+}
+.nav-submenu a{
+  display:block;
+  padding:9px 12px;
+  border-radius:9px;
+  white-space:nowrap;
+  text-transform:none;
+  letter-spacing:0;
+  font-size:13px;
+}
 .nav-submenu a:hover{background:#e8f6f6}
-.nav-dropdown:hover>.nav-submenu,.nav-dropdown:focus-within>.nav-submenu{display:flex!important}
+.nav-dropdown:hover>.nav-submenu,
+.nav-dropdown:focus-within>.nav-submenu{display:flex!important}
 
 /* Hero */
-.hero{padding:84px 0 76px;background:radial-gradient(ellipse at 85% 15%,#f5e3df 0,transparent 52%),linear-gradient(180deg,#fffdf9,#faf3ed)}
+.hero{
+  padding:84px 0 76px;
+  background:
+    radial-gradient(ellipse at 85% 15%,#f5e3df 0,transparent 52%),
+    linear-gradient(180deg,#fffdf9,#faf3ed);
+}
 .hero-inner{max-width:920px;margin:auto;text-align:center}
-.hero h1{font-family:var(--serif);font-size:clamp(3.5rem,8vw,7rem);line-height:.96;letter-spacing:-.045em;color:var(--deep);margin:14px 0 26px;font-weight:500}
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(3.5rem,8vw,7rem);
+  line-height:.96;
+  letter-spacing:-.045em;
+  color:var(--deep);
+  margin:14px 0 26px;
+  font-weight:500;
+}
 .hero h1 em{color:var(--teal);font-weight:500}
-.hero .opening{max-width:790px;margin:0 auto;font-family:var(--serif);font-size:clamp(1.25rem,2.5vw,1.65rem);line-height:1.55;color:var(--ink)}
-.hero-tag{display:block;margin:28px auto 0;padding:0;background:none;border:0;border-radius:0;box-shadow:none;font-family:var(--serif);font-weight:500;font-style:italic;font-size:1.18rem;color:var(--teal)}
-.hero-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero .opening{
+  max-width:790px;
+  margin:0 auto;
+  font-family:var(--serif);
+  font-size:clamp(1.25rem,2.5vw,1.65rem);
+  line-height:1.55;
+  color:var(--ink);
+}
+.hero-tag{
+  display:block;
+  margin:28px auto 0;
+  padding:0;
+  background:none;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  font-family:var(--serif);
+  font-weight:500;
+  font-style:italic;
+  font-size:1.18rem;
+  color:var(--teal);
+}
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
 
 /* Page index */
 .page-index{padding:32px 0;background:#fff;border-bottom:1px solid var(--line)}
 .page-index details{max-width:none;margin:0;padding:20px 24px;background:var(--paper)}
 .page-index summary{font-family:var(--serif);font-size:1.45rem}
-.index-links{list-style:none;padding:0;margin:20px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 24px}
-.index-links a{display:block;color:var(--teal);text-decoration:none;font-size:.91rem}
+.index-links{
+  list-style:none;
+  padding:0;
+  margin:20px 0 0;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px 24px;
+}
+.index-links a{
+  display:block;
+  color:var(--teal);
+  text-decoration:none;
+  font-size:.91rem;
+}
 .index-links a:hover{text-decoration:underline}
-.media-link{display:inline-block;margin-top:10px;color:var(--teal);font-size:.88rem;font-weight:600}
+.media-link{
+  display:inline-block;
+  margin-top:10px;
+  color:var(--teal);
+  font-size:.88rem;
+  font-weight:600;
+}
 
 /* Introduction */
 .concept{padding:90px 0}
-.concept-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.concept-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:64px;
+  align-items:center;
+}
 .concept-copy p{font-size:1.06rem}
-.pullquote{padding:38px;border-radius:24px;background:var(--deep);color:#fff;box-shadow:0 24px 60px rgba(8,63,66,.13)}
-.pullquote p{margin:0;font-family:var(--serif);font-size:clamp(1.65rem,3vw,2.35rem);line-height:1.4}
-.pullquote span{display:block;margin-top:22px;color:#bce1e2;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+.pullquote{
+  padding:38px;
+  border-radius:24px;
+  background:var(--deep);
+  color:#fff;
+  box-shadow:0 24px 60px rgba(8,63,66,.13);
+}
+.pullquote p{
+  margin:0;
+  font-family:var(--serif);
+  font-size:clamp(1.65rem,3vw,2.35rem);
+  line-height:1.4;
+}
+.pullquote span{
+  display:block;
+  margin-top:22px;
+  color:#bce1e2;
+  font-size:.85rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
 
 /* Flowing stages */
 .how{padding:90px 0;background:linear-gradient(135deg,#fcf3ee,#f5e3df)}
-.how-grid{display:grid;grid-template-columns:minmax(0,1fr) 34px minmax(0,1fr) 34px minmax(0,1fr);align-items:start;gap:16px;margin-top:40px}
-.how-card{padding:22px 12px;background:none;border:0;border-radius:0;box-shadow:none}
-.how-card h3{margin:4px 0 8px;color:var(--teal);font-family:var(--serif);font-size:2rem;line-height:1.2;font-style:italic}
+.how-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 34px minmax(0,1fr) 34px minmax(0,1fr);
+  align-items:start;
+  gap:16px;
+  margin-top:40px;
+}
+.how-card{padding:22px 12px}
+.how-card h3{
+  margin:4px 0 8px;
+  color:var(--teal);
+  font-family:var(--serif);
+  font-size:2rem;
+  line-height:1.2;
+  font-style:italic;
+}
 .flow-arrow{padding-top:20px;font-size:2rem;color:var(--rose);text-align:center}
 
 /* Each session */
-.evening{padding:90px 0;background:radial-gradient(ellipse at 100% 100%,#28605d,transparent 65%),var(--deep);color:#fff}
+.evening{
+  padding:90px 0;
+  background:radial-gradient(ellipse at 100% 100%,#28605d,transparent 65%),var(--deep);
+  color:#fff;
+}
 .evening .eyebrow{color:#9ed6d8}
 .evening .section-title{color:#fff}
 .evening .section-intro{color:rgba(255,255,255,.85)}
-.evening-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:38px}
-.evening-item{padding:24px 12px;border:0;border-top:1px solid rgba(241,220,174,.45);border-radius:0;background:none}
-.evening-item strong{display:block;margin-bottom:7px;font-family:var(--serif);color:#f1dcae;font-size:1.4rem;line-height:1.3}
+.evening-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:38px;
+}
+.evening-item{padding:24px 12px;border-top:1px solid rgba(241,220,174,.45)}
+.evening-item strong{
+  display:block;
+  margin-bottom:7px;
+  font-family:var(--serif);
+  color:#f1dcae;
+  font-size:1.4rem;
+  line-height:1.3;
+}
 
-/* General disclosures */
-details{max-width:850px;margin:12px auto;padding:18px 21px;background:#fff;border:1px solid var(--line);border-radius:14px}
+/* Disclosures */
+details{
+  max-width:850px;
+  margin:12px auto;
+  padding:18px 21px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+}
 summary{cursor:pointer;color:var(--deep);font-weight:700}
 details p{margin:13px 0 0}
 
-/* Collapsible weekly outlines */
+/* Weekly outlines */
 .weeks{padding:95px 0}
 .week-list{margin-top:32px;display:grid;gap:16px}
-details.week{display:block;width:100%;max-width:none;margin:0;padding:0;border:1px solid var(--line);border-radius:22px;background:#fff;transition:border-color .2s ease,box-shadow .2s ease}
-details.week:hover{border-color:rgba(5,99,103,.3);box-shadow:0 12px 30px rgba(5,99,103,.07)}
-.week-summary{display:grid;grid-template-columns:78px minmax(0,1fr) 24px;align-items:center;gap:24px;padding:24px;list-style:none;cursor:pointer;border-radius:22px}
+details.week{
+  display:block;
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:0;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:#fff;
+  transition:border-color .2s ease,box-shadow .2s ease;
+}
+details.week:hover{
+  border-color:rgba(5,99,103,.3);
+  box-shadow:0 12px 30px rgba(5,99,103,.07);
+}
+.week-summary{
+  display:grid;
+  grid-template-columns:78px minmax(0,1fr) 24px;
+  align-items:center;
+  gap:24px;
+  padding:24px;
+  list-style:none;
+  cursor:pointer;
+  border-radius:22px;
+}
 .week-summary::-webkit-details-marker{display:none}
 .week-summary::marker{content:""}
-.week-number{width:78px;height:78px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(145deg,var(--deep),var(--teal));color:#fff}
+.week-number{
+  width:78px;
+  height:78px;
+  border-radius:50%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(145deg,var(--deep),var(--teal));
+  color:#fff;
+}
 .week-number small{font-size:.63rem;letter-spacing:.1em;text-transform:uppercase}
 .week-number strong{font-family:var(--serif);font-size:1.9rem;line-height:1}
-.week-title{font-family:var(--serif);color:var(--deep);font-size:1.7rem;font-weight:500;line-height:1.3}
+.week-title{
+  font-family:var(--serif);
+  color:var(--deep);
+  font-size:1.7rem;
+  font-weight:500;
+  line-height:1.3;
+}
 .week-indicator::before{content:"+";font-size:1.8rem;color:var(--teal)}
 .week[open] .week-indicator::before{content:"−"}
 .week[open] .week-summary{border-radius:22px 22px 0 0}
 .week-content{padding:0 30px 30px 126px}
 .week-content>p{margin:16px 0}
-.affirmation{margin:13px 0 19px;padding:11px 16px;border-left:4px solid var(--gold);background:var(--cream);color:var(--teal);font-family:var(--serif);font-size:1.08rem;font-style:italic}
+.affirmation{
+  margin:13px 0 19px;
+  padding:11px 16px;
+  border-left:4px solid var(--gold);
+  background:var(--cream);
+  color:var(--teal);
+  font-family:var(--serif);
+  font-size:1.08rem;
+  font-style:italic;
+}
 .session-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
 .session-item{padding:17px;border-radius:14px;background:#eef7f6;font-size:.9rem}
 .session-item strong{display:block;color:var(--teal);margin-bottom:5px}
 
 /* Love affirmations */
-.love{padding:90px 0;background:radial-gradient(circle at 90% 20%,rgba(49,159,162,.10),transparent 28%),var(--paper)}
+.love{
+  padding:90px 0;
+  background:radial-gradient(circle at 90% 20%,rgba(49,159,162,.10),transparent 28%),var(--paper);
+}
 .love-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:start}
-.love-quote{position:sticky;top:30px;padding:36px;background:var(--cream);border-left:4px solid var(--gold);border-radius:0 22px 22px 0}
-.love-quote p{margin:0;font-family:var(--serif);color:var(--deep);font-size:clamp(1.7rem,3vw,2.45rem);line-height:1.4}
+.love-quote{
+  position:sticky;
+  top:30px;
+  padding:36px;
+  background:var(--cream);
+  border-left:4px solid var(--gold);
+  border-radius:0 22px 22px 0;
+}
+.love-quote p{
+  margin:0;
+  font-family:var(--serif);
+  color:var(--deep);
+  font-size:clamp(1.7rem,3vw,2.45rem);
+  line-height:1.4;
+}
 .love-copy p{font-size:1.06rem}
 .mini-affirmations{display:grid;gap:10px;margin-top:25px}
-.mini-affirmation{padding:15px 18px;background:#fff;border:1px solid var(--line);border-radius:14px;color:var(--teal);font-family:var(--serif)}
+.mini-affirmation{
+  padding:15px 18px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  color:var(--teal);
+  font-family:var(--serif);
+}
 
 /* Programme details */
 .different{padding:90px 0;background:var(--cream)}
 .difference-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
-.difference{padding:27px;background:#fff;border:1px solid rgba(5,99,103,.10);border-radius:18px}
-.difference strong{display:block;color:var(--teal);font-family:var(--serif);font-size:1.25rem;margin-bottom:6px}
+.difference{
+  padding:27px;
+  background:#fff;
+  border:1px solid rgba(5,99,103,.10);
+  border-radius:18px;
+}
+.difference strong{
+  display:block;
+  color:var(--teal);
+  font-family:var(--serif);
+  font-size:1.25rem;
+  margin-bottom:6px;
+}
 .who{padding:90px 0}
 .who-box{max-width:900px;margin:38px auto 0;padding:36px;border-radius:22px;background:#eef7f6}
-.checklist{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:13px 28px}
+.checklist{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:13px 28px;
+}
 .checklist li{position:relative;padding-left:27px}
 .checklist li:before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:700}
 .matching{padding:64px 0;background:var(--cream)}
-.match-box{max-width:850px;margin:24px auto 0;padding:22px 26px;background:#fff;border:1px solid var(--line);border-radius:22px}
+.match-box{
+  max-width:850px;
+  margin:24px auto 0;
+  padding:22px 26px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:22px;
+}
 .match-box summary{font-family:var(--serif);font-size:1.4rem}
 .pilot{padding:90px 0}
 .pilot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:38px}
-.stat{padding:25px 16px;background:var(--cream);border-radius:18px;text-align:center;border:1px solid rgba(201,168,106,.22)}
+.stat{
+  padding:25px 16px;
+  background:var(--cream);
+  border-radius:18px;
+  text-align:center;
+  border:1px solid rgba(201,168,106,.22);
+}
 .stat strong{display:block;color:var(--deep);font-family:var(--serif);font-size:1.5rem}
-.price-note{max-width:790px;margin:30px auto 0;padding:20px 22px;border-left:4px solid var(--gold);background:#fff8e9}
+.price-note{
+  max-width:790px;
+  margin:30px auto 0;
+  padding:20px 22px;
+  border-left:4px solid var(--gold);
+  background:#fff8e9;
+}
 
-/* Attachment tools */
+/* Attachment education */
 .attachment-learning{padding:90px 0;background:linear-gradient(180deg,#fffdf9,#f0f7f5)}
-.attachment-note{max-width:850px;margin:24px auto 36px;padding:25px 30px;background:#fff;border-left:4px solid var(--gold);border-radius:0 18px 18px 0}
+.attachment-note{
+  max-width:850px;
+  margin:24px auto 36px;
+  padding:25px 30px;
+  background:#fff;
+  border-left:4px solid var(--gold);
+  border-radius:0 18px 18px 0;
+}
 .attachment-note p{margin:0 0 12px}
 .attachment-note p:last-child{margin-bottom:0}
-.attachment-feature{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;margin:36px 0 55px}
-.attachment-feature h3,.attachment-subtitle{font-family:var(--serif);color:var(--deep);font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.25}
+.attachment-feature{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:36px;
+  align-items:center;
+  margin:36px 0 55px;
+}
+.attachment-feature h3,.attachment-subtitle{
+  font-family:var(--serif);
+  color:var(--deep);
+  font-size:clamp(1.5rem,3vw,2.1rem);
+  line-height:1.25;
+}
 figure.attachment-art{margin:0}
 .attachment-art>a{display:block}
-.attachment-art img{display:block;width:100%;height:auto;max-width:100%;max-height:none;border-radius:18px;box-shadow:0 15px 40px rgba(8,63,66,.1);cursor:zoom-in}
+.attachment-art img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:100%;
+  max-height:none;
+  border-radius:18px;
+  box-shadow:0 15px 40px rgba(8,63,66,.1);
+  cursor:zoom-in;
+}
 .attachment-feature .attachment-art{width:100%;max-width:340px;margin:0 auto}
 figcaption{margin-top:12px;font-size:.87rem;line-height:1.5;color:var(--text)}
 .attachment-card figcaption{text-align:center}
-.attachment-audio{background:#e8f4f2;border:1px solid #cce5e1;border-radius:18px;padding:23px;margin:25px 0}
+.attachment-audio{
+  background:#e8f4f2;
+  border:1px solid #cce5e1;
+  border-radius:18px;
+  padding:23px;
+  margin:25px 0;
+}
 .attachment-audio h4{margin:0 0 8px;color:var(--deep);font-size:1.05rem}
 .attachment-audio audio{width:100%;margin:10px 0 4px}
 .attachment-audio small{display:block;font-size:.85rem;color:#526766}
 .attachment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:30px 0 48px}
-.attachment-card{border:1px solid var(--line);border-radius:20px;padding:24px;background:#fff;min-width:0}
+.attachment-card{
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:24px;
+  background:#fff;
+  min-width:0;
+}
 .attachment-card h3{font-family:var(--serif);color:var(--deep);font-size:1.65rem;margin:0 0 10px}
 .attachment-card p{margin:0 0 14px}
-.attachment-card details{margin:10px 0;padding:12px 15px;border:1px solid #e0e9e6;background:#f7faf8;border-radius:12px}
+.attachment-card details{
+  margin:10px 0;
+  padding:12px 15px;
+  border:1px solid #e0e9e6;
+  background:#f7faf8;
+  border-radius:12px;
+}
 .attachment-card details p{margin:10px 0 0;font-size:.94rem}
 .attachment-card .attachment-art{width:100%;max-width:310px;margin:16px auto 0}
 .attachment-affirmation{padding:32px;background:var(--deep);color:#fff;border-radius:22px;margin:40px 0}
-.attachment-affirmation h3{font-family:var(--serif);font-size:2rem;font-weight:500;margin:0 0 12px;color:#fff}
+.attachment-affirmation h3{
+  font-family:var(--serif);
+  font-size:2rem;
+  font-weight:500;
+  margin:0 0 12px;
+  color:#fff;
+}
 .attachment-affirmation p{margin:0 0 12px}
 .attachment-affirmation p:last-child{margin:0}
 .attachment-affirmation strong{color:#f1dcae}
 .attachment-bridge{margin-top:28px;padding:25px;background:#fff;border:1px solid var(--line);border-radius:18px}
 
-/* Interactive reflection */
-.aq{max-width:850px;margin:38px auto 52px;padding:clamp(22px,4vw,38px);background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 16px 45px rgba(8,63,66,.07)}
-.aq h3{font-family:var(--serif);color:var(--deep);font-size:clamp(1.7rem,3vw,2.25rem);margin:5px 0 10px}
-.aq p{margin:8px 0 15px}
-.aq .aq-small{font-size:.86rem;color:var(--text)}
-.aq-progress{height:7px;border-radius:20px;background:#e5eeec;overflow:hidden;margin:20px 0 25px}
-.aq-progress span{display:block;height:100%;background:var(--teal);width:0;transition:width .25s}
-.aq-step{font-size:.79rem;color:var(--teal);font-weight:700;letter-spacing:.07em;text-transform:uppercase}
-.aq-choices{display:grid;gap:11px;margin:22px 0}
-.aq-choice{width:100%;border:1px solid #d8e5e2;background:#f8fbfa;text-align:left;color:var(--ink);padding:15px 17px;border-radius:13px;font:inherit;line-height:1.45;cursor:pointer;transition:.18s}
-.aq-choice:hover,.aq-choice:focus-visible{border-color:var(--teal);background:#e9f5f2;outline-offset:2px}
-.aq-choice[aria-pressed=true]{background:#e1f2ee;border:2px solid var(--teal);padding:14px 16px;font-weight:600}
-.aq-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.aq-btn{border:0;background:var(--teal);color:#fff;padding:12px 22px;border-radius:99px;font:inherit;font-weight:700;cursor:pointer}
-.aq-btn:disabled{opacity:.4;cursor:not-allowed}
-.aq-back{border:1px solid var(--line);background:#fff;color:var(--deep)}
-.aq-result{padding:23px;border-radius:16px;background:#eef7f4;border-left:4px solid var(--gold)}
-.aq-result h4{font-family:var(--serif);color:var(--deep);font-size:1.7rem;margin:0 0 10px}
-.aq-result p{margin:10px 0}
-.aq-result a{color:var(--teal);font-weight:700}
-.aq-noscript{padding:14px;background:#fff4df}
+/* Attachment quiz */
+#attachment-quiz{
+  max-width:900px;
+  margin:48px auto;
+  padding:clamp(22px,5vw,48px);
+  background:linear-gradient(135deg,#f5e3df,#fff6ef);
+  border:2px solid var(--rose);
+  border-radius:26px;
+  box-shadow:0 20px 50px rgba(162,85,97,.14);
+  color:var(--ink);
+}
+#attachment-quiz .quiz-eyebrow{
+  margin-bottom:12px;
+  color:#7e3543;
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+#attachment-quiz h3{
+  margin:0 0 18px;
+  color:var(--deep);
+  font-family:var(--serif);
+  font-size:clamp(2.2rem,5vw,3.4rem);
+  font-weight:500;
+  line-height:1.15;
+}
+#attachment-quiz p{margin:12px 0;line-height:1.75}
+#attachment-quiz label{display:block;margin:24px 0 8px;color:var(--deep);font-weight:700}
+#attachment-quiz select{
+  width:100%;
+  padding:13px 15px;
+  border:1px solid var(--rose);
+  border-radius:12px;
+  background:var(--paper);
+  color:var(--ink);
+  font:inherit;
+}
+#attachment-quiz .quiz-small{color:var(--text);font-size:.87rem}
+#attachment-quiz .quiz-live{
+  margin-top:26px;
+  padding:clamp(18px,3vw,28px);
+  background:var(--paper);
+  border-radius:18px;
+}
+#attachment-quiz .quiz-step{
+  color:var(--teal);
+  font-size:.8rem;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+#attachment-quiz .quiz-progress{height:7px;margin:18px 0 24px;overflow:hidden;border-radius:20px;background:#e5eeec}
+#attachment-quiz .quiz-progress span{display:block;height:100%;background:var(--teal);transition:width .2s ease}
+#attachment-quiz h4{margin:0 0 18px;color:var(--deep);font-size:1.2rem;line-height:1.5}
+#attachment-quiz .quiz-choices{display:grid;gap:11px;margin:22px 0}
+#attachment-quiz .quiz-choice{
+  width:100%;
+  padding:15px 17px;
+  border:2px solid #d8e5e2;
+  border-radius:13px;
+  background:#f8fbfa;
+  color:var(--ink);
+  font:inherit;
+  line-height:1.5;
+  text-align:left;
+  cursor:pointer;
+}
+#attachment-quiz .quiz-choice:hover{border-color:var(--teal);background:#e9f5f2}
+#attachment-quiz .quiz-choice[aria-pressed="true"]{border-color:var(--teal);background:#e1f2ee;font-weight:700}
+#attachment-quiz .quiz-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:22px}
+#attachment-quiz .quiz-button{
+  min-height:46px;
+  padding:12px 22px;
+  border:1px solid var(--teal);
+  border-radius:999px;
+  background:var(--teal);
+  color:#fff;
+  font:inherit;
+  font-weight:700;
+  cursor:pointer;
+}
+#attachment-quiz .quiz-button-back{background:#fff;color:var(--deep)}
+#attachment-quiz .quiz-button:disabled{opacity:.45;cursor:not-allowed}
+#attachment-quiz :focus-visible{outline:3px solid var(--rose);outline-offset:4px}
+#attachment-quiz .quiz-result{
+  padding:clamp(18px,3vw,26px);
+  border-left:4px solid var(--gold);
+  border-radius:16px;
+  background:#eef7f4;
+}
+#attachment-quiz .quiz-result h4{
+  margin:10px 0 18px;
+  font-family:var(--serif);
+  font-size:clamp(2rem,4vw,2.8rem);
+  font-weight:500;
+  line-height:1.2;
+}
+#attachment-quiz .quiz-result h5{margin:24px 0 10px;color:var(--deep);font-size:1rem}
+#attachment-quiz .quiz-secondary{margin:20px 0;padding:16px 18px;border-radius:12px;background:var(--paper)}
+#attachment-quiz a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+#attachment-quiz .quiz-explainer{max-width:none;margin:24px 0 0;padding:18px;border:1px solid #dbc8bf;border-radius:14px;background:var(--paper)}
+#attachment-quiz .quiz-explainer summary{color:var(--deep);font-weight:700;cursor:pointer}
 
 /* Self-soothing */
 .soothing-section{padding:90px 0;background:var(--cream)}
 .soothing-layout{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:start;margin-top:32px}
 .soothing-hint{font-size:.88rem}
 .soothing-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:25px 0;align-items:start}
-.soothing-tip{width:100%;margin:0;padding:16px;border:1px solid #dbc8bf;background:#fffdf9;border-radius:14px}
+.soothing-tip{width:100%;margin:0;padding:16px;border:1px solid #dbc8bf;background:var(--paper);border-radius:14px}
 .soothing-tip summary{font-size:.95rem}
 .soothing-tip p{font-size:.91rem;font-weight:400;line-height:1.65}
 .soothing-tip[open]{background:var(--blush)}
 .soothing-visual{min-width:0;margin:0}
-.soothing-visual img{display:block;width:100%;height:auto;max-width:440px;margin:auto;border-radius:160px 160px 20px 20px;box-shadow:0 15px 40px rgba(8,63,66,.12)}
-.soothing-visual figcaption{text-align:center;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--teal);margin:20px auto;max-width:350px}
+.soothing-visual img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:440px;
+  margin:auto;
+  border-radius:160px 160px 20px 20px;
+  box-shadow:0 15px 40px rgba(8,63,66,.12);
+}
+.soothing-visual figcaption{
+  text-align:center;
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:1.15rem;
+  color:var(--teal);
+  margin:20px auto;
+  max-width:350px;
+}
 
 /* FAQ and registration */
 .faq{padding:90px 0;background:var(--cream)}
-.interest{padding:90px 0;background:radial-gradient(circle at 10% 10%,rgba(49,159,162,.18),transparent 28%),var(--deep);color:#fff}
+.interest{
+  padding:90px 0;
+  background:radial-gradient(circle at 10% 10%,rgba(49,159,162,.18),transparent 28%),var(--deep);
+  color:#fff;
+}
 .interest .eyebrow{color:#9ed6d8}
 .interest .section-title{color:#fff}
 .interest .section-intro{color:rgba(255,255,255,.85)}
 form{max-width:760px;margin-top:34px;display:grid;gap:15px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
 label{display:block;margin-bottom:6px;font-weight:600}
-input,select,textarea{width:100%;padding:13px 14px;border:1px solid rgba(255,255,255,.22);border-radius:10px;background:#fff;color:var(--ink);font:inherit}
+input,select,textarea{
+  width:100%;
+  padding:13px 14px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:10px;
+  background:#fff;
+  color:var(--ink);
+  font:inherit;
+}
 textarea{min-height:110px;resize:vertical}
-.submit-btn{width:max-content;border:0;padding:13px 22px;border-radius:999px;background:var(--gold);color:var(--deep);font:inherit;font-weight:700;cursor:pointer}
+.submit-btn{
+  width:max-content;
+  border:0;
+  padding:13px 22px;
+  border-radius:999px;
+  background:var(--gold);
+  color:var(--deep);
+  font:inherit;
+  font-weight:700;
+  cursor:pointer;
+}
 .form-note{color:rgba(255,255,255,.85);font-size:.83rem}
 
 /* Footer */
@@ -260,7 +764,19 @@ textarea{min-height:110px;resize:vertical}
   .main-nav.open{display:block}
   .main-nav>ul{flex-direction:column;gap:14px}
   .nav-parent:after{display:none}
-  .nav-submenu{position:static!important;display:flex!important;transform:none;box-shadow:none;border:0;border-left:2px solid #e8f6f6;border-radius:0;background:transparent;margin:4px auto 0!important;width:min(100%,330px);padding:3px 0 3px 18px!important}
+  .nav-submenu{
+    position:static!important;
+    display:flex!important;
+    transform:none;
+    box-shadow:none;
+    border:0;
+    border-left:2px solid #e8f6f6;
+    border-radius:0;
+    background:transparent;
+    margin:4px auto 0!important;
+    width:min(100%,330px);
+    padding:3px 0 3px 18px!important;
+  }
   .nav-submenu a{white-space:normal}
   .hero{padding:65px 0}
   .hero h1{font-size:clamp(3.1rem,15vw,5rem)}
@@ -286,8 +802,9 @@ textarea{min-height:110px;resize:vertical}
   .attachment-card{padding:18px}
   .attachment-note{padding:20px}
   .attachment-affirmation{padding:24px}
-  .aq{margin:25px auto 35px}
-  .aq-choice{font-size:.95rem}
+  #attachment-quiz{padding:22px 16px}
+  #attachment-quiz .quiz-live{padding:18px 14px}
+  #attachment-quiz .quiz-choice{font-size:.95rem}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -306,7 +823,13 @@ textarea{min-height:110px;resize:vertical}
       <img src="MKT-logo-3.png" alt="Marsha Kerr Talley - Live Inspired">
     </a>
 
-    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-navigation">☰</button>
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="main-navigation"
+    >☰</button>
 
     <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
       <ul>
@@ -343,13 +866,15 @@ textarea{min-height:110px;resize:vertical}
     <h1 id="page-heading">Six Weeks to<br><em>Date Differently.</em></h1>
     <p class="opening">A little chemistry. Real conversation. Room for something to grow.</p>
     <p class="section-intro" style="margin:22px auto 0;">
-      An intentional six-week dating experience where singles have time to meet, reconnect, reflect and discover what happens when we stop making decisions about love from chemistry, fear, habit or a five-minute first impression.
+      An intentional six-week dating experience where singles have time to meet,
+      reconnect, reflect and discover what happens when we stop making decisions
+      about love from chemistry, fear, habit or a five-minute first impression.
     </p>
     <p class="hero-tag">Not six weeks to find love. Six weeks to date differently.</p>
     <div class="hero-buttons">
       <a class="btn btn-primary" href="#six-weeks">See the Six Weeks</a>
       <a class="btn btn-secondary" href="#interest">Register Interest</a>
-      <a class="btn btn-secondary" href="#attachment-styles">Explore Attachment Styles</a>
+      <a class="btn btn-quiz" href="#attachment-quiz">Take the Attachment Style Quiz</a>
     </div>
   </div>
 </section>
@@ -378,7 +903,7 @@ textarea{min-height:110px;resize:vertical}
         <li><a href="#attachment-styles">Understanding Your Attachment Style</a></li>
         <li><a href="#attachment-audio">Attachment Styles Audio Introduction</a></li>
         <li><a href="#attachment-infographic">The 4 Attachment Styles Infographic</a></li>
-        <li><a href="#attachment-quiz">How Do You Show Up in Love?</a></li>
+        <li><a href="#attachment-quiz">Take the Attachment Style Quiz</a></li>
         <li><a href="#four-attachment-styles">Four Common Attachment Styles</a></li>
         <li><a href="#secure-attachment">Secure Attachment</a></li>
         <li><a href="#anxious-attachment">Anxious Attachment</a></li>
@@ -419,7 +944,6 @@ textarea{min-height:110px;resize:vertical}
       <h2 class="section-title" id="how-heading">Meet someone new.<br>Discover something about yourself.</h2>
       <p class="section-intro">A shared laugh. A conversation that surprises you. The chance to see someone again—and discover what grows when you give connection a little time.</p>
     </div>
-
     <div class="how-grid">
       <div class="how-card">
         <h3>Feel the spark</h3>
@@ -444,7 +968,6 @@ textarea{min-height:110px;resize:vertical}
     <div class="eyebrow">Each Session</div>
     <h2 class="section-title" id="session-heading">A little flirting.<br>A little courage. A real conversation.</h2>
     <p class="section-intro">Come for the possibility of connection. Make room for laughter, thoughtful conversation and those small moments that leave you wanting to know more.</p>
-
     <div class="evening-grid">
       <div class="evening-item">
         <strong>Break the ice</strong>
@@ -656,7 +1179,6 @@ textarea{min-height:110px;resize:vertical}
       <h2 class="section-title" id="privacy-heading">No public choosing. No public rejection.</h2>
       <p class="section-intro">Your interest stays private. Contact details are shared only with consent. You are free to explore a connection—and free to change your mind.</p>
     </div>
-
     <details class="match-box" id="privacy-details">
       <summary>How private connections work</summary>
       <p>As the programme progresses, participants may privately indicate who they would like additional time with. Individual selections are not publicly revealed.</p>
@@ -699,7 +1221,8 @@ textarea{min-height:110px;resize:vertical}
     <div class="attachment-note">
       <p>Start with <a href="#attachment-audio">my audio introduction below</a>. I share how early experiences—and the relationships we have throughout life—can influence the way we connect with others.</p>
       <p>Remember, these are simply tools to help you understand yourself better. They are not the be-all and end-all. Attachment patterns are not just about ego or insecurity, and they are not personality flaws.</p>
-      <p><strong>Take a moment to review the graphic. Can you identify which attachment style best describes you?</strong></p>
+      <p><strong>Take a moment to review the graphic. Which patterns feel familiar—and do they change depending on the person or situation?</strong></p>
+      <p><a class="btn btn-quiz" href="#attachment-quiz">Find Your Best-Fit Attachment Pattern</a></p>
     </div>
 
     <div class="attachment-feature">
@@ -732,18 +1255,44 @@ textarea{min-height:110px;resize:vertical}
       </figure>
     </div>
 
-    <div class="aq" id="attachment-quiz" aria-labelledby="aq-title">
-      <div class="eyebrow">A Two-Minute Reflection</div>
+    <!-- ATTACHMENT QUIZ -->
+    <section id="attachment-quiz" aria-labelledby="aq-title">
+      <div class="quiz-eyebrow">Attachment Style Quiz · 10 Questions</div>
       <h3 id="aq-title">How Do You Show Up in Love?</h3>
-      <p>Choose the response that sounds most like you. There are no right or wrong answers.</p>
-      <div id="aq-live" aria-live="polite"></div>
-      <noscript><p class="aq-noscript">Enable JavaScript to try this interactive reflection.</p></noscript>
-      <p class="aq-small">A self-reflection activity, not a diagnosis or a scientifically validated attachment assessment. Your patterns can vary across relationships.</p>
-    </div>
+
+      <p><strong>Find the attachment pattern that best fits your responses in this relationship.</strong></p>
+      <p>You might feel secure with one person and more anxious or withdrawn with another. Keep one person or relationship context in mind throughout this quiz.</p>
+
+      <label for="aq-context">What are you reflecting on?</label>
+      <select id="aq-context" aria-describedby="aq-context-help">
+        <option value="current">A current romantic connection</option>
+        <option value="past">A past romantic connection</option>
+        <option value="general">My romantic relationships in general</option>
+      </select>
+
+      <p class="quiz-small" id="aq-context-help">Changing this selection restarts the quiz. No names needed. Your answers stay in this page and are not sent with the registration form.</p>
+      <p>Choose the answer closest to how you usually respond, even if it is not an exact match. Answer for what you actually do, rather than what you think you should do.</p>
+
+      <div id="aq-live" class="quiz-live" aria-live="polite" aria-atomic="false"></div>
+      <noscript><p>Please enable JavaScript to use this quiz.</p></noscript>
+
+      <p class="quiz-small">This is an informal reflection, not a diagnosis or a scientifically validated attachment assessment. “Best fit” means the closest match among the four patterns represented by these questions.</p>
+
+      <details class="quiz-explainer">
+        <summary>Can I be secure and still have anxious or avoidant responses?</summary>
+        <p>Yes. Being secure does not mean you never feel anxious or want to pull away. Your result identifies the pattern that best fits your answers and acknowledges other tendencies when they appear repeatedly.</p>
+        <p>“Secure-anxious” and “secure-avoidant” are not additional standard attachment categories. “Generally secure, with some anxious or avoidant responses” is a clearer description.</p>
+        <p>Your responses may differ with another person or in another situation. This quiz cannot establish why a pattern occurs, what another person’s attachment style is, or who caused a relationship difficulty.</p>
+        <p><a href="https://labs.psychology.illinois.edu/~rcfraley/attachment" target="_blank" rel="noopener">Read about adult attachment research</a></p>
+      </details>
+
+      <p class="quiz-small"><a href="#attachment-quiz">Direct link to this quiz</a></p>
+    </section>
+    <!-- END ATTACHMENT QUIZ -->
 
     <div class="center" id="four-attachment-styles">
       <h3 class="attachment-subtitle">Four Common Attachment Styles</h3>
-      <p class="section-intro">These are common patterns, not fixed identities or diagnoses. You may recognise elements of more than one.</p>
+      <p class="section-intro">These are common patterns, not fixed identities or diagnoses. You may recognise elements of more than one. Being secure does not mean you never feel anxious or want to pull away.</p>
     </div>
 
     <div class="attachment-grid">
@@ -906,7 +1455,6 @@ textarea{min-height:110px;resize:vertical}
         </div>
 
         <p>Self-soothing doesn't mean pretending everything is fine or ignoring genuine concerns. It means giving yourself space to settle your emotions so you can decide what to communicate, what to accept and what needs to change.</p>
-
         <div class="attachment-bridge">
           <strong>Remember:</strong> You can work on your emotional responses and still expect mutual effort, respect and consistency in your relationships.
         </div>
@@ -931,27 +1479,22 @@ textarea{min-height:110px;resize:vertical}
       <summary>Is this therapy?</summary>
       <p>No. Six Weeks to Date Differently is a facilitated personal-development and social dating experience. It is not psychotherapy, counselling or mental-health treatment.</p>
     </details>
-
     <details id="faq-guaranteed-partner">
       <summary>Am I guaranteed to meet a partner?</summary>
       <p>No. The programme creates structured opportunities to meet and get to know other singles, but attraction, compatibility and relationships cannot be guaranteed.</p>
     </details>
-
     <details id="faq-like-someone-early">
       <summary>What if I like someone early?</summary>
       <p>That's okay. Participants are encouraged to remain curious while the programme progresses. Mutual interest may lead to additional conversation time without turning the experience into a public competition.</p>
     </details>
-
     <details id="faq-no-romantic-match">
       <summary>What if I don't make a romantic match?</summary>
       <p>A romantic match is not the only outcome. The programme is also an opportunity to understand more about how you date, communicate, choose and respond to connection.</p>
     </details>
-
     <details id="faq-missing-a-week">
       <summary>Can I miss a week?</summary>
       <p>Because the same cohort progresses together, consistent attendance is important. Participants should plan to attend all six sessions wherever possible.</p>
     </details>
-
     <details id="faq-who-can-participate">
       <summary>Who can participate?</summary>
       <p>Eligibility, age range, dating preferences and cohort structure will be confirmed before registration opens.</p>
@@ -967,8 +1510,8 @@ textarea{min-height:110px;resize:vertical}
 
     <!--
       Registration submissions go to info@marshakerrtalley.com through FormSubmit.
-      If required, activate the recipient using FormSubmit's confirmation email.
-      Verify inbox delivery with a test submission from the published page.
+      Activate the recipient address if FormSubmit requests confirmation.
+      Actual inbox delivery should be checked from the published page.
     -->
     <form id="registration-form" action="https://formsubmit.co/info@marshakerrtalley.com" method="POST" accept-charset="UTF-8">
       <input type="hidden" name="_subject" value="Six Weeks to Date Differently - New Registration Interest">
@@ -1041,37 +1584,37 @@ textarea{min-height:110px;resize:vertical}
 </footer>
 
 <script>
-document.getElementById('year').textContent = new Date().getFullYear();
+"use strict";
+
+/* Copyright */
+document.getElementById("year").textContent = new Date().getFullYear();
 
 /* Mobile navigation */
-const toggle = document.querySelector('.nav-toggle');
-const nav = document.querySelector('.main-nav');
+const navToggle = document.querySelector(".nav-toggle");
+const mainNav = document.querySelector(".main-nav");
 
-toggle.addEventListener('click', () => {
-  const isOpen = nav.classList.toggle('open');
-  toggle.setAttribute('aria-expanded', String(isOpen));
-  toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+navToggle.addEventListener("click", function () {
+  const isOpen = mainNav.classList.toggle("open");
+  navToggle.setAttribute("aria-expanded", String(isOpen));
+  navToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
 });
 
-/* Open collapsed content when a direct section link is followed. */
+/* Open collapsed content when following section links. */
 function revealTarget(target) {
   if (!target) return;
 
-  if (target.matches('details')) {
-    target.open = true;
-  }
+  if (target.matches("details")) target.open = true;
 
   let parent = target.parentElement;
   while (parent) {
-    if (parent.matches('details')) {
-      parent.open = true;
-    }
+    if (parent.matches("details")) parent.open = true;
     parent = parent.parentElement;
   }
 }
 
 function targetFromHash(hash) {
-  if (!hash || hash === '#') return null;
+  if (!hash || hash === "#") return null;
+
   try {
     return document.getElementById(decodeURIComponent(hash.slice(1)));
   } catch {
@@ -1084,134 +1627,210 @@ function openLinkedDetails() {
   if (!target) return;
 
   const wasHidden =
-    (target.matches('details') && !target.open) ||
-    Boolean(target.closest('details:not([open])'));
+    (target.matches("details") && !target.open) ||
+    Boolean(target.closest("details:not([open])"));
 
   revealTarget(target);
 
   if (wasHidden) {
-    requestAnimationFrame(() => {
-      target.scrollIntoView({block:'start', behavior:'auto'});
+    requestAnimationFrame(function () {
+      target.scrollIntoView({block:"start", behavior:"auto"});
     });
   }
 }
 
-document.addEventListener('click', event => {
+document.addEventListener("click", function (event) {
   if (!(event.target instanceof Element)) return;
+
   const link = event.target.closest('a[href^="#"]');
   if (!link) return;
-  revealTarget(targetFromHash(link.getAttribute('href')));
+
+  revealTarget(targetFromHash(link.getAttribute("href")));
 });
 
-window.addEventListener('hashchange', openLinkedDetails);
+window.addEventListener("hashchange", openLinkedDetails);
 openLinkedDetails();
 
-/* The registration form uses its normal POST submission to FormSubmit. */
+/* Attachment quiz: one implementation only. */
+(function () {
+  const section = document.getElementById("attachment-quiz");
+  const root = document.getElementById("aq-live");
+  const contextSelect = document.getElementById("aq-context");
 
-/* Interactive attachment reflection */
-(function() {
-  const root = document.getElementById('aq-live');
-  if (!root) return;
+  if (!section || !root || !contextSelect) return;
+  if (section.dataset.quizReady === "true") return;
 
+  section.dataset.quizReady = "true";
+
+  /*
+    Informal answer mapping:
+    0 = Secure
+    1 = Anxious
+    2 = Avoidant
+    3 = Fearful-Avoidant
+
+    This is not a validated psychological scale.
+  */
   const questions = [
     [
-      'When someone I like takes longer than usual to reply, I usually…',
+      "When someone I like takes longer than usual to reply, I usually…",
       [
-        'Give them time without assuming the worst.',
-        'Start wondering whether their feelings have changed.',
-        'Feel relieved to have some space.',
-        'Feel worried, then want to pull away too.'
+        "Give them time without immediately assuming something is wrong.",
+        "Worry that their interest has changed and look for reassurance.",
+        "Use the distance to detach and become less inclined to reconnect.",
+        "Want reassurance, but also feel like pulling away before I get hurt."
       ]
     ],
     [
-      'When a relationship starts getting emotionally close, I…',
+      "When a relationship becomes more emotionally close, I tend to…",
       [
-        'Enjoy the closeness while keeping my own interests.',
-        'Want frequent reassurance that we are okay.',
-        'Feel uncomfortable and need more distance.',
-        'Want closeness but worry about getting hurt.'
+        "Enjoy the closeness while keeping my own interests and friendships.",
+        "Want more reassurance that the closeness means as much to them.",
+        "Feel uncomfortable with the growing dependence and create distance.",
+        "Want the closeness, then feel exposed and uncertain about trusting it."
       ]
     ],
     [
-      'During a disagreement, I am more likely to…',
+      "During a disagreement, I am most likely to…",
       [
-        'Talk it through, even if we need a break first.',
-        'Want to resolve it immediately so I can feel okay.',
-        'Shut down or avoid the conversation.',
-        'Alternate between seeking reassurance and withdrawing.'
+        "Discuss the issue, or agree on a break and return to the conversation.",
+        "Seek an immediate resolution because the tension feels threatening.",
+        "Shut down or avoid returning to the difficult conversation.",
+        "Push for connection, then withdraw when I feel overwhelmed."
       ]
     ],
     [
-      'When I need support, I tend to…',
+      "When I need emotional support, I usually…",
       [
-        'Ask for it and accept that others have limits.',
-        'Worry that asking might push someone away.',
-        'Handle it myself rather than depend on someone.',
-        'Want support but struggle to trust it when offered.'
+        "Ask directly while recognising that the other person has limits.",
+        "Worry I am too much and need reassurance that they still care.",
+        "Keep the problem to myself because depending on someone feels uncomfortable.",
+        "Want support but struggle to trust or accept it when it arrives."
       ]
     ],
     [
-      'If a partner asks for some alone time, I…',
+      "If the person I am dating asks for time alone, I tend to…",
       [
-        'Respect it and stay connected in other ways.',
-        'Feel unsettled and need to know we are still okay.',
-        'Welcome the distance and may not check back in.',
-        'Agree, but worry they may be leaving me.'
+        "Respect the space and stay comfortable with an agreed way to reconnect.",
+        "Wonder whether they are losing interest and seek reassurance.",
+        "Welcome the distance and avoid making plans to reconnect.",
+        "Feel afraid of losing them, then pull away to protect myself."
       ]
     ],
     [
-      'When someone treats me with steady affection, I…',
+      "When someone consistently shows affection and follows through, I…",
       [
-        'Generally feel comfortable receiving it.',
-        'Enjoy it but worry it might suddenly disappear.',
-        'Sometimes feel crowded by the attention.',
-        'Want to trust it but find myself questioning it.'
+        "Generally feel comfortable trusting and receiving their care.",
+        "Enjoy it but keep looking for reassurance that it will continue.",
+        "Sometimes feel crowded and reduce how much I engage.",
+        "Want to believe it, but question it or pull back when it feels vulnerable."
       ]
     ],
     [
-      'When I feel uncertain about a relationship, I…',
+      "When I need clarity about where a relationship is going, I usually…",
       [
-        'Look at the pattern and communicate directly.',
-        'Look for signs that I am being rejected.',
-        'Detach or tell myself I do not need anyone.',
-        'Move between reaching out and shutting down.'
+        "Ask directly and consider whether their answer works for me.",
+        "Search for signs of rejection and repeatedly seek reassurance.",
+        "Avoid the conversation and keep the relationship emotionally undefined.",
+        "Want a clear commitment but feel an urge to retreat when it becomes possible."
       ]
     ],
     [
-      'The relationship skill I most want to practise is…',
+      "When my needs differ from the other person’s, I tend to…",
       [
-        'Continuing honest communication and healthy boundaries.',
-        'Calming myself before seeking reassurance.',
-        'Staying emotionally present while asking for space.',
-        'Building trust without pushing people away.'
+        "Express what I need and listen to whether we can find a workable agreement.",
+        "Downplay my needs because I fear that expressing them could make them leave.",
+        "Keep my needs private and create distance instead of discussing them.",
+        "Express my needs intensely, then regret feeling exposed and pull back."
+      ]
+    ],
+    [
+      "After a disagreement has been addressed, I am most likely to…",
+      [
+        "Reconnect while watching whether our agreed changes happen.",
+        "Keep needing reassurance that the relationship is still okay.",
+        "Stay emotionally distant even when there is an opportunity to reconnect.",
+        "Want to reconnect but alternate between reaching out and protecting myself."
+      ]
+    ],
+    [
+      "When the person I am dating wants to know more about my feelings, I…",
+      [
+        "Share at a comfortable pace and explain when I need time.",
+        "Share while closely watching for signs that they may reject me.",
+        "Change the subject or minimise my feelings to avoid vulnerability.",
+        "Want to open up, then feel exposed and pull back after sharing."
       ]
     ]
   ];
 
-  const labels = ['Secure', 'Anxious', 'Avoidant', 'Fearful-Avoidant'];
-
-  const summaries = [
-    'You may feel fairly comfortable with closeness and independence. Keep practising clear communication and healthy boundaries.',
-    'Uncertainty may bring a strong need for reassurance. Try grounding yourself, then communicate what you need.',
-    'You may protect your independence by creating distance. Try naming your need for space and agreeing when to reconnect.',
-    'You may want connection while also fearing it. Practise slowing down, naming your feelings and building trust gradually.'
+  const patterns = [
+    {
+      name:"Secure attachment",
+      description:
+        "Comfort with closeness and independence, direct communication and respect for boundaries. You can value a relationship while still staying connected to yourself.",
+      secondary:
+        "You also selected secure responses, including comfort with connection, clearer communication or respect for independence.",
+      practice:
+        "Keep expressing your needs, listening to the other person and checking whether their actions match the relationship you want.",
+      anchor:"#secure-attachment",
+      tie:
+        "I am usually comfortable with closeness and independence, and I can discuss what I need."
+    },
+    {
+      name:"Anxious attachment",
+      description:
+        "Sensitivity to uncertainty, worry about rejection and a strong wish for reassurance or closeness.",
+      secondary:
+        "Some answers also reflect anxious tendencies: uncertainty may bring worry about rejection or a stronger need for reassurance.",
+      practice:
+        "Separate what you know from what you fear, then ask clearly for the consistency or clarity you need. Consider how the other person responds to that request.",
+      anchor:"#anxious-attachment",
+      tie:
+        "I usually move towards the person for reassurance when I am unsure where I stand."
+    },
+    {
+      name:"Avoidant attachment",
+      description:
+        "Protecting your independence by creating emotional distance, especially when closeness, dependence or vulnerability feels uncomfortable.",
+      secondary:
+        "Some answers also reflect avoidant tendencies: you may create distance or keep feelings private when closeness feels uncomfortable.",
+      practice:
+        "Try naming your need for space while being clear about when you will reconnect. Consider what you can communicate instead of leaving the other person to guess.",
+      anchor:"#avoidant-attachment",
+      tie:
+        "I usually create distance or rely on myself when emotional closeness feels demanding."
+    },
+    {
+      name:"Fearful-avoidant attachment",
+      description:
+        "Both wanting closeness and feeling wary of it. You may reach for connection and then pull back when being vulnerable feels uncomfortable or risky.",
+      secondary:
+        "Some answers also reflect fearful-avoidant tendencies: you may want connection while also feeling an urge to protect yourself by pulling away.",
+      practice:
+        "Give yourself time to settle before moving towards or away from the person. Try explaining both parts of your experience: the wish for connection and the need to feel safe.",
+      anchor:"#fearful-avoidant-attachment",
+      tie:
+        "I often alternate between wanting reassurance and pulling away because closeness itself feels risky."
+    }
   ];
 
   const answers = Array(questions.length).fill(null);
   let index = 0;
+  let tieChoice = null;
 
-  function node(tag, cls, txt) {
-    const el = document.createElement(tag);
-    if (cls) el.className = cls;
-    if (txt !== undefined) el.textContent = txt;
-    return el;
+  function element(tag, className, text) {
+    const item = document.createElement(tag);
+    if (className) item.className = className;
+    if (text !== undefined) item.textContent = text;
+    return item;
   }
 
-  function button(text, cls, action) {
-    const b = node('button', cls, text);
-    b.type = 'button';
-    b.addEventListener('click', action);
-    return b;
+  function button(text, className, action) {
+    const item = element("button", className, text);
+    item.type = "button";
+    item.addEventListener("click", action);
+    return item;
   }
 
   function focusHeading(heading) {
@@ -1219,180 +1838,449 @@ openLinkedDetails();
     heading.focus({preventScroll:true});
   }
 
-  function show(moveFocus = false) {
+  function reset() {
+    answers.fill(null);
+    index = 0;
+    tieChoice = null;
+    showQuestion(false);
+  }
+
+  contextSelect.addEventListener("change", reset);
+
+  function evaluate() {
+    const scores = [0, 0, 0, 0];
+
+    answers.forEach(function (answer) {
+      if (Number.isInteger(answer) && answer >= 0 && answer < 4) {
+        scores[answer]++;
+      }
+    });
+
+    const highest = Math.max.apply(null, scores);
+
+    const leaders = scores
+      .map(function (score, patternIndex) {
+        return score === highest ? patternIndex : -1;
+      })
+      .filter(function (patternIndex) {
+        return patternIndex >= 0;
+      });
+
+    const primary = leaders.length === 1
+      ? leaders[0]
+      : leaders.includes(tieChoice) ? tieChoice : null;
+
+    /*
+      Secondary tendencies are mentioned when they occur
+      in at least two answers. This is a presentation rule,
+      not a validated clinical threshold.
+    */
+    const others = scores
+      .map(function (score, patternIndex) {
+        return {score:score, index:patternIndex};
+      })
+      .filter(function (item) {
+        return item.index !== primary && item.score >= 2;
+      })
+      .sort(function (a, b) {
+        return b.score - a.score;
+      });
+
+    const secondary = others.length
+      ? others
+          .filter(function (item) {
+            return item.score === others[0].score;
+          })
+          .map(function (item) {
+            return item.index;
+          })
+      : [];
+
+    return {
+      scores:scores,
+      leaders:leaders,
+      primary:primary,
+      secondary:secondary
+    };
+  }
+
+  function showQuestion(moveFocus) {
     root.replaceChildren();
 
-    root.append(node(
-      'div',
-      'aq-step',
-      'Question ' + (index + 1) + ' of ' + questions.length
-    ));
+    root.append(
+      element(
+        "div",
+        "quiz-step",
+        "Question " + (index + 1) + " of " + questions.length
+      )
+    );
 
-    const progress = node('div', 'aq-progress');
-    progress.setAttribute('role', 'progressbar');
-    progress.setAttribute('aria-label', 'Reflection progress');
-    progress.setAttribute('aria-valuemin', '0');
-    progress.setAttribute('aria-valuemax', String(questions.length));
-    progress.setAttribute('aria-valuenow', String(index));
+    const progress = element("div", "quiz-progress");
+    progress.setAttribute("role", "progressbar");
+    progress.setAttribute("aria-label", "Quiz progress");
+    progress.setAttribute("aria-valuemin", "0");
+    progress.setAttribute("aria-valuemax", String(questions.length));
+    progress.setAttribute("aria-valuenow", String(index));
+    progress.setAttribute(
+      "aria-valuetext",
+      "Question " + (index + 1) + " of " + questions.length
+    );
 
-    const bar = node('span');
-    bar.style.width = (index / questions.length * 100) + '%';
+    const bar = element("span");
+    bar.style.width = (index / questions.length * 100) + "%";
     progress.append(bar);
     root.append(progress);
 
-    const heading = node('h4', '', questions[index][0]);
+    const heading = element("h4", "", questions[index][0]);
+    heading.id = "aq-question-heading";
     root.append(heading);
 
-    const choices = node('div', 'aq-choices');
+    const choices = element("div", "quiz-choices");
+    choices.setAttribute("role", "group");
+    choices.setAttribute("aria-labelledby", heading.id);
 
-    questions[index][1].forEach((answer, i) => {
-      const b = button(answer, 'aq-choice', () => {
-        answers[index] = i;
-        choices.querySelectorAll('button').forEach((choice, j) => {
-          choice.setAttribute('aria-pressed', String(j === i));
-        });
-        next.disabled = false;
-      });
+    const actions = element("div", "quiz-actions");
 
-      b.setAttribute('aria-pressed', String(answers[index] === i));
-      choices.append(b);
-    });
-
-    root.append(choices);
-
-    const actions = node('div', 'aq-actions');
-
-    const back = button('Back', 'aq-btn aq-back', () => {
-      if (index > 0) {
-        index--;
-        show(true);
-      }
-    });
-
-    back.disabled = index === 0;
-    actions.append(back);
-
-    const next = button(
-      index === questions.length - 1 ? 'See My Reflection' : 'Next',
-      'aq-btn',
-      () => {
-        if (answers[index] === null) return;
-
-        if (index === questions.length - 1) {
-          result();
-        } else {
-          index++;
-          show(true);
+    const back = button(
+      "Back",
+      "quiz-button quiz-button-back",
+      function () {
+        if (index > 0) {
+          index--;
+          showQuestion(true);
         }
       }
     );
+    back.disabled = index === 0;
 
+    const next = button(
+      index === questions.length - 1 ? "See My Result" : "Next",
+      "quiz-button",
+      function () {
+        if (answers[index] === null) return;
+
+        if (index < questions.length - 1) {
+          index++;
+          showQuestion(true);
+        } else {
+          finish();
+        }
+      }
+    );
     next.disabled = answers[index] === null;
-    actions.append(next);
+
+    questions[index][1].forEach(function (answer, answerIndex) {
+      const choice = button(
+        answer,
+        "quiz-choice",
+        function () {
+          answers[index] = answerIndex;
+          tieChoice = null;
+
+          choices.querySelectorAll("button").forEach(
+            function (choiceButton, choiceIndex) {
+              choiceButton.setAttribute(
+                "aria-pressed",
+                String(choiceIndex === answerIndex)
+              );
+            }
+          );
+
+          next.disabled = false;
+        }
+      );
+
+      choice.setAttribute(
+        "aria-pressed",
+        String(answers[index] === answerIndex)
+      );
+      choices.append(choice);
+    });
+
+    root.append(choices);
+    actions.append(back, next);
     root.append(actions);
 
     if (moveFocus) focusHeading(heading);
   }
 
-  function result() {
-    root.replaceChildren();
-
-    const totals = [0, 0, 0, 0];
-    answers.forEach(answer => {
-      if (answer !== null) totals[answer]++;
-    });
-
-    const high = Math.max(...totals);
-    const winners = totals
-      .map((total, i) => total === high ? i : -1)
-      .filter(i => i >= 0);
-
-    const panel = node('div', 'aq-result');
-    panel.append(node('div', 'aq-step', 'Your Reflection'));
-
-    let heading;
-
-    if (winners.length === 1) {
-      const i = winners[0];
-      heading = node('h4', '', labels[i] + ' tendencies');
-      panel.append(heading);
-      panel.append(node('p', '', summaries[i]));
-    } else {
-      heading = node('h4', '', 'A mix of patterns');
-      panel.append(heading);
-      panel.append(node(
-        'p',
-        '',
-        'Your answers reflect more than one pattern. That is common. Consider which responses show up in different relationships or situations.'
-      ));
+  function finish() {
+    if (answers.some(function (answer) {
+      return answer === null;
+    })) {
+      index = answers.indexOf(null);
+      showQuestion(true);
+      return;
     }
 
-    panel.append(node(
-      'p',
-      '',
-      'This is a conversation starter, not a label. Your history matters, but so do your present choices and the way others treat you.'
-    ));
+    const result = evaluate();
 
-    const link = node('a', '', 'Explore the four styles below ↓');
-    link.href = '#four-attachment-styles';
-    panel.append(link);
-    root.append(panel);
+    if (result.primary === null) {
+      showTieQuestion(result.leaders);
+    } else {
+      showResult(result);
+    }
+  }
 
-    const actions = node('div', 'aq-actions');
-    actions.style.marginTop = '20px';
-    actions.append(button('Try Again', 'aq-btn', () => {
-      answers.fill(null);
-      index = 0;
-      show(true);
-    }));
+  function showTieQuestion(leaders) {
+    root.replaceChildren();
+    root.append(element("div", "quiz-step", "One Final Check"));
+
+    const heading = element(
+      "h4",
+      "",
+      "Which response is more typical of you in this relationship?"
+    );
+    heading.id = "aq-tie-heading";
+    root.append(heading);
+
+    root.append(
+      element(
+        "p",
+        "",
+        "Your answers fit more than one pattern equally. Choose the description that feels closest overall to help identify your best fit."
+      )
+    );
+
+    const choices = element("div", "quiz-choices");
+    choices.setAttribute("role", "group");
+    choices.setAttribute("aria-labelledby", heading.id);
+
+    const actions = element("div", "quiz-actions");
+
+    const next = button(
+      "See My Best Fit",
+      "quiz-button",
+      function () {
+        if (!leaders.includes(tieChoice)) return;
+        showResult(evaluate());
+      }
+    );
+    next.disabled = !leaders.includes(tieChoice);
+
+    leaders.forEach(function (patternIndex) {
+      const choice = button(
+        patterns[patternIndex].tie,
+        "quiz-choice",
+        function () {
+          tieChoice = patternIndex;
+
+          choices.querySelectorAll("button").forEach(
+            function (choiceButton, choiceIndex) {
+              choiceButton.setAttribute(
+                "aria-pressed",
+                String(leaders[choiceIndex] === patternIndex)
+              );
+            }
+          );
+
+          next.disabled = false;
+        }
+      );
+
+      choice.setAttribute(
+        "aria-pressed",
+        String(tieChoice === patternIndex)
+      );
+      choices.append(choice);
+    });
+
+    root.append(choices);
+
+    actions.append(
+      button(
+        "Review Last Answer",
+        "quiz-button quiz-button-back",
+        function () {
+          index = questions.length - 1;
+          showQuestion(true);
+        }
+      ),
+      next
+    );
 
     root.append(actions);
     focusHeading(heading);
   }
 
-  show();
+  function showResult(result) {
+    root.replaceChildren();
+
+    const primary = patterns[result.primary];
+    const panel = element("div", "quiz-result");
+
+    panel.append(
+      element("div", "quiz-step", "Your Best-Fit Pattern")
+    );
+
+    const heading = element("h4", "", primary.name);
+    panel.append(heading);
+
+    const contextText =
+      contextSelect.options[contextSelect.selectedIndex].text;
+
+    panel.append(
+      element(
+        "p",
+        "quiz-small",
+        "You reflected on: " + contextText + "."
+      )
+    );
+
+    if (result.leaders.length > 1) {
+      panel.append(
+        element(
+          "p",
+          "",
+          "Your first 10 answers were tied across patterns. Your follow-up choice identified " +
+          primary.name.toLowerCase() +
+          " as the closer fit for this relationship."
+        )
+      );
+    } else {
+      panel.append(
+        element(
+          "p",
+          "",
+          "This pattern appeared most often in your answers."
+        )
+      );
+    }
+
+    panel.append(element("p", "", primary.description));
+
+    if (result.secondary.length) {
+      const secondaryBox = element("div", "quiz-secondary");
+
+      secondaryBox.append(
+        element("strong", "", "The nuance in your result")
+      );
+
+      result.secondary.forEach(function (patternIndex) {
+        secondaryBox.append(
+          element("p", "", patterns[patternIndex].secondary)
+        );
+      });
+
+      panel.append(secondaryBox);
+    }
+
+    panel.append(element("h5", "", "Something to practise"));
+    panel.append(element("p", "", primary.practice));
+
+    panel.append(
+      element(
+        "p",
+        "",
+        "This best fit applies to the answers you gave in the context you chose. You may respond differently with another person or in another situation."
+      )
+    );
+
+    panel.append(
+      element(
+        "p",
+        "",
+        "Understanding your responses does not mean taking responsibility for the whole relationship. Your needs matter, and so do the other person’s actions, communication and willingness to meet you with mutual effort."
+      )
+    );
+
+    const more = element(
+      "a",
+      "",
+      "Explore " + primary.name.toLowerCase() + " below ↓"
+    );
+    more.href = primary.anchor;
+    panel.append(more);
+
+    panel.append(
+      element(
+        "p",
+        "quiz-small",
+        "This is an informal best-fit description, not a diagnosis or a validated psychological assessment."
+      )
+    );
+
+    root.append(panel);
+
+    const actions = element("div", "quiz-actions");
+
+    actions.append(
+      button(
+        "Review My Answers",
+        "quiz-button quiz-button-back",
+        function () {
+          index = 0;
+          showQuestion(true);
+        }
+      ),
+      button(
+        "Try Another Relationship",
+        "quiz-button",
+        function () {
+          reset();
+          contextSelect.focus();
+        }
+      )
+    );
+
+    root.append(actions);
+
+    root.append(
+      element(
+        "p",
+        "quiz-small",
+        "To consider another person, restart and keep that person in mind. Your previous answers are cleared, not saved."
+      )
+    );
+
+    focusHeading(heading);
+  }
+
+  showQuestion(false);
 })();
 
-/* Exercise examples: hover previews, focus opens, click or tap pins. */
-document.querySelectorAll('.soothing-tip').forEach(tip => {
-  const summary = tip.querySelector('summary');
+/* Self-soothing examples: hover, focus, click and tap. */
+document.querySelectorAll(".soothing-tip").forEach(function (tip) {
+  const summary = tip.querySelector("summary");
   let pinned = tip.open;
 
-  tip.addEventListener('pointerenter', event => {
-    if (event.pointerType === 'mouse') tip.open = true;
+  tip.addEventListener("pointerenter", function (event) {
+    if (event.pointerType === "mouse") tip.open = true;
   });
 
-  tip.addEventListener('pointerleave', () => {
+  tip.addEventListener("pointerleave", function () {
     if (!pinned && !tip.contains(document.activeElement)) {
       tip.open = false;
     }
   });
 
-  summary.addEventListener('focus', () => {
+  summary.addEventListener("focus", function () {
     tip.open = true;
   });
 
-  tip.addEventListener('focusout', () => {
-    setTimeout(() => {
+  tip.addEventListener("focusout", function () {
+    setTimeout(function () {
       if (!pinned && !tip.contains(document.activeElement)) {
         tip.open = false;
       }
     }, 0);
   });
 
-  summary.addEventListener('click', event => {
+  summary.addEventListener("click", function (event) {
     event.preventDefault();
     pinned = !pinned;
     tip.open = pinned;
   });
 
-  tip.addEventListener('keydown', event => {
-    if (event.key === 'Escape') {
+  tip.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
       pinned = false;
       tip.open = false;
     }
   });
 });
+
+/* Registration uses its normal POST submission to FormSubmit. */
 </script>
 </body>
 </html>
