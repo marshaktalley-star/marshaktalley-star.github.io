@@ -6233,6 +6233,14 @@ html { scroll-padding-top: 125px; }
 .featured-provider-review { margin: 24px 0; border: 1px solid #d8e4df; border-radius: 16px; background: #f7faf8; overflow: hidden; }
 .featured-provider-review summary { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px 20px; padding: 19px 22px; cursor: pointer; list-style: none; color: #173e40; }
 .featured-provider-review summary::-webkit-details-marker { display: none; }
+/* Ensure the personal review remains readable inside the dark solar section. */
+.featured-provider .featured-provider-review { background: #ffffff; border-color: #d5e2de; }
+.featured-provider .featured-provider-review summary { background: #ffffff; color: #173e40; }
+.featured-provider .featured-provider-review summary strong { color: #173e40 !important; }
+.featured-provider .featured-provider-review summary::after { background: #eaf5f2; color: #173e40; }
+.featured-provider .featured-provider-review-content { background: #ffffff; color: #35585a; }
+.featured-provider .featured-provider-review-content p { color: #35585a; }
+
 .featured-provider-review summary:focus-visible { outline: 3px solid #c79a50; outline-offset: -3px; }
 .featured-provider-review-heading { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 10px; }
 .featured-provider-stars { color: #a66b19; font-size: 1.13rem; letter-spacing: .08em; white-space: nowrap; }
