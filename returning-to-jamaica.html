@@ -6126,7 +6126,124 @@
             scroll-margin-top: 25px
         }
     }
-    </style>
+    
+/* October 2026: premium finishing touches, scoped to Returning to Jamaica */
+#power .key-grid .key {
+  background: #fbfdfb;
+  color: #173f40;
+  border: 1px solid rgba(12, 99, 101, .14);
+  box-shadow: 0 10px 26px rgba(0, 32, 35, .18);
+  border-radius: 20px;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+#power .key-grid .key h3 { color: #16484a; }
+#power .key-grid .key p { color: #486668; }
+#power .key-grid .key .num { color: #087b7e; }
+#power .key-grid .key:hover, #power .key-grid .key:focus-within {
+  transform: translateY(-5px);
+  border-color: #35c4bc;
+  box-shadow: 0 18px 35px rgba(0, 32, 35, .25);
+}
+.featured-provider {
+  margin-top: 28px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #fffdf9;
+  color: #173b3d;
+  border: 1px solid #dce5df;
+  box-shadow: 0 18px 42px rgba(0, 25, 29, .24);
+}
+.featured-provider-header {
+  padding: 26px 30px 22px;
+  background: #173c43;
+  color: #fff;
+  border-top: 5px solid #d7ae65;
+}
+.featured-provider-eyebrow { color: #f0ce8d; font-size: .72rem; letter-spacing: .13em; font-weight: 800; }
+.featured-provider-header h3 { margin: 10px 0 2px; color: #fff; font-size: clamp(1.65rem, 3vw, 2.4rem); }
+.featured-provider-header p { color: #f1f6f3; margin: 9px 0 0; }
+.featured-provider-subtitle { font-size: 1.05rem; }
+.featured-provider-body { padding: 24px 30px 28px; }
+.featured-provider-body p { color: #345759; }
+.featured-provider-services { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.featured-provider-services span { background: #e9f4f1; color: #175558; border: 1px solid #c9e3dc; border-radius: 999px; padding: 7px 12px; font-size: .82rem; font-weight: 700; }
+.featured-provider-actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 22px 0; }
+.featured-provider-actions a { display: inline-flex; gap: 10px; align-items: center; padding: 12px 18px; border-radius: 999px; background: #174d52; color: white; text-decoration: none; font-weight: 750; }
+.featured-provider-actions a + a { background: #fff; color: #174d52; border: 1px solid #9abcb9; }
+.featured-provider-actions a:hover, .featured-provider-actions a:focus-visible { transform: translateY(-2px); box-shadow: 0 8px 20px #173c432b; }
+.featured-provider-disclaimer { font-size: .83rem; line-height: 1.6; }
+.premium-line-icon { display: inline-grid; place-items: center; width: 43px; height: 43px; background: #e9f4f1; color: #0b696d; border-radius: 12px; }
+.premium-line-icon svg { width: 23px; height: 23px; }
+#costs .grid-3 > .card { border: 1px solid #e1e9e5; border-radius: 18px; background: #fff; box-shadow: 0 8px 24px rgba(11, 62, 63, .055); transition: transform .2s, box-shadow .2s; }
+#costs .grid-3 > .card:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(11, 62, 63, .12); }
+.premium-stay-connected { background: #fbfdfb; color: #173f40; border: 1px solid #d8e6e2; border-radius: 22px; box-shadow: 0 12px 32px rgba(0, 28, 29, .14); }
+.premium-stay-connected .mini-label { color: #087579; }
+.premium-stay-connected h3 { color: #153d3f; }
+.premium-stay-connected p { color: #4b6263; }
+.premium-subscribe-cta { display: inline-flex; align-items: center; justify-content: center; gap: 12px; border-radius: 999px; padding: 13px 21px; background: #09676c; color: white !important; font-weight: 800; text-decoration: none; }
+.premium-subscribe-cta:hover, .premium-subscribe-cta:focus-visible { background: #074b4f; transform: translateY(-2px); }
+.premium-subscribe-free { margin-top: 12px; font-weight: 700; font-size: .86rem; }
+.premium-subscribe-consent { font-size: .77rem; line-height: 1.55; }
+.chapter-nav { position: sticky; top: 0; z-index: 80; }
+.chapter-nav a:focus-visible, .site-nav a:focus-visible, .nav-toggle:focus-visible { outline: 3px solid #d7ae65; outline-offset: 3px; }
+html { scroll-padding-top: 125px; }
+@media(max-width:700px) {
+  #power .key-grid .key { box-shadow: 0 8px 22px rgba(0, 32, 35, .19); }
+  .featured-provider-header, .featured-provider-body { padding-left: 19px; padding-right: 19px; }
+  .featured-provider-actions a { width: 100%; justify-content: center; }
+  .chapter-nav { top: 0; }
+  html { scroll-padding-top: 95px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  #power .key-grid .key, #costs .grid-3 > .card, .featured-provider-actions a { transition: none; }
+}
+
+
+/* Quiet, editorial section sharing and non-interactive service listing */
+.section-share {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 5px 0 17px;
+  padding: 3px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #467174;
+  font-size: .76rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.section-share::before { content: '↗'; font-size: .8rem; font-weight: 400; }
+.section-share:hover, .section-share:focus-visible { background: transparent; color: #07595c; text-decoration-color: currentColor; }
+.featured-provider-service-line { margin: 0 0 22px; padding: 0 0 15px; border-bottom: 1px solid #d9e4df; font-size: .92rem; line-height: 1.9; }
+.featured-provider-service-line strong { color: #163f42; }
+.featured-provider-service-line span { padding: 0 8px; color: #7b9995; }
+
+
+/* Featured provider: distinguish contact guidance from action buttons */
+.featured-provider-contact-intro { margin: 22px 0 4px; font-weight: 650; }
+.featured-provider-contact-note { margin: -7px 0 19px; font-size: .88rem; color: #4d6668; }
+
+/* Firsthand review: clear five-star rating, compact until opened */
+.featured-provider-review { margin: 24px 0; border: 1px solid #d8e4df; border-radius: 16px; background: #f7faf8; overflow: hidden; }
+.featured-provider-review summary { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px 20px; padding: 19px 22px; cursor: pointer; list-style: none; color: #173e40; }
+.featured-provider-review summary::-webkit-details-marker { display: none; }
+.featured-provider-review summary:focus-visible { outline: 3px solid #c79a50; outline-offset: -3px; }
+.featured-provider-review-heading { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.featured-provider-stars { color: #a66b19; font-size: 1.13rem; letter-spacing: .08em; white-space: nowrap; }
+.featured-provider-review-prompt { color: #126d70; font-size: .85rem; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.featured-provider-review[open] .featured-provider-review-prompt { font-size: 0; }
+.featured-provider-review[open] .featured-provider-review-prompt::after { content: 'Close review'; font-size: .85rem; }
+.featured-provider-review-content { border-top: 1px solid #d8e4df; padding: 7px 22px 20px; }
+.featured-provider-review-content p { margin: 15px 0; }
+.featured-provider-review-signature { font-style: italic; }
+@media(max-width:700px) { .featured-provider-review summary { padding: 16px; } .featured-provider-review-content { padding: 6px 16px 16px; } }
+</style>
     <link href="https://www.marshakerrtalley.com/returning-to-jamaica" rel="canonical"/>
     <meta content="index,follow,max-snippet:-1,max-image-preview:large" name="robots"/>
 </head>
@@ -6257,7 +6374,7 @@
             <div>
                 <span class="kicker">This is what coming home really looks like</span>
                 <h2>I love being home. That does not mean I am going to pretend everything works well.</h2>
-                <button aria-label="Copy link to introduction" class="section-share" data-share-section="introduction" type="button">↗ Copy section link</button>
+                <button aria-label="Copy link to introduction" class="section-share" data-share-section="introduction" type="button">Share this section</button>
                 <p class="lead">
                         There is so much I love about being back in Jamaica. There are also things that frustrate me, things that make
                         absolutely no sense to me, and things I am having to relearn after decades away.
@@ -6309,7 +6426,7 @@
         <div class="wrap">
             <span class="series-kicker">Audio series</span>
             <h2 class="series-heading" id="series-title">Returning to Jamaica. The part that doesn't fit neatly into a guide.</h2>
-            <button aria-label="Copy link to series" class="section-share" data-share-section="series" type="button">↗ Copy section link</button>
+            <button aria-label="Copy link to series" class="section-share" data-share-section="series" type="button">Share this section</button>
             <p class="series-intro">
                   This audio series chronicles my experience moving back in real time.
                   Some situations are frustrating. Others are funny. There are those that make me question why on earth I decided to move back!
@@ -6415,7 +6532,7 @@
                     <span class="chapter-label">01</span>
                     <span class="kicker">Before you move</span>
                     <h2>Handle what you can before you get on the plane.</h2>
-                    <button aria-label="Copy link to prepare" class="section-share" data-share-section="prepare" type="button">↗ Copy section link</button>
+                    <button aria-label="Copy link to prepare" class="section-share" data-share-section="prepare" type="button">Share this section</button>
                     <p class="lead">
                               Get the boring paperwork moving early. If you are starting from scratch like I am, you need more than a packing list. You need the Returning Resident process clear, money for the landing, somewhere to live, and your own copies of every important document.
                             </p>
@@ -6632,7 +6749,7 @@
                 <div>
                     <span class="kicker">Before you send it, sign it or follow somebody anywhere</span>
                     <h2 id="verify-title">Blind trust is not verification. Check what matters.</h2>
-                    <button aria-label="Copy link to verify" class="section-share" data-share-section="verify" type="button">↗ Copy section link</button>
+                    <button aria-label="Copy link to verify" class="section-share" data-share-section="verify" type="button">Share this section</button>
                 </div>
                 <p class="lead">People who genuinely want to help you exist here in abundance. I have met many of them. That still does not mean I am sending my passport, TRN, permit, title or any other personal document willy-nilly because somebody says, "send it to me." Nor am I driving into an unfamiliar area simply because somebody sent me a pretty property listing.</p>
             </div>
@@ -6676,7 +6793,7 @@
                     <span class="chapter-label">02</span>
                     <span class="kicker">Shipping your belongings</span>
                     <h2>Before your things leave farin, know exactly who is handling them in Jamaica.</h2>
-                    <button aria-label="Copy link to shipping" class="section-share" data-share-section="shipping" type="button">↗ Copy section link</button>
+                    <button aria-label="Copy link to shipping" class="section-share" data-share-section="shipping" type="button">Share this section</button>
                     <p class="lead">
                               The company you pay overseas is only one part of the story. Find out who will actually touch your shipment once it reaches Jamaica.
                             </p>
@@ -6886,7 +7003,7 @@
         <div class="wrap">
             <span class="kicker">Personalised relocation guidance</span>
             <h2 id="consultations-title">Need Help Returning to Jamaica?</h2>
-            <button aria-label="Copy link to consultations" class="section-share" data-share-section="consultations" type="button">↗ Copy section link</button>
+            <button aria-label="Copy link to consultations" class="section-share" data-share-section="consultations" type="button">Share this section</button>
             <p class="lead">
                 I offer 
                 <strong>personalised relocation consultations</strong>
@@ -6926,7 +7043,7 @@
         <div class="wrap">
             <span class="kicker">Customs broker safety • October 2026 review</span>
             <h2 id="broker-title">Find and Verify a Licensed Customs Broker in Jamaica</h2>
-            <button aria-label="Copy link to brokers" class="section-share" data-share-section="brokers" type="button">↗ Copy section link</button>
+            <button aria-label="Copy link to brokers" class="section-share" data-share-section="brokers" type="button">Share this section</button>
             <p class="lead broker-intro">Before you entrust someone with your shipment, vehicle, money or original documents, verify who they are and how they conduct business. A personal recommendation is not proof of a licence, and a licence is not a guarantee of good service.</p>
             <div class="broker-warning">
                 <strong>Important October 2026 caution:</strong>
@@ -7013,7 +7130,7 @@
                         <a href="https://www.tradeboard.gov.jm/ttbl/PreShipmentI_Fee.php" rel="noopener noreferrer" target="_blank">current inspection fees</a>
                         .
                     </div>
-                    <button aria-label="Copy link to car-import-export" class="section-share" data-share-section="car-import-export" type="button">↗ Copy section link</button>
+                    <button aria-label="Copy link to car-import-export" class="section-share" data-share-section="car-import-export" type="button">Share this section</button>
                     <p class="lead">
                               I shipped my car from the UK, so I had to deal with the export side there and the import side here. Do not let those become one blurry process in your head. Before the car leaves the country you are moving from, confirm its export requirements, ownership documents and Jamaica pre-shipment inspection requirements. On the Jamaica side, get the Returning Resident approval and Trade Board import permit sorted before the vehicle arrives. Returning Resident status does not make the vehicle duty-free.
                             </p>
@@ -7136,7 +7253,7 @@
                     <span class="chapter-label">04</span>
                     <span class="kicker">Arrival + money</span>
                     <h2>Once you land, start asking people what things are supposed to cost.</h2>
-                    <button aria-label="Copy link to arrival" class="section-share" data-share-section="arrival" type="button">↗ Copy section link</button>
+                    <button aria-label="Copy link to arrival" class="section-share" data-share-section="arrival" type="button">Share this section</button>
                     <p class="lead">
                               Learn what things normally cost. Use Jamaican dollars where it makes sense, keep payment records and ask people who actually live here where they shop.
                             </p>
@@ -7203,7 +7320,7 @@
                 <div class="network-copy">
                     <span class="kicker" style="color:#bdfcf8">People + connections</span>
                     <h2>Network. Meet people. Just be intentional about it.</h2>
-                    <button aria-label="Copy link to networking" class="section-share" data-share-section="networking" type="button">↗ Copy section link</button>
+                    <button aria-label="Copy link to networking" class="section-share" data-share-section="networking" type="button">Share this section</button>
                     <p class="lead">
                               Since moving back, I have been connected to a LOT of people. Some of those introductions have helped me solve problems,
                               find opportunities and get into rooms I would not have known about otherwise. Jamaica can be very relationship-driven,
@@ -7273,7 +7390,7 @@
                 <span class="chapter-label">05</span>
                 <span class="kicker">Getting around + useful local apps</span>
                 <h2>Always secure your ride back home before you leave.</h2>
-                <button aria-label="Copy link to getting-around" class="section-share" data-share-section="getting-around" type="button">↗ Copy section link</button>
+                <button aria-label="Copy link to getting-around" class="section-share" data-share-section="getting-around" type="button">Share this section</button>
                 <p class="lead">
 
                             This was one of those things I learned very quickly. You can get taxis and, in some areas, use ride-hailing apps.
@@ -7510,7 +7627,7 @@
                     <span class="chapter-label">06</span>
                     <span class="kicker">Power + connectivity</span>
                     <h2>Electricity and internet can humble you quickly. Have a backup.</h2>
-                    <button aria-label="Copy link to power" class="section-share" data-share-section="power" type="button">↗ Copy section link</button>
+                    <button aria-label="Copy link to power" class="section-share" data-share-section="power" type="button">Share this section</button>
                     <p class="lead">
                               If your income depends on being online, one internet connection and one source of power may not be enough. I learned that one early.
                             </p>
@@ -7536,27 +7653,36 @@
                     <p>Battery storage, charged power banks and a properly used generator can make outages much easier to manage.</p>
                 </article>
             </div>
-            <div class="tip" style="margin-top:24px" aria-labelledby="solar-provider-title">
-                <h3 id="solar-provider-title" style="margin-top:0">Solar, electrical &amp; home technology: Technical Innovators Ltd.</h3>
-                <p>
-                    <strong>Peter Kennion</strong>
-                     · Based in Montego Bay · Travels islandwide
-                </p>
-                <p>Technical Innovators offers solar and electrical solutions, customised EV charging solutions, Starlink installation and home Wi-Fi coverage solutions, including for concrete-built homes.</p>
-                <p>
-                    <strong>Why I am sharing this business:</strong>
-                     I have personally seen Peter's work and his ability to create practical solutions for different technical needs.
-                </p>
-                <p>
-                    <a href="https://technicalinnovatorsjm.com" target="_blank" rel="noopener noreferrer">Visit Technical Innovators' website →</a>
-                     &nbsp; 
-                    <a href="https://www.instagram.com/technical_innovators_ltd/" target="_blank" rel="noopener noreferrer">Instagram: @technical_innovators_ltd →</a>
-                </p>
-                <p>
-                    <small>Contact the company directly to confirm services, availability, credentials and quotations. This is a personal recommendation based on work I have observed, not a guarantee of future work.</small>
-                </p>
-                <button aria-label="Copy link to solar services" class="section-share" data-share-section="solar" type="button">↗ Copy solar section link</button>
-            </div>
+            <aside class="featured-provider" aria-labelledby="solar-provider-title">
+                <div class="featured-provider-header">
+                    <span class="featured-provider-eyebrow">FEATURED SERVICE PROVIDER · PERSONAL RECOMMENDATION</span>
+                    <h3 id="solar-provider-title">Technical Innovators Ltd.</h3>
+                    <p class="featured-provider-subtitle">Solar, electrical &amp; home technology</p>
+                    <p><strong>Peter Kennion</strong> · Based in Montego Bay · Travels islandwide</p>
+                </div>
+                <div class="featured-provider-body">
+                    <p class="featured-provider-service-line"><strong>Services:</strong> Solar <span aria-hidden="true">·</span> Electrical <span aria-hidden="true">·</span> EV charging <span aria-hidden="true">·</span> Starlink <span aria-hidden="true">·</span> Home Wi-Fi</p>
+                    <p>Technical Innovators offers solar and electrical solutions, customised EV charging solutions, Starlink installation and home Wi-Fi coverage solutions, including for concrete-built homes.</p>
+                    <details class="featured-provider-review">
+                        <summary><span class="featured-provider-review-heading"><span class="featured-provider-stars" aria-label="5 out of 5 stars">★★★★★</span><strong>My Review of Technical Innovators Ltd.</strong></span><span class="featured-provider-review-prompt">Read my full review</span></summary>
+                        <div class="featured-provider-review-content">
+                            <p>Peter was prompt, professional and innovative. I would 100% recommend him every time.</p>
+                            <p>I first contacted him for Starlink installation, but later utilised his expertise to create an electrical solution for my EV that was imported from the UK. I needed to be able to charge it at home. He was able to come up with a practical solution that others said was impossible or that they just could not do.</p>
+                            <p>Additionally, because of the structure of my house, the internet was limited in certain rooms. Again, Peter was able to create a solution so I could have internet in every room, especially in my office, where I work from home.</p>
+                            <p><strong>Highly recommended.</strong></p>
+                            <p class="featured-provider-review-signature">— Marsha Kerr Talley</p>
+                        </div>
+                    </details>
+                    <p class="featured-provider-contact-intro">For inquiries, availability or quotations, contact Technical Innovators directly.</p>
+                    <div class="featured-provider-actions">
+                        <a href="https://technicalinnovatorsjm.com" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span></a>
+                        <a href="https://www.instagram.com/technical_innovators_ltd/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
+                    </div>
+                    <p class="featured-provider-contact-note">Contact details, WhatsApp and service inquiries are available on the company's website.</p>
+                    <p class="featured-provider-disclaimer">This is a personal recommendation based on work I have observed, not a guarantee of future work. Please confirm services and credentials directly with the company.</p>
+                    <button aria-label="Copy link to solar services" class="section-share" data-share-section="solar" type="button">Share this section</button>
+                </div>
+            </aside>
             <div class="story">
                 <div class="story-badge">
                         “The modem was already in the house. That did not mean I had working internet.”
@@ -7637,7 +7763,7 @@
                     <span class="chapter-label">07</span>
                     <span class="kicker">Renting, buying + choosing where to live</span>
                     <h2>Choose the home that fits your life, not somebody else’s commission.</h2>
-                    <button aria-label="Copy link to housing" class="section-share" data-share-section="housing" type="button">↗ Copy section link</button>
+                    <button aria-label="Copy link to housing" class="section-share" data-share-section="housing" type="button">Share this section</button>
                     <p class="lead">
                               Know your real budget before somebody starts showing you houses. Know the kind of community you actually want too.
                               A pretty house is not enough if the location, cost or lifestyle does not fit your life.
@@ -7902,7 +8028,7 @@
                 <div>
                     <span class="kicker">Money + costs</span>
                     <h2>Coming home costs more than the plane ticket.</h2>
-                    <button aria-label="Copy link to costs" class="section-share" data-share-section="costs" type="button">↗ Copy section link</button>
+                    <button aria-label="Copy link to costs" class="section-share" data-share-section="costs" type="button">Share this section</button>
                     <p class="lead">
                               If you are rebuilding from scratch, the money question matters. I did not return to a paid-off family house, inherited land or relatives
                               absorbing my everyday costs. My advice is to think in categories, not one magical number, because your landing fund has to carry the life
@@ -7913,32 +8039,32 @@
             </div>
             <div class="grid-3">
                 <article class="card">
-                    <span class="icon">🏠</span>
+                    <span class="icon premium-line-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></span>
                     <h3>Housing</h3>
                     <p>Rent or mortgage, deposits, legal costs, community fees, utilities, furniture, appliances and the things a new home quietly needs.</p>
                 </article>
                 <article class="card">
-                    <span class="icon">🚗</span>
+                    <span class="icon premium-line-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14l-1.5-7h-11L5 17ZM7 10l2-5h6l2 5M5 17v3m14-3v3M3 17h18"/><circle cx="7.5" cy="17" r="1"/><circle cx="16.5" cy="17" r="1"/></svg></span>
                     <h3>Transport + vehicle</h3>
                     <p>Rental cars or taxis while you settle, shipping, inspection, permits, Customs, broker fees, insurance, registration, fitness and unexpected repairs.</p>
                 </article>
                 <article class="card">
-                    <span class="icon">📦</span>
+                    <span class="icon premium-line-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 9 5-9 5-9-5 9-5Zm-9 5v10l9 5 9-5V7M12 12v10M7.5 4.5l9 5"/></svg></span>
                     <h3>Shipping + clearing</h3>
                     <p>Freight is only one part of the cost. Ask about destination charges, clearance, storage, handling, delivery, insurance and what happens when something goes wrong.</p>
                 </article>
                 <article class="card">
-                    <span class="icon">💡</span>
+                    <span class="icon premium-line-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6m-5 3h4M8 14c-1.4-1.1-2-2.5-2-4a6 6 0 0 1 12 0c0 1.5-.6 2.9-2 4l-1 2H9l-1-2Z"/></svg></span>
                     <h3>Setting up daily life</h3>
                     <p>Electricity, water, internet, mobile service, groceries, household supplies and deposits can arrive together when you are already spending heavily.</p>
                 </article>
                 <article class="card">
-                    <span class="icon">🧾</span>
+                    <span class="icon premium-line-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2h14v20l-3-2-4 2-4-2-3 2V2Zm4 5h6M9 11h6M9 15h4"/></svg></span>
                     <h3>Government + professional fees</h3>
                     <p>Budget for applications, licences, certificates, legal work and legitimate professional services. Confirm current fees with the authority before paying anyone.</p>
                 </article>
                 <article class="card">
-                    <span class="icon">🛟</span>
+                    <span class="icon premium-line-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="m6 6 3 3m6 6 3 3m0-12-3 3m-6 6-3 3"/></svg></span>
                     <h3>Your emergency buffer</h3>
                     <p>Keep money that is not already assigned. Delays, temporary transport, extra accommodation, storage, repairs and administrative surprises can change the plan quickly.</p>
                 </article>
@@ -7956,7 +8082,7 @@
                 <div>
                     <span class="kicker">Banking + money</span>
                     <h2 id="banking-title">Opening a Jamaican bank account is worth preparing for before you need it.</h2>
-                    <button aria-label="Copy link to banking" class="section-share" data-share-section="banking" type="button">↗ Copy section link</button>
+                    <button aria-label="Copy link to banking" class="section-share" data-share-section="banking" type="button">Share this section</button>
                     <p class="lead">
                               A Jamaican account can make everyday life easier once you are home, but do not assume you can walk into every bank with one piece of ID and leave with an account. Requirements differ by bank and by whether the bank treats you as a local or overseas customer. Check the bank's current requirements before you go.
                             </p>
@@ -7974,7 +8100,7 @@
                     <p>Banks commonly ask for valid government-issued photo identification and tax information. For local residents this commonly includes a TRN. Overseas customers may also need their overseas tax identification information.</p>
                 </article>
                 <article class="card">
-                    <span class="icon">🏠</span>
+                    <span class="icon premium-line-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></span>
                     <h3>Prepare proof of address</h3>
                     <p>Depending on the bank, acceptable evidence can include a utility bill, lease or rent receipt, property tax receipt, bank statement or another approved document showing your address.</p>
                 </article>
@@ -8029,7 +8155,7 @@
                 <div class="voice-note-copy">
                     <span class="audio-label">🎧 A real conversation from my return</span>
                     <h2>Coming home should not require proving that you are Jamaican.</h2>
-                    <button aria-label="Copy link to accent" class="section-share" data-share-section="accent" type="button">↗ Copy section link</button>
+                    <button aria-label="Copy link to accent" class="section-share" data-share-section="accent" type="button">Share this section</button>
                     <p class="lead">
                               One of the more unexpected parts of returning has been thinking about when I speak patois,
                               when I use Standard English, and how people sometimes respond to the accent I brought home with me.
@@ -8080,7 +8206,7 @@
                     <span class="chapter-label">08</span>
                     <span class="kicker">Actually living here</span>
                     <h2>At some point, you have to stop relocating and start living.</h2>
-                    <button aria-label="Copy link to living" class="section-share" data-share-section="living" type="button">↗ Copy section link</button>
+                    <button aria-label="Copy link to living" class="section-share" data-share-section="living" type="button">Share this section</button>
                     <p class="lead">
                               Clearing the container is one thing. Building an actual life is another. Your people, your routines, healthcare, transport, security and knowing who to call all matter.
                             </p>
@@ -8203,7 +8329,7 @@
             <div class="conversation-intro">
                 <span class="kicker">A conversation worth having</span>
                 <h2 id="conversation-title">Coming home also means asking what kind of Jamaica we are building.</h2>
-                <button aria-label="Copy link to conversation" class="section-share" data-share-section="conversation" type="button">↗ Copy section link</button>
+                <button aria-label="Copy link to conversation" class="section-share" data-share-section="conversation" type="button">Share this section</button>
                 <p class="lead">
                         Returning to Jamaica has made me think much more seriously about what it actually takes to make returning home sustainable, not only emotionally, but financially and practically. A recent Facebook conversation captured many of the questions I keep coming back to.
                       </p>
@@ -8255,7 +8381,7 @@
         <div class="wrap">
             <span class="kicker">Interactive planner</span>
             <h2>Things I would sort before landing.</h2>
-            <button aria-label="Copy link to checklist" class="section-share" data-share-section="checklist" type="button">↗ Copy section link</button>
+            <button aria-label="Copy link to checklist" class="section-share" data-share-section="checklist" type="button">Share this section</button>
             <p class="lead">Use this as a running list. Tick things off as you sort them; your progress stays saved in this browser.</p>
             <div class="progress-label" id="progressLabel">0% ready</div>
             <div class="progress-track">
@@ -8378,7 +8504,7 @@
             <div class="quiz-shell">
                 <span class="kicker" style="color:#bdfcf8">60-second check</span>
                 <h2>How ready are you, really?</h2>
-                <button aria-label="Copy link to quiz" class="section-share" data-share-section="quiz" type="button">↗ Copy section link</button>
+                <button aria-label="Copy link to quiz" class="section-share" data-share-section="quiz" type="button">Share this section</button>
                 <p class="lead">Seven quick questions. No email. No sales funnel. Just check where you are.</p>
                 <div class="question">
                     <h3>1. Have you confirmed Returning Resident eligibility?</h3>
@@ -8453,7 +8579,7 @@
                 <div class="voice-note-copy">
                     <span class="audio-label">My answer so far</span>
                     <h2>Some days I ask myself, “Marsha, did you make the right choice?” I still believe I did.</h2>
-                    <button aria-label="Copy link to can-i-live-here" class="section-share" data-share-section="can-i-live-here" type="button">↗ Copy section link</button>
+                    <button aria-label="Copy link to can-i-live-here" class="section-share" data-share-section="can-i-live-here" type="button">Share this section</button>
                     <p class="lead">
                               If you are thinking about coming home, I know you are not only looking for Customs forms and phone numbers.
                               You are trying to picture an ordinary Tuesday here. You are wondering whether you can actually build a life.
@@ -8488,9 +8614,9 @@
                 <div class="journey-connect-copy" id="help">
                     <span class="kicker" style="color:#bdfcf8">Follow the journey · Get help</span>
                     <h2 id="connect-title">Come home with the story, or bring me into yours.</h2>
-                    <button aria-label="Copy link to subscribe" class="section-share" data-share-section="subscribe" type="button">↗ Copy section link</button>
+                    <button aria-label="Copy link to subscribe" class="section-share" data-share-section="subscribe" type="button">Share this section</button>
                     <p class="lead">
-                              If you are enjoying the Returning to Jamaica series, subscribe for new stories, audio episodes and updates.
+                              Explore the resources here, and stay connected for occasional updates about my work.
                             </p>
                     <p>
                               If you are planning your own return and trying to make sense of the moving pieces, I can also sit with you, help you organise the questions and think through what needs to happen first.
@@ -8506,50 +8632,21 @@
                 <div class="journey-connect-visual">
                     <img alt="Two people having a consultation over coffee with a Live Inspired journal on the table" src="live-inspired-cafe.png"/>
                 </div>
-                <div class="journey-subscribe-panel">
+                <div class="journey-subscribe-panel premium-stay-connected">
                     <div class="journey-subscribe-intro">
-                        <span class="mini-label">Stay with the journey</span>
-                        <h3>Want the next Returning to Jamaica update?</h3>
-                        <p>Subscribe for new writing, audio and updates from me directly.</p>
+                        <span class="mini-label">STAY CONNECTED</span>
+                        <h3>Keep in touch with Marsha</h3>
+                        <p>Get occasional updates about my Returning to Jamaica resources, books, workshops, new projects and other work. Only when I have something worth sharing.</p>
                     </div>
-                    <div aria-label="Subscribe to Candid Conversations with Marsha" class="marsha-subscribe-card">
-                        <div aria-hidden="true" class="marsha-subscribe-mark">M</div>
-                        <div class="marsha-subscribe-copy">
-                            <span class="marsha-subscribe-eyebrow">Candid Conversations with Marsha</span>
-                            <strong>Jamaica, life and the conversations in between.</strong>
-                            <p>Join me on Substack for new writing, audio episodes and updates.</p>
-                        </div>
-                        <a class="marsha-subscribe-button" href="https://marshakerrtalley.substack.com/subscribe" rel="noopener" target="_blank">
-
-                                        Subscribe on Substack
-                                        
-                            <span aria-hidden="true">→</span>
-                        </a>
-                    </div>
+                    <a class="premium-subscribe-cta" href="https://marshakerrtalley.substack.com/subscribe" rel="noopener noreferrer" target="_blank">
+                        Subscribe on Substack <span aria-hidden="true">↗</span>
+                    </a>
+                    <p class="premium-subscribe-free">Free subscriptions are available. Paid support is optional.</p>
+                    <p class="premium-subscribe-consent">By subscribing, you agree to receive occasional emails from Marsha Kerr Talley. Unsubscribe anytime.</p>
                 </div>
             </div>
         </div>
     </section>
-    <aside aria-hidden="true" aria-label="Subscribe invitation" class="subscribe-nudge" id="subscribeNudge">
-        <button aria-label="Dismiss subscription invitation" class="subscribe-nudge-close" id="subscribeNudgeClose" type="button">×</button>
-        <div class="subscribe-nudge-head">
-            <img alt="" aria-hidden="true" src="https://marshakerrtalley.com/marsha-strike-a-pose.jpg"/>
-            <div>
-                <span class="mini-label">Jamaica, in real time</span>
-                <span class="subscribe-nudge-note">A little note from Marsha</span>
-            </div>
-        </div>
-        <h3>Finding this useful? Stay with the journey.</h3>
-        <p>Get the next story, practical update and new Returning to Jamaica resource from me.</p>
-        <div class="subscribe-nudge-actions">
-            <a href="https://marshakerrtalley.substack.com/subscribe" id="subscribeNudgeLink" rel="noopener" target="_blank">
-
-                      Subscribe 
-                <span aria-hidden="true">→</span>
-            </a>
-            <button class="subscribe-contact-link" id="subscribeContactLink" type="button">Ask Marsha</button>
-        </div>
-    </aside>
     <button aria-controls="jamaicaContactOverlay" aria-haspopup="dialog" class="jamaica-contact-launcher" id="jamaicaContactLauncher" type="button">
         <span aria-hidden="true" class="jamaica-contact-dot"></span>
          Ask Marsha
@@ -8971,11 +9068,11 @@
         const b = e.target.closest('[data-share-section]');
         if (!b)
             return;
-        const url = location.origin + location.pathname + '#' + encodeURIComponent(b.dataset.shareSection);
+        const url = 'https://marshakerrtalley.com/returning-to-jamaica#' + encodeURIComponent(b.dataset.shareSection);
         try {
             await navigator.clipboard.writeText(url);
             const old = b.textContent;
-            b.textContent = '✓ Link copied';
+            b.textContent = 'Link copied';
             setTimeout(() => b.textContent = old, 1800)
         } catch (err) {
             window.prompt('Copy this section link:', url)
