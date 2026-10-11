@@ -6251,6 +6251,51 @@ html { scroll-padding-top: 125px; }
 .featured-provider-review-content p { margin: 15px 0; }
 .featured-provider-review-signature { font-style: italic; }
 @media(max-width:700px) { .featured-provider-review summary { padding: 16px; } .featured-provider-review-content { padding: 6px 16px 16px; } }
+
+/* Review preview: readable at a glance, with the full experience below. */
+.featured-provider .featured-provider-review summary {
+    position: relative;
+    display: block;
+    padding: 22px 64px 22px 24px;
+    background: #fff;
+    color: #173e40;
+}
+.featured-provider .featured-provider-review summary::after {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    margin: 0;
+}
+.featured-provider .featured-provider-review-heading {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    line-height: 1.45;
+}
+.featured-provider .featured-provider-review-heading strong { color: #173e40; }
+.featured-provider .featured-provider-review-excerpt {
+    display: block;
+    margin: 12px 0 14px;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 400;
+    color: #486265;
+}
+.featured-provider .featured-provider-review-prompt {
+    display: inline-block;
+    color: #126d70;
+    font-size: .94rem;
+    font-weight: 750;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.featured-provider .featured-provider-review-content { border-top: 1px solid #d8e4df; }
+@media (max-width: 700px) {
+    .featured-provider .featured-provider-review summary { padding: 18px 54px 18px 17px; }
+    .featured-provider .featured-provider-review summary::after { right: 14px; top: 18px; }
+}
+
 </style>
     <link href="https://www.marshakerrtalley.com/returning-to-jamaica" rel="canonical"/>
     <meta content="index,follow,max-snippet:-1,max-image-preview:large" name="robots"/>
@@ -7672,9 +7717,8 @@ html { scroll-padding-top: 125px; }
                     <p class="featured-provider-service-line"><strong>Services:</strong> Solar <span aria-hidden="true">·</span> Electrical <span aria-hidden="true">·</span> EV charging <span aria-hidden="true">·</span> Starlink <span aria-hidden="true">·</span> Home Wi-Fi</p>
                     <p>Technical Innovators offers solar and electrical solutions, customised EV charging solutions, Starlink installation and home Wi-Fi coverage solutions, including for concrete-built homes.</p>
                     <details class="featured-provider-review">
-                        <summary><span class="featured-provider-review-heading"><span class="featured-provider-stars" aria-label="5 out of 5 stars">★★★★★</span><strong>My Review of Technical Innovators Ltd.</strong></span><span class="featured-provider-review-prompt">Read my full review</span></summary>
+                        <summary><span class="featured-provider-review-heading"><span class="featured-provider-stars" aria-label="5 out of 5 stars">★★★★★</span><strong>My Review of Technical Innovators Ltd.</strong></span><span class="featured-provider-review-excerpt">Peter was prompt, professional and innovative. I would 100% recommend him every time.</span><span class="featured-provider-review-prompt">Read my full review</span></summary>
                         <div class="featured-provider-review-content">
-                            <p>Peter was prompt, professional and innovative. I would 100% recommend him every time.</p>
                             <p>I first contacted him for Starlink installation, but later utilised his expertise to create an electrical solution for my EV that was imported from the UK. I needed to be able to charge it at home. He was able to come up with a practical solution that others said was impossible or that they just could not do.</p>
                             <p>Additionally, because of the structure of my house, the internet was limited in certain rooms. Again, Peter was able to create a solution so I could have internet in every room, especially in my office, where I work from home.</p>
                             <p><strong>Highly recommended.</strong></p>
