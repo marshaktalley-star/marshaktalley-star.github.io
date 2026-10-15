@@ -305,6 +305,32 @@
       font-size: 0.9rem;
     }
 
+    /* COLLAPSIBLE AIRBNB CLASS */
+    .airbnb-dropdown {
+      max-width: 850px;
+      margin: 1rem auto;
+      border: 1px solid #d6e4e4;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .airbnb-dropdown > summary {
+      padding: 14px 20px;
+      background: #056367;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .airbnb-dropdown > summary:focus-visible {
+      outline: 3px solid #2fe2dd;
+      outline-offset: -3px;
+    }
+
+    .airbnb-dropdown .airbnb-class {
+      margin: 0 auto;
+    }
+
     /* AIRBNB LIVE CLASS */
     .airbnb-class {
       max-width: 850px;
@@ -471,70 +497,58 @@
   </section>
 
 
-  <!-- LIVE ONLINE CLASS BANNER -->
-  <div style="
-    background: #056367;
-    color: white;
-    text-align: center;
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  ">
-    LIVE ONLINE CLASS
-  </div>
-  <!-- END BANNER -->
+  <!-- COLLAPSIBLE AIRBNB CLASS -->
+  <details class="airbnb-dropdown">
+    <summary>View Airbnb Hosting Class</summary>
 
+    <section class="airbnb-class">
 
-  <!-- AIRBNB LIVE CLASS -->
-  <section class="airbnb-class">
+      <h2>
+        Airbnb Hosting: What I Wish I Knew Before Becoming a Host
+      </h2>
 
-    <h2>
-      Airbnb Hosting: What I Wish I Knew Before Becoming a Host
-    </h2>
+      <p class="class-subtitle">
+        A live, practical class for new, current and aspiring Airbnb hosts.
+      </p>
 
-    <p class="class-subtitle">
-      A live, practical class for new, current and aspiring Airbnb hosts.
-    </p>
+      <p>
+        Drawing from years of Airbnb hosting experience and earning
+        Superhost status multiple times, I will share practical lessons
+        about setting expectations, protecting your property, handling
+        difficult guests and reviews, and creating systems that can save
+        time and reduce stress.
+      </p>
 
-    <p>
-      Drawing from years of Airbnb hosting experience and earning
-      Superhost status multiple times, I will share practical lessons
-      about setting expectations, protecting your property, handling
-      difficult guests and reviews, and creating systems that can save
-      time and reduce stress.
-    </p>
+      <div class="class-details">
+        Wednesday, July 29, 2026<br>
+        12:00 PM Jamaica Time<br>
+        Live Online via Zoom<br><br>
+        $10 USD
+      </div>
 
-    <div class="class-details">
-      Wednesday, July 29, 2026<br>
-      12:00 PM Jamaica Time<br>
-      Live Online via Zoom<br><br>
-      $10 USD
-    </div>
+      <p>
+        <strong>
+          Don't just be a good host. Be a prepared host.
+        </strong>
+      </p>
 
-    <p>
-      <strong>
-        Don't just be a good host. Be a prepared host.
-      </strong>
-    </p>
+      <div class="stripe-buy-wrapper">
 
-    <div class="stripe-buy-wrapper">
+        <script
+          async
+          src="https://js.stripe.com/v3/buy-button.js">
+        </script>
 
-      <script
-        async
-        src="https://js.stripe.com/v3/buy-button.js">
-      </script>
+        <stripe-buy-button
+          buy-button-id="buy_btn_1TxVt9Eh8djIZFgfIroZp9iO"
+          publishable-key="pk_live_6LEoVdcEMgIMTx3M2sd3XW26008MFD18hQ">
+        </stripe-buy-button>
 
-      <stripe-buy-button
-        buy-button-id="buy_btn_1TxVt9Eh8djIZFgfIroZp9iO"
-        publishable-key="pk_live_6LEoVdcEMgIMTx3M2sd3XW26008MFD18hQ">
-      </stripe-buy-button>
+      </div>
 
-    </div>
-
-  </section>
-  <!-- END AIRBNB LIVE CLASS -->
+    </section>
+  </details>
+  <!-- END COLLAPSIBLE AIRBNB CLASS -->
 
 
   <!-- HOST GAME -->
@@ -598,11 +612,22 @@
 
     <!-- POLPERRO WAY -->
     <div class="property">
-      <a href="https://www.rightmove.co.uk/properties/94360029#/?channel=RES_LET" target="_blank" rel="noopener noreferrer">
-        <img class="property-main-photo" src="https://media.rightmove.co.uk/property-photo/780bcc4d8/94360029/780bcc4d8a34333e6034ace051b6e9a0.jpeg" alt="Polperro Way property in Hucknall — listing photo 1" loading="lazy">
+
+      <a
+        href="https://www.rightmove.co.uk/properties/94360029#/?channel=RES_LET"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          class="property-main-photo"
+          src="https://media.rightmove.co.uk/property-photo/46ddbbdbf/94360029/46ddbbdbf0fb03950e433e7f81fe883d.jpeg"
+          alt="Bright living room at the Polperro Way property in Hucknall"
+          loading="lazy"
+        >
       </a>
 
       <div class="property-content">
+
         <h3>Polperro Way — Hucknall, Nottingham, UK</h3>
 
         <p>
@@ -612,63 +637,82 @@
           transport links to Nottingham.
         </p>
 
-        <a href="https://www.rightmove.co.uk/properties/94360029#/?channel=RES_LET" class="cta-button" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://www.rightmove.co.uk/properties/94360029#/?channel=RES_LET"
+          class="cta-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           View Photos &amp; Full Details
         </a>
+
       </div>
 
       <details class="property-gallery">
-        <summary>View all 16 property photos</summary>
+        <summary>View 15 property photos</summary>
 
         <div class="property-photo-grid">
-          <a href="https://media.rightmove.co.uk/property-photo/780bcc4d8/94360029/780bcc4d8a34333e6034ace051b6e9a0.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/780bcc4d8/94360029/780bcc4d8a34333e6034ace051b6e9a0.jpeg" alt="Polperro Way, Hucknall — listing photo 1 of 16" loading="lazy" decoding="async">
-          </a>
+
           <a href="https://media.rightmove.co.uk/property-photo/46ddbbdbf/94360029/46ddbbdbf0fb03950e433e7f81fe883d.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/46ddbbdbf/94360029/46ddbbdbf0fb03950e433e7f81fe883d.jpeg" alt="Polperro Way, Hucknall — listing photo 2 of 16" loading="lazy" decoding="async">
+            <img src="https://media.rightmove.co.uk/property-photo/46ddbbdbf/94360029/46ddbbdbf0fb03950e433e7f81fe883d.jpeg" alt="Polperro Way, Hucknall — photo 1 of 15" loading="lazy" decoding="async">
           </a>
+
           <a href="https://media.rightmove.co.uk/property-photo/d06f8467f/94360029/d06f8467fd4ffbbfb4492f9484f21e14.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/d06f8467f/94360029/d06f8467fd4ffbbfb4492f9484f21e14.jpeg" alt="Polperro Way, Hucknall — listing photo 3 of 16" loading="lazy" decoding="async">
+            <img src="https://media.rightmove.co.uk/property-photo/d06f8467f/94360029/d06f8467fd4ffbbfb4492f9484f21e14.jpeg" alt="Polperro Way, Hucknall — photo 2 of 15" loading="lazy" decoding="async">
           </a>
+
           <a href="https://media.rightmove.co.uk/property-photo/968095666/94360029/968095666de5951e2f68a1ab361d26cc.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/968095666/94360029/968095666de5951e2f68a1ab361d26cc.jpeg" alt="Polperro Way, Hucknall — listing photo 4 of 16" loading="lazy" decoding="async">
+            <img src="https://media.rightmove.co.uk/property-photo/968095666/94360029/968095666de5951e2f68a1ab361d26cc.jpeg" alt="Polperro Way, Hucknall — photo 3 of 15" loading="lazy" decoding="async">
           </a>
+
           <a href="https://media.rightmove.co.uk/property-photo/5cdd12597/94360029/5cdd12597725cb4bc4d771f917e28157.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/5cdd12597/94360029/5cdd12597725cb4bc4d771f917e28157.jpeg" alt="Polperro Way, Hucknall — listing photo 5 of 16" loading="lazy" decoding="async">
+            <img src="https://media.rightmove.co.uk/property-photo/5cdd12597/94360029/5cdd12597725cb4bc4d771f917e28157.jpeg" alt="Polperro Way, Hucknall — photo 4 of 15" loading="lazy" decoding="async">
           </a>
+
           <a href="https://media.rightmove.co.uk/property-photo/81019ee66/94360029/81019ee66d16de7284b7fb7daebcb9e2.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/81019ee66/94360029/81019ee66d16de7284b7fb7daebcb9e2.jpeg" alt="Polperro Way, Hucknall — listing photo 6 of 16" loading="lazy" decoding="async">
+            <img src="https://media.rightmove.co.uk/property-photo/81019ee66/94360029/81019ee66d16de7284b7fb7daebcb9e2.jpeg" alt="Polperro Way, Hucknall — photo 5 of 15" loading="lazy" decoding="async">
           </a>
+
           <a href="https://media.rightmove.co.uk/property-photo/35c5cb097/94360029/35c5cb097b97312abc8e3bf50e5b7731.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/35c5cb097/94360029/35c5cb097b97312abc8e3bf50e5b7731.jpeg" alt="Polperro Way, Hucknall — listing photo 7 of 16" loading="lazy" decoding="async">
+            <img src="https://media.rightmove.co.uk/property-photo/35c5cb097/94360029/35c5cb097b97312abc8e3bf50e5b7731.jpeg" alt="Polperro Way, Hucknall — photo 6 of 15" loading="lazy" decoding="async">
           </a>
+
           <a href="https://media.rightmove.co.uk/property-photo/6b694c244/94360029/6b694c244a19fd37afafff200a01f4b7.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/6b694c244/94360029/6b694c244a19fd37afafff200a01f4b7.jpeg" alt="Polperro Way, Hucknall — listing photo 8 of 16" loading="lazy" decoding="async">
+            <img src="https://media.rightmove.co.uk/property-photo/6b694c244/94360029/6b694c244a19fd37afafff200a01f4b7.jpeg" alt="Polperro Way, Hucknall — photo 7 of 15" loading="lazy" decoding="async">
           </a>
+
           <a href="https://media.rightmove.co.uk/property-photo/25a5dec94/94360029/25a5dec94e804e3c786555072d1f1635.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/25a5dec94/94360029/25a5dec94e804e3c786555072d1f1635.jpeg" alt="Polperro Way, Hucknall — listing photo 9 of 16" loading="lazy" decoding="async">
+            <img src="https://media.rightmove.co.uk/property-photo/25a5dec94/94360029/25a5dec94e804e3c786555072d1f1635.jpeg" alt="Polperro Way, Hucknall — photo 8 of 15" loading="lazy" decoding="async">
           </a>
+
           <a href="https://media.rightmove.co.uk/property-photo/fff059007/94360029/fff0590073860d898b1b6030356395ad.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/fff059007/94360029/fff0590073860d898b1b6030356395ad.jpeg" alt="Polperro Way, Hucknall — listing photo 10 of 16" loading="lazy" decoding="async">
+            <img src="https://media.rightmove.co.uk/property-photo/fff059007/94360029/fff0590073860d898b1b6030356395ad.jpeg" alt="Polperro Way, Hucknall — photo 9 of 15" loading="lazy" decoding="async">
           </a>
+
           <a href="https://media.rightmove.co.uk/property-photo/97f668bbc/94360029/97f668bbcc6d2d155136b38a8a366b67.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/97f668bbc/94360029/97f668bbcc6d2d155136b38a8a366b67.jpeg" alt="Polperro Way, Hucknall — listing photo 11 of 16" loading="lazy" decoding="async">
+            <img src="https://media.rightmove.co.uk/property-photo/97f668bbc/94360029/97f668bbcc6d2d155136b38a8a366b67.jpeg" alt="Polperro Way, Hucknall — photo 10 of 15" loading="lazy" decoding="async">
           </a>
+
           <a href="https://media.rightmove.co.uk/property-photo/12959c1a3/94360029/12959c1a356b37468e78905a8b186c51.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/12959c1a3/94360029/12959c1a356b37468e78905a8b186c51.jpeg" alt="Polperro Way, Hucknall — listing photo 12 of 16" loading="lazy" decoding="async">
+            <img src="https://media.rightmove.co.uk/property-photo/12959c1a3/94360029/12959c1a356b37468e78905a8b186c51.jpeg" alt="Polperro Way, Hucknall — photo 11 of 15" loading="lazy" decoding="async">
           </a>
+
           <a href="https://media.rightmove.co.uk/property-photo/a6531814b/94360029/a6531814bf0cc5550598c3ae8176a0f3.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/a6531814b/94360029/a6531814bf0cc5550598c3ae8176a0f3.jpeg" alt="Polperro Way, Hucknall — listing photo 13 of 16" loading="lazy" decoding="async">
+            <img src="https://media.rightmove.co.uk/property-photo/a6531814b/94360029/a6531814bf0cc5550598c3ae8176a0f3.jpeg" alt="Polperro Way, Hucknall — photo 12 of 15" loading="lazy" decoding="async">
           </a>
+
           <a href="https://media.rightmove.co.uk/property-photo/e4252b0a9/94360029/e4252b0a91753f415eac5ed8cc0b5815.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/e4252b0a9/94360029/e4252b0a91753f415eac5ed8cc0b5815.jpeg" alt="Polperro Way, Hucknall — listing photo 14 of 16" loading="lazy" decoding="async">
+            <img src="https://media.rightmove.co.uk/property-photo/e4252b0a9/94360029/e4252b0a91753f415eac5ed8cc0b5815.jpeg" alt="Polperro Way, Hucknall — photo 13 of 15" loading="lazy" decoding="async">
           </a>
+
           <a href="https://media.rightmove.co.uk/property-photo/f078544c0/94360029/f078544c09c63acf63bab656a7c46d61.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/f078544c0/94360029/f078544c09c63acf63bab656a7c46d61.jpeg" alt="Polperro Way, Hucknall — listing photo 15 of 16" loading="lazy" decoding="async">
+            <img src="https://media.rightmove.co.uk/property-photo/f078544c0/94360029/f078544c09c63acf63bab656a7c46d61.jpeg" alt="Polperro Way, Hucknall — photo 14 of 15" loading="lazy" decoding="async">
           </a>
+
           <a href="https://media.rightmove.co.uk/property-photo/dbd3dd59c/94360029/dbd3dd59cd811a00e11c6401bc9609a8.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/dbd3dd59c/94360029/dbd3dd59cd811a00e11c6401bc9609a8.jpeg" alt="Polperro Way, Hucknall — listing photo 16 of 16" loading="lazy" decoding="async">
+            <img src="https://media.rightmove.co.uk/property-photo/dbd3dd59c/94360029/dbd3dd59cd811a00e11c6401bc9609a8.jpeg" alt="Polperro Way, Hucknall — photo 15 of 15" loading="lazy" decoding="async">
           </a>
+
         </div>
       </details>
     </div>
