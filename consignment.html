@@ -1,0 +1,1206 @@
+<!doctype html>
+<html lang="en-JM">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Wholesale & Consignment | Marsha Kerr Talley</title>
+
+  <meta
+    name="description"
+    content="Explore print books and Silhouette’s Café products for your Jamaican store. View JMD retail and wholesale prices and enquire about stocking products."
+  >
+
+  <style>
+    :root {
+      --cream: #fffaf2;
+      --ink: #34271e;
+      --muted: #6b6258;
+      --green: #36543b;
+      --line: #ded9cb;
+      --gold: #ae843d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 25px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--green);
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    header .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding-top: 21px;
+      padding-bottom: 21px;
+    }
+
+    .brand {
+      text-decoration: none;
+      color: var(--ink);
+      font-family: Georgia, serif;
+      font-size: 23px;
+    }
+
+    .brand small {
+      display: block;
+      font: 11px Arial, sans-serif;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    nav {
+      display: flex;
+      gap: 23px;
+      font-size: 14px;
+    }
+
+    nav a {
+      text-decoration: none;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: Georgia, serif;
+      font-weight: normal;
+      line-height: 1.12;
+    }
+
+    h1 {
+      font-size: clamp(44px, 6vw, 76px);
+      letter-spacing: -.035em;
+      margin: 18px 0 24px;
+      max-width: 780px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 44px);
+      margin: 0 0 18px;
+    }
+
+    h3 {
+      font-size: 27px;
+      margin: 0 0 12px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: 12px;
+      font-weight: bold;
+      color: var(--green);
+    }
+
+    .hero {
+      padding: 65px 0 56px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .lead {
+      max-width: 660px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+
+    .button {
+      display: inline-block;
+      border: 1px solid var(--green);
+      border-radius: 5px;
+      padding: 12px 22px;
+      background: var(--green);
+      color: #fff;
+      text-decoration: none;
+      font: 600 15px/1.5 Arial, sans-serif;
+      cursor: pointer;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--green);
+    }
+
+    section {
+      padding: 54px 0;
+    }
+
+    .section-intro {
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .tag {
+      font-size: 12px;
+      white-space: nowrap;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 5px 13px;
+      color: var(--green);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      text-align: left;
+      font-size: 15px;
+    }
+
+    caption {
+      text-align: left;
+      color: var(--muted);
+      font-size: 13px;
+      padding-bottom: 12px;
+    }
+
+    thead {
+      background: var(--green);
+      color: #fff;
+    }
+
+    th,
+    td {
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    thead th {
+      font-size: 12px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    tbody th {
+      font-weight: 500;
+      width: 60%;
+    }
+
+    td {
+      white-space: nowrap;
+    }
+
+    th small {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .trade {
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    .category th {
+      background: #edeedd;
+      color: var(--green);
+      padding: 11px 22px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .note {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 15px 0 0;
+    }
+
+    .arrangements {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      border-top: 1px solid var(--line);
+      padding-top: 30px;
+      margin-top: 35px;
+    }
+
+    .arrangements p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .form-section {
+      background: #eceee4;
+    }
+
+    .form-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.7fr;
+      gap: 48px;
+    }
+
+    .form-layout aside p {
+      color: var(--muted);
+    }
+
+    form {
+      background: #fff;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+    }
+
+    .fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    input:not([type="checkbox"]),
+    select,
+    textarea {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid #aaa99e;
+      border-radius: 4px;
+      font: 16px Arial, sans-serif;
+      color: var(--ink);
+      background: #fff;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    fieldset {
+      margin: 23px 0;
+      padding: 0;
+      border: 0;
+    }
+
+    legend {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .choice {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 14px;
+      margin: 9px 0;
+    }
+
+    .choice input {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+      accent-color: var(--green);
+      margin-top: 4px;
+    }
+
+    .conditional {
+      background: #f6f6ef;
+      padding: 16px;
+      margin: 18px 0;
+    }
+
+    .conditional[hidden] {
+      display: none;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      padding: 18px 0;
+    }
+
+    details {
+      border-bottom: 1px solid var(--line);
+    }
+
+    details p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      max-width: 850px;
+    }
+
+    footer {
+      background: var(--green);
+      color: #fff;
+      padding: 33px 0;
+      font-size: 14px;
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: #fff;
+    }
+
+    .skip {
+      position: absolute;
+      left: -9999px;
+    }
+
+    .skip:focus {
+      left: 12px;
+      top: 12px;
+      background: white;
+      padding: 12px;
+      z-index: 5;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    #status {
+      font-size: 14px;
+      color: var(--green);
+    }
+
+    @media (max-width: 700px) {
+      header .wrap {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        gap: 20px;
+      }
+
+      .hero {
+        padding: 40px 0;
+      }
+
+      .form-layout {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .arrangements {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .fields {
+        grid-template-columns: 1fr;
+      }
+
+      form {
+        padding: 22px 18px;
+      }
+
+      .wrap {
+        padding: 0 18px;
+      }
+
+      .section-intro {
+        align-items: start;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      th,
+      td {
+        padding: 14px 9px;
+        font-size: 13px;
+      }
+
+      tbody th {
+        width: 52%;
+      }
+
+      thead th {
+        font-size: 10px;
+      }
+
+      .category th {
+        padding: 10px;
+      }
+
+      .button {
+        width: 100%;
+        text-align: center;
+      }
+
+      section {
+        padding: 40px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!--
+    OWNER NOTE:
+    Shop retail prices are from the supplied source pages.
+    Wholesale prices are proposals pending cost checks.
+    Book JMD retail prices are new proposed local prices,
+    not currency conversions. Review before publishing.
+  -->
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header>
+    <div class="wrap">
+      <a class="brand" href="https://marshakerrtalley.com/">
+        Marsha Kerr Talley
+        <small>Live Inspired · Turning Pain Into Possibility™</small>
+      </a>
+
+      <nav aria-label="Page navigation">
+        <a href="#products">Products &amp; prices</a>
+        <a href="#enquire">Enquire</a>
+        <a href="#faq">FAQs</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="hero">
+      <div class="wrap">
+        <div class="eyebrow">For retailers in Jamaica</div>
+
+        <h1>Make room for<br>something meaningful.</h1>
+
+        <p class="lead">
+          Bring Marsha Kerr Talley’s print books and Silhouette’s Café
+          wellness essentials to your store. Explore wholesale purchases
+          or propose a consignment arrangement that works for your business.
+        </p>
+
+        <div class="actions">
+          <a class="button" href="#products">
+            View products &amp; prices
+          </a>
+
+          <a
+            class="button secondary"
+            href="https://wa.me/447939325005?text=Hello%20Marsha%2C%20I%27d%20like%20to%20discuss%20stocking%20your%20products%20in%20Jamaica."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ask Marsha on WhatsApp ↗
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <section id="products" class="wrap">
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow">The collection</p>
+          <h2>Products &amp; prices</h2>
+        </div>
+
+        <p class="tag">
+          All prices in Jamaican dollars · per unit / set
+        </p>
+      </div>
+
+      <table>
+        <caption>
+          Suggested retail prices and proposed wholesale prices.
+          Orders are confirmed by quotation.
+        </caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Physical product</th>
+            <th scope="col">Retail</th>
+            <th scope="col">Wholesale</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="category">
+            <th colspan="3" scope="colgroup">Books</th>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              Healing from Emotional Traumas
+              <small>Print edition · proposed JMD pricing</small>
+            </th>
+            <td>J$4,500</td>
+            <td class="trade">J$2,700</td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              The Decision Is Just the Beginning
+              <small>Print edition · proposed JMD pricing</small>
+            </th>
+            <td>J$3,000</td>
+            <td class="trade">J$1,800</td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              A Guide to Dealing with a Narcissist
+              <small>Print edition · proposed JMD pricing</small>
+            </th>
+            <td>J$1,200</td>
+            <td class="trade">J$720</td>
+          </tr>
+
+          <tr class="category">
+            <th colspan="3" scope="colgroup">
+              Wellness &amp; everyday living
+            </th>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              Wear Your Calm Lifestyle Necklace
+              <small>Silhouette’s Café</small>
+            </th>
+            <td>J$4,500</td>
+            <td class="trade">J$2,475</td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              Silhouette’s Essentials Peppermint
+              <small>Silhouette’s Café</small>
+            </th>
+            <td>J$1,500</td>
+            <td class="trade">J$975</td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              Soft Cycle Reusable Menstrual Pads — Set of 5
+              <small>Silhouette’s Café</small>
+            </th>
+            <td>J$3,000</td>
+            <td class="trade">J$1,800</td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              Healing Rose Water
+              <small>Silhouette’s Café</small>
+            </th>
+            <td>J$1,400</td>
+            <td class="trade">J$910</td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              Return to Stillness Tibetan Singing Bowl Set
+              <small>Silhouette’s Café</small>
+            </th>
+            <td>J$5,500</td>
+            <td class="trade">J$3,575</td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              Calm Me Down — Essential Oil Roll-On
+              <small>Silhouette’s Café</small>
+            </th>
+            <td>J$2,200</td>
+            <td class="trade">J$1,430</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="note">
+        Book prices are proposed Jamaican prices for print editions.
+        Wholesale prices are subject to confirmation of quantities and
+        availability. Delivery charges and any applicable taxes will be
+        clarified in your quotation before an order is agreed.
+      </p>
+
+      <div class="arrangements">
+        <div>
+          <h3>Buy wholesale</h3>
+          <p>
+            Purchase stock upfront at the wholesale price. Tell Marsha
+            which products and quantities you would like; availability,
+            payment and delivery details will be confirmed before you commit.
+          </p>
+        </div>
+
+        <div>
+          <h3>Propose consignment</h3>
+          <p>
+            Share the percentage your store retains, your payment schedule
+            and any fees. Commission, stock handling and unsold-stock
+            arrangements are agreed in writing before products are supplied.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="enquire" class="form-section">
+      <div class="wrap form-layout">
+        <aside>
+          <p class="eyebrow">Let’s work together</p>
+
+          <h2>Tell me about<br>your store.</h2>
+
+          <p>
+            A few details will help me prepare a suitable quotation
+            or discuss your consignment terms.
+          </p>
+
+          <p>
+            <strong>No commitment at this stage.</strong><br>
+            This is an enquiry, not an order or an agreement.
+          </p>
+
+          <p class="note">
+            Complete the form to prepare a WhatsApp message.
+            Review it in WhatsApp and press Send to deliver it to Marsha.
+          </p>
+
+          <a
+            href="https://wa.me/447939325005"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Prefer to chat? Ask Marsha ↗
+          </a>
+        </aside>
+
+        <form id="retailer-form">
+          <div class="fields">
+            <label class="field">
+              Business name *
+              <input
+                name="business"
+                autocomplete="organization"
+                required
+                maxlength="100"
+              >
+            </label>
+
+            <label class="field">
+              Contact person *
+              <input
+                name="contact"
+                autocomplete="name"
+                required
+                maxlength="100"
+              >
+            </label>
+
+            <label class="field">
+              Email *
+              <input
+                type="email"
+                name="email"
+                autocomplete="email"
+                required
+                maxlength="150"
+              >
+            </label>
+
+            <label class="field">
+              Phone / WhatsApp *
+              <input
+                type="tel"
+                name="phone"
+                autocomplete="tel"
+                required
+                maxlength="35"
+              >
+            </label>
+
+            <label class="field">
+              Store address / town *
+              <input
+                name="address"
+                autocomplete="street-address"
+                required
+                maxlength="200"
+              >
+            </label>
+
+            <label class="field">
+              Parish *
+              <select name="parish" required>
+                <option value="">Select parish</option>
+                <option>Kingston</option>
+                <option>St. Andrew</option>
+                <option>St. Thomas</option>
+                <option>Portland</option>
+                <option>St. Mary</option>
+                <option>St. Ann</option>
+                <option>Trelawny</option>
+                <option>St. James</option>
+                <option>Hanover</option>
+                <option>Westmoreland</option>
+                <option>St. Elizabeth</option>
+                <option>Manchester</option>
+                <option>Clarendon</option>
+                <option>St. Catherine</option>
+              </select>
+            </label>
+
+            <label class="field">
+              Type of business *
+              <select name="businessType" required>
+                <option value="">Select type</option>
+                <option>Bookshop</option>
+                <option>Gift shop / boutique</option>
+                <option>Café</option>
+                <option>Salon / spa / wellness store</option>
+                <option>Other</option>
+              </select>
+            </label>
+
+            <label class="field">
+              Website / social page (optional)
+              <input
+                name="website"
+                maxlength="200"
+                placeholder="Website or social handle"
+              >
+            </label>
+
+            <label class="field full">
+              Preferred arrangement *
+              <select id="arrangement" name="arrangement" required>
+                <option value="">Select arrangement</option>
+                <option>Wholesale</option>
+                <option>Consignment</option>
+                <option>Open to either</option>
+              </select>
+            </label>
+          </div>
+
+          <fieldset>
+            <legend>Products of interest — select at least one *</legend>
+
+            <label class="choice">
+              <input
+                type="checkbox"
+                name="product"
+                value="Healing from Emotional Traumas"
+              >
+              <span>Healing from Emotional Traumas</span>
+            </label>
+
+            <label class="choice">
+              <input
+                type="checkbox"
+                name="product"
+                value="The Decision Is Just the Beginning"
+              >
+              <span>The Decision Is Just the Beginning</span>
+            </label>
+
+            <label class="choice">
+              <input
+                type="checkbox"
+                name="product"
+                value="A Guide to Dealing with a Narcissist"
+              >
+              <span>A Guide to Dealing with a Narcissist</span>
+            </label>
+
+            <label class="choice">
+              <input
+                type="checkbox"
+                name="product"
+                value="Wear Your Calm Lifestyle Necklace"
+              >
+              <span>Wear Your Calm Lifestyle Necklace</span>
+            </label>
+
+            <label class="choice">
+              <input
+                type="checkbox"
+                name="product"
+                value="Silhouette’s Essentials Peppermint"
+              >
+              <span>Silhouette’s Essentials Peppermint</span>
+            </label>
+
+            <label class="choice">
+              <input
+                type="checkbox"
+                name="product"
+                value="Soft Cycle Reusable Menstrual Pads — Set of 5"
+              >
+              <span>Soft Cycle Reusable Menstrual Pads — Set of 5</span>
+            </label>
+
+            <label class="choice">
+              <input
+                type="checkbox"
+                name="product"
+                value="Healing Rose Water"
+              >
+              <span>Healing Rose Water</span>
+            </label>
+
+            <label class="choice">
+              <input
+                type="checkbox"
+                name="product"
+                value="Return to Stillness Tibetan Singing Bowl Set"
+              >
+              <span>Return to Stillness Tibetan Singing Bowl Set</span>
+            </label>
+
+            <label class="choice">
+              <input
+                type="checkbox"
+                name="product"
+                value="Calm Me Down — Essential Oil Roll-On"
+              >
+              <span>Calm Me Down — Essential Oil Roll-On</span>
+            </label>
+          </fieldset>
+
+          <label class="field">
+            Estimated quantities per product *
+            <textarea
+              name="quantities"
+              required
+              maxlength="800"
+              placeholder="For example: 6 necklaces and 5 copies of Healing from Emotional Traumas."
+            ></textarea>
+          </label>
+
+          <div id="consignment-fields" class="conditional" hidden>
+            <div class="fields">
+              <label class="field full">
+                Percentage of each sale your store retains (%)
+                <input
+                  type="number"
+                  name="commission"
+                  min="0"
+                  max="100"
+                  step="0.5"
+                  placeholder="Your store’s proposed commission"
+                >
+              </label>
+
+              <label class="field full">
+                Proposed payment schedule
+                <input
+                  name="schedule"
+                  maxlength="150"
+                  placeholder="For example: monthly, by the 5th"
+                >
+              </label>
+
+              <label class="field full">
+                Additional fees or consignment conditions
+                <textarea
+                  name="terms"
+                  maxlength="600"
+                  placeholder="Include any display fees, stock period or return conditions. Enter None if applicable."
+                ></textarea>
+              </label>
+            </div>
+          </div>
+
+          <label class="field" style="margin-top: 18px;">
+            Delivery preference
+            <select name="delivery">
+              <option>Discuss delivery / collection</option>
+              <option>Delivery to store</option>
+              <option>Collection by arrangement</option>
+            </select>
+          </label>
+
+          <label class="field" style="margin-top: 18px;">
+            Anything else? (optional)
+            <textarea name="notes" maxlength="600"></textarea>
+          </label>
+
+          <label class="choice" style="margin-top: 20px;">
+            <input type="checkbox" required>
+            <span>
+              I agree that Marsha may contact me about this enquiry. *
+            </span>
+          </label>
+
+          <p class="note">
+            Your details are included in the WhatsApp message you choose
+            to send. This page does not save your form entries.
+          </p>
+
+          <button
+            class="button"
+            style="margin-top: 18px;"
+            type="submit"
+          >
+            Prepare WhatsApp enquiry ↗
+          </button>
+
+          <p id="status" role="status" aria-live="polite"></p>
+
+          <noscript>
+            <p>
+              JavaScript is needed to prepare the enquiry. Please
+              <a href="https://wa.me/447939325005">
+                contact Marsha on WhatsApp
+              </a>
+              with your store details and products of interest.
+            </p>
+          </noscript>
+        </form>
+      </div>
+    </section>
+
+    <section id="faq" class="wrap">
+      <p class="eyebrow">Before we begin</p>
+      <h2>A few useful answers.</h2>
+
+      <details>
+        <summary>How do wholesale and consignment differ?</summary>
+        <p>
+          Wholesale means purchasing stock upfront. Consignment means
+          holding agreed stock and accounting for sales on an agreed
+          schedule. The written agreement will set out commission,
+          payments, stock responsibility and returns.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can my store propose its own consignment rate?</summary>
+        <p>
+          Yes. Include the percentage your store retains, payment schedule
+          and any fees in the enquiry form. Terms must be agreed by both
+          parties before products are supplied.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is there a minimum order?</summary>
+        <p>
+          Send the products and quantities you have in mind. Any minimum
+          quantities will be confirmed with your quotation.
+        </p>
+      </details>
+
+      <details>
+        <summary>Are these physical books?</summary>
+        <p>
+          Yes. The three books listed here are print editions. This
+          retailer collection does not include ebooks or digital downloads.
+        </p>
+      </details>
+
+      <details>
+        <summary>How are delivery and unsold stock handled?</summary>
+        <p>
+          Delivery or collection is arranged with each store. For
+          consignment, the stock period, condition of returned items,
+          responsibility for loss or damage and return arrangements
+          are agreed before delivery.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does completing the form place an order?</summary>
+        <p>
+          No. The form prepares a WhatsApp enquiry for you to review
+          and send. Marsha will discuss availability and terms with
+          you before any order or consignment placement is confirmed.
+        </p>
+      </details>
+
+      <div class="actions">
+        <a
+          class="button secondary"
+          href="https://wa.me/447939325005?text=Hello%20Marsha%2C%20I%20have%20a%20question%20about%20wholesale%20or%20consignment."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Still have a question? Ask Marsha ↗
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>
+        Marsha Kerr Talley<br>
+        Live Inspired | Turning Pain Into Possibility™
+      </div>
+
+      <a href="https://marshakerrtalley.com/">
+        Visit the main website ↗
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById("retailer-form");
+    const arrangement = document.getElementById("arrangement");
+    const conditional = document.getElementById("consignment-fields");
+
+    function updateArrangement() {
+      const show =
+        arrangement.value === "Consignment" ||
+        arrangement.value === "Open to either";
+
+      conditional.hidden = !show;
+
+      conditional.querySelectorAll("input, textarea").forEach(function (el) {
+        el.disabled = !show;
+      });
+    }
+
+    arrangement.addEventListener("change", updateArrangement);
+    updateArrangement();
+
+    const products = Array.from(
+      form.querySelectorAll('input[name="product"]')
+    );
+
+    function validateProducts() {
+      const selected = products.some(function (product) {
+        return product.checked;
+      });
+
+      products[0].setCustomValidity(
+        selected ? "" : "Please select at least one product."
+      );
+    }
+
+    products.forEach(function (product) {
+      product.addEventListener("change", validateProducts);
+    });
+
+    validateProducts();
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      validateProducts();
+
+      if (!form.reportValidity()) {
+        return;
+      }
+
+      const data = new FormData(form);
+
+      const value = function (name) {
+        return String(data.get(name) || "").trim();
+      };
+
+      const lines = [
+        "Hello Marsha, I would like to discuss stocking your products in Jamaica.",
+        "",
+        "Business: " + value("business"),
+        "Contact: " + value("contact"),
+        "Email: " + value("email"),
+        "Phone / WhatsApp: " + value("phone"),
+        "Store: " + value("address") + ", " + value("parish"),
+        "Business type: " + value("businessType"),
+        "Website / social: " + (value("website") || "Not provided"),
+        "Arrangement: " + value("arrangement"),
+        "",
+        "Products: " + data.getAll("product").join("; "),
+        "Quantities: " + value("quantities")
+      ];
+
+      if (!conditional.hidden) {
+        lines.push(
+          "",
+          "Store retains: " +
+            (value("commission") ? value("commission") + "%" : "To discuss"),
+          "Payment schedule: " + (value("schedule") || "To discuss"),
+          "Fees / conditions: " + (value("terms") || "To discuss")
+        );
+      }
+
+      lines.push(
+        "",
+        "Delivery: " + value("delivery"),
+        "Notes: " + (value("notes") || "None"),
+        "",
+        "I agree to be contacted about this enquiry."
+      );
+
+      const url =
+        "https://wa.me/447939325005?text=" +
+        encodeURIComponent(lines.join("\n"));
+
+      const status = document.getElementById("status");
+
+      status.textContent =
+        "Your enquiry is prepared. Review it in WhatsApp and press Send. ";
+
+      const link = document.createElement("a");
+      link.href = url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "Open prepared enquiry";
+
+      status.appendChild(link);
+
+      window.open(url, "_blank", "noopener,noreferrer");
+    });
+  </script>
+</body>
+</html>
