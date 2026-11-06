@@ -4,6 +4,7 @@
     <base href="https://marshakerrtalley.com/"/>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="referrer" content="strict-origin-when-cross-origin"/>
     <meta content="Returning to Jamaica through my lived experience: Returning Resident concessions, shipping, Customs, importing a car, housing, document safety, verified brokers and realtors, money, community and rebuilding a life back home from scratch." name="description"/>
     <title>Returning to Jamaica | Marsha Kerr Talley</title>
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -7176,6 +7177,720 @@
     }
     </style>
 
+    <style id="luxury-editorial">
+    /* The magazine uses a restrained editorial system rather than the original blog cards. */
+    .mag-mode {
+        background: #d9d9cf;
+        color:#203b35
+    }
+
+    .mag-tools {
+        background: #132f29;
+        padding: 12px 26px;
+        box-shadow: none;
+        border-bottom:1px solid #a68a56
+    }
+
+    .mag-brand strong {
+        font-size: 23px;
+        font-weight:500
+    }
+
+    .mag-brand small {
+        color: #c6b389;
+        letter-spacing: .15em;
+        font-size:9px
+    }
+
+    .mag-controls {
+        gap:6px
+    }
+
+    .mag-tools button, .mag-tools select {
+        font-size: 12px;
+        border-radius: 2px;
+        padding: 9px 12px;
+        border: 1px solid #a69c7d;
+        background: transparent;
+        color:#faf6eb
+    }
+
+    .mag-tools select {
+        max-width:180px
+    }
+
+    .mag-tools option {
+        color: #132f29;
+        background:#fffdf6
+    }
+
+    .mag-tools button:hover {
+        background: #f4ead4;
+        color:#132f29
+    }
+
+    .mag-tools button:disabled {
+        opacity:.35
+    }
+
+    .mag-mode .mag-stage {
+        max-width: 1240px;
+        padding: 30px 42px 24px;
+        margin: 22px auto 0;
+        background: #fbf8f0;
+        border: 1px solid #bdb9a7;
+        box-shadow:0 16px 48px #18372c24
+    }
+
+    .mag-mode .mag-stage:after {
+        content: '';
+        position: absolute;
+        top: 22px;
+        bottom: 22px;
+        left: 50%;
+        width: 1px;
+        background: #aa997c40;
+        pointer-events:none
+    }
+
+    .mag-mode .mag-flow {
+        height: 740px;
+        column-gap:70px
+    }
+
+    .mag-mode .mag-flow, .mag-mode .mag-flow p, .mag-mode .mag-flow li, .mag-mode .mag-flow .lead {
+        font: 13.5px/1.55 Manrope, Arial, sans-serif !important;
+        color:#2a433b !important
+    }
+
+    .mag-mode .mag-flow p {
+        margin:0 0 11px !important
+    }
+
+    .mag-mode .mag-flow h2 {
+        font: 500 28px/1.08 'Cormorant Garamond', Georgia, serif !important;
+        margin: 8px 0 16px !important;
+        letter-spacing:-.02em
+    }
+
+    .mag-mode .mag-flow h3 {
+        font: 600 19px/1.15 'Cormorant Garamond', Georgia, serif !important;
+        margin:12px 0 7px !important
+    }
+
+    .mag-mode .mag-flow h1 {
+        font-size: 40px !important;
+        font-weight:500 !important
+    }
+
+    .mag-mode .mag-flow div[class], .mag-mode .mag-flow article, .mag-mode .mag-flow figure {
+        padding: 0 !important;
+        margin: 0 0 12px !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        min-height: 0 !important;
+        max-height:none !important
+    }
+
+    .mag-mode .mag-flow div[class] {
+        display: block !important;
+        height:auto !important
+    }
+
+    .mag-mode .mag-flow .wrap {
+        margin:0 !important
+    }
+
+    .mag-mode .mag-flow span {
+        font-size:inherit
+    }
+
+    .mag-mode .mag-flow .kicker, .mag-mode .mag-flow .num, .editorial-eyebrow {
+        font: 600 9px/1.5 Manrope, Arial, sans-serif !important;
+        letter-spacing: .16em !important;
+        text-transform: uppercase;
+        color: #8b7041 !important;
+        display: block;
+        margin:6px 0 12px !important
+    }
+
+    .mag-mode .mag-flow .kicker:before {
+        display:none
+    }
+
+    .mag-mode .mag-flow .chapter-label {
+        font: 500 30px/1 Georgia, serif !important;
+        background: none !important;
+        color: #ac9469 !important;
+        padding: 0 !important;
+        margin:0 0 8px !important
+    }
+
+    .mag-mode .mag-flow .key, .mag-mode .mag-flow .tip, .mag-mode .mag-flow .note, .mag-mode .mag-flow .home-reflection, .mag-mode .mag-flow .everyday-card, .mag-mode .mag-flow .question {
+        border: 0 !important;
+        border-top: 1px solid #bba77d66 !important;
+        padding: 10px 0 !important;
+        background: none !important;
+        margin:9px 0 !important
+    }
+
+    .mag-mode .mag-flow .quote, .mag-mode .mag-flow .story-badge, .mag-mode .mag-flow .voice-line {
+        font: 500 22px/1.25 'Cormorant Garamond', Georgia, serif !important;
+        color:#435e4a !important
+    }
+
+    .mag-mode .mag-flow .mark {
+        display:none !important
+    }
+
+    .mag-mode .mag-flow img {
+        max-height: 210px !important;
+        border-radius: 0 !important;
+        margin:8px 0 !important
+    }
+
+    .mag-mode .mag-flow .hero-image img {
+        height: 510px !important;
+        max-height: 510px !important;
+        object-fit: cover !important;
+        object-position:center 35% !important
+    }
+
+    .mag-mode .mag-flow .hero-image {
+        break-before:column
+    }
+
+    .mag-mode .mag-flow .hero-note {
+        border-top: 1px solid #bba77d !important;
+        padding: 15px 0 !important;
+        font:14px/1.6 Georgia, serif !important
+    }
+
+    .mag-mode .mag-flow .hero-note strong {
+        font:500 24px/1.2 Georgia, serif
+    }
+
+    .mag-mode .mag-flow .hero-copy {
+        min-height:690px !important
+    }
+
+    .mag-mode .mag-flow .hero-copy .lead {
+        font-size: 14px !important;
+        line-height:1.7 !important
+    }
+
+    .mag-mode .mag-flow .hero-byline {
+        font: 9px/1.6 Manrope, Arial, sans-serif !important;
+        letter-spacing: .09em;
+        text-transform: uppercase;
+        margin:20px 0 !important
+    }
+
+    .mag-mode .mag-flow .actions, .mag-mode .mag-flow .resource-links, .mag-mode .mag-flow .sources {
+        display: flex !important;
+        flex-wrap: wrap;
+        gap: 6px !important;
+        align-items: flex-start;
+        margin: 12px 0 !important;
+        break-inside:avoid
+    }
+
+    .mag-mode .mag-flow .actions a, .mag-mode .mag-flow .resource-links a, .mag-mode .mag-flow .sources a {
+        display: inline-flex !important;
+        border: 1px solid #bdac8a !important;
+        background: none !important;
+        color: #294a3c !important;
+        border-radius: 2px !important;
+        box-shadow: none !important;
+        font: 600 10px/1.4 Manrope, Arial, sans-serif !important;
+        padding: 7px 9px !important;
+        margin: 0 !important;
+        white-space:normal
+    }
+
+    .mag-mode .mag-flow .sources {
+        break-inside:auto
+    }
+
+    .mag-mode .mag-flow .section-share {
+        float: none !important;
+        display: inline-block !important;
+        font: 10px/1.3 Manrope, Arial, sans-serif !important;
+        border: 0 !important;
+        border-bottom: 1px solid #bba77d !important;
+        background: transparent !important;
+        padding: 4px 0 !important;
+        margin: 0 0 12px !important;
+        box-shadow:none
+    }
+
+    .mag-mode .mag-flow summary {
+        font: 600 12px/1.5 Manrope, Arial, sans-serif !important;
+        color: #294a3c !important;
+        padding:8px 0 !important
+    }
+
+    .mag-mode .mag-flow summary:after {
+        font-size: 15px;
+        width: 22px;
+        height: 22px;
+        flex-basis: 22px;
+        background:none
+    }
+
+    .mag-mode .mag-flow details {
+        border-color: #c4b59466 !important;
+        margin:0 0 9px !important
+    }
+
+    .mag-mode .mag-flow .detail-body {
+        padding: 0 !important;
+        font:13.5px/1.55 Manrope, Arial, sans-serif !important
+    }
+
+    .mag-mode .mag-flow ul, .mag-mode .mag-flow ol {
+        padding-left: 19px;
+        margin:8px 0 12px
+    }
+
+    .mag-mode .mag-flow li {
+        margin:4px 0 !important
+    }
+
+    .mag-mode .mag-flow iframe {
+        height:240px !important
+    }
+
+    .mag-mode .mag-flow .portrait-video {
+        height: 420px !important;
+        max-width: 250px !important;
+        display: block;
+        margin:0 auto
+    }
+
+    .video-watch-link {
+        display: block;
+        font: 11px/1.5 Manrope, Arial, sans-serif;
+        margin: 8px 0 15px;
+        text-decoration: underline;
+        color:#395741
+    }
+
+    .mag-mode .mag-flow > .story-bridge {
+        break-before: auto;
+        padding: 18px 0 !important;
+        font: italic 20px/1.4 Georgia, serif !important;
+        color: #6f775a !important;
+        break-inside:avoid
+    }
+
+    .mag-mode .mag-flow .car-slide:not(.active) {
+        display:none !important
+    }
+
+    .mag-mode .mag-flow .car-slide.active {
+        display:block !important
+    }
+
+    .mag-mode .mag-flow .car-slide-controls {
+        display: flex !important;
+        gap:7px !important
+    }
+
+    .mag-mode .mag-flow .check {
+        padding: 7px 0 !important;
+        border-radius: 0 !important;
+        border: 0 !important;
+        border-bottom: 1px solid #c4b59466 !important;
+        background: none !important;
+        font: 13px/1.5 Manrope, Arial, sans-serif !important;
+        break-inside:avoid
+    }
+
+    .mag-mode .mag-flow .choice {
+        display: inline-block !important;
+        padding: 6px 10px !important;
+        font: 12px/1.5 Manrope, Arial, sans-serif !important;
+        border-radius: 2px !important;
+        margin:3px 5px 3px 0 !important
+    }
+
+    .mag-mode .mag-flow .choice.selected {
+        background: #183e32 !important;
+        color:#fff !important
+    }
+
+    .mag-mode .mag-bottom {
+        max-width: 1240px;
+        background: #132f29;
+        margin-bottom: 24px;
+        border-top: 1px solid #a68a56;
+        padding:12px 24px
+    }
+
+    .mag-bottom button {
+        font-size: 11px;
+        border-radius: 2px;
+        padding:7px 12px
+    }
+
+    .mag-page-count small {
+        font-size: 8px;
+        color:#c6b389
+    }
+
+    .mag-mode .mag-flow .contents-leaf {
+        height: 730px !important;
+        break-before: column;
+        break-inside: avoid;
+        margin: 0 !important;
+        padding:12px 0 !important
+    }
+
+    .mag-mode .mag-flow .contents-leaf h2 {
+        font-size: 48px !important;
+        margin:20px 0 !important
+    }
+
+    .mag-mode .mag-flow .contents-intro {
+        font: italic 17px/1.5 Georgia, serif !important;
+        color: #68705e !important;
+        margin:0 0 28px !important
+    }
+
+    .mag-mode .mag-flow .contents-group {
+        font: 600 10px/1.4 Manrope, Arial, sans-serif !important;
+        text-transform: uppercase;
+        letter-spacing: .14em;
+        margin: 18px 0 !important;
+        color:#887043 !important
+    }
+
+    .contents-row {
+        display: grid;
+        grid-template-columns: 24px 1fr 26px;
+        gap: 10px;
+        text-decoration: none;
+        border-bottom: 1px solid #b7a78666;
+        padding: 12px 0;
+        font: 13px/1.4 Manrope, Arial, sans-serif;
+        color:#243f34
+    }
+
+    .contents-row:hover {
+        color: #8c6e35;
+        background:#a88b4e0a
+    }
+
+    .contents-no {
+        font: italic 13px/1.4 Georgia, serif;
+        color:#9b8154
+    }
+
+    .contents-page {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+        color:#84704c
+    }
+
+    .discovery-feature {
+        padding: 60px 30px;
+        background:#f8f4e8
+    }
+
+    .discovery-feature > div {
+        max-width: 760px;
+        margin:auto
+    }
+
+    .discovery-film iframe {
+        width: 280px;
+        height: 498px;
+        border: 0;
+        display: block;
+        margin:auto
+    }
+
+    .discovery-film figcaption {
+        text-align: center;
+        font: 11px/1.4 Arial;
+        margin-top:10px
+    }
+
+    .mag-mode .mag-flow .discovery-leaf, .mag-mode .mag-flow .discovery-partner {
+        height: 730px !important;
+        break-before: column;
+        break-inside: avoid;
+        padding: 12px 0 !important;
+        margin:0 !important
+    }
+
+    .mag-mode .mag-flow .discovery-leaf h2, .mag-mode .mag-flow .discovery-partner h2 {
+        font-size: 37px !important;
+        margin:18px 0 !important
+    }
+
+    .mag-mode .mag-flow .discovery-film iframe {
+        width: 238px !important;
+        height: 423px !important;
+        margin: 18px auto 8px !important;
+        display:block
+    }
+
+    .mag-mode .mag-flow .discovery-film figcaption {
+        font-size:10px !important
+    }
+
+    .mag-mode .mag-flow .partner-offer {
+        border-top: 1px solid #b7a786 !important;
+        padding: 12px 0 !important;
+        margin:12px 0 !important
+    }
+
+    .partner-cta {
+        display: inline-block;
+        padding: 13px 18px;
+        background: #1b4235;
+        color: #fff;
+        text-decoration: none;
+        font:12px/1.4 Manrope, Arial, sans-serif
+    }
+
+    .mag-mode .mag-flow .partner-disclosure {
+        font-size: 10px !important;
+        color: #727965 !important;
+        margin-top:15px !important
+    }
+
+    .mag-mode .mag-flow .progress {
+        height: 4px !important;
+        background:#d5d9c6 !important
+    }
+
+    .mag-mode .mag-flow .progress > div {
+        height: 4px !important;
+        background: #486748 !important;
+        margin: 0 !important
+    }
+
+    @media (max-width: 760px) {
+        .mag-mode .mag-stage {
+            margin: 10px 8px 0;
+            padding:23px 20px
+        }
+
+        .mag-mode .mag-stage:after {
+            display:none
+        }
+
+        .mag-mode .mag-flow {
+            height: 740px;
+            column-gap:40px
+        }
+
+        .mag-controls {
+            gap: 5px;
+            justify-content:flex-start
+        }
+
+        .mag-tools {
+            padding:10px 12px
+        }
+
+        .mag-tools select {
+            max-width: 140px;
+            flex:1
+        }
+
+        .mag-tools button {
+            font-size: 11px;
+            padding:8px
+        }
+
+        .mag-mode .mag-flow p, .mag-mode .mag-flow li, .mag-mode .mag-flow .lead {
+            font-size:14px !important
+        }
+
+        .mag-mode .mag-flow .contents-leaf h2 {
+            font-size:40px !important
+        }
+
+        .contents-row {
+            font-size: 12px;
+            padding:12px 0
+        }
+
+        .mag-mode .mag-flow .discovery-leaf h2, .mag-mode .mag-flow .discovery-partner h2 {
+            font-size:30px !important
+        }
+
+        .mag-mode .mag-bottom {
+            margin:0 8px 20px
+        }
+
+        .mag-mode .mag-flow .hero-copy {
+            min-height:0 !important
+        }
+
+        .mag-mode .mag-flow .hero-image img {
+            height:510px !important
+        }
+
+        .mag-mode .mag-flow .discovery-film iframe {
+            height: 390px !important;
+            width: 219px !important
+        }
+    }
+
+    @media print {
+        .mag-mode .mag-flow .contents-leaf, .mag-mode .mag-flow .discovery-leaf, .mag-mode .mag-flow .discovery-partner {
+            height:auto !important
+        }
+
+        .mag-mode .mag-stage:after {
+            display: none
+        }
+    }
+    </style>
+    <style id="editorial-refinements">
+    .mag-mode .mag-flow div[class] {
+        margin: 0 !important;
+        font-size: 13.5px;
+        line-height:1.55
+    }
+
+    .mag-mode .mag-flow div.actions, .mag-mode .mag-flow div.resource-links, .mag-mode .mag-flow div.sources {
+        display: flex !important;
+        gap: 6px !important;
+        margin:10px 0 !important
+    }
+
+    .mag-mode .mag-flow div.chapter-top, .mag-mode .mag-flow div.story, .mag-mode .mag-flow div.everyday-card, .mag-mode .mag-flow div.home-reflection, .mag-mode .mag-flow div.voice-line, .mag-mode .mag-flow div.tip {
+        margin:0 0 14px !important
+    }
+
+    .mag-mode .mag-flow div.hero-note {
+        margin:20px 0 !important
+    }
+
+    .mag-mode .mag-flow .contents-row {
+        padding: 9px 0 !important;
+        break-inside:avoid
+    }
+
+    .mag-mode .mag-flow .contents-leaf h2 {
+        font-size: 43px !important;
+        margin:16px 0 !important
+    }
+
+    .mag-mode .mag-flow .contents-intro {
+        margin-bottom:20px !important
+    }
+
+    .mag-mode .mag-flow div.contents-leaf {
+        height: 730px !important;
+        padding:8px 0 !important
+    }
+
+    .mag-mode .mag-flow div.discovery-leaf, .mag-mode .mag-flow div.discovery-partner {
+        height: 730px !important;
+        padding:8px 0 !important
+    }
+
+    .mag-mode .mag-flow div.partner-offer {
+        margin: 12px 0 !important;
+        padding:10px 0 !important
+    }
+
+    .mag-mode .mag-flow .road-video, .mag-mode .mag-flow .story-video-embed, .mag-mode .mag-flow .rights-video {
+        aspect-ratio:auto !important
+    }
+
+    .mag-mode .mag-flow div.housing-visual {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 14px !important;
+        break-inside:avoid
+    }
+
+    .mag-mode .mag-flow .housing-photo-copy strong {
+        font-size:15px !important
+    }
+
+    .mag-mode .mag-flow .housing-photo-copy small {
+        font-size:12px !important
+    }
+
+    .mag-mode .mag-flow .housing-illustration img {
+        height:160px !important
+    }
+
+    .mag-mode .mag-flow .source-heading {
+        font: 500 30px/1.15 Georgia, serif !important;
+        margin-bottom:15px !important
+    }
+
+    .mag-mode .mag-flow .story-bridge-inner {
+        font:italic 20px/1.4 Georgia, serif !important
+    }
+
+    .mag-mode .mag-flow .reel-stage {
+        background:none !important
+    }
+
+    .mag-mode .mag-flow .chapter.dark * {
+        color:#2a433b
+    }
+
+    .mag-mode .mag-flow .chapter.dark a.btn {
+        color:#294a3c !important
+    }
+
+    .mag-mode .mag-flow .hero-image {
+        break-inside:avoid
+    }
+
+    .mag-mode .mag-flow .contents-row:focus-visible {
+        outline: 2px solid #9f8353;
+        outline-offset: 2px
+    }
+    </style>
+    <style>
+    .mag-mode > .jamaica-contact-launcher {
+        display: none !important
+    }
+    </style>
+    <style>
+    @media (max-width: 760px) {
+        .mag-controls select {
+            order: -1;
+            flex: 0 0 100%;
+            max-width: none;
+            width:100%
+        }
+
+        .mag-controls {
+            display: flex;
+            gap:5px
+        }
+
+        .mag-tools button {
+            padding: 8px 10px;
+            font-size:10px
+        }
+
+        .mag-mode .mag-flow .hero-copy h1 {
+            font-size:32px !important
+        }
+
+        .mag-mode .mag-flow .hero-copy .lead {
+            font-size: 13px !important;
+            line-height: 1.6 !important
+        }
+    }
+    </style>
 </head>
 <body>
     <div aria-hidden="true" class="reading-progress">
@@ -7274,6 +7989,148 @@
             </div>
         </div>
     </header>
+    <section id="mag-index" class="mag-index" aria-label="Magazine contents">
+        <div class="contents-leaf">
+            <span class="editorial-eyebrow">The returning resident’s edition</span>
+            <h2>In this issue</h2>
+            <p class="contents-intro">
+                The practical details. The personal stories.
+                <br>
+                A life taking shape, one discovery at a time.
+            </p>
+            <h3 class="contents-group">01 / Making the move</h3>
+            <a class="contents-row" href="#introduction">
+                <span class="contents-no">01</span>
+                <span>Coming home, honestly</span>
+                <span class="contents-page" data-page-for="introduction">↗</span>
+            </a>
+            <a class="contents-row" href="#series">
+                <span class="contents-no">02</span>
+                <span>The audio journal</span>
+                <span class="contents-page" data-page-for="series">↗</span>
+            </a>
+            <a class="contents-row" href="#prepare">
+                <span class="contents-no">03</span>
+                <span>Before you move</span>
+                <span class="contents-page" data-page-for="prepare">↗</span>
+            </a>
+            <a class="contents-row" href="#verify">
+                <span class="contents-no">04</span>
+                <span>Safety & verification</span>
+                <span class="contents-page" data-page-for="verify">↗</span>
+            </a>
+            <a class="contents-row" href="#shipping">
+                <span class="contents-no">05</span>
+                <span>Shipping your belongings</span>
+                <span class="contents-page" data-page-for="shipping">↗</span>
+            </a>
+            <a class="contents-row" href="#consultations">
+                <span class="contents-no">06</span>
+                <span>Personal relocation support</span>
+                <span class="contents-page" data-page-for="consultations">↗</span>
+            </a>
+            <a class="contents-row" href="#brokers">
+                <span class="contents-no">07</span>
+                <span>Finding a licensed broker</span>
+                <span class="contents-page" data-page-for="brokers">↗</span>
+            </a>
+            <a class="contents-row" href="#car-import-export">
+                <span class="contents-no">08</span>
+                <span>Bringing your car home</span>
+                <span class="contents-page" data-page-for="car-import-export">↗</span>
+            </a>
+            <a class="contents-row" href="#arrival">
+                <span class="contents-no">09</span>
+                <span>Your first days</span>
+                <span class="contents-page" data-page-for="arrival">↗</span>
+            </a>
+            <a class="contents-row" href="#networking">
+                <span class="contents-no">10</span>
+                <span>People & connections</span>
+                <span class="contents-page" data-page-for="networking">↗</span>
+            </a>
+            <a class="contents-row" href="#getting-around">
+                <span class="contents-no">11</span>
+                <span>Getting around</span>
+                <span class="contents-page" data-page-for="getting-around">↗</span>
+            </a>
+            <a class="contents-row" href="#power">
+                <span class="contents-no">12</span>
+                <span>Power & internet</span>
+                <span class="contents-page" data-page-for="power">↗</span>
+            </a>
+        </div>
+        <div class="contents-leaf">
+            <span class="editorial-eyebrow">Returning to Jamaica</span>
+            <h2>Living the story</h2>
+            <p class="contents-intro">
+                Find your way to the part you need.
+                <br>
+                Every chapter is one click away.
+            </p>
+            <h3 class="contents-group">02 / Building a life</h3>
+            <a class="contents-row" href="#housing">
+                <span class="contents-no">13</span>
+                <span>Finding a home</span>
+                <span class="contents-page" data-page-for="housing">↗</span>
+            </a>
+            <a class="contents-row" href="#costs">
+                <span class="contents-no">14</span>
+                <span>Money & the real costs</span>
+                <span class="contents-page" data-page-for="costs">↗</span>
+            </a>
+            <a class="contents-row" href="#banking">
+                <span class="contents-no">15</span>
+                <span>Opening a bank account</span>
+                <span class="contents-page" data-page-for="banking">↗</span>
+            </a>
+            <a class="contents-row" href="#accent">
+                <span class="contents-no">16</span>
+                <span>Accent & belonging</span>
+                <span class="contents-page" data-page-for="accent">↗</span>
+            </a>
+            <a class="contents-row" href="#living">
+                <span class="contents-no">17</span>
+                <span>Making a life here</span>
+                <span class="contents-page" data-page-for="living">↗</span>
+            </a>
+            <a class="contents-row" href="#finding-my-jamaica">
+                <span class="contents-no">18</span>
+                <span>Finding My Jamaica</span>
+                <span class="contents-page" data-page-for="finding-my-jamaica">↗</span>
+            </a>
+            <a class="contents-row" href="#conversation">
+                <span class="contents-no">19</span>
+                <span>The bigger conversation</span>
+                <span class="contents-page" data-page-for="conversation">↗</span>
+            </a>
+            <a class="contents-row" href="#checklist">
+                <span class="contents-no">20</span>
+                <span>Your moving checklist</span>
+                <span class="contents-page" data-page-for="checklist">↗</span>
+            </a>
+            <a class="contents-row" href="#quiz">
+                <span class="contents-no">21</span>
+                <span>Your readiness check</span>
+                <span class="contents-page" data-page-for="quiz">↗</span>
+            </a>
+            <a class="contents-row" href="#can-i-live-here">
+                <span class="contents-no">22</span>
+                <span>Can I build a life here?</span>
+                <span class="contents-page" data-page-for="can-i-live-here">↗</span>
+            </a>
+            <a class="contents-row" href="#subscribe">
+                <span class="contents-no">23</span>
+                <span>Stay connected</span>
+                <span class="contents-page" data-page-for="subscribe">↗</span>
+            </a>
+            <a class="contents-row" href="#sources-title">
+                <span class="contents-no">24</span>
+                <span>Sources & references</span>
+                <span class="contents-page" data-page-for="sources-title">↗</span>
+            </a>
+        </div>
+    </section>
     <nav aria-label="Returning to Jamaica guide navigation" class="chapter-nav">
         <div class="wrap">
             <a href="#prepare">Prepare</a>
@@ -7301,7 +8158,8 @@
     <section class="video-section" id="introduction">
         <div class="wrap video-layout">
             <div class="reel-stage">
-                <iframe allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen="" src="https://www.facebook.com/plugins/video.php?height=476&amp;href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2110831816184762%2F&amp;show_text=false&amp;width=267&amp;t=0" title="Returning to Jamaica Facebook Reel"></iframe>
+                <iframe referrerpolicy="strict-origin-when-cross-origin" class="portrait-video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen src="https://www.youtube.com/embed/OfTqqoHgq2Y?playsinline=1&amp;enablejsapi=1" title="Returning to Jamaica — my experience"></iframe>
+                <a class="video-watch-link" href="https://www.youtube.com/shorts/OfTqqoHgq2Y" target="_blank" rel="noopener">Watch on YouTube ↗</a>
             </div>
             <div>
                 <span class="kicker">This is what coming home really looks like</span>
@@ -7767,7 +8625,8 @@
             <div class="experience-video car-story">
                 <div class="car-story-top">
                     <div class="story-video-embed">
-                        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" src="https://www.youtube.com/embed/LbtHCjfQYp8" title="My experience getting my car shipped from the UK to Jamaica"></iframe>
+                        <iframe referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" src="https://www.youtube.com/embed/LbtHCjfQYp8?playsinline=1&amp;enablejsapi=1" title="My experience getting my car shipped from the UK to Jamaica"></iframe>
+                        <a class="video-watch-link" href="https://www.youtube.com/watch?v=LbtHCjfQYp8" target="_blank" rel="noopener">Watch on YouTube ↗</a>
                     </div>
                     <div class="car-story-right">
                         <div class="car-story-intro">
@@ -8917,7 +9776,7 @@
                 <article>
                     <span class="kicker">Know your renter rights</span>
                     <div class="rights-video">
-                        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Uo_DeyntZJ8?si=UoaJ0Zb1vHWToyfZ" title="Jamaica renter rights video"></iframe>
+                        <iframe referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" src="https://www.youtube.com/embed/Uo_DeyntZJ8?si=UoaJ0Zb1vHWToyfZ&amp;enablejsapi=1" title="Jamaica renter rights video"></iframe>
                     </div>
                 </article>
             </div>
@@ -8968,14 +9827,14 @@
                 <article>
                     <span>Part 1 · Going up</span>
                     <div class="road-video">
-                        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" src="https://www.youtube.com/embed/D49nPZJW6oY" title="Part 1: Driving to a property viewing in Bamboo, St Ann"></iframe>
+                        <iframe referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" src="https://www.youtube.com/embed/D49nPZJW6oY?enablejsapi=1" title="Part 1: Driving to a property viewing in Bamboo, St Ann"></iframe>
                     </div>
                     <p>This was on the way to the house. The road got worse after this.</p>
                 </article>
                 <article>
                     <span>Part 2 · Leaving</span>
                     <div class="road-video">
-                        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" src="https://www.youtube.com/embed/CICTUi5hbNU" title="Part 2: Leaving the Bamboo property viewing in St Ann"></iframe>
+                        <iframe referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" src="https://www.youtube.com/embed/CICTUi5hbNU?enablejsapi=1" title="Part 2: Leaving the Bamboo property viewing in St Ann"></iframe>
                     </div>
                     <p>We were leaving after making the entire journey without getting inside the house.</p>
                 </article>
@@ -9011,7 +9870,7 @@
                 <article>
                     <span class="kicker">What I noticed that day</span>
                     <div class="road-video">
-                        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" src="https://www.youtube.com/embed/EkfcRqLmsAA" title="Looking beyond a new housing development in Jamaica to the surrounding roads and communities"></iframe>
+                        <iframe referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" src="https://www.youtube.com/embed/EkfcRqLmsAA?enablejsapi=1" title="Looking beyond a new housing development in Jamaica to the surrounding roads and communities"></iframe>
                     </div>
                     <p style="margin:12px auto 0;max-width:390px;color:#52696a">This was after I passed a new development and started thinking about the difference between what may be improved inside a development and what exists immediately outside of it.</p>
                 </article>
@@ -9476,6 +10335,47 @@
                                                 </div>
                 </details>
             </div>
+        </div>
+    </section>
+    <section id="finding-my-jamaica" class="discovery-feature" aria-labelledby="discovery-heading">
+        <div class="discovery-leaf">
+            <span class="editorial-eyebrow">Finding My Jamaica / Ocho Rios, St. Ann</span>
+            <h2 id="discovery-heading">
+                There is beauty here.
+                <br>
+                I am making time to find it.
+            </h2>
+            <p>Part of settling into life in Jamaica is finding places I enjoy spending time in. I found this beautiful spot in Ocho Rios, and I am on the hunt for more places like it.</p>
+            <figure class="discovery-film">
+                <iframe title="Finding My Jamaica — a beautiful spot in Ocho Rios" src="https://www.youtube.com/embed/A9JnvSVPDs4?playsinline=1&amp;enablejsapi=1" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <figcaption>
+                    <a href="https://www.youtube.com/shorts/A9JnvSVPDs4" target="_blank" rel="noopener">Watch my Ocho Rios discovery on YouTube ↗</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="discovery-partner">
+            <span class="editorial-eyebrow">An invitation to local businesses</span>
+            <h2>
+                Let me tell
+                <br>
+                your story.
+            </h2>
+            <p>I am exploring Jamaica as someone who lives here. Along the way, I want to introduce people to places and businesses worth knowing about.</p>
+            <p>If you run a café, garden, restaurant, hotel or another welcoming space, I offer paid features and video content to help people see what makes your business worth a visit.</p>
+            <div class="partner-offer">
+                <h3>A magazine feature</h3>
+                <p>A dedicated feature within Finding My Jamaica, with agreed photographs or video, a written introduction and your business links.</p>
+            </div>
+            <div class="partner-offer">
+                <h3>Video for your business</h3>
+                <p>Content created for your own website or social channels. Scope, usage and fees agreed before filming.</p>
+            </div>
+            <div class="partner-offer">
+                <h3>Sponsor the series</h3>
+                <p>Support a series of local discoveries through an agreed sponsorship arrangement.</p>
+            </div>
+            <a class="partner-cta" href="mailto:info@marshakerrtalley.com?subject=Finding%20My%20Jamaica%20%E2%80%94%20Paid%20Feature%20Enquiry">Enquire about a paid feature ↗</a>
+            <p class="partner-disclosure">Paid partnerships and complimentary experiences will be clearly identified. Enquiries do not guarantee a feature.</p>
         </div>
     </section>
     <section aria-labelledby="conversation-title" class="conversation-section" id="conversation">
@@ -10314,7 +11214,7 @@
             return;
         const tools = document.createElement('div');
         tools.className = 'mag-tools';
-        tools.innerHTML = '<div class="mag-brand"><strong>Returning to Jamaica</strong><small>Marsha Kerr Talley · The living magazine</small></div><div class="mag-controls"><select id="mag-contents" aria-label="Magazine contents"><option value="top">Cover & introduction</option></select><button id="mag-top-prev" type="button" aria-label="Previous magazine pages">←</button><button id="mag-top-next" type="button" aria-label="Next magazine pages">→</button><button id="mag-mode" type="button">Read as webpage</button></div>';
+        tools.innerHTML = '<div class="mag-brand"><strong>Returning to Jamaica</strong><small>Marsha Kerr Talley · The living magazine</small></div><div class="mag-controls"><button id="mag-index-button" type="button">Contents</button><button id="mag-enquire" type="button">Enquire</button><select id="mag-contents" aria-label="Magazine contents"><option value="top">Cover & introduction</option></select><button id="mag-top-prev" type="button" aria-label="Previous magazine pages">←</button><button id="mag-top-next" type="button" aria-label="Next magazine pages">→</button><button id="mag-mode" type="button">Read as webpage</button></div>';
         const stage = document.createElement('main');
         stage.className = 'mag-stage';
         stage.setAttribute('aria-label', 'Returning to Jamaica magazine');
@@ -10328,6 +11228,32 @@
             viewport = stage.querySelector('.mag-viewport'),
             select = tools.querySelector('select');
         const originals = [...body.children].filter(e => e === hero || e.tagName === 'SECTION' || e.classList.contains('story-bridge'));
+        const chapterNames = {
+            "introduction": "Coming home, honestly",
+            "series": "The audio journal",
+            "prepare": "Before you move",
+            "verify": "Safety & verification",
+            "shipping": "Shipping your belongings",
+            "consultations": "Personal relocation support",
+            "brokers": "Finding a licensed broker",
+            "car-import-export": "Bringing your car home",
+            "arrival": "Your first days",
+            "networking": "People & connections",
+            "getting-around": "Getting around",
+            "power": "Power & internet",
+            "housing": "Finding a home",
+            "costs": "Money & the real costs",
+            "banking": "Opening a bank account",
+            "accent": "Accent & belonging",
+            "living": "Making a life here",
+            "finding-my-jamaica": "Finding My Jamaica",
+            "conversation": "The bigger conversation",
+            "checklist": "Your moving checklist",
+            "quiz": "Your readiness check",
+            "can-i-live-here": "Can I build a life here?",
+            "subscribe": "Stay connected",
+            "sources-title": "Sources & references"
+        };
         const anchors = [];
         originals.forEach((el, i) => {
             const marker = document.createComment('magazine original position');
@@ -10339,7 +11265,7 @@
             if (h) {
                 const opt = document.createElement('option');
                 opt.value = el.id;
-                opt.textContent = h.textContent.trim();
+                opt.textContent = chapterNames[el.id] || h.textContent.trim();
                 select.append(opt)
             }
         });
@@ -10364,8 +11290,23 @@
             void flow.offsetWidth;
             total = Math.max(1, Math.ceil((flow.scrollWidth + gap - 2) / stride));
             current = Math.min(current, Math.floor((total - 1) / spread) * spread);
+            updateContents();
             render();
+            void flow.offsetWidth;
             requestAnimationFrame(() => flow.style.transition = '');
+        }
+        function updateContents() {
+            flow.querySelectorAll('[data-page-for]').forEach(label => {
+                const target = document.getElementById(label.dataset.pageFor);
+                if (!target)
+                    return;
+                const rect = target.getClientRects()[0];
+                if (rect) {
+                    const n = String(Math.floor(Math.max(0, rect.left - viewport.getBoundingClientRect().left) / stride) + 1).padStart(2, '0');
+                    if (label.textContent !== n)
+                        label.textContent = n;
+                }
+            });
         }
         function render() {
             flow.style.transform = 'translateX(' + (-current * stride) + 'px)';
@@ -10375,11 +11316,19 @@
             tools.querySelector('#mag-top-prev').disabled = prev.disabled;
             tools.querySelector('#mag-top-next').disabled = next.disabled;
         }
+        function pauseMedia() {
+            flow.querySelectorAll('video,audio').forEach(m => m.pause());
+            flow.querySelectorAll('iframe[src*="youtube.com/embed/"]').forEach(f => f.contentWindow?.postMessage(JSON.stringify({
+                event: "command",
+                func: "pauseVideo",
+                args: []
+            }), "https://www.youtube.com"));
+        }
         function turn(delta) {
             const n = Math.max(0, Math.min(Math.floor((total - 1) / spread) * spread, current + delta * spread));
             if (n === current)
                 return;
-            flow.querySelectorAll('video,audio').forEach(m => m.pause());
+            pauseMedia();
             const leaf = stage.querySelector('.mag-turn');
             leaf.className = 'mag-turn' + (delta < 0 ? ' back' : '');
             void leaf.offsetWidth;
@@ -10388,6 +11337,7 @@
             render();
         }
         function jump(id) {
+            pauseMedia();
             const el = document.getElementById(id);
             if (!el)
                 return;
@@ -10407,7 +11357,7 @@
             if (!r)
                 return;
             const x = r.left - viewport.getBoundingClientRect().left + current * stride;
-            current = Math.min(Math.floor((total - 1) / spread) * spread, Math.floor(Math.max(0, x) / stride / spread) * spread);
+            current = Math.min(Math.floor((total - 1) / spread) * spread, Math.floor((Math.max(0, x) + 2) / stride / spread) * spread);
             render();
             select.value = originals.find(s => s.contains(el))?.id || 'top';
         }
@@ -10423,6 +11373,8 @@
                 flow.style.transform = 'none';
             }
         }
+        tools.querySelector('#mag-enquire').onclick = () => document.getElementById('jamaicaContactLauncher').click();
+        tools.querySelector('#mag-index-button').onclick = () => jump('mag-index');
         tools.querySelector('#mag-mode').onclick = () => setMode(!mag);
         prev.onclick = () => turn(-1);
         next.onclick = () => turn(1);
