@@ -1542,6 +1542,12 @@
     .rental-feature a {display:inline-block;color:#0b5559;font-weight:800;text-underline-offset:4px;line-height:1.6}
     .rental-feature a:focus-visible {outline:3px solid #ad7736;outline-offset:5px}
     @media(max-width:600px){.rental-feature{padding:20px}}
+
+    .opener:not(.type-opener) .large-chapter-number {font-family:'Cormorant Garamond',Georgia,serif;font-size:64px;line-height:1;color:#319fa2;margin:8px 0 12px}
+    .chapter-spacer .page-content {display:flex;align-items:center;justify-content:center}
+    .chapter-spacer-brand {font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;font-style:italic;color:#a0b9b2}
+    .reading .chapter-spacer {display:none}
+
 </style>
 </head>
 <body>
@@ -4985,18 +4991,10 @@
             }
         }
         function opener(ch) {
-            const p = createPage(ch, 'opener'),
+            const p = createPage(ch, 'opener type-opener'),
                 c = contentOf(p);
             c.append(node('span', 'eyebrow', 'The living magazine / ' + String(ch.number).padStart(2, '0')));
-            if (ch.image) {
-                const img = node('img', 'opener-image');
-                img.src = ch.image;
-                img.alt = ch.label;
-                c.append(img)
-            } else {
-                p.classList.add('type-opener');
-                c.append(node('div', 'large-chapter-number', String(ch.number).padStart(2, '0')))
-            }
+            c.append(node('div', 'large-chapter-number', String(ch.number).padStart(2, '0')));
             c.append(node('div', 'opener-title', ch.label));
             const box = node('div', 'in-chapter');
             box.append(node('span', 'eyebrow', 'Inside this chapter'));
@@ -5162,9 +5160,18 @@
                 contentOf(p).append(node('span', 'eyebrow', 'The returning resident’s edition'), node('h2', '', i ? 'Living the story' : 'In this issue'), node('p', 'contents-deck', i ? 'The people, places and possibilities of a life at home.' : 'The practical details. The personal stories. Find the part you need.'))
             });
             for (const ch of chapterData) {
-                if (pages.length % 2 === 0)
-                    opener(ch);
+                // A chapter always opens on the left, with its content opposite.
+                // Finish the previous spread instead of dropping the introduction.
+                if (pages.length % 2 !== 0) {
+                    const previous = pages[pages.length - 1];
+                    const spacer = createPage({
+                        id: previous.dataset.chapter,
+                        label: previous.querySelector('.page-running span:last-child')?.textContent || ''
+                    }, 'chapter-spacer');
+                    contentOf(spacer).append(node('span', 'chapter-spacer-brand', 'Live Inspired'));
+                }
                 chapterPages[ch.id] = pages.length;
+                opener(ch);
                 const cls = ch.id === 'consultations' ? 'consult-page' : ch.id === 'technical-innovators' ? 'provider-page' : ch.id === 'finding-my-jamaica' ? 'discovery-page' : '';
                 if (ch.id === 'checklist')
                     buildPlanner(ch);
