@@ -1534,7 +1534,15 @@
             font-size: 27px
         }
     }
-    </style>
+    
+    .rental-feature {margin:24px 0;padding:24px 26px;border:1px solid #c9d8d2;border-left:5px solid #ad7736;border-radius:12px;background:#f5f0e5;color:var(--ink)}
+    .rental-feature .kicker {display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);font-weight:800}
+    .rental-feature h3 {margin:8px 0 10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(27px,3vw,35px);line-height:1.15}
+    .rental-feature p {margin:0 0 16px;max-width:65ch;line-height:1.7}
+    .rental-feature a {display:inline-block;color:#0b5559;font-weight:800;text-underline-offset:4px;line-height:1.6}
+    .rental-feature a:focus-visible {outline:3px solid #ad7736;outline-offset:5px}
+    @media(max-width:600px){.rental-feature{padding:20px}}
+</style>
 </head>
 <body>
     <header class="masthead">
@@ -3466,6 +3474,12 @@
                         </div>
                     </article>
                 </div>
+                <aside class="rental-feature" aria-labelledby="renting-article-title">
+                    <span class="kicker">More on renting</span>
+                    <h3 id="renting-article-title">Renting in Jamaica</h3>
+                    <p>Your rental should feel like home. Before you sign, understand the lease, agree on boundaries and know where to turn if problems arise.</p>
+                    <a href="https://marshakerrtalley.com/renting-in-jamaica.html">Read my experience and rental checklist →</a>
+                </aside>
                 <details class="renter-story">
                     <summary>My experience: when long-standing property access collided with my tenancy</summary>
                     <div class="detail-body">
