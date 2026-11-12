@@ -1,892 +1,805 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marsha Kerr Talley | Turning Pain Into Possibilities</title>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore Marsha Kerr Talley’s residential collection in Nottinghamshire, Texas and Florida. View property photographs, discover your interior style and enquire directly.">
+  <title>The Residential Collection | Marsha Kerr Talley Management</title>
 
   <style>
     :root {
-      --brand-primary: #056367;
-      --text-body: #5a5a5a;
-      --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      --font-heading: "Playfair Display", serif;
-      --teal-main: #319fa2;
-      --teal-dark: #056367;
-      --teal-light: #2fe2dd;
-      --gray-soft: #f5f7f7;
-      --text-dark: #333;
+      --paper: #f8f6ef;
+      --ink: #1b332e;
+      --green: #153a34;
+      --gold: #dfc99b;
+      --rule: #cbc8bb;
+      --sand: #e9e3d5;
+      --serif: Georgia, "Times New Roman", serif;
     }
 
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: var(--font-body);
-      color: var(--text-body);
-      background: #ffffff;
-      line-height: 1.6;
+      color: var(--ink);
+      background: var(--paper);
+      font: 16px/1.65 "Helvetica Neue", Arial, sans-serif;
     }
 
-    /* HEADER */
-    .site-header {
-      width: 100%;
-      background: #ffffff;
+    a { color: inherit; }
+    button, summary { font: inherit; cursor: pointer; }
+    button { color: inherit; }
+    button, img { display: block; }
+    img { width: 100%; }
+    figure { margin: 0; }
+    [hidden] { display: none !important; }
+
+    a:focus-visible, button:focus-visible, summary:focus-visible {
+      outline: 3px solid #af7228;
+      outline-offset: 4px;
     }
 
-    .site-header .page-wrap {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px 16px 12px;
+    .wrap {
+      width: min(100%, 1320px);
+      margin-inline: auto;
+      padding-inline: clamp(20px, 5vw, 76px);
+    }
+
+    .masthead, .menu, .cities, .footer-inner, .contact-links, .controls {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      position: relative;
+      flex-wrap: wrap;
+      gap: 14px 24px;
     }
 
-    .site-header img {
-      max-width: 220px;
-      width: 100%;
-      height: auto;
-      margin-bottom: 12px;
+    .masthead, .footer-inner { justify-content: space-between; }
+    .masthead { padding-block: 19px; }
+    .menu, .cities { font-size: 14px; }
+    .menu a, .cities a, .brand { text-decoration: none; }
+    .menu a:hover, .cities a:hover { text-decoration: underline; }
+
+    .brand { font: 25px/1.1 var(--serif); }
+
+    .brand small {
       display: block;
-    }
-
-    .site-nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      gap: 28px;
-      justify-content: center;
-      font-size: 14px;
-      letter-spacing: 0.08em;
+      margin-top: 5px;
+      font: 10px/1.4 Arial, sans-serif;
+      letter-spacing: .28em;
       text-transform: uppercase;
     }
 
-    .site-nav a {
-      text-decoration: none;
-      color: #2f2f2f;
-      font-weight: 500;
-    }
-
-    .site-nav a.active {
-      color: var(--brand-primary);
-      font-weight: 600;
-    }
-
-    .nav-toggle {
-      display: none;
-      position: absolute;
-      right: 16px;
-      top: 20px;
-      width: 44px;
-      height: 44px;
-      border: none;
-      background: transparent;
-      font-size: 28px;
-      color: var(--brand-primary);
-      cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      .nav-toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .site-nav {
-        display: none;
-        width: 100%;
-      }
-
-      .site-nav.open {
-        display: block;
-      }
-
-      .site-nav ul {
-        flex-direction: column;
-        gap: 16px;
-        padding: 10px 0 6px;
-        text-align: center;
-      }
-
-      .site-nav a {
-        font-size: 16px;
-        letter-spacing: 0.06em;
-        white-space: nowrap;
-      }
+    .eyebrow {
+      margin: 0 0 12px;
+      font: 700 11px/1.5 Arial, sans-serif;
+      letter-spacing: .17em;
+      text-transform: uppercase;
     }
 
     h1, h2, h3 {
-      font-weight: 500;
-      margin: 0;
+      margin: 10px 0 16px;
+      font-family: var(--serif);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -.045em;
     }
 
-    p {
-      line-height: 1.6;
-    }
+    h1 { font-size: clamp(48px, 6.5vw, 96px); }
+    h2 { font-size: clamp(38px, 5vw, 72px); }
+    h3 { font-size: clamp(26px, 3vw, 39px); }
 
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 3rem 1.5rem;
-    }
-
-    /* HERO */
     .hero {
-      position: relative;
-      background: url("hero-kitchen.jpg") center/cover no-repeat;
-      min-height: 420px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-    }
-
-    .hero-overlay {
-      background: rgba(0,0,0,0.45);
-      padding: 3rem 2rem;
-      width: 100%;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      letter-spacing: 0.5px;
-    }
-
-    /* BRAND */
-    .brand-block {
-      text-align: center;
-      padding: 3rem 1.5rem 2rem;
-    }
-
-    .brand-block h2 {
-      color: var(--teal-main);
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .brand-block p {
-      font-size: 1rem;
-      color: #666;
-    }
-
-    /* GENERAL CTA */
-    .cta-wrapper {
-      text-align: center;
-      margin: 2rem 0 1.5rem;
-    }
-
-    .cta-button {
-      background: var(--teal-main);
-      color: white;
-      border: none;
-      padding: 1rem 3rem;
-      font-size: 1rem;
-      border-radius: 40px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .cta-button:hover {
-      background: var(--teal-dark);
-    }
-
-    /* RUNNER */
-    .runner {
-      background: linear-gradient(
-        to right,
-        var(--teal-dark),
-        var(--teal-main),
-        var(--teal-light)
-      );
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      font-size: 1rem;
-      letter-spacing: 0.6px;
-    }
-
-    /* PROPERTY SECTION */
-    .section-title {
-      text-align: center;
-      color: var(--teal-main);
-      font-size: 1.8rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .property {
-      background: var(--gray-soft);
-      margin-bottom: 3rem;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .property-content {
-      padding: 2rem;
-    }
-
-    .property h3 {
-      color: var(--teal-dark);
-      font-size: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
-
-    /* POLPERRO WAY PHOTO GALLERY */
-    .property-main-photo {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .property-gallery {
-      padding: 0 2rem 2rem;
-    }
-
-    .property-gallery summary {
-      cursor: pointer;
-      color: var(--teal-dark);
-      font-weight: 600;
-      padding: 0.75rem 0;
-    }
-
-    .property-photo-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-      margin-top: 12px;
+      grid-template-columns: .85fr 1.35fr;
+      background: var(--green);
+      color: #fffaf0;
+      min-height: 440px;
     }
 
-    .property-photo-grid img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4 / 3;
+    .hero-copy {
+      align-self: center;
+      padding: clamp(32px, 5vw, 78px);
+    }
+
+    .hero .eyebrow, .hero em { color: var(--gold); }
+    .hero em { display: block; font-weight: 400; }
+    .hero-copy > p:not(.eyebrow) { max-width: 33ch; }
+
+    .hero-figure { position: relative; min-height: 350px; }
+    .hero-figure img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
       object-fit: cover;
-      border-radius: 6px;
     }
 
-    .agent-grid {
+    .hero-figure figcaption {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      background: #15332deb;
+      color: white;
+      padding: 5px 13px;
+      font-size: 13px;
+    }
+
+    .text-link {
+      display: inline-block;
+      margin-top: 12px;
+      padding-bottom: 3px;
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+    }
+
+    .cities {
+      justify-content: center;
+      gap: 12px clamp(22px, 5vw, 76px);
+      padding: 20px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .property { padding-top: clamp(44px, 7vw, 92px); }
+
+    .spread {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .agent-card {
-      border: 1px solid #ddd;
-      padding: 2rem;
-      text-align: center;
-      border-radius: 8px;
-    }
-
-    .agent-card a {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.75rem 2rem;
-      background: var(--teal-main);
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-      font-size: 0.9rem;
-    }
-
-    /* COLLAPSIBLE AIRBNB CLASS */
-    .airbnb-dropdown {
-      max-width: 850px;
-      margin: 1rem auto;
-      border: 1px solid #d6e4e4;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .airbnb-dropdown > summary {
-      padding: 14px 20px;
-      background: #056367;
-      color: white;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .airbnb-dropdown > summary:focus-visible {
-      outline: 3px solid #2fe2dd;
-      outline-offset: -3px;
-    }
-
-    .airbnb-dropdown .airbnb-class {
-      margin: 0 auto;
-    }
-
-    /* AIRBNB LIVE CLASS */
-    .airbnb-class {
-      max-width: 850px;
-      margin: 2.5rem auto;
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-    }
-
-    .airbnb-class h2 {
-      font-family: var(--font-heading);
-      color: var(--teal-dark);
-      font-size: 2rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .airbnb-class .class-subtitle {
-      font-size: 1.1rem;
-      color: var(--text-dark);
-      margin-bottom: 1.5rem;
-    }
-
-    .airbnb-class .class-details {
-      margin: 1.5rem 0;
-      font-weight: 600;
-      color: var(--text-dark);
-    }
-
-    .stripe-buy-wrapper {
-      display: flex;
-      justify-content: center;
-      margin-top: 1.5rem;
-    }
-
-    /* HOST CHALLENGE */
-    .host-game-section {
-      text-align: center;
-      margin: 28px auto 12px;
-      padding: 0 20px;
-      font-family: Arial, sans-serif;
-    }
-
-    .host-game-section p {
-      font-size: 18px;
-      color: #555;
-      margin: 0 0 12px;
-    }
-
-    .host-game-button {
-      display: inline-block;
-      padding: 12px 28px;
-      background-color: #ffffff;
-      color: #2fa3a8;
-      border: 2px solid #2fa3a8;
-      border-radius: 30px;
-      font-size: 16px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .host-game-button:hover {
-      background-color: #2fa3a8;
-      color: #ffffff;
-    }
-
-    /* PREPARED HOST TOOLKIT */
-    .toolkit-wrapper {
-      display: flex;
-      justify-content: center;
+      grid-template-columns: 1.3fr 1fr;
       align-items: center;
-      padding: 6px 20px 24px;
-      margin: 0;
+      gap: clamp(22px, 5vw, 70px);
+      margin-bottom: 22px;
+    }
+
+    .property:nth-child(even) .feature { order: 2; }
+
+    .feature, .thumb {
+      padding: 0;
+      border: 0;
+      background: var(--sand);
+      overflow: hidden;
       width: 100%;
+      aspect-ratio: 3 / 2;
     }
 
-    .toolkit-button {
-      display: inline-block;
-      background: #0F2A3D;
-      color: #F4C15D;
-      padding: 15px 28px;
-      border: 2px solid #F4C15D;
-      border-radius: 8px;
-      text-decoration: none;
-      font-family: Georgia, serif;
-      font-size: 17px;
-      font-weight: 700;
-      text-align: center;
+    .feature img, .thumb img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform .3s;
     }
 
-    .toolkit-button:hover {
-      opacity: 0.9;
+    .feature:hover img, .thumb:hover img { transform: scale(1.025); }
+
+    .spec {
+      border-block: 1px solid var(--rule);
+      padding: 11px 0;
+      color: #4d6257;
+      font-size: 14px;
     }
 
-    /* FOOTER */
-    .site-footer {
-      width: 100%;
-      background-color: #ffffff;
-      border-top: 1px solid #eeeeee;
-      padding: 2.5rem 1.5rem 2rem;
-      text-align: center;
-    }
+    .property-copy > p:last-child { max-width: 49ch; }
+    details { border-bottom: 1px solid var(--rule); }
 
-    .footer-links {
+    summary {
       display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 2px;
+      list-style: none;
+      font-weight: 600;
     }
 
-    .footer-links a {
-      font-size: 1rem;
-      color: #319fa2;
-      text-decoration: none;
+    summary::-webkit-details-marker { display: none; }
+    summary small { color: #53625b; font-weight: 400; }
+    summary::after { content: "+"; margin-left: auto; font: 25px var(--serif); }
+    details[open] > summary::after { content: "−"; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(165px, 44%), 1fr));
+      gap: 9px;
+      padding-bottom: 18px;
+    }
+
+    .contact { margin-block: 65px; }
+    .contact-inner {
+      border-block: 1px solid var(--rule);
+      padding-block: 32px;
+    }
+
+    .contact-links { align-items: flex-start; gap: 18px 40px; }
+    .contact-links a { text-decoration: none; }
+    .contact-links strong { display: block; text-decoration: underline; }
+
+    .studio { background: var(--sand); padding-block: clamp(35px, 5vw, 72px); }
+    .studio .spread { grid-template-columns: 1fr 1.05fr; margin: 0; }
+    .studio-image { aspect-ratio: 3 / 2; object-fit: cover; }
+
+    .action {
+      display: inline-block;
+      border: 0;
+      padding: 11px 19px;
+      border-radius: 2px;
+      background: var(--green);
+      color: white;
+    }
+
+    .action:disabled { opacity: .45; cursor: default; }
+
+    .quiz-box {
+      background: var(--paper);
+      padding: clamp(20px, 4vw, 44px);
+      margin-top: 24px;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 18px 0;
+    }
+
+    .option {
+      text-align: left;
+      padding: 14px;
+      border: 1px solid var(--rule);
+      background: white;
+    }
+
+    .option[aria-pressed="true"] { background: var(--green); color: white; }
+    .result-images { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .result-images img { margin-block: 10px 20px; }
+
+    .resources { padding-block: clamp(42px, 6vw, 82px); }
+    .resources details > div { padding-bottom: 18px; }
+    .resources details p { max-width: 68ch; }
+    .resources label { display: block; margin: 10px 0; }
+    .resources iframe { width: 100%; height: min(820px, 80vh); border: 0; }
+
+    footer { background: var(--green); color: white; padding-block: 30px; }
+    footer .menu { font-size: 13px; }
+
+    dialog {
+      background: #112521;
+      color: white;
+      border: 0;
+      padding: 14px;
+      width: min(1020px, 96vw);
+    }
+
+    dialog::backdrop { background: #091812e8; }
+    dialog img { height: min(68vh, 700px); object-fit: contain; }
+
+    .viewer-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .viewer-bar button {
+      border: 1px solid #81978c;
+      background: transparent;
+      color: white;
+      padding: 7px 13px;
+    }
+
+    .viewer-bar p { margin: 8px 0; font-size: 14px; }
+
+    @media (max-width: 720px) {
+      .hero, .spread, .studio .spread { grid-template-columns: 1fr; }
+      .hero-figure { min-height: 245px; }
+      .hero-copy { padding: 30px 22px; }
+      .hero em { display: inline; }
+      .property:nth-child(even) .feature { order: 0; }
+      .options, .result-images { grid-template-columns: 1fr; }
+      .masthead { align-items: flex-start; }
+      .menu { gap: 8px 13px; }
+      .contact { margin-block: 40px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
     }
   </style>
 </head>
 
-<body>
-
-  <header class="site-header">
-    <div class="page-wrap">
-
-      <a href="index.html">
-        <img
-          src="MKT-logo-3.png"
-          alt="Marsha Kerr Talley – Live Inspired"
-        >
-      </a>
-
-      <button
-        class="nav-toggle"
-        aria-label="Open menu"
-        aria-expanded="false"
-      >
-        ☰
-      </button>
-
-      <nav class="site-nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="work-with-me.html">Work With Me</a></li>
-          <li><a href="books.html">Books</a></li>
-          <li><a href="podcast.html">Podcast</a></li>
-          <li><a href="reflections.html">Reflections</a></li>
-        </ul>
-      </nav>
-
-    </div>
+<body id="top">
+  <header class="masthead wrap">
+    <a class="brand" href="#top">
+      Marsha Kerr Talley
+      <small>Property Management</small>
+    </a>
+    <nav class="menu" aria-label="Page sections">
+      <a href="#homes">Homes</a>
+      <a href="#style">Style quiz</a>
+      <a href="#hosting">For hosts</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-overlay">
-      <h1>The Right Rental for Your Lifestyle</h1>
-      <p>Experience the Ultimate in Practical Living</p>
-    </div>
-  </section>
-
-
-  <!-- BRAND -->
-  <section class="brand-block">
-    <h2>Marsha Kerr Talley Management</h2>
-    <p>Clear expectations. Consistent standards. Respectful leasing.</p>
-  </section>
-
-
-  <!-- COLLAPSIBLE AIRBNB CLASS -->
-  <details class="airbnb-dropdown">
-    <summary>View Airbnb Hosting Class</summary>
-
-    <section class="airbnb-class">
-
-      <h2>
-        Airbnb Hosting: What I Wish I Knew Before Becoming a Host
-      </h2>
-
-      <p class="class-subtitle">
-        A live, practical class for new, current and aspiring Airbnb hosts.
-      </p>
-
-      <p>
-        Drawing from years of Airbnb hosting experience and earning
-        Superhost status multiple times, I will share practical lessons
-        about setting expectations, protecting your property, handling
-        difficult guests and reviews, and creating systems that can save
-        time and reduce stress.
-      </p>
-
-      <div class="class-details">
-        Wednesday, July 29, 2026<br>
-        12:00 PM Jamaica Time<br>
-        Live Online via Zoom<br><br>
-        $10 USD
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Marsha Kerr Talley Management</p>
+        <h1>The Residential <em>Collection</em></h1>
+        <p>Four homes, from an English garden to a Florida fairway.</p>
+        <a class="text-link" href="#homes">Explore the homes ↓</a>
       </div>
 
-      <p>
-        <strong>
-          Don't just be a good host. Be a prepared host.
-        </strong>
-      </p>
-
-      <div class="stripe-buy-wrapper">
-
-        <script
-          async
-          src="https://js.stripe.com/v3/buy-button.js">
-        </script>
-
-        <stripe-buy-button
-          buy-button-id="buy_btn_1TxVt9Eh8djIZFgfIroZp9iO"
-          publishable-key="pk_live_6LEoVdcEMgIMTx3M2sd3XW26008MFD18hQ">
-        </stripe-buy-button>
-
-      </div>
-
-    </section>
-  </details>
-  <!-- END COLLAPSIBLE AIRBNB CLASS -->
-
-
-  <!-- HOST GAME -->
-  <section class="host-game-section">
-
-    <p>
-      Think like a host. What would you do?
-    </p>
-
-    <a
-      href="/host-game"
-      class="host-game-button"
-    >
-      PLAY THE HOST CHALLENGE →
-    </a>
-
-  </section>
-  <!-- END HOST GAME -->
-
-
-  <!-- PREPARED HOST TOOLKIT -->
-  <div class="toolkit-wrapper">
-
-    <a
-      href="https://payhip.com/b/LNfn2"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="toolkit-button"
-    >
-      Get The Prepared Host Toolkit
-    </a>
-
-  </div>
-  <!-- END PREPARED HOST TOOLKIT -->
-
-
-  <!-- RUNNER -->
-  <div class="runner">
-    Clear expectations. Consistent standards. Respectful leasing.
-  </div>
-
-
-  <!-- RENTAL MANAGEMENT CTA -->
-  <div class="cta-wrapper">
-    <a
-      href="RENTAL-MANAGEMENT-APP-LINK"
-      class="cta-button"
-    >
-      RENTAL MANAGEMENT APP
-    </a>
-  </div>
-
-
-  <!-- PROPERTIES -->
-  <section class="container">
-
-    <h2 class="section-title">
-      Available & Managed Properties
-    </h2>
-
-
-    <!-- POLPERRO WAY -->
-    <div class="property">
-
-      <a
-        href="https://www.rightmove.co.uk/properties/94360029#/?channel=RES_LET"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <figure class="hero-figure">
         <img
-          class="property-main-photo"
-          src="https://media.rightmove.co.uk/property-photo/46ddbbdbf/94360029/46ddbbdbf0fb03950e433e7f81fe883d.jpeg"
-          alt="Bright living room at the Polperro Way property in Hucknall"
-          loading="lazy"
+          src="rentals-photos/fortWorthHero.webp"
+          alt="Fort Worth brick bungalow with twin garage doors, a green lawn and potted plants on the porch"
+          fetchpriority="high"
         >
-      </a>
+        <figcaption>Fort Worth, Texas</figcaption>
+      </figure>
+    </section>
 
-      <div class="property-content">
-
-        <h3>Polperro Way — Hucknall, Nottingham, UK</h3>
-
-        <p>
-          Three-bedroom semi-detached home with a spacious living room,
-          kitchen/diner, family bathroom, enclosed rear garden and off-road
-          parking. Conveniently located for Hucknall's shops, schools and
-          transport links to Nottingham.
-        </p>
-
-        <a
-          href="https://www.rightmove.co.uk/properties/94360029#/?channel=RES_LET"
-          class="cta-button"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View Photos &amp; Full Details
-        </a>
-
-      </div>
-
-      <details class="property-gallery">
-        <summary>View 15 property photos</summary>
-
-        <div class="property-photo-grid">
-
-          <a href="https://media.rightmove.co.uk/property-photo/46ddbbdbf/94360029/46ddbbdbf0fb03950e433e7f81fe883d.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/46ddbbdbf/94360029/46ddbbdbf0fb03950e433e7f81fe883d.jpeg" alt="Polperro Way, Hucknall — photo 1 of 15" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://media.rightmove.co.uk/property-photo/d06f8467f/94360029/d06f8467fd4ffbbfb4492f9484f21e14.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/d06f8467f/94360029/d06f8467fd4ffbbfb4492f9484f21e14.jpeg" alt="Polperro Way, Hucknall — photo 2 of 15" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://media.rightmove.co.uk/property-photo/968095666/94360029/968095666de5951e2f68a1ab361d26cc.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/968095666/94360029/968095666de5951e2f68a1ab361d26cc.jpeg" alt="Polperro Way, Hucknall — photo 3 of 15" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://media.rightmove.co.uk/property-photo/5cdd12597/94360029/5cdd12597725cb4bc4d771f917e28157.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/5cdd12597/94360029/5cdd12597725cb4bc4d771f917e28157.jpeg" alt="Polperro Way, Hucknall — photo 4 of 15" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://media.rightmove.co.uk/property-photo/81019ee66/94360029/81019ee66d16de7284b7fb7daebcb9e2.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/81019ee66/94360029/81019ee66d16de7284b7fb7daebcb9e2.jpeg" alt="Polperro Way, Hucknall — photo 5 of 15" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://media.rightmove.co.uk/property-photo/35c5cb097/94360029/35c5cb097b97312abc8e3bf50e5b7731.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/35c5cb097/94360029/35c5cb097b97312abc8e3bf50e5b7731.jpeg" alt="Polperro Way, Hucknall — photo 6 of 15" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://media.rightmove.co.uk/property-photo/6b694c244/94360029/6b694c244a19fd37afafff200a01f4b7.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/6b694c244/94360029/6b694c244a19fd37afafff200a01f4b7.jpeg" alt="Polperro Way, Hucknall — photo 7 of 15" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://media.rightmove.co.uk/property-photo/25a5dec94/94360029/25a5dec94e804e3c786555072d1f1635.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/25a5dec94/94360029/25a5dec94e804e3c786555072d1f1635.jpeg" alt="Polperro Way, Hucknall — photo 8 of 15" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://media.rightmove.co.uk/property-photo/fff059007/94360029/fff0590073860d898b1b6030356395ad.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/fff059007/94360029/fff0590073860d898b1b6030356395ad.jpeg" alt="Polperro Way, Hucknall — photo 9 of 15" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://media.rightmove.co.uk/property-photo/97f668bbc/94360029/97f668bbcc6d2d155136b38a8a366b67.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/97f668bbc/94360029/97f668bbcc6d2d155136b38a8a366b67.jpeg" alt="Polperro Way, Hucknall — photo 10 of 15" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://media.rightmove.co.uk/property-photo/12959c1a3/94360029/12959c1a356b37468e78905a8b186c51.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/12959c1a3/94360029/12959c1a356b37468e78905a8b186c51.jpeg" alt="Polperro Way, Hucknall — photo 11 of 15" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://media.rightmove.co.uk/property-photo/a6531814b/94360029/a6531814bf0cc5550598c3ae8176a0f3.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/a6531814b/94360029/a6531814bf0cc5550598c3ae8176a0f3.jpeg" alt="Polperro Way, Hucknall — photo 12 of 15" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://media.rightmove.co.uk/property-photo/e4252b0a9/94360029/e4252b0a91753f415eac5ed8cc0b5815.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/e4252b0a9/94360029/e4252b0a91753f415eac5ed8cc0b5815.jpeg" alt="Polperro Way, Hucknall — photo 13 of 15" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://media.rightmove.co.uk/property-photo/f078544c0/94360029/f078544c09c63acf63bab656a7c46d61.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/f078544c0/94360029/f078544c09c63acf63bab656a7c46d61.jpeg" alt="Polperro Way, Hucknall — photo 14 of 15" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://media.rightmove.co.uk/property-photo/dbd3dd59c/94360029/dbd3dd59cd811a00e11c6401bc9609a8.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="https://media.rightmove.co.uk/property-photo/dbd3dd59c/94360029/dbd3dd59cd811a00e11c6401bc9609a8.jpeg" alt="Polperro Way, Hucknall — photo 15 of 15" loading="lazy" decoding="async">
-          </a>
-
-        </div>
-      </details>
-    </div>
-
-
-    <!-- MEADOWBROOK -->
-    <div class="property">
-
-      <img
-        src="meadowbrook-main.jpeg"
-        alt="7013 Meadowbrook Drive Fort Worth"
-        style="width:100%; height:auto;"
-      >
-
-      <div class="property-content">
-
-        <h3>
-          Meadowbrook Drive — Fort Worth, TX
-        </h3>
-
-        <p>
-          Spacious single-family home featuring comfortable living areas,
-          modern updates, and a generous yard. Ideal for professionals or
-          families seeking practical, well-maintained living.
-        </p>
-
-        <a
-          href="https://rental.turbotenant.com/p/7013-meadowbrook-drive-fort-worth-tx/1768893"
-          class="cta-button"
-          target="_blank"
-        >
-          View Photos & Full Details
-        </a>
-
-      </div>
-    </div>
-
-
-    <!-- BAIRD FARM -->
-    <div class="property">
-
-      <img
-        src="bairdfarm.webp.png"
-        alt="1700 Baird Farm Arlington"
-        style="width:100%; height:auto;"
-      >
-
-      <div class="property-content">
-
-        <h3>
-          Baird Farm — Arlington, TX
-        </h3>
-
-        <p>
-          Well-located condo offering convenient access to Arlington
-          amenities, comfortable interior layout, and community living
-          in a maintained residential setting.
-        </p>
-
-        <a
-          href="https://rental.turbotenant.com/p/1700-baird-farm-arlington-tx/1642177"
-          class="cta-button"
-          target="_blank"
-        >
-          View Photos & Full Details
-        </a>
-
-      </div>
-    </div>
-
-
-    <!-- COVE CAY -->
-    <div class="property">
-
-      <img
-        src="covecay.webp.png"
-        alt="2618 Cove Cay Drive Clearwater"
-        style="width:100%; height:auto;"
-      >
-
-      <div class="property-content">
-
-        <h3>
-          Cove Cay Drive — Clearwater, FL
-        </h3>
-
-        <p>
-          Bright Florida condo in a resort-style community with water
-          views, maintained grounds, and convenient access to beaches,
-          golf, and local amenities.
-        </p>
-
-        <a
-          href="https://rental.turbotenant.com/p/2618-cove-cay-drive-clearwater-fl/1627432"
-          class="cta-button"
-          target="_blank"
-        >
-          View Photos & Full Details
-        </a>
-
-      </div>
-    </div>
-
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-
-    <p>
-      Copyright ©
-      <span id="currentYear"></span>
-      Marsha Kerr Talley — All Rights Reserved.
-    </p>
-
-    <nav class="footer-links">
-
-      <a href="/privacy-policy">
-        Privacy Policy
-      </a>
-
-      <a href="/shipping-return-policy">
-        Shipping & Return Policy
-      </a>
-
-      <a href="/terms-and-conditions">
-        Terms and Conditions
-      </a>
-
+    <nav class="cities" id="homes" aria-label="Properties">
+      <a href="#hucknall">Hucknall</a>
+      <a href="#fort-worth">Fort Worth</a>
+      <a href="#arlington">Arlington</a>
+      <a href="#clearwater">Clearwater</a>
     </nav>
 
+    <div class="wrap" id="properties"></div>
+
+    <section class="contact wrap" id="contact">
+      <div class="contact-inner">
+        <p class="eyebrow">Property enquiries</p>
+        <h2>Contact Marsha</h2>
+        <p>Tell me which property you’re interested in and what you’d like to know.</p>
+        <div class="contact-links">
+          <a id="email-link" href="mailto:info@marshakerrtalley.com">
+            Email <strong>info@marshakerrtalley.com</strong>
+          </a>
+          <a id="whatsapp-link" href="https://wa.me/447939325005"
+             target="_blank" rel="noopener noreferrer">
+            WhatsApp <strong>+44 7939 325005</strong>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="studio" id="style">
+      <div class="wrap">
+        <div class="spread">
+          <div>
+            <p class="eyebrow">The interiors studio</p>
+            <h2>What’s your home style?</h2>
+            <p>
+              Choose the colours, textures and pieces you would love to live
+              with. Get a palette and a place to start in your own room.
+            </p>
+            <button class="action" id="start-quiz" type="button">
+              Take the style quiz →
+            </button>
+          </div>
+          <img class="studio-image" src="rentals-photos/s5.webp" loading="lazy"
+               alt="Living room inspiration with a turquoise vintage trunk, warm upholstery and bold portrait art">
+        </div>
+        <section class="quiz-box" id="quiz" tabindex="-1"
+                 aria-label="Home style quiz" hidden></section>
+      </div>
+    </section>
+
+    <section class="resources wrap" id="hosting">
+      <p class="eyebrow">For property hosts</p>
+      <h2>The Prepared Host</h2>
+
+      <details>
+        <summary>Airbnb hosting class</summary>
+        <div>
+          <h3>What I Wish I Knew Before Becoming a Host</h3>
+          <p>
+            Marsha draws on her experience as a repeat Airbnb Superhost to
+            explore how to set guest expectations, protect a property and
+            handle difficult reviews.
+          </p>
+          <p>The live online session was scheduled for 29 July 2026.</p>
+        </div>
+      </details>
+
+      <details id="host-challenge">
+        <summary>Play the Host Challenge</summary>
+        <div id="host-game"></div>
+      </details>
+
+      <details>
+        <summary>The Prepared Host Toolkit</summary>
+        <div>
+          <p>
+            Marsha’s toolkit brings together practical templates, worksheets
+            and checklists for guest communication and day-to-day hosting.
+          </p>
+          <h3>Before your next arrival</h3>
+          <label><input type="checkbox"> Walk the route from the entrance to the front door with your arrival instructions in hand.</label>
+          <label><input type="checkbox"> Check the Wi-Fi details and appliance instructions against what guests will find.</label>
+          <label><input type="checkbox"> Leave a clear way to report a problem during the stay.</label>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner wrap">
+      <span class="brand">Marsha Kerr Talley<small>Property Management</small></span>
+      <nav class="menu" aria-label="Site navigation">
+        <a href="/index.html">Home</a>
+        <a href="/work-with-me.html">Work with me</a>
+        <a href="/books.html">Books</a>
+        <a href="/podcast.html">Podcast</a>
+        <a href="/reflections.html">Reflections</a>
+        <a href="/privacy-policy">Privacy</a>
+        <a href="/shipping-return-policy">Shipping &amp; returns</a>
+        <a href="/terms-and-conditions">Terms</a>
+        <a href="#top">Back to top ↑</a>
+      </nav>
+    </div>
   </footer>
 
+  <dialog id="viewer" aria-label="Property photographs">
+    <div class="viewer-bar">
+      <p id="photo-count"></p>
+      <button type="button" id="close-viewer" autofocus>Close ×</button>
+    </div>
+    <img id="large-photo" alt="">
+    <div class="viewer-bar">
+      <button type="button" id="previous-photo" aria-label="Previous photograph">←</button>
+      <p id="photo-caption" aria-live="polite"></p>
+      <button type="button" id="next-photo" aria-label="Next photograph">→</button>
+    </div>
+  </dialog>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    "use strict";
 
-      document.getElementById("currentYear").textContent =
-        new Date().getFullYear();
+    const byId = id => document.getElementById(id);
+    const photoPath = key => `rentals-photos/${key}.webp`;
 
-      const toggle = document.querySelector(".nav-toggle");
-      const nav = document.querySelector(".site-nav");
+    const albums = {
+      u: [
+        "Living room facing the front window", "Deep blue feature wall",
+        "Fireplace and garden doors", "Living room looking towards the garden",
+        "Front entrance and timber staircase", "Fitted kitchen",
+        "Hallway and stairs", "Family bathroom",
+        "Bedroom with botanical wallpaper", "Bedroom with fitted wardrobes",
+        "Neutral bedroom with natural light", "Bedroom with a wide window"
+      ],
+      h: [
+        "Furnished sitting room", "Seating around the fireplace",
+        "Dining area by the garden doors", "Kitchen counters and window",
+        "Kitchen and appliances", "Kitchen doorway", "Upstairs landing",
+        "Furnished bedroom", "Bedroom with fitted storage", "Study space",
+        "Bedroom with turquoise accents", "Family bathroom", "Entrance hall",
+        "Enclosed garden and patio", "Garden seating and summerhouse"
+      ],
+      f: [
+        "Dining table and book-lined wall", "Bedroom with teal bedding",
+        "Bedroom with dark timber bed", "Kitchen cabinetry and appliances",
+        "Open living area", "Bathroom and tiled shower", "Study with desk",
+        "Dining area beside the deck", "Bathroom vanity",
+        "Office shelving and desk", "Bungalow beneath mature trees",
+        "Island kitchen and open shelving", "Bedroom with fireplace",
+        "Bathroom and built-in shelves", "Bedroom and closet doors",
+        "Kitchen island from the dining area", "Fenced lawn",
+        "Garage and driveway", "Covered deck seating"
+      ],
+      a: [
+        "Vaulted living room and fireplace", "Living room and breakfast bar",
+        "Kitchen viewed across the bar", "Window-side dining nook",
+        "Kitchen cabinets and range", "Bedroom with reading lamp",
+        "Bedroom and closet", "Bedroom with seating", "Laundry cupboard",
+        "Sheltered balcony", "Community exterior", "Brick exterior and walkway",
+        "Shared picnic area", "Landscaped courtyard"
+      ],
+      c: [
+        "Kitchen and stainless-steel appliances", "Fairway view",
+        "Palms beside the fairway", "Aerial view of the golf community",
+        "Kitchen pass-through", "Kitchen worktop and dining area",
+        "Bathroom vanity", "Living room opening towards the patio",
+        "Bedroom", "Walk-in wardrobe"
+      ]
+    };
 
-      if (toggle && nav) {
+    const homes = [
+      {
+        id: "hucknall", city: "Hucknall",
+        region: "Nottinghamshire, United Kingdom",
+        type: "Semi-detached home", rooms: "3 bedrooms",
+        description: "A fireplace framed by deep blue walls gives the long sitting room a natural centre. Follow the timber floor to the glazed doors and the room opens onto an enclosed garden with space to sit outside. Upstairs, botanical wallpaper and fitted wardrobes give one bedroom its own character.",
+        cover: ["u", 2],
+        galleries: [["Unfurnished home", "u"], ["Previously furnished", "h"]]
+      },
+      {
+        id: "fort-worth", city: "Fort Worth", region: "Texas, United States",
+        type: "Single-storey bungalow", rooms: "3 bedrooms · 2 bathrooms",
+        description: "Mature trees frame this low brick bungalow. Inside, a wall of bookshelves makes an intimate backdrop for dinner, while the kitchen island opens towards the sitting room. Take a plate out to the covered wooden deck and the view changes to a broad, fenced lawn.",
+        cover: ["f", 0], galleries: [["Explore the bungalow", "f"]]
+      },
+      {
+        id: "arlington", city: "Arlington", region: "Texas, United States",
+        type: "Condominium", rooms: "2 bedrooms · 2 bathrooms",
+        description: "A vaulted ceiling lends the living room height, with a fireplace below and an open breakfast bar connecting it to the kitchen. A window-side dining nook makes a lovely spot for morning coffee. The sheltered balcony offers a quieter seat, with a pool and shared picnic spaces elsewhere in the gated grounds.",
+        cover: ["a", 0], galleries: [["Explore the condominium", "a"]]
+      },
+      {
+        id: "clearwater", city: "Clearwater", region: "Florida, United States",
+        type: "Golf-course condominium", rooms: "1 bedroom · 1 bathroom",
+        description: "The screened patio of this ground-floor home looks across the seventeenth fairway. A kitchen pass-through carries the sightline into the living room, where pale finishes let the green beyond the glass take centre stage. A walk-in wardrobe and an assigned carport make everyday living easy.",
+        cover: ["c", 2], galleries: [["Explore the home and grounds", "c"]]
+      }
+    ];
 
-        toggle.addEventListener("click", () => {
+    function photoButton(group, index, className) {
+      const caption = albums[group][index];
+      return `<button class="${className}" type="button"
+        data-group="${group}" data-index="${index}" aria-label="Enlarge: ${caption}">
+        <img src="${photoPath(group + index)}" loading="lazy" alt="${caption}">
+      </button>`;
+    }
 
-          const isOpen = nav.classList.toggle("open");
+    function gallery(title, group) {
+      const photos = albums[group];
+      return `<details>
+        <summary>${title}<small>${photos.length} photos</small></summary>
+        <div class="grid">
+          ${photos.map((_, index) => photoButton(group, index, "thumb")).join("")}
+        </div>
+      </details>`;
+    }
 
-          toggle.setAttribute(
-            "aria-expanded",
-            isOpen
-          );
+    byId("properties").innerHTML = homes.map(home => `
+      <article class="property" id="${home.id}">
+        <div class="spread">
+          ${photoButton(home.cover[0], home.cover[1], "feature")}
+          <div class="property-copy">
+            <p class="eyebrow">${home.region}</p>
+            <h2>${home.city}</h2>
+            <p class="spec">${home.type}<br>${home.rooms}</p>
+            <p>${home.description}</p>
+          </div>
+        </div>
+        ${home.galleries.map(([title, group]) => gallery(title, group)).join("")}
+        <a class="text-link" href="#contact" data-city="${home.city}">
+          Enquire about the ${home.city} property →
+        </a>
+      </article>
+    `).join("");
 
-        });
+    const viewer = byId("viewer");
+    let activeGroup = "u";
+    let activeIndex = 0;
 
+    function displayPhoto(offset = 0) {
+      const list = albums[activeGroup];
+      activeIndex = (activeIndex + offset + list.length) % list.length;
+      const caption = list[activeIndex];
+      byId("large-photo").src = photoPath(activeGroup + activeIndex);
+      byId("large-photo").alt = caption;
+      byId("photo-caption").textContent = caption;
+      byId("photo-count").textContent = `${activeIndex + 1} / ${list.length}`;
+    }
+
+    byId("properties").addEventListener("click", event => {
+      const photo = event.target.closest("button[data-group]");
+      if (photo) {
+        activeGroup = photo.dataset.group;
+        activeIndex = Number(photo.dataset.index);
+        displayPhoto();
+        viewer.showModal();
+        return;
       }
 
-      const currentPage =
-        (location.pathname.split("/").pop() || "index.html")
-        .toLowerCase();
-
-      document.querySelectorAll(".site-nav a").forEach(link => {
-
-        if (
-          link.getAttribute("href").toLowerCase() === currentPage
-        ) {
-          link.classList.add("active");
-        }
-
-      });
-
+      const enquiry = event.target.closest("a[data-city]");
+      if (enquiry) {
+        const city = enquiry.dataset.city;
+        const subject = encodeURIComponent(`${city} property enquiry`);
+        const message = encodeURIComponent(`Hello Marsha, I’m interested in the ${city} property.`);
+        byId("email-link").href = `mailto:info@marshakerrtalley.com?subject=${subject}`;
+        byId("whatsapp-link").href = `https://wa.me/447939325005?text=${message}`;
+      }
     });
-  </script>
 
+    byId("close-viewer").onclick = () => viewer.close();
+    byId("previous-photo").onclick = () => displayPhoto(-1);
+    byId("next-photo").onclick = () => displayPhoto(1);
+
+    viewer.addEventListener("keydown", event => {
+      if (event.key === "ArrowLeft") displayPhoto(-1);
+      if (event.key === "ArrowRight") displayPhoto(1);
+    });
+
+    byId("host-challenge").addEventListener("toggle", function () {
+      if (!this.open || byId("host-game").firstElementChild) return;
+      const frame = document.createElement("iframe");
+      frame.title = "Interactive Host Challenge";
+      frame.src = "https://marshakerrtalley.com/host-game";
+      byId("host-game").append(frame);
+    });
+
+    const profiles = [
+      ["Modern Contemporary", "Ink, ivory and deep teal",
+       "Choose a low sofa with a crisp outline. Hang one large abstract work above it and repeat a colour from the painting in a cushion."],
+      ["Modern Farmhouse", "Oat, faded olive and warm oak",
+       "Start with a comfortable linen-covered sofa. Pair it with a timber table, a stoneware jug and a lamp with a warm linen shade."],
+      ["Coastal", "Chalk, sea glass and sandy beige",
+       "Let pale curtains filter the light. Try a sea-glass lamp on a light timber table and a washable striped rug where you kick off your shoes."],
+      ["Boho", "Clay, saffron and cream",
+       "Give a woven chair a reading corner of its own. Add a patterned cushion and echo one of its colours in a ceramic planter."],
+      ["Transitional", "Warm ivory, taupe and ink blue",
+       "Balance a gently rolled sofa arm with a clean-lined table. A pair of shaded lamps will pull older and newer pieces together."],
+      ["Modern Tropical", "Palm green, warm white and lagoon blue",
+       "Give one large leafy plant the brightest suitable corner. Set a cane-backed chair nearby and pick up the leaf colour in a solid cushion."],
+      ["Eclectic", "Turquoise, ochre and warm cream",
+       "Start with one object you would never part with. Let a colour from that piece guide your artwork and leave some space around it."],
+      ["Organic Modern", "Limestone, mushroom and muted sage",
+       "Build around a softly rounded sofa or table. Bring in matte pottery and a textured wool rug, leaving room around their shapes."]
+    ];
+
+    const questions = [
+      ["Which piece would you build a living room around?",
+       "A low, sculptural sofa", "A comfortable linen sofa", "A pale oak bench",
+       "A woven hanging chair", "A classic armchair with tailored piping",
+       "A cane-backed lounge chair", "A vintage turquoise trunk",
+       "A rounded travertine table"],
+
+      ["Which palette would you bring home?",
+       "Ink and ivory with one jewel tone", "Oatmeal, olive and honeyed oak",
+       "Sea glass, sand and chalk", "Terracotta, saffron and cream",
+       "Taupe, navy and warm ivory", "Leaf green, lagoon blue and white",
+       "Turquoise, mustard and a flash of coral", "Mushroom, stone and sage"],
+
+      ["What belongs on your favourite wall?",
+       "One oversized abstract", "A quiet landscape in a timber frame",
+       "A shoreline photograph", "A handmade woven hanging",
+       "A pair of framed prints", "A botanical study in rich greens",
+       "A bold portrait by an artist I love", "A softly textured plaster finish"],
+
+      ["Which surface would you reach out to touch?",
+       "Smooth lacquer", "Timeworn oak", "Washed linen", "Hand-knotted cotton",
+       "Fine tailored upholstery", "Woven cane",
+       "Paint worn through on a vintage find", "Honed limestone"],
+
+      ["What would you place on the dining table?",
+       "A single sculptural bowl", "A stoneware jug with a few branches",
+       "Pale blue glass on a linen runner", "Handmade pottery on a patterned cloth",
+       "Two candlesticks and a low arrangement", "A glossy-leaved plant in a ceramic pot",
+       "Books and a glass terrarium with a gold base", "A shallow unglazed bowl"],
+
+      ["Which lighting feels most like home?",
+       "A graphic floor lamp", "A linen drum shade", "A translucent glass pendant",
+       "A woven shade with an intricate pattern", "A matched pair of shaded lamps",
+       "A broad cane pendant", "A colourful vintage lamp", "An opal globe on a stone base"],
+
+      ["Which finishing touch would you choose first?",
+       "Leave a clean surface around one object", "Fold a soft quilt over the sofa",
+       "Hang airy linen curtains", "Layer a patterned rug over jute",
+       "Bring the cushion and curtain colours together", "Give a tall plant room by the window",
+       "Hang meaningful art above one statement piece", "Set a handmade vase where the light catches it"]
+    ];
+
+    const quiz = byId("quiz");
+    let step = 0;
+    let answers = [];
+
+    function focusQuiz() {
+      quiz.focus({ preventScroll: true });
+      quiz.scrollIntoView({ block: "nearest" });
+    }
+
+    function beginQuiz() {
+      answers = [];
+      step = 0;
+      quiz.hidden = false;
+      byId("start-quiz").hidden = true;
+      showQuestion();
+    }
+
+    function showQuestion() {
+      const question = questions[step];
+      const last = step === questions.length - 1;
+
+      quiz.innerHTML = `
+        <p class="eyebrow">Question ${step + 1} of ${questions.length}</p>
+        <h3>${question[0]}</h3>
+        <div class="options" id="quiz-options"></div>
+        <div class="controls">
+          <button class="action" type="button" id="quiz-back">Back</button>
+          <button class="action" type="button" id="quiz-next">
+            ${last ? "See my style" : "Continue →"}
+          </button>
+        </div>`;
+
+      const options = byId("quiz-options");
+      for (let position = 0; position < profiles.length; position++) {
+        const style = (position + 3 * step) % profiles.length;
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "option";
+        button.textContent = question[style + 1];
+        button.setAttribute("aria-pressed", String(answers[step] === style));
+
+        button.onclick = () => {
+          answers[step] = style;
+          for (const other of options.children) {
+            other.setAttribute("aria-pressed", String(other === button));
+          }
+          byId("quiz-next").disabled = false;
+        };
+        options.append(button);
+      }
+
+      byId("quiz-next").disabled = answers[step] === undefined;
+
+      byId("quiz-back").onclick = () => {
+        if (step > 0) {
+          step--;
+          showQuestion();
+        } else {
+          quiz.hidden = true;
+          byId("start-quiz").hidden = false;
+          byId("start-quiz").focus();
+        }
+      };
+
+      byId("quiz-next").onclick = () => {
+        if (last) {
+          showResult();
+        } else {
+          step++;
+          showQuestion();
+        }
+      };
+
+      focusQuiz();
+    }
+
+    function showResult() {
+      const scores = profiles.map((_, style) =>
+        answers.filter(answer => answer === style).length
+      );
+
+      const ranked = profiles.map((_, style) => style).sort((a, b) =>
+        scores[b] - scores[a] || answers.indexOf(a) - answers.indexOf(b)
+      );
+
+      const first = ranked[0];
+      const second = ranked[1];
+      const blended = scores[second] >= 2 && scores[first] - scores[second] <= 1;
+      const farmhouseMix = blended &&
+        ((first === 1 && second === 6) || (first === 6 && second === 1));
+
+      const title = farmhouseMix ? "Eclectic Farmhouse" : profiles[first][0];
+      const palette = farmhouseMix ? "Deep teal, ochre and warm ivory" : profiles[first][1];
+      const advice = farmhouseMix
+        ? "Give a cream sofa and a warm timber floor one colourful companion, such as a distressed turquoise trunk. Echo its teal in a cushion, hang a bold portrait and let a trailing vine soften a shelf. A peace lily makes a beautiful centrepiece on the dining table."
+        : profiles[first][2];
+
+      quiz.innerHTML = `
+        <p class="eyebrow">Your home style</p>
+        <h3>${title}</h3>
+        <p><strong>Your palette</strong> · ${palette}</p>
+        <p>${advice}</p>
+        ${blended && !farmhouseMix
+          ? `<p><strong>A touch of ${profiles[second][0]}</strong> · ${profiles[second][2]}</p>`
+          : ""}
+        ${farmhouseMix ? `
+          <div class="result-images">
+            <img src="${photoPath("s2")}" alt="Eclectic Farmhouse style board">
+            <img src="${photoPath("s4")}" alt="Dining room inspiration with teal chairs and a glass terrarium">
+          </div>` : ""}
+        <div class="controls">
+          <button class="action" type="button" id="review-answer">Review my last answer</button>
+          <button class="action" type="button" id="retake-quiz">Retake the quiz</button>
+        </div>`;
+
+      byId("review-answer").onclick = showQuestion;
+      byId("retake-quiz").onclick = beginQuiz;
+      focusQuiz();
+    }
+
+    byId("start-quiz").onclick = beginQuiz;
+  </script>
 </body>
 </html>
