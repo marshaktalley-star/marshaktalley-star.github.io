@@ -1736,6 +1736,45 @@
       .concierge-panel { padding:32px 22px 26px; border-radius:20px; }
     }
 
+
+    .site-nav > ul {
+      flex-wrap: wrap;
+    }
+
+    .hero-grid > *, .private-grid > *, .speaking-grid > *, .selected-case > * {
+      min-width: 0;
+    }
+
+    .hero-video-card {
+      width: min(100%, 370px);
+      justify-self: center;
+    }
+
+    .speaking-media {
+      width: min(100%, 340px);
+      justify-self: center;
+    }
+
+    .selected-case-media {
+      width: min(100%, 320px);
+      justify-self: center;
+    }
+
+    @media (max-width: 1020px) {
+      .private-image-wrap {
+        width: min(100%, 540px);
+        justify-self: center;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero-video-card, .speaking-media, .selected-case-media {
+        max-width: 280px;
+      }
+      .hero-video-shell {
+        aspect-ratio: 4 / 5;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1752,6 +1791,7 @@
       <nav class="site-nav" aria-label="Main navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
           <li class="nav-dropdown">
             <a href="work-with-me.html" class="nav-parent active">Work With Me</a>
             <ul class="nav-submenu" aria-label="Work With Me">
