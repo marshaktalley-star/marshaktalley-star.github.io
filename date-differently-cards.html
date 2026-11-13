@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Date Differently™ is an interactive dating card experience by Marsha Kerr Talley, created as part of Six Weeks to Date Differently.">
+<meta name="description" content="Explore Date Differently™ interactive dating games: the card deck and dating thermometer, part of Six Weeks to Date Differently.">
 
-<title>Date Differently™ Card Game | Marsha Kerr Talley</title>
+<title>Date Differently™ Dating Games | Marsha Kerr Talley</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -952,6 +952,35 @@ button:disabled{opacity:.55;cursor:default;transform:none;}
 @media(min-width:801px){.date-card{min-height:434px;}}
 @media(max-width:380px){.logo img{width:180px;}.card-front{padding:30px 20px;}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+
+/* Dating games navigation and thermometer */
+.game-anchor-nav{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:28px auto 0}
+.game-anchor-nav a{min-width:165px}
+#card-game,#dating-thermometer{scroll-margin-top:22px}
+.thermo-section{padding:80px 0;background:linear-gradient(160deg,#f8f3eb,#fffdf9)}
+.thermo-wrap{max-width:880px;margin:auto;text-align:center}
+.thermo-wrap h2{font:500 clamp(2rem,5vw,3.2rem)/1.2 var(--serif);color:var(--deep);margin:8px 0 12px}
+.thermo-intro{max-width:650px;margin:0 auto 25px}
+.thermo-modes{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:20px 0 26px}
+.thermo-mode{border:1px solid var(--line);background:#fff;color:var(--deep);padding:11px 18px;border-radius:999px;cursor:pointer;font-weight:700}
+.thermo-mode[aria-pressed="true"]{background:var(--teal);color:#fff;border-color:var(--teal)}
+.thermo-panel{max-width:670px;margin:auto;background:white;border:1px solid var(--line);border-radius:25px;padding:clamp(22px,5vw,42px);box-shadow:0 20px 50px rgba(8,63,66,.07)}
+.thermo-panel h3{font:500 clamp(1.5rem,4vw,2.2rem) var(--serif);color:var(--deep);margin:0 0 9px}
+.thermo-visual{display:flex;align-items:center;justify-content:center;gap:clamp(12px,5vw,45px);margin:28px auto}
+.thermo-gauge{position:relative;width:78px;height:250px;flex:none}
+.thermo-tube{position:absolute;left:22px;top:0;width:34px;height:205px;border:4px solid #c8d5d4;border-radius:30px;background:#f0f4f3;overflow:hidden}
+.thermo-liquid{position:absolute;bottom:0;left:0;width:100%;height:50%;background:linear-gradient(to top,#6cc4e7 0%,#f2c75b 38%,#ed793c 72%,#b72d42 100%);background-size:100% 205px;background-position:bottom;transition:height .12s ease}
+.thermo-bulb{position:absolute;bottom:0;left:7px;width:64px;height:64px;border:5px solid #c8d5d4;border-radius:50%;background:#e77b45;box-shadow:inset 0 0 0 5px #fff5}
+.thermo-reading{text-align:left;max-width:310px}
+.thermo-number{font:600 3rem var(--serif);color:var(--deep);line-height:1.1}
+.thermo-stage{font-weight:800;color:var(--teal);font-size:1.15rem;margin:8px 0}
+.thermo-description{margin:0;line-height:1.6}
+.thermo-slider{width:100%;accent-color:var(--teal);cursor:pointer;min-height:32px}
+.thermo-ends{display:flex;justify-content:space-between;font-size:.83rem;color:var(--text);margin:0 0 22px}
+.thermo-question{margin:16px 0 22px;color:var(--deep);font-family:var(--serif);font-size:1.18rem}
+.thermo-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.thermo-note{font-size:.8rem;color:#667575;margin:18px auto 0;max-width:530px}
+@media(max-width:480px){.thermo-visual{gap:20px}.thermo-reading{flex:1}.thermo-number{font-size:2.4rem}.thermo-panel{padding:22px 18px}}
 </style>
 </head>
 
@@ -1126,6 +1155,10 @@ Meet. Connect. Discover.
 
 </div>
 
+<nav class="game-anchor-nav" aria-label="Choose a dating game">
+<a class="btn btn-primary" href="#card-game">Play the Card Game</a>
+<a class="btn btn-secondary" href="#dating-thermometer">Try the Thermometer</a>
+</nav>
 </section>
 
 
@@ -1134,7 +1167,7 @@ Meet. Connect. Discover.
      INSTRUCTIONS
 ====================================================== -->
 
-<section class="instructions">
+<section class="instructions" id="card-game">
 
 <div class="wrap">
 
@@ -1370,6 +1403,43 @@ Shuffle &amp; Play Again
 </section>
 
 
+
+
+<!-- ======================================================
+     DATING THERMOMETER
+====================================================== -->
+<section class="thermo-section" id="dating-thermometer" aria-labelledby="thermoHeading">
+<div class="wrap thermo-wrap">
+<div class="eyebrow">The Dating Temperature Check</div>
+<h2 id="thermoHeading">Are you getting warmer?</h2>
+<p class="thermo-intro">Sometimes you think you know someone. Sometimes you surprise them by noticing something they never told you. Move the thermometer and discover just how close you are.</p>
+<div class="thermo-modes" role="group" aria-label="Choose thermometer game mode">
+<button class="thermo-mode" type="button" data-mode="know" aria-pressed="true">How Well Do You Know Me?</button>
+<button class="thermo-mode" type="button" data-mode="warm" aria-pressed="false">How Hot Am I Getting?</button>
+</div>
+<div class="thermo-panel">
+<h3 id="thermoPrompt">How well do you think you know me?</h3>
+<p id="thermoDirections">Choose the temperature that reflects how well you believe you understand the other person. Then compare what you each think.</p>
+<div class="thermo-visual">
+<div class="thermo-gauge" aria-hidden="true"><div class="thermo-tube"><div class="thermo-liquid" id="thermoLiquid"></div></div><div class="thermo-bulb" id="thermoBulb"></div></div>
+<div class="thermo-reading" aria-live="polite" aria-atomic="true">
+<div class="thermo-number"><span id="thermoNumber">50</span>°</div>
+<div class="thermo-stage" id="thermoStage">Warming Up</div>
+<p class="thermo-description" id="thermoDescription">I'm beginning to notice your patterns and preferences.</p>
+</div>
+</div>
+<label for="thermoSlider"><strong>Drag to set your temperature</strong></label>
+<input class="thermo-slider" id="thermoSlider" type="range" min="0" max="100" step="1" value="50" aria-describedby="thermoDirections">
+<div class="thermo-ends"><span>🧊 Ice Cold</span><span>🔥 On Fire</span></div>
+<p class="thermo-question" id="thermoFollowup">What would help you understand me better?</p>
+<div class="thermo-actions">
+<button class="btn btn-primary" type="button" id="thermoCopy">Copy My Temperature</button>
+<button class="btn btn-secondary" type="button" id="thermoReset">Reset</button>
+</div>
+<p class="thermo-note" id="thermoFeedback" role="status">A temperature is a conversation starter, not a test or a verdict on your relationship.</p>
+</div>
+</div>
+</section>
 
 <!-- ======================================================
      ABOUT
@@ -2177,6 +2247,59 @@ playAgainButton.addEventListener(
 ========================================================= */
 
 shuffleCards();
+
+
+/* Dating thermometer: separate from the existing card deck. */
+const thermoSlider = document.getElementById("thermoSlider");
+const thermoModes = document.querySelectorAll(".thermo-mode");
+const thermoStages = [
+  {max:15, label:"Ice Cold 🧊", know:"We're still getting to know each other.", warm:"Not quite. Try another observation.", color:"#69c4e8"},
+  {max:35, label:"Cold ❄️", know:"I know a few things, but there is so much more to discover.", warm:"You have picked up on something, but you're not there yet.", color:"#599fc8"},
+  {max:55, label:"Warming Up 🌤️", know:"I'm beginning to notice your patterns and preferences.", warm:"You're getting warmer. Keep going!", color:"#d6a044"},
+  {max:75, label:"Getting Hot 🔥", know:"I notice things about you that others might miss.", warm:"That is close! You are seeing something real.", color:"#e77a38"},
+  {max:90, label:"Hot ❤️‍🔥", know:"I understand more than what you tell me.", warm:"You have almost figured me out.", color:"#d94c40"},
+  {max:100, label:"On Fire 🔥", know:"I feel that I know you deeply, and I'm still learning.", warm:"You got it! That observation is spot on.", color:"#b72d42"}
+];
+let thermoMode = "know";
+function updateThermometer(){
+  const value = Number(thermoSlider.value);
+  const stage = thermoStages.find(item => value <= item.max) || thermoStages[thermoStages.length - 1];
+  document.getElementById("thermoLiquid").style.height = value + "%";
+  document.getElementById("thermoBulb").style.backgroundColor = stage.color;
+  document.getElementById("thermoNumber").textContent = value;
+  document.getElementById("thermoStage").textContent = stage.label;
+  document.getElementById("thermoDescription").textContent = stage[thermoMode];
+  thermoSlider.setAttribute("aria-valuetext", value + " degrees, " + stage.label);
+}
+thermoSlider.addEventListener("input", updateThermometer);
+thermoModes.forEach(button => button.addEventListener("click", () => {
+  thermoMode = button.dataset.mode;
+  thermoModes.forEach(item => item.setAttribute("aria-pressed", String(item === button)));
+  document.getElementById("thermoPrompt").textContent = thermoMode === "know" ? "How well do you think you know me?" : "How hot am I getting?";
+  document.getElementById("thermoDirections").textContent = thermoMode === "know"
+    ? "Choose the temperature that reflects how well you believe you understand the other person. Then compare what you each think."
+    : "Make an observation about your date. The person receiving it moves the thermometer to show how close you came to the truth.";
+  document.getElementById("thermoFollowup").textContent = thermoMode === "know"
+    ? "What would help you understand me better?" : "What would it take to turn up the heat?";
+  thermoSlider.value = 50;
+  document.getElementById("thermoFeedback").textContent = "A temperature is a conversation starter, not a test or a verdict on your relationship.";
+  updateThermometer();
+}));
+document.getElementById("thermoReset").addEventListener("click", () => {
+  thermoSlider.value = 50;
+  updateThermometer();
+  document.getElementById("thermoFeedback").textContent = "Temperature reset. Ready for another round.";
+});
+document.getElementById("thermoCopy").addEventListener("click", async () => {
+  const modeTitle = thermoMode === "know" ? "How Well Do You Know Me?" : "How Hot Am I Getting?";
+  const result = "Date Differently™ — " + modeTitle + "\n" + thermoSlider.value + "° — " + document.getElementById("thermoStage").textContent + "\n" + document.getElementById("thermoDescription").textContent + "\n" + document.getElementById("thermoFollowup").textContent;
+  try {
+    if(navigator.clipboard && window.isSecureContext){await navigator.clipboard.writeText(result);}
+    else {const field=document.createElement("textarea");field.value=result;field.style.position="fixed";field.style.opacity="0";document.body.appendChild(field);field.select();if(!document.execCommand("copy"))throw Error("Copy failed");field.remove();}
+    document.getElementById("thermoFeedback").textContent = "Temperature copied. Share it with your date!";
+  } catch(error){document.getElementById("thermoFeedback").textContent = "Copy unavailable in this browser. You can share your temperature aloud.";}
+});
+updateThermometer();
 
 </script>
 
