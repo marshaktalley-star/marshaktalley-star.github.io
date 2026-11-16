@@ -1,0 +1,730 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Walkerswood Academy | Literacy Assessment</title>
+<style>
+:root {
+  --teal:#08736f;
+  --red:#b95e55;
+  --amber:#d7a03c;
+  --green:#16877e;
+  --ink:#19383b;
+  --line:#d7e4e1;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#f2f7f6;color:var(--ink);
+  font:16px/1.5 Arial,sans-serif}
+header{background:var(--teal);color:white;padding:25px}
+main{max-width:1050px;margin:auto;padding:16px}
+.card{background:white;border:1px solid var(--line);
+  border-radius:12px;padding:22px;margin:15px 0}
+h1{margin:0}h2{color:var(--teal)}
+label{display:block;margin:12px 0}
+input,textarea,select{width:100%;padding:10px;margin-top:5px;
+  border:1px solid #a5bbb6;border-radius:6px;font:inherit}
+textarea{min-height:85px}
+button{background:var(--teal);color:white;border:0;
+  border-radius:7px;padding:12px 17px;cursor:pointer;margin:5px}
+.secondary{background:#526a70}
+.notice{background:#fff4dc;padding:14px;
+  border-left:4px solid var(--amber);margin:14px 0}
+.passage{background:#edf5f3;padding:17px;border-radius:8px}
+.question{padding:14px 0;border-bottom:1px solid var(--line)}
+.question label{font-weight:normal}
+.question input[type=radio]{width:auto;margin-right:8px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hidden{display:none}
+.profile-item{margin:20px 0}
+.profile-heading{display:flex;justify-content:space-between;gap:10px}
+.track{height:16px;background:#edf0f0;border-radius:20px;
+  overflow:hidden;margin-top:8px}
+.fill{height:100%;border-radius:20px}
+.red{background:var(--red)}
+.amber{background:var(--amber)}
+.green{background:var(--green)}
+.panel{padding:18px;border:1px solid var(--line);
+  border-radius:10px;margin:15px 0}
+.student-panel{background:#f0f8f6}
+.strategy{padding:15px;border-left:4px solid var(--teal);
+  background:#f6faf9;margin:12px 0}
+.strategy p{margin:7px 0}
+small{color:#52676c}
+table{border-collapse:collapse;width:100%}
+td,th{border:1px solid var(--line);padding:9px;text-align:left}
+th{background:#edf5f3}
+@media(max-width:650px){
+  .grid{grid-template-columns:1fr}
+  main{padding:8px}.card{padding:15px}
+}
+@media print{
+  header{background:white;color:black}
+  body{background:white}
+  button{display:none}
+  .card,.panel{break-inside:avoid}
+  .fill{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Walkerswood Academy</h1>
+<p>Diagnostic Literacy Skills Assessment</p>
+<p>School-Developed Educational Assessment</p>
+</header>
+
+<main>
+
+<section class="card">
+<h2>Assessment instructions</h2>
+<p>
+This assessment examines foundational reading, language,
+and written expression skills. Students complete independent
+tasks while an assessor administers oral activities.
+</p>
+<div class="notice">
+<strong>Assessment status:</strong>
+This is a school-developed pilot informed by established
+literacy assessment methods. Its original items have not
+been validated or normed on Jamaican students.
+Scores describe performance on these tasks only.
+They do not establish reading age, disability or
+special education eligibility.
+</div>
+<p>
+Record language, attendance, prior instruction and access
+needs. Jamaican Patois is a legitimate language variety
+and must not be treated as evidence of disability.
+</p>
+</section>
+
+<section class="card">
+<h2>1. Student information</h2>
+<div class="grid">
+<label>Student code
+<input id="student" placeholder="WA-001"></label>
+<label>Grade
+<select id="grade">
+<option value="">Select</option>
+<option>7</option><option>8</option><option>9</option>
+<option>10</option><option>11</option>
+<option>12</option><option>13</option>
+</select></label>
+<label>Assessment date<input type="date" id="date"></label>
+<label>Assessor<input id="assessor"></label>
+</div>
+<label>Language used for directions
+<select id="language">
+<option>Standard Jamaican English</option>
+<option>Jamaican Patois clarification</option>
+<option>Both</option>
+</select></label>
+<label>Previous assessments, attendance and instruction
+<textarea id="context"></textarea></label>
+<label>Student strengths and interests
+<textarea id="strengths"></textarea></label>
+</section>
+
+<section class="card">
+<h2>2. Reading comprehension</h2>
+<p><strong>Student:</strong> Read the passage independently.</p>
+<div class="passage">
+<h3>The School Garden</h3>
+<p>
+On Tuesday morning, Nia went to the school garden
+with her class. The students wanted to grow callaloo
+and tomatoes. Their teacher asked them to loosen
+the soil before planting. Nia noticed that one corner
+of the garden was dry, so she carried water from a
+nearby tank. By Friday, the class had planted twelve
+seedlings. They agreed to check the garden every
+morning because young plants need regular care.
+</p>
+</div>
+<div id="readingQuestions"></div>
+<small>
+This short original passage samples comprehension.
+It does not establish a grade or instructional reading level.
+</small>
+</section>
+
+<section class="card">
+<h2>3. Listening comprehension</h2>
+<p>
+<strong>Assessor:</strong> Read the passage aloud without
+showing it to the student. Ask the questions orally.
+</p>
+<details>
+<summary>Assessor passage — keep hidden from student</summary>
+<div class="passage">
+At the community library, Mr Brown delivered several
+books. The librarian placed the books on a table so
+students could choose one to read. She asked everyone
+to return their books the following week. The children
+were excited because the library had new stories
+about animals and adventures.
+</div>
+</details>
+<div id="listeningQuestions"></div>
+<label>Passage repeated?
+<select id="repeated">
+<option>No</option><option>Yes, once</option>
+</select></label>
+</section>
+
+<section class="card">
+<h2>4. Word recognition and decoding</h2>
+<p>
+<strong>Assessor:</strong> Present one word at a time.
+Record the number correct and note errors.
+</p>
+<div class="passage">
+<strong>Real words:</strong>
+sun, market, plant, basket, window,
+tomorrow, careful, information
+</div>
+<label>Real words correct (0–8)
+<input id="real" type="number" min="0" max="8"></label>
+<div class="passage">
+<strong>Invented words:</strong>
+mip, shab, fenter, plim, noster, vake
+</div>
+<label>Invented words correct (0–6)
+<input id="pseudo" type="number" min="0" max="6"></label>
+<label>Actual decoding errors
+<textarea id="decodingNotes"
+placeholder="Record substitutions, omissions, blending difficulties"></textarea>
+</label>
+<small>
+These are brief original probes. Predetermine acceptable
+pronunciations before administration. Use a fuller
+reading inventory for detailed diagnosis.
+</small>
+</section>
+
+<section class="card">
+<h2>5. Phonological awareness</h2>
+<p>
+<strong>Assessor:</strong> Administer orally without
+displaying printed words. Mark each response.
+</p>
+<div id="phonQuestions"></div>
+</section>
+
+<section class="card">
+<h2>6. Oral reading fluency</h2>
+<p>
+Ask the student to read the garden passage aloud.
+Record words attempted, errors and time.
+Because the passage may already be familiar,
+this is a descriptive observation, not a normed
+fluency benchmark.
+</p>
+<div class="grid">
+<label>Words attempted (0–70)
+<input id="attempted" type="number" min="0" max="70"></label>
+<label>Reading errors
+<input id="errors" type="number" min="0" max="70"></label>
+<label>Time in seconds
+<input id="seconds" type="number" min="1"></label>
+<label>Self-corrections
+<input id="selfCorrections" type="number" min="0"></label>
+</div>
+<label>Oral reading observations
+<textarea id="oralNotes"
+placeholder="Phrasing, substitutions, pauses, self-corrections"></textarea>
+</label>
+</section>
+
+<section class="card">
+<h2>7. Written expression</h2>
+<p><strong>Student task:</strong></p>
+<div class="passage">
+Write four to six sentences about something you
+learned, made or helped with. Explain what happened
+and why it mattered.
+</div>
+<p>Allow up to ten minutes.</p>
+<label>Student writing
+<textarea id="writing" rows="6"></textarea></label>
+<p>
+<strong>Assessor:</strong> Score each feature:
+0 = not demonstrated; 1 = emerging;
+2 = demonstrated.
+</p>
+<div id="writingRubric"></div>
+<label>Writing observations
+<textarea id="writingNotes"></textarea></label>
+</section>
+
+<section class="card">
+<h2>8. Functional access and observations</h2>
+<label>Follows two-step spoken directions
+<select id="directions">
+<option>Not assessed</option>
+<option>Independently</option>
+<option>With support</option>
+<option>Not yet demonstrated</option>
+</select></label>
+<label>Vision, hearing, communication or access concerns
+<textarea id="access"></textarea></label>
+<label>Immediate safeguarding or significant functional concerns
+<textarea id="urgent"></textarea></label>
+<div class="notice">
+Address immediate safety or access concerns promptly.
+Do not wait for academic scores or an intervention review.
+</div>
+</section>
+
+<section class="card">
+<h2>9. Assessment results</h2>
+<button onclick="generateReport()">Generate literacy profile</button>
+<button class="secondary" onclick="window.print()">
+Print / Save PDF
+</button>
+<button class="secondary" onclick="exportJSON()">
+Export data
+</button>
+<div id="results" class="hidden"></div>
+</section>
+
+</main>
+
+<script>
+"use strict";
+
+const reading=[
+["Why did the class visit the garden?",
+["To grow vegetables","To play football","To sell books"],0],
+["What did Nia notice?",
+["The plants were tall","One corner was dry","The tank was empty"],1],
+["Why did Nia carry water?",
+["To help with dry soil","To wash windows","To fill bottles"],0],
+["How many seedlings were planted?",
+["Five","Ten","Twelve"],2],
+["Why did they check the garden every morning?",
+["To count students","Young plants need care","A key was lost"],1]
+];
+
+const listening=[
+["Where were the books delivered?",
+"At the library"],
+["When should students return their books?",
+"The following week"],
+["What kinds of stories were mentioned?",
+"Animals and adventures"],
+["Why were the children excited?",
+"The library had new books"]
+];
+
+const phon=[
+["Say 'sun' without the /s/ sound.","un","Phoneme deletion"],
+["What word do these sounds make: /m/ /a/ /p/?","map","Blending"],
+["What is the first sound in 'fish'?","f","Initial phoneme"],
+["Say the sounds in 'ship' separately.","sh-i-p","Segmentation"],
+["What word is made by changing /m/ in 'mat' to /s/?",
+"sat","Phoneme substitution"]
+];
+
+const writingFeatures=[
+"Ideas are relevant and understandable",
+"Sentences communicate complete thoughts",
+"Ideas have a clear sequence",
+"Writing conventions support meaning"
+];
+
+const $=id=>document.getElementById(id);
+const val=id=>$(id)?.value.trim()||"";
+
+function esc(x){
+return String(x??"").replace(/[&<>"']/g,c=>({
+"&":"&amp;","<":"&lt;",">":"&gt;",
+'"':"&quot;","'":"&#39;"
+})[c]);
+}
+
+function build(){
+$("readingQuestions").innerHTML=reading.map((q,i)=>`
+<div class="question">
+<p><strong>${i+1}. ${esc(q[0])}</strong></p>
+${q[1].map((choice,j)=>`
+<label><input type="radio" name="r${i}" value="${j}">
+${esc(choice)}</label>`).join("")}
+</div>`).join("");
+
+$("listeningQuestions").innerHTML=listening.map((q,i)=>`
+<div class="question">
+<label>${i+1}. ${esc(q[0])}
+<input id="l${i}" placeholder="Record exact response"></label>
+<label>Assessor scoring
+<select id="ls${i}">
+<option value="">Not scored</option>
+<option value="1">Correct meaning demonstrated</option>
+<option value="0">Not demonstrated</option>
+</select></label>
+</div>`).join("");
+
+$("phonQuestions").innerHTML=phon.map((q,i)=>`
+<div class="question">
+<p>${i+1}. ${esc(q[0])}</p>
+<small>Expected response: ${esc(q[1])}</small>
+<label>Assessor scoring
+<select id="p${i}">
+<option value="">Not scored</option>
+<option value="1">Correct</option>
+<option value="0">Incorrect</option>
+</select></label>
+<label>Actual student response
+<input id="pr${i}"></label>
+</div>`).join("");
+
+$("writingRubric").innerHTML=writingFeatures.map((q,i)=>`
+<label>${esc(q)}
+<select id="w${i}">
+<option value="">Not scored</option>
+<option value="0">0 — Not demonstrated</option>
+<option value="1">1 — Emerging</option>
+<option value="2">2 — Demonstrated</option>
+</select></label>`).join("");
+}
+
+function numeric(id,max){
+let x=val(id);
+if(x==="")return null;
+let n=Number(x);
+return Number.isFinite(n)&&n>=0&&n<=max?n:null;
+}
+
+function scoreItems(items,points=1){
+let completed=items.filter(x=>x!==null);
+let score=completed.reduce((a,b)=>a+Number(b),0);
+return {
+score,
+max:items.length*points,
+completed:completed.length,
+total:items.length,
+complete:completed.length===items.length
+};
+}
+
+function collect(){
+let read=reading.map((q,i)=>{
+let chosen=document.querySelector(`input[name=r${i}]:checked`);
+return chosen?Number(chosen.value)===q[2]?1:0:null;
+});
+
+let listen=listening.map((_,i)=>{
+let x=val("ls"+i);
+return x===""?null:Number(x);
+});
+
+let sounds=phon.map((_,i)=>{
+let x=val("p"+i);
+return x===""?null:Number(x);
+});
+
+let write=writingFeatures.map((_,i)=>{
+let x=val("w"+i);
+return x===""?null:Number(x);
+});
+
+let real=numeric("real",8);
+let pseudo=numeric("pseudo",6);
+let attempted=numeric("attempted",70);
+let errors=numeric("errors",70);
+let seconds=numeric("seconds",3600);
+let wcpm=null;
+
+if(attempted!==null&&errors!==null&&
+seconds!==null&&seconds>0&&errors<=attempted){
+wcpm=Math.round((attempted-errors)*60/seconds*10)/10;
+}
+
+return {
+student:val("student"),
+grade:val("grade"),
+date:val("date"),
+assessor:val("assessor"),
+language:val("language"),
+context:val("context"),
+strengths:val("strengths"),
+access:val("access"),
+urgent:val("urgent"),
+decodingNotes:val("decodingNotes"),
+oralNotes:val("oralNotes"),
+writingNotes:val("writingNotes"),
+writingSample:val("writing"),
+directions:val("directions"),
+repeated:val("repeated"),
+readingResponses:read,
+listeningResponses:listen,
+phonologicalResponses:sounds,
+phonologicalActual:phon.map((_,i)=>val("pr"+i)),
+writingRubric:write,
+real,pseudo,attempted,errors,seconds,wcpm,
+domains:[
+{name:"Phonological awareness",...scoreItems(sounds)},
+{name:"Decoding",...scoreItems([pseudo],6)},
+{name:"Word recognition",...scoreItems([real],8)},
+{name:"Reading comprehension",...scoreItems(read)},
+{name:"Listening comprehension",...scoreItems(listen)},
+{name:"Written expression",...scoreItems(write,2)}
+]
+};
+}
+
+const strategies={
+"Phonological awareness":{
+student:"Practise hearing and changing sounds in words.",
+teach:"Use explicit oral phoneme blending, segmentation and manipulation with immediate corrective feedback.",
+scaffold:"Start with two- and three-phoneme words. Model with counters, then remove the counters gradually.",
+accommodation:"Give spoken directions, extra processing time and repeated instructions when appropriate.",
+modification:"Temporarily reduce phoneme complexity while building towards the intended learning outcome.",
+monitor:"Use equivalent untaught oral sound tasks weekly."
+},
+"Decoding":{
+student:"Practise sounding out unfamiliar words.",
+teach:"Teach phoneme–grapheme relationships systematically, with cumulative blending and decoding practice.",
+scaffold:"Use teacher modelling, sound boxes, guided blending and gradual release.",
+accommodation:"Provide accessible text or read content-area instructions aloud when decoding is not the assessed skill.",
+modification:"Use a shorter text with simpler spelling patterns for an individually documented instructional target.",
+monitor:"Track accuracy with comparable unfamiliar-word probes."
+},
+"Word recognition":{
+student:"Practise reading words accurately and automatically.",
+teach:"Use explicit word analysis, repeated accurate reading and review of previously taught patterns.",
+scaffold:"Highlight word parts, model pronunciation and practise in short meaningful sentences.",
+accommodation:"Provide word banks and preview vocabulary when word recognition is not being assessed.",
+modification:"Reduce the number or complexity of target words when justified by an individual plan.",
+monitor:"Use comparable word-recognition lists and record accuracy."
+},
+"Reading comprehension":{
+student:"Practise finding information and explaining what you read.",
+teach:"Model literal and inferential questioning, vocabulary instruction, summarising and evidence-based answers.",
+scaffold:"Use chunked text, guided questions, graphic organisers and think-alouds.",
+accommodation:"Allow extra time and accessible formats; use oral presentation when decoding is not the target.",
+modification:"Use an individually selected shorter or less complex text while teaching towards curriculum expectations.",
+monitor:"Use unseen comparable passages and record accuracy by question type."
+},
+"Listening comprehension":{
+student:"Practise listening for important details and explaining ideas.",
+teach:"Teach listening for key information, sequencing, vocabulary and oral retelling.",
+scaffold:"Use short oral segments, visual organisers and guided retelling.",
+accommodation:"Reduce background noise and provide repetition or visual cues where permitted.",
+modification:"Temporarily simplify oral language complexity while retaining the essential concept.",
+monitor:"Use comparable oral passages with consistent administration conditions."
+},
+"Written expression":{
+student:"Practise putting your ideas into clear, connected sentences.",
+teach:"Use oral rehearsal, explicit sentence instruction, sentence combining and planning–drafting–revising.",
+scaffold:"Provide model sentences, planning boxes, sentence frames and gradual release.",
+accommodation:"Allow keyboarding, extra time or speech-to-text when handwriting is not the skill being assessed.",
+modification:"Set a shorter independent writing target when appropriately documented.",
+monitor:"Collect independent writing samples with the same rubric and comparable prompts."
+}
+};
+
+function profileBar(domain){
+if(!domain.complete||domain.max===0){
+return `<div class="profile-item">
+<div class="profile-heading">
+<strong>${esc(domain.name)}</strong>
+<strong>Not fully assessed</strong>
+</div><div class="track"></div></div>`;
+}
+let pct=Math.round(domain.score/domain.max*100);
+let colour=pct<50?"red":pct<75?"amber":"green";
+return `<div class="profile-item">
+<div class="profile-heading">
+<strong>${esc(domain.name)}</strong>
+<strong>${pct}% · ${domain.score}/${domain.max}</strong>
+</div>
+<div class="track">
+<div class="fill ${colour}" style="width:${pct}%"></div>
+</div></div>`;
+}
+
+function generateReport(){
+let d=collect();
+
+let existing={};
+["planSkill","planGoal","planTeaching","planScaffold",
+"planAccommodation","planModification","planOwner",
+"planMonitor","planDate","planReferral"].forEach(id=>{
+existing[id]=val(id);
+});
+
+let completed=d.domains.filter(x=>x.complete);
+let priorities=completed.filter(x=>x.score<x.max)
+.sort((a,b)=>a.score/a.max-b.score/b.max).slice(0,3);
+
+let html=`
+<hr>
+<h2>Individual Student Literacy Profile</h2>
+<p><strong>Student:</strong> ${esc(d.student||"Not entered")}</p>
+<p><strong>Grade:</strong> ${esc(d.grade||"Not entered")}</p>
+<p><strong>Date:</strong> ${esc(d.date||"Not entered")}</p>
+
+<div class="notice">
+<strong>Understanding the colours:</strong>
+Red means fewer than half of the sampled points were earned.
+Amber means 50–74%. Green means 75–100%.
+These are descriptive display bands, not validated
+risk categories, reading levels or disability classifications.
+</div>
+
+<div class="panel student-panel">
+<h3>My Literacy Skills</h3>
+<p>
+These numbers show how you performed on today's activities.
+They do not measure your intelligence or your potential.
+</p>
+${d.domains.map(profileBar).join("")}
+
+<div class="profile-item">
+<strong>Oral reading fluency:</strong>
+${d.wcpm===null?"Not assessed":d.wcpm+" correct words per minute"}
+<p><small>
+This is a reading rate, not a percentage.
+It is not compared with a grade-level benchmark.
+</small></p>
+</div>
+
+<h3>What I can practise next</h3>
+<ul>
+${priorities.map(x=>`
+<li>${esc(strategies[x.name].student)}</li>
+`).join("")||"<li>Discuss your next learning goal with your teacher.</li>"}
+</ul>
+<p><strong>My strengths:</strong>
+${esc(d.strengths||"Discuss with your teacher.")}</p>
+</div>
+
+<div class="panel">
+<h3>Teacher Assessment and Intervention Report</h3>
+<p>
+Interpret item errors alongside previous instruction,
+attendance, classroom work, access needs and
+other assessments. One missed item does not
+establish a persistent skill deficit.
+</p>
+<table>
+<tr><th>Skill</th><th>Raw score</th><th>Completion</th></tr>
+${d.domains.map(x=>`
+<tr><td>${esc(x.name)}</td>
+<td>${x.score}/${x.max}</td>
+<td>${x.completed}/${x.total} tasks</td></tr>
+`).join("")}
+</table>
+`;
+
+if(d.domains.some(x=>!x.complete)){
+html+=`<p class="notice">
+Some domains are incomplete. Complete missing tasks
+before drawing conclusions about those domains.
+</p>`;
+}
+
+html+=`<h3>Instructional strategies and supports</h3>`;
+
+for(let domain of completed){
+if(domain.score===domain.max)continue;
+let s=strategies[domain.name];
+html+=`
+<div class="strategy">
+<h4>${esc(domain.name)}</h4>
+<p><strong>Evidence:</strong>
+${domain.score}/${domain.max} points demonstrated.
+Verify the error pattern using additional tasks.</p>
+<p><strong>Explicit instruction:</strong> ${esc(s.teach)}</p>
+<p><strong>Scaffolding:</strong> ${esc(s.scaffold)}</p>
+<p><strong>Accommodations:</strong> ${esc(s.accommodation)}</p>
+<p><strong>Possible documented modification:</strong>
+${esc(s.modification)}</p>
+<p><strong>Progress monitoring:</strong> ${esc(s.monitor)}</p>
+</div>`;
+}
+
+html+=`
+<h3>Context and referral considerations</h3>
+<p><strong>Attendance and instruction:</strong>
+${esc(d.context||"Not recorded")}</p>
+<p><strong>Access needs:</strong>
+${esc(d.access||"Not recorded")}</p>
+<p><strong>Immediate concerns:</strong>
+${esc(d.urgent||"None recorded")}</p>
+<p><strong>Assessment language:</strong>
+${esc(d.language)}</p>
+<div class="notice">
+Accommodations maintain the intended learning standard.
+Modifications change the expected learning target and
+require an appropriate documented educational decision.
+Specialist referral can proceed alongside intervention.
+</div>
+</div>
+
+<div class="panel">
+<h3>Individual Intervention Plan</h3>
+<p>Complete this section after reviewing all available evidence.</p>
+`;
+
+const fields=[
+["planSkill","Priority skill and supporting evidence"],
+["planGoal","Baseline and measurable instructional goal"],
+["planTeaching","Explicit teaching strategies"],
+["planScaffold","Scaffolding and gradual release"],
+["planAccommodation","Access accommodations"],
+["planModification","Modifications, if appropriate"],
+["planOwner","Responsible staff, frequency and duration"],
+["planMonitor","Progress-monitoring method"],
+["planReferral","Review and referral decision"]
+];
+
+fields.forEach(([id,label])=>{
+html+=`<label>${esc(label)}
+<textarea id="${id}">${esc(existing[id]||"")}</textarea>
+</label>`;
+});
+
+html+=`
+<label>Review date
+<input type="date" id="planDate"
+value="${esc(existing.planDate||"")}"></label>
+<button onclick="window.print()">Print report</button>
+<button class="secondary" onclick="exportJSON()">
+Export completed assessment
+</button>
+</div>`;
+
+$("results").innerHTML=html;
+$("results").classList.remove("hidden");
+$("results").scrollIntoView({behavior:"smooth"});
+}
+
+function exportJSON(){
+let d=collect();
+d.intervention={};
+["planSkill","planGoal","planTeaching","planScaffold",
+"planAccommodation","planModification","planOwner",
+"planMonitor","planDate","planReferral"].forEach(id=>{
+d.intervention[id]=val(id);
+});
+let blob=new Blob([JSON.stringify(d,null,2)],
+{type:"application/json"});
+let url=URL.createObjectURL(blob);
+let link=document.createElement("a");
+link.href=url;
+link.download="literacy-"+(
+d.student.replace(/[^a-z0-9_-]/gi,"_")||"student"
+)+".json";
+link.click();
+setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+
+build();
+</script>
+</body>
+</html>
