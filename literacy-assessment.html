@@ -730,45 +730,42 @@ a.jump{display:inline-block;padding:10px 14px;background:var(--navy);color:white
 <label>Errors and strategies observed<textarea id="mathFluencyNotes" placeholder="Counting strategies, recall, regrouping, accuracy, anxiety, pacing"></textarea></label>
 </section>
 
-<!-- FUNCTIONAL ACCESS -->
-
-<section class="card">
+<!-- FUNCTIONAL LEARNING, ACCESS AND STUDENT VOICE -->
+<section class="card" id="learning-access">
   <h2>Functional Learning and Access</h2>
+  <p>Complete this observation profile alongside the academic tasks. It is not a diagnostic checklist. Record what the student actually does, in what conditions, and what changes when support is provided. Select <strong>Not observed</strong> where evidence is unavailable.</p>
+  <div id="accessObservations"></div>
+  <h3>Student voice: What helps me learn?</h3>
+  <p>Ask these questions conversationally. Record the student's words or their preferred method of communication. These responses are not scored.</p>
+  <label>What schoolwork feels easiest or most enjoyable?<textarea id="voiceStrength"></textarea></label>
+  <label>What schoolwork feels difficult, and what happens when you get stuck?<textarea id="voiceChallenge"></textarea></label>
+  <label>What helps you understand, remember or finish your work?<textarea id="voiceSupport"></textarea></label>
+  <h3>Compare independent work and supported work</h3>
+  <p>Where a difficulty is observed, try a brief, appropriate support such as modelling, chunking, visual instructions or extra processing time. Record whether performance improves. Do not change standard task conditions without documenting it.</p>
+  <label>Task and independent baseline (what the student did without help)<textarea id="independentEvidence" placeholder="Task, date, accuracy, prompts, time and observed error pattern"></textarea></label>
+  <label>Support tried and response (what changed?)<textarea id="supportedEvidence" placeholder="Support provided, student response, accuracy and degree of independence"></textarea></label>
+  <label>Previous targeted teaching and response over time<textarea id="priorIntervention" placeholder="What was taught, how often, for how long, and what progress data show"></textarea></label>
+  <label>Possible barriers to learning<textarea id="barriers" placeholder="Instructional opportunity, attendance, language, accessibility, sensory or other barriers; describe evidence rather than diagnoses"></textarea></label>
+  <label>Immediate safeguarding or significant functional concerns<textarea id="urgent"></textarea></label>
+  <div class="notice">Act promptly on immediate safeguarding and accessibility concerns through the school's established procedures. Do not wait for an academic score or a scheduled intervention review.</div>
+</section>
 
-  <label>
-    Follows two-step spoken directions
-    <select id="directions">
-      <option>Not assessed</option>
-      <option>Independently</option>
-      <option>With support</option>
-      <option>Not yet demonstrated</option>
-    </select>
-  </label>
-
-  <label>
-    Communicates a need or requests help
-    <select id="help">
-      <option>Not assessed</option>
-      <option>Independently</option>
-      <option>With support</option>
-      <option>Not yet demonstrated</option>
-    </select>
-  </label>
-
-  <label>
-    Possible barriers to learning
-    <textarea id="barriers"
-    placeholder="Instructional, language, access, attendance or other concerns"></textarea>
-  </label>
-
-  <label>
-    Immediate safeguarding or significant functional concerns
-    <textarea id="urgent"></textarea>
-  </label>
-
-  <div class="notice">
-    Address immediate safety or access concerns promptly.
-    Do not wait for academic scores or an intervention review.
+<!-- OPTIONAL FUNCTIONAL LIFE SKILLS -->
+<section class="card" id="functional-life-skills">
+  <h2>Functional Life Skills — Optional</h2>
+  <p>Use this section when there is a specific concern about everyday independence, participation or applying skills outside academic tasks. It is appropriate for secondary students when tasks and expectations are age-appropriate. Do not assume reduced independence from a low literacy or numeracy score.</p>
+  <label><input type="checkbox" id="lifeEnabled" onchange="toggleLifeSkills()" style="display:inline-block;width:auto;margin-right:8px"> Include Functional Life Skills in this student's assessment and report</label>
+  <div id="lifeContent" class="hidden">
+    <p class="muted">Use observation, a practical demonstration, student input and, where appropriate, caregiver input. Record the opportunity provided and actual assistance needed. These ratings are descriptive and are not adaptive-functioning standard scores.</p>
+    <label>Sources of information and contexts observed<textarea id="lifeSources" placeholder="Student interview, classroom observation, supervised real-life task, caregiver input; date and setting"></textarea></label>
+    <div id="lifeObservations"></div>
+    <h3>Student perspective and next steps</h3>
+    <label>What everyday activities does the student feel confident doing?<textarea id="lifeStudentStrength"></textarea></label>
+    <label>What everyday activities does the student want help learning?<textarea id="lifeStudentGoal"></textarea></label>
+    <label>Priority functional skill and independent baseline<textarea id="lifeBaseline" placeholder="For example: follows 2 of 5 steps on a daily timetable without prompts"></textarea></label>
+    <label>Support trial and observed response<textarea id="lifeSupportTrial" placeholder="What support was tried, frequency, assistance needed and what improved"></textarea></label>
+    <label>Measurable functional learning goal<textarea id="lifeGoal" placeholder="By [date], given [support], student will [skill] in [4/5] opportunities across [settings]"></textarea></label>
+    <label>Responsible staff, practice opportunities and review date<textarea id="lifeFollowup"></textarea></label>
   </div>
 </section>
 
@@ -908,6 +905,66 @@ a.jump{display:inline-block;padding:10px 14px;background:var(--navy);color:white
 <script>
 "use strict";
 
+/* FUNCTIONAL OBSERVATIONS: descriptive, not diagnostic */
+const accessIndicators=[
+  ["directions","Understands and follows spoken directions","Try one direction at a time, visual steps, and a check for understanding."],
+  ["expression","Expresses understanding or asks for help","Offer spoken, written, pointing or alternative communication responses."],
+  ["attention","Begins and sustains a learning task","Use a predictable start routine, short chunks, and a visual task checklist."],
+  ["memory","Remembers and applies multistep instructions","Provide written steps, rehearsal and worked examples."],
+  ["processing","Responds with adequate processing time","Allow wait time, reduce unnecessary time pressure, and check comprehension."],
+  ["organisation","Organises materials and completes work","Use an assignment checklist, model the first step and monitor completion."],
+  ["sensory","Accesses visual, auditory and classroom information","Check seating, visibility, noise and accessible formats; refer access concerns appropriately."],
+  ["motor","Uses writing tools or alternative response methods","Offer keyboarding or other accessible methods when handwriting is not the assessed skill."],
+  ["regulation","Participates when tasks become challenging","Use predictable transitions, supportive co-regulation and a planned break or re-entry routine."]
+];
+function buildAccessObservations(){
+  $("accessObservations").innerHTML=accessIndicators.map(([id,label,support])=>`
+    <div class="question">
+      <label><strong>${esc(label)}</strong>
+        <select id="access_${id}">
+          <option value="Not observed">Not observed</option>
+          <option value="Independently">Independently</option>
+          <option value="With support">With support</option>
+          <option value="Not yet demonstrated">Not yet demonstrated</option>
+        </select>
+      </label>
+      <label>Observed evidence or conditions
+        <input id="accessNote_${id}" placeholder="Specific example, setting and support used">
+      </label>
+      <p class="muted"><strong>Possible classroom support:</strong> ${esc(support)}</p>
+    </div>`).join("");
+}
+/* OPTIONAL FUNCTIONAL LIFE SKILLS */
+const lifeDomains=[
+  ["routines","Daily routines and personal organisation","Follow a visual routine; teach one step at a time, practise in the actual setting, and fade prompts."],
+  ["communication","Everyday communication and help-seeking","Role-play requesting help and expressing preferences; provide communication supports as needed."],
+  ["literacy","Functional literacy: signs, labels, forms and instructions","Use authentic, age-respectful examples; teach recognition and comprehension of meaningful information."],
+  ["numeracy","Practical numeracy: money, time and schedules","Practise with real or simulated prices, clocks and schedules; model each step and check transfer."],
+  ["safety","Personal safety and seeking assistance","Teach how to recognise common hazards, identify trusted helpers and practise safe help-seeking."],
+  ["participation","Social participation, boundaries and self-advocacy","Model respectful choices, role-play boundaries and practise describing helpful accommodations."]
+];
+function toggleLifeSkills(){
+  $("lifeContent").classList.toggle("hidden",!$("lifeEnabled").checked);
+}
+function buildLifeSkills(){
+  $("lifeObservations").innerHTML=lifeDomains.map(([id,label,tip])=>`
+    <div class="question">
+      <h3>${esc(label)}</h3>
+      <label>Level demonstrated
+        <select id="life_${id}">
+          <option value="Not assessed">Not assessed</option>
+          <option value="Independent">Independent</option>
+          <option value="With prompting">With prompting</option>
+          <option value="With direct support">With direct support</option>
+          <option value="Not yet demonstrated">Not yet demonstrated</option>
+        </select>
+      </label>
+      <label>Task, setting and evidence
+        <textarea id="lifeEvidence_${id}" placeholder="Describe the actual task, opportunities and independence"></textarea>
+      </label>
+      <p class="muted"><strong>Teaching strategy to consider:</strong> ${esc(tip)}</p>
+    </div>`).join("");
+}
 /* ASSESSMENT ITEMS */
 
 const reading = [
@@ -1393,6 +1450,22 @@ function collect() {
     strengths:val("strengths"),
     assessmentAccess:val("assessmentAccess"),
 
+    lifeSkills:{
+      included:$("lifeEnabled").checked,
+      sources:val("lifeSources"),
+      studentStrength:val("lifeStudentStrength"),studentGoal:val("lifeStudentGoal"),
+      baseline:val("lifeBaseline"),supportTrial:val("lifeSupportTrial"),
+      goal:val("lifeGoal"),followup:val("lifeFollowup"),
+      domains:lifeDomains.map(([id,label,tip])=>({id,label,tip,
+        level:val("life_"+id),evidence:val("lifeEvidence_"+id)}))
+    },
+    functionalObservations:accessIndicators.map(([id,label,support])=>({
+      id,label,support,status:val("access_"+id),evidence:val("accessNote_"+id)
+    })),
+    studentVoice:{strength:val("voiceStrength"),challenge:val("voiceChallenge"),support:val("voiceSupport")},
+    independentEvidence:val("independentEvidence"),
+    supportedEvidence:val("supportedEvidence"),
+    priorIntervention:val("priorIntervention"),
     access:val("barriers"),
     urgent:val("urgent"),
 
@@ -1796,6 +1869,49 @@ function generateReport(mode="combined") {
       <p><strong>Numeracy access:</strong> ${esc(d.mathAccess||"Not recorded")}</p>
       <p><strong>Fluency observations:</strong> ${esc(d.mathFluencyNotes||"Not recorded")}</p>
       <p><strong>Fluency time:</strong> ${d.mathSeconds===null?"Not recorded":d.mathSeconds+" seconds"}</p>
+      <h3>Functional Learning and Access Profile</h3>
+      <p class="muted">Descriptive observations, not disability screening scores. A difficulty in one setting may reflect access, instruction or context rather than an impairment.</p>
+      <table><thead><tr><th>Learning area</th><th>Observation</th><th>Evidence</th></tr></thead><tbody>
+      ${d.functionalObservations.map(x=>`<tr><td>${esc(x.label)}</td><td>${esc(x.status)}</td><td>${esc(x.evidence||"No example recorded")}</td></tr>`).join("")}
+      </tbody></table>
+      <h3>Student Perspective and Response to Support</h3>
+      <p><strong>Student's strengths:</strong> ${esc(d.studentVoice.strength||"Not recorded")}</p>
+      <p><strong>Student's concerns:</strong> ${esc(d.studentVoice.challenge||"Not recorded")}</p>
+      <p><strong>Supports the student finds useful:</strong> ${esc(d.studentVoice.support||"Not recorded")}</p>
+      <p><strong>Independent task baseline:</strong> ${esc(d.independentEvidence||"Not recorded")}</p>
+      <p><strong>Response after support:</strong> ${esc(d.supportedEvidence||"Not recorded")}</p>
+      <p><strong>Previous targeted instruction and progress:</strong> ${esc(d.priorIntervention||"Not recorded")}</p>
+      <h3>Practical Access Supports to Trial</h3>
+      ${d.functionalObservations.filter(x=>x.status==="With support"||x.status==="Not yet demonstrated").map(x=>`
+        <div class="strategy"><h4>${esc(x.label)}</h4>
+        <p><strong>Suggested strategy:</strong> ${esc(x.support)}</p>
+        <p><strong>Check impact:</strong> Repeat a comparable task, document accuracy, independence and the support needed. Retain effective supports and adjust those that do not help.</p></div>
+      `).join("")||"<p>No additional supports were selected from the observations. Continue to monitor classroom access and student feedback.</p>"}
+      <h3>Evidence-Based Support and Referral Considerations</h3>
+      <p><strong>Instructional gap:</strong> Check whether the skill has been explicitly taught and practised, and whether performance improves with teaching.</p>
+      <p><strong>Access barrier:</strong> Check language, vision, hearing, motor access, environment, attendance and task presentation; provide appropriate adjustments and document the response.</p>
+      <p><strong>Persistent or broad difficulty:</strong> If concerns occur across settings or remain despite well-delivered targeted instruction, consult the learning support team and consider specialist evaluation under local procedures. No diagnosis is required to start classroom support.</p>
+      <p><strong>Accommodation versus modification:</strong> An accommodation changes access or response method without changing the learning expectation (for example, extra processing time or oral directions). A modification changes the learning expectation or content (for example, a reduced complexity target). Document modifications individually and review their effect on curriculum access.</p>
+      ${d.lifeSkills.included?`
+        <h3>Functional Life Skills Profile — Optional Observations</h3>
+        <p>These observations describe independence in the tasks and settings recorded; they are not a diagnosis or a standardised adaptive-behaviour assessment.</p>
+        <p><strong>Evidence sources:</strong> ${esc(d.lifeSkills.sources||"Not recorded")}</p>
+        <table><thead><tr><th>Functional area</th><th>Observed level</th><th>Task and evidence</th></tr></thead><tbody>
+          ${d.lifeSkills.domains.map(x=>`<tr><td>${esc(x.label)}</td><td>${esc(x.level)}</td><td>${esc(x.evidence||"No evidence recorded")}</td></tr>`).join("")}
+        </tbody></table>
+        <p><strong>Student-identified strengths:</strong> ${esc(d.lifeSkills.studentStrength||"Not recorded")}</p>
+        <p><strong>Student's priority:</strong> ${esc(d.lifeSkills.studentGoal||"Not recorded")}</p>
+        <h3>Functional Skills Teaching and Support</h3>
+        ${d.lifeSkills.domains.filter(x=>x.level!=="Not assessed"&&x.level!=="Independent").map(x=>`
+          <div class="strategy"><h4>${esc(x.label)}</h4><p><strong>Teaching approach:</strong> ${esc(x.tip)}</p>
+          <p><strong>Monitor:</strong> Observe a comparable real-world task, note the prompt level, accuracy and transfer to another setting. Gradually fade support where successful.</p></div>`).join("")||"<p>No additional functional skill teaching priorities were identified from completed observations.</p>"}
+        <h3>Functional Skills Intervention Plan</h3>
+        <p><strong>Baseline:</strong> ${esc(d.lifeSkills.baseline||"Not recorded")}</p>
+        <p><strong>Support trial and response:</strong> ${esc(d.lifeSkills.supportTrial||"Not recorded")}</p>
+        <p><strong>Measurable goal:</strong> ${esc(d.lifeSkills.goal||"Not recorded")}</p>
+        <p><strong>Responsibility, practice and review:</strong> ${esc(d.lifeSkills.followup||"Not recorded")}</p>
+        <p class="muted">Review with the student and relevant staff. Where broader adaptive-functioning concerns persist across contexts, seek appropriate specialist assessment while continuing practical support.</p>
+      `:""}
       <h3>Assessment Context</h3>
 
       <p>
@@ -1994,6 +2110,8 @@ function exportJSON() {
 /* INITIALISE */
 
 build();
+buildAccessObservations();
+buildLifeSkills();
 
 </script>
 
