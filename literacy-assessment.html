@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Literacy Skills Assessment | Marsha Kerr Talley</title>
+<title>Foundational Literacy and Numeracy Assessment | Marsha Kerr Talley</title>
 
 <meta name="description"
-content="A literacy skills assessment examining foundational reading, phonological awareness, decoding, comprehension, fluency and written expression, with instructional recommendations.">
+content="A foundational literacy and numeracy assessment with skill-level evidence, instructional recommendations and individual intervention plans.">
 
 <style>
 :root {
@@ -22,6 +22,7 @@ content="A literacy skills assessment examining foundational reading, phonologic
   --red:#b95e55;
   --amber:#d7a03c;
   --green:#16877e;
+  --math:#72518e;
 }
 
 * {
@@ -360,6 +361,10 @@ summary {
     print-color-adjust:exact;
   }
 }
+a.jump{display:inline-block;padding:10px 14px;background:var(--navy);color:white;border-radius:7px;text-decoration:none;margin:4px 8px 4px 0}
+.math-domain{border-left:4px solid var(--math);padding:8px 18px;margin:22px 0;background:#f9f6fc;border-radius:8px}
+.math-domain h3{color:var(--math)}
+@media print{a.jump{display:none}}
 </style>
 </head>
 
@@ -368,15 +373,13 @@ summary {
 <header class="literacy-header">
   <div class="wrap">
     <p class="literacy-eyebrow">
-      Literacy Assessment
+      ACADEMIC SKILLS ASSESSMENT
     </p>
 
-    <h1>Literacy Skills Assessment</h1>
+    <h1>Foundational Literacy and Numeracy Assessment</h1>
 
     <p class="literacy-subtitle">
-      Assessing foundational reading, comprehension,
-      fluency and written expression to inform
-      targeted literacy instruction.
+      Identifying foundational reading, writing and mathematics skills to guide targeted instruction and intervention planning.
     </p>
   </div>
 </header>
@@ -389,10 +392,7 @@ summary {
   <h2>Assessment Instructions</h2>
 
   <p>
-    This assessment examines foundational literacy,
-    reading comprehension, listening comprehension,
-    phonological awareness, decoding, word recognition,
-    oral reading fluency and written expression.
+    This assessment examines foundational literacy and numeracy skills. Literacy and numeracy can be administered independently or together. Use the appropriate report button to review each area.
   </p>
 
   <p>
@@ -401,20 +401,10 @@ summary {
     administers oral activities and records responses.
   </p>
 
-  <div class="notice">
-    <strong>Assessment status:</strong>
-
-    This is a school-developed literacy assessment
-    informed by established educational assessment
-    methods. Its original items have not been
-    independently validated or normed for the
-    intended student population.
-
-    Results describe performance on the tasks
-    administered. They do not independently
-    establish reading age, disability or
-    special education eligibility.
-  </div>
+  <p>
+    This academic skills assessment is informed by established
+    educational assessment methods.
+  </p>
 
   <p>
     Record relevant language background, attendance,
@@ -482,10 +472,18 @@ summary {
   </label>
 </section>
 
+<section class="card no-print" aria-label="Assessment navigation">
+<h2>Choose an assessment area</h2>
+<p>Both sections use the same student information. Complete either subject or both; unanswered tasks remain unassessed.</p>
+<a class="jump" href="#literacy-start">Literacy assessment</a>
+<a class="jump" href="#numeracy-start">Numeracy assessment</a>
+<a class="jump" href="#results-start">Results and intervention plans</a>
+</section>
+
 <!-- READING COMPREHENSION -->
 
 <section class="card">
-  <h2>2. Reading Comprehension</h2>
+  <h2 id="literacy-start">Literacy Assessment — Reading Comprehension</h2>
 
   <p>
     <strong>Student instructions:</strong>
@@ -522,7 +520,7 @@ summary {
 <!-- LISTENING COMPREHENSION -->
 
 <section class="card">
-  <h2>3. Listening Comprehension</h2>
+  <h2>Listening Comprehension</h2>
 
   <p>
     <strong>Assessor instructions:</strong>
@@ -566,7 +564,7 @@ summary {
 <!-- WORD RECOGNITION -->
 
 <section class="card">
-  <h2>4. Word Recognition and Decoding</h2>
+  <h2>Word Recognition and Decoding</h2>
 
   <p>
     <strong>Assessor instructions:</strong>
@@ -618,7 +616,7 @@ summary {
 <!-- PHONOLOGICAL AWARENESS -->
 
 <section class="card">
-  <h2>5. Phonological Awareness</h2>
+  <h2>Phonological Awareness</h2>
 
   <p>
     <strong>Assessor instructions:</strong>
@@ -632,7 +630,7 @@ summary {
 <!-- ORAL READING -->
 
 <section class="card">
-  <h2>6. Oral Reading Fluency</h2>
+  <h2>Oral Reading Fluency</h2>
 
   <p>
     Ask the student to read the garden passage aloud.
@@ -679,7 +677,7 @@ summary {
 <!-- WRITTEN EXPRESSION -->
 
 <section class="card">
-  <h2>7. Written Expression</h2>
+  <h2>Written Expression</h2>
 
   <p><strong>Student task:</strong></p>
 
@@ -714,10 +712,28 @@ summary {
   </label>
 </section>
 
+<!-- NUMERACY ASSESSMENT -->
+<section class="card" id="numeracy-start">
+<h2>Numeracy Assessment</h2>
+<p>Complete the questions independently unless an access arrangement is documented. Questions progress from foundational to more complex examples within each domain. A few items cannot establish mastery; use error patterns to select follow-up probes.</p>
+<div class="notice"><strong>Administration:</strong> Provide paper for working. Do not use a calculator unless the assessment accommodation is explicitly recorded. For mathematical reasoning, read the question aloud only when assessing mathematical reasoning rather than independent reading. Record any support given. No overall score should be interpreted as a standardised mathematics level.</div>
+<label>Numeracy administration and access notes
+<textarea id="mathAccess" placeholder="Calculator, read-aloud, manipulatives, extra time, breaks, language or other access arrangements"></textarea></label>
+<div id="numeracyQuestions"></div>
+</section>
+
+<section class="card">
+<h2>Mathematical Fluency — Assessor-Recorded Probe</h2>
+<p>Ask the student to complete the following eight calculations without a calculator. Record the number correct, time and observed strategy. Do not use this short original probe as a normed speed benchmark.</p>
+<details><summary>Show calculation prompts to assessor</summary><div class="passage"><ol><li>6 + 7</li><li>15 − 8</li><li>9 + 8</li><li>20 − 6</li><li>4 × 6</li><li>21 ÷ 3</li><li>35 + 17</li><li>63 − 28</li></ol><p class="muted">Answer key: 13, 7, 17, 14, 24, 7, 52, 35.</p></div></details>
+<div class="grid"><label>Correct calculations (0–8)<input id="mathFluency" type="number" min="0" max="8"></label><label>Time in seconds (optional)<input id="mathSeconds" type="number" min="1"></label></div>
+<label>Errors and strategies observed<textarea id="mathFluencyNotes" placeholder="Counting strategies, recall, regrouping, accuracy, anxiety, pacing"></textarea></label>
+</section>
+
 <!-- FUNCTIONAL ACCESS -->
 
 <section class="card">
-  <h2>8. Functional Learning and Access</h2>
+  <h2>Functional Learning and Access</h2>
 
   <label>
     Follows two-step spoken directions
@@ -759,11 +775,13 @@ summary {
 <!-- RESULTS -->
 
 <section class="card">
-  <h2>9. Assessment Results</h2>
+  <h2 id="results-start">Assessment Results</h2>
 
-  <button type="button" onclick="generateReport()">
+  <button type="button" onclick="generateReport('literacy')">
     Generate Literacy Profile
   </button>
+  <button type="button" onclick="generateReport('numeracy')">Generate Numeracy Profile</button>
+  <button type="button" onclick="generateReport('combined')">Generate Combined Profile</button>
 
   <button type="button" class="secondary"
   onclick="window.print()">
@@ -856,11 +874,11 @@ summary {
     </p>
 
     <p class="muted">
-      This school-developed assessment identifies observed
-      academic skills and instructional needs. It is not
-      a standardised psychoeducational evaluation,
-      medical diagnosis or independent determination
-      of disability eligibility.
+      Assessment findings describe the skills demonstrated during
+      the activities completed and should be considered alongside
+      classroom evidence, learning history and professional judgement.
+      Where further evaluation is appropriate, educators should use
+      relevant validated assessments and established referral procedures.
     </p>
   </details>
 </section>
@@ -880,6 +898,11 @@ summary {
     Special Education and Literacy Educator<br>
     Behaviour Specialist
   </p>
+  <p class="muted">
+    This assessment supports educational planning and is not intended
+    to serve as a standalone diagnostic or eligibility determination.
+  </p>
+  <p>&copy; 2026 Marsha Kerr Talley. All rights reserved.</p>
 </footer>
 
 <script>
@@ -1094,6 +1117,55 @@ const strategies = {
   }
 };
 
+/* NUMERACY ASSESSMENT ITEMS — ORIGINAL, UNNORMED */
+const mathDomains = [
+{name:"Number recognition and place value",items:[
+["What number is written as three hundred and six?",["360","306","36","3006"],1,"Recognising three-digit numbers"],
+["What is the value of 7 in 4,735?",["7","70","700","7,000"],2,"Identifying place value"],
+["Which number is greatest?",["3,908","3,890","3,980","3,809"],2,"Comparing multi-digit numbers"],
+["What is 5,042 in expanded form?",["5,000 + 400 + 2","5,000 + 40 + 2","500 + 40 + 2","5,000 + 4 + 2"],1,"Decomposing numbers"]]},
+{name:"Number sense",items:[
+["Which is closest to 50?",["32","47","61","72"],1,"Estimating proximity"],
+["What number comes halfway between 20 and 30?",["22","24","25","28"],2,"Using number relationships"],
+["Which statement is true?",["0.6 is less than 0.4","0.6 equals 0.4","0.6 is greater than 0.4","0.6 equals 6"],2,"Comparing decimal magnitudes"],
+["Round 468 to the nearest ten.",["460","470","400","500"],1,"Rounding"]]},
+{name:"Addition and subtraction",items:[
+["8 + 5 = ?",["12","13","14","15"],1,"Basic addition"],
+["17 − 9 = ?",["6","7","8","9"],2,"Basic subtraction"],
+["46 + 28 = ?",["64","74","76","84"],1,"Addition with regrouping"],
+["102 − 57 = ?",["35","45","55","65"],1,"Subtraction with regrouping"]]},
+{name:"Multiplication and division",items:[
+["4 groups of 3 make how many?",["7","10","12","14"],2,"Equal groups"],
+["6 × 7 = ?",["36","42","48","49"],1,"Multiplication facts"],
+["24 ÷ 4 = ?",["4","5","6","8"],2,"Division facts"],
+["There are 5 boxes with 12 pencils in each. How many pencils are there?",["17","50","60","72"],2,"Multiplicative reasoning"]]},
+{name:"Fractions and decimals",items:[
+["Which is one half?",["1/4","1/2","1/3","2/3"],1,"Recognising fractions"],
+["Which fraction is larger?",["1/4","1/2","They are equal","Cannot tell"],1,"Comparing unit fractions"],
+["0.25 is the same as which fraction?",["1/2","1/4","3/4","1/5"],1,"Fraction–decimal equivalence"],
+["1/2 + 1/4 = ?",["1/6","2/6","3/4","1/8"],2,"Adding fractions"]]},
+{name:"Measurement and practical mathematics",items:[
+["How many minutes are in one hour?",["30","45","60","100"],2,"Time units"],
+["Which unit best measures the length of a classroom?",["Millilitres","Metres","Kilograms","Degrees"],1,"Selecting measurement units"],
+["A bottle holds 1 litre. How many millilitres is that?",["10","100","1,000","10,000"],2,"Metric conversion"],
+["An item costs $85. You pay $100. What change should you receive?",["$5","$10","$15","$25"],2,"Money calculations"]]},
+{name:"Mathematical reasoning",items:[
+["A bus has 18 passengers. Seven leave and four enter. How many are on the bus?",["7","11","15","29"],2,"Two-step reasoning"],
+["A pattern is 3, 6, 12, 24. What comes next?",["27","30","36","48"],3,"Identifying a multiplicative pattern"],
+["A class needs 30 notebooks. Each pack contains 6. How many packs are needed?",["4","5","6","24"],1,"Selecting a division operation"],
+["Maya says 49 + 28 = 77. Which explanation verifies her answer?",["50 + 30 = 80, so it must be 80","49 + 20 = 69, then add 8 to get 77","49 − 28 = 21","49 + 28 = 67"],1,"Explaining a solution"]]}
+];
+const mathStrategies = {
+"Number recognition and place value": ["Teach number naming, place value and expanded notation explicitly.","Use base-ten blocks, digit cards and a place-value chart.","Provide enlarged numerals or a place-value chart when place value is not the target.","Reduce the number range temporarily within a documented individual goal.","Monitor with comparable unseen numeral and place-value items."],
+"Number sense": ["Teach magnitude, number relationships, estimation and rounding with explicit comparison.","Use number lines, benchmark numbers and visual quantity models.","Allow number lines or visual representations when the skill being tested permits.","Limit the number range for a documented learning target.","Use short comparison and estimation probes."],
+"Addition and subtraction": ["Model the meaning of operations and teach accurate calculation strategies, including regrouping.","Move from counters and base-ten blocks to drawings and equations.","Provide graph paper or accessible spacing when layout is a barrier.","Reduce computational complexity while maintaining the chosen conceptual target.","Track accuracy by calculation type and regrouping demand."],
+"Multiplication and division": ["Teach equal groups, arrays, fact relationships and division as sharing or grouping.","Use arrays, counters and repeated addition before abstract algorithms.","Allow a multiplication grid when fact recall is not the intended skill.","Begin with smaller factors and whole-number quotients as documented.","Track fact accuracy separately from word-problem accuracy."],
+"Fractions and decimals": ["Teach fraction magnitude, equivalence and decimal place value using visual models.","Use fraction strips, area models and aligned number lines.","Provide manipulatives or visual models where they do not invalidate the task.","Begin with halves and quarters before increasing complexity if documented.","Track equivalent fractions, comparisons and operations separately."],
+"Measurement and practical mathematics": ["Teach units, conversions, time and money through explicit practical examples.","Use clocks, measuring tools, labelled unit charts and simulated transactions.","Allow accessible tools or reference charts when memorisation is not the target.","Limit conversions to familiar units in an individual instructional goal.","Use comparable practical measurement tasks."],
+"Mathematical reasoning": ["Model how to identify relevant information, select operations and justify solutions.","Use diagrams, bar models, worked examples and verbal rehearsal.","Read problems aloud when assessing mathematical reasoning rather than reading skill.","Reduce linguistic complexity while preserving the mathematical relationship if documented.","Use comparable novel problems and analyse strategy choices."],
+"Mathematical fluency": ["Build accurate strategies first, then practise retrieval and efficient calculation without undue speed pressure.","Use number bonds, derived facts and brief cumulative practice.","Allow processing time when speed is not the intended skill.","Reduce the number or complexity of facts within a documented instructional goal.","Track accuracy and strategy use; record time descriptively without normed cutoffs."]
+};
+
 /* UTILITIES */
 
 const $ = id => document.getElementById(id);
@@ -1187,6 +1259,12 @@ function build() {
 
       </div>
     `).join("");
+
+  $("numeracyQuestions").innerHTML = mathDomains.map((domain,di)=>`
+    <div class="math-domain"><h3>${esc(domain.name)}</h3>
+    ${domain.items.map((item,qi)=>`<div class="question"><p><strong>${qi+1}. ${esc(item[0])}</strong></p>
+    ${item[1].map((choice,ci)=>`<label><input type="radio" name="m${di}_${qi}" value="${ci}"> ${esc(choice)}</label>`).join("")}
+    </div>`).join("")}</div>`).join("");
 
   $("writingRubric").innerHTML =
     writingFeatures.map((q,i) => `
@@ -1286,7 +1364,23 @@ function collect() {
     )/10;
   }
 
+  const mathResponses=mathDomains.map((domain,di)=>domain.items.map((item,qi)=>{
+    const chosen=document.querySelector(`input[name="m${di}_${qi}"]:checked`);
+    return chosen ? (Number(chosen.value)===item[2] ? 1 : 0) : null;
+  }));
+  const mathFluency=numeric("mathFluency",8);
+  const mathDomainsScored=mathDomains.map((domain,di)=>({
+    name:domain.name,...scoreItems(mathResponses[di]),subject:"numeracy"
+  }));
+  mathDomainsScored.push({name:"Mathematical fluency",...scoreItems([mathFluency],8),subject:"numeracy"});
+
   return {
+    mathResponses,
+    mathFluency,
+    mathSeconds:numeric("mathSeconds",3600),
+    mathAccess:val("mathAccess"),
+    mathFluencyNotes:val("mathFluencyNotes"),
+    mathDomains:mathDomainsScored,
 
     student:val("student"),
     grade:val("grade"),
@@ -1338,32 +1432,32 @@ function collect() {
 
       {
         name:"Phonological awareness",
-        ...scoreItems(sounds)
+        ...scoreItems(sounds),subject:"literacy"
       },
 
       {
         name:"Decoding",
-        ...scoreItems([pseudo],6)
+        ...scoreItems([pseudo],6),subject:"literacy"
       },
 
       {
         name:"Word recognition",
-        ...scoreItems([real],8)
+        ...scoreItems([real],8),subject:"literacy"
       },
 
       {
         name:"Reading comprehension",
-        ...scoreItems(read)
+        ...scoreItems(read),subject:"literacy"
       },
 
       {
         name:"Listening comprehension",
-        ...scoreItems(listen)
+        ...scoreItems(listen),subject:"literacy"
       },
 
       {
         name:"Written expression",
-        ...scoreItems(write,2)
+        ...scoreItems(write,2),subject:"literacy"
       }
     ]
   };
@@ -1432,24 +1526,33 @@ const planIds = [
   "planOwner",
   "planMonitor",
   "planDate",
-  "planReferral"
+  "planReferral",
+  "mathPlanSkill","mathPlanGoal","mathPlanTeaching","mathPlanScaffold",
+  "mathPlanAccommodation","mathPlanModification","mathPlanOwner",
+  "mathPlanMonitor","mathPlanDate","mathPlanReferral"
 ];
+
+/* PRESERVE EDITABLE PLANS WHEN SWITCHING REPORT VIEWS */
+const planDraft={};
+document.addEventListener("input",e=>{
+  if(e.target && planIds.includes(e.target.id)) planDraft[e.target.id]=e.target.value;
+});
 
 /* GENERATE REPORT */
 
-function generateReport() {
+function generateReport(mode="combined") {
 
   const d = collect();
 
   const existing = {};
 
   planIds.forEach(id => {
-    existing[id] = val(id);
+    existing[id] = $(id) ? val(id) : (planDraft[id] || "");
   });
 
-  const completed = d.domains.filter(
-    x => x.complete
-  );
+  const domains=mode==="literacy"?d.domains:
+    mode==="numeracy"?d.mathDomains:[...d.domains,...d.mathDomains];
+  const completed = domains.filter(x=>x.complete);
 
   const priorities = completed
     .filter(x => x.score < x.max)
@@ -1463,7 +1566,7 @@ function generateReport() {
 
     <hr>
 
-    <h2>Individual Student Literacy Profile</h2>
+    <h2>Individual Student ${mode==="literacy"?"Literacy":mode==="numeracy"?"Numeracy":"Literacy and Numeracy"} Profile</h2>
 
     <p>
       <strong>Student:</strong>
@@ -1497,7 +1600,7 @@ function generateReport() {
 
     <div class="panel student-panel">
 
-      <h3>My Literacy Skills</h3>
+      <h3>My ${mode==="literacy"?"Literacy":mode==="numeracy"?"Numeracy":"Literacy and Numeracy"} Skills</h3>
 
       <p>
         These numbers show how you performed
@@ -1507,7 +1610,7 @@ function generateReport() {
         or your potential.
       </p>
 
-      ${d.domains.map(profileBar).join("")}
+      ${domains.map(profileBar).join("")}
 
       <div class="legend">
 
@@ -1528,7 +1631,7 @@ function generateReport() {
 
       </div>
 
-      <h3>My Oral Reading</h3>
+      ${mode!=="numeracy"?`<h3>My Oral Reading</h3>
 
       <p>
         ${
@@ -1544,13 +1647,14 @@ function generateReport() {
         age- or grade-level benchmark.
       </p>
 
+      `:""}
       <h3>What I Can Practise Next</h3>
 
       <ul>
         ${
           priorities.map(x => `
             <li>
-              ${esc(strategies[x.name].student)}
+              ${esc(x.subject==="numeracy"?"Practise "+x.name.toLowerCase()+" with your teacher.":strategies[x.name].student)}
             </li>
           `).join("")
           ||
@@ -1596,7 +1700,7 @@ function generateReport() {
         <tbody>
 
           ${
-            d.domains.map(x => `
+            domains.map(x => `
               <tr>
                 <td>${esc(x.name)}</td>
                 <td>${x.score}/${x.max}</td>
@@ -1609,7 +1713,7 @@ function generateReport() {
       </table>
   `;
 
-  if (d.domains.some(x => !x.complete)) {
+  if (domains.some(x => !x.complete)) {
 
     html += `
       <div class="notice">
@@ -1621,6 +1725,16 @@ function generateReport() {
     `;
   }
 
+  if(mode!=="literacy"){
+    html+=`<h3>Numeracy Item-Level Evidence</h3><p class="muted">Items missed or not attempted are listed by domain. Use them to guide further observation; a single response does not confirm a skill deficit.</p>`;
+    mathDomains.forEach((group,di)=>{
+      const rows=group.items.map((item,qi)=>({item,response:d.mathResponses[di][qi]}))
+        .filter(x=>x.response!==1);
+      if(rows.length){
+        html+=`<div class="strategy"><h4>${esc(group.name)}</h4><ul>${rows.map(x=>`<li>${esc(x.item[3])}: ${x.response===null?"Not attempted":"Incorrect"}</li>`).join("")}</ul></div>`;
+      }
+    });
+  }
   html += `
     <h3>Instructional Strategies and Supports</h3>
   `;
@@ -1629,7 +1743,8 @@ function generateReport() {
 
     if (domain.score === domain.max) continue;
 
-    const s = strategies[domain.name];
+    const s = domain.subject==="numeracy"?null:strategies[domain.name];
+    const ms=domain.subject==="numeracy"?mathStrategies[domain.name]:null;
 
     html += `
 
@@ -1648,27 +1763,27 @@ function generateReport() {
 
         <p>
           <strong>Explicit instruction:</strong>
-          ${esc(s.teach)}
+          ${esc(ms?ms[0]:s.teach)}
         </p>
 
         <p>
           <strong>Scaffolding:</strong>
-          ${esc(s.scaffold)}
+          ${esc(ms?ms[1]:s.scaffold)}
         </p>
 
         <p>
           <strong>Accommodations:</strong>
-          ${esc(s.accommodation)}
+          ${esc(ms?ms[2]:s.accommodation)}
         </p>
 
         <p>
           <strong>Possible documented modification:</strong>
-          ${esc(s.modification)}
+          ${esc(ms?ms[3]:s.modification)}
         </p>
 
         <p>
           <strong>Progress monitoring:</strong>
-          ${esc(s.monitor)}
+          ${esc(ms?ms[4]:s.monitor)}
         </p>
 
       </div>
@@ -1677,6 +1792,10 @@ function generateReport() {
 
   html += `
 
+      <h3>Numeracy Administration Notes</h3>
+      <p><strong>Numeracy access:</strong> ${esc(d.mathAccess||"Not recorded")}</p>
+      <p><strong>Fluency observations:</strong> ${esc(d.mathFluencyNotes||"Not recorded")}</p>
+      <p><strong>Fluency time:</strong> ${d.mathSeconds===null?"Not recorded":d.mathSeconds+" seconds"}</p>
       <h3>Assessment Context</h3>
 
       <p>
@@ -1722,7 +1841,7 @@ function generateReport() {
 
     <div class="panel">
 
-      <h3>Individual Literacy Intervention Plan</h3>
+      <h3>${mode==="literacy"?"Individual Literacy":mode==="numeracy"?"Individual Numeracy":"Individual Literacy and Numeracy"} Intervention Plan</h3>
 
       <p>
         Complete this section after reviewing
@@ -1778,7 +1897,19 @@ function generateReport() {
     ]
   ];
 
-  fields.forEach(([id,label]) => {
+  const mathFields=[
+    ["mathPlanSkill","Numeracy priority skill and supporting item evidence"],
+    ["mathPlanGoal","Numeracy baseline and measurable goal"],
+    ["mathPlanTeaching","Numeracy explicit teaching strategies"],
+    ["mathPlanScaffold","Numeracy scaffolding and gradual release"],
+    ["mathPlanAccommodation","Numeracy accommodations"],
+    ["mathPlanModification","Numeracy modifications, if appropriate"],
+    ["mathPlanOwner","Numeracy responsible personnel and frequency"],
+    ["mathPlanMonitor","Numeracy progress monitoring"],
+    ["mathPlanReferral","Numeracy review and specialist referral decision"]
+  ];
+  const selectedFields=mode==="literacy"?fields:mode==="numeracy"?mathFields:fields.concat(mathFields);
+  selectedFields.forEach(([id,label]) => {
 
     html += `
 
@@ -1795,13 +1926,8 @@ function generateReport() {
 
   html += `
 
-      <label>
-        Review date
-
-        <input type="date"
-        id="planDate"
-        value="${esc(existing.planDate || "")}">
-      </label>
+      ${mode!=="numeracy"?`<label>Literacy review date<input type="date" id="planDate" value="${esc(existing.planDate||"")}"></label>`:""}
+      ${mode!=="literacy"?`<label>Numeracy review date<input type="date" id="mathPlanDate" value="${esc(existing.mathPlanDate||"")}"></label>`:""}
 
       <button type="button"
       onclick="window.print()">
@@ -1835,7 +1961,7 @@ function exportJSON() {
   d.intervention = {};
 
   planIds.forEach(id => {
-    d.intervention[id] = val(id);
+    d.intervention[id] = $(id) ? val(id) : (planDraft[id] || "");
   });
 
   const blob = new Blob(
@@ -1850,7 +1976,7 @@ function exportJSON() {
   link.href = url;
 
   link.download =
-    "literacy-assessment-" +
+    "literacy-numeracy-assessment-" +
     (
       d.student.replace(/[^a-z0-9_-]/gi,"_")
       || "student"
