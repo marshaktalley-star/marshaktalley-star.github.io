@@ -1,0 +1,587 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Walkerswood Academy | Student Incentives</title>
+<style>
+:root {
+  --navy:#193754;
+  --teal:#087e80;
+  --bg:#f5f7f8;
+  --line:#dce4e8;
+}
+* {box-sizing:border-box}
+body {
+  margin:0;
+  background:var(--bg);
+  color:#273746;
+  font:16px/1.5 system-ui,Arial,sans-serif;
+}
+header {
+  background:var(--navy);
+  color:white;
+  padding:30px 20px;
+}
+header div, main {max-width:900px;margin:auto}
+h1 {margin:0;font-size:clamp(26px,4vw,36px)}
+header p {color:#e2ebf0}
+main {padding:18px 15px 45px}
+section {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:20px;
+  margin-bottom:16px;
+}
+h2 {font-size:21px;color:var(--navy);margin:0 0 8px}
+h3 {font-size:17px;color:var(--navy)}
+p {margin:8px 0 14px}
+small,.hint {color:#586c7c}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:9px;
+}
+.choice {
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:11px;
+  cursor:pointer;
+}
+.choice:has(input:checked) {
+  background:#eaf7f5;
+  border-color:var(--teal);
+}
+.choice input {accent-color:var(--teal);margin-top:5px}
+.choice strong {display:block}
+.choice small {display:block}
+button {
+  background:var(--teal);
+  color:white;
+  border:0;
+  border-radius:8px;
+  padding:10px 14px;
+  font:inherit;
+  cursor:pointer;
+}
+button.secondary {
+  background:white;
+  color:var(--navy);
+  border:1px solid #b6c4cd;
+}
+.actions {display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
+input[type=text],input[type=date],input[type=number],textarea {
+  width:100%;
+  padding:10px;
+  font:inherit;
+  border:1px solid #bac8d0;
+  border-radius:7px;
+}
+label.field {display:block;margin:12px 0}
+label.field span {display:block;font-weight:600;margin-bottom:5px}
+textarea {min-height:85px}
+.result {
+  background:#eff8f7;
+  border-radius:9px;
+  padding:15px;
+  margin-top:14px;
+}
+.calendar-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  margin:14px 0;
+}
+.calendar-head h3 {margin:0;text-align:center}
+.calendar {
+  display:grid;
+  grid-template-columns:repeat(7,minmax(0,1fr));
+  gap:4px;
+}
+.day {
+  border:1px solid var(--line);
+  min-height:74px;
+  padding:5px;
+  border-radius:5px;
+  overflow-wrap:anywhere;
+  font-size:13px;
+}
+.weekday {
+  text-align:center;
+  min-height:auto;
+  background:#edf2f5;
+  font-weight:700;
+}
+.birthday {
+  display:block;
+  background:#e1f5f1;
+  border-radius:4px;
+  padding:3px;
+  margin-top:4px;
+  font-size:11px;
+}
+.birthday-list {margin-top:12px}
+.birthday-entry {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  padding:8px;
+  border-bottom:1px solid var(--line);
+}
+.birthday-entry button {padding:5px 9px}
+footer {text-align:center;color:#657483;padding:20px}
+@media(max-width:500px) {
+  section {padding:15px}
+  .day {min-height:60px;font-size:11px;padding:3px}
+  .birthday {font-size:10px}
+}
+@media print {
+  header {background:white;color:black;padding:12px 0}
+  header p {color:black}
+  body {background:white}
+  section {break-inside:avoid}
+  button,.no-print {display:none!important}
+}
+</style>
+</head>
+
+<body>
+<header>
+<div>
+  <h1>Student Incentives & Recognition</h1>
+  <p>Walkerswood Academy</p>
+  <p>Practical rewards for homework, effort, positive behaviour,
+  classroom improvement and family involvement.</p>
+</div>
+</header>
+
+<main>
+
+<section>
+<h2>1. Choose Student Incentives</h2>
+<p class="hint">Select rewards that suit your students and classroom.</p>
+<div class="grid" id="rewards"></div>
+<div class="actions">
+  <button onclick="copyRewards()">Copy Selected Rewards</button>
+  <button class="secondary" onclick="clearRewards()">Clear</button>
+</div>
+</section>
+
+<section>
+<h2>2. Homework Recognition</h2>
+<p>Recognise completion, genuine effort, improvement and consistency.</p>
+<div class="grid" id="homework"></div>
+
+<h3>Parent Acknowledgement</h3>
+<p>Students can earn recognition for discussing their homework
+with a parent or guardian and receiving acknowledgement through
+WhatsApp, email, a signature, a phone call, verbal confirmation,
+or another convenient method.</p>
+
+<p class="hint">No particular method is required. Students who
+cannot obtain acknowledgement at home should have an equivalent
+opportunity to demonstrate their learning.</p>
+</section>
+
+<section>
+<h2>3. Classroom Birthday Calendar</h2>
+<p>Celebrate students' birthdays with a class greeting,
+birthday card, announcement or other simple recognition.</p>
+
+<div class="grid no-print">
+  <label class="field">
+    <span>Student's first name</span>
+    <input id="birthdayName" type="text" maxlength="40"
+      placeholder="First name">
+  </label>
+  <label class="field">
+    <span>Birthday</span>
+    <input id="birthdayDate" type="date">
+  </label>
+</div>
+
+<div class="actions no-print">
+  <button onclick="addBirthday()">Add Birthday</button>
+</div>
+
+<div class="calendar-head">
+  <button class="secondary no-print" onclick="changeMonth(-1)">
+    Previous
+  </button>
+  <h3 id="monthTitle"></h3>
+  <button class="secondary no-print" onclick="changeMonth(1)">
+    Next
+  </button>
+</div>
+
+<div class="calendar" id="calendar"></div>
+<div class="birthday-list no-print" id="birthdayList"></div>
+
+<p class="hint">Birthdays are saved in this browser only.
+Use first names and enter birthdays only with appropriate permission.
+Students may opt out of public recognition.</p>
+</section>
+
+<section>
+<h2>4. Parent and Guardian Involvement</h2>
+<p>Choose simple ways to encourage communication between
+students, families and teachers.</p>
+<div class="grid" id="parents"></div>
+</section>
+
+<section>
+<h2>5. Whole-Class Recognition</h2>
+<div class="grid" id="classRewards"></div>
+</section>
+
+<section>
+<h2>6. Quick Homework Progress Check</h2>
+<p class="hint">Optional: compare homework completion before
+and after introducing incentives.</p>
+
+<div class="grid">
+  <label class="field">
+    <span>Students assigned homework</span>
+    <input id="total" type="number" min="1" placeholder="e.g. 30">
+  </label>
+  <label class="field">
+    <span>Previously completing homework</span>
+    <input id="before" type="number" min="0">
+  </label>
+  <label class="field">
+    <span>Currently completing homework</span>
+    <input id="after" type="number" min="0">
+  </label>
+</div>
+
+<div class="actions">
+  <button onclick="calculate()">Calculate Improvement</button>
+</div>
+<div id="progressResult" class="result" aria-live="polite">
+  Enter the figures to see the change in completion rate.
+</div>
+</section>
+
+<section>
+<h2>7. Quick Guide for Teachers</h2>
+<ol>
+  <li>Choose two or three incentives your students value.</li>
+  <li>Explain how students can earn recognition.</li>
+  <li>Recognise effort, progress and consistency each week.</li>
+  <li>Encourage parent acknowledgement through any convenient method.</li>
+  <li>Review homework completion and adjust incentives as needed.</li>
+</ol>
+<p class="hint">Keep rewards manageable. Students with additional
+learning needs should have fair opportunities to earn recognition
+through individual progress and reasonable adjustments.</p>
+</section>
+
+<div class="actions no-print">
+  <button onclick="copyPlan()">Copy My Incentive Plan</button>
+  <button class="secondary" onclick="window.print()">
+    Print / Save as PDF
+  </button>
+</div>
+
+</main>
+
+<footer>
+Walkerswood Academy | Student Incentives & Recognition
+</footer>
+
+<script>
+const rewardItems = [
+ ["Commendation Card","Recognise effort or improvement."],
+ ["PRIZE Recognition","Celebrate school core values."],
+ ["Certificate","Recognise achievement or progress."],
+ ["Student of the Week","Celebrate consistent effort."],
+ ["Star Achievers Board","Display student achievements."],
+ ["Merit Chart","Track positive progress."],
+ ["Monthly Test Award","Recognise achievement and improvement."],
+ ["Homework Champion","Celebrate homework consistency."],
+ ["Homework Streak","Recognise consecutive weeks of completion."],
+ ["Positive Contact Home","Share good news with families."],
+ ["Principal's Recognition","Acknowledge achievement at assembly."],
+ ["Student Choice Time","Offer an approved class activity."],
+ ["Classroom Leadership Role","Assign a positive responsibility."],
+ ["Class Celebration","Celebrate a shared improvement target."]
+];
+
+const homeworkItems = [
+ ["Submitted on Time","Homework completed by the agreed deadline."],
+ ["Genuine Effort","Student attempts the assigned work."],
+ ["Improvement","Progress from previous work."],
+ ["Corrections Completed","Student revises work after feedback."],
+ ["Parent Acknowledgement","Student discusses homework at home."],
+ ["Weekly Homework Completion","All assigned work completed for the week."]
+];
+
+const parentItems = [
+ ["Positive Parent Message","Share student achievements by WhatsApp, email or phone."],
+ ["Homework Acknowledgement","Parent confirms a homework discussion in any convenient way."],
+ ["Monthly Progress Update","Share a strength and one next step."],
+ ["Family Learning Activity","Encourage a short reading or learning activity together."]
+];
+
+const classItems = [
+ ["Classroom PRIZE Challenge","Recognise improved routines, punctuality and respect."],
+ ["Homework Improvement Challenge","Celebrate improvement from the class baseline."],
+ ["Wall of Achievement","Display academic and personal progress."]
+];
+
+function renderChoices(id,items) {
+ const container=document.getElementById(id);
+ items.forEach(([title,description],i)=>{
+   const label=document.createElement("label");
+   label.className="choice";
+   const check=document.createElement("input");
+   check.type="checkbox";
+   check.value=title;
+   check.dataset.group=id;
+   const text=document.createElement("span");
+   const strong=document.createElement("strong");
+   strong.textContent=title;
+   const small=document.createElement("small");
+   small.textContent=description;
+   text.append(strong,small);
+   label.append(check,text);
+   container.append(label);
+ });
+}
+
+renderChoices("rewards",rewardItems);
+renderChoices("homework",homeworkItems);
+renderChoices("parents",parentItems);
+renderChoices("classRewards",classItems);
+
+function selected(group) {
+ return [...document.querySelectorAll(
+  'input[data-group="'+group+'"]:checked'
+ )].map(x=>x.value);
+}
+
+function copyText(text) {
+ if(navigator.clipboard && window.isSecureContext) {
+   navigator.clipboard.writeText(text)
+    .then(()=>alert("Copied."))
+    .catch(()=>fallbackCopy(text));
+ } else {
+   fallbackCopy(text);
+ }
+}
+
+function fallbackCopy(text) {
+ const area=document.createElement("textarea");
+ area.value=text;
+ area.style.position="fixed";
+ area.style.opacity="0";
+ document.body.append(area);
+ area.select();
+ try {
+   document.execCommand("copy");
+   alert("Copied.");
+ } catch(e) {
+   alert("Copying is unavailable in this browser.");
+ }
+ area.remove();
+}
+
+function copyRewards() {
+ const items=selected("rewards");
+ if(!items.length) {
+   alert("Select at least one reward.");
+   return;
+ }
+ copyText("Selected Student Incentives:\n- "+items.join("\n- "));
+}
+
+function clearRewards() {
+ document.querySelectorAll(
+  'input[data-group="rewards"]'
+ ).forEach(x=>x.checked=false);
+}
+
+function copyPlan() {
+ const groups=[
+  ["Student Rewards","rewards"],
+  ["Homework Recognition","homework"],
+  ["Parent Involvement","parents"],
+  ["Classroom Recognition","classRewards"]
+ ];
+ let lines=["WALKERSWOOD ACADEMY","INCENTIVE PLAN",""];
+ groups.forEach(([title,id])=>{
+  lines.push(title);
+  const values=selected(id);
+  lines.push(values.length?"- "+values.join("\n- "):"None selected");
+  lines.push("");
+ });
+ copyText(lines.join("\n"));
+}
+
+function calculate() {
+ const total=Number(document.getElementById("total").value);
+ const before=Number(document.getElementById("before").value);
+ const after=Number(document.getElementById("after").value);
+ const output=document.getElementById("progressResult");
+
+ if(!Number.isInteger(total)||total<1||
+    !Number.isInteger(before)||!Number.isInteger(after)||
+    before<0||after<0||before>total||after>total) {
+   output.textContent="Enter valid numbers. Completion counts cannot exceed the class total.";
+   return;
+ }
+ const oldRate=before/total*100;
+ const newRate=after/total*100;
+ const change=newRate-oldRate;
+ output.textContent=
+  "Previous: "+oldRate.toFixed(1)+"% | Current: "+
+  newRate.toFixed(1)+"% | Change: "+
+  (change>0?"+":"")+change.toFixed(1)+" percentage points.";
+}
+
+/* Birthday Calendar */
+const birthdayKey="walkerswood-birthdays-v1";
+let birthdays=[];
+
+try {
+ const stored=JSON.parse(localStorage.getItem(birthdayKey)||"[]");
+ birthdays=Array.isArray(stored)?stored:[];
+} catch(e) {
+ birthdays=[];
+}
+
+const today=new Date();
+let shownMonth=today.getMonth();
+let shownYear=today.getFullYear();
+
+function saveBirthdays() {
+ try {
+  localStorage.setItem(birthdayKey,JSON.stringify(birthdays));
+ } catch(e) {
+  alert("This browser could not save birthdays.");
+ }
+}
+
+function addBirthday() {
+ const name=document.getElementById("birthdayName").value.trim();
+ const date=document.getElementById("birthdayDate").value;
+ if(!name||!date) {
+   alert("Enter a first name and birthday.");
+   return;
+ }
+ const md=date.slice(5);
+ if(birthdays.some(b=>b.name.toLowerCase()===name.toLowerCase()&&b.md===md)) {
+   alert("This birthday is already listed.");
+   return;
+ }
+ birthdays.push({
+   id:String(Date.now())+Math.random().toString(36).slice(2),
+   name:name,
+   md:md
+ });
+ shownMonth=Number(md.slice(0,2))-1;
+ shownYear=today.getFullYear();
+ saveBirthdays();
+ renderCalendar();
+ document.getElementById("birthdayName").value="";
+ document.getElementById("birthdayDate").value="";
+}
+
+function changeMonth(amount) {
+ shownMonth+=amount;
+ if(shownMonth<0) {
+   shownMonth=11;
+   shownYear--;
+ }
+ if(shownMonth>11) {
+   shownMonth=0;
+   shownYear++;
+ }
+ renderCalendar();
+}
+
+function removeBirthday(id) {
+ birthdays=birthdays.filter(b=>b.id!==id);
+ saveBirthdays();
+ renderCalendar();
+}
+
+function renderCalendar() {
+ const title=document.getElementById("monthTitle");
+ const calendar=document.getElementById("calendar");
+ const list=document.getElementById("birthdayList");
+ const date=new Date(shownYear,shownMonth,1);
+ title.textContent=date.toLocaleDateString("en-JM",{
+   month:"long",year:"numeric"
+ });
+ calendar.replaceChildren();
+ list.replaceChildren();
+
+ ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].forEach(d=>{
+   const el=document.createElement("div");
+   el.className="day weekday";
+   el.textContent=d;
+   calendar.append(el);
+ });
+
+ const first=date.getDay();
+ const days=new Date(shownYear,shownMonth+1,0).getDate();
+
+ for(let i=0;i<first;i++){
+   const blank=document.createElement("div");
+   calendar.append(blank);
+ }
+
+ for(let day=1;day<=days;day++){
+   const cell=document.createElement("div");
+   cell.className="day";
+   const num=document.createElement("strong");
+   num.textContent=day;
+   cell.append(num);
+   const md=String(shownMonth+1).padStart(2,"0")+"-"+
+     String(day).padStart(2,"0");
+   birthdays.filter(b=>b.md===md).forEach(b=>{
+     const tag=document.createElement("span");
+     tag.className="birthday";
+     tag.textContent=b.name;
+     cell.append(tag);
+   });
+   calendar.append(cell);
+ }
+
+ const monthly=birthdays.filter(b=>
+   Number(b.md.slice(0,2))===shownMonth+1
+ ).sort((a,b)=>a.md.localeCompare(b.md));
+
+ if(!monthly.length) {
+   const p=document.createElement("p");
+   p.className="hint";
+   p.textContent="No birthdays entered for this month.";
+   list.append(p);
+ }
+
+ monthly.forEach(b=>{
+   const row=document.createElement("div");
+   row.className="birthday-entry";
+   const text=document.createElement("span");
+   text.textContent=Number(b.md.slice(3))+" — "+b.name;
+   const remove=document.createElement("button");
+   remove.className="secondary";
+   remove.textContent="Remove";
+   remove.onclick=()=>removeBirthday(b.id);
+   row.append(text,remove);
+   list.append(row);
+ });
+}
+
+renderCalendar();
+</script>
+</body>
+</html>
