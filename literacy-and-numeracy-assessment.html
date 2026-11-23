@@ -475,9 +475,47 @@ a.jump{display:inline-block;padding:10px 14px;background:var(--navy);color:white
 <section class="card no-print" aria-label="Assessment navigation">
 <h2>Choose an assessment area</h2>
 <p>Both sections use the same student information. Complete either subject or both; unanswered tasks remain unassessed.</p>
-<a class="jump" href="#literacy-start">Literacy assessment</a>
+<a class="jump" href="#literacy-ladder">Reading and writing ladder</a>
+<a class="jump" href="#literacy-start">Other literacy tasks</a>
 <a class="jump" href="#numeracy-start">Numeracy assessment</a>
 <a class="jump" href="#results-start">Results and intervention plans</a>
+</section>
+
+
+<!-- STRUCTURED LITERACY LADDER: original supplementary probes -->
+<section class="card" id="literacy-ladder">
+<h2>Structured Reading and Writing Inventory</h2>
+<p>Administer in sequence, starting at a level the student can attempt successfully. This is an <strong>informal instructional inventory</strong>, not a standardised grade-placement test. Record independent performance before giving support. Use a fresh, comparable probe to confirm progress.</p>
+<div class="notice">For older learners, use age-respectful contexts even when teaching early decoding. Record whether the student read independently, needed prompts, or answered after listening. Jamaican Patois and Standard English differences must not be scored as a disability.</div>
+<h3>A. Word-reading ladder</h3>
+<p>Show each word separately without pictures or pronunciation cues. Tick words read correctly on the first independent attempt. Groups are <strong>instructional skill bands, not grade-equivalent scores</strong>. The high-frequency selections are original curated samples informed by common word-frequency teaching approaches; they are not the complete Fry or Dolch lists.</p>
+<div id="ladderWords"></div>
+<h3>B. Sentence reading and understanding</h3>
+<p>Ask the student to read each sentence aloud, then answer the question without looking back where feasible. Record reading and comprehension separately. Stop when the text is too difficult and return to a more accessible band.</p>
+<div id="ladderSentences"></div>
+<h3>C. Paragraph reading and comprehension</h3>
+<p>Use unseen paragraphs. Record oral reading errors and comprehension independently. Questions include literal, vocabulary and inferential understanding; accept equivalent accurate responses.</p>
+<div id="ladderPassages"></div>
+<h3>D. Writing ladder</h3>
+<p>Offer paper or an accessible writing method. Do not score handwriting as spelling or composition. First collect an independent sample, then document the effect of modelling or prompts.</p>
+<div id="ladderWriting"></div>
+<h3>E. Instructional response and review</h3>
+<div class="grid"><label>Priority reading skill<select id="ladderPriority"><option value="">Choose after assessment</option><option>Letter–sound knowledge</option><option>Phonemic awareness</option><option>Phonics and decoding</option><option>High-frequency word recognition</option><option>Sentence reading</option><option>Paragraph accuracy and fluency</option><option>Vocabulary and comprehension</option><option>Writing and spelling</option></select></label><label>Review date<input id="ladderReview" type="date"></label></div>
+<label>Independent baseline (e.g. 6/10 words, 2/3 questions, 1/4 sentences)<textarea id="ladderBaseline"></textarea></label>
+<label>Measurable goal (skill, accuracy, conditions and date)<textarea id="ladderGoal" placeholder="By [date], independently read at least 8/10 new words with the taught spelling pattern across three probes."></textarea></label>
+<label>Teaching activities and schedule<textarea id="ladderActivities" placeholder="Explicit modelling, guided practice, word building, repeated reading, sentence combining; frequency and minutes"></textarea></label>
+<label>Weekly progress monitoring and response to teaching<textarea id="ladderProgress" placeholder="Date | unseen probe | correct/attempted | prompts | next step"></textarea></label>
+<label>Assessor's observations / error analysis<textarea id="ladderNotes" placeholder="Substitutions, letter-sound confusion, omissions, guessing, self-corrections, comprehension vs decoding"></textarea></label>
+<details><summary>Teaching activities by identified gap</summary>
+<table><thead><tr><th>Observed need</th><th>Short, repeatable activity</th><th>Evidence to collect</th></tr></thead><tbody>
+<tr><td>Sound–letter mapping</td><td>Say the sound, select its letter, build and read 5–10 words with that pattern; use sound boxes.</td><td>Correct sound–letter links and unfamiliar words.</td></tr>
+<tr><td>Decoding</td><td>Model blending; sort words by spelling pattern; change one grapheme to make a new word; read decodable sentences.</td><td>Correct on untaught pattern-matched words.</td></tr>
+<tr><td>High-frequency words</td><td>Analyse sounds and spellings in 5 target words; read, spell from dictation, and use each in a meaningful sentence. Cumulative review.</td><td>Accurate recognition and spelling across sessions.</td></tr>
+<tr><td>Sentence comprehension</td><td>Read a sentence; identify who, did what, where/when; match meaning to a picture or explain orally; combine two sentences.</td><td>Reading accuracy and correct answers separately.</td></tr>
+<tr><td>Paragraph comprehension</td><td>Pre-teach only essential concepts during instruction, not baseline; read a short text, retell, find evidence, answer literal and inferential questions.</td><td>Question-type scores on unseen text.</td></tr>
+<tr><td>Written expression</td><td>Orally rehearse; dictate words and sentences; use subject–verb expansion; plan a paragraph with topic, details and closing; revise one feature.</td><td>Independent spelling, complete sentences and organised ideas.</td></tr>
+</tbody></table></details>
+<details><summary>Finding a book's reading level</summary><p>Use <a href="https://hub.lexile.com/find-a-book/search" target="_blank" rel="noopener noreferrer">Lexile Find a Book</a> for titles with Lexile measures, <a href="https://www.arbookfind.com/" target="_blank" rel="noopener noreferrer">AR BookFinder</a> for ATOS book levels, and publisher information where available. These systems are not interchangeable. A book level is a text-complexity indicator, not proof of a student's reading level. Confirm suitability using a short unseen passage, reading accuracy, comprehension, interest and age-appropriate content.</p></details>
 </section>
 
 <!-- READING COMPREHENSION -->
@@ -2106,6 +2144,59 @@ function exportJSON() {
     1000
   );
 }
+
+
+/* STRUCTURED LITERACY LADDER — supplementary, unnormed */
+const ladderWordSets=[
+ {label:"Foundation: common words",words:"the and is in it to of a was you he she we they are have said come some one there where what when because".split(" ")},
+ {label:"Developing: everyday reading",words:"after before around another through thought enough different important between without people together question answer sometimes every during family".split(" ")},
+ {label:"Secondary: cross-curricular vocabulary",words:"analyse compare contrast evidence explain identify infer interpret justify summarise evaluate consequence perspective significant environment community responsibility structure process establish".split(" ")}
+];
+const ladderSentenceSets=[
+ {text:"The bus is late.",q:"What is late?",answer:"The bus"},
+ {text:"Maya put her books in the bag before she left.",q:"What did Maya do before leaving?",answer:"Put her books in the bag"},
+ {text:"Although the road was wet, the students arrived on time because the driver travelled carefully.",q:"Why did they arrive on time despite the wet road?",answer:"The driver travelled carefully"}
+];
+const ladderPassageSets=[
+ {title:"Short: The notice",text:"The school club meets on Thursday. Bring a notebook. The meeting begins at three o'clock.",qs:[["When does the club meet?","Thursday"],["What should students bring?","A notebook"],["What time does the meeting begin?","Three o'clock"]]},
+ {title:"Developing: The community project",text:"A group of students noticed rubbish near the school gate. They asked the principal for permission to organise a clean-up. On Saturday, volunteers collected bottles and paper. The students also placed signs reminding people to use the bins. By Monday, the entrance looked better, but the group knew that keeping it clean would require everyone to help.",qs:[["What problem did students notice?","Rubbish near the school gate"],["What did they do on Saturday?","Collected bottles and paper"],["Why were signs needed?","To encourage people to use bins and keep the area clean"]]},
+ {title:"Extended: Protecting water",text:"During a dry season, a community may have less water available for homes, gardens and businesses. Residents can reduce waste by repairing leaking taps and collecting rainwater where it is safe to do so. Schools can help by checking for leaks and teaching students to turn off taps properly. These small actions do not create new rainfall, but they can protect existing supplies. Planning ahead matters because a shortage affects many people, not just one household.",qs:[["Name one way residents can reduce water waste.","Repair leaking taps or collect rainwater safely"],["What does 'shortage' mean here?","Not enough water"],["Why is planning ahead important?","Water shortages affect the wider community"]]}
+];
+const ladderWritingTasks=[
+ ["Copying and letter formation","Copy: The school garden needs water.","Record legibility separately from spelling and language."],
+ ["Word dictation","Dictate: shop, train, plant, because, important.","Count correctly spelled words; record phonetic attempts."],
+ ["Sentence dictation","Dictate: The students arrived before the meeting began.","Record words, punctuation, spacing and syntax."],
+ ["Independent sentence","Write one complete sentence explaining something you enjoy learning.","Record completeness and meaning."],
+ ["Independent paragraph","Write 4–6 sentences explaining one improvement you would make to your school and why.","Look for topic, supporting details, sequence and conventions."]
+];
+function ladderSelect(id, options){return `<select id="${id}"><option value="">Not assessed</option>${options.map(o=>`<option value="${esc(o)}">${esc(o)}</option>`).join("")}</select>`}
+function buildLadder(){
+ $("ladderWords").innerHTML=ladderWordSets.map((set,i)=>`<details ${i===0?"open":""}><summary>${esc(set.label)} (${set.words.length} words)</summary><div class="grid">${set.words.map((w,j)=>`<label style="margin:4px 0"><input type="checkbox" id="lw_${i}_${j}" style="display:inline;width:auto;margin-right:8px">${esc(w)}</label>`).join("")}</div><p class="muted">Tick only independently correct words. Leave unticked words as incorrect <em>only if the group was administered</em>.</p><label><input type="checkbox" id="lwDone_${i}" style="display:inline;width:auto"> This entire word group was administered</label></details>`).join("");
+ $("ladderSentences").innerHTML=ladderSentenceSets.map((x,i)=>`<div class="question"><p><strong>${i+1}.</strong> ${esc(x.text)}</p><label>Independent sentence reading ${ladderSelect('lsRead_'+i,['Accurate','Some errors','Unable to read'])}</label><p><strong>Ask:</strong> ${esc(x.q)}</p><label>Comprehension ${ladderSelect('lsComp_'+i,['Correct independently','Correct with support','Incorrect'])}</label><p class="muted">Expected meaning: ${esc(x.answer)}</p></div>`).join("");
+ $("ladderPassages").innerHTML=ladderPassageSets.map((p,i)=>`<details><summary>${esc(p.title)}</summary><div class="passage">${esc(p.text)}</div><div class="grid"><label>Words attempted<input type="number" min="0" id="lpAttempt_${i}"></label><label>Reading errors<input type="number" min="0" id="lpErrors_${i}"></label></div>${p.qs.map((q,j)=>`<div class="question"><p><strong>${j+1}. ${esc(q[0])}</strong></p><label>Response / evidence<input id="lpAnswer_${i}_${j}"></label><label>Score ${ladderSelect('lpScore_'+i+'_'+j,['Correct independently','Correct with support','Incorrect'])}</label><p class="muted">Expected meaning: ${esc(q[1])}</p></div>`).join("")}</details>`).join("");
+ $("ladderWriting").innerHTML=ladderWritingTasks.map((t,i)=>`<div class="question"><h4>${i+1}. ${esc(t[0])}</h4><p>${esc(t[1])}</p><label>Performance ${ladderSelect('lwrite_'+i,['Independent','Partly independent','With support','Not yet demonstrated'])}</label><label>Actual writing / notes<textarea id="lwriteNote_${i}"></textarea></label><p class="muted">${esc(t[2])}</p></div>`).join("");
+}
+function collectLadder(){
+ const words=ladderWordSets.map((set,i)=>({band:set.label,administered:$("lwDone_"+i).checked,correct:set.words.filter((w,j)=>$("lw_"+i+"_"+j).checked),total:set.words.length}));
+ const sentences=ladderSentenceSets.map((s,i)=>({sentence:s.text,reading:val('lsRead_'+i),comprehension:val('lsComp_'+i)}));
+ const passages=ladderPassageSets.map((p,i)=>({title:p.title,attempted:val('lpAttempt_'+i),errors:val('lpErrors_'+i),questions:p.qs.map((q,j)=>({question:q[0],response:val(`lpAnswer_${i}_${j}`),score:val(`lpScore_${i}_${j}`)}))}));
+ const writing=ladderWritingTasks.map((t,i)=>({task:t[0],performance:val('lwrite_'+i),notes:val('lwriteNote_'+i)}));
+ return {words,sentences,passages,writing,priority:val('ladderPriority'),baseline:val('ladderBaseline'),goal:val('ladderGoal'),activities:val('ladderActivities'),progress:val('ladderProgress'),review:val('ladderReview'),notes:val('ladderNotes')};
+}
+const baseCollect=collect;
+collect=function(){return {...baseCollect(),structuredLiteracy:collectLadder()};};
+const baseGenerateReport=generateReport;
+generateReport=function(mode='combined'){
+ baseGenerateReport(mode);
+ if(mode==='numeracy')return;
+ const d=collectLadder();
+ const summary=d.words.map(x=>`<li>${esc(x.band)}: ${x.administered?`${x.correct.length}/${x.total} independently correct`:'Not fully administered'}</li>`).join('');
+ const sentences=d.sentences.map((x,i)=>`<li>Sentence ${i+1}: reading ${esc(x.reading||'not assessed')}; understanding ${esc(x.comprehension||'not assessed')}</li>`).join('');
+ const passage=d.passages.map(x=>`<li>${esc(x.title)}: ${esc(x.attempted||'—')} attempted, ${esc(x.errors||'—')} errors; ${x.questions.filter(q=>q.score==='Correct independently').length}/${x.questions.filter(q=>q.score).length} independently correct comprehension items scored</li>`).join('');
+ const write=d.writing.map(x=>`<li>${esc(x.task)}: ${esc(x.performance||'not assessed')}</li>`).join('');
+ $('results').insertAdjacentHTML('beforeend',`<div class="panel"><h3>Structured Literacy Inventory</h3><h4>Word recognition</h4><ul>${summary}</ul><h4>Sentence reading</h4><ul>${sentences}</ul><h4>Paragraph reading</h4><ul>${passage}</ul><h4>Writing</h4><ul>${write}</ul><h4>Intervention</h4><p><strong>Priority:</strong> ${esc(d.priority||'Not chosen')}</p><p><strong>Baseline:</strong> ${esc(d.baseline||'Not entered')}</p><p><strong>Goal:</strong> ${esc(d.goal||'Not entered')}</p><p><strong>Activities:</strong> ${esc(d.activities||'Not entered')}</p><p><strong>Review:</strong> ${esc(d.review||'Not entered')}</p><p><strong>Progress:</strong> ${esc(d.progress||'Not entered')}</p><p class="muted">These original informal probes do not yield a validated reading age, grade level, or Lexile measure.</p></div>`);
+};
+buildLadder();
 
 /* INITIALISE */
 
