@@ -1219,6 +1219,16 @@ main{
     transition:none!important;
   }
 }
+
+/* EDUCATIONAL RESOURCE HUB */
+.resource-hub-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}
+.resource-hub-link{display:flex;flex-direction:column;gap:8px;padding:22px;background:var(--white);border:1px solid var(--border);border-top:4px solid var(--teal);border-radius:var(--radius);text-decoration:none;box-shadow:var(--shadow)}
+.resource-hub-link:hover,.resource-hub-link:focus-visible{background:var(--soft);border-color:var(--deep)}
+.resource-hub-link h3{margin:0;font-size:1.3rem}
+.resource-hub-link p{margin:0;color:var(--muted);font-size:.94rem}
+.resource-hub-link .service-action{margin-top:auto;padding-top:10px}
+@media(max-width:760px){.resource-hub-grid{grid-template-columns:1fr}}
+
 </style>
 </head>
 
@@ -1276,12 +1286,40 @@ main{
     <div class="hero-buttons">
       <a class="btn btn-primary" href="#support">Explore Support</a>
       <a class="btn btn-light" href="#contact">Tell Me What You Need</a>
+      <a class="btn btn-light" href="#learning-tools">Learning &amp; Assessment Tools</a>
     </div>
 
   </div>
 </header>
 
 <main>
+
+<section class="landing-section" id="learning-tools" aria-labelledby="learning-tools-title">
+  <span class="section-tag">Interactive educational resources</span>
+  <h2 id="learning-tools-title">Learning &amp; Assessment Tools</h2>
+  <p class="lead">Explore practical digital resources for developing skills, identifying learning needs and understanding the school experience.</p>
+  <div class="resource-hub-grid">
+    <a class="resource-hub-link" href="https://marshakerrtalley.com/weekly-assignment-document">
+      <span class="service-kicker">For learners &amp; educators</span>
+      <h3>Literacy Learning Studio</h3>
+      <p>Interactive literacy activities, vocabulary, comprehension, grammar and academic writing with differentiated learning pathways.</p>
+      <span class="service-action">Open Learning Studio →</span>
+    </a>
+    <a class="resource-hub-link" href="https://marshakerrtalley.com/literacy-and-numeracy-assessment">
+      <span class="service-kicker">For assessment &amp; intervention</span>
+      <h3>Literacy &amp; Numeracy Assessment</h3>
+      <p>Explore learners’ strengths and areas of need to inform targeted educational support and intervention.</p>
+      <span class="service-action">Open Assessment →</span>
+    </a>
+    <a class="resource-hub-link" href="https://marshakerrtalley.com/apse_needs_assessment.html">
+      <span class="service-kicker">For teachers &amp; school leaders</span>
+      <h3>School Needs &amp; Experience Surveys</h3>
+      <p>Gather teacher and student perspectives on learning, school culture and barriers to participation.</p>
+      <span class="service-action">Open Surveys →</span>
+    </a>
+  </div>
+</section>
+
 
 <section class="landing-section" id="about-special-education">
 
