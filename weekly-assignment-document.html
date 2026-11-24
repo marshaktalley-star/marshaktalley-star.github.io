@@ -7,7 +7,7 @@
 .emobank h2{font-size:clamp(27px,4vw,36px);color:#173d58;position:relative}.emobank .intro{max-width:720px;position:relative}
 .emobank .eyebrow{color:#a3475d}.emotion-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:20px 0}
 .emotion-choice{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;min-height:150px;background:white;color:#233f56;border:2px solid #e4e8f0;border-radius:19px;padding:12px 6px;box-shadow:0 6px 0 #dce9e7;transition:transform .18s,box-shadow .18s,border-color .18s}
-.emotion-choice:hover{transform:translateY(-4px);filter:none}.emotion-choice[aria-pressed="true"]{border:3px solid #087f83;background:#e7faf6;box-shadow:0 7px 0 #82c9c4;transform:translateY(-3px)}
+.emotion-choice:hover{transform:translateY(-4px);filter:none}.emotion-choice[aria-pressed="true"]{border:3px solid #087f83;background:#e7faf6;box-shadow:0 7px 0 #82c9c4,0 0 18px #319fa266;transform:translateY(-6px)}
 .emotion-choice svg{width:82px;height:82px;filter:drop-shadow(0 5px 3px #20354a20)}.emotion-choice strong{font-size:15px}.emotion-choice small{font-weight:500;color:#526578;font-size:12px}
 .day-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:16px 0}.day-btn{background:#e9eff5;color:#21425c;border:2px solid #d1e0e7;padding:11px 4px}.day-btn[aria-pressed="true"]{background:#173d58;color:white;border-color:#173d58}
 .emotion-workspace{background:#fff;border:1px solid #d8e8e6;border-radius:19px;padding:20px;position:relative}.emotion-workspace h3{font-size:21px;margin:0 0 5px}.sentence-type{display:inline-block;background:#fff0cf;border-radius:40px;padding:5px 12px;color:#754c0c;font-weight:800}
@@ -93,6 +93,8 @@ const emotionDays=[
  {name:'Friday',kind:'My choice · sentence challenge',instruction:'Choose any sentence type from the week. Explain why your sentence fits that type.',frame:'Choose your own structure. Try using because, although, but or so.',model:'I feel optimistic because I have made progress, and I am ready to keep learning.'}
 ];
 let emotionDay=0;
+const selectedEmotionByWeek={};
+function selectEmotionDay(next){const feeling=selectedEmotionByWeek[index]||emotionRecord().feeling;emotionDay=next;const rec=emotionRecord();if(!rec.feeling&&feeling)rec.feeling=feeling;selectedEmotionByWeek[index]=rec.feeling||feeling;renderEmotion()}
 const emotionRecords={};
 function emotionRecord(){const k=index+'-'+emotionDay;return emotionRecords[k]||(emotionRecords[k]={feeling:'',sentence:''})}
 function faceSvg(i){
@@ -110,9 +112,9 @@ function faceSvg(i){
 function renderEmotion(){
  const rec=emotionRecord(),day=emotionDays[emotionDay];
  $('emotionChoices').innerHTML=emotionNames.map((n,i)=>`<button type="button" class="emotion-choice" data-emotion="${i}" aria-pressed="${rec.feeling===n}">${faceSvg(i)}<strong>${n}</strong><small>${emotionHints[i]}</small></button>`).join('');
- document.querySelectorAll('[data-emotion]').forEach(b=>b.onclick=()=>{emotionRecord().feeling=emotionNames[Number(b.dataset.emotion)];renderEmotion()});
+ document.querySelectorAll('[data-emotion]').forEach(b=>b.onclick=()=>{emotionRecord().feeling=emotionNames[Number(b.dataset.emotion)];selectedEmotionByWeek[index]=emotionRecord().feeling;renderEmotion()});
  $('dayChoices').innerHTML=emotionDays.map((d,i)=>`<button type="button" class="day-btn" data-day="${i}" aria-pressed="${i===emotionDay}">${d.name}</button>`).join('');
- document.querySelectorAll('[data-day]').forEach(b=>b.onclick=()=>{emotionDay=Number(b.dataset.day);renderEmotion()});
+ document.querySelectorAll('[data-day]').forEach(b=>b.onclick=()=>{selectEmotionDay(Number(b.dataset.day))});
  $('emotionDayHeading').textContent=day.name+' · '+day.kind;
  $('emotionSentenceType').textContent=day.kind;
  $('emotionInstruction').textContent=day.instruction;
@@ -126,7 +128,7 @@ function renderEmotion(){
 $('emotionSentence').addEventListener('input',e=>{emotionRecord().sentence=e.target.value;const started=emotionDays.filter((_,i)=>emotionRecords[index+'-'+i]?.sentence?.trim()).length;$('emotionProgressText').textContent=started+' of 5 days started';$('emotionProgressBar').style.width=(started/5*100)+'%'});
 $('emotionListen').onclick=()=>speak(emotionDays[emotionDay].model);
 $('emotionReadMine').onclick=()=>speak($('emotionSentence').value.trim()||'Please write your sentence first.');
-$('emotionNext').onclick=()=>{emotionDay=(emotionDay+1)%5;renderEmotion()};
+$('emotionNext').onclick=()=>{selectEmotionDay((emotionDay+1)%5)};
 $('emotionCheck').onclick=()=>{const s=$('emotionSentence').value.trim();if(!s){$('emotionFeedback').textContent='Write a sentence before checking.';return}let hints=[];if(!/[.!?]$/.test(s))hints.push('Add end punctuation.');if(!/^[A-Z]/.test(s))hints.push('Begin with a capital letter.');if(emotionDay===1&&!/\b(and|but|or|so|yet)\b/i.test(s))hints.push('Try a joining word such as and, but or so.');if(emotionDay===2&&!/\b(because|although|when|if|while|since)\b/i.test(s))hints.push('Try a dependent clause using because, although, when or if.');if(emotionDay===3&&(!/\b(because|although|when|if|while|since)\b/i.test(s)||!/\b(and|but|or|so|yet)\b/i.test(s)))hints.push('Include a dependent clause and a coordinating conjunction.');$('emotionFeedback').textContent=hints.length?hints.join(' '):'Good start! Read it aloud. Does it express your idea clearly? Ask your teacher to check the sentence structure.'};
 const previousWeekChange=week.onchange;week.onchange=()=>{previousWeekChange();renderEmotion()};
 const previousDownload=$('downloadWork').onclick;$('downloadWork').onclick=()=>{previousDownload();const lines=emotionDays.map((d,i)=>{let r=emotionRecords[index+'-'+i]||{};return `${d.name} (${d.kind})\nFeeling: ${r.feeling||'Not selected'}\nSentence: ${r.sentence||'Not entered'}`});download(`emotional-bank-week-${index+1}.txt`,[`Student code: ${$('student').value}`,`Week ${index+1}: ${current().title}`,...lines].join('\n\n'),'text/plain')};
